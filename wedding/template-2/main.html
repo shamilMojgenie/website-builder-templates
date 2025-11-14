@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wedding Template - 1</title>
+        <title>Wedding Template - 2</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,38 +22,50 @@
     <body>
         <section
             id="navbar"
-            class="w-full fixed top-0 left-0 py-4 lg:py-8 px-6 flex items-center justify-between font-playfair z-50 transition-all duration-300 bg-transparent text-white"
+            class="w-full fixed top-0 left-0 px-6 py-6 z-50 bg-[#fff8f7]/70 duration-300 backdrop-blur-xl border-b border-[#e8d9d7]"
         >
-            <a href="#" class="text-4xl font-arizonia tracking-wider nav-text">
-                Eve &amp; Adam
-            </a>
-
-            <input type="checkbox" id="menu-toggle" class="peer hidden" />
-
-            <label for="menu-toggle" class="cursor-pointer md:hidden nav-text">
-                <div class="space-y-1.5">
-                    <span class="block w-6 h-[2px] bg-white"></span>
-                    <span class="block w-6 h-[2px] bg-white"></span>
-                    <span class="block w-6 h-[2px] bg-white"></span>
-                </div>
-            </label>
-
-            <ul
-                class="flex-col md:flex-row md:flex space-y-4 md:space-y-0 md:space-x-8 uppercase tracking-widest absolute md:static left-0 top-[70px] w-full md:w-auto bg-white md:bg-transparent py-6 md:py-0 px-6 md:px-0 hidden peer-checked:flex shadow-md md:shadow-none"
+            <div
+                class="max-w-7xl mx-auto flex items-center justify-between relative"
             >
-                <a href="#" class="transition cursor-pointer nav-text">Home</a>
-                <a href="#story" class="transition cursor-pointer nav-text"
-                    >Our Story</a
+                <!-- Floral Accent + Logo -->
+                <div class="flex items-center gap-3">
+                    <img
+                        src="https://loveineden.com/assets/images/png/flower.svg"
+                        class="w-10 opacity-70"
+                    />
+                    <a
+                        class="text-4xl font-arizonia text-[#4F5E3A] tracking-wider"
+                    >
+                        Eve & Adam
+                    </a>
+                </div>
+
+                <!-- Toggle -->
+                <input type="checkbox" id="menu-toggle" class="peer hidden" />
+                <label for="menu-toggle" class="md:hidden cursor-pointer">
+                    <div class="space-y-1.5">
+                        <span class="block w-7 h-[2px] bg-[#4F5E3A]"></span>
+                        <span class="block w-7 h-[2px] bg-[#4F5E3A]"></span>
+                        <span class="block w-7 h-[2px] bg-[#4F5E3A]"></span>
+                    </div>
+                </label>
+
+                <!-- Links -->
+                <ul
+                    class="absolute md:static left-0 top-[80px] w-full md:w-auto hidden peer-checked:flex md:flex flex-col md:flex-row bg-white md:bg-transparent p-6 md:p-0 rounded-xl md:rounded-none space-y-4 md:space-y-0 md:space-x-10 font-playfair text-[#594e61] uppercase tracking-widest"
                 >
-                <li class="transition cursor-pointer nav-text">The Wedding</li>
-                <li class="transition cursor-pointer nav-text">Gallery</li>
-            </ul>
+                    <a class="hover:text-[#4F5E3A] transition">Home</a>
+                    <a class="hover:text-[#4F5E3A] transition">Our Story</a>
+                    <a class="hover:text-[#4F5E3A] transition">The Wedding</a>
+                    <a class="hover:text-[#4F5E3A] transition">Gallery</a>
+                </ul>
+            </div>
         </section>
 
         <section
             class="relative w-full pt-40 pb-30 md:pb-[190px] bg-cover bg-no-repeat bg-[center_60%] bg-[url('https://anitapeeples.com/wp-content/uploads/2023/08/Ottawa-Engagement-Photos-European-Picnic-23-1.jpg')] overflow-hidden"
         >
-            <div class="absolute inset-0 bg-[#A38C8C]/60 z-10"></div>
+            <div class="absolute inset-0 bg-[#4F5E3A]/60 z-10"></div>
 
             <div
                 class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4"
@@ -79,7 +91,7 @@
                         ></div>
 
                         <button
-                            class="relative cursor-pointer z-10 border border-white px-8 py-3 text-lg uppercase tracking-widest hover:bg-white hover:text-[#A38C8C] transition-all duration-300 font-semibold"
+                            class="relative cursor-pointer z-10 border border-white px-8 py-3 text-lg uppercase tracking-widest hover:bg-white hover:text-[#4F5E3A] transition-all duration-300 font-semibold"
                         >
                             More Details
                         </button>
@@ -96,10 +108,10 @@
                     <img
                         src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Christian-Wedding-Groom-Photos_A17I2505.jpg?fit=1662%2C2493&amp;ssl=1"
                         alt="Groom"
-                        class="w-24 h-24 rounded-full object-cover border-2 border-[#A38C8C] ml-auto"
+                        class="w-24 h-24 rounded-full object-cover border-2 border-[#4F5E3A] ml-auto"
                     />
                     <h3
-                        class="text-3xl md:text-4xl font-semibold text-[#A38C8C] font-arizonia"
+                        class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] font-arizonia"
                     >
                         Adam
                     </h3>
@@ -121,10 +133,10 @@
                     <img
                         src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Christian-Wedding-Bride-Photos__LIB7444-scaled.jpg?fit=1707%2C2560&amp;ssl=1"
                         alt="Bride"
-                        class="w-24 h-24 rounded-full object-cover border-2 border-[#A38C8C] object-[center_90%]"
+                        class="w-24 h-24 rounded-full object-cover border-2 border-[#4F5E3A] object-[center_90%]"
                     />
                     <h3
-                        class="text-3xl md:text-4xl font-semibold text-[#A38C8C] font-arizonia"
+                        class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] font-arizonia"
                     >
                         Eve
                     </h3>
@@ -144,7 +156,7 @@
             >
                 <div class="text-center md:text-left">
                     <h2
-                        class="text-3xl md:text-4xl font-semibold text-[#A38C8C] font-arizonia mb-6"
+                        class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] font-arizonia mb-6"
                     >
                         A Swipe, A Spark, A Forever
                     </h2>
@@ -172,12 +184,12 @@
                     <div class="relative mt-12 max-w-fit">
                         <!-- Outer Frame (Absolute) -->
                         <div
-                            class="absolute inset-0 border-2 border-[#A38C8C] translate-x-1 translate-y-1"
+                            class="absolute inset-0 border-2 border-[#4F5E3A] translate-x-1 translate-y-1"
                         ></div>
 
                         <!-- Actual Button -->
                         <button
-                            class="relative z-10 border text-[#A38C8C] border-[#A38C8C] px-8 py-3 text-lg uppercase tracking-widest hover:bg-white hover:text-[#A38C8C] transition-all duration-300 font-semibold"
+                            class="relative z-10 border text-[#4F5E3A] border-[#4F5E3A] px-8 py-3 text-lg uppercase tracking-widest hover:bg-white hover:text-[#4F5E3A] transition-all duration-300 font-semibold"
                         >
                             OUR LOVE STORY
                         </button>
@@ -205,7 +217,7 @@
             <div class="max-w-6xl mx-auto py-10">
                 <div class="text-center mb-16">
                     <h2
-                        class="text-3xl md:text-6xl font-bold text-[#A38C8C] font-arizonia mb-6"
+                        class="text-3xl md:text-6xl font-bold text-[#4F5E3A] font-arizonia mb-6"
                     >
                         Our Love Story
                     </h2>
@@ -213,7 +225,7 @@
 
                 <div class="relative">
                     <div
-                        class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-[#A38C8C] hidden md:block"
+                        class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-[#4F5E3A] hidden md:block"
                     ></div>
 
                     <div class="space-y-16 md:space-y-20">
@@ -221,11 +233,11 @@
                             class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
                         >
                             <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#A38C8C] z-10 flex items-center justify-center hidden md:flex"
+                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#A38C8C]"
+                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
                                 >
@@ -242,12 +254,12 @@
                                 class="md:w-5/12 md:pr-4 text-center md:text-right order-2 md:order-1"
                             >
                                 <h3
-                                    class="text-3xl md:text-4xl font-semibold text-[#A38C8C] mb-2"
+                                    class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] mb-2"
                                 >
                                     THE PERFECT SWIPE
                                 </h3>
                                 <p
-                                    class="text-[#A38C8C] text-sm md:text-base mb-4 font-medium"
+                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
                                 >
                                     March 2024
                                 </p>
@@ -275,7 +287,7 @@
                                         />
                                     </div>
                                     <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#A38C8C] p-2"
+                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
                                     >
                                         <img
                                             src="https://relationshipsmdd.com/wp-content/uploads/2023/05/Can-you-send-pictures-on-hinge.jpeg"
@@ -291,11 +303,11 @@
                             class="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16"
                         >
                             <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#A38C8C] z-10 flex items-center justify-center hidden md:flex"
+                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#A38C8C]"
+                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
                                 >
@@ -313,12 +325,12 @@
                                 class="md:w-5/12 md:pl-4 text-center md:text-left order-2 md:order-1"
                             >
                                 <h3
-                                    class="text-2xl md:text-3xl font-semibold text-[#A38C8C] mb-2"
+                                    class="text-2xl md:text-3xl font-semibold text-[#4F5E3A] mb-2"
                                 >
                                     FIRST CONNECTION
                                 </h3>
                                 <p
-                                    class="text-[#A38C8C] text-sm md:text-base mb-4 font-medium"
+                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
                                 >
                                     March 2024
                                 </p>
@@ -347,7 +359,7 @@
                                         />
                                     </div>
                                     <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#A38C8C] p-2"
+                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
                                     >
                                         <img
                                             src="https://img.freepik.com/premium-photo/indian-couple-date-restaurant-capturing-selfie-terrace-boyfriend_868783-43332.jpg"
@@ -363,11 +375,11 @@
                             class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
                         >
                             <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#A38C8C] z-10 flex items-center justify-center hidden md:flex"
+                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#A38C8C]"
+                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
                                 >
@@ -385,12 +397,12 @@
                                 class="md:w-5/12 md:pr-4 text-center md:text-right order-2 md:order-1"
                             >
                                 <h3
-                                    class="text-2xl md:text-3xl font-semibold text-[#A38C8C] mb-2"
+                                    class="text-2xl md:text-3xl font-semibold text-[#4F5E3A] mb-2"
                                 >
                                     MOMENTS TOGETHER
                                 </h3>
                                 <p
-                                    class="text-[#A38C8C] text-sm md:text-base mb-4 font-medium"
+                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
                                 >
                                     March – June 2024
                                 </p>
@@ -420,7 +432,7 @@
                                         />
                                     </div>
                                     <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#A38C8C] p-2"
+                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
                                     >
                                         <img
                                             src="https://www.brides.com/thmb/LMyiMPxRFx82BLiHZC8lySJFnGo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/marriage-pose-photo-recirc-kyle-john-1-29-4f97523aa049471992292e8d6ddc41ee.jpg"
@@ -436,11 +448,11 @@
                             class="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16"
                         >
                             <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#A38C8C] z-10 flex items-center justify-center hidden md:flex"
+                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#A38C8C]"
+                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
                                 >
@@ -458,12 +470,12 @@
                                 class="md:w-5/12 md:pl-4 text-center md:text-left order-2 md:order-1"
                             >
                                 <h3
-                                    class="text-2xl md:text-3xl font-semibold text-[#A38C8C] mb-2"
+                                    class="text-2xl md:text-3xl font-semibold text-[#4F5E3A] mb-2"
                                 >
                                     FOREVER BEGINS
                                 </h3>
                                 <p
-                                    class="text-[#A38C8C] text-sm md:text-base mb-4 font-medium"
+                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
                                 >
                                     June 2024 – May 2025
                                 </p>
@@ -489,7 +501,7 @@
                                         />
                                     </div>
                                     <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#A38C8C] p-2"
+                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
                                     >
                                         <img
                                             src="https://eventsmanagementkerala.com/wp-content/uploads/2023/08/kerala-christian-wedding-rituals-and-procedure-1024x683.webp"
@@ -513,11 +525,11 @@
                 class="absolute inset-0 w-full h-full object-cover object-[center_40%]"
             />
             <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-[#A38C8C]/60 z-10"></div>
+            <div class="absolute inset-0 bg-[#4F5E3A]/60 z-10"></div>
             <!-- Play Button Centered -->
             <div class="relative z-20 flex items-center justify-center h-full">
                 <button
-                    class="w-20 h-20 rounded-full bg-white text-[#A38C8C] border-4 border-[#A38C8C] shadow-lg flex items-center justify-center hover:scale-105 transition duration-300 cursor-pointer"
+                    class="w-20 h-20 rounded-full bg-white text-[#4F5E3A] border-4 border-[#4F5E3A] shadow-lg flex items-center justify-center hover:scale-105 transition duration-300 cursor-pointer"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -535,7 +547,7 @@
             <div class="max-w-5xl mx-auto relative z-10">
                 <!-- TITLE -->
                 <h2
-                    class="text-3xl md:text-6xl font-bold text-[#A38C8C] font-arizonia mb-6 text-center"
+                    class="text-3xl md:text-6xl font-bold text-[#4F5E3A] font-arizonia mb-6 text-center"
                 >
                     Wedding Details
                 </h2>
@@ -732,7 +744,7 @@
                     <!-- Button -->
                     <a
                         href="#"
-                        class="mt-6 relative z-20 inline-block border border-white px-6 py-2 md:px-8 md:py-3 uppercase tracking-widest text-sm md:text-base font-medium hover:bg-white hover:text-[#A38C8C] transition duration-300"
+                        class="mt-6 relative z-20 inline-block border border-white px-6 py-2 md:px-8 md:py-3 uppercase tracking-widest text-sm md:text-base font-medium hover:bg-white hover:text-[#4F5E3A] transition duration-300"
                     >
                         View Map
                     </a>
@@ -746,7 +758,7 @@
         </section>
 
         <section class="relative py-10 md:py-20 bg-[#faf9f7] px-6 text-center">
-            <h2 class="text-4xl md:text-6xl font-arizonia text-[#A38C8C] mb-6">
+            <h2 class="text-4xl md:text-6xl font-arizonia text-[#4F5E3A] mb-6">
                 Dress Code
             </h2>
 
@@ -761,7 +773,7 @@
                 <!-- Women -->
                 <div class="flex flex-col items-center">
                     <div
-                        class="w-40 h-40 md:h-46 md:w-46 2xl:h-60 2xl:w-60 rounded-full border-2 border-dashed border-[#A38C8C] p-2 overflow-hidden"
+                        class="w-40 h-40 md:h-46 md:w-46 2xl:h-60 2xl:w-60 rounded-full border-2 border-dashed border-[#4F5E3A] p-2 overflow-hidden"
                     >
                         <img
                             src="https://plus.unsplash.com/premium_photo-1664540415112-f6afc235c8e2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJpZGVzbWFpZHxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000"
@@ -770,7 +782,7 @@
                     </div>
 
                     <h3
-                        class="text-xl font-semibold text-[#A38C8C] tracking-wide mt-4"
+                        class="text-xl font-semibold text-[#4F5E3A] tracking-wide mt-4"
                     >
                         Women
                     </h3>
@@ -783,7 +795,7 @@
                 <!-- Men -->
                 <div class="flex flex-col items-center">
                     <div
-                        class="w-40 h-40 md:h-46 md:w-46 2xl:h-60 2xl:w-60 rounded-full border-2 border-dashed border-[#A38C8C] p-2 overflow-hidden"
+                        class="w-40 h-40 md:h-46 md:w-46 2xl:h-60 2xl:w-60 rounded-full border-2 border-dashed border-[#4F5E3A] p-2 overflow-hidden"
                     >
                         <img
                             src="https://cityvibes.in/cdn/shop/files/19_51c02ba6-fa98-4bb6-b6e5-02d82ce31488.png?v=1728973821&width=2240"
@@ -792,7 +804,7 @@
                     </div>
 
                     <h3
-                        class="text-xl font-semibold text-[#A38C8C] tracking-wide mt-4"
+                        class="text-xl font-semibold text-[#4F5E3A] tracking-wide mt-4"
                     >
                         Men
                     </h3>
@@ -857,7 +869,7 @@
         <section class="w-full bg-[#faf9f7] overflow-hidden">
             <div class="relative">
                 <div
-                    class="whitespace-nowrap flex items-center animate-marquee text-[#A38C8C]"
+                    class="whitespace-nowrap flex items-center animate-marquee text-[#4F5E3A]"
                 >
                     <span
                         class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
@@ -886,7 +898,7 @@
 
                 <!-- Duplicate for seamless loop -->
                 <div
-                    class="whitespace-nowrap flex items-center animate-marquee2 text-[#A38C8C] absolute top-0"
+                    class="whitespace-nowrap flex items-center animate-marquee2 text-[#4F5E3A] absolute top-0"
                 >
                     <span
                         class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
@@ -918,7 +930,7 @@
         <section class="relative py-10 md:py-20 bg-[#faf9f7] px-6">
             <div class="max-w-6xl mx-auto text-center mb-14">
                 <h2
-                    class="text-4xl md:text-6xl font-arizonia text-[#A38C8C] mb-4"
+                    class="text-4xl md:text-6xl font-arizonia text-[#4F5E3A] mb-4"
                 >
                     Our Gallery
                 </h2>
@@ -932,7 +944,7 @@
             >
                 <!-- Image -->
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#4F5E3A]/20 bg-white"
                 >
                     <img
                         src="https://images.pexels.com/photos/2959194/pexels-photo-2959194.jpeg"
@@ -941,7 +953,7 @@
 
                     <!-- Overlay -->
                     <div
-                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                        class="absolute inset-0 bg-[#4F5E3A]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
                     >
                         <span
                             class="text-white text-lg tracking-widest font-semibold"
@@ -951,14 +963,14 @@
                 </div>
 
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#4F5E3A]/20 bg-white"
                 >
                     <img
                         src="https://images.pexels.com/photos/1839747/pexels-photo-1839747.jpeg"
                         class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div
-                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                        class="absolute inset-0 bg-[#4F5E3A]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
                     >
                         <span
                             class="text-white text-lg tracking-widest font-semibold"
@@ -968,14 +980,14 @@
                 </div>
 
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#4F5E3A]/20 bg-white"
                 >
                     <img
                         src="https://people.com/thmb/JNZdm-O_D8BjLtiC0RT_mMex0qk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(963x655:965x657)/Bride-Makes-11-Bridesmaid-Dresses-092325-1-4b0ea094d0cd45af9cd18a1c3b4e250a.jpg"
                         class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div
-                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                        class="absolute inset-0 bg-[#4F5E3A]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
                     >
                         <span
                             class="text-white text-lg tracking-widest font-semibold"
@@ -985,14 +997,14 @@
                 </div>
 
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#4F5E3A]/20 bg-white"
                 >
                     <img
                         src="https://images.pexels.com/photos/3593434/pexels-photo-3593434.jpeg"
                         class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div
-                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                        class="absolute inset-0 bg-[#4F5E3A]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
                     >
                         <span
                             class="text-white text-lg tracking-widest font-semibold"
@@ -1002,14 +1014,14 @@
                 </div>
 
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#4F5E3A]/20 bg-white"
                 >
                     <img
                         src="https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg"
                         class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div
-                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                        class="absolute inset-0 bg-[#4F5E3A]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
                     >
                         <span
                             class="text-white text-lg tracking-widest font-semibold"
@@ -1019,14 +1031,14 @@
                 </div>
 
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#4F5E3A]/20 bg-white"
                 >
                     <img
                         src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg"
                         class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div
-                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                        class="absolute inset-0 bg-[#4F5E3A]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
                     >
                         <span
                             class="text-white text-lg tracking-widest font-semibold"
@@ -1042,7 +1054,7 @@
             <div class="max-w-6xl mx-auto text-center">
                 <!-- Names -->
                 <h2
-                    class="text-4xl md:text-6xl font-arizonia text-[#A38C8C] mb-4"
+                    class="text-4xl md:text-6xl font-arizonia text-[#4F5E3A] mb-4"
                 >
                     Eve & Adam
                 </h2>
@@ -1053,14 +1065,14 @@
                 </p>
 
                 <!-- Divider -->
-                <div class="w-24 h-px bg-[#A38C8C]/40 mx-auto my-6"></div>
+                <div class="w-24 h-px bg-[#4F5E3A]/40 mx-auto my-6"></div>
 
                 <!-- Social Icons -->
                 <div class="flex justify-center gap-6 mb-8">
                     <!-- Instagram -->
                     <a
                         href="#"
-                        class="text-[#A38C8C] hover:opacity-70 transition"
+                        class="text-[#4F5E3A] hover:opacity-70 transition"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -1079,7 +1091,7 @@
                     <!-- Facebook -->
                     <a
                         href="#"
-                        class="text-[#A38C8C] hover:opacity-70 transition"
+                        class="text-[#4F5E3A] hover:opacity-70 transition"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -1096,7 +1108,7 @@
                     <!-- Pinterest -->
                     <a
                         href="#"
-                        class="text-[#A38C8C] hover:opacity-70 transition"
+                        class="text-[#4F5E3A] hover:opacity-70 transition"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
