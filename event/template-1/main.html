@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Template 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./global.css" />
+  </head>
+  <body>
+    <!-- nav bar  -->
+    <section>
+      <main>
+        <header class="bg-white shadow-sm z-30 sticky top-0">
+          <!-- Hidden checkbox for toggle -->
+          <input type="checkbox" id="navToggle" class="hidden peer" />
+
+          <div class="flex justify-between items-center px-6 py-4">
+            <!-- Logo -->
+            <a href="/#">
+              <img
+                src="https://logodix.com/logo/2045179.png"
+                alt="Logo"
+                class="w-auto h-14 md:h-18"
+              />
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav
+              class="hidden md:flex space-x-6 font-semibold text-sm tracking-wide items-center"
+            >
+              <a href="/#" class="hover:text-[#F95357]">HOME</a>
+              <a href="/#" class="hover:text-[#F95357]">ABOUT</a>
+              <a href="/#" class="hover:text-[#F95357]">HIGHLIGHTS</a>
+              <a href="/#" class="hover:text-[#F95357]">VENUE</a>
+              <a href="/#" class="hover:text-[#F95357]">GALLERY</a>
+
+              <!-- Register Button (Desktop) -->
+              <a
+                href="/#"
+                class="ml-4 px-4 py-2 bg-[#F95357] text-white rounded-md hover:bg-[#d8484b] transition-colors"
+              >
+                Register Now
+              </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <label for="navToggle" class="md:hidden cursor-pointer z-50">
+              <svg
+                class="w-7 h-7 text-[#F95357]"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </label>
+          </div>
+
+          <!-- Overlay -->
+          <label
+            for="navToggle"
+            id="overlay"
+            class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden opacity-0 invisible transition-all duration-300 ease-in-out peer-checked:opacity-100 peer-checked:visible"
+          ></label>
+
+          <!-- Mobile Nav -->
+          <div
+            id="mobileMenu"
+            class="md:hidden z-50 fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out peer-checked:translate-x-0"
+          >
+            <div class="flex justify-end p-4">
+              <label
+                for="navToggle"
+                class="text-gray-600 hover:text-[#F95357] cursor-pointer transition-colors"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </label>
+            </div>
+
+            <nav
+              class="flex flex-col space-y-6 px-6 text-sm font-semibold tracking-wide"
+            >
+              <a
+                href="/#"
+                class="hover:text-[#F95357] py-2 border-b border-gray-100"
+                >HOME</a
+              >
+              <a
+                href="/#"
+                class="hover:text-[#F95357] py-2 border-b border-gray-100"
+                >ABOUT</a
+              >
+              <a
+                href="/#"
+                class="hover:text-[#F95357] py-2 border-b border-gray-100"
+                >HIGHLIGHTS</a
+              >
+              <a
+                href="/#"
+                class="hover:text-[#F95357] py-2 border-b border-gray-100"
+                >VENUE</a
+              >
+              <a
+                href="/#"
+                class="hover:text-[#F95357] py-2 border-b border-gray-100"
+                >GALLERY</a
+              >
+
+              <!-- Register Button (Mobile) -->
+              <a
+                href="/#"
+                class="mt-4 text-center px-4 py-3 bg-[#F95357] text-white rounded-md hover:bg-[#d8484b] transition-colors"
+              >
+                Register Now
+              </a>
+            </nav>
+          </div>
+        </header>
+      </main>
+    </section>
+
+    <!-- HERO -->
+    <section class="relative py-20 md:py-32 flex items-center overflow-hidden">
+      <!-- Background Image -->
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="
+          background-image: url('https://sc0.blr1.cdn.digitaloceanspaces.com/article/206977-afuvozwynm-1745865631.jpeg');
+          filter: brightness(0.6);
+        "
+      ></div>
+
+      <div class="px-10 md:px-32 md:py-20 md:px-8 relative z-10">
+        <div class="max-w-4xl">
+          <!-- Badge -->
+          <div
+            class="inline-block bg-[#3C4242] bg-opacity-10 backdrop-blur-sm px-4 py-1 rounded-full mb-4"
+          >
+            <p
+              class="font-montserrat uppercase tracking-widest text-xs text-[#F9D633]"
+            >
+              Event Date • Location
+            </p>
+          </div>
+
+          <!-- Title -->
+          <h1
+            class="font-playfair text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            Your Main Headline Here
+          </h1>
+
+          <!-- Description -->
+          <p
+            class="font-montserrat text-lg md:text-xl text-white opacity-90 mb-8 max-w-2xl"
+          >
+            Add a catchy introduction or hero description here. Explain the
+            event, product, service, or message in one or two engaging sentences
+            to capture attention.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/#"
+              class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-amber-400 transition-colors duration-300"
+            >
+              Primary Action
+            </a>
+
+            <a
+              href="/#"
+              class="inline-flex items-center justify-center px-8 py-3 border-2 border-white border-opacity-30 text-base font-medium rounded-md text-white hover:bg-white hover:text-black hover:bg-opacity-10 duration-500"
+            >
+              Secondary Action
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about event -->
+    <section>
+      <div class="py-10 px-4 xl:py-20 lg:px-10 overflow-hidden relative">
+        <!-- Decorative patterns -->
+        <div
+          class="absolute xl:-top-20 xl:-right-20 xl:w-72 xl:h-72 h-32 w-32 top-[-60px] right-[-60px] rounded-full border-[30px] border-[#4DA645]/80 transform decorative-circle circle-right circle-top"
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        ></div>
+        <div
+          class="absolute xl:-bottom-20 xl:-right-20 xl:w-72 xl:h-72 h-32 w-32 bottom-[-60px] right-[-60px] rounded-full border-[30px] border-[#4DA645]/80 transform decorative-circle circle-right circle-top"
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        ></div>
+
+        <div class="max-w-6xl mx-auto relative z-10 backdrop-blur-sm p-1">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="space-y-4 lg:pr-8">
+              <h1
+                class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#3C4242] mb-4 md:mb-6 tracking-tight"
+              >
+                Your Main Heading
+              </h1>
+              <p class="text-gray-700 text-base leading-relaxed max-w-xl">
+                Add another paragraph here to elaborate, describe features, give
+                more context, or communicate additional information. Add another
+                paragraph here to elaborate, describe features, give more
+                context, or communicate additional information. Add another
+                paragraph here to elaborate, describe features, give more
+                context, or communicate additional information.
+              </p>
+              <p class="text-gray-700 text-base leading-relaxed max-w-xl">
+                This is dummy placeholder content for template usage. Replace
+                this with your actual description or introduction text as
+                needed.
+              </p>
+
+              <p class="text-gray-700 text-base leading-relaxed max-w-xl">
+                Add another paragraph here to elaborate, describe features, give
+                more context, or communicate additional information.
+              </p>
+            </div>
+
+            <!-- Right Image Section -->
+            <div class="relative">
+              <!-- Curved background -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-[#F8D21F] to-[#F8D21F80] rounded-full transform scale-110 -rotate-12"
+              ></div>
+
+              <!-- Image wrapper -->
+              <div class="relative z-10 bg-white rounded p-1 shadow-xl">
+                <div class="aspect-square rounded overflow-hidden">
+                  <div
+                    class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300"
+                  >
+                    <img
+                      class="h-full w-full object-cover"
+                      src="https://www.artgharana.com/_next/image?url=/images/mission-and-vision-02.jpg&w=3840&q=75"
+                      alt="Placeholder Image"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Decorative circles -->
+              <div
+                class="absolute -top-4 -right-4 w-8 h-8 bg-[#4FAA47] rounded-full"
+              ></div>
+              <div
+                class="absolute -bottom-6 -left-6 w-12 h-12 bg-[#4FAA47] rounded-full"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- event highlights -->
+    <section
+      id="highlights"
+      class="py-10 px-4 xl:py-20 lg:px-10 relative bg-[url('https://mavelicuz.com/assets/bg-event.avif')] bg-cover bg-no-repeat bg-left-bottom md:bg-center overflow-hidden"
+    >
+      <!-- Decorative Circles -->
+      <div class="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+      <!-- Heading -->
+      <div class="md:text-center mb-6 md:mb-10 relative z-10">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-white drop-shadow-sm tracking-tight"
+        >
+          Event Highlights
+        </h2>
+        <p class="mt-4 text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+          quisquam ab fugiat tempora quaerat.
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-12 max-w-7xl mx-auto relative z-10"
+      >
+        <!-- Opening Musical Night -->
+        <div
+          class="relative h-[16rem] rounded-md overflow-hidden group bg-white/30 backdrop-blur-md transition-all duration-500"
+        >
+          <img
+            src="https://mavelicuz.com/assets/event-1.jpg"
+            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out z-0"
+            alt="Opening Night"
+          />
+          <div
+            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-500 z-10"
+          ></div>
+          <div class="absolute bottom-6 left-6 right-6 z-20 text-white">
+            <h3 class="text-2xl font-semibold mb-1">Highlight-1</h3>
+            <p class="text-base opacity-80">
+              Alias, maiores commodi doloremque
+            </p>
+          </div>
+        </div>
+        <!-- Street Performances -->
+        <div
+          class="relative h-[16rem] rounded-md overflow-hidden group bg-white/30 backdrop-blur-md transition-all duration-500"
+        >
+          <img
+            src="https://mavelicuz.com/assets/event-3.jpg"
+            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out z-0"
+            alt="Opening Night"
+          />
+          <div
+            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-500 z-10"
+          ></div>
+          <div class="absolute bottom-6 left-6 right-6 z-20 text-white">
+            <h3 class="text-2xl font-semibold mb-1">Highlight-2</h3>
+            <p class="text-base opacity-80">
+              Alias, maiores commodi doloremque
+            </p>
+          </div>
+        </div>
+        <div
+          class="relative h-[16rem] rounded-md overflow-hidden group bg-white/30 backdrop-blur-md transition-all duration-500"
+        >
+          <img
+            src="https://mavelicuz.com/assets/event-4.jpg"
+            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out z-0"
+            alt="Opening Night"
+          />
+          <div
+            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-500 z-10"
+          ></div>
+          <div class="absolute bottom-6 left-6 right-6 z-20 text-white">
+            <h3 class="text-2xl font-semibold mb-1">Highlight-3</h3>
+            <p class="text-base opacity-80">
+              Alias, maiores commodi doloremque
+            </p>
+          </div>
+        </div>
+        <div
+          class="relative h-[16rem] rounded-md overflow-hidden group bg-white/30 backdrop-blur-md transition-all duration-500"
+        >
+          <img
+            src="https://mavelicuz.com/assets/event-2.jpg"
+            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out z-0"
+            alt="Opening Night"
+          />
+          <div
+            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-500 z-10"
+          ></div>
+          <div class="absolute bottom-6 left-6 right-6 z-20 text-white">
+            <h3 class="text-2xl font-semibold mb-1">Highlight-4</h3>
+            <p class="text-base opacity-80">
+              Alias, maiores commodi doloremque
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- venue -->
+    <section>
+      <div class="py-16 px-4 md:px-10 xl:py-24 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div
+          class="absolute xl:-top-20 xl:-left-20 xl:w-72 xl:h-72 h-32 w-32 top-[-60px] left-[-60px] rounded-full border-[30px] border-[#4DA645]/80 transform decorative-circle circle-right circle-top"
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        ></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Image -->
+            <div class="relative">
+              <!-- Gradient halo -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-[#F8D21F] to-[#F8D21F80] rounded-3xl transform scale-105 -rotate-3"
+              ></div>
+
+              <div class="relative z-10 bg-white rounded-2xl p-1 shadow-xl">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden">
+                  <img
+                    src="https://images.pexels.com/photos/1537637/pexels-photo-1537637.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                    alt="Venue Image"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="space-y-4 lg:pl-6">
+              <!-- Tag -->
+
+              <!-- Heading -->
+              <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#3C4242] leading-tight"
+              >
+                Discover the <br />
+                <span class="text-[#02B5BB] font-semibold">Perfect Venue</span>
+              </h2>
+
+              <!-- Paragraph -->
+              <p class="text-gray-700 text-base leading-relaxed max-w-xl">
+                This venue offers a modern, spacious environment designed to
+                elevate your event experience. From stunning architecture to
+                spectacular surroundings, it creates the perfect atmosphere for
+                gatherings, celebrations, and immersive experiences.
+              </p>
+
+              <p class="text-gray-700 text-base leading-relaxed max-w-xl">
+                Well-connected, beautifully crafted, and equipped with essential
+                facilities, this location ensures convenience, comfort, and an
+                unforgettable ambience for every visitor.
+              </p>
+
+              <!-- Button -->
+              <a
+                href="/#"
+                class="inline-flex items-center justify-center px-8 py-3 bg-[#F95357] text-white rounded-md hover:bg-[#d8484b] transition-colors font-semibold"
+              >
+                Explore Venue
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFF -->
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute xl:-bottom-20 xl:-left-20 xl:w-72 xl:h-72 h-32 w-32 bottom-[-60px] left-[-60px] rounded-full border-[30px] border-[#4DA645]/80 transform decorative-circle circle-right circle-top"
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      ></div>
+      <div class="py-20 px-4 md:px-10 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <!-- Heading -->
+          <div class="text-center mb-14">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#3C4242]">
+              Ticket <span class="text-[#F95357]">Pricing</span>
+            </h2>
+            <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+              Choose the perfect pass for your festival experience — early bird
+              offers available for a limited time.
+            </p>
+          </div>
+
+          <!-- Pricing Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Early Bird -->
+            <div class="border rounded-2xl shadow-lg p-8 bg-[#FFF6F6] relative">
+              <span
+                class="absolute top-4 right-4 bg-[#F95357] text-white text-xs font-semibold px-3 py-1 rounded-full"
+              >
+                BEST OFFER
+              </span>
+
+              <h3 class="text-2xl font-bold text-[#F95357] mb-2">Early Bird</h3>
+              <p class="text-gray-600 mb-6">
+                Available for a limited period only
+              </p>
+
+              <div class="text-4xl font-bold text-[#3C4242] mb-6">₹999</div>
+
+              <ul class="text-gray-600 space-y-3 mb-8 text-sm">
+                <li>✔ Full Day Access</li>
+                <li>✔ Priority Entry</li>
+                <li>✔ Access to Special Zones</li>
+                <li>✔ Free Festival Kit</li>
+              </ul>
+
+              <a
+                href="/#"
+                class="block text-center bg-[#F95357] text-white py-3 rounded-lg font-semibold hover:bg-[#e0484c] transition"
+              >
+                Get Early Bird
+              </a>
+            </div>
+
+            <!-- Standard -->
+            <div class="border rounded-2xl shadow-md p-8 bg-white">
+              <h3 class="text-2xl font-bold text-[#3C4242] mb-2">
+                Standard Pass
+              </h3>
+              <p class="text-gray-600 mb-6">General access for all visitors</p>
+
+              <div class="text-4xl font-bold text-[#3C4242] mb-6">₹1499</div>
+
+              <ul class="text-gray-600 space-y-3 mb-8 text-sm">
+                <li>✔ Full Day Access</li>
+                <li>✔ All Stage Performances</li>
+                <li>✔ Access to Food Court</li>
+              </ul>
+
+              <a
+                href="/#"
+                class="block text-center bg-[#02B5BB] text-white py-3 rounded-lg font-semibold hover:bg-[#0297a0] transition"
+              >
+                Buy Standard
+              </a>
+            </div>
+
+            <!-- VIP -->
+            <div class="border rounded-2xl shadow-md p-8 bg-white">
+              <h3 class="text-2xl font-bold text-[#3C4242] mb-2">VIP Pass</h3>
+              <p class="text-gray-600 mb-6">
+                Premium access with exclusive perks
+              </p>
+
+              <div class="text-4xl font-bold text-[#3C4242] mb-6">₹2999</div>
+
+              <ul class="text-gray-600 space-y-3 mb-8 text-sm">
+                <li>✔ Front Row Access</li>
+                <li>✔ Backstage Tour</li>
+                <li>✔ Meet & Greet</li>
+                <li>✔ VIP Lounge Entry</li>
+                <li>✔ Complimentary Merchandise</li>
+              </ul>
+
+              <a
+                href="/#"
+                class="block text-center bg-[#F8D21F] text-gray-900 py-3 rounded-lg font-semibold hover:bg-[#e8c21c] transition"
+              >
+                Buy VIP Pass
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery -->
+    <section>
+      <div
+        class="py-10 px-4 xl:py-20 lg:px-10 bg-[url('https://t3.ftcdn.net/jpg/03/22/30/46/360_F_322304683_7ysRarFkmy2osfPKTOYQv7qTPofKelfb.jpg')] bg-cover bg-center relative overflow-hidden"
+      >
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+          <!-- Heading -->
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">
+              Event <span class="text-[#F8D21F]">Gallery</span>
+            </h2>
+            <p class="mt-3 text-white/90 max-w-xl mx-auto">
+              A curated layout showcasing memorable festival highlights.
+            </p>
+          </div>
+
+          <!-- FIXED 3-COLUMN BENTO GRID -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- LEFT COLUMN -->
+            <div class="flex flex-col gap-6">
+              <!-- Image 1 -->
+              <div
+                class="relative h-64 rounded-xl overflow-hidden bg-white/20 backdrop-blur-md group"
+              >
+                <img
+                  src="https://img.freepik.com/premium-photo/music-event-with-red-stage-lights-generative-ai-throng-with-raised-arms-is-cheering-having-fun_28914-8773.jpg?semt=ais_hybrid&w=740&q=80"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+                <div class="absolute bottom-5 left-6 text-white">
+                  <h3 class="text-xl font-semibold">Moment One</h3>
+                  <p class="text-sm text-white/80">Short description</p>
+                </div>
+              </div>
+
+              <!-- Image 2 -->
+              <div
+                class="relative h-64 rounded-xl overflow-hidden bg-white/20 backdrop-blur-md group"
+              >
+                <img
+                  src="https://media.istockphoto.com/id/174574110/photo/people-enjoying-the-music.jpg?s=170667a&w=0&k=20&c=cV3ryTrvzU5q1ZlYzZBCY_5RNDuqjm8FWbkpd21iWks="
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+                <div class="absolute bottom-5 left-6 text-white">
+                  <h3 class="text-xl font-semibold">Moment Four</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- MIDDLE COLUMN (Tall Image) -->
+            <div>
+              <div
+                class="relative h-66 md:h-[34rem] rounded-xl overflow-hidden bg-white/20 backdrop-blur-md group"
+              >
+                <img
+                  src="https://img.freepik.com/photos-premium/photo-scene-concert-public-beaucoup-lumieres_747552-18343.jpg"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+                <div class="absolute bottom-5 left-6 text-white">
+                  <h3 class="text-xl font-semibold">Moment Two</h3>
+                  <p class="text-sm text-white/80">Short description</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="flex flex-col gap-6">
+              <!-- Image 3 -->
+              <div
+                class="relative h-64 rounded-xl overflow-hidden bg-white/20 backdrop-blur-md group"
+              >
+                <img
+                  src="https://st4.depositphotos.com/12218988/20301/i/450/depositphotos_203013910-stock-photo-rock-concert-silhouettes-people-happy.jpg"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+                <div class="absolute bottom-5 left-6 text-white">
+                  <h3 class="text-xl font-semibold">Moment Three</h3>
+                </div>
+              </div>
+
+              <!-- Image 4 -->
+              <div
+                class="relative h-64 rounded-xl overflow-hidden bg-white/20 backdrop-blur-md group"
+              >
+                <img
+                  src="https://media.istockphoto.com/id/1489238048/photo/large-group-of-people-at-a-concert-party.jpg?s=612x612&w=0&k=20&c=Cn_HyZH-rmVJ_v0eWEX_dnn_CmA9hHHbR73lYh6-Mdo="
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+                <div class="absolute bottom-5 left-6 text-white">
+                  <h3 class="text-xl font-semibold">Moment Five</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scedule -->
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute xl:-top-20 xl:-right-20 xl:w-72 xl:h-72 h-32 w-32 top-[-60px] right-[-60px] rounded-full border-[30px] border-[#4DA645]/80 transform decorative-circle circle-right circle-top"
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      ></div>
+      <div
+        class="absolute xl:-bottom-20 xl:-right-20 xl:w-72 xl:h-72 h-32 w-32 bottom-[-60px] right-[-60px] rounded-full border-[30px] border-[#4DA645]/80 transform decorative-circle circle-right circle-top"
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      ></div>
+      <div class="py-16 px-4 md:px-10 xl:py-24">
+        <div class="max-w-7xl mx-auto">
+          <!-- MAIN HEADING -->
+          <h2 class="text-5xl md:text-6xl font-bold text-[#3C4242] mb-4">
+            Event <span class="text-[#02B5BB]">Schedule</span>
+          </h2>
+
+          <!-- SMALL PARAGRAPH -->
+          <p class="text-gray-600 max-w-2xl mb-12">
+            Explore the structured flow of activities planned across the event.
+            Each day brings unique experiences crafted to inspire, entertain,
+            and engage you.
+          </p>
+
+          <!-- ==================== DAY 1 ==================== -->
+          <h3 class="text-3xl md:text-4xl font-bold text-[#3C4242] mb-4">
+            Day 01 — Wednesday
+          </h3>
+
+          <!-- TABLE HEADER -->
+          <div
+            class="bg-[#F95357] text-white font-semibold px-6 py-3 rounded-t-lg"
+          >
+            <div class="grid grid-cols-3">
+              <p>Time</p>
+              <p>Service</p>
+              <p>Duration</p>
+            </div>
+          </div>
+
+          <!-- TABLE BODY -->
+          <div
+            class="border border-gray-200 rounded-b-lg mb-12 overflow-hidden"
+          >
+            <div class="grid grid-cols-3 px-6 py-4 border-b">
+              <p class="text-gray-700">10:00am – 10:50am</p>
+              <p class="text-[#F95357] font-semibold">Opening Ceremony</p>
+              <p class="text-gray-700">60 min</p>
+            </div>
+
+            <div class="grid grid-cols-3 px-6 py-4 border-b">
+              <p class="text-gray-700">11:00am – 12:00pm</p>
+              <p class="text-[#F95357] font-semibold">Creative Workshop</p>
+              <p class="text-gray-700">60 min</p>
+            </div>
+
+            <div class="grid grid-cols-3 px-6 py-4 border-b">
+              <p class="text-gray-700">5:30pm – 6:50pm</p>
+              <p class="text-[#F95357] font-semibold">Music Flow Session</p>
+              <p class="text-gray-700">80 min</p>
+            </div>
+
+            <div class="grid grid-cols-3 px-6 py-4">
+              <p class="text-gray-700">6:00pm – 7:10pm</p>
+              <p class="text-[#F95357] font-semibold">Dance Performance</p>
+              <p class="text-gray-700">70 min</p>
+            </div>
+          </div>
+
+          <!-- ==================== DAY 2 ==================== -->
+          <h3 class="text-3xl md:text-4xl font-bold text-[#3C4242] mb-4">
+            Day 02 — Thursday
+          </h3>
+
+          <!-- TABLE HEADER -->
+          <div
+            class="bg-[#F95357] text-white font-semibold px-6 py-3 rounded-t-lg"
+          >
+            <div class="grid grid-cols-3">
+              <p>Time</p>
+              <p>Service</p>
+              <p>Duration</p>
+            </div>
+          </div>
+
+          <!-- TABLE BODY -->
+          <div class="border border-gray-200 rounded-b-lg overflow-hidden">
+            <div class="grid grid-cols-3 px-6 py-4 border-b">
+              <p class="text-gray-700">6:00pm – 7:20pm</p>
+              <p class="text-[#F95357] font-semibold">Art Exhibition</p>
+              <p class="text-gray-700">60 min</p>
+            </div>
+
+            <div class="grid grid-cols-3 px-6 py-4 border-b">
+              <p class="text-gray-700">11:00am – 12:30pm</p>
+              <p class="text-[#F95357] font-semibold">Cultural Showcase</p>
+              <p class="text-gray-700">90 min</p>
+            </div>
+
+            <div class="grid grid-cols-3 px-6 py-4">
+              <p class="text-gray-700">6:00pm – 8:00pm</p>
+              <p class="text-[#F95357] font-semibold">Final Evening Concert</p>
+              <p class="text-gray-700">120 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- banner -->
+
+    <section>
+      <div
+        class="relative py-28 px-4 md:px-10 overflow-hidden"
+        style="
+          background: url('https://static.vecteezy.com/system/resources/previews/005/489/284/non_2x/beautiful-purple-color-gradient-background-free-vector.jpg')
+            center/cover no-repeat;
+        "
+      >
+        <!-- Soft overlay to blend image -->
+        <div class="absolute inset-0 bg-black/30"></div>
+
+        <!-- Center Container -->
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <!-- Glassmorphic Card -->
+          <div
+            class="relative px-10 py-14 rounded-3xl bg-white/15 backdrop-blur-2xl border border-white/20 shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
+          >
+            <!-- Inner soft glow -->
+            <div
+              class="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-white/5 pointer-events-none"
+            ></div>
+
+            <div class="relative z-10 text-center">
+              <h2 class="text-4xl md:text-6xl font-bold text-white drop-shadow">
+                Experience the <span class="text-[#F8D21F]">Magic</span>
+              </h2>
+
+              <p
+                class="mt-4 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+              >
+                A vibrant fusion of art, music, culture, and unforgettable
+                memories — wrapped inside a week-long celebration.
+              </p>
+
+              <a
+                href="/#"
+                class="inline-block mt-8 px-10 py-4 rounded-full bg-[#F95357] text-white font-semibold shadow-lg hover:bg-[#d8474b] transition-all"
+              >
+                Join The Celebration
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-white border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-10 py-14">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- About Event -->
+          <div>
+            <h3 class="text-lg font-semibold text-[#F95357] mb-4">
+              About Event
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              A vibrant celebration bringing together music, culture, arts, and
+              entertainment for an unforgettable week-long experience.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold text-[#F95357] mb-4">
+              Quick Links
+            </h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="/#" class="hover:text-[#F95357] transition">Home</a>
+              </li>
+              <li>
+                <a href="/#" class="hover:text-[#F95357] transition">About</a>
+              </li>
+              <li>
+                <a href="/#" class="hover:text-[#F95357] transition"
+                  >Highlights</a
+                >
+              </li>
+              <li>
+                <a href="/#" class="hover:text-[#F95357] transition"
+                  >Schedule</a
+                >
+              </li>
+              <li>
+                <a href="/#" class="hover:text-[#F95357] transition">Venue</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Address -->
+          <div>
+            <h3 class="text-lg font-semibold text-[#F95357] mb-4">Address</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              123 Event Street<br />
+              Festival City, Dreamland 000000<br />
+              Wonderland
+            </p>
+          </div>
+
+          <!-- Contact Us -->
+          <div>
+            <h3 class="text-lg font-semibold text-[#F95357] mb-4">
+              Contact Us
+            </h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                Email:
+                <a
+                  href="mailto:info@example.com"
+                  class="hover:text-[#F95357] transition"
+                  >info@example.com</a
+                >
+              </li>
+              <li>
+                Phone:
+                <a
+                  href="tel:+911234567890"
+                  class="hover:text-[#F95357] transition"
+                  >+91 12345 67890</a
+                >
+              </li>
+              <li>
+                Support Hours:<br />
+                Mon – Fri, 9am – 5pm
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="mt-12 text-center text-gray-500 text-sm">
+          © 2025 Event Festival. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
