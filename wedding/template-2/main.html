@@ -63,35 +63,60 @@
         </section>
 
         <section
-            class="relative w-full pt-40 pb-30 md:pb-[190px] bg-cover bg-no-repeat bg-[center_60%] bg-[url('https://anitapeeples.com/wp-content/uploads/2023/08/Ottawa-Engagement-Photos-European-Picnic-23-1.jpg')] overflow-hidden"
+            class="relative w-full h-screen bg-cover bg-center bg-no-repeat mt-10 overflow-hidden flex items-center justify-center px-6"
+            style="
+                background-image: url('https://anitapeeples.com/wp-content/uploads/2023/08/Ottawa-Engagement-Photos-European-Picnic-23-1.jpg');
+            "
         >
-            <div class="absolute inset-0 bg-[#4F5E3A]/60 z-10"></div>
+            <!-- Soft Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
 
+            <!-- Framed Text Block -->
             <div
-                class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4"
+                class="relative z-20 bg-white/10 px-10 py-14 md:px-16 md:py-20 border border-white/20 rounded-xl shadow-xl"
             >
-                <p class="text-xl tracking-widest uppercase mb-4">
-                    Save the Date
-                </p>
+                <!-- Decorative Frame Lines -->
+                <div
+                    class="absolute -top-3 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-white/40"
+                ></div>
+                <div
+                    class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-white/40"
+                ></div>
+                <div
+                    class="absolute top-1/2 -left-3 -translate-y-1/2 h-2/3 w-[2px] bg-white/40"
+                ></div>
+                <div
+                    class="absolute top-1/2 -right-3 -translate-y-1/2 h-2/3 w-[2px] bg-white/40"
+                ></div>
 
-                <h1 class="text-6xl sm:text-[150px] font-arizonia">
-                    Eve &amp; Adam
-                </h1>
+                <!-- Content -->
+                <div class="text-center text-white">
+                    <p
+                        class="tracking-[0.35em] uppercase text-sm md:text-base mb-5 opacity-90"
+                    >
+                        Save the Date
+                    </p>
 
-                <div class="w-32 h-px bg-white my-5"></div>
+                    <h1
+                        class="font-arizonia text-6xl md:text-[150px] leading-none drop-shadow-xl"
+                    >
+                        Eve & Adam
+                    </h1>
 
-                <p class="text-2xl tracking-wide mb-10">
-                    26th &amp; 27th December 2025
-                </p>
+                    <div class="w-24 h-px mx-auto bg-white/60 my-6"></div>
 
-                <div class="flex justify-center items-center gap-10">
-                    <div class="relative mt-12">
-                        <div
-                            class="absolute inset-0 border-2 border-white translate-x-1 translate-y-1"
-                        ></div>
+                    <p class="text-xl md:text-3xl tracking-wide font-playfair">
+                        26th & 27th December 2025
+                    </p>
+
+                    <!-- Button -->
+                    <div class="relative inline-block mt-10 group">
+                        <span
+                            class="absolute inset-0 border-2 border-white translate-x-1 translate-y-1 group-hover:translate-x-[3px] group-hover:translate-y-[3px] transition-all duration-300"
+                        ></span>
 
                         <button
-                            class="relative cursor-pointer z-10 border border-white px-8 py-3 text-lg uppercase tracking-widest hover:bg-white hover:text-[#4F5E3A] transition-all duration-300 font-semibold"
+                            class="relative px-10 py-3 border border-white text-white tracking-widest uppercase font-semibold text-sm md:text-base transition-all duration-300 group-hover:bg-white group-hover:text-[#4F5E3A]"
                         >
                             More Details
                         </button>
@@ -100,662 +125,462 @@
             </div>
         </section>
 
-        <section class="pb-10 pt-20 px-4 md:px-16 relative">
+        <section
+            class="py-10 md:py-20 px-6 md:px-16 bg-[#faf9f7] relative overflow-hidden"
+        >
             <div
-                class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 relative"
+                class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-center"
             >
-                <div class="text-right space-y-4">
-                    <img
-                        src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Christian-Wedding-Groom-Photos_A17I2505.jpg?fit=1662%2C2493&amp;ssl=1"
-                        alt="Groom"
-                        class="w-24 h-24 rounded-full object-cover border-2 border-[#4F5E3A] ml-auto"
-                    />
-                    <h3
-                        class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] font-arizonia"
+                <!-- Groom -->
+                <div class="text-center space-y-5 relative">
+                    <div
+                        class="w-28 h-28 mx-auto md:ml-auto rounded-full overflow-hidden border-4 border-[#4F5E3A]/40 shadow-md"
                     >
-                        Adam
-                    </h3>
-                    <p
-                        class="text-gray-600 font-playfair md:text-lg leading-relaxed"
-                    >
+                        <img
+                            src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Christian-Wedding-Groom-Photos_A17I2505.jpg?fit=1662%2C2493&ssl=1"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <h3 class="text-4xl font-arizonia text-[#4F5E3A]">Adam</h3>
+
+                    <p class="text-gray-600 font-playfair leading-relaxed">
                         Calm, witty, and quietly brilliant — always a few steps
                         ahead.
                     </p>
+
+                    <!-- Decorative line -->
+                    <div
+                        class="hidden md:block w-20 h-[2px] bg-[#4F5E3A]/40 ml-auto"
+                    ></div>
                 </div>
-                <div class="relative">
-                    <img
-                        src="https://imaginewithrashid.com/wp-content/uploads/2025/10/Gemini_Generated_Image_capkz3capkz3capk.webp"
-                        alt="Couple"
-                        class="h-full w-full relative rounded-full"
-                    />
-                </div>
-                <div class="text-left space-y-4">
-                    <img
-                        src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Christian-Wedding-Bride-Photos__LIB7444-scaled.jpg?fit=1707%2C2560&amp;ssl=1"
-                        alt="Bride"
-                        class="w-24 h-24 rounded-full object-cover border-2 border-[#4F5E3A] object-[center_90%]"
-                    />
-                    <h3
-                        class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] font-arizonia"
+
+                <!-- Couple Center -->
+                <div class="relative flex flex-col items-center text-center">
+                    <!-- Outer frame -->
+                    <div
+                        class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-3 border-2 border-dashed border-[#4F5E3A]/40 shadow-xl bg-white/70 backdrop-blur-sm"
                     >
-                        Eve
+                        <img
+                            src="https://imaginewithrashid.com/wp-content/uploads/2025/10/Gemini_Generated_Image_capkz3capkz3capk.webp"
+                            class="w-full h-full object-cover rounded-full"
+                        />
+                    </div>
+
+                    <!-- Flower Overlay -->
+                    <img
+                        src="https://loveineden.com/assets/images/png/flower.svg"
+                        class="absolute -top-10 -right-16 w-32 opacity-60"
+                    />
+
+                    <h3 class="text-4xl font-arizonia text-[#4F5E3A] mt-6">
+                        Eve &amp; Adam
                     </h3>
-                    <p
-                        class="text-gray-600 font-playfair md:text-lg leading-relaxed"
+
+                    <p class="text-gray-600 font-playfair max-w-sm mt-3">
+                        Two hearts, one story — a journey shaped by warmth,
+                        laughter, and serendipity.
+                    </p>
+                </div>
+
+                <!-- Bride -->
+                <div class="text-center space-y-5 relative">
+                    <div
+                        class="w-28 h-28 mx-auto md:mr-auto rounded-full overflow-hidden border-4 border-[#4F5E3A]/40 shadow-md"
                     >
+                        <img
+                            src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Christian-Wedding-Bride-Photos__LIB7444-scaled.jpg?fit=1707%2C2560&ssl=1"
+                            class="w-full h-full object-cover object-[center_90%]"
+                        />
+                    </div>
+
+                    <h3 class="text-4xl font-arizonia text-[#4F5E3A]">Eve</h3>
+
+                    <p class="text-gray-600 font-playfair leading-relaxed">
                         Warm-hearted, driven, and full of light — always lifting
                         others.
                     </p>
+
+                    <!-- Decorative line -->
+                    <div
+                        class="hidden md:block w-20 h-[2px] bg-[#4F5E3A]/40 mr-auto"
+                    ></div>
                 </div>
             </div>
         </section>
 
-        <section class="relative z-10 overflow-hidden py-10">
-            <div
-                class="relative z-10 max-w-[1350px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-32 items-center"
-            >
-                <div class="text-center md:text-left">
-                    <h2
-                        class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] font-arizonia mb-6"
-                    >
+        <section class="relative py-10 md:py-20 px-6 bg-[#f3f2ef]">
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Image -->
+                <img
+                    src="https://fetch.getnarrativeapp.com/static/d7ec1e91-00c1-4cb0-a5ad-42087e7f607e/European-inspired-session.jpg?w=1500"
+                    class="rounded-3xl shadow-xl w-full h-80 md:h-[500px] object-cover mb-16 object-[center_70%]"
+                />
+
+                <!-- Text Block -->
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-arizonia text-[#4F5E3A] mb-4">
                         A Swipe, A Spark, A Forever
                     </h2>
-                    <p
-                        class="text-gray-600 text-base md:text-lg leading-relaxed mb-6"
-                    >
-                        Eve and Adam's journey began with a simple swipe in
-                        March 2024 — one just starting out, the other ready to
-                        move on. But fate had plans of its own. Their first date
-                        was unassuming: a pizza, quiet laughter, and a rare
-                        sense of ease.
-                        <br /><br />
-                        From long-distance calls and strolls through golden
-                        autumns to Broadway shows and boba dates, their bond
-                        grew with every shared moment. A turning point came in
-                        June — Eve’s White Coat Ceremony — when their story
-                        became one shared with family and future.
-                        <br /><br />
-                        By May 2025, they were engaged. Now, as December nears,
-                        they’re ready to celebrate a love stitched with
-                        serendipity, laughter, and quiet joy.
+
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        What began with a swipe soon became a beautiful story —
+                        a connection built on timing, warmth, and quiet magic.
                     </p>
-
-                    <!-- Button -->
-                    <div class="relative mt-12 max-w-fit">
-                        <!-- Outer Frame (Absolute) -->
-                        <div
-                            class="absolute inset-0 border-2 border-[#4F5E3A] translate-x-1 translate-y-1"
-                        ></div>
-
-                        <!-- Actual Button -->
-                        <button
-                            class="relative z-10 border text-[#4F5E3A] border-[#4F5E3A] px-8 py-3 text-lg uppercase tracking-widest hover:bg-white hover:text-[#4F5E3A] transition-all duration-300 font-semibold"
-                        >
-                            OUR LOVE STORY
-                        </button>
-                    </div>
-                </div>
-
-                <div class="relative z-20 h-80 md:h-[600px] max-h-[600px]">
-                    <div
-                        class="p-3 border-4 border-white shadow-lg relative z-10 bg-white"
-                    >
-                        <img
-                            src="https://sethlui.com/wp-content/uploads/2025/05/vincent-tay.jpg"
-                            alt="Eve & Adam"
-                            class="w-full h-80 md:h-[600px] object-cover"
-                        />
-                    </div>
-                    <img
-                        src="https://loveineden.com/assets/images/png/flower.svg"
-                        alt="Flower Decor"
-                        class="w-full h-auto object-cover absolute -right-60 top-1/2 -translate-y-1/2"
-                    />
-                </div>
-            </div>
-
-            <div class="max-w-6xl mx-auto py-10">
-                <div class="text-center mb-16">
-                    <h2
-                        class="text-3xl md:text-6xl font-bold text-[#4F5E3A] font-arizonia mb-6"
-                    >
-                        Our Love Story
-                    </h2>
-                </div>
-
-                <div class="relative">
-                    <div
-                        class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-[#4F5E3A] hidden md:block"
-                    ></div>
-
-                    <div class="space-y-16 md:space-y-20">
-                        <div
-                            class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
-                        >
-                            <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
-                       2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 
-                       4.13 2.44h1.74C14.09 5.01 15.76 4 17.5 
-                       4 19.99 4 22 6.01 22 8.5c0 3.78-3.4 
-                       6.86-8.55 11.54L12 21.35z"
-                                    />
-                                </svg>
-                            </div>
-                            <div
-                                class="md:w-5/12 md:pr-4 text-center md:text-right order-2 md:order-1"
-                            >
-                                <h3
-                                    class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] mb-2"
-                                >
-                                    THE PERFECT SWIPE
-                                </h3>
-                                <p
-                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
-                                >
-                                    March 2024
-                                </p>
-                                <p class="text-gray-700 leading-relaxed">
-                                    Every love story begins somewhere — theirs
-                                    started with a swipe on Hinge. Eve, new to
-                                    the world of dating apps, matched with Adam,
-                                    who was just about to delete his account.
-                                    One was starting out, the other ready to
-                                    move on — but fate clearly had other plans.
-                                </p>
-                            </div>
-
-                            <div class="md:w-5/12 md:pl-12 order-1 md:order-2">
-                                <div
-                                    class="relative w-64 h-64 md:w-80 md:h-80 mx-auto"
-                                >
-                                    <div
-                                        class="absolute -top-10 -right-8 z-10 w-32 h-32"
-                                    >
-                                        <img
-                                            src="https://loveineden.com/assets/images/png/flower.svg"
-                                            alt="Flower decoration"
-                                            class="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
-                                    >
-                                        <img
-                                            src="https://relationshipsmdd.com/wp-content/uploads/2023/05/Can-you-send-pictures-on-hinge.jpeg"
-                                            alt="First Meeting"
-                                            class="w-full h-full object-cover rounded-full"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16"
-                        >
-                            <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
-                       2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 
-                       4.13 2.44h1.74C14.09 5.01 15.76 4 17.5 
-                       4 19.99 4 22 6.01 22 8.5c0 3.78-3.4 
-                       6.86-8.55 11.54L12 21.35z"
-                                    />
-                                </svg>
-                            </div>
-
-                            <div
-                                class="md:w-5/12 md:pl-4 text-center md:text-left order-2 md:order-1"
-                            >
-                                <h3
-                                    class="text-2xl md:text-3xl font-semibold text-[#4F5E3A] mb-2"
-                                >
-                                    FIRST CONNECTION
-                                </h3>
-                                <p
-                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
-                                >
-                                    March 2024
-                                </p>
-                                <p class="text-gray-700 leading-relaxed">
-                                    Their first date was quiet and unassuming: a
-                                    shared pizza, easy conversation, and an
-                                    instant comfort that felt rare. Adam was
-                                    flying to Indiana the next day, but
-                                    something about that evening lingered — a
-                                    feeling that this was more than just a
-                                    chance meeting.
-                                </p>
-                            </div>
-
-                            <div class="md:w-5/12 md:pr-12 order-1 md:order-2">
-                                <div
-                                    class="relative w-64 h-64 md:w-80 md:h-80 mx-auto"
-                                >
-                                    <div
-                                        class="absolute -bottom-10 -left-8 z-10 w-32 h-32 rotate-180"
-                                    >
-                                        <img
-                                            src="https://loveineden.com/assets/images/png/flower.svg"
-                                            alt="Flower decoration"
-                                            class="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
-                                    >
-                                        <img
-                                            src="https://img.freepik.com/premium-photo/indian-couple-date-restaurant-capturing-selfie-terrace-boyfriend_868783-43332.jpg"
-                                            alt="First Date"
-                                            class="w-full h-full object-cover rounded-full"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
-                        >
-                            <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
-                       2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 
-                       4.13 2.44h1.74C14.09 5.01 15.76 4 17.5 
-                       4 19.99 4 22 6.01 22 8.5c0 3.78-3.4 
-                       6.86-8.55 11.54L12 21.35z"
-                                    />
-                                </svg>
-                            </div>
-
-                            <div
-                                class="md:w-5/12 md:pr-4 text-center md:text-right order-2 md:order-1"
-                            >
-                                <h3
-                                    class="text-2xl md:text-3xl font-semibold text-[#4F5E3A] mb-2"
-                                >
-                                    MOMENTS TOGETHER
-                                </h3>
-                                <p
-                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
-                                >
-                                    March – June 2024
-                                </p>
-                                <p class="text-gray-700 leading-relaxed">
-                                    What followed was a whirlwind of connection
-                                    and discovery. From long-distance calls and
-                                    late-night texts to boba dates, strolls
-                                    through golden Michigan autumns, Broadway
-                                    shows, and even the occasional pickleball
-                                    match — each moment brought them closer,
-                                    stitched together by laughter and shared
-                                    ease.
-                                </p>
-                            </div>
-
-                            <div class="md:w-5/12 md:pl-12 order-1 md:order-2">
-                                <div
-                                    class="relative w-64 h-64 md:w-80 md:h-80 mx-auto"
-                                >
-                                    <div
-                                        class="absolute -top-10 -right-8 z-10 w-32 h-32"
-                                    >
-                                        <img
-                                            src="https://loveineden.com/assets/images/png/flower.svg"
-                                            alt="Flower decoration"
-                                            class="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
-                                    >
-                                        <img
-                                            src="https://www.brides.com/thmb/LMyiMPxRFx82BLiHZC8lySJFnGo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/marriage-pose-photo-recirc-kyle-john-1-29-4f97523aa049471992292e8d6ddc41ee.jpg"
-                                            alt="Growing Together"
-                                            class="w-full h-full object-cover rounded-full"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16"
-                        >
-                            <div
-                                class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-2 border-dashed border-[#4F5E3A] z-10 flex items-center justify-center hidden md:flex"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-3.5 h-3.5 text-[#4F5E3A]"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
-                       2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 
-                       4.13 2.44h1.74C14.09 5.01 15.76 4 17.5 
-                       4 19.99 4 22 6.01 22 8.5c0 3.78-3.4 
-                       6.86-8.55 11.54L12 21.35z"
-                                    />
-                                </svg>
-                            </div>
-
-                            <div
-                                class="md:w-5/12 md:pl-4 text-center md:text-left order-2 md:order-1"
-                            >
-                                <h3
-                                    class="text-2xl md:text-3xl font-semibold text-[#4F5E3A] mb-2"
-                                >
-                                    FOREVER BEGINS
-                                </h3>
-                                <p
-                                    class="text-[#4F5E3A] text-sm md:text-base mb-4 font-medium"
-                                >
-                                    June 2024 – May 2025
-                                </p>
-                                <p class="text-gray-700 leading-relaxed">
-                                    Eve's White Coat Ceremony in June 2024 was a
-                                    turning point. By May 2025, they were
-                                    engaged — ready to celebrate a journey built
-                                    on serendipity, connection, and quiet joy.
-                                </p>
-                            </div>
-
-                            <div class="md:w-5/12 md:pr-12 order-1 md:order-2">
-                                <div
-                                    class="relative w-64 h-64 md:w-80 md:h-80 mx-auto"
-                                >
-                                    <div
-                                        class="absolute -bottom-10 -left-8 z-10 w-32 h-32 rotate-180"
-                                    >
-                                        <img
-                                            src="https://loveineden.com/assets/images/png/flower.svg"
-                                            alt="Flower decoration"
-                                            class="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                    <div
-                                        class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#4F5E3A] p-2"
-                                    >
-                                        <img
-                                            src="https://eventsmanagementkerala.com/wp-content/uploads/2023/08/kerala-christian-wedding-rituals-and-procedure-1024x683.webp"
-                                            alt="Forever Begins"
-                                            class="w-full h-full object-cover rounded-full"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="relative h-[500px] overflow-hidden">
-            <!-- Background Image -->
-            <img
-                src="https://showmeyourmumu.com/cdn/shop/articles/Fall_wedding.jpg?v=1692048438"
-                alt="Background"
-                class="absolute inset-0 w-full h-full object-cover object-[center_40%]"
-            />
-            <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-[#4F5E3A]/60 z-10"></div>
-            <!-- Play Button Centered -->
-            <div class="relative z-20 flex items-center justify-center h-full">
-                <button
-                    class="w-20 h-20 rounded-full bg-white text-[#4F5E3A] border-4 border-[#4F5E3A] shadow-lg flex items-center justify-center hover:scale-105 transition duration-300 cursor-pointer"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-8 h-8"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path d="M8 5.14v14.72L20 12 8 5.14z"></path>
-                    </svg>
-                </button>
-            </div>
-        </section>
-
-        <section class="relative py-10 md:py-24 px-4 bg-white overflow-hidden">
-            <div class="max-w-5xl mx-auto relative z-10">
-                <!-- TITLE -->
-                <h2
-                    class="text-3xl md:text-6xl font-bold text-[#4F5E3A] font-arizonia mb-6 text-center"
-                >
-                    Wedding Details
+        <section class="pt-10 md:pt-20 bg-[#F7F6F3]">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-arizonia text-[#4F5E3A]">
+                    Our Love Story
                 </h2>
-
-                <!-- SUBTITLE -->
-                <p
-                    class="text-center text-gray-500 italic max-w-2xl mx-auto mt-4"
-                >
-                    Lorem ipsum dolor sit amet, consectetur gravida nibh vel
-                    velit auctor aliquet. Aenean sollicitudin, lorem quis
-                    bibendum auci elit consequat ipsum sem nisi sed odio sit
-                    amet
+                <p class="text-gray-600 italic mt-3">
+                    Moments that shaped a forever.
                 </p>
+            </div>
 
-                <!-- TIMELINE SECTION -->
-                <div
-                    class="relative mt-10 md:mt-24 grid grid-cols-2 md:grid-cols-2 gap-y-10 md:gap-y-20"
-                >
-                    <!-- Vertical Line -->
-                    <!-- Vertical Line + Dots -->
+            <div class="relative max-w-5xl mx-auto space-y-32 px-4">
+                <!-- CARD 1 - Polaroid Left -->
+                <div class="sticky top-24">
                     <div
-                        class="hidden md:block absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2"
+                        class="flex flex-col md:flex-row items-center gap-12 bg-white/90 rounded-[40px] p-6 md:p-10 border-2 border-[#4F5E3A]/40 shadow-xl relative overflow-hidden"
                     >
-                        <!-- The Line -->
-                        <div
-                            class="absolute inset-0 border-l border-gray-300"
-                        ></div>
+                        <div class="w-full md:w-1/2 relative">
+                            <div
+                                class="bg-white p-3 rounded-2xl shadow-xl border border-[#4F5E3A]/30 md:rotate-[-2deg]"
+                            >
+                                <img
+                                    src="https://relationshipsmdd.com/wp-content/uploads/2023/05/Can-you-send-pictures-on-hinge.jpeg"
+                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
+                                />
+                            </div>
+                        </div>
 
-                        <!-- Balls (Dots) -->
-                        <span
-                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[12%] left-1/2 -translate-x-1/2"
-                        ></span>
-                        <span
-                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[37%] left-1/2 -translate-x-1/2"
-                        ></span>
-                        <span
-                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[63%] left-1/2 -translate-x-1/2"
-                        ></span>
-                        <span
-                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[88%] left-1/2 -translate-x-1/2"
-                        ></span>
-                    </div>
-
-                    <!-- ---------------- ROW 1 ---------------- -->
-
-                    <!-- LEFT TEXT -->
-                    <div class="text-right md:pr-10">
-                        <h3
-                            class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
-                        >
-                            CEREMONY
-                        </h3>
-                        <p
-                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs ml-auto"
-                        >
-                            Lorem ipsum dolor sit amet, consectetur gravida nibh
-                            vel velit auctor aliquam sollicitudin lorem quis
-                            bibendum.
-                        </p>
-                    </div>
-
-                    <!-- RIGHT ICON -->
-                    <div class="flex justify-start pl-10">
-                        <img
-                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-1.png"
-                            class="w-20 icon-tint object-contain"
-                            alt="Ceremony Icon"
-                        />
-                    </div>
-
-                    <!-- ---------------- ROW 2 ---------------- -->
-
-                    <!-- LEFT ICON -->
-                    <div class="flex justify-end pr-10">
-                        <img
-                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-2.png"
-                            class="w-20 icon-tint object-contain"
-                            alt="Toast Icon"
-                        />
-                    </div>
-
-                    <!-- RIGHT TEXT -->
-                    <div class="md:text-left md:pl-10">
-                        <h3
-                            class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
-                        >
-                            TOAST & DINNER
-                        </h3>
-                        <p
-                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs"
-                        >
-                            Lorem ipsum dolor sit amet, consectetur gravida nibh
-                            vel velit auctor aliquam sollicitudin lorem quis
-                            bibendum.
-                        </p>
-                    </div>
-
-                    <!-- ---------------- ROW 3 ---------------- -->
-
-                    <!-- LEFT TEXT -->
-                    <div class="text-right md:pr-10">
-                        <h3
-                            class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
-                        >
-                            WEDDING CAKE
-                        </h3>
-                        <p
-                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs ml-auto"
-                        >
-                            Lorem ipsum dolor sit amet, consectetur gravida nibh
-                            vel velit auctor aliquam sollicitudin lorem quis
-                            bibendum.
-                        </p>
-                    </div>
-
-                    <!-- RIGHT ICON -->
-                    <div class="flex justify-start pl-10">
-                        <img
-                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-3.png"
-                            class="w-20 icon-tint object-contain"
-                            alt="Wedding Cake Icon"
-                        />
-                    </div>
-
-                    <!-- ---------------- ROW 4 ---------------- -->
-
-                    <!-- LEFT ICON -->
-                    <div class="flex justify-end pr-10">
-                        <img
-                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-4.png"
-                            class="w-20 icon-tint object-contain"
-                            alt="Photography Icon"
-                        />
-                    </div>
-
-                    <!-- RIGHT TEXT -->
-                    <div class="md:text-left md:pl-10">
-                        <h3
-                            class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
-                        >
-                            PHOTOGRAPHY
-                        </h3>
-                        <p
-                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs"
-                        >
-                            Lorem ipsum dolor sit amet, consectetur gravida nibh
-                            vel velit auctor aliquam sollicitudin lorem quis
-                            bibendum.
-                        </p>
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h3 class="text-4xl font-arizonia text-[#4F5E3A]">
+                                The Perfect Swipe
+                            </h3>
+                            <p
+                                class="text-xs text-[#4F5E3A] mt-1 tracking-widest"
+                            >
+                                March 2024
+                            </p>
+                            <p class="text-gray-700 mt-5 leading-relaxed">
+                                It began with a match at the most unexpected
+                                moment — one person arriving, the other ready to
+                                leave. A swipe that felt ordinary but became
+                                everything.
+                            </p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- CARD 2 - Polaroid Right -->
+                <div class="sticky top-30">
+                    <div
+                        class="flex flex-col md:flex-row-reverse items-center gap-12 bg-white/90 rounded-[40px] p-6 md:p-10 border-2 border-[#4F5E3A]/40 shadow-xl relative overflow-hidden"
+                    >
+                        <div class="w-full md:w-1/2 relative">
+                            <div
+                                class="bg-white p-3 rounded-2xl shadow-xl border border-[#4F5E3A]/30 md:rotate-[2deg]"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-photo/indian-couple-date-restaurant-capturing-selfie-terrace-boyfriend_868783-43332.jpg"
+                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="md:w-1/2 text-center md:text-right">
+                            <h3 class="text-4xl font-arizonia text-[#4F5E3A]">
+                                First Connection
+                            </h3>
+                            <p
+                                class="text-xs text-[#4F5E3A] mt-1 tracking-widest"
+                            >
+                                March 2024
+                            </p>
+                            <p class="text-gray-700 mt-5 leading-relaxed">
+                                A quiet pizza, laughter, and a calmness that
+                                felt rare. Their first date was simple — but
+                                unforgettable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 - Polaroid Left -->
+                <div class="sticky top-36">
+                    <div
+                        class="flex flex-col md:flex-row items-center gap-12 bg-white/90 rounded-[40px] p-6 md:p-10 border-2 border-[#4F5E3A]/40 shadow-xl relative overflow-hidden"
+                    >
+                        <div class="w-full md:w-1/2 relative">
+                            <div
+                                class="bg-white p-3 rounded-2xl shadow-xl border border-[#4F5E3A]/30 md:rotate-[-2deg]"
+                            >
+                                <img
+                                    src="https://fetch.getnarrativeapp.com/static/9727d264-ff8b-40a7-9a06-1b08097351c3/europe-engagement-session.jpg?w=750"
+                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h3 class="text-4xl font-arizonia text-[#4F5E3A]">
+                                Moments Together
+                            </h3>
+                            <p
+                                class="text-xs text-[#4F5E3A] mt-1 tracking-widest"
+                            >
+                                Mar – Jun 2024
+                            </p>
+                            <p class="text-gray-700 mt-5 leading-relaxed">
+                                Long calls, boba dates, autumn walks, Broadway
+                                shows — joy stitched their story together
+                                beautifully.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 - Polaroid Right -->
+                <div class="sticky top-42">
+                    <div
+                        class="flex flex-col md:flex-row-reverse items-center gap-12 bg-white/90 rounded-[40px] p-6 md:p-10 border-2 border-[#4F5E3A]/40 shadow-xl relative overflow-hidden"
+                    >
+                        <div class="w-full md:w-1/2 relative">
+                            <div
+                                class="bg-white p-3 rounded-2xl shadow-xl border border-[#4F5E3A]/30 md:rotate-[2deg]"
+                            >
+                                <img
+                                    src="https://eventsmanagementkerala.com/wp-content/uploads/2023/08/kerala-christian-wedding-rituals-and-procedure-1024x683.webp"
+                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="md:w-1/2 text-center md:text-right">
+                            <h3 class="text-4xl font-arizonia text-[#4F5E3A]">
+                                Forever Begins
+                            </h3>
+                            <p
+                                class="text-xs text-[#4F5E3A] mt-1 tracking-widest"
+                            >
+                                2024 – 2025
+                            </p>
+                            <p class="text-gray-700 mt-5 leading-relaxed">
+                                Their journey became a promise — one step at a
+                                time, built on faith, timing, and deep love.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-20"></div>
             </div>
         </section>
 
         <section
-            class="relative py-24 md:py-40 bg-fixed bg-cover bg-center text-white"
-            style="
-                background-image: url('https://eventsmanagementkerala.com/wp-content/uploads/2023/08/outdoor-wedding-venues-in-calicut-1.webp');
-            "
+            class="py-10 md:py-24 px-6 bg-[#FAF8F5] relative overflow-hidden"
         >
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-black/50"></div>
+            <!-- Soft Background Blobs -->
+            <div
+                class="absolute top-0 left-0 w-96 h-96 bg-[#E4DED6]/40 blur-3xl rounded-full"
+            ></div>
+            <div
+                class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#D8D2C9]/40 blur-3xl rounded-full"
+            ></div>
 
-            <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <div class="relative max-w-6xl mx-auto z-10">
                 <!-- Title -->
-                <h2 class="text-4xl md:text-6xl font-arizonia mb-10">
-                    Wedding Venue
-                </h2>
-
-                <!-- Round Highlight Card -->
-                <div
-                    class="relative mx-auto w-72 h-72 md:w-96 md:h-96 bg-white/10 backdrop-blur-xl rounded-full border border-white/30 shadow-2xl flex flex-col items-center justify-center p-8"
+                <h2
+                    class="text-5xl md:text-7xl text-center font-arizonia text-[#4F5E3A]"
                 >
-                    <h3
-                        class="text-2xl md:text-4xl font-semibold tracking-wider"
+                    Wedding Details
+                </h2>
+                <p
+                    class="text-center text-gray-600 italic max-w-xl mx-auto mt-4"
+                >
+                    A glimpse of the beautiful moments planned for our
+                    celebration.
+                </p>
+
+                <!-- GRID -->
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+                    <!-- CARD 1 -->
+                    <div
+                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-3xl border-2 border-[#4F5E3A]/30"
                     >
+                        <div class="absolute -top-8 left-10">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4F5E3A]/40 shadow-lg"
+                            >
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/512/1059/1059802.png"
+                                    class="w-10 icon-green"
+                                />
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-[#4F5E3A] mt-14">
+                            Ceremony
+                        </h3>
+                        <p class="text-gray-600 mt-3 leading-relaxed">
+                            A heartfelt gathering where our journey begins —
+                            surrounded by blessings, joy, and loved ones.
+                        </p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-3xl border-2 border-[#4F5E3A]/30"
+                    >
+                        <div class="absolute -top-8 left-10">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4F5E3A]/40 shadow-lg"
+                            >
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/512/3480/3480718.png"
+                                    class="w-10 icon-green"
+                                />
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-[#4F5E3A] mt-14">
+                            Toast & Dinner
+                        </h3>
+                        <p class="text-gray-600 mt-3 leading-relaxed">
+                            A warm feast with clinking glasses, laughter, and
+                            the perfect start to a beautiful evening.
+                        </p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div
+                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-3xl border-2 border-[#4F5E3A]/30"
+                    >
+                        <div class="absolute -top-8 left-10">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4F5E3A]/40 shadow-lg"
+                            >
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/512/1683/1683807.png"
+                                    class="w-10 icon-green"
+                                />
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-[#4F5E3A] mt-14">
+                            Wedding Cake
+                        </h3>
+                        <p class="text-gray-600 mt-3 leading-relaxed">
+                            A sweet symbol of unity — shared with smiles, love,
+                            and a sprinkle of magic.
+                        </p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div
+                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-3xl border-2 border-[#4F5E3A]/30"
+                    >
+                        <div class="absolute -top-8 left-10">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4F5E3A]/40 shadow-lg"
+                            >
+                                <img
+                                    src="https://www.freeiconspng.com/uploads/camera-icon-21.png"
+                                    class="w-10 icon-green"
+                                />
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-[#4F5E3A] mt-14">
+                            Photography
+                        </h3>
+                        <p class="text-gray-600 mt-3 leading-relaxed">
+                            Every precious moment — beautifully captured,
+                            framed, and cherished forever.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <section class="relative py-10 md:py-20 bg-[#F7F5F2] overflow-hidden">
+
+    <!-- Soft Background Shapes -->
+    <div class="absolute top-10 left-0 w-[450px] h-[450px] bg-[#E8E3DC]/40 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#D6D0C8]/40 blur-[120px] rounded-full"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 z-10">
+        
+        <!-- Header -->
+        <div class="text-center mb-10 lg:mb-20">
+            <h2 class="text-5xl md:text-7xl font-arizonia text-[#4F5E3A] leading-tight">
+                Wedding Venue
+            </h2>
+            <p class="text-gray-600 italic mt-4 max-w-xl mx-auto">
+                A serene place chosen to begin the next chapter of our story.
+            </p>
+        </div>
+
+        <!-- GRID WRAPPER -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-center h-full">
+
+            <!-- LEFT: VENUE IMAGE (TALL) -->
+            <div class="rounded-3xl overflow-hidden">
+                <img 
+                    src="https://eventsmanagementkerala.com/wp-content/uploads/2023/08/outdoor-wedding-venues-in-calicut-1.webp"
+                    class="w-full h-80 md:h-full object-cover"
+                />
+            </div>
+
+            <!-- RIGHT: FLOATING VENUE CARD -->
+            <div class="relative">
+                <!-- Decorative Line -->
+                <div class="absolute -left-8 top-0 h-full w-1 bg-[#4F5E3A]/20 rounded-full"></div>
+
+                <!-- Card -->
+                <div class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 border border-[#4F5E3A]/20">
+
+                    <!-- Icon -->
+                    <div class="w-20 h-20 rounded-full bg-[#4F5E3A]/10 border border-[#4F5E3A]/20 flex items-center justify-center mx-auto mb-6">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3917/3917132.png"
+                             class="w-10 opacity-80">
+                    </div>
+
+                    <h3 class="text-3xl md:text-4xl font-semibold text-[#4F5E3A] text-center">
                         St. Mary’s Cathedral
                     </h3>
 
-                    <p
-                        class="text-white/90 text-sm md:text-base mt-3 leading-relaxed max-w-xs"
-                    >
-                        MG Road, Ernakulam, Kerala – 682011
+                    <p class="text-gray-600 text-center mt-3">
+                        MG Road, Ernakulam, Kerala — 682011
                     </p>
 
-                    <div
-                        class="w-16 h-px bg-white/40 my-4 hidden md:block"
-                    ></div>
+                    <div class="w-16 h-px bg-[#4F5E3A]/20 mx-auto my-6"></div>
 
-                    <p class="text-lg md:text-xl">
+                    <p class="text-center text-lg md:text-xl text-[#4F5E3A] tracking-wide">
                         Ceremony at <span class="font-bold">10:00 AM</span>
                     </p>
 
                     <!-- Button -->
-                    <a
-                        href="#"
-                        class="mt-6 relative z-20 inline-block border border-white px-6 py-2 md:px-8 md:py-3 uppercase tracking-widest text-sm md:text-base font-medium hover:bg-white hover:text-[#4F5E3A] transition duration-300"
-                    >
-                        View Map
-                    </a>
+                    <div class="text-center mt-10">
+                        <a href="#"
+                           class="inline-block border border-[#4F5E3A] text-[#4F5E3A] px-8 py-3 rounded-full tracking-widest uppercase text-sm hover:bg-[#4F5E3A] hover:text-white transition-all duration-300">
+                            View Map
+                        </a>
+                    </div>
 
-                    <!-- Outer Decorative Ring -->
-                    <span
-                        class="absolute inset-0 rounded-full border border-white/20 scale-110"
-                    ></span>
                 </div>
             </div>
-        </section>
+
+        </div>
+    </div>
+
+</section>
+
 
         <section class="relative py-10 md:py-20 bg-[#faf9f7] px-6 text-center">
             <h2 class="text-4xl md:text-6xl font-arizonia text-[#4F5E3A] mb-6">
