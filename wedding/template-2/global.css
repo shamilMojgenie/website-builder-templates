@@ -1,0 +1,34 @@
+body {
+    font-family: "Playfair Display", serif;
+}
+
+.font-arizonia {
+    font-family: "Arizonia", cursive;
+}
+
+img[src*="flower.svg"] {
+    filter: brightness(1) saturate(3) hue-rotate(315deg);
+    opacity: 50%;
+}
+
+.icon-tint {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(30%) saturate(166%) hue-rotate(294deg) brightness(91%) contrast(86%);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2 {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+
+.animate-marquee2 {
+    animation: marquee2 60s linear infinite;
+}
