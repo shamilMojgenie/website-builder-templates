@@ -22,11 +22,11 @@
     <body>
         <section
             id="navbar"
-            class="w-full fixed top-0 left-0 py-4 px-6 flex items-center justify-between font-playfair z-50 transition-all duration-300 bg-transparent text-white"
+            class="w-full fixed top-0 left-0 py-4 lg:py-8 px-6 flex items-center justify-between font-playfair z-50 transition-all duration-300 bg-transparent text-white"
         >
-            <div class="text-4xl font-arizonia tracking-wider nav-text">
+            <a href="#" class="text-4xl font-arizonia tracking-wider nav-text">
                 Eve &amp; Adam
-            </div>
+            </a>
 
             <input type="checkbox" id="menu-toggle" class="peer hidden" />
 
@@ -41,8 +41,10 @@
             <ul
                 class="flex-col md:flex-row md:flex space-y-4 md:space-y-0 md:space-x-8 uppercase tracking-widest absolute md:static left-0 top-[70px] w-full md:w-auto bg-white md:bg-transparent py-6 md:py-0 px-6 md:px-0 hidden peer-checked:flex shadow-md md:shadow-none"
             >
-                <li class="transition cursor-pointer nav-text">Home</li>
-                <li class="transition cursor-pointer nav-text">Our Story</li>
+                <a href="#" class="transition cursor-pointer nav-text">Home</a>
+                <a href="#story" class="transition cursor-pointer nav-text"
+                    >Our Story</a
+                >
                 <li class="transition cursor-pointer nav-text">The Wedding</li>
                 <li class="transition cursor-pointer nav-text">Gallery</li>
             </ul>
@@ -110,9 +112,9 @@
                 </div>
                 <div class="relative">
                     <img
-                        src="http://localhost:4323/assets/images/png/elipse-image.png"
+                        src="https://imaginewithrashid.com/wp-content/uploads/2025/10/Gemini_Generated_Image_capkz3capkz3capk.webp"
                         alt="Couple"
-                        class="h-full w-full relative"
+                        class="h-full w-full relative rounded-full"
                     />
                 </div>
                 <div class="text-left space-y-4">
@@ -136,7 +138,7 @@
             </div>
         </section>
 
-        <section class="relative z-10 overflow-hidden">
+        <section class="relative z-10 overflow-hidden py-10">
             <div
                 class="relative z-10 max-w-[1350px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-32 items-center"
             >
@@ -182,14 +184,14 @@
                     </div>
                 </div>
 
-                <div class="relative z-20 h-[600px] max-h-[600px]">
+                <div class="relative z-20 h-80 md:h-[600px] max-h-[600px]">
                     <div
                         class="p-3 border-4 border-white shadow-lg relative z-10 bg-white"
                     >
                         <img
-                            src="https://crystallinestudio.com/image_gallery_big/Crystalline-photography-972.jpg"
+                            src="https://sethlui.com/wp-content/uploads/2025/05/vincent-tay.jpg"
                             alt="Eve & Adam"
-                            class="w-full h-[600px] object-cover"
+                            class="w-full h-80 md:h-[600px] object-cover"
                         />
                     </div>
                     <img
@@ -200,7 +202,7 @@
                 </div>
             </div>
 
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-6xl mx-auto py-10">
                 <div class="text-center mb-16">
                     <h2
                         class="text-3xl md:text-6xl font-bold text-[#A38C8C] font-arizonia mb-6"
@@ -421,7 +423,7 @@
                                         class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-[#A38C8C] p-2"
                                     >
                                         <img
-                                            src="https://i0.wp.com/www.framehunt.com/wp-content/uploads/2021/04/Kerala-Save-The-Date-Christian-Wedding-Photos_G.jpg?fit=1262%2C1892&ssl=1"
+                                            src="https://www.brides.com/thmb/LMyiMPxRFx82BLiHZC8lySJFnGo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/marriage-pose-photo-recirc-kyle-john-1-29-4f97523aa049471992292e8d6ddc41ee.jpg"
                                             alt="Growing Together"
                                             class="w-full h-full object-cover rounded-full"
                                         />
@@ -502,15 +504,40 @@
                 </div>
             </div>
         </section>
-        <section class="relative py-24 px-6 bg-white overflow-hidden">
-          
 
+        <section class="relative h-[500px] overflow-hidden">
+            <!-- Background Image -->
+            <img
+                src="https://showmeyourmumu.com/cdn/shop/articles/Fall_wedding.jpg?v=1692048438"
+                alt="Background"
+                class="absolute inset-0 w-full h-full object-cover object-[center_40%]"
+            />
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-[#A38C8C]/60 z-10"></div>
+            <!-- Play Button Centered -->
+            <div class="relative z-20 flex items-center justify-center h-full">
+                <button
+                    class="w-20 h-20 rounded-full bg-white text-[#A38C8C] border-4 border-[#A38C8C] shadow-lg flex items-center justify-center hover:scale-105 transition duration-300 cursor-pointer"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path d="M8 5.14v14.72L20 12 8 5.14z"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="relative py-10 md:py-24 px-4 bg-white overflow-hidden">
             <div class="max-w-5xl mx-auto relative z-10">
                 <!-- TITLE -->
                 <h2
-                    class="text-center text-4xl md:text-5xl tracking-wide font-playfair text-[#594e61]"
+                    class="text-3xl md:text-6xl font-bold text-[#A38C8C] font-arizonia mb-6 text-center"
                 >
-                    WEDDING DETAILS
+                    Wedding Details
                 </h2>
 
                 <!-- SUBTITLE -->
@@ -525,112 +552,569 @@
 
                 <!-- TIMELINE SECTION -->
                 <div
-                    class="relative mt-24 grid grid-cols-1 md:grid-cols-2 gap-y-20"
+                    class="relative mt-10 md:mt-24 grid grid-cols-2 md:grid-cols-2 gap-y-10 md:gap-y-20"
                 >
-                    <!-- VERTICAL LINE -->
+                    <!-- Vertical Line -->
+                    <!-- Vertical Line + Dots -->
                     <div
-                        class="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 border-l border-gray-300"
-                    ></div>
+                        class="hidden md:block absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2"
+                    >
+                        <!-- The Line -->
+                        <div
+                            class="absolute inset-0 border-l border-gray-300"
+                        ></div>
 
-                    <!-- ROW 1 - LEFT -->
-                    <div class="md:text-right pr-10">
+                        <!-- Balls (Dots) -->
+                        <span
+                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[12%] left-1/2 -translate-x-1/2"
+                        ></span>
+                        <span
+                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[37%] left-1/2 -translate-x-1/2"
+                        ></span>
+                        <span
+                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[63%] left-1/2 -translate-x-1/2"
+                        ></span>
+                        <span
+                            class="w-3 h-3 bg-gray-300 rounded-full absolute top-[88%] left-1/2 -translate-x-1/2"
+                        ></span>
+                    </div>
+
+                    <!-- ---------------- ROW 1 ---------------- -->
+
+                    <!-- LEFT TEXT -->
+                    <div class="text-right md:pr-10">
                         <h3
                             class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
                         >
                             CEREMONY
                         </h3>
                         <p
-                            class="text-gray-500 text-sm mt-3 leading-relaxed max-w-xs ml-auto"
+                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs ml-auto"
                         >
                             Lorem ipsum dolor sit amet, consectetur gravida nibh
                             vel velit auctor aliquam sollicitudin lorem quis
                             bibendum.
                         </p>
+                    </div>
+
+                    <!-- RIGHT ICON -->
+                    <div class="flex justify-start pl-10">
                         <img
-                            src="https://i.ibb.co/6bt9pQx/icon-ceremony.png"
-                            class="w-14 mt-6 opacity-80 ml-auto"
-                            alt="Ceremony"
+                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-1.png"
+                            class="w-20 icon-tint object-contain"
+                            alt="Ceremony Icon"
                         />
                     </div>
 
-                    <!-- DOT -->
-                    <div class="hidden md:flex justify-center">
-                        <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                    <!-- ---------------- ROW 2 ---------------- -->
+
+                    <!-- LEFT ICON -->
+                    <div class="flex justify-end pr-10">
+                        <img
+                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-2.png"
+                            class="w-20 icon-tint object-contain"
+                            alt="Toast Icon"
+                        />
                     </div>
 
-                    <!-- ROW 1 - RIGHT -->
-                    <div class="md:text-left pl-10">
+                    <!-- RIGHT TEXT -->
+                    <div class="md:text-left md:pl-10">
                         <h3
                             class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
                         >
                             TOAST & DINNER
                         </h3>
                         <p
-                            class="text-gray-500 text-sm mt-3 leading-relaxed max-w-xs"
+                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs"
                         >
                             Lorem ipsum dolor sit amet, consectetur gravida nibh
                             vel velit auctor aliquam sollicitudin lorem quis
                             bibendum.
                         </p>
-                        <img
-                            src="https://i.ibb.co/2cBcLWS/icon-toast.png"
-                            class="w-14 mt-6 opacity-80"
-                            alt="Toast"
-                        />
                     </div>
 
-                    <!-- DOT -->
-                    <div class="hidden md:flex justify-center">
-                        <div class="w-3 h-3 rounded-full bg-gray-300"></div>
-                    </div>
+                    <!-- ---------------- ROW 3 ---------------- -->
 
-                    <!-- ROW 2 - LEFT -->
-                    <div class="md:text-right pr-10">
+                    <!-- LEFT TEXT -->
+                    <div class="text-right md:pr-10">
                         <h3
                             class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
                         >
                             WEDDING CAKE
                         </h3>
                         <p
-                            class="text-gray-500 text-sm mt-3 leading-relaxed max-w-xs ml-auto"
+                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs ml-auto"
                         >
                             Lorem ipsum dolor sit amet, consectetur gravida nibh
                             vel velit auctor aliquam sollicitudin lorem quis
                             bibendum.
                         </p>
+                    </div>
+
+                    <!-- RIGHT ICON -->
+                    <div class="flex justify-start pl-10">
                         <img
-                            src="https://i.ibb.co/D18jz1W/icon-cake.png"
-                            class="w-14 mt-6 opacity-80 ml-auto"
-                            alt="Wedding Cake"
+                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-3.png"
+                            class="w-20 icon-tint object-contain"
+                            alt="Wedding Cake Icon"
                         />
                     </div>
 
-                    <!-- DOT -->
-                    <div class="hidden md:flex justify-center">
-                        <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                    <!-- ---------------- ROW 4 ---------------- -->
+
+                    <!-- LEFT ICON -->
+                    <div class="flex justify-end pr-10">
+                        <img
+                            src="https://fleur.qodeinteractive.com/wp-content/uploads/2017/02/home-announcment-icon-4.png"
+                            class="w-20 icon-tint object-contain"
+                            alt="Photography Icon"
+                        />
                     </div>
 
-                    <!-- ROW 2 - RIGHT -->
-                    <div class="md:text-left pl-10">
+                    <!-- RIGHT TEXT -->
+                    <div class="md:text-left md:pl-10">
                         <h3
                             class="text-sm font-semibold uppercase tracking-wide text-[#594e61]"
                         >
                             PHOTOGRAPHY
                         </h3>
                         <p
-                            class="text-gray-500 text-sm mt-3 leading-relaxed max-w-xs"
+                            class="text-gray-500 text-xs md:text-base font-medium mt-3 leading-relaxed max-w-xs"
                         >
                             Lorem ipsum dolor sit amet, consectetur gravida nibh
                             vel velit auctor aliquam sollicitudin lorem quis
                             bibendum.
                         </p>
-                        <img
-                            src="https://i.ibb.co/YQKgDkM/icon-camera.png"
-                            class="w-14 mt-6 opacity-80"
-                            alt="Photography"
-                        />
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section
+            class="relative py-24 md:py-40 bg-fixed bg-cover bg-center text-white"
+            style="
+                background-image: url('https://eventsmanagementkerala.com/wp-content/uploads/2023/08/outdoor-wedding-venues-in-calicut-1.webp');
+            "
+        >
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+                <!-- Title -->
+                <h2 class="text-4xl md:text-6xl font-arizonia mb-10">
+                    Wedding Venue
+                </h2>
+
+                <!-- Round Highlight Card -->
+                <div
+                    class="relative mx-auto w-72 h-72 md:w-96 md:h-96 bg-white/10 backdrop-blur-xl rounded-full border border-white/30 shadow-2xl flex flex-col items-center justify-center p-8"
+                >
+                    <h3
+                        class="text-2xl md:text-4xl font-semibold tracking-wider"
+                    >
+                        St. Mary’s Cathedral
+                    </h3>
+
+                    <p
+                        class="text-white/90 text-sm md:text-base mt-3 leading-relaxed max-w-xs"
+                    >
+                        MG Road, Ernakulam, Kerala – 682011
+                    </p>
+
+                    <div
+                        class="w-16 h-px bg-white/40 my-4 hidden md:block"
+                    ></div>
+
+                    <p class="text-lg md:text-xl">
+                        Ceremony at <span class="font-bold">10:00 AM</span>
+                    </p>
+
+                    <!-- Button -->
+                    <a
+                        href="#"
+                        class="mt-6 relative z-20 inline-block border border-white px-6 py-2 md:px-8 md:py-3 uppercase tracking-widest text-sm md:text-base font-medium hover:bg-white hover:text-[#A38C8C] transition duration-300"
+                    >
+                        View Map
+                    </a>
+
+                    <!-- Outer Decorative Ring -->
+                    <span
+                        class="absolute inset-0 rounded-full border border-white/20 scale-110"
+                    ></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-10 md:py-20 bg-[#faf9f7] px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-arizonia text-[#A38C8C] mb-6">
+                Dress Code
+            </h2>
+
+            <p class="text-gray-600 italic max-w-xl mx-auto mb-12">
+                Kindly follow our soft and elegant wedding palette.
+            </p>
+
+            <!-- DRESS CODE TEXT WITH IMAGES -->
+            <div
+                class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-center mb-16"
+            >
+                <!-- Women -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-40 h-40 md:h-46 md:w-46 2xl:h-60 2xl:w-60 rounded-full border-2 border-dashed border-[#A38C8C] p-2 overflow-hidden"
+                    >
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1664540415112-f6afc235c8e2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJpZGVzbWFpZHxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000"
+                            class="w-full h-full object-cover rounded-full"
+                        />
+                    </div>
+
+                    <h3
+                        class="text-xl font-semibold text-[#A38C8C] tracking-wide mt-4"
+                    >
+                        Women
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        Pastels, florals, shimmer tones<br />
+                        Sarees, gowns, or elegant ethnic wear.
+                    </p>
+                </div>
+
+                <!-- Men -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-40 h-40 md:h-46 md:w-46 2xl:h-60 2xl:w-60 rounded-full border-2 border-dashed border-[#A38C8C] p-2 overflow-hidden"
+                    >
+                        <img
+                            src="https://cityvibes.in/cdn/shop/files/19_51c02ba6-fa98-4bb6-b6e5-02d82ce31488.png?v=1728973821&width=2240"
+                            class="w-full h-full object-cover rounded-full"
+                        />
+                    </div>
+
+                    <h3
+                        class="text-xl font-semibold text-[#A38C8C] tracking-wide mt-4"
+                    >
+                        Men
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        Ivory, beige, champagne tones<br />
+                        Suits, sherwanis, or soft ethnic wear.
+                    </p>
+                </div>
+            </div>
+
+            <!-- COLOR SWATCHES -->
+            <div class="flex justify-center flex-wrap gap-8">
+                <div class="flex flex-col items-center">
+                    <span
+                        class="w-12 h-12 rounded-full shadow-md"
+                        style="background: #f7dde2"
+                    ></span>
+                    <p class="mt-2 text-sm text-gray-600">
+                        Blush<br /><span class="text-xs text-gray-400"
+                            >#F7DDE2</span
+                        >
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span
+                        class="w-12 h-12 rounded-full shadow-md border"
+                        style="background: #fffff4"
+                    ></span>
+                    <p class="mt-2 text-sm text-gray-600">
+                        Ivory<br /><span class="text-xs text-gray-400"
+                            >#FFFFF4</span
+                        >
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span
+                        class="w-12 h-12 rounded-full shadow-md"
+                        style="background: #d8a7b4"
+                    ></span>
+                    <p class="mt-2 text-sm text-gray-600">
+                        Dusty Rose<br /><span class="text-xs text-gray-400"
+                            >#D8A7B4</span
+                        >
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span
+                        class="w-12 h-12 rounded-full shadow-md"
+                        style="background: #f3e5c3"
+                    ></span>
+                    <p class="mt-2 text-sm text-gray-600">
+                        Champagne<br /><span class="text-xs text-gray-400"
+                            >#F3E5C3</span
+                        >
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-[#faf9f7] overflow-hidden">
+            <div class="relative">
+                <div
+                    class="whitespace-nowrap flex items-center animate-marquee text-[#A38C8C]"
+                >
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        Two hearts, one journey —
+                    </span>
+
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        A love written by destiny —
+                    </span>
+
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        Moments we cherish forever —
+                    </span>
+
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        Together is a beautiful place —
+                    </span>
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div
+                    class="whitespace-nowrap flex items-center animate-marquee2 text-[#A38C8C] absolute top-0"
+                >
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        Two hearts, one journey —
+                    </span>
+
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        A love written by destiny —
+                    </span>
+
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        Moments we cherish forever —
+                    </span>
+
+                    <span
+                        class="mx-10 text-3xl md:text-5xl font-arizonia opacity-80"
+                    >
+                        Together is a beautiful place —
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-10 md:py-20 bg-[#faf9f7] px-6">
+            <div class="max-w-6xl mx-auto text-center mb-14">
+                <h2
+                    class="text-4xl md:text-6xl font-arizonia text-[#A38C8C] mb-4"
+                >
+                    Our Gallery
+                </h2>
+                <p class="text-gray-600 italic max-w-2xl mx-auto">
+                    Moments woven with love, captured forever.
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            >
+                <!-- Image -->
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/2959194/pexels-photo-2959194.jpeg"
+                        class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-white text-lg tracking-widest font-semibold"
+                            >Eve & Adam</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/1839747/pexels-photo-1839747.jpeg"
+                        class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div
+                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-white text-lg tracking-widest font-semibold"
+                            >A Beautiful Moment</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                >
+                    <img
+                        src="https://people.com/thmb/JNZdm-O_D8BjLtiC0RT_mMex0qk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(963x655:965x657)/Bride-Makes-11-Bridesmaid-Dresses-092325-1-4b0ea094d0cd45af9cd18a1c3b4e250a.jpg"
+                        class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div
+                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-white text-lg tracking-widest font-semibold"
+                            >Forever Begins</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/3593434/pexels-photo-3593434.jpeg"
+                        class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div
+                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-white text-lg tracking-widest font-semibold"
+                            >Captured Love</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg"
+                        class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div
+                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-white text-lg tracking-widest font-semibold"
+                            >Together</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-md border border-[#A38C8C]/20 bg-white"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg"
+                        class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div
+                        class="absolute inset-0 bg-[#A38C8C]/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center"
+                    >
+                        <span
+                            class="text-white text-lg tracking-widest font-semibold"
+                            >Timeless</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section class="bg-[#faf9f7] border-t border-[#e6dad8] py-12 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <!-- Names -->
+                <h2
+                    class="text-4xl md:text-6xl font-arizonia text-[#A38C8C] mb-4"
+                >
+                    Eve & Adam
+                </h2>
+
+                <!-- Tagline -->
+                <p class="text-gray-600 italic max-w-lg mx-auto">
+                    “A celebration of love, joy, and forever.”
+                </p>
+
+                <!-- Divider -->
+                <div class="w-24 h-px bg-[#A38C8C]/40 mx-auto my-6"></div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center gap-6 mb-8">
+                    <!-- Instagram -->
+                    <a
+                        href="#"
+                        class="text-[#A38C8C] hover:opacity-70 transition"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-7 h-7"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <circle cx="12" cy="12" r="3.2"></circle>
+                            <path
+                                d="M17.2 3H6.8A3.8 3.8 0 0 0 3 6.8v10.4A3.8 3.8 0 0 0 6.8 21h10.4a3.8 3.8 0 0 0 3.8-3.8V6.8A3.8 3.8 0 0 0 17.2 3ZM18 7.2a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0Z"
+                            ></path>
+                        </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a
+                        href="#"
+                        class="text-[#A38C8C] hover:opacity-70 transition"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-7 h-7"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M22 12.06C22 6.48 17.52 2 11.94 2A10.06 10.06 0 0 0 2 12c0 5 3.66 9.14 8.44 9.88v-7h-2.5v-3h2.5V9.5c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.22.2 2.22.2v2.44h-1.25c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 3h-2.34v7A10 10 0 0 0 22 12.06Z"
+                            />
+                        </svg>
+                    </a>
+
+                    <!-- Pinterest -->
+                    <a
+                        href="#"
+                        class="text-[#A38C8C] hover:opacity-70 transition"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-7 h-7"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12.04 2A10 10 0 0 0 8 21.12c-.14-.82-.28-2.08 0-3l1.88-7A3.4 3.4 0 0 1 9.5 8c0-2 2.5-3.7 4.45-3.7 2.08 0 3.62 1.38 3.62 3.38 0 2.27-1.2 4.5-2.7 4.5a1.44 1.44 0 0 1-1.45-1.79c.2-.82.62-2.08.62-2.73 0-.62-.32-1.14-1.02-1.14-1.08 0-2 1.14-2 2.57 0 .96.34 1.6.34 1.6l-1.38 5.64c-.28 1.1-.06 2.58-.06 2.58A10 10 0 0 0 22 12a10 10 0 0 0-9.96-10Z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-gray-500 text-sm">
+                    © 2025 Eve & Adam Wedding. All Rights Reserved.
+                </p>
             </div>
         </section>
 
