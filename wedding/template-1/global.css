@@ -1,0 +1,16 @@
+body {
+    font-family: "Playfair Display", serif;
+}
+
+.font-arizonia {
+    font-family: "Arizonia", cursive;
+}
+
+img[src*="flower.svg"] {
+    filter: brightness(1) saturate(3) hue-rotate(315deg);
+    opacity: 50%;
+}
+
+img[src*="heart_PNG51168.png"] {
+    opacity: 20%;
+}
