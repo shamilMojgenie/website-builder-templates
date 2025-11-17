@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 2</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <!-- navbar  -->
+        <section
+            class="bg-white fixed w-full z-40 top-0 left-0 px-6 py-3 shadow-sm lg:flex lg:justify-between"
+        >
+            <!-- Mobile Toggle -->
+            <input type="checkbox" id="navToggle" class="hidden peer" />
+
+            <!-- TOP BAR (logo + button) -->
+            <div class="flex justify-between items-center gap-3 lg:gap-6">
+                <a href="/" class="flex items-center bg-white p-1 rounded-md">
+                    <img
+                        src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                        class="h-14 xl:h-[90px]"
+                    />
+                </a>
+
+                <!-- Mobile Button -->
+                <label
+                    for="navToggle"
+                    class="lg:hidden inline-flex items-center justify-center w-10 h-10 bg-white rounded-lg cursor-pointer text-gray-600"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 17 14"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        />
+                    </svg>
+                </label>
+            </div>
+
+            <div
+                class="hidden lg:flex flex-col lg:flex-row w-full flex-wrap justify-center gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
+            >
+                <!-- Normal Items -->
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Home</a
+                >
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >About</a
+                >
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Message</a
+                >
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Venue</a
+                >
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Sessions</a
+                >
+
+                <!-- Desktop Dropdown -->
+                <div class="relative hidden lg:block">
+                    <input type="checkbox" id="teamDrop" class="hidden peer" />
+                    <label
+                        for="teamDrop"
+                        class="cursor-pointer flex items-center text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    >
+                        Team
+                        <svg
+                            class="w-2.5 h-2.5 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 10 6"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="m1 1 4 4 4-4"
+                            />
+                        </svg>
+                    </label>
+
+                    <div
+                        class="absolute hidden peer-checked:block bg-white shadow-lg rounded-lg mt-2 w-40 py-2"
+                    >
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                            >Option One</a
+                        >
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                            >Option Two</a
+                        >
+                    </div>
+                </div>
+
+                <!-- More Items -->
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Abstract</a
+                >
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Tariff</a
+                >
+                <a
+                    class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                    href="#"
+                    >Contact Us</a
+                >
+            </div>
+
+            <!-- MENU (MOVED OUTSIDE — NOW SIBLING OF PEER) -->
+            <div
+                id="menu"
+                class="hidden peer-checked:block min-w-fit lg:flex items-center gap-6 lg:w-auto pt-6 lg:pt-0 transition-all duration-300"
+            >
+                <div
+                    class="flex flex-col lg:hidden w-full flex-wrap gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
+                >
+                    <!-- Normal Items -->
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >Home</a
+                    >
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >About</a
+                    >
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >Message</a
+                    >
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >Venue</a
+                    >
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >Sessions</a
+                    >
+
+                    <!-- Mobile Dropdown -->
+                    <div class="lg:hidden w-full">
+                        <input
+                            type="checkbox"
+                            id="teamAcc"
+                            class="hidden peer"
+                        />
+                        <label
+                            for="teamAcc"
+                            class="flex items-center justify-between text-base font-medium text-gray-900 hover:text-[#3265A6] cursor-pointer"
+                        >
+                            Team
+                            <svg
+                                class="w-3 h-3 transition-transform rotate-180"
+                                fill="none"
+                                stroke="#000000"
+                                stroke-width="2"
+                                viewBox="0 0 10 6"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M9 5 5 1 1 5"
+                                />
+                            </svg>
+                        </label>
+
+                        <div class="hidden peer-checked:block pl-4">
+                            <a
+                                href="#"
+                                class="block py-2 text-base text-gray-900"
+                                >Option One</a
+                            >
+                            <a
+                                href="#"
+                                class="block pt-2 text-base text-gray-900"
+                                >Option Two</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- More Items -->
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >Abstract</a
+                    >
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
+                        href="#"
+                        >Tariff</a
+                    >
+                    <a
+                        class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6] mb-4"
+                        href="#"
+                        >Contact Us</a
+                    >
+                </div>
+                <!-- Register -->
+                <a
+                    href="#"
+                    class="inline-block min-w-fit bg-[#3265A6] border-2 border-[#3265A6] text-white px-5 py-2 rounded-md hover:bg-white hover:text-[#3265A6] transition-all duration-300 font-medium group"
+                >
+                    Register Now
+                    <svg
+                        class="h-4 w-4 inline-block ml-2 transform group-hover:translate-x-1 duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- hero section -->
+        <section
+            class="relative text-white pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden"
+            style="
+                background-image: url('https://static.vecteezy.com/system/resources/thumbnails/070/675/601/small/audience-attending-business-conference-with-speaker-on-stage-delivering-presentation-in-blurred-background-photo.jpeg');
+                background-size: cover;
+                background-position: center;
+            "
+        >
+            <!-- Soft Cinematic Overlay -->
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80"
+            ></div>
+            <div
+                class="absolute inset-0 bg-gradient-to-tr from-[#3265A6]/25 via-transparent to-transparent"
+            ></div>
+
+            <div
+                class="relative z-[2] max-w-5xl mx-auto px-6 md:px-10 space-y-6 md:space-y-10 text-center"
+            >
+                <!-- TEXT BLOCK -->
+                <div class="space-y-8">
+                    <h1
+                        class="text-4xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight"
+                    >
+                        Global Innovation
+                        <span class="text-[#3265A6] block"
+                            >Leadership Summit</span
+                        >
+                    </h1>
+
+                    <p
+                        class="text-gray-200 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"
+                    >
+                        A landmark gathering of world-class experts, innovators,
+                        and forward-thinking professionals—united to shape the
+                        future with breakthrough discussions and
+                        knowledge-sharing.
+                    </p>
+
+                    <div
+                        class="space-y-4 text-gray-200 text-lg font-medium max-w-xl mx-auto"
+                    >
+                        <div class="flex justify-center items-center gap-3">
+                            <svg
+                                class="h-6 w-6 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                            </svg>
+                            <span>World Convention Arena · Dubai</span>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-3">
+                            <svg
+                                class="h-6 w-6 text-white"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                                />
+                            </svg>
+                            <span>October 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTERED HORIZONTAL COUNTDOWN BAR -->
+                <div
+                    class="max-w-xl mx-auto bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-xl p-4 md:p-8"
+                >
+                    <div class="grid grid-cols-4 gap-3 md:gap-5 text-center">
+                        <!-- Item -->
+                        <div class="space-y-3">
+                            <div
+                                class="bg-white/20 backdrop-blur-lg border border-white/30 py-4 rounded-xl shadow-lg"
+                            >
+                                <span
+                                    id="days"
+                                    class="text-2xl md:text-4xl font-extrabold text-white"
+                                    >242</span
+                                >
+                            </div>
+                            <span
+                                class="text-xs md:text-sm text-gray-200 uppercase tracking-widest"
+                                >Days</span
+                            >
+                        </div>
+
+                        <div class="space-y-3">
+                            <div
+                                class="bg-white/20 backdrop-blur-lg border border-white/30 py-4 rounded-xl shadow-lg"
+                            >
+                                <span
+                                    id="hours"
+                                    class="text-2xl md:text-4xl font-extrabold text-white"
+                                    >22</span
+                                >
+                            </div>
+                            <span
+                                class="text-xs md:text-sm text-gray-200 uppercase tracking-widest"
+                                >Hours</span
+                            >
+                        </div>
+
+                        <div class="space-y-3">
+                            <div
+                                class="bg-white/20 backdrop-blur-lg border border-white/30 py-4 rounded-xl shadow-lg"
+                            >
+                                <span
+                                    id="minutes"
+                                    class="text-2xl md:text-4xl font-extrabold text-white"
+                                    >12</span
+                                >
+                            </div>
+                            <span
+                                class="text-xs md:text-sm text-gray-200 uppercase tracking-widest"
+                                >Minutes</span
+                            >
+                        </div>
+
+                        <div class="space-y-3">
+                            <div
+                                class="bg-white/20 backdrop-blur-lg border border-white/30 py-4 rounded-xl shadow-lg"
+                            >
+                                <span
+                                    id="seconds"
+                                    class="text-2xl md:text-4xl font-extrabold text-white"
+                                    >45</span
+                                >
+                            </div>
+                            <span
+                                class="text-xs md:text-sm text-gray-200 uppercase tracking-widest"
+                                >Seconds</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap justify-center gap-5">
+                    <a
+                        href="#"
+                        class="px-10 py-3 rounded-xl bg-[#3265A6] border-2 border-[#3265A6] text-white font-semibold text-lg hover:bg-white hover:text-[#3265A6] transition-all duration-300 shadow-lg w-full md:w-auto text-center"
+                    >
+                        Register Now
+                    </a>
+
+                    <a
+                        href="#"
+                        class="px-10 py-3 rounded-xl border-2 border-white text-white font-semibold text-lg hover:bg-white hover:text-[#3265A6] transition-all duration-300 shadow-lg w-full md:w-auto text-center"
+                    >
+                        View Schedule
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section
+            class="relative py-12 md:py-20 px-4 lg:px-16 bg-[#f7f9fc] overflow-hidden"
+        >
+            <!-- Soft Glow -->
+            <div
+                class="absolute top-10 left-0 w-72 h-72 bg-[#3265A6]/10 blur-[130px] rounded-full"
+            ></div>
+
+            <div
+                class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-10 xl:gap-16 items-center"
+            >
+                <!-- LEFT: BENTO GRID (same style as IITC design) -->
+                <div
+                    class="w-full grid grid-cols-2 gap-4 relative order-1 md:order-0"
+                >
+                    <!-- Image 1 -->
+                    <div
+                        class="rounded-xl bg-gray-100 flex justify-center items-center p-2 md:p-6"
+                    >
+                        <img
+                            src="https://balticsecurityconference.lv/wp-content/uploads/fly-images/325/izstaditaji-bg@2x-scaled-1366x0-c.jpg"
+                            alt="Event Graphic"
+                            class="w-full h-full object-cover rounded-xl"
+                        />
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="overflow-hidden pt-20">
+                        <img
+                            src="https://www.cvent.com/sites/default/files/styles/column_content_width/public/image/2024-06/53322146052_90bc13d238_c%20%281%29.jpg.webp?itok=En_R8nwG"
+                            alt="Event Area"
+                            class="w-full h-full object-cover rounded-xl"
+                        />
+                    </div>
+
+                    <!-- Image 3 (bottom full width) -->
+                    <div class="col-span-2 overflow-hidden">
+                        <img
+                            src="https://images.unsplash.com/photo-1531058020387-3be344556be6"
+                            alt="Conference Image"
+                            class="w-full h-full max-h-[200px] object-cover rounded-xl"
+                        />
+                    </div>
+                </div>
+
+                <!-- RIGHT: TEXT BLOCK -->
+                <div class="text-left">
+                    <!-- Heading -->
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
+                    >
+                        About <span class="text-[#3265A6]">The Conference</span>
+                        <div
+                            class="mt-4 w-32 h-1 bg-[#3265A6] rounded-full"
+                        ></div>
+                    </h2>
+
+                    <p class="text-[#4B4A42] text-sm md:text-base mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+
+                    <p class="text-[#6E6C5F] text-sm md:text-base mb-6 md:mb-8">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Quisque facilisis, neque id cursus porttitor, ipsum urna
+                        pulvinar ligula, sed dapibus lorem mauris vel arcu.
+                    </p>
+
+                    <!-- Highlights (same structure as IITC block) -->
+                    <div class="space-y-4 mb-7 md:mb-10 flex flex-col">
+                        <!-- Highlight 1 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 bg-[#3265A6]/10 text-[#3265A6] flex items-center justify-center rounded-full"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-width="2"
+                                        d="M12 1a3 3 0 00-3 3v7a3 3 0 006 0V4a3 3 0 00-3-3zM5 10a7 7 0 0014 0m-7 7v4m-4 0h8"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-[#2E2B1E]">
+                                    Lorem Ipsum Dolor
+                                </h4>
+                                <p class="text-sm text-[#6E6C5F]">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Highlight 2 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 bg-[#3265A6]/10 text-[#3265A6] flex items-center justify-center rounded-full"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-[#2E2B1E]">
+                                    Lorem Ipsum Sit Amet
+                                </h4>
+                                <p class="text-sm text-[#6E6C5F]">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons (same style as IITC section) -->
+                    <div class="flex flex-wrap gap-4 justify-start">
+                        <a
+                            href="#"
+                            class="bg-[#3265A6] text-sm md:text-base text-white px-6 py-3 font-semibold rounded-lg shadow hover:scale-105 transition duration-300 cursor-pointer"
+                        >
+                            Button 1
+                        </a>
+
+                        <a
+                            href="#"
+                            class="border-2 border-[#3265A6] text-sm md:text-base text-[#3265A6] px-6 py-3 font-semibold rounded-lg hover:scale-105 transition duration-300 cursor-pointer"
+                        >
+                            Button 2
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- message -->
+        <section
+            class="py-10 md:py-24 px-4 lg:px-16 bg-[#f5f5f5] relative overflow-hidden"
+            id="message"
+        >
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-14">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
+                    >
+                        Message From
+                        <span class="text-[#3265A6]">Committee</span>
+                    </h2>
+                    <div
+                        class="mt-4 w-32 h-1 bg-[#3265A6] mx-auto rounded-full"
+                    ></div>
+                </div>
+
+                <div
+                    class="relative bg-white shadow-xl border border-gray-200 rounded-xl p-4 py-8 md:p-14"
+                >
+                    <div>
+                        <div
+                            class="absolute -top-6 left-1/2 transform -translate-x-1/2"
+                        >
+                            <div
+                                class="w-12 h-12 bg-[#3265A6] text-white flex items-center justify-center rounded-full shadow-lg"
+                            >
+                                <span class="text-4xl leading-none">“</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed space-y-6"
+                        >
+                            <p class="text-base md:text-xl font-bold">
+                                Dear Participants,
+                            </p>
+
+                            <p>
+                                We are delighted to welcome you to our upcoming
+                                scientific and academic program. This gathering
+                                is curated to deliver a meaningful experience
+                                rooted in collaboration, knowledge-sharing, and
+                                inspiration.
+                            </p>
+
+                            <p>
+                                Our sessions are carefully planned to bring
+                                insights on key topics relevant to
+                                practitioners, learners, and enthusiasts from
+                                across the discipline.
+                            </p>
+
+                            <p>
+                                You will find opportunities to engage with
+                                experts, participate in interactive discussions,
+                                and expand your perspectives in a dynamic,
+                                supportive atmosphere.
+                            </p>
+
+                            <p>
+                                We truly hope your time with us proves
+                                enriching, memorable, and filled with new
+                                takeaways that broaden your horizons.
+                            </p>
+
+                            <div class="md:pt-4">
+                                <p class="font-bold">Warm regards,</p>
+                                <p class="font-bold">[Name Here]</p>
+                                <p class="font-medium">[Designation]</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-center mt-4">
+                            <div
+                                class="w-40 md:w-44 h-48 mx-auto rounded-xl overflow-hidden shadow-lg bg-gray-200"
+                            >
+                                <img
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                    alt="Profile"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            <h3
+                                class="text-xl md:text-2xl font-semibold text-[#0D1112] mt-5"
+                            >
+                                [Name Here]
+                            </h3>
+
+                            <p
+                                class="text-sm md:text-base text-[#3265A6] font-medium mt-1"
+                            >
+                                [Designation / Role]
+                            </p>
+
+                            <p
+                                class="text-sm md:text-base text-gray-700 mt-3 leading-relaxed"
+                            >
+                                [Organisation / Institution] <br />
+                                <span class="font-medium text-[#0D1112]">
+                                    [Additional Line]
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute -bottom-6 left-1/2 transform -translate-x-1/2"
+                    >
+                        <div
+                            class="w-12 h-12 bg-[#3265A6] text-white flex items-center justify-center rounded-full shadow-lg rotate-180"
+                        >
+                            <span class="text-4xl leading-none">“</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- highlights -->
+        <section
+            class="py-10 md:py-24 px-5 lg:px-12 xl:px-16 bg-white overflow-hidden relative"
+        >
+            <!-- Red Glow Decoration -->
+            <div
+                class="absolute top-10 left-0 w-72 h-72 bg-[#3265A6]/10 blur-2xl rounded-full"
+            ></div>
+
+            <div class="max-w-7xl mx-auto">
+                <!-- HEADING -->
+                <div class="text-center mb-10">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
+                    >
+                        Event
+                        <span class="text-[#3265A6]">Highlights</span>
+                    </h2>
+                    <div
+                        class="mt-3 w-28 h-1 bg-[#3265A6] mx-auto rounded-full"
+                    ></div>
+                </div>
+
+                <!-- INTRO TEXT -->
+                <div class="max-w-3xl mx-auto text-center mb-8 md:mb-16">
+                    <p
+                        class="text-[#0D1112]/80 text-base md:text-lg leading-relaxed"
+                    >
+                        Explore the key features of this program — combining
+                        expert insights, hands-on learning, and opportunities
+                        for meaningful professional growth.
+                    </p>
+                </div>
+
+                <!-- 4-CARD ROW -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                >
+                    <!-- CARD 1 -->
+                    <div
+                        class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                    >
+                        <div class="mb-4">
+                            <svg
+                                class="w-8 h-8"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M8 5C8 2.79086 9.79086 1 12 1C14.2091 1 16 2.79086 16 5V12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12V5Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                    <path
+                                        d="M6.25 11.8438V12C6.25 13.525 6.8558 14.9875 7.93414 16.0659C9.01247 17.1442 10.475 17.75 12 17.75C13.525 17.75 14.9875 17.1442 16.0659 16.0659C17.1442 14.9875 17.75 13.525 17.75 12V11.8438C17.75 11.2915 18.1977 10.8438 18.75 10.8438H19.25C19.8023 10.8438 20.25 11.2915 20.25 11.8437V12C20.25 14.188 19.3808 16.2865 17.8336 17.8336C16.5842 19.0831 14.9753 19.8903 13.25 20.1548V22C13.25 22.5523 12.8023 23 12.25 23H11.75C11.1977 23 10.75 22.5523 10.75 22V20.1548C9.02471 19.8903 7.41579 19.0831 6.16637 17.8336C4.61919 16.2865 3.75 14.188 3.75 12V11.8438C3.75 11.2915 4.19772 10.8438 4.75 10.8438H5.25C5.80228 10.8438 6.25 11.2915 6.25 11.8438Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#3265A6] mb-2">
+                            Expert Sessions
+                        </h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Gain valuable insights from leading experts through
+                            carefully curated talks.
+                        </p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                    >
+                        <div class="mb-4">
+                            <svg
+                                class="w-8 h-8"
+                                version="1.1"
+                                id="_x32_"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 512 512"
+                                xml:space="preserve"
+                                fill="#3265A6"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <style type="text/css">
+                                        .st0 {
+                                            fill: #3265a6;
+                                        }
+                                    </style>
+                                    <g>
+                                        <path
+                                            class="st0"
+                                            d="M141.698,141.549H79.077c-8.488,0-15.37,6.882-15.37,15.362v198.179c0,8.479,6.882,15.362,15.37,15.362h62.622 c8.489,0,15.371-6.883,15.371-15.362V156.911C157.07,148.431,150.187,141.549,141.698,141.549z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M32.374,189.734H12.803C5.736,189.734,0,195.47,0,202.537v106.925c0,7.068,5.736,12.803,12.803,12.803h19.571 c7.067,0,12.803-5.736,12.803-12.803V202.537C45.177,195.47,39.441,189.734,32.374,189.734z"
+                                        ></path>
+                                        <rect
+                                            x="177.69"
+                                            y="228.894"
+                                            class="st0"
+                                            width="156.62"
+                                            height="54.212"
+                                        ></rect>
+                                        <path
+                                            class="st0"
+                                            d="M432.922,141.549h-62.621c-8.488,0-15.371,6.882-15.371,15.362v198.179c0,8.479,6.882,15.362,15.371,15.362 h62.621c8.488,0,15.371-6.883,15.371-15.362V156.911C448.293,148.431,441.411,141.549,432.922,141.549z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M499.197,189.734h-19.57c-7.068,0-12.803,5.736-12.803,12.803v106.925c0,7.068,5.736,12.803,12.803,12.803 h19.57c7.068,0,12.803-5.736,12.803-12.803V202.537C512,195.47,506.264,189.734,499.197,189.734z"
+                                        ></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#3265A6] mb-2">
+                            Workshops
+                        </h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Participate in hands-on workshops designed to build
+                            skills and confidence.
+                        </p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div
+                        class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                    >
+                        <div class="mb-4">
+                            <svg
+                                class="w-8 h-8"
+                                version="1.1"
+                                id="svg2"
+                                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                xmlns:cc="http://creativecommons.org/ns#"
+                                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                xmlns:svg="http://www.w3.org/2000/svg"
+                                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                                sodipodi:docname="group.svg"
+                                inkscape:version="0.48.4 r9939"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 1200 1200"
+                                enable-background="new 0 0 1200 1200"
+                                xml:space="preserve"
+                                fill="#3265A6"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <sodipodi:namedview
+                                        inkscape:cy="277.91534"
+                                        inkscape:cx="657.61025"
+                                        inkscape:zoom="0.37249375"
+                                        showgrid="false"
+                                        id="namedview30"
+                                        guidetolerance="10"
+                                        gridtolerance="10"
+                                        objecttolerance="10"
+                                        borderopacity="1"
+                                        bordercolor="#666666"
+                                        pagecolor="#ffffff"
+                                        inkscape:current-layer="svg2"
+                                        inkscape:window-maximized="1"
+                                        inkscape:window-y="24"
+                                        inkscape:window-height="876"
+                                        inkscape:window-width="1535"
+                                        inkscape:pageshadow="2"
+                                        inkscape:pageopacity="0"
+                                        inkscape:window-x="65"
+                                    >
+                                    </sodipodi:namedview>
+                                    <path
+                                        id="path10706"
+                                        inkscape:connector-curvature="0"
+                                        d="M596.847,188.488c-103.344,0-187.12,97.81-187.12,218.465 c0,83.678,40.296,156.352,99.468,193.047l-68.617,31.801l-182.599,84.688c-17.64,8.821-26.444,23.778-26.444,44.947 c0,67.034,0,134.067,0,201.102c1.451,25.143,16.537,48.577,40.996,48.974h649.62c27.924-2.428,42.05-24.92,42.325-48.974 c0-67.034,0-134.068,0-201.102c0-21.169-8.804-36.126-26.443-44.947l-175.988-84.688l-73.138-34.65 c56.744-37.521,95.061-108.624,95.061-190.197C783.967,286.298,700.19,188.488,596.847,188.488L596.847,188.488z M295.023,265.312 c-44.473,1.689-79.719,20.933-106.497,51.596c-29.62,36.918-44.06,80.75-44.339,124.354c1.819,64.478,30.669,125.518,82.029,157.446 L21.163,693.997C7.05,699.289,0,711.636,0,731.041v161.398c1.102,21.405,12.216,39.395,33.055,39.703h136.284V761.436 c2.255-45.639,23.687-82.529,62.196-100.531l136.247-64.817c10.584-6.175,20.731-14.568,30.433-25.152 c-56.176-86.676-63.977-190.491-27.773-281.801C346.895,274.724,320.432,265.463,295.023,265.312L295.023,265.312z M903.609,265.312 c-29.083,0.609-55.96,11.319-78.039,26.444c35.217,92.137,25.503,196.016-26.482,276.52c11.467,13.23,23.404,23.377,35.753,30.434 l130.965,62.195c39.897,21.881,60.47,59.098,60.866,100.532v170.707h140.235c23.063-1.991,32.893-20.387,33.093-39.704V731.042 c0-17.641-7.05-29.987-21.163-37.045l-202.431-96.618c52.498-38.708,78.859-96.72,79.369-156.117 c-1.396-47.012-15.757-90.664-44.339-124.354C981.57,284.509,944.526,265.655,903.609,265.312L903.609,265.312z"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#3265A6] mb-2">
+                            Interactive Activities
+                        </h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Engage in discussions and collaborative activities
+                            that encourage learning.
+                        </p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div
+                        class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                    >
+                        <div class="mb-4">
+                            <svg
+                                class="w-8 h-8"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M12 2C12.5523 2 13 2.44772 13 3V4C13 4.55228 12.5523 5 12 5C11.4477 5 11 4.55228 11 4V3C11 2.44772 11.4477 2 12 2Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L18.7071 6.70711C18.3166 7.09763 17.6834 7.09763 17.2929 6.70711C16.9024 6.31658 16.9024 5.68342 17.2929 5.29289L18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M19 12C19 11.4477 19.4477 11 20 11H21C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H20C19.4477 13 19 12.5523 19 12Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M2 12C2 11.4477 2.44772 11 3 11H4C4.55228 11 5 11.4477 5 12C5 12.5523 4.55228 13 4 13H3C2.44772 13 2 12.5523 2 12Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L6.70711 5.29289C7.09763 5.68342 7.09763 6.31658 6.70711 6.70711C6.31658 7.09763 5.68342 7.09763 5.29289 6.70711L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M12 6C8.68629 6 6 8.68629 6 12C6 13.6332 6.65387 15.1157 7.71186 16.1966C7.97971 16.4703 8.1241 16.7217 8.16867 16.9444L8.69776 19.5886C8.97833 20.9908 10.2095 22 11.6395 22H12.3605C13.7905 22 15.0217 20.9908 15.3022 19.5886L15.8313 16.9444C15.8759 16.7217 16.0203 16.4703 16.2881 16.1966C17.3461 15.1157 18 13.6332 18 12C18 8.68629 15.3137 6 12 6ZM11 16C10.4477 16 10 16.4477 10 17C10 17.5523 10.4477 18 11 18H13C13.5523 18 14 17.5523 14 17C14 16.4477 13.5523 16 13 16H11Z"
+                                        fill="#3265A6"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#3265A6] mb-2">
+                            Participant Benefits
+                        </h3>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Access exclusive event resources, support tools, and
+                            networking advantages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARIFF -->
+        <section
+            id="tariff"
+            class="py-16 md:py-24 px-4 lg:px-14 xl:px-24 bg-[#f4f8fc] relative"
+        >
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-10 md:mb-14">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
+                    >
+                        Registration
+                        <span class="text-[#3265A6]">Charges</span>
+                    </h2>
+                    <div
+                        class="mt-4 w-32 h-1 bg-[#3265A6] mx-auto rounded-full"
+                    ></div>
+                </div>
+
+                <div
+                    class="overflow-x-auto border border-[#C7D9EC] rounded-xl shadow-md bg-white scrollbar-hidden"
+                >
+                    <table class="min-w-full text-left text-base">
+                        <!-- TABLE HEAD -->
+                        <thead
+                            class="bg-[#E6F0FA] text-[#17426C] font-semibold"
+                        >
+                            <tr>
+                                <th class="px-6 py-4 border-r border-[#C7D9EC]">
+                                    Category
+                                </th>
+                                <th
+                                    class="px-6 py-4 border-r border-[#C7D9EC] text-center min-w-40"
+                                >
+                                    Early Bird <br /><span
+                                        class="text-xs font-normal"
+                                        >(Till DD-MM-YYYY)</span
+                                    >
+                                </th>
+                                <th
+                                    class="px-6 py-4 border-r border-[#C7D9EC] text-center"
+                                >
+                                    Regular
+                                </th>
+                                <th class="px-6 py-4 text-center">Spot</th>
+                            </tr>
+                        </thead>
+
+                        <!-- TABLE BODY -->
+                        <tbody class="text-[#17426C]">
+                            <!-- Row -->
+                            <tr class="even:bg-[#F8FBFE]">
+                                <td class="px-6 py-4 border-r border-[#E1EAF4]">
+                                    Professional Delegate
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    ₹4,000
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    ₹4,500
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center font-semibold text-[#3265A6]"
+                                >
+                                    ₹6,000
+                                </td>
+                            </tr>
+
+                            <tr class="even:bg-[#F8FBFE]">
+                                <td class="px-6 py-4 border-r border-[#E1EAF4]">
+                                    Non-Member Delegate
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    ₹4,500
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    ₹5,000
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center font-semibold text-[#3265A6]"
+                                >
+                                    ₹6,500
+                                </td>
+                            </tr>
+
+                            <tr class="even:bg-[#F8FBFE]">
+                                <td class="px-6 py-4 border-r border-[#E1EAF4]">
+                                    Accompanying Person
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    ₹1,500
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    ₹2,000
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center font-semibold text-[#3265A6]"
+                                >
+                                    ₹2,500
+                                </td>
+                            </tr>
+
+                            <tr class="even:bg-[#F8FBFE]">
+                                <td class="px-6 py-4 border-r border-[#E1EAF4]">
+                                    Student / Trainee
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    Free
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center border-r border-[#E1EAF4]"
+                                >
+                                    Complimentary
+                                </td>
+                                <td
+                                    class="px-6 py-4 text-center font-semibold text-[#3265A6]"
+                                >
+                                    Complimentary
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div
+                    class="mt-12 md:mt-20 relative bg-gradient-to-br from-[#2B5590] to-[#3265A6] text-white rounded-xl p-8 md:p-14 shadow-[0_10px_40px_rgba(0,0,0,0.15)]"
+                >
+                    <div
+                        class="absolute inset-0 bg-white/10 blur-2xl opacity-20"
+                    ></div>
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#3265A6] px-6 py-1.5 rounded-full shadow-md text-sm font-semibold tracking-wide min-w-50"
+                    >
+                        LIMITED TIME OFFER
+                    </div>
+
+                    <div class="relative z-10 text-center space-y-6">
+                        <h3
+                            class="text-2xl md:text-4xl font-bold tracking-tight"
+                        >
+                            Early Bird Registration Now Open
+                        </h3>
+
+                        <p
+                            class="text-white/90 text-base md:text-lg max-w-xl mx-auto leading-relaxed"
+                        >
+                            Don’t miss your chance to register at the best
+                            price. Early bird slots are limited and fill up
+                            fast.
+                        </p>
+
+                        <div
+                            class="flex flex-col sm:flex-row justify-center gap-4 pt-4"
+                        >
+                            <a
+                                href="#"
+                                class="px-10 py-3 rounded-xl bg-white text-[#3265A6] font-semibold shadow hover:bg-[#3265A6] hover:text-white border border-white transition-all duration-300"
+                            >
+                                Register Now
+                            </a>
+
+                            <a
+                                href="#"
+                                class="px-10 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/40 text-white font-semibold hover:bg-white hover:text-[#3265A6] transition-all duration-300"
+                            >
+                                Download Brochure
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Venue -->
+        <section
+            class="py-14 px-4 xl:py-20 lg:px-16 xl:px-16 bg-[#f7f9fc] relative overflow-hidden"
+        >
+            <!-- Soft Blue Glow -->
+            <div
+                class="absolute top-10 right-0 w-80 h-80 bg-[#3265A6]/10 blur-3xl rounded-full"
+            ></div>
+
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10 items-center relative z-10"
+            >
+                <!-- RIGHT: CONTENT -->
+                <div>
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
+                    >
+                        About
+                        <span class="text-[#3265A6]">Venue</span>
+                    </h2>
+
+                    <div class="w-28 h-1 bg-[#3265A6] rounded-full mb-8"></div>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed mb-4"
+                    >
+                        The venue offers world-class facilities designed to host
+                        large-scale conferences, symposia, and workshops with
+                        ease. Featuring advanced AV systems, spacious halls, and
+                        exceptional service — it ensures a smooth and impactful
+                        event experience.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed mb-4"
+                    >
+                        Conveniently located in the city’s prime area, it
+                        provides easy access, premium hospitality, and a
+                        professional atmosphere suited for learning,
+                        collaboration, and networking.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        From keynote sessions to breakout discussions, the venue
+                        is tailored to deliver comfort, efficiency, and an
+                        inspiring experience for every attendee.
+                    </p>
+                </div>
+                <!-- LEFT: IMAGE WITH OVERLAY CARD -->
+                <div class="relative">
+                    <div
+                        class="rounded-xl overflow-hidden shadow-2xl border border-white/60"
+                    >
+                        <img
+                            src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
+                            class="w-full h-[350px] md:h-[450px] xl:h-[550px] object-cover"
+                        />
+                    </div>
+
+                    <!-- FLOATING CARD -->
+                    <div
+                        class="absolute -bottom-6 left-6 bg-white/90 backdrop-blur-lg border border-gray-200 shadow-xl p-5 rounded-xl w-[80%]"
+                    >
+                        <h3 class="text-lg font-semibold text-[#3265A6] mb-1">
+                            Premium Event Venue
+                        </h3>
+                        <p class="text-sm text-[#0D1112]/70 leading-relaxed">
+                            A modern, fully equipped conference center with
+                            seamless facilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOTELS SECTION -->
+        <section class="py-10 md:py-16 px-4 lg:px-16 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <!-- Heading -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase text-center"
+                >
+                    Hotels for
+                    <span class="text-[#3265A6]">Stay</span>
+                </h2>
+                <div
+                    class="w-28 h-1 bg-[#3265A6] rounded-full mb-8 mx-auto"
+                ></div>
+
+                <!-- BENTO GRID -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                >
+                    <!-- Card -->
+                    <div
+                        class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+                    >
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/89/11/15/hotel-facade.jpg?w=900&h=500&s=1"
+                            class="w-full h-44 lg:h-64 xl:h-72 object-cover group-hover:scale-110 transition duration-500"
+                        />
+                        <!-- OVERLAY -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+                        >
+                            <h3 class="text-white text-lg font-semibold">
+                                Hotel Name One
+                            </h3>
+                            <p class="text-gray-200 text-xs">City Center</p>
+                        </div>
+                    </div>
+
+                    <!-- Card -->
+                    <div
+                        class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+                    >
+                        <img
+                            src="https://m.ahstatic.com/is/image/accorhotels/HCM_P_8147067:4by3"
+                            class="w-full h-44 lg:h-64 xl:h-72 object-cover group-hover:scale-110 transition duration-500"
+                        />
+                        <!-- OVERLAY -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+                        >
+                            <h3 class="text-white text-lg font-semibold">
+                                Hotel Name Two
+                            </h3>
+                            <p class="text-gray-200 text-xs">Near Venue</p>
+                        </div>
+                    </div>
+
+                    <!-- Card -->
+                    <div
+                        class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+                    >
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/86/8a/0f/the-lalit-jaipur.jpg?w=900&h=500&s=1"
+                            class="w-full h-44 lg:h-64 xl:h-72 object-cover group-hover:scale-110 transition duration-500"
+                        />
+                        <!-- OVERLAY -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+                        >
+                            <h3 class="text-white text-lg font-semibold">
+                                Hotel Name Three
+                            </h3>
+                            <p class="text-gray-200 text-xs">
+                                5 min from Venue
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card -->
+                    <div
+                        class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+                    >
+                        <img
+                            src="https://pix10.agoda.net/hotelImages/7947/-1/07ced56d77a74314b87c7e199b7f474b.jpg?ca=14&ce=1&s=702x392"
+                            class="w-full h-44 lg:h-64 xl:h-72 object-cover group-hover:scale-110 transition duration-500"
+                        />
+                        <!-- OVERLAY -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+                        >
+                            <h3 class="text-white text-lg font-semibold">
+                                Hotel Name Four
+                            </h3>
+                            <p class="text-gray-200 text-xs">City Hub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLACES TO VISIT SECTION -->
+        <section class="py-10 px-4 xl:py-20 lg:px-10 xl:px-16 bg-[#fbfbfb]">
+            <div class="max-w-7xl mx-auto">
+                <!-- Heading -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase text-center"
+                >
+                    Explore Nearby
+                    <span class="text-[#3265A6]">Attractions</span>
+                </h2>
+                <div
+                    class="w-28 h-1 bg-[#3265A6] rounded-full mb-8 mx-auto"
+                ></div>
+
+                <!-- Bento Grid -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    <!-- Card 1 -->
+                    <div
+                        class="relative group rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-xl transition duration-500"
+                    >
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1669748157617-a3a83cc8ea23?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-56 object-cover group-hover:scale-110 transition duration-700"
+                        />
+                        <div
+                            class="absolute bottom-4 left-4 bg-white/85 backdrop-blur-md px-4 py-2 rounded-lg shadow"
+                        >
+                            <h3 class="text-lg font-semibold text-[#3265A6]">
+                                Place 1
+                            </h3>
+                            <p class="text-xs text-[#0D1112]/60">
+                                Short dummy description here.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="relative group rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-xl transition duration-500"
+                    >
+                        <img
+                            src="https://www.thegari.in/blog/wp-content/uploads/2025/08/nandi-hills-1024x538.jpg"
+                            class="w-full h-56 object-cover group-hover:scale-110 transition duration-700"
+                        />
+                        <div
+                            class="absolute bottom-4 left-4 bg-white/85 backdrop-blur-md px-4 py-2 rounded-lg shadow"
+                        >
+                            <h3 class="text-lg font-semibold text-[#3265A6]">
+                                Place 2
+                            </h3>
+                            <p class="text-xs text-[#0D1112]/60">
+                                Clean dummy content goes here.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="relative group rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-xl transition duration-500"
+                    >
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0f/81/d0/christ-church-shimla.jpg?w=900&h=500&s=1"
+                            class="w-full h-56 object-cover group-hover:scale-110 transition duration-700"
+                        />
+                        <div
+                            class="absolute bottom-4 left-4 bg-white/85 backdrop-blur-md px-4 py-2 rounded-lg shadow"
+                        >
+                            <h3 class="text-lg font-semibold text-[#3265A6]">
+                                Place 3
+                            </h3>
+                            <p class="text-xs text-[#0D1112]/60">
+                                Another example description.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPONSORS -->
+        <section
+            class="pt-10 pb-14 md:py-20 px-4 lg:px-16 bg-[#fafafa] relative overflow-hidden"
+        >
+            <div class="max-w-7xl mx-auto space-y-10 md:space-y-20">
+                <!-- MAIN HEADING -->
+                <div class="text-center">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
+                    >
+                        Our
+                        <span class="text-[#3265A6]">Sponsors</span>
+                    </h2>
+                    <div
+                        class="w-24 h-[3px] bg-[#3265A6] mx-auto mt-4 rounded-full"
+                    ></div>
+                </div>
+
+                <!-- SECTION GROUP -->
+                <div class="space-y-14">
+                    <!-- PLATINUM -->
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-8 items-start lg:items-center"
+                    >
+                        <!-- Category Label -->
+                        <div
+                            class="flex items-center lg:justify-end justify-center lg:border-r lg:pr-8 border-[#3265A6]/30"
+                        >
+                            <h3
+                                class="text-2xl font-semibold text-[#3265A6] tracking-wide uppercase"
+                            >
+                                Platinum
+                            </h3>
+                        </div>
+
+                        <!-- Logos -->
+                        <div
+                            class="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8"
+                        >
+                            <div
+                                class="w-40 md:w-44 h-32 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-lg transition-all flex items-center justify-center p-4"
+                            >
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                    class="max-h-14"
+                                />
+                            </div>
+
+                            <div
+                                class="w-40 md:w-44 h-32 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-lg transition-all flex items-center justify-center p-4"
+                            >
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                    class="max-h-14"
+                                />
+                            </div>
+
+                            <div
+                                class="w-40 md:w-44 h-32 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-lg transition-all flex items-center justify-center p-4"
+                            >
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                    class="max-h-14"
+                                />
+                            </div>
+                            <div
+                                class="w-40 md:w-44 h-32 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-lg transition-all flex items-center justify-center p-4"
+                            >
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                    class="max-h-14"
+                                />
+                            </div>
+                            <div
+                                class="w-40 md:w-44 h-32 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-lg transition-all flex items-center justify-center p-4"
+                            >
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                    class="max-h-14"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GOLD -->
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-8 items-start lg:items-center"
+                    >
+                        <!-- Category Label -->
+                        <div
+                            class="flex items-center lg:justify-end justify-center lg:border-r lg:pr-8 border-[#3265A6]/30"
+                        >
+                            <h3
+                                class="text-2xl font-semibold text-[#3265A6] tracking-wide uppercase"
+                            >
+                                Gold
+                            </h3>
+                        </div>
+
+                        <!-- Logos -->
+                        <div
+                            class="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8"
+                        >
+                            <div
+                                class="w-36 h-28 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+
+                            <div
+                                class="w-36 h-28 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+
+                            <div
+                                class="w-36 h-28 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+
+                            <div
+                                class="w-36 h-28 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+                            <div
+                                class="w-36 h-28 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+                            <div
+                                class="w-36 h-28 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SILVER -->
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-8 items-start lg:items-center"
+                    >
+                        <!-- Category Label -->
+                        <div
+                            class="flex items-center lg:justify-end justify-center lg:border-r lg:pr-8 border-[#3265A6]/30"
+                        >
+                            <h3
+                                class="text-2xl font-semibold text-[#3265A6] tracking-wide uppercase"
+                            >
+                                Silver
+                            </h3>
+                        </div>
+
+                        <!-- Logos -->
+                        <div
+                            class="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8"
+                        >
+                            <div
+                                class="w-32 h-24 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+
+                            <div
+                                class="w-32 h-24 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+
+                            <div
+                                class="w-32 h-24 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+                            <div
+                                class="w-32 h-24 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+                            <div
+                                class="w-32 h-24 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+
+                            <div
+                                class="w-32 h-24 bg-white border border-[#d9e4f2] rounded-xl shadow hover:shadow-md transition-all flex items-center justify-center p-3"
+                            >
+                                <img
+                                    src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                    class="max-h-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer  -->
+        <section class="bg-[#3B6FA5] text-white py-14 px-6 lg:px-16">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+            >
+                <!-- ABOUT -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">About Event</h3>
+                    <p class="text-sm text-white/85 leading-relaxed">
+                        A national-level conference focusing on learning,
+                        collaboration, and the exchange of impactful ideas among
+                        professionals.
+                    </p>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-1 text-sm text-white/85">
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Venue</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Sessions</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ADDRESS -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Address</h3>
+                    <p class="text-sm text-white/85 leading-relaxed">
+                        Event Venue,<br />
+                        City Center,<br />
+                        Your Location, Country.
+                    </p>
+                </div>
+
+                <!-- CONTACT -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-1 text-sm text-white/85">
+                        <li>Email: info@conference.com</li>
+                        <li>Phone: +91 98765 43210</li>
+                        <li>Support: support@conference.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-6 border-t border-white/20 text-center">
+                <p class="text-xs text-white/70">
+                    © 2025 Conference Name. All Rights Reserved.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
