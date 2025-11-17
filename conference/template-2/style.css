@@ -1,5 +1,4 @@
-  .nav-link { @apply text-base text-[#6F6573] hover:text-[#C10817] transition font-medium; }
-    .dropdown-item { @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100; }
+
 
     .scrollbar-hidden {
   -ms-overflow-style: none;

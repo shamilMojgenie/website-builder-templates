@@ -23,11 +23,14 @@
         <!-- navbar  -->
         <section
             class="bg-white fixed w-full z-40 top-0 left-0 px-6 py-3 shadow-sm lg:flex lg:justify-between"
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
         >
-            <!-- Mobile Toggle -->
             <input type="checkbox" id="navToggle" class="hidden peer" />
 
-            <!-- TOP BAR (logo + button) -->
             <div class="flex justify-between items-center gap-3 lg:gap-6">
                 <a href="/" class="flex items-center bg-white p-1 rounded-md">
                     <img
@@ -36,7 +39,6 @@
                     />
                 </a>
 
-                <!-- Mobile Button -->
                 <label
                     for="navToggle"
                     class="lg:hidden inline-flex items-center justify-center w-10 h-10 bg-white rounded-lg cursor-pointer text-gray-600"
@@ -60,7 +62,6 @@
             <div
                 class="hidden lg:flex flex-col lg:flex-row w-full flex-wrap justify-center gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
             >
-                <!-- Normal Items -->
                 <a
                     class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
                     href="#"
@@ -87,7 +88,6 @@
                     >Sessions</a
                 >
 
-                <!-- Desktop Dropdown -->
                 <div class="relative hidden lg:block">
                     <input type="checkbox" id="teamDrop" class="hidden peer" />
                     <label
@@ -122,7 +122,6 @@
                     </div>
                 </div>
 
-                <!-- More Items -->
                 <a
                     class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
                     href="#"
@@ -140,7 +139,6 @@
                 >
             </div>
 
-            <!-- MENU (MOVED OUTSIDE — NOW SIBLING OF PEER) -->
             <div
                 id="menu"
                 class="hidden peer-checked:block min-w-fit lg:flex items-center gap-6 lg:w-auto pt-6 lg:pt-0 transition-all duration-300"
@@ -148,7 +146,6 @@
                 <div
                     class="flex flex-col lg:hidden w-full flex-wrap gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
                 >
-                    <!-- Normal Items -->
                     <a
                         class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
                         href="#"
@@ -175,7 +172,6 @@
                         >Sessions</a
                     >
 
-                    <!-- Mobile Dropdown -->
                     <div class="lg:hidden w-full">
                         <input
                             type="checkbox"
@@ -216,7 +212,6 @@
                         </div>
                     </div>
 
-                    <!-- More Items -->
                     <a
                         class="menu-item text-base lg:text-[#6F6573] hover:text-[#3265A6]"
                         href="#"
@@ -233,7 +228,6 @@
                         >Contact Us</a
                     >
                 </div>
-                <!-- Register -->
                 <a
                     href="#"
                     class="inline-block min-w-fit bg-[#3265A6] border-2 border-[#3265A6] text-white px-5 py-2 rounded-md hover:bg-white hover:text-[#3265A6] transition-all duration-300 font-medium group"
@@ -264,8 +258,12 @@
                 background-size: cover;
                 background-position: center;
             "
+            id="hero-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Section"
+            data-moj-web-category="structural"
         >
-            <!-- Soft Cinematic Overlay -->
             <div
                 class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80"
             ></div>
@@ -276,7 +274,6 @@
             <div
                 class="relative z-[2] max-w-5xl mx-auto px-6 md:px-10 space-y-6 md:space-y-10 text-center"
             >
-                <!-- TEXT BLOCK -->
                 <div class="space-y-8">
                     <h1
                         class="text-4xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight"
@@ -339,12 +336,10 @@
                     </div>
                 </div>
 
-                <!-- CENTERED HORIZONTAL COUNTDOWN BAR -->
                 <div
                     class="max-w-xl mx-auto bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-xl p-4 md:p-8"
                 >
                     <div class="grid grid-cols-4 gap-3 md:gap-5 text-center">
-                        <!-- Item -->
                         <div class="space-y-3">
                             <div
                                 class="bg-white/20 backdrop-blur-lg border border-white/30 py-4 rounded-xl shadow-lg"
@@ -411,7 +406,6 @@
                     </div>
                 </div>
 
-                <!-- CTA Buttons -->
                 <div class="flex flex-wrap justify-center gap-5">
                     <a
                         href="#"
@@ -433,8 +427,12 @@
         <!-- about -->
         <section
             class="relative py-12 md:py-20 px-4 lg:px-16 bg-[#f7f9fc] overflow-hidden"
+            id="about-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
         >
-            <!-- Soft Glow -->
             <div
                 class="absolute top-10 left-0 w-72 h-72 bg-[#3265A6]/10 blur-[130px] rounded-full"
             ></div>
@@ -442,11 +440,9 @@
             <div
                 class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-10 xl:gap-16 items-center"
             >
-                <!-- LEFT: BENTO GRID (same style as IITC design) -->
                 <div
                     class="w-full grid grid-cols-2 gap-4 relative order-1 md:order-0"
                 >
-                    <!-- Image 1 -->
                     <div
                         class="rounded-xl bg-gray-100 flex justify-center items-center p-2 md:p-6"
                     >
@@ -457,7 +453,6 @@
                         />
                     </div>
 
-                    <!-- Image 2 -->
                     <div class="overflow-hidden pt-20">
                         <img
                             src="https://www.cvent.com/sites/default/files/styles/column_content_width/public/image/2024-06/53322146052_90bc13d238_c%20%281%29.jpg.webp?itok=En_R8nwG"
@@ -466,7 +461,6 @@
                         />
                     </div>
 
-                    <!-- Image 3 (bottom full width) -->
                     <div class="col-span-2 overflow-hidden">
                         <img
                             src="https://images.unsplash.com/photo-1531058020387-3be344556be6"
@@ -476,9 +470,7 @@
                     </div>
                 </div>
 
-                <!-- RIGHT: TEXT BLOCK -->
                 <div class="text-left">
-                    <!-- Heading -->
                     <h2
                         class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
                     >
@@ -498,9 +490,7 @@
                         pulvinar ligula, sed dapibus lorem mauris vel arcu.
                     </p>
 
-                    <!-- Highlights (same structure as IITC block) -->
                     <div class="space-y-4 mb-7 md:mb-10 flex flex-col">
-                        <!-- Highlight 1 -->
                         <div class="flex gap-4">
                             <div
                                 class="w-10 h-10 bg-[#3265A6]/10 text-[#3265A6] flex items-center justify-center rounded-full"
@@ -528,7 +518,6 @@
                             </div>
                         </div>
 
-                        <!-- Highlight 2 -->
                         <div class="flex gap-4">
                             <div
                                 class="w-10 h-10 bg-[#3265A6]/10 text-[#3265A6] flex items-center justify-center rounded-full"
@@ -559,7 +548,6 @@
                         </div>
                     </div>
 
-                    <!-- CTA Buttons (same style as IITC section) -->
                     <div class="flex flex-wrap gap-4 justify-start">
                         <a
                             href="#"
@@ -582,7 +570,11 @@
         <!-- message -->
         <section
             class="py-10 md:py-24 px-4 lg:px-16 bg-[#f5f5f5] relative overflow-hidden"
-            id="message"
+            id="message-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
         >
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-14">
@@ -704,14 +696,17 @@
         <!-- highlights -->
         <section
             class="py-10 md:py-24 px-5 lg:px-12 xl:px-16 bg-white overflow-hidden relative"
+            id="highlight-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlight"
+            data-moj-web-label="Conference Highlight"
+            data-moj-web-category="structural"
         >
-            <!-- Red Glow Decoration -->
             <div
                 class="absolute top-10 left-0 w-72 h-72 bg-[#3265A6]/10 blur-2xl rounded-full"
             ></div>
 
             <div class="max-w-7xl mx-auto">
-                <!-- HEADING -->
                 <div class="text-center mb-10">
                     <h2
                         class="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#2E2B1E] mb-4 lg:mb-6 uppercase"
@@ -724,7 +719,6 @@
                     ></div>
                 </div>
 
-                <!-- INTRO TEXT -->
                 <div class="max-w-3xl mx-auto text-center mb-8 md:mb-16">
                     <p
                         class="text-[#0D1112]/80 text-base md:text-lg leading-relaxed"
@@ -735,11 +729,9 @@
                     </p>
                 </div>
 
-                <!-- 4-CARD ROW -->
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
-                    <!-- CARD 1 -->
                     <div
                         class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
                     >
@@ -777,7 +769,6 @@
                         </p>
                     </div>
 
-                    <!-- CARD 2 -->
                     <div
                         class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
                     >
@@ -841,7 +832,6 @@
                         </p>
                     </div>
 
-                    <!-- CARD 3 -->
                     <div
                         class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
                     >
@@ -911,7 +901,6 @@
                         </p>
                     </div>
 
-                    <!-- CARD 4 -->
                     <div
                         class="bg-white p-4 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
                     >
@@ -979,8 +968,16 @@
                 </div>
             </div>
         </section>
+
         <!-- COMMITTEE SECTION -->
-        <section class="py-12 md:py-20 px-4 lg:px-16 bg-[#f4f8fc]">
+        <section
+            class="py-12 md:py-20 px-4 lg:px-16 bg-[#f4f8fc]"
+            id="committee-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="committe"
+            data-moj-web-label="Committee Members"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-7xl mx-auto">
                 <!-- Heading -->
                 <div class="text-center mb-12 md:mb-16">
@@ -1027,7 +1024,7 @@
                         </div>
                     </div>
 
-                           <div class="relative flex justify-center">
+                    <div class="relative flex justify-center">
                         <div class="w-40 md:w-56 overflow-hidden relative z-10">
                             <!-- Image -->
                             <div
@@ -1055,7 +1052,7 @@
                         </div>
                     </div>
 
-                           <div class="relative flex justify-center">
+                    <div class="relative flex justify-center">
                         <div class="w-40 md:w-56 overflow-hidden relative z-10">
                             <!-- Image -->
                             <div
@@ -1083,7 +1080,7 @@
                         </div>
                     </div>
 
-                           <div class="relative flex justify-center">
+                    <div class="relative flex justify-center">
                         <div class="w-40 md:w-56 overflow-hidden relative z-10">
                             <!-- Image -->
                             <div
@@ -1111,7 +1108,7 @@
                         </div>
                     </div>
 
-                           <div class="relative flex justify-center">
+                    <div class="relative flex justify-center">
                         <div class="w-40 md:w-56 overflow-hidden relative z-10">
                             <!-- Image -->
                             <div
@@ -1220,8 +1217,12 @@
 
         <!-- TARIFF -->
         <section
-            id="tariff"
-            class="py-16 md:py-24 px-4 lg:px-14 xl:px-24  relative"
+            class="py-16 md:py-24 px-4 lg:px-14 xl:px-24 relative"
+            id="tariff-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="Tariff"
+            data-moj-web-category="structural"
         >
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10 md:mb-14">
@@ -1407,6 +1408,11 @@
         <!-- About Venue -->
         <section
             class="py-14 px-4 xl:py-20 lg:px-16 xl:px-16 bg-[#f7f9fc] relative overflow-hidden"
+            id="about-venue-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="aboutVenue"
+            data-moj-web-label="About Venue"
+            data-moj-web-category="structural"
         >
             <!-- Soft Blue Glow -->
             <div
@@ -1482,7 +1488,14 @@
         </section>
 
         <!-- HOTELS SECTION -->
-        <section class="py-10 md:py-16 px-4 lg:px-16 bg-white">
+        <section
+            class="py-10 md:py-16 px-4 lg:px-16 bg-white"
+            id="hotels-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hotels"
+            data-moj-web-label="Hotels"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-7xl mx-auto">
                 <!-- Heading -->
                 <h2
@@ -1581,7 +1594,14 @@
         </section>
 
         <!-- PLACES TO VISIT SECTION -->
-        <section class="py-10 px-4 xl:py-20 lg:px-10 xl:px-16 bg-[#fbfbfb]">
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-16 bg-[#fbfbfb]"
+            id="places-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="Places"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-7xl mx-auto">
                 <!-- Heading -->
                 <h2
@@ -1664,6 +1684,11 @@
         <!-- SPONSORS -->
         <section
             class="pt-10 pb-14 md:py-20 px-4 lg:px-16 bg-[#fafafa] relative overflow-hidden"
+            id="sponsor-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="sponsor"
+            data-moj-web-label="Sponsors "
+            data-moj-web-category="structural"
         >
             <div class="max-w-7xl mx-auto space-y-10 md:space-y-20">
                 <!-- MAIN HEADING -->
@@ -1895,7 +1920,14 @@
         </section>
 
         <!-- footer  -->
-        <section class="bg-[#3B6FA5] text-white py-14 px-6 lg:px-16">
+        <section
+            class="bg-[#3B6FA5] text-white py-14 px-6 lg:px-16"
+            id="footer-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Footer"
+            data-moj-web-category="structural"
+        >
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
             >
