@@ -17,20 +17,18 @@
             href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./global.css" />
+        <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        <!-- nav bar  -->
         <section>
             <nav
-                class="bg-white fixed w-full z-40 top-0 left-0 px-6 py-3 shadow-sm"
+                class="bg-white fixed w-full z-40 top-0 left-0 px-6 py-3 shadow-sm md:flex md:justify-between"
             >
-                <!-- Mobile Toggle -->
+                <!-- Mobile Toggle (PEER) -->
                 <input type="checkbox" id="navToggle" class="hidden peer" />
 
-                <div
-                    class="flex flex-wrap justify-between items-center gap-3 lg:gap-6"
-                >
+                <!-- NAV TOP BAR -->
+                <div class="flex justify-between items-center gap-3 lg:gap-6">
                     <!-- Logo -->
                     <a
                         href="/"
@@ -38,7 +36,6 @@
                     >
                         <img
                             src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
-                            alt="Logo"
                             class="h-14 xl:h-[90px]"
                         />
                     </a>
@@ -62,168 +59,161 @@
                             />
                         </svg>
                     </label>
+                </div>
 
-                    <!-- NAVIGATION MENU -->
+                <!-- MENU (NOW A DIRECT SIBLING OF THE PEER) -->
+                <div
+                    class="hidden peer-checked:block lg:flex lg:w-auto w-full pt-6 lg:pt-4 transition-all duration-300"
+                >
                     <div
-                        id="menu"
-                        class="hidden peer-checked:block w-full lg:flex lg:w-auto pt-6 lg:pt-0 transition-all duration-300"
+                        class="flex flex-col lg:flex-row w-full flex-wrap justify-end gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
                     >
-                        <div
-                            class="flex flex-col lg:flex-row w-full flex-wrap justify-end gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Home</a
                         >
-                            <!-- Normal Nav Items -->
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Home</a
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >About</a
+                        >
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Message</a
+                        >
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Venue</a
+                        >
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Sessions</a
+                        >
+
+                        <!-- DESKTOP DROPDOWN -->
+                        <div class="relative hidden lg:block">
+                            <input
+                                type="checkbox"
+                                id="teamDrop"
+                                class="hidden peer"
+                            />
+                            <label
+                                for="teamDrop"
+                                class="cursor-pointer flex items-center text-base lg:text-[#6F6573] hover:text-[#C10817]"
                             >
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >About</a
-                            >
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Message</a
-                            >
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Venue</a
-                            >
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Sessions</a
-                            >
-
-                            <!-- DESKTOP DROPDOWN -->
-                            <div class="relative hidden lg:block">
-                                <input
-                                    type="checkbox"
-                                    id="teamDrop"
-                                    class="hidden peer"
-                                />
-
-                                <label
-                                    for="teamDrop"
-                                    class="cursor-pointer flex items-center text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                >
-                                    Team
-                                    <svg
-                                        class="w-2.5 h-2.5 ml-2"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        viewBox="0 0 10 6"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="m1 1 4 4 4-4"
-                                        />
-                                    </svg>
-                                </label>
-
-                                <div
-                                    class="absolute hidden peer-checked:block bg-white shadow-lg rounded-lg mt-2 w-40 py-2"
-                                >
-                                    <a
-                                        href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100"
-                                        >Option One</a
-                                    >
-                                    <a
-                                        href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100"
-                                        >Option Two</a
-                                    >
-                                </div>
-                            </div>
-
-                            <!-- MOBILE ACCORDION DROPDOWN -->
-                            <div class="lg:hidden w-full">
-                                <input
-                                    type="checkbox"
-                                    id="teamAcc"
-                                    class="hidden peer"
-                                />
-
-                                <label
-                                    for="teamAcc"
-                                    class="flex items-center justify-between py-2 text-base font-medium text-[#C10817] cursor-pointer"
-                                >
-                                    Team
-                                    <svg
-                                        class="w-3 h-3 transition-transform peer-checked:rotate-180"
-                                        fill="none"
-                                        stroke="#C10817"
-                                        stroke-width="2"
-                                        viewBox="0 0 10 6"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="M9 5 5 1 1 5"
-                                        />
-                                    </svg>
-                                </label>
-
-                                <div class="hidden peer-checked:block pl-4">
-                                    <a
-                                        href="#"
-                                        class="block py-2 text-base text-[#C10817]"
-                                        >Option One</a
-                                    >
-                                    <a
-                                        href="#"
-                                        class="block py-2 text-base text-[#C10817]"
-                                        >Option Two</a
-                                    >
-                                </div>
-                            </div>
-
-                            <!-- More Items -->
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Abstract</a
-                            >
-
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Tariff</a
-                            >
-
-                            <a
-                                class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817] transition"
-                                href="#"
-                                >Contact Us</a
-                            >
-
-                            <!-- REGISTER BUTTON -->
-                            <a
-                                href="#"
-                                class="inline-block bg-[#C10817] border-2 border-[#C10817] text-white px-5 py-2 rounded-md hover:bg-white hover:text-[#C10817] transition-all duration-300 font-medium group"
-                            >
-                                Register Now
+                                Team
                                 <svg
-                                    class="h-4 w-4 inline-block ml-2 transform group-hover:translate-x-1 duration-300"
+                                    class="w-2.5 h-2.5 ml-2"
                                     fill="none"
                                     stroke="currentColor"
                                     stroke-width="2"
-                                    viewBox="0 0 24 24"
+                                    viewBox="0 0 10 6"
                                 >
                                     <path
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                        d="m1 1 4 4 4-4"
                                     />
                                 </svg>
-                            </a>
+                            </label>
+
+                            <div
+                                class="absolute hidden peer-checked:block bg-white shadow-lg rounded-lg mt-2 w-40 py-2"
+                            >
+                                <a
+                                    href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100"
+                                    >Option One</a
+                                >
+                                <a
+                                    href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100"
+                                    >Option Two</a
+                                >
+                            </div>
                         </div>
+
+                        <!-- MOBILE DROPDOWN -->
+                        <div class="lg:hidden w-full">
+                            <input
+                                type="checkbox"
+                                id="teamMobile"
+                                class="hidden peer"
+                            />
+
+                            <label
+                                for="teamMobile"
+                                class="flex items-center justify-between py-2 text-base font-medium text-[#C10817] cursor-pointer"
+                            >
+                                Team
+                                <svg
+                                    class="w-3 h-3 transition-transform peer-checked:rotate-180"
+                                    fill="none"
+                                    stroke="#C10817"
+                                    stroke-width="2"
+                                    viewBox="0 0 10 6"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M9 5 5 1 1 5"
+                                    />
+                                </svg>
+                            </label>
+
+                            <div class="hidden peer-checked:block pl-4">
+                                <a
+                                    href="#"
+                                    class="block py-2 text-base text-[#C10817]"
+                                    >Option One</a
+                                >
+                                <a
+                                    href="#"
+                                    class="block py-2 text-base text-[#C10817]"
+                                    >Option Two</a
+                                >
+                            </div>
+                        </div>
+
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Abstract</a
+                        >
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Tariff</a
+                        >
+                        <a
+                            class="menu-item text-base lg:text-[#6F6573] hover:text-[#C10817]"
+                            href="#"
+                            >Contact Us</a
+                        >
+
+                        <a
+                            href="#"
+                            class="inline-block bg-[#C10817] border-2 border-[#C10817] text-white px-5 py-2 rounded-md hover:bg-white hover:text-[#C10817] transition-all duration-300 font-medium group"
+                        >
+                            Register Now
+                            <svg
+                                class="h-4 w-4 inline-block ml-2 transform group-hover:translate-x-1 duration-300"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                ></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -245,10 +235,10 @@
                 <div class="w-full lg:w-1/2 space-y-6 lg:space-y-8">
                     <!-- Title -->
                     <h1
-                        class="text-5xl md:text-6xl 2xl:text-8xl font-bold leading-tight"
+                        class="text-5xl md:text-6xl 2xl:text-7xl font-bold leading-tight"
                     >
                         <span class=""
-                            >Event
+                            >Conference
                             <span class="text-[#C10817]">Title</span></span
                         ><br />
                     </h1>
@@ -315,7 +305,7 @@
                                 <span
                                     class="block text-2xl font-bold text-[#C10817]"
                                     id="days"
-                                    >00</span
+                                    >172</span
                                 >
                                 <span class="text-xs md:text-sm text-[#C10817]"
                                     >Days</span
@@ -325,7 +315,7 @@
                                 <span
                                     class="block text-2xl font-bold text-[#C10817]"
                                     id="hours"
-                                    >00</span
+                                    >23</span
                                 >
                                 <span class="text-xs md:text-sm text-[#C10817]"
                                     >Hours</span
@@ -335,7 +325,7 @@
                                 <span
                                     class="block text-2xl font-bold text-[#C10817]"
                                     id="minutes"
-                                    >00</span
+                                    >11</span
                                 >
                                 <span class="text-xs md:text-sm text-[#C10817]"
                                     >Minutes</span
@@ -345,7 +335,7 @@
                                 <span
                                     class="block text-2xl font-bold text-[#C10817]"
                                     id="seconds"
-                                    >00</span
+                                    >33</span
                                 >
                                 <span class="text-xs md:text-sm text-[#C10817]"
                                     >Seconds</span
@@ -374,9 +364,9 @@
             </div>
         </section>
 
-        <!-- about event -->
+        <!-- welcome -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-16 xl:px-20 relative overflow-hidden"
+            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
         >
             <!-- Background -->
             <div
@@ -398,9 +388,10 @@
                 <!-- CONTENT SIDE -->
                 <div class="xl:w-1/2 flex flex-col justify-center">
                     <h1
-                        class="text-4xl md:text-6xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
+                        class="text-4xl md:text-5xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
                     >
-                        Welcome to <span class="text-[#C10817]">Our Event</span>
+                        Welcome to
+                        <span class="text-[#C10817]">Our Conference</span>
                     </h1>
 
                     <h2
@@ -441,10 +432,10 @@
             class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 relative bg-[#f5f5f5] overflow-hidden"
             id="message"
         >
-            <div class="max-w-8xl mx-auto relative z-10">
+            <div class="max-w-8xl mx-auto relative z-10 max-w-7xl mx-auto">
                 <!-- Section Title -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] mb-8 md:mb-12 leading-tight md:text-center lg:text-left"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] mb-8 md:mb-12 leading-tight md:text-center lg:text-left"
                 >
                     Message From
                     <span class="text-[#C10817]">The Committee</span>
@@ -560,9 +551,9 @@
             </div>
         </section>
 
-        <!-- event highlights -->
+        <!-- highlights -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 mx-auto flex flex-col justify-between overflow-hidden"
+            class="py-10 px-4 xl:py-20 mx-auto flex flex-col justify-between overflow-hidden max-w-7xl mx-auto"
         >
             <div
                 class="flex justify-between lg:flex-row flex-col items-center gap-4 md:gap-10 lg:gap-10 max-w-8xl mx-auto"
@@ -571,7 +562,7 @@
                 <div class="flex flex-col gap-4 lg:gap-[20px] lg:w-1/2">
                     <div class="lg:max-w-2xl">
                         <h2
-                            class="text-3xl md:text-4xl lg:text-6xl font-bold leading-[1.22] lg:mb-2"
+                            class="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.22] lg:mb-2"
                         >
                             Event <span class="text-[#C10817]">Highlights</span>
                         </h2>
@@ -652,7 +643,7 @@
             </div>
         </section>
 
-        <!-- venue -->
+        <!-- about -->
         <section class="relative flex flex-col md:flex-row overflow-hidden">
             <!-- LEFT SECTION -->
             <div
@@ -712,14 +703,14 @@
 
         <!-- TARIFF -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 relative overflow-hidden"
+            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
             id="tariff"
         >
             <div class="max-w-8xl mx-auto flex flex-col gap-5">
                 <!-- Section Heading -->
                 <div>
                     <h2
-                        class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] leading-tight md:text-center mb-10"
+                        class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] leading-tight md:text-center mb-10"
                     >
                         Registration <span class="text-[#C10817]">Charges</span>
                     </h2>
@@ -820,177 +811,67 @@
             </div>
         </section>
 
-        <!-- SPONSORS -->
+        <!-- About Venue -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#f9f9f9] relative overflow-hidden"
+            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
         >
-            <div class="max-w-8xl mx-auto">
-                <!-- Main Title -->
-                <h2
-                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] text-center leading-tight mb-12"
-                >
-                    Our <span class="text-[#C10817]">Sponsors</span>
-                </h2>
+            <!-- Background -->
+            <div
+                class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            ></div>
 
-                <!-- PLATINUM -->
-                <div class="mb-14">
-                    <h3
-                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
-                    >
-                        Platinum Sponsors
-                    </h3>
-
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <div
-                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
-                                class="max-h-16 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
-                                class="max-h-16 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
-                                class="max-h-16 object-contain"
-                            />
-                        </div>
-                    </div>
+            <div
+                class="relative z-10 flex flex-col-reverse xl:flex-row lg:items-center xl:items-stretch gap-5 xl:gap-8 max-w-8xl mx-auto"
+            >
+                <!-- IMAGE SIDE -->
+                <div class="relative xl:w-1/2">
+                    <img
+                        src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
+                        alt="Venue Image"
+                        class="w-full rounded-[10px] xl:rounded-2xl lg:h-[400px] max-h-150 xl:h-full shadow-xl object-cover object-center"
+                    />
                 </div>
 
-                <!-- GOLD -->
-                <div class="mb-14">
-                    <h3
-                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                <!-- CONTENT SIDE -->
+                <div class="xl:w-1/2 flex flex-col justify-center">
+                    <h1
+                        class="text-4xl md:text-5xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
                     >
-                        Gold Sponsors
-                    </h3>
+                        About the <span class="text-[#C10817]">Venue</span>
+                    </h1>
 
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SILVER -->
-                <div class="mb-12">
-                    <h3
-                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                    <h2
+                        class="text-2xl md:text-2xl font-semibold text-[#0D1112] mb-4 tracking-wide"
                     >
-                        Silver Sponsors
-                    </h3>
+                        A Premium Conference Destination
+                    </h2>
 
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
-                        >
-                            <img
-                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
-                                class="max-h-12 object-contain"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA -->
-                <div class="text-center mt-10">
-                    <h3 class="text-2xl font-semibold text-[#0D1112] mb-3">
-                        Interested in Sponsoring?
-                    </h3>
                     <p
-                        class="text-[#0D1112]/70 text-base md:text-lg mb-6 max-w-2xl mx-auto"
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
                     >
-                        Become an official sponsor and position your brand at
-                        the forefront of a prestigious event.
+                        Our event takes place at a world-class venue featuring
+                        state-of-the-art auditoriums, modern meeting spaces, and
+                        top-notch hospitality. Designed to support large
+                        academic and professional gatherings, it ensures a
+                        seamless experience for every participant.
                     </p>
 
-                    <a
-                        href="#"
-                        class="inline-block px-8 py-3 bg-[#C10817] text-white rounded-md font-semibold hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300"
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
                     >
-                        Download Sponsorship Brochure
-                    </a>
+                        Located in the heart of the city, the venue offers easy
+                        connectivity, premium amenities, and a comfortable
+                        environment ideal for learning, discussions, and
+                        networking.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Attend sessions, explore exhibitions, and enjoy
+                        world-class facilities — all in one exceptional location
+                        crafted for a memorable conference experience.
+                    </p>
                 </div>
             </div>
         </section>
@@ -1002,7 +883,7 @@
             <div class="max-w-8xl mx-auto">
                 <!-- Title -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] text-center mb-12 leading-tight"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center mb-12 leading-tight"
                 >
                     Hotels for <span class="text-[#C10817]">Stay</span>
                 </h2>
@@ -1107,7 +988,7 @@
             <div class="max-w-7xl mx-auto">
                 <!-- Title -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-center text-[#0D1112] mb-14"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-14"
                 >
                     Explore Nearby
                     <span class="text-[#C10817]">Attractions</span>
@@ -1126,13 +1007,13 @@
 
                     <div class="lg:w-1/2">
                         <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
-                            Marina Beach
+                            Place One
                         </h3>
                         <p class="text-[#0D1112]/70 text-base leading-relaxed">
-                            One of the longest urban beaches in the world,
-                            Marina Beach offers breathtaking views, vibrant
-                            activity, and a peaceful seafront perfect for
-                            evening strolls.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Vestibulum at dui eget nunc facilisis posuere
+                            sed nec lorem. Integer id orci vel ligula efficitur
+                            tempus sed vitae neque.
                         </p>
                     </div>
                 </div>
@@ -1143,12 +1024,12 @@
                 >
                     <div class="lg:w-1/2">
                         <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
-                            Santhome Cathedral
+                            Place Two
                         </h3>
                         <p class="text-[#0D1112]/70 text-base leading-relaxed">
-                            A beautiful Roman Catholic minor basilica built in
-                            the 16th century by Portuguese explorers. Known for
-                            its neo-gothic architecture and serene interiors.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Praesent volutpat massa non tortor eleifend,
+                            vitae fermentum nisl feugiat. Nulla facilisi.
                         </p>
                     </div>
 
@@ -1171,80 +1052,170 @@
 
                     <div class="lg:w-1/2">
                         <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
-                            Fort St. George
+                            Place Three
                         </h3>
                         <p class="text-[#0D1112]/70 text-base leading-relaxed">
-                            The first English fortress in India, offering deep
-                            historical significance, museums, colonial
-                            architecture, and cultural insight into Chennai’s
-                            past.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed dapibus diam sit amet mauris dignissim, at
+                            pellentesque lectus euismod. Proin pulvinar neque
+                            vel nulla pretium, quis gravida elit feugiat.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Venue -->
+        <!-- SPONSORS -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-16 xl:px-20 relative overflow-hidden"
+            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#f9f9f9] relative overflow-hidden"
         >
-            <!-- Background -->
-            <div
-                class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-            ></div>
+            <div class="max-w-7xl mx-auto">
+                <!-- Main Title -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center leading-tight mb-12"
+                >
+                    Our <span class="text-[#C10817]">Sponsors</span>
+                </h2>
 
-            <div
-                class="relative z-10 flex flex-col-reverse xl:flex-row lg:items-center xl:items-stretch gap-5 xl:gap-8 max-w-8xl mx-auto"
-            >
-                <!-- IMAGE SIDE -->
-                <div class="relative xl:w-1/2">
-                    <img
-                        src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
-                        alt="Venue Image"
-                        class="w-full rounded-[10px] xl:rounded-2xl lg:h-[400px] max-h-150 xl:h-full shadow-xl object-cover object-center"
-                    />
+                <!-- PLATINUM -->
+                <div class="mb-14">
+                    <h3
+                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                    >
+                        Platinum Sponsors
+                    </h3>
+
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                class="max-h-16 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                class="max-h-16 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                class="max-h-16 object-contain"
+                            />
+                        </div>
+                    </div>
                 </div>
 
-                <!-- CONTENT SIDE -->
-                <div class="xl:w-1/2 flex flex-col justify-center">
-                    <h1
-                        class="text-4xl md:text-6xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
+                <!-- GOLD -->
+                <div class="mb-14">
+                    <h3
+                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
                     >
-                        About the <span class="text-[#C10817]">Venue</span>
-                    </h1>
+                        Gold Sponsors
+                    </h3>
 
-                    <h2
-                        class="text-2xl md:text-2xl font-semibold text-[#0D1112] mb-4 tracking-wide"
-                    >
-                        A Premium Conference Destination
-                    </h2>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
 
-                    <p
-                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
-                    >
-                        Our event takes place at a world-class venue featuring
-                        state-of-the-art auditoriums, modern meeting spaces, and
-                        top-notch hospitality. Designed to support large
-                        academic and professional gatherings, it ensures a
-                        seamless experience for every participant.
-                    </p>
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
 
-                    <p
-                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
-                    >
-                        Located in the heart of the city, the venue offers easy
-                        connectivity, premium amenities, and a comfortable
-                        environment ideal for learning, discussions, and
-                        networking.
-                    </p>
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
 
-                    <p
-                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SILVER -->
+                <div class="">
+                    <h3
+                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
                     >
-                        Attend sessions, explore exhibitions, and enjoy
-                        world-class facilities — all in one exceptional location
-                        crafted for a memorable conference experience.
-                    </p>
+                        Silver Sponsors
+                    </h3>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
