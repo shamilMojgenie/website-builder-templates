@@ -15,23 +15,24 @@ img[src*="flower.svg"] {
     filter: brightness(0) saturate(100%) invert(84%) sepia(30%) saturate(166%) hue-rotate(294deg) brightness(91%) contrast(86%);
 }
 
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
+  #menu-toggle:checked ~ * {
+        overflow: hidden !important;
+    }
 
-@keyframes marquee2 {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(0); }
-}
-
-.animate-marquee {
-    animation: marquee 40s linear infinite;
-}
-
-.animate-marquee2 {
-    animation: marquee2 60s linear infinite;
-}
 .icon-green {
     filter: invert(34%) sepia(9%) saturate(1022%) hue-rotate(49deg) brightness(92%) contrast(87%);
+}
+
+.scroll-track {
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
