@@ -6,23 +6,6 @@ body {
     font-family: "Arizonia", cursive;
 }
 
-img[src*="flower.svg"] {
-    filter: brightness(1) saturate(3) hue-rotate(315deg);
-    opacity: 50%;
-}
-
-.icon-tint {
-    filter: brightness(0) saturate(100%) invert(84%) sepia(30%) saturate(166%) hue-rotate(294deg) brightness(91%) contrast(86%);
-}
-
-  #menu-toggle:checked ~ * {
-        overflow: hidden !important;
-    }
-
-.icon-green {
-    filter: invert(34%) sepia(9%) saturate(1022%) hue-rotate(49deg) brightness(92%) contrast(87%);
-}
-
 .scroll-track {
     width: max-content;
     animation: scroll 40s linear infinite;

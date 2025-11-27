@@ -20,16 +20,19 @@
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        <section>
+        <section
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
             <nav
-                class="bg-white fixed w-full z-40 top-0 left-0 px-6 py-3 shadow-sm md:flex md:justify-between"
+                class="bg-white fixed w-full z-40 top-0 left-0 px-6 py-3 shadow-sm lg:flex lg:justify-between"
             >
-                <!-- Mobile Toggle (PEER) -->
                 <input type="checkbox" id="navToggle" class="hidden peer" />
 
-                <!-- NAV TOP BAR -->
                 <div class="flex justify-between items-center gap-3 lg:gap-6">
-                    <!-- Logo -->
                     <a
                         href="/"
                         class="flex items-center bg-white p-1 rounded-md"
@@ -40,7 +43,6 @@
                         />
                     </a>
 
-                    <!-- Mobile Button -->
                     <label
                         for="navToggle"
                         class="lg:hidden inline-flex items-center justify-center w-10 h-10 bg-white rounded-lg cursor-pointer text-gray-600"
@@ -61,9 +63,8 @@
                     </label>
                 </div>
 
-                <!-- MENU (NOW A DIRECT SIBLING OF THE PEER) -->
                 <div
-                    class="hidden peer-checked:block lg:flex lg:w-auto w-full pt-6 lg:pt-4 transition-all duration-300"
+                    class="hidden peer-checked:block lg:flex lg:w-auto w-full pt-6 lg:pt-0 transition-all duration-300"
                 >
                     <div
                         class="flex flex-col lg:flex-row w-full flex-wrap justify-end gap-6 lg:gap-4 xl:gap-6 items-start lg:items-center"
@@ -94,7 +95,6 @@
                             >Sessions</a
                         >
 
-                        <!-- DESKTOP DROPDOWN -->
                         <div class="relative hidden lg:block">
                             <input
                                 type="checkbox"
@@ -137,7 +137,6 @@
                             </div>
                         </div>
 
-                        <!-- MOBILE DROPDOWN -->
                         <div class="lg:hidden w-full">
                             <input
                                 type="checkbox"
@@ -225,15 +224,18 @@
             style="
                 background-image: url('https://static.vecteezy.com/system/resources/thumbnails/070/675/601/small/audience-attending-business-conference-with-speaker-on-stage-delivering-presentation-in-blurred-background-photo.jpeg');
             "
+            id="hero-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Section"
+            data-moj-web-category="structural"
         >
-            <!-- Overlay -->
             <div class="absolute inset-0 bg-black/50"></div>
 
             <div
                 class="relative z-[2] max-w-8xl mx-auto px-4 lg:px-16 2xl:px-20"
             >
                 <div class="w-full lg:w-1/2 space-y-6 lg:space-y-8">
-                    <!-- Title -->
                     <h1
                         class="text-5xl md:text-6xl 2xl:text-7xl font-bold leading-tight"
                     >
@@ -243,14 +245,12 @@
                         ><br />
                     </h1>
 
-                    <!-- Description -->
                     <p class="text-lg text-gray-100 max-w-xl">
                         This is a sample introduction text for your event.
                         Replace this placeholder text with your own message or
                         tagline.
                     </p>
 
-                    <!-- Location + Date -->
                     <div
                         class="flex flex-col sm:flex-row gap-5 lg:gap-8 text-lg"
                     >
@@ -296,7 +296,6 @@
                         </div>
                     </div>
 
-                    <!-- Countdown -->
                     <div
                         class="bg-[#6F839070] backdrop-blur-sm p-4 rounded-lg inline-block w-full sm:w-auto"
                     >
@@ -344,7 +343,6 @@
                         </div>
                     </div>
 
-                    <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-5 md:mt-6">
                         <a
                             href="#"
@@ -364,9 +362,51 @@
             </div>
         </section>
 
+        <section
+            class="py-12 md:py-20 bg-[#fafafa] px-6"
+            id="stats-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="stats"
+            data-moj-web-label="Event Stats"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+            >
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold text-[#C10817]">2000+</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Delegates</p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold text-[#C10817]">30+</h3>
+                    <p class="text-gray-700 text-sm md:text-base">
+                        International Speakers
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold text-[#C10817]">20</h3>
+                    <p class="text-gray-700 text-sm md:text-base">
+                        Scientific Sessions
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold text-[#C10817]">3</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Days Event</p>
+                </div>
+            </div>
+        </section>
+
         <!-- welcome -->
         <section
             class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
+            id="welcome-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="welcome"
+            data-moj-web-label="Welcome"
+            data-moj-web-category="structural"
         >
             <!-- Background -->
             <div
@@ -430,10 +470,13 @@
         <!-- message -->
         <section
             class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 relative bg-[#f5f5f5] overflow-hidden"
-            id="message"
+            id="message-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
         >
             <div class="max-w-8xl mx-auto relative z-10 max-w-7xl mx-auto">
-                <!-- Section Title -->
                 <h2
                     class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] mb-8 md:mb-12 leading-tight md:text-center lg:text-left"
                 >
@@ -444,7 +487,6 @@
                 <div
                     class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center"
                 >
-                    <!-- LEFT: MESSAGE CONTENT -->
                     <div class="flex-1">
                         <div class="text-lg text-gray-800 leading-relaxed">
                             <p
@@ -508,12 +550,10 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT: PROFILE CARD -->
                     <div
                         class="w-full lg:w-80 xl:w-96 flex justify-center px-4 sm:px-0"
                     >
                         <div class="w-full max-w-xs text-center">
-                            <!-- Profile Image -->
                             <div
                                 class="w-28 h-28 lg:h-34 lg:w-34 mx-auto rounded-full overflow-hidden bg-gray-200"
                             >
@@ -524,19 +564,16 @@
                                 />
                             </div>
 
-                            <!-- Name -->
                             <h3
                                 class="text-xl font-semibold text-[#0D1112] mt-4"
                             >
                                 [Name Here]
                             </h3>
 
-                            <!-- Role -->
                             <p class="text-sm text-[#C10817] font-medium mt-1">
                                 [Designation / Role]
                             </p>
 
-                            <!-- Extra Line -->
                             <p
                                 class="text-sm text-gray-600 mt-2 leading-relaxed"
                             >
@@ -554,11 +591,15 @@
         <!-- highlights -->
         <section
             class="py-10 px-4 xl:py-20 mx-auto flex flex-col justify-between overflow-hidden max-w-7xl mx-auto"
+            id="highlight-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlight"
+            data-moj-web-label="Conference Highlight"
+            data-moj-web-category="structural"
         >
             <div
                 class="flex justify-between lg:flex-row flex-col items-center gap-4 md:gap-10 lg:gap-10 max-w-8xl mx-auto"
             >
-                <!-- LEFT CONTENT -->
                 <div class="flex flex-col gap-4 lg:gap-[20px] lg:w-1/2">
                     <div class="lg:max-w-2xl">
                         <h2
@@ -580,11 +621,9 @@
                     </p>
                 </div>
 
-                <!-- RIGHT GRID CONTENT -->
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:w-1/2"
                 >
-                    <!-- Card 1 -->
                     <div
                         class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
                     >
@@ -598,7 +637,6 @@
                         </p>
                     </div>
 
-                    <!-- Card 2 -->
                     <div
                         class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
                     >
@@ -612,7 +650,6 @@
                         </p>
                     </div>
 
-                    <!-- Card 3 -->
                     <div
                         class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
                     >
@@ -626,7 +663,6 @@
                         </p>
                     </div>
 
-                    <!-- Card 4 -->
                     <div
                         class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
                     >
@@ -644,13 +680,18 @@
         </section>
 
         <!-- about -->
-        <section class="relative flex flex-col md:flex-row overflow-hidden">
-            <!-- LEFT SECTION -->
+        <section
+            class="relative flex flex-col md:flex-row overflow-hidden"
+            id="about-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+        >
             <div
                 class="w-full md:w-1/2 bg-gradient-to-br from-[#C10817] via-[#900612] to-[#C10817] relative flex items-center xl:py-16 pt-8 pb-10 px-4 xl:px-8 z-10"
             >
                 <div class="max-w-xl mx-auto space-y-2 xl:space-y-6">
-                    <!-- Heading -->
                     <h2
                         class="text-3xl xl:text-4xl font-medium text-white leading-tight"
                     >
@@ -659,7 +700,6 @@
                         >
                     </h2>
 
-                    <!-- Dummy Text -->
                     <p
                         class="text-white text-sm md:text-base xl:text-lg leading-relaxed mb-4"
                     >
@@ -688,7 +728,6 @@
                 </div>
             </div>
 
-            <!-- RIGHT SECTION (IMAGE) -->
             <div
                 class="relative w-full md:w-1/2 bg-cover bg-[10%] min-h-[300px] md:min-h-full"
                 style="
@@ -702,23 +741,27 @@
         </section>
 
         <!-- COMMITTEE SECTION -->
-        <section class="py-14 px-4 xl:py-20 bg-[#fafafa]">
+        <section
+            class="py-14 px-4 xl:py-20 bg-[#fafafa]"
+            id="committee-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="committe"
+            data-moj-web-label="Committee Members"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-7xl mx-auto">
-                <!-- Heading -->
                 <h2
                     class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-12"
                 >
                     Organizing <span class="text-[#C10817]">Committee</span>
                 </h2>
 
-                <!-- Grid -->
                 <div
                     class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10"
                 >
-                    <!-- CARD -->
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -733,7 +776,8 @@
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -743,10 +787,9 @@
                         </div>
                     </div>
 
-                    <!-- CARD -->
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -754,13 +797,14 @@
                                     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
                                 "
                             ></div>
-              <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -770,10 +814,9 @@
                         </div>
                     </div>
 
-                    <!-- CARD -->
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -782,13 +825,14 @@
                                 "
                             ></div>
 
-                                     <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -798,10 +842,9 @@
                         </div>
                     </div>
 
-                    <!-- CARD -->
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -810,13 +853,14 @@
                                 "
                             ></div>
 
-                                    <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -826,10 +870,9 @@
                         </div>
                     </div>
 
-                      <!-- CARD -->
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -838,13 +881,14 @@
                                 "
                             ></div>
 
-                                    <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -853,10 +897,10 @@
                             </div>
                         </div>
                     </div>
-                      <!-- CARD -->
+
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -865,13 +909,14 @@
                                 "
                             ></div>
 
-                                    <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -880,10 +925,10 @@
                             </div>
                         </div>
                     </div>
-                      <!-- CARD -->
+
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -892,13 +937,14 @@
                                 "
                             ></div>
 
-                                    <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -907,10 +953,10 @@
                             </div>
                         </div>
                     </div>
-                      <!-- CARD -->
+
                     <div class="group">
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300 "
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
                         >
                             <div
                                 class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
@@ -919,13 +965,14 @@
                                 "
                             ></div>
 
-                                    <div
+                            <div
                                 class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
                             >
                                 <h3
                                     class="text-lg md:text-xl font-semibold text-[#0D1112]"
                                 >
-                                    Member Name </h3>
+                                    Member Name
+                                </h3>
                                 <p
                                     class="text-sm text-[#C10817] mt-1 font-medium"
                                 >
@@ -938,13 +985,181 @@
             </div>
         </section>
 
+        <!-- SCHEDULE SECTION  -->
+        <section
+            class="py-12 px-4 xl:py-20 bg-[#fafafa]"
+            id="schedule-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="Schedule"
+            data-moj-web-label="Schedule"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold md:text-center text-[#0D1112] mb-6 md:mb-12"
+                >
+                    Event <span class="text-[#C10817]">Schedule</span>
+                </h2>
+
+                <div class="mb-16">
+                    <h3
+                        class="text-2xl md:text-3xl font-semibold text-[#C10817] mb-6"
+                    >
+                        Day 1
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                8:00 AM – 9:00 AM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Registration & Welcome
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Delegate registration and welcome ceremony.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                9:00 AM – 10:00 AM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Inaugural Ceremony
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Keynote speech and formal inauguration.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                10:00 AM – 12:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Scientific Session 1
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Talks by invited experts and Q&A session.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                12:30 PM – 1:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Lunch Break
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Buffet lunch for all registered participants.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                1:30 PM – 4:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Workshops & Hands-on
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Practical hands-on training with faculty
+                                mentors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3
+                        class="text-2xl md:text-3xl font-semibold text-[#C10817] mb-6"
+                    >
+                        Day 2
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                9:00 AM – 11:00 AM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Scientific Session 2
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Engaging lectures covering modern advancements.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                11:00 AM – 12:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Panel Discussion
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Expert panel interacts with participants live.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                12:30 PM – 1:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Lunch Break
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Lunch served in the dining lounge.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                1:30 PM – 3:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Valedictory Ceremony
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Certificate distribution and closing remarks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- TARIFF -->
         <section
             class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
-            id="tariff"
+            id="tariff-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="Tariff"
+            data-moj-web-category="structural"
         >
             <div class="max-w-8xl mx-auto flex flex-col gap-5">
-                <!-- Section Heading -->
                 <div>
                     <h2
                         class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] leading-tight md:text-center mb-10"
@@ -952,7 +1167,6 @@
                         Registration <span class="text-[#C10817]">Charges</span>
                     </h2>
 
-                    <!-- Table -->
                     <div
                         class="overflow-x-auto rounded-xl border border-[#D1E2F3]"
                     >
@@ -1010,7 +1224,6 @@
                     </div>
                 </div>
 
-                <!-- CTA BOX -->
                 <div
                     class="bg-[#C10817] rounded-xl py-10 px-6 text-center text-white relative"
                 >
@@ -1051,8 +1264,12 @@
         <!-- About Venue -->
         <section
             class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
+            id="about-venue-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="aboutVenue"
+            data-moj-web-label="About Venue"
+            data-moj-web-category="structural"
         >
-            <!-- Background -->
             <div
                 class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
             ></div>
@@ -1060,7 +1277,6 @@
             <div
                 class="relative z-10 flex flex-col-reverse xl:flex-row lg:items-center xl:items-stretch gap-5 xl:gap-8 max-w-8xl mx-auto"
             >
-                <!-- IMAGE SIDE -->
                 <div class="relative xl:w-1/2">
                     <img
                         src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
@@ -1069,7 +1285,6 @@
                     />
                 </div>
 
-                <!-- CONTENT SIDE -->
                 <div class="xl:w-1/2 flex flex-col justify-center">
                     <h1
                         class="text-4xl md:text-5xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
@@ -1116,18 +1331,20 @@
         <!-- HOTELS SECTION -->
         <section
             class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-white relative overflow-hidden"
+            id="hotels-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hotels"
+            data-moj-web-label="Hotels"
+            data-moj-web-category="structural"
         >
             <div class="max-w-8xl mx-auto">
-                <!-- Title -->
                 <h2
                     class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center mb-12 leading-tight"
                 >
                     Hotels for <span class="text-[#C10817]">Stay</span>
                 </h2>
 
-                <!-- Hotel Cards (Flex Layout) -->
                 <div class="flex flex-wrap justify-center gap-8">
-                    <!-- HOTEL CARD -->
                     <div
                         class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
                     >
@@ -1157,7 +1374,6 @@
                         </div>
                     </div>
 
-                    <!-- HOTEL CARD -->
                     <div
                         class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
                     >
@@ -1187,7 +1403,6 @@
                         </div>
                     </div>
 
-                    <!-- HOTEL CARD -->
                     <div
                         class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
                     >
@@ -1221,9 +1436,15 @@
         </section>
 
         <!-- PLACES TO VISIT SECTION -->
-        <section class="py-12 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#fdfdfd]">
+        <section
+            class="py-12 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#fdfdfd]"
+            id="places-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="Places"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-7xl mx-auto">
-                <!-- Title -->
                 <h2
                     class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-14"
                 >
@@ -1231,7 +1452,6 @@
                     <span class="text-[#C10817]">Attractions</span>
                 </h2>
 
-                <!-- ITEM 1 -->
                 <div
                     class="flex flex-col lg:flex-row items-center gap-10 mb-16"
                 >
@@ -1255,7 +1475,6 @@
                     </div>
                 </div>
 
-                <!-- ITEM 2 -->
                 <div
                     class="flex flex-col-reverse lg:flex-row items-center gap-10 mb-16"
                 >
@@ -1278,7 +1497,6 @@
                     </div>
                 </div>
 
-                <!-- ITEM 3 -->
                 <div class="flex flex-col lg:flex-row items-center gap-10">
                     <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
                         <img
@@ -1305,16 +1523,19 @@
         <!-- SPONSORS -->
         <section
             class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#f9f9f9] relative overflow-hidden"
+            id="sponsor-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="sponsor"
+            data-moj-web-label="Sponsors "
+            data-moj-web-category="structural"
         >
             <div class="max-w-7xl mx-auto">
-                <!-- Main Title -->
                 <h2
                     class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center leading-tight mb-12"
                 >
                     Our <span class="text-[#C10817]">Sponsors</span>
                 </h2>
 
-                <!-- PLATINUM -->
                 <div class="mb-14">
                     <h3
                         class="text-2xl font-semibold text-[#C10817] text-center mb-6"
@@ -1352,7 +1573,6 @@
                     </div>
                 </div>
 
-                <!-- GOLD -->
                 <div class="mb-14">
                     <h3
                         class="text-2xl font-semibold text-[#C10817] text-center mb-6"
@@ -1399,7 +1619,6 @@
                     </div>
                 </div>
 
-                <!-- SILVER -->
                 <div class="">
                     <h3
                         class="text-2xl font-semibold text-[#C10817] text-center mb-6"
@@ -1458,11 +1677,17 @@
         </section>
 
         <!-- FOOTER -->
-        <section class="bg-[#C10817] text-white pt-14 pb-6 px-6 lg:px-20">
+        <section
+            class="bg-[#C10817] text-white pt-14 pb-6 px-6 lg:px-20"
+            id="footer-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Footer"
+            data-moj-web-category="structural"
+        >
             <div
                 class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
             >
-                <!-- ABOUT -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4">About Event</h3>
                     <p class="text-sm text-white/90 leading-relaxed">
@@ -1472,7 +1697,6 @@
                     </p>
                 </div>
 
-                <!-- QUICK LINKS -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-sm text-white/90">
@@ -1504,7 +1728,6 @@
                     </ul>
                 </div>
 
-                <!-- ADDRESS -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Address</h3>
                     <p class="text-sm text-white/90 leading-relaxed">
@@ -1514,7 +1737,6 @@
                     </p>
                 </div>
 
-                <!-- CONTACT -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <ul class="space-y-2 text-sm text-white/90">
@@ -1525,7 +1747,6 @@
                 </div>
             </div>
 
-            <!-- Bottom -->
             <div class="mt-10 pt-6 border-t border-white/20 text-center">
                 <p class="text-sm text-white/80">
                     © 2025 Conference Name. All Rights Reserved.
