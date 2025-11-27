@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 3</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <section
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav class="bg-white pt-5 fixed w-full top-0 pb-5 z-50 shadow-xs">
+                <div class="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <!-- Logo -->
+                        <a href="/">
+                            <div class="flex items-center gap-2">
+                                <div class="h-16 border-r border-gray-100">
+                                    <img
+                                        src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                                        class="object-contain h-16"
+                                        alt="Logo"
+                                    />
+                                </div>
+                                <div
+                                    class="uppercase font-medium text-[#043915] text-sm lg:text-base leading-tight"
+                                >
+                                    <h2>Conference</h2>
+                                    <h2>title</h2>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Desktop Navigation -->
+                        <div
+                            class="hidden lg:flex items-center space-x-4 lg:space-x-8"
+                        >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium"
+                                >Gallery</a
+                            >
+                            <div class="relative">
+                                <button
+                                    onclick="toggleDownloads()"
+                                    class="flex items-center text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium gap-1 cursor-pointer"
+                                >
+                                    Downloads
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="downloadsDropdown"
+                                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden z-50"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block px-4 py-3 pr-4 text-sm text-[#353535] hover:bg-gray-100 text-nowrap"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex items-center space-x-4">
+                            <a
+                                href="/#"
+                                class="bg-[#043915] hover:bg-[#043915]/80 transition duration-500 text-white px-6 py-2 rounded-lg font-medium flex items-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Mobile menu button -->
+                        <div class="lg:hidden">
+                            <button
+                                onclick="toggleSidebar()"
+                                class="text-gray-500 hover:text-[#353535]"
+                            >
+                                <svg
+                                    class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Overlay -->
+                <div
+                    id="mobileOverlay"
+                    onclick="closeSidebar()"
+                    class="hidden fixed inset-0 bg-black/50 bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden"
+                ></div>
+                <!-- Mobile Sidebar -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50 pt-5"
+                >
+                    <div class="p-6 space-y-6 relative">
+                        <button
+                            onclick="closeSidebar()"
+                            class="absolute top-4 right-4 text-gray-500 hover:text-black"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div class="mt-10 space-y-4">
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#043915] transition duration-300 font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#043915] transition duration-300 font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#043915] transition duration-300 font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#043915] transition duration-300 font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#043915] transition duration-300 font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#043915] transition duration-300 font-medium"
+                                >Gallery</a
+                            >
+                            <!-- Downloads Dropdown in Mobile -->
+                            <div class="space-y-1">
+                                <button
+                                    onclick="toggleMobileDownloads()"
+                                    class="w-full flex justify-between items-center text-[#353535] font-medium focus:outline-none"
+                                >
+                                    <span>Downloads</span>
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="mobileDownloadsDropdown"
+                                    class="ml-4 hidden"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block text-sm text-[#353535] hover:text-[#043915] transition duration-300 mt-2"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                            <a
+                                href="/#contact-us"
+                                class="bg-[#043915] text-white px-4 py-2 rounded-lg font-medium w-full mt-6 flex items-center justify-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <script>
+            let isOpen = false;
+
+            const toggleSidebar = () => {
+                isOpen = !isOpen;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("block");
+            };
+
+            const closeSidebar = () => {
+                isOpen = false;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.add("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.remove("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.add("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.remove("block");
+            };
+
+            const toggleDownloads = () => {
+                const dropdown = document.getElementById("downloadsDropdown");
+                dropdown.classList.toggle("hidden");
+            };
+            const toggleMobileDownloads = () => {
+                const dropdown = document.getElementById(
+                    "mobileDownloadsDropdown"
+                );
+                dropdown.classList.toggle("hidden");
+            };
+            document.addEventListener("click", (e) => {
+                const btn = e.target.closest("button");
+                const menu = document.getElementById("downloadsDropdown");
+
+                if (!btn || !btn.closest("[onclick='toggleDownloads()']")) {
+                    if (!e.target.closest("#downloadsDropdown")) {
+                        menu?.classList.add("hidden");
+                    }
+                }
+            });
+        </script>
+
+        <section
+            id="hero-block"
+            class="relative overflow-hidden text-white pt-36 pb-20 md:pt-44 md:pb-28 bg-black"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Section"
+            data-moj-web-category="structural"
+        >
+            <!-- ABSOLUTE BG IMAGE -->
+            <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/070/675/601/small/audience-attending-business-conference-with-speaker-on-stage-delivering-presentation-in-blurred-background-photo.jpeg"
+                alt="Conference Background"
+                class="absolute inset-0 w-full h-full object-cover z-[1]"
+            />
+
+            <!-- BLUE GRADIENT OVERLAY -->
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-[#043915]/80 via-black/60 to-black/80 z-[2]"
+            ></div>
+
+            <!-- CONTENT -->
+            <div
+                class="relative z-[3] max-w-7xl mx-auto px-5 lg:px-16 text-center"
+            >
+                <div class="mx-auto w-full lg:w-2/3 space-y-8">
+                    <!-- HEADING -->
+                    <h1
+                        class="text-4xl md:text-6xl 2xl:text-7xl font-extrabold tracking-tight leading-relaxed md:leading-tight"
+                    >
+                        <span class="block">International</span>
+                        <span class="block">
+                            Medical
+                            <span
+                                class="text-[#043915] bg-white px-2 py-1 rounded-md"
+                            >
+                                Conference
+                            </span>
+                        </span>
+                        <span
+                            class="text-xl md:text-2xl font-light mt-3 block opacity-90"
+                        >
+                            2025
+                        </span>
+                    </h1>
+
+                    <!-- SUBTEXT -->
+                    <p
+                        class="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed"
+                    >
+                        Join global leaders, innovators, and specialists as we
+                        explore the latest advancements in healthcare and
+                        medical sciences.
+                    </p>
+
+                    <!-- LOCATION + DATE -->
+                    <div
+                        class="flex flex-col sm:flex-row justify-center items-center gap-6 text-lg font-medium"
+                    >
+                        <div
+                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-md"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                            </svg>
+                            <span>Your Location, Country</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-md"
+                        >
+                            <svg
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+                                />
+                            </svg>
+                            <span>Event Dates 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- COUNTDOWN BOX -->
+                    <div
+                        class="mx-auto bg-white/10 backdrop-blur-xl border border-white/20 p-3 md:p-5 rounded-xl inline-block shadow-[0_0_30px_rgba(28,63,98,0.35)]"
+                    >
+                        <div
+                            class="grid grid-cols-4 gap-3 md:gap-4 text-center"
+                        >
+                            <!-- DAYS -->
+                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
+                                <span
+                                    class="block text-2xl md:text-3xl font-extrabold text-white"
+                                    id="days"
+                                    >172</span
+                                >
+                                <span
+                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
+                                    >Days</span
+                                >
+                            </div>
+
+                            <!-- HOURS -->
+                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
+                                <span
+                                    class="block text-2xl md:text-3xl font-extrabold text-white"
+                                    id="hours"
+                                    >23</span
+                                >
+                                <span
+                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
+                                    >Hours</span
+                                >
+                            </div>
+
+                            <!-- MINUTES -->
+                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
+                                <span
+                                    class="block text-2xl md:text-3xl font-extrabold text-white"
+                                    id="minutes"
+                                    >11</span
+                                >
+                                <span
+                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
+                                    >Minutes</span
+                                >
+                            </div>
+
+                            <!-- SECONDS -->
+                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
+                                <span
+                                    class="block text-2xl md:text-3xl font-extrabold text-white"
+                                    id="seconds"
+                                    >33</span
+                                >
+                                <span
+                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
+                                    >Seconds</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA BUTTONS -->
+                    <div class="flex flex-wrap justify-center gap-5 md:mt-6">
+                        <a
+                            href="#"
+                            class="w-full md:w-auto text-center bg-[#043915] border-2 border-[#043915] text-white px-10 py-3 rounded-md font-semibold tracking-wide hover:bg-transparent transition-all duration-300 hover:-translate-y-1"
+                        >
+                            Register Now
+                        </a>
+
+                        <a
+                            href="#"
+                            class="w-full md:w-auto text-center bg-white/10 border-2 border-white/30 text-white px-10 py-3 rounded-md font-semibold tracking-wide hover:bg-white hover:text-[#043915] transition-all duration-300 hover:-translate-y-1"
+                        >
+                            View Schedule
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="stats-block"
+            class="py-10 md:py-20 bg-[#f3f7f4] px-6"
+            data-moj-web-fixed="false"
+            data-moj-web-type="stats"
+            data-moj-web-label="Event Stats"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center"
+            >
+                <!-- Delegates -->
+                <div class="space-y-4">
+                    <div
+                        class="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-[#043915]/10"
+                    >
+                        <svg
+                            class="w-7 h-7 text-[#043915]"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"
+                            />
+                            <circle cx="9" cy="7" r="4" />
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M23 20v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
+                            />
+                        </svg>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-[#043915]">
+                        2000+
+                    </h3>
+                    <p class="text-gray-600 text-sm md:text-base">Delegates</p>
+                </div>
+
+                <!-- Speakers -->
+                <div class="space-y-4">
+                    <div
+                        class="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-[#043915]/10"
+                    >
+                        <svg
+                            class="w-7 h-7 text-[#043915]"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 1a3 3 0 0 1 3 3v8a3 3 0 0 1-6 0V4a3 3 0 0 1 3-3z"
+                            />
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19 10a7 7 0 0 1-14 0M12 17v6m-4 0h8"
+                            />
+                        </svg>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-[#043915]">30+</h3>
+                    <p class="text-gray-600 text-sm md:text-base">
+                        International Speakers
+                    </p>
+                </div>
+
+                <!-- Scientific Sessions -->
+                <div class="space-y-4">
+                    <div
+                        class="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-[#043915]/10"
+                    >
+                        <svg
+                            class="w-7 h-7 text-[#043915]"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 21V4m0 17c-2-1.5-4.5-2-7-2V5c2.5 0 5 .5 7 2m0 14c2-1.5 4.5-2 7-2V5c-2.5 0-5 .5-7 2"
+                            />
+                        </svg>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-[#043915]">20+</h3>
+                    <p class="text-gray-600 text-sm md:text-base">
+                        Scientific Sessions
+                    </p>
+                </div>
+
+                <!-- Days Event -->
+                <div class="space-y-4">
+                    <div
+                        class="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-[#043915]/10"
+                    >
+                        <svg
+                            class="w-7 h-7 text-[#043915]"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8 2v3m8-3v3M4 8h16M5 22h14a2 2 0 0 0 2-2V8H3v12a2 2 0 0 0 2 2z"
+                            />
+                        </svg>
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-[#043915]">3</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Days Event</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- welcome -->
+        <section
+            id="welcome-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="welcome"
+            data-moj-web-label="Welcome"
+            data-moj-web-category="structural"
+            class="py-10 md:py-20 px-4 relative max-w-7xl mx-auto"
+        >
+            <div
+                class="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-14 items-center"
+            >
+                <!-- BENTO GRID IMAGES -->
+                <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                    <!-- Large main image -->
+                    <div class="col-span-2">
+                        <img
+                            src="https://balticsecurityconference.lv/wp-content/uploads/fly-images/325/izstaditaji-bg@2x-scaled-1366x0-c.jpg"
+                            class="w-full h-40 md:h-72 xl:h-80 object-cover rounded-lg shadow-sm"
+                        />
+                    </div>
+
+                    <!-- Small Image 1 -->
+                    <img
+                        src="https://images.unsplash.com/photo-1596522354195-e84ae3c98731?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZmVyZW5jZSUyMGhhbGx8ZW58MHx8MHx8fDA%3D"
+                        class="w-full h-40 md:h-60 xl:h-full object-cover rounded-lg shadow-sm"
+                    />
+
+                    <!-- Small Image 2 -->
+                    <img
+                        src="https://t4.ftcdn.net/jpg/02/61/20/57/360_F_261205772_J0UqLRfoc1qumAgujual72bEAdmNSVzb.jpg"
+                        class="w-full h-40 md:h-60 xl:h-full object-cover rounded-lg shadow-sm"
+                    />
+                </div>
+
+                <!-- CONTENT -->
+                <div class="flex flex-col justify-center">
+                    <!-- SMALL BADGE -->
+                    <span
+                        class="inline-block mb-3 text-xs md:text-sm font-semibold tracking-wider text-[#043915] bg-[#043915]/10 px-3 py-1 rounded-full w-fit"
+                    >
+                        WELCOME MESSAGE
+                    </span>
+
+                    <!-- HEADING -->
+                    <h1
+                        class="text-3xl md:text-5xl font-bold tracking-tight leading-relaxed md:leading-tight mb-4"
+                    >
+                        <span class="block">Welcome to</span>
+
+                        <span class="block">
+                            our
+                            <span
+                                class="bg-[#043915] text-white px-3 rounded-md"
+                            >
+                                Conference
+                            </span>
+                        </span>
+                    </h1>
+
+                    <h2
+                        class="text-lg md:text-2xl font-semibold text-[#0D1112] mb-5"
+                    >
+                        Warm Greetings
+                    </h2>
+
+                    <!-- DESCRIPTION -->
+                    <div
+                        class="space-y-4 text-[#0D1112]/80 text-base md:text-lg leading-relaxed border-l-4 border-[#043915] pl-5"
+                    >
+                        <p>
+                            We are delighted to welcome you to our annual
+                            conference — a gathering dedicated to innovation,
+                            collaboration, and meaningful progress.
+                        </p>
+
+                        <p>
+                            Experts, professionals, and visionaries come
+                            together for inspiring sessions, insightful
+                            discussions, and unique networking opportunities.
+                        </p>
+
+                        <p>
+                            Join us for an enriching experience filled with
+                            knowledge, culture, and community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- message -->
+        <section
+            id="message-block"
+            class="py-10 md:py-20 px-4 lg:px-12 xl:px-20 bg-[#f3f7f4]"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <!-- HEADING -->
+                <div class="mb-4 md:mb-12">
+                    <h2
+                        class="text-3xl md:text-5xl font-bold tracking-tight leading-relaxed md:leading-tight mb-4 lg:mb-12"
+                    >
+                        <span class="block">Message</span>
+
+                        <span class="block">
+                            from the
+                            <span
+                                class="bg-[#043915] text-white px-3 rounded-md"
+                            >
+                                Committee
+                            </span>
+                        </span>
+                    </h2>
+                </div>
+
+                <div class="max-w-7xl mx-auto">
+                    <!-- MESSAGE BLOCK -->
+                    <div
+                        class="bg-white p-4 md:p-10 rounded-xl shadow-sm border border-gray-100"
+                    >
+                        <p
+                            class="text-lg md:text-xl text-[#043915] font-semibold mb-4 md:mb-6"
+                        >
+                            Dear Participants,
+                        </p>
+
+                        <div
+                            class="space-y-5 text-[#0D1112]/85 text-base md:text-lg leading-relaxed"
+                        >
+                            <p>
+                                We are delighted to welcome you to our upcoming
+                                scientific and academic program. This gathering
+                                has been crafted to ensure a meaningful blend of
+                                learning, collaboration, and valuable
+                                engagement.
+                            </p>
+
+                            <p>
+                                Each session is thoughtfully structured to offer
+                                insights into emerging advancements, essential
+                                concepts, and discussions relevant to
+                                professionals, trainees, and students alike.
+                            </p>
+
+                            <p>
+                                Beyond the academic enrichment, the event
+                                invites opportunities to interact with experts,
+                                exchange ideas, and build meaningful connections
+                                within an inspiring environment.
+                            </p>
+
+                            <p>
+                                We hope your time here becomes enriching and
+                                memorable, empowering you with new perspectives,
+                                broader horizons, and renewed motivation.
+                            </p>
+
+                            <div class="pt-4 border-t border-gray-200">
+                                <p class="font-semibold text-[#0D1112]">
+                                    Warm regards,
+                                </p>
+                                <p class="font-bold text-[#0D1112] mt-1">
+                                    [Name Here]
+                                </p>
+                                <p class="text-[#043915] font-medium">
+                                    [Designation]
+                                </p>
+                            </div>
+                        </div>
+                        <!-- PROFILE BLOCK TOP -->
+                        <div class="text-center mt-10">
+                            <div
+                                class="w-32 h-40 lg:h-72 lg:w-64 rounded-lg overflow-hidden mx-auto shadow-md bg-gray-200"
+                            >
+                                <img
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-[#0D1112] mt-5">
+                                [Name Here]
+                            </h3>
+
+                            <p
+                                class="text-sm text-[#043915] font-semibold mt-1"
+                            >
+                                [Designation]
+                            </p>
+
+                            <div
+                                class="w-14 h-[3px] bg-[#043915] mx-auto mt-3 rounded-full"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- highlights -->
+        <section
+            id="highlight-block"
+            class="py-14 md:py-20 px-4 max-w-7xl mx-auto"
+        >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+                <!-- LEFT CONTENT — TITLE KEPT -->
+                <div class="space-y-6">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+                    >
+                        Event
+                        <span class="bg-[#043915] text-white px-3 rounded-md">
+                            Highlights
+                        </span>
+                    </h2>
+
+                    <p
+                        class="text-[#0D1112]/80 text-base md:text-lg leading-relaxed max-w-xl"
+                    >
+                        Explore a dynamic blend of expert sessions,
+                        skill-building workshops, and interactive activities —
+                        each curated to spark curiosity, broaden perspectives,
+                        and promote meaningful engagement. This event brings
+                        together distinguished professionals, emerging talents,
+                        and enthusiastic learners for a truly collaborative and
+                        growth-focused experience.
+                    </p>
+                </div>
+
+                <!-- RIGHT CONTENT — MINIMAL LIST STYLE -->
+                <div class="space-y-8">
+                    <!-- ITEM -->
+                    <!-- ITEM 1 — Expert Sessions -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="h-10 w-10 flex items-center justify-center rounded-full bg-[#043915]/10"
+                        >
+                            <!-- Presentation Icon -->
+                            <svg
+                                class="w-6 h-6 text-[#043915]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3 4h18M3 4v10a1 1 0 0 0 1 1h5m10-11v10a1 1 0 0 1-1 1h-5m0 0v5m0-5h-4m4 0h4"
+                                />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#043915]">
+                                Expert Sessions
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm md:text-base mt-1 leading-relaxed"
+                            >
+                                Engage with renowned speakers delivering
+                                high-impact scientific insights.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 — Workshops -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="h-10 w-10 flex items-center justify-center rounded-full bg-[#043915]/10"
+                        >
+                            <!-- Tools Icon -->
+                            <svg
+                                class="w-6 h-6 text-[#043915]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.232 5.232a3 3 0 1 1 4.243 4.243l-7.071 7.071a4 4 0 0 1-2.121 1.121L5 19l1.333-5.283a4 4 0 0 1 1.121-2.121l7.071-7.071z"
+                                />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#043915]">
+                                Workshops
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm md:text-base mt-1 leading-relaxed"
+                            >
+                                Hands-on opportunities to build skills and apply
+                                practical techniques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 4 — Participant Advantages -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="h-10 w-10 flex items-center justify-center rounded-full bg-[#043915]/10"
+                        >
+                            <!-- Badge / Star Icon -->
+                            <svg
+                                class="w-6 h-6 text-[#043915]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#043915]">
+                                Participant Advantages
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm md:text-base mt-1 leading-relaxed"
+                            >
+                                Gain access to exclusive benefits, networking
+                                resources, and recognition.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section
+            class="relative flex flex-col md:flex-row overflow-hidden"
+            id="about-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="w-full md:w-1/2 bg-gradient-to-br from-[#C10817] via-[#900612] to-[#C10817] relative flex items-center xl:py-16 pt-8 pb-10 px-4 xl:px-8 z-10"
+            >
+                <div class="max-w-xl mx-auto space-y-2 xl:space-y-6">
+                    <h2
+                        class="text-3xl xl:text-4xl font-medium text-white leading-tight"
+                    >
+                        <span class="text-yellow-300"
+                            >About the Conference</span
+                        >
+                    </h2>
+
+                    <p
+                        class="text-white text-sm md:text-base xl:text-lg leading-relaxed mb-4"
+                    >
+                        This conference brings together leaders, innovators, and
+                        participants from across the country to explore ideas,
+                        share knowledge, and build meaningful networks for the
+                        future.
+                    </p>
+
+                    <p
+                        class="text-white text-sm md:text-base xl:text-lg leading-relaxed mb-4"
+                    >
+                        Attendees can expect a rich mix of keynote talks, panel
+                        discussions, interactive sessions, and collaborative
+                        activities designed to inspire growth and innovation
+                        across diverse fields.
+                    </p>
+
+                    <p
+                        class="text-white text-sm md:text-base xl:text-lg leading-relaxed"
+                    >
+                        Together, we aim to create a platform that encourages
+                        learning, connection, and meaningful progress for
+                        everyone involved.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="relative w-full md:w-1/2 bg-cover bg-[10%] min-h-[300px] md:min-h-full"
+                style="
+                    background-image: url('https://www.shutterstock.com/image-photo/female-speaker-giving-talk-on-600nw-2480862361.jpg');
+                "
+            >
+                <div
+                    class="relative z-10 w-full min-h-[300px] h-full bg-[#C10817]/40"
+                ></div>
+            </div>
+        </section>
+
+        <!-- COMMITTEE SECTION -->
+        <section
+            class="py-14 px-4 xl:py-20 bg-[#fafafa]"
+            id="committee-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="committe"
+            data-moj-web-label="Committee Members"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-12"
+                >
+                    Organizing <span class="text-[#C10817]">Committee</span>
+                </h2>
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10"
+                >
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div
+                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                        >
+                            <div
+                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
+                                style="
+                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
+                                "
+                            ></div>
+
+                            <div
+                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
+                            >
+                                <h3
+                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
+                                >
+                                    Member Name
+                                </h3>
+                                <p
+                                    class="text-sm text-[#C10817] mt-1 font-medium"
+                                >
+                                    Committee Role
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCHEDULE SECTION  -->
+        <section
+            class="py-12 px-4 xl:py-20 bg-[#fafafa]"
+            id="schedule-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="Schedule"
+            data-moj-web-label="Schedule"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold md:text-center text-[#0D1112] mb-6 md:mb-12"
+                >
+                    Event <span class="text-[#C10817]">Schedule</span>
+                </h2>
+
+                <div class="mb-16">
+                    <h3
+                        class="text-2xl md:text-3xl font-semibold text-[#C10817] mb-6"
+                    >
+                        Day 1
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                8:00 AM – 9:00 AM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Registration & Welcome
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Delegate registration and welcome ceremony.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                9:00 AM – 10:00 AM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Inaugural Ceremony
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Keynote speech and formal inauguration.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                10:00 AM – 12:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Scientific Session 1
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Talks by invited experts and Q&A session.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                12:30 PM – 1:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Lunch Break
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Buffet lunch for all registered participants.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                1:30 PM – 4:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Workshops & Hands-on
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Practical hands-on training with faculty
+                                mentors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3
+                        class="text-2xl md:text-3xl font-semibold text-[#C10817] mb-6"
+                    >
+                        Day 2
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                9:00 AM – 11:00 AM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Scientific Session 2
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Engaging lectures covering modern advancements.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                11:00 AM – 12:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Panel Discussion
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Expert panel interacts with participants live.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                12:30 PM – 1:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Lunch Break
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Lunch served in the dining lounge.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
+                        >
+                            <p class="text-sm text-gray-600 mb-1">
+                                1:30 PM – 3:30 PM
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#C10817]">
+                                Valedictory Ceremony
+                            </h4>
+                            <p class="text-gray-700 mt-2">
+                                Certificate distribution and closing remarks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARIFF -->
+        <section
+            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
+            id="tariff-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="Tariff"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-8xl mx-auto flex flex-col gap-5">
+                <div>
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] leading-tight md:text-center mb-10"
+                    >
+                        Registration <span class="text-[#C10817]">Charges</span>
+                    </h2>
+
+                    <div
+                        class="overflow-x-auto rounded-xl border border-[#D1E2F3]"
+                    >
+                        <table class="min-w-full text-left text-base">
+                            <thead
+                                class="bg-[#E8F1F8] text-[#17426C] font-semibold"
+                            >
+                                <tr>
+                                    <th class="px-6 py-4">Category</th>
+                                    <th class="px-6 py-4">Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[#17426C]">
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">
+                                        Professional Delegate
+                                    </td>
+                                    <td class="px-6 py-4">₹4,500</td>
+                                </tr>
+
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">
+                                        Non-Member Delegate
+                                    </td>
+                                    <td class="px-6 py-4">₹5,000</td>
+                                </tr>
+
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">
+                                        Accompanying Person
+                                    </td>
+                                    <td class="px-6 py-4">₹2,000</td>
+                                </tr>
+
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">Student / Trainee</td>
+                                    <td class="px-6 py-4">Complimentary</td>
+                                </tr>
+
+                                <tr class="bg-[#E8F1F8] font-semibold">
+                                    <td class="px-6 py-4">
+                                        Spot Registration – Member
+                                    </td>
+                                    <td class="px-6 py-4">₹6,000</td>
+                                </tr>
+
+                                <tr class="bg-[#E8F1F8] font-semibold">
+                                    <td class="px-6 py-4">
+                                        Spot Registration – Non-Member
+                                    </td>
+                                    <td class="px-6 py-4">₹6,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[#C10817] rounded-xl py-10 px-6 text-center text-white relative"
+                >
+                    <div
+                        class="absolute inset-0 bg-[url('/assets/images/png/3d-grid.png')] bg-no-repeat opacity-40"
+                    ></div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-semibold mb-3">
+                            Ready to Register?
+                        </h3>
+                        <p class="text-white/90 text-base md:text-lg mb-6">
+                            Secure your place now – limited seats available.
+                        </p>
+
+                        <div
+                            class="flex flex-col sm:flex-row justify-center gap-4"
+                        >
+                            <a
+                                href="#"
+                                class="inline-block px-6 py-3 bg-white text-[#C10817] border border-white rounded-md font-semibold shadow hover:bg-[#C10817] hover:text-white transition-all duration-300"
+                            >
+                                Register Now
+                            </a>
+
+                            <a
+                                href="#"
+                                class="inline-block px-6 py-3 border border-white text-white rounded-md font-semibold hover:bg-white hover:text-[#C10817] transition-all duration-300"
+                            >
+                                Download Brochure
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Venue -->
+        <section
+            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
+            id="about-venue-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="aboutVenue"
+            data-moj-web-label="About Venue"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            ></div>
+
+            <div
+                class="relative z-10 flex flex-col-reverse xl:flex-row lg:items-center xl:items-stretch gap-5 xl:gap-8 max-w-8xl mx-auto"
+            >
+                <div class="relative xl:w-1/2">
+                    <img
+                        src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
+                        alt="Venue Image"
+                        class="w-full rounded-[10px] xl:rounded-2xl lg:h-[400px] max-h-150 xl:h-full shadow-xl object-cover object-center"
+                    />
+                </div>
+
+                <div class="xl:w-1/2 flex flex-col justify-center">
+                    <h1
+                        class="text-4xl md:text-5xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
+                    >
+                        About the <span class="text-[#C10817]">Venue</span>
+                    </h1>
+
+                    <h2
+                        class="text-2xl md:text-2xl font-semibold text-[#0D1112] mb-4 tracking-wide"
+                    >
+                        A Premium Conference Destination
+                    </h2>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        Our event takes place at a world-class venue featuring
+                        state-of-the-art auditoriums, modern meeting spaces, and
+                        top-notch hospitality. Designed to support large
+                        academic and professional gatherings, it ensures a
+                        seamless experience for every participant.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        Located in the heart of the city, the venue offers easy
+                        connectivity, premium amenities, and a comfortable
+                        environment ideal for learning, discussions, and
+                        networking.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Attend sessions, explore exhibitions, and enjoy
+                        world-class facilities — all in one exceptional location
+                        crafted for a memorable conference experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOTELS SECTION -->
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-white relative overflow-hidden"
+            id="hotels-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hotels"
+            data-moj-web-label="Hotels"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-8xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center mb-12 leading-tight"
+                >
+                    Hotels for <span class="text-[#C10817]">Stay</span>
+                </h2>
+
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div
+                        class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
+                    >
+                        <div class="h-48 w-full">
+                            <img
+                                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/89/11/15/hotel-facade.jpg?w=900&h=500&s=1"
+                                alt="Hotel Image"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="text-xl font-semibold text-[#C10817] mb-1"
+                            >
+                                Hotel Name One
+                            </h3>
+                            <p class="text-sm text-[#0D1112]/70 mb-4">
+                                City Center, Your Location
+                            </p>
+
+                            <a
+                                href="#"
+                                class="inline-block px-5 py-2 bg-[#C10817] text-white rounded-md hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300 text-sm font-semibold"
+                            >
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
+                    >
+                        <div class="h-48 w-full">
+                            <img
+                                src="https://m.ahstatic.com/is/image/accorhotels/HCM_P_8147067:4by3?fmt=jpg&op_usm=1.75,0.3,2,0&resMode=sharp2&iccEmbed=true&icc=sRGB&dpr=on,1.5&wid=335&hei=251&qlt=80"
+                                alt="Hotel Image"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="text-xl font-semibold text-[#C10817] mb-1"
+                            >
+                                Hotel Name Two
+                            </h3>
+                            <p class="text-sm text-[#0D1112]/70 mb-4">
+                                Near Convention Venue
+                            </p>
+
+                            <a
+                                href="#"
+                                class="inline-block px-5 py-2 bg-[#C10817] text-white rounded-md hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300 text-sm font-semibold"
+                            >
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
+                    >
+                        <div class="h-48 w-full">
+                            <img
+                                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/86/8a/0f/the-lalit-jaipur.jpg?w=900&h=500&s=1"
+                                alt="Hotel Image"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-5">
+                            <h3
+                                class="text-xl font-semibold text-[#C10817] mb-1"
+                            >
+                                Hotel Name Three
+                            </h3>
+                            <p class="text-sm text-[#0D1112]/70 mb-4">
+                                5 Minutes from Venue
+                            </p>
+
+                            <a
+                                href="#"
+                                class="inline-block px-5 py-2 bg-[#C10817] text-white rounded-md hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300 text-sm font-semibold"
+                            >
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLACES TO VISIT SECTION -->
+        <section
+            class="py-12 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#fdfdfd]"
+            id="places-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="Places"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-14"
+                >
+                    Explore Nearby
+                    <span class="text-[#C10817]">Attractions</span>
+                </h2>
+
+                <div
+                    class="flex flex-col lg:flex-row items-center gap-10 mb-16"
+                >
+                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1669748157617-a3a83cc8ea23?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                        />
+                    </div>
+
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
+                            Place One
+                        </h3>
+                        <p class="text-[#0D1112]/70 text-base leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Vestibulum at dui eget nunc facilisis posuere
+                            sed nec lorem. Integer id orci vel ligula efficitur
+                            tempus sed vitae neque.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col-reverse lg:flex-row items-center gap-10 mb-16"
+                >
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
+                            Place Two
+                        </h3>
+                        <p class="text-[#0D1112]/70 text-base leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Praesent volutpat massa non tortor eleifend,
+                            vitae fermentum nisl feugiat. Nulla facilisi.
+                        </p>
+                    </div>
+
+                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                            src="https://www.thegari.in/blog/wp-content/uploads/2025/08/nandi-hills-1024x538.jpg"
+                            class="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                        />
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center gap-10">
+                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0f/81/d0/christ-church-shimla.jpg?w=900&h=500&s=1"
+                            class="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                        />
+                    </div>
+
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
+                            Place Three
+                        </h3>
+                        <p class="text-[#0D1112]/70 text-base leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed dapibus diam sit amet mauris dignissim, at
+                            pellentesque lectus euismod. Proin pulvinar neque
+                            vel nulla pretium, quis gravida elit feugiat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPONSORS -->
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#f9f9f9] relative overflow-hidden"
+            id="sponsor-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="sponsor"
+            data-moj-web-label="Sponsors "
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center leading-tight mb-12"
+                >
+                    Our <span class="text-[#C10817]">Sponsors</span>
+                </h2>
+
+                <div class="mb-14">
+                    <h3
+                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                    >
+                        Platinum Sponsors
+                    </h3>
+
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                class="max-h-16 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                class="max-h-16 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                                class="max-h-16 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-14">
+                    <h3
+                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                    >
+                        Gold Sponsors
+                    </h3>
+
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                    <h3
+                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                    >
+                        Silver Sponsors
+                    </h3>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                                class="max-h-12 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section
+            class="bg-[#C10817] text-white pt-14 pb-6 px-6 lg:px-20"
+            id="footer-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Footer"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+            >
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">About Event</h3>
+                    <p class="text-sm text-white/90 leading-relaxed">
+                        A premier conference bringing together experts,
+                        innovators, and professionals from across the country
+                        for learning, collaboration, and meaningful exchange.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-white/90">
+                        <li>
+                            <a href="#" class="hover:text-yellow-300 transition"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-300 transition"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-300 transition"
+                                >Venue</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-300 transition"
+                                >Sessions</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-300 transition"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Address</h3>
+                    <p class="text-sm text-white/90 leading-relaxed">
+                        Conference Venue,<br />
+                        City Center,<br />
+                        Your Location, Country.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-sm text-white/90">
+                        <li>Email: info@conference.com</li>
+                        <li>Phone: +91 98765 43210</li>
+                        <li>Support: support@conference.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-white/20 text-center">
+                <p class="text-sm text-white/80">
+                    © 2025 Conference Name. All Rights Reserved.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
