@@ -340,186 +340,187 @@
         </script>
 
         <section
-            id="hero-block"
-            class="relative overflow-hidden text-white pt-36 pb-20 md:pt-44 md:pb-28 bg-black"
+            class="relative md:mx-5 md:rounded-3xl mt-20 md:mt-32 xl:mt-28 overflow-hidden"
+            style="background: rgba(4, 57, 21, 0.15)"
             data-moj-web-fixed="false"
             data-moj-web-type="hero"
             data-moj-web-label="Hero Section"
             data-moj-web-category="structural"
+            id="hero-block"
         >
-            <!-- ABSOLUTE BG IMAGE -->
-            <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/070/675/601/small/audience-attending-business-conference-with-speaker-on-stage-delivering-presentation-in-blurred-background-photo.jpeg"
-                alt="Conference Background"
-                class="absolute inset-0 w-full h-full object-cover z-[1]"
-            />
-
-            <!-- BLUE GRADIENT OVERLAY -->
+            <!-- Decorative Blobs -->
             <div
-                class="absolute inset-0 bg-gradient-to-b from-[#043915]/80 via-black/60 to-black/80 z-[2]"
+                class="absolute -left-24 top-10 w-[380px] h-[380px] rounded-full bg-gradient-to-br from-[#87C0A0] via-[#5E9F7D] to-[#043915] opacity-30 blur-3xl hidden lg:block"
             ></div>
 
-            <!-- CONTENT -->
             <div
-                class="relative z-[3] max-w-7xl mx-auto px-5 lg:px-16 text-center"
+                class="absolute -left-36 bottom-10 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#CFE8D8] via-[#A4D0B0] to-[#043915] opacity-20 blur-2xl hidden lg:block"
+            ></div>
+
+            <div
+                class="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center"
             >
-                <div class="mx-auto w-full lg:w-2/3 space-y-8">
-                    <!-- HEADING -->
+                <!-- LEFT CONTENT -->
+                <div
+                    class="px-6 md:px-12 2xl:px-16 text-[#1a1d1a] py-12 relative z-10"
+                >
+                    <!-- TITLE -->
                     <h1
-                        class="text-4xl md:text-6xl 2xl:text-7xl font-extrabold tracking-tight leading-relaxed md:leading-tight"
+                        class="font-semibold leading-tight text-4xl md:text-5xl xl:text-6xl"
                     >
-                        <span class="block">International</span>
+                        <span class="block">Conference</span>
                         <span class="block">
-                            Medical
-                            <span
-                                class="text-[#043915] bg-white px-2 py-1 rounded-md"
-                            >
-                                Conference
-                            </span>
-                        </span>
-                        <span
-                            class="text-xl md:text-2xl font-light mt-3 block opacity-90"
-                        >
-                            2025
+                            Title <span class="text-[#043915]">2026</span>
                         </span>
                     </h1>
 
                     <!-- SUBTEXT -->
                     <p
-                        class="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed"
+                        class="mt-4 text-sm md:text-lg leading-relaxed text-[#1a1d1a]/90 max-w-lg"
                     >
-                        Join global leaders, innovators, and specialists as we
-                        explore the latest advancements in healthcare and
-                        medical sciences.
+                        Add a compelling one-line description for the event here
+                        — highlighting the goal, value, and unique experience
+                        your conference offers.
                     </p>
 
-                    <!-- LOCATION + DATE -->
+                    <!-- CTA BUTTON -->
                     <div
-                        class="flex flex-col sm:flex-row justify-center items-center gap-6 text-lg font-medium"
+                        class="mt-8 flex flex-col gap-4 xl:flex-row justify-between md:items-center"
                     >
-                        <div
-                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-md"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                        <div>
+                            <!-- DATE + VENUE + COUNTDOWN -->
+                            <div
+                                class="flex flex-col xl:flex-row gap-6 xl:gap-10 mb-5 md:mb-8"
                             >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                />
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                />
-                            </svg>
-                            <span>Your Location, Country</span>
-                        </div>
-
-                        <div
-                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-md"
-                        >
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                                <!-- DATE + VENUE -->
+                                <div>
+                                    <p
+                                        class="text-3xl md:text-5xl font-bold leading-tight"
+                                    >
+                                        DD–DD
+                                        <span
+                                            class="text-2xl md:text-3xl font-light"
+                                            >Month 'YY</span
+                                        >
+                                    </p>
+                                    <p
+                                        class="text-base md:text-lg font-medium mt-1"
+                                    >
+                                        Venue Name, Location
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                                class="group flex items-center cursor-pointer gap-3 bg-[#043915] py-3 px-4 2xl:px-8 rounded-full text-white text-base 2xl:text-lg font-medium shadow-md hover:shadow-xl transition-all duration-300 hover:bg-[#032f13]"
                             >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
-                                />
-                            </svg>
-                            <span>Event Dates 2025</span>
-                        </div>
-                    </div>
+                                <span>Register Now</span>
 
-                    <!-- COUNTDOWN BOX -->
-                    <div
-                        class="mx-auto bg-white/10 backdrop-blur-xl border border-white/20 p-3 md:p-5 rounded-xl inline-block shadow-[0_0_30px_rgba(28,63,98,0.35)]"
-                    >
+                                <div
+                                    class="h-6 w-6 2xl:h-9 2xl:w-9 bg-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                                >
+                                    <svg
+                                        class="p-1 2xl:p-0.5"
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 24 24"
+                                        fill="#043915"
+                                    >
+                                        <path
+                                            d="M5 12h14M13 5l7 7-7 7"
+                                            stroke="#043915"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- COUNTDOWN BOX -->
                         <div
-                            class="grid grid-cols-4 gap-3 md:gap-4 text-center"
+                            class="bg-white/30 backdrop-blur-sm border border-[#043915]/10 rounded-2xl px-6 py-6 w-full max-w-sm"
                         >
-                            <!-- DAYS -->
-                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
-                                <span
-                                    class="block text-2xl md:text-3xl font-extrabold text-white"
-                                    id="days"
-                                    >172</span
-                                >
-                                <span
-                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
-                                    >Days</span
-                                >
-                            </div>
+                            <!-- Title -->
+                            <h4
+                                class="text-center text-xs md:text-sm font-semibold text-[#043915] tracking-widest mb-6"
+                            >
+                                EVENT COUNTDOWN
+                            </h4>
 
-                            <!-- HOURS -->
-                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
-                                <span
-                                    class="block text-2xl md:text-3xl font-extrabold text-white"
-                                    id="hours"
-                                    >23</span
+                            <div class="grid grid-cols-4 gap-3 text-center">
+                                <!-- Days -->
+                                <div
+                                    class="bg-[#043915]/10 rounded-lg p-3 flex flex-col items-center"
                                 >
-                                <span
-                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
-                                    >Hours</span
-                                >
-                            </div>
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#043915]"
+                                    >
+                                        12
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Days</span
+                                    >
+                                </div>
 
-                            <!-- MINUTES -->
-                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
-                                <span
-                                    class="block text-2xl md:text-3xl font-extrabold text-white"
-                                    id="minutes"
-                                    >11</span
+                                <!-- Hours -->
+                                <div
+                                    class="bg-[#043915]/10 rounded-lg p-3 flex flex-col items-center"
                                 >
-                                <span
-                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
-                                    >Minutes</span
-                                >
-                            </div>
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#043915]"
+                                    >
+                                        08
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Hours</span
+                                    >
+                                </div>
 
-                            <!-- SECONDS -->
-                            <div class="p-2 md:p-4 rounded-lg bg-[#043915]/40">
-                                <span
-                                    class="block text-2xl md:text-3xl font-extrabold text-white"
-                                    id="seconds"
-                                    >33</span
+                                <!-- Minutes -->
+                                <div
+                                    class="bg-[#043915]/10 rounded-lg p-3 flex flex-col items-center"
                                 >
-                                <span
-                                    class="text-[10px] md:text-xs uppercase tracking-widest opacity-80"
-                                    >Seconds</span
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#043915]"
+                                    >
+                                        32
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Mins</span
+                                    >
+                                </div>
+
+                                <!-- Seconds -->
+                                <div
+                                    class="bg-[#043915]/10 rounded-lg p-3 flex flex-col items-center"
                                 >
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#043915]"
+                                    >
+                                        45
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Secs</span
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- CTA BUTTONS -->
-                    <div class="flex flex-wrap justify-center gap-5 md:mt-6">
-                        <a
-                            href="#"
-                            class="w-full md:w-auto text-center bg-[#043915] border-2 border-[#043915] text-white px-10 py-3 rounded-md font-semibold tracking-wide hover:bg-transparent transition-all duration-300 hover:-translate-y-1"
-                        >
-                            Register Now
-                        </a>
-
-                        <a
-                            href="#"
-                            class="w-full md:w-auto text-center bg-white/10 border-2 border-white/30 text-white px-10 py-3 rounded-md font-semibold tracking-wide hover:bg-white hover:text-[#043915] transition-all duration-300 hover:-translate-y-1"
-                        >
-                            View Schedule
-                        </a>
-                    </div>
+                <!-- RIGHT IMAGE -->
+                <div
+                    class="relative w-full h-[300px] md:h-full overflow-hidden"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1100&q=80"
+                        class="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-[#043915]/20"></div>
                 </div>
             </div>
         </section>
@@ -560,7 +561,9 @@
                             />
                         </svg>
                     </div>
-                    <h3 class="text-4xl font-extrabold text-[#043915]">
+                    <h3
+                        class="text-2xl md:text-4xl font-extrabold text-[#043915]"
+                    >
                         2000+
                     </h3>
                     <p class="text-gray-600 text-sm md:text-base">Delegates</p>
@@ -590,7 +593,11 @@
                             />
                         </svg>
                     </div>
-                    <h3 class="text-4xl font-extrabold text-[#043915]">30+</h3>
+                    <h3
+                        class="text-2xl md:text-4xl font-extrabold text-[#043915]"
+                    >
+                        30+
+                    </h3>
                     <p class="text-gray-600 text-sm md:text-base">
                         International Speakers
                     </p>
@@ -615,7 +622,11 @@
                             />
                         </svg>
                     </div>
-                    <h3 class="text-4xl font-extrabold text-[#043915]">20+</h3>
+                    <h3
+                        class="text-2xl md:text-4xl font-extrabold text-[#043915]"
+                    >
+                        20+
+                    </h3>
                     <p class="text-gray-600 text-sm md:text-base">
                         Scientific Sessions
                     </p>
@@ -640,7 +651,11 @@
                             />
                         </svg>
                     </div>
-                    <h3 class="text-4xl font-extrabold text-[#043915]">3</h3>
+                    <h3
+                        class="text-2xl md:text-4xl font-extrabold text-[#043915]"
+                    >
+                        3
+                    </h3>
                     <p class="text-gray-600 text-sm md:text-base">Days Event</p>
                 </div>
             </div>
@@ -664,20 +679,20 @@
                     <div class="col-span-2">
                         <img
                             src="https://balticsecurityconference.lv/wp-content/uploads/fly-images/325/izstaditaji-bg@2x-scaled-1366x0-c.jpg"
-                            class="w-full h-40 md:h-72 xl:h-80 object-cover rounded-lg shadow-sm"
+                            class="w-full h-40 md:h-56 object-cover rounded-lg shadow-sm"
                         />
                     </div>
 
                     <!-- Small Image 1 -->
                     <img
                         src="https://images.unsplash.com/photo-1596522354195-e84ae3c98731?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZmVyZW5jZSUyMGhhbGx8ZW58MHx8MHx8fDA%3D"
-                        class="w-full h-40 md:h-60 xl:h-full object-cover rounded-lg shadow-sm"
+                        class="w-full h-40 md:h-56 xl:h-full object-cover rounded-lg shadow-sm"
                     />
 
                     <!-- Small Image 2 -->
                     <img
                         src="https://t4.ftcdn.net/jpg/02/61/20/57/360_F_261205772_J0UqLRfoc1qumAgujual72bEAdmNSVzb.jpg"
-                        class="w-full h-40 md:h-60 xl:h-full object-cover rounded-lg shadow-sm"
+                        class="w-full h-40 md:h-56 xl:h-full object-cover rounded-lg shadow-sm"
                     />
                 </div>
 
@@ -852,9 +867,15 @@
         <!-- highlights -->
         <section
             id="highlight-block"
-            class="py-14 md:py-20 px-4 max-w-7xl mx-auto"
+            class="py-10 md:py-20 px-4 max-w-7xl mx-auto"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlight"
+            data-moj-web-label="Conference Highlight"
+            data-moj-web-category="structural"
         >
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-14 items-center"
+            >
                 <!-- LEFT CONTENT — TITLE KEPT -->
                 <div class="space-y-6">
                     <h2
@@ -986,355 +1007,292 @@
 
         <!-- about -->
         <section
-            class="relative flex flex-col md:flex-row overflow-hidden"
             id="about-block"
+            class="relative flex flex-col md:flex-row overflow-hidden"
             data-moj-web-fixed="false"
             data-moj-web-type="about"
             data-moj-web-label="About Conference"
             data-moj-web-category="structural"
         >
+            <!-- LEFT CONTENT -->
             <div
-                class="w-full md:w-1/2 bg-gradient-to-br from-[#C10817] via-[#900612] to-[#C10817] relative flex items-center xl:py-16 pt-8 pb-10 px-4 xl:px-8 z-10"
+                class="w-full md:w-1/2 bg-gradient-to-br from-[#043915] via-[#065723] to-[#043915] relative flex items-center xl:py-20 py-10 px-4 md:px-6 xl:px-12 z-10"
             >
-                <div class="max-w-xl mx-auto space-y-2 xl:space-y-6">
+                <div
+                    class="max-w-xl mx-auto space-y-4 md:space-y-8 border-l-4 border-white/30 pl-3 md:pl-6"
+                >
+                    <!-- TITLE -->
                     <h2
-                        class="text-3xl xl:text-4xl font-medium text-white leading-tight"
+                        class="text-3xl xl:text-4xl font-medium text-white leading-tight tracking-tight"
                     >
-                        <span class="text-yellow-300"
-                            >About the Conference</span
-                        >
+                        About the
+                        <span class="bg-white text-[#043915] px-3 rounded-md">
+                            Conference
+                        </span>
                     </h2>
 
+                    <!-- DESCRIPTION -->
                     <p
-                        class="text-white text-sm md:text-base xl:text-lg leading-relaxed mb-4"
+                        class="text-white/85 text-base md:text-lg leading-relaxed"
                     >
-                        This conference brings together leaders, innovators, and
-                        participants from across the country to explore ideas,
-                        share knowledge, and build meaningful networks for the
-                        future.
+                        This conference unites leaders, innovators, and
+                        professionals from across the region to exchange
+                        insights, explore new ideas, and cultivate meaningful
+                        collaborations that shape the future.
                     </p>
 
                     <p
-                        class="text-white text-sm md:text-base xl:text-lg leading-relaxed mb-4"
+                        class="text-white/85 text-base md:text-lg leading-relaxed"
                     >
-                        Attendees can expect a rich mix of keynote talks, panel
-                        discussions, interactive sessions, and collaborative
-                        activities designed to inspire growth and innovation
-                        across diverse fields.
+                        Participants will experience keynote lectures, panel
+                        discussions, hands-on workshops, and dynamic interactive
+                        sessions — all curated to inspire knowledge, broaden
+                        perspectives, and spark innovative thinking.
                     </p>
 
                     <p
-                        class="text-white text-sm md:text-base xl:text-lg leading-relaxed"
+                        class="text-white/85 text-base md:text-lg leading-relaxed"
                     >
-                        Together, we aim to create a platform that encourages
-                        learning, connection, and meaningful progress for
-                        everyone involved.
+                        Our mission is to create a vibrant platform that
+                        nurtures learning, strengthens networks, and drives
+                        impactful advancements within the field.
                     </p>
                 </div>
             </div>
 
-            <div
-                class="relative w-full md:w-1/2 bg-cover bg-[10%] min-h-[300px] md:min-h-full"
-                style="
-                    background-image: url('https://www.shutterstock.com/image-photo/female-speaker-giving-talk-on-600nw-2480862361.jpg');
-                "
-            >
+            <!-- RIGHT IMAGE -->
+            <div class="relative w-full md:w-1/2 md:min-h-full overflow-hidden">
+                <!-- Angled mask effect -->
                 <div
-                    class="relative z-10 w-full min-h-[300px] h-full bg-[#C10817]/40"
+                    class="absolute inset-0 bg-gradient-to-tr from-[#043915]/40 to-transparent z-[2]"
+                ></div>
+
+                <img
+                    src="https://www.shutterstock.com/image-photo/female-speaker-giving-talk-on-600nw-2480862361.jpg"
+                    class="w-full h-full object-cover object-center scale-105"
+                />
+
+                <!-- Decorative diagonal layer -->
+                <div
+                    class="absolute top-0 right-0 w-[120%] h-[100%] bg-white/5 rotate-6 origin-top-right"
                 ></div>
             </div>
         </section>
 
         <!-- COMMITTEE SECTION -->
         <section
-            class="py-14 px-4 xl:py-20 bg-[#fafafa]"
             id="committee-block"
+            class="py-10 md:py-16 px-4 bg-[#f3f7f4]"
             data-moj-web-fixed="false"
             data-moj-web-type="committe"
             data-moj-web-label="Committee Members"
             data-moj-web-category="structural"
         >
             <div class="max-w-7xl mx-auto">
+                <!-- HEADING -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-12"
+                    class="text-3xl md:text-5xl font-bold tracking-tight leading-relaxed md:leading-tight mb-4 lg:mb-6 text-center"
                 >
-                    Organizing <span class="text-[#C10817]">Committee</span>
+                    <span class="">Organizing</span>
+
+                    <span class="bg-[#043915] text-white px-3 rounded-md">
+                        Committee
+                    </span>
                 </h2>
 
+                <!-- GRID -->
                 <div
-                    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10"
+                    class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-10"
                 >
-                    <div class="group">
+                    <!-- MEMBER CARD -->
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 p-3 md:p-5"
+                    >
+                        <!-- Image (no round) -->
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                            class="w-full h-48 md:h-56 bg-gray-200 overflow-hidden"
                         >
-                            <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
-                            ></div>
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                            />
+                        </div>
 
+                        <!-- Text -->
+                        <div class="pt-4">
+                            <h3 class="text-lg font-semibold text-[#0D1112]">
+                                Member Name
+                            </h3>
+                            <p class="text-sm font-medium text-[#043915] mt-1">
+                                Committee Role
+                            </p>
+
+                            <!-- Accent Line -->
                             <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
+                                class="mt-3 h-0.5 bg-[#043915]/40 w-full"
+                            ></div>
                         </div>
                     </div>
 
-                    <div class="group">
+                    <!-- DUPLICATE CARDS BELOW -->
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 p-3 md:p-5"
+                    >
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                            class="w-full h-48 md:h-56 bg-gray-200 overflow-hidden"
                         >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-lg font-semibold text-[#0D1112]">
+                                Member Name
+                            </h3>
+                            <p class="text-sm font-medium text-[#043915] mt-1">
+                                Committee Role
+                            </p>
                             <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
+                                class="mt-3 h-0.5 bg-[#043915]/40 w-full"
                             ></div>
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="group">
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 p-3 md:p-5"
+                    >
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                            class="w-full h-48 md:h-56 bg-gray-200 overflow-hidden"
                         >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-lg font-semibold text-[#0D1112]">
+                                Member Name
+                            </h3>
+                            <p class="text-sm font-medium text-[#043915] mt-1">
+                                Committee Role
+                            </p>
                             <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
+                                class="mt-3 h-0.5 bg-[#043915]/40 w-full"
                             ></div>
-
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="group">
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 p-3 md:p-5"
+                    >
                         <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
+                            class="w-full h-48 md:h-56 bg-gray-200 overflow-hidden"
                         >
-                            <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
-                            ></div>
-
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                            />
                         </div>
-                    </div>
-
-                    <div class="group">
-                        <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
-                        >
+                        <div class="pt-4">
+                            <h3 class="text-lg font-semibold text-[#0D1112]">
+                                Member Name
+                            </h3>
+                            <p class="text-sm font-medium text-[#043915] mt-1">
+                                Committee Role
+                            </p>
                             <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
+                                class="mt-3 h-0.5 bg-[#043915]/40 w-full"
                             ></div>
-
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group">
-                        <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
-                        >
-                            <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
-                            ></div>
-
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group">
-                        <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
-                        >
-                            <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
-                            ></div>
-
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group">
-                        <div
-                            class="w-full bg-white rounded-xl border border-[#C10817]/30 overflow-hidden transition-all duration-300"
-                        >
-                            <div
-                                class="h-40 md:h-56 xl:h-64 bg-gray-200 bg-cover bg-center"
-                                style="
-                                    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg');
-                                "
-                            ></div>
-
-                            <div
-                                class="p-4 bg-[#C10817]/5 text-center rounded-b-xl"
-                            >
-                                <h3
-                                    class="text-lg md:text-xl font-semibold text-[#0D1112]"
-                                >
-                                    Member Name
-                                </h3>
-                                <p
-                                    class="text-sm text-[#C10817] mt-1 font-medium"
-                                >
-                                    Committee Role
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SCHEDULE SECTION  -->
+        <!-- schedule -->
         <section
-            class="py-12 px-4 xl:py-20 bg-[#fafafa]"
             id="schedule-block"
             data-moj-web-fixed="false"
             data-moj-web-type="Schedule"
             data-moj-web-label="Schedule"
             data-moj-web-category="structural"
+            class="py-10 md:py-16 px-4 bg-white"
         >
             <div class="max-w-7xl mx-auto">
+                <!-- TITLE -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold md:text-center text-[#0D1112] mb-6 md:mb-12"
+                    class="text-3xl md:text-5xl font-bold tracking-tight leading-relaxed md:leading-tight mb-4 lg:mb-6 text-center"
                 >
-                    Event <span class="text-[#C10817]">Schedule</span>
+                    <span class="">Event</span>
+
+                    <span class="bg-[#043915] text-white px-3 rounded-md">
+                        Schedule
+                    </span>
                 </h2>
 
-                <div class="mb-16">
+                <!-- TOGGLE BUTTONS -->
+                <div class="flex justify-center gap-4 mb-10">
+                    <!-- DAY 1 BUTTON -->
+                    <label
+                        for="day1"
+                        class="peer-checked/day1:bg-[#043915] peer-checked/day1:text-white cursor-pointer px-6 py-3 text-sm md:text-base font-semibold border rounded-full transition-all border-[#043915] text-[#043915] hover:bg-[#043915] hover:text-white"
+                    >
+                        Day 1
+                    </label>
+
+                    <!-- DAY 2 BUTTON -->
+                    <label
+                        for="day2"
+                        class="peer-checked/day2:bg-[#043915] peer-checked/day2:text-white cursor-pointer px-6 py-3 text-sm md:text-base font-semibold border rounded-full transition-all border-[#043915] text-[#043915] hover:bg-[#043915] hover:text-white"
+                    >
+                        Day 2
+                    </label>
+                </div>
+
+                <!-- Hidden Inputs for Toggle -->
+                <input
+                    type="radio"
+                    name="day"
+                    id="day1"
+                    class="hidden peer/day1"
+                    checked
+                />
+                <input
+                    type="radio"
+                    name="day"
+                    id="day2"
+                    class="hidden peer/day2"
+                />
+
+                <!-- DAY 1 CONTENT -->
+                <div class="peer-checked/day1:block hidden" id="schedule-day1">
                     <h3
-                        class="text-2xl md:text-3xl font-semibold text-[#C10817] mb-6"
+                        class="text-2xl md:text-3xl font-bold text-[#043915] mb-8"
                     >
                         Day 1
                     </h3>
 
-                    <div class="space-y-6">
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                    <div
+                        class="relative border-l-2 border-[#043915]/30 pl-6 space-y-10"
+                    >
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 8:00 AM – 9:00 AM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Registration & Welcome
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Delegate registration and welcome ceremony.
+                                Delegate registration & welcome ceremony.
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 9:00 AM – 10:00 AM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Inaugural Ceremony
                             </h4>
                             <p class="text-gray-700 mt-2">
@@ -1342,94 +1300,84 @@
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 10:00 AM – 12:30 PM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Scientific Session 1
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Talks by invited experts and Q&A session.
+                                Talks by invited experts + Q&A session.
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 12:30 PM – 1:30 PM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Lunch Break
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Buffet lunch for all registered participants.
+                                Buffet lunch for participants.
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 1:30 PM – 4:30 PM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Workshops & Hands-on
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Practical hands-on training with faculty
-                                mentors.
+                                Practical hands-on learning with mentors.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div>
+                <!-- DAY 2 CONTENT -->
+                <div class="peer-checked/day2:block hidden" id="schedule-day2">
                     <h3
-                        class="text-2xl md:text-3xl font-semibold text-[#C10817] mb-6"
+                        class="text-2xl md:text-3xl font-bold text-[#043915] mb-8"
                     >
                         Day 2
                     </h3>
 
-                    <div class="space-y-6">
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                    <div
+                        class="relative border-l-2 border-[#043915]/30 pl-6 space-y-10"
+                    >
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 9:00 AM – 11:00 AM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Scientific Session 2
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Engaging lectures covering modern advancements.
+                                Lectures on emerging innovations.
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 11:00 AM – 12:30 PM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Panel Discussion
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Expert panel interacts with participants live.
+                                Interactive session with experts.
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 12:30 PM – 1:30 PM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Lunch Break
                             </h4>
                             <p class="text-gray-700 mt-2">
@@ -1437,17 +1385,15 @@
                             </p>
                         </div>
 
-                        <div
-                            class="bg-white rounded-xl shadow p-6 border border-[#C10817]/20"
-                        >
-                            <p class="text-sm text-gray-600 mb-1">
+                        <div>
+                            <p class="text-sm text-gray-600">
                                 1:30 PM – 3:30 PM
                             </p>
-                            <h4 class="text-xl font-semibold text-[#C10817]">
+                            <h4 class="text-xl font-semibold text-[#043915]">
                                 Valedictory Ceremony
                             </h4>
                             <p class="text-gray-700 mt-2">
-                                Certificate distribution and closing remarks.
+                                Closing remarks & certificate distribution.
                             </p>
                         </div>
                     </div>
@@ -1457,91 +1403,141 @@
 
         <!-- TARIFF -->
         <section
-            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
             id="tariff-block"
+            class="py-10 px-4 xl:py-20 bg-[#f3f7f4]"
             data-moj-web-fixed="false"
             data-moj-web-type="tariff"
             data-moj-web-label="Tariff"
             data-moj-web-category="structural"
         >
-            <div class="max-w-8xl mx-auto flex flex-col gap-5">
-                <div>
-                    <h2
-                        class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] leading-tight md:text-center mb-10"
-                    >
-                        Registration <span class="text-[#C10817]">Charges</span>
-                    </h2>
+            <div class="flex flex-col gap-6 md:gap-12 max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-5xl font-bold tracking-tight leading-relaxed md:leading-tight mb-4 lg:mb-6 text-center"
+                >
+                    <span class="">Registration</span>
 
-                    <div
-                        class="overflow-x-auto rounded-xl border border-[#D1E2F3]"
-                    >
-                        <table class="min-w-full text-left text-base">
-                            <thead
-                                class="bg-[#E8F1F8] text-[#17426C] font-semibold"
+                    <span class="bg-[#043915] text-white px-3 rounded-md">
+                        Charges
+                    </span>
+                </h2>
+
+                <!-- TABLE -->
+                <div
+                    class="overflow-x-auto bg-white rounded-xl border border-[#043915]/20 shadow-sm"
+                >
+                    <table class="min-w-full text-left text-base">
+                        <!-- Header -->
+                        <thead>
+                            <tr
+                                class="bg-[#043915]/10 text-[#043915] font-semibold"
                             >
-                                <tr>
-                                    <th class="px-6 py-4">Category</th>
-                                    <th class="px-6 py-4">Fee</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-[#17426C]">
-                                <tr class="even:bg-[#F5FAFD]">
-                                    <td class="px-6 py-4">
-                                        Professional Delegate
-                                    </td>
-                                    <td class="px-6 py-4">₹4,500</td>
-                                </tr>
+                                <th
+                                    class="px-6 py-4 text-sm md:text-base uppercase tracking-wide"
+                                >
+                                    Category
+                                </th>
+                                <th
+                                    class="px-6 py-4 text-sm md:text-base uppercase tracking-wide"
+                                >
+                                    Fee
+                                </th>
+                            </tr>
+                        </thead>
 
-                                <tr class="even:bg-[#F5FAFD]">
-                                    <td class="px-6 py-4">
-                                        Non-Member Delegate
-                                    </td>
-                                    <td class="px-6 py-4">₹5,000</td>
-                                </tr>
+                        <!-- Body -->
+                        <tbody class="divide-y divide-gray-200">
+                            <!-- Row -->
+                            <tr class="hover:bg-[#043915]/5 transition">
+                                <td
+                                    class="px-6 py-5 font-medium text-[#0D1112]"
+                                >
+                                    Professional Delegate
+                                </td>
+                                <td
+                                    class="px-6 py-5 font-semibold text-[#043915]"
+                                >
+                                    ₹4,500
+                                </td>
+                            </tr>
 
-                                <tr class="even:bg-[#F5FAFD]">
-                                    <td class="px-6 py-4">
-                                        Accompanying Person
-                                    </td>
-                                    <td class="px-6 py-4">₹2,000</td>
-                                </tr>
+                            <tr class="hover:bg-[#043915]/5 transition">
+                                <td
+                                    class="px-6 py-5 font-medium text-[#0D1112]"
+                                >
+                                    Non-Member Delegate
+                                </td>
+                                <td
+                                    class="px-6 py-5 font-semibold text-[#043915]"
+                                >
+                                    ₹5,000
+                                </td>
+                            </tr>
 
-                                <tr class="even:bg-[#F5FAFD]">
-                                    <td class="px-6 py-4">Student / Trainee</td>
-                                    <td class="px-6 py-4">Complimentary</td>
-                                </tr>
+                            <tr class="hover:bg-[#043915]/5 transition">
+                                <td
+                                    class="px-6 py-5 font-medium text-[#0D1112]"
+                                >
+                                    Accompanying Person
+                                </td>
+                                <td
+                                    class="px-6 py-5 font-semibold text-[#043915]"
+                                >
+                                    ₹2,000
+                                </td>
+                            </tr>
 
-                                <tr class="bg-[#E8F1F8] font-semibold">
-                                    <td class="px-6 py-4">
-                                        Spot Registration – Member
-                                    </td>
-                                    <td class="px-6 py-4">₹6,000</td>
-                                </tr>
+                            <tr class="hover:bg-[#043915]/5 transition">
+                                <td
+                                    class="px-6 py-5 font-medium text-[#0D1112]"
+                                >
+                                    Student / Trainee
+                                </td>
+                                <td
+                                    class="px-6 py-5 font-semibold text-[#043915]"
+                                >
+                                    Complimentary
+                                </td>
+                            </tr>
 
-                                <tr class="bg-[#E8F1F8] font-semibold">
-                                    <td class="px-6 py-4">
-                                        Spot Registration – Non-Member
-                                    </td>
-                                    <td class="px-6 py-4">₹6,500</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            <!-- Highlight Rows -->
+                            <tr
+                                class="bg-[#043915]/10 hover:bg-[#043915]/20 transition font-semibold"
+                            >
+                                <td class="px-6 py-5 text-[#043915]">
+                                    Spot Registration – Member
+                                </td>
+                                <td class="px-6 py-5 text-[#043915]">₹6,000</td>
+                            </tr>
+
+                            <tr
+                                class="bg-[#043915]/10 hover:bg-[#043915]/20 transition font-semibold"
+                            >
+                                <td class="px-6 py-5 text-[#043915]">
+                                    Spot Registration – Non-Member
+                                </td>
+                                <td class="px-6 py-5 text-[#043915]">₹6,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
+                <!-- CTA BOX -->
                 <div
-                    class="bg-[#C10817] rounded-xl py-10 px-6 text-center text-white relative"
+                    class="rounded-2xl bg-gradient-to-br from-[#043915] via-[#065723] to-[#043915] text-white p-10 relative overflow-hidden"
                 >
+                    <!-- Soft Glow Background -->
                     <div
-                        class="absolute inset-0 bg-[url('/assets/images/png/3d-grid.png')] bg-no-repeat opacity-40"
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent)]"
                     ></div>
 
-                    <div class="relative z-10">
-                        <h3 class="text-2xl md:text-3xl font-semibold mb-3">
+                    <div class="relative z-10 text-center max-w-2xl mx-auto">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-3">
                             Ready to Register?
                         </h3>
-                        <p class="text-white/90 text-base md:text-lg mb-6">
-                            Secure your place now – limited seats available.
+
+                        <p class="text-white/90 text-base md:text-lg mb-8">
+                            Secure your seat early and be part of an enriching
+                            experience.
                         </p>
 
                         <div
@@ -1549,14 +1545,14 @@
                         >
                             <a
                                 href="#"
-                                class="inline-block px-6 py-3 bg-white text-[#C10817] border border-white rounded-md font-semibold shadow hover:bg-[#C10817] hover:text-white transition-all duration-300"
+                                class="px-7 py-3 bg-white text-[#043915] rounded-full font-semibold shadow hover:bg-[#043915] hover:text-white border border-white transition-all duration-300"
                             >
                                 Register Now
                             </a>
 
                             <a
                                 href="#"
-                                class="inline-block px-6 py-3 border border-white text-white rounded-md font-semibold hover:bg-white hover:text-[#C10817] transition-all duration-300"
+                                class="px-7 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-[#043915] transition-all duration-300"
                             >
                                 Download Brochure
                             </a>
@@ -1568,171 +1564,228 @@
 
         <!-- About Venue -->
         <section
-            class="py-10 px-4 xl:py-20 relative overflow-hidden max-w-7xl mx-auto"
             id="about-venue-block"
+            class="py-10 px-4 xl:py-20 max-w-7xl mx-auto"
             data-moj-web-fixed="false"
             data-moj-web-type="aboutVenue"
             data-moj-web-label="About Venue"
             data-moj-web-category="structural"
         >
-            <div
-                class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-            ></div>
-
-            <div
-                class="relative z-10 flex flex-col-reverse xl:flex-row lg:items-center xl:items-stretch gap-5 xl:gap-8 max-w-8xl mx-auto"
-            >
-                <div class="relative xl:w-1/2">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
+                <!-- BENTO IMAGE GRID -->
+                <div class="grid grid-cols-2 grid-rows-2 gap-4">
                     <img
                         src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
-                        alt="Venue Image"
-                        class="w-full rounded-[10px] xl:rounded-2xl lg:h-[400px] max-h-150 xl:h-full shadow-xl object-cover object-center"
+                        class="col-span-2 w-full h-40 md:h-56 object-cover rounded-lg"
+                    />
+
+                    <img
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+                        class="w-full h-40 md:h-56 object-cover rounded-lg"
+                    />
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                        class="w-full h-40 md:h-56 object-cover rounded-lg"
                     />
                 </div>
 
-                <div class="xl:w-1/2 flex flex-col justify-center">
-                    <h1
-                        class="text-4xl md:text-5xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
+                <!-- CONTENT SECTION -->
+                <div class="flex flex-col justify-center">
+                    <!-- BADGE -->
+                    <span
+                        class="inline-block mb-3 text-xs md:text-sm font-semibold tracking-wider text-[#043915] bg-[#043915]/10 px-3 py-1 rounded-full w-fit"
                     >
-                        About the <span class="text-[#C10817]">Venue</span>
-                    </h1>
+                        ABOUT THE VENUE
+                    </span>
 
+                    <!-- MODERN HEADING -->
                     <h2
-                        class="text-2xl md:text-2xl font-semibold text-[#0D1112] mb-4 tracking-wide"
+                        class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4"
                     >
-                        A Premium Conference Destination
+                        About the
+                        <span class="bg-[#043915] text-white px-3 rounded-md">
+                            Venue
+                        </span>
                     </h2>
 
-                    <p
-                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    <h3
+                        class="text-xl md:text-2xl font-semibold text-[#0D1112] mb-6"
                     >
-                        Our event takes place at a world-class venue featuring
-                        state-of-the-art auditoriums, modern meeting spaces, and
-                        top-notch hospitality. Designed to support large
-                        academic and professional gatherings, it ensures a
-                        seamless experience for every participant.
-                    </p>
+                        A Premium Conference Destination
+                    </h3>
 
-                    <p
-                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    <!-- DESCRIPTION -->
+                    <div
+                        class="space-y-4 text-[#0D1112]/80 text-base md:text-lg leading-relaxed border-l-4 border-[#043915] pl-5"
                     >
-                        Located in the heart of the city, the venue offers easy
-                        connectivity, premium amenities, and a comfortable
-                        environment ideal for learning, discussions, and
-                        networking.
-                    </p>
+                        <p>
+                            Our event is hosted at a world-class venue equipped
+                            with state-of-the-art auditoriums, modern meeting
+                            spaces, and exceptional hospitality — perfect for
+                            large academic and professional gatherings.
+                        </p>
 
-                    <p
-                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
-                    >
-                        Attend sessions, explore exhibitions, and enjoy
-                        world-class facilities — all in one exceptional location
-                        crafted for a memorable conference experience.
-                    </p>
+                        <p>
+                            Located in the heart of the city, it offers
+                            effortless connectivity, premium amenities, and a
+                            comfortable environment ideal for learning,
+                            discussions, and networking.
+                        </p>
+
+                        <p>
+                            Experience seamless sessions, explore exhibits, and
+                            enjoy world-class facilities — all crafted for a
+                            memorable conference experience.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- HOTELS SECTION -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-white relative overflow-hidden"
             id="hotels-block"
+            class="py-10 px-4 xl:py-20 bg-[#f3f7f4]"
             data-moj-web-fixed="false"
             data-moj-web-type="hotels"
             data-moj-web-label="Hotels"
             data-moj-web-category="structural"
         >
-            <div class="max-w-8xl mx-auto">
+            <div class="max-w-7xl mx-auto">
+                <!-- TITLE -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center mb-12 leading-tight"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-6 md:mb-12 leading-tight"
                 >
-                    Hotels for <span class="text-[#C10817]">Stay</span>
+                    Hotels for
+                    <span class="bg-[#043915] text-white px-3 rounded-md"
+                        >Stay</span
+                    >
                 </h2>
 
-                <div class="flex flex-wrap justify-center gap-8">
+                <!-- GRID -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
+                >
+                    <!-- HOTEL CARD -->
                     <div
-                        class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
+                        class="group border border-gray-200 bg-white overflow-hidden"
                     >
-                        <div class="h-48 w-full">
+                        <div class="h-52">
                             <img
                                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/89/11/15/hotel-facade.jpg?w=900&h=500&s=1"
-                                alt="Hotel Image"
-                                class="w-full h-full object-cover"
+                                class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300"
                             />
                         </div>
-                        <div class="p-5">
-                            <h3
-                                class="text-xl font-semibold text-[#C10817] mb-1"
-                            >
+
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-semibold text-[#043915]">
                                 Hotel Name One
                             </h3>
-                            <p class="text-sm text-[#0D1112]/70 mb-4">
+                            <p class="text-sm text-gray-600">
                                 City Center, Your Location
                             </p>
 
                             <a
                                 href="#"
-                                class="inline-block px-5 py-2 bg-[#C10817] text-white rounded-md hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300 text-sm font-semibold"
+                                class="inline-flex items-center gap-2 mt-3 text-[#043915] font-medium border border-[#043915] px-4 py-2 text-sm hover:bg-[#043915] hover:text-white transition-all"
                             >
                                 View Details
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M5 12h14M13 5l7 7-7 7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
                             </a>
                         </div>
                     </div>
 
+                    <!-- HOTEL CARD -->
                     <div
-                        class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
+                        class="group border border-gray-200 bg-white overflow-hidden"
                     >
-                        <div class="h-48 w-full">
+                        <div class="h-52">
                             <img
-                                src="https://m.ahstatic.com/is/image/accorhotels/HCM_P_8147067:4by3?fmt=jpg&op_usm=1.75,0.3,2,0&resMode=sharp2&iccEmbed=true&icc=sRGB&dpr=on,1.5&wid=335&hei=251&qlt=80"
-                                alt="Hotel Image"
-                                class="w-full h-full object-cover"
+                                src="https://m.ahstatic.com/is/image/accorhotels/HCM_P_8147067:4by3"
+                                class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300"
                             />
                         </div>
-                        <div class="p-5">
-                            <h3
-                                class="text-xl font-semibold text-[#C10817] mb-1"
-                            >
+
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-semibold text-[#043915]">
                                 Hotel Name Two
                             </h3>
-                            <p class="text-sm text-[#0D1112]/70 mb-4">
+                            <p class="text-sm text-gray-600">
                                 Near Convention Venue
                             </p>
 
                             <a
                                 href="#"
-                                class="inline-block px-5 py-2 bg-[#C10817] text-white rounded-md hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300 text-sm font-semibold"
+                                class="inline-flex items-center gap-2 mt-3 text-[#043915] font-medium border border-[#043915] px-4 py-2 text-sm hover:bg-[#043915] hover:text-white transition-all"
                             >
                                 View Details
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M5 12h14M13 5l7 7-7 7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
                             </a>
                         </div>
                     </div>
 
+                    <!-- HOTEL CARD -->
                     <div
-                        class="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-2xl shadow-lg overflow-hidden"
+                        class="group border border-gray-200 bg-white overflow-hidden"
                     >
-                        <div class="h-48 w-full">
+                        <div class="h-52">
                             <img
                                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/86/8a/0f/the-lalit-jaipur.jpg?w=900&h=500&s=1"
-                                alt="Hotel Image"
-                                class="w-full h-full object-cover"
+                                class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300"
                             />
                         </div>
-                        <div class="p-5">
-                            <h3
-                                class="text-xl font-semibold text-[#C10817] mb-1"
-                            >
+
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-semibold text-[#043915]">
                                 Hotel Name Three
                             </h3>
-                            <p class="text-sm text-[#0D1112]/70 mb-4">
+                            <p class="text-sm text-gray-600">
                                 5 Minutes from Venue
                             </p>
 
                             <a
                                 href="#"
-                                class="inline-block px-5 py-2 bg-[#C10817] text-white rounded-md hover:bg-white hover:text-[#C10817] border border-[#C10817] transition duration-300 text-sm font-semibold"
+                                class="inline-flex items-center gap-2 mt-3 text-[#043915] font-medium border border-[#043915] px-4 py-2 text-sm hover:bg-[#043915] hover:text-white transition-all"
                             >
                                 View Details
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M5 12h14M13 5l7 7-7 7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -1742,84 +1795,99 @@
 
         <!-- PLACES TO VISIT SECTION -->
         <section
-            class="py-12 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#fdfdfd]"
             id="places-block"
+            class="py-10 md:py-20 px-4 bg-white relative overflow-hidden"
             data-moj-web-fixed="false"
             data-moj-web-type="places"
             data-moj-web-label="Places"
             data-moj-web-category="structural"
         >
-            <div class="max-w-7xl mx-auto">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- TITLE -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-14"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-6 md:mb-12 leading-tight"
                 >
                     Explore Nearby
-                    <span class="text-[#C10817]">Attractions</span>
+                    <span class="bg-[#043915] text-white px-3 rounded-md"
+                        >Attractions</span
+                    >
                 </h2>
 
+                <!-- BENTO GRID -->
                 <div
-                    class="flex flex-col lg:flex-row items-center gap-10 mb-16"
+                    class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 auto-rows-[250px] md:auto-rows-[300px] lg:auto-rows-[1fr]"
                 >
-                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+                    <!-- LARGE IMAGE LEFT (Tall) -->
+                    <div
+                        class="relative lg:row-span-2 overflow-hidden group bg-black/10 h-[300px] sm:h-[400px] lg:h-full"
+                    >
                         <img
-                            src="https://plus.unsplash.com/premium_photo-1669748157617-a3a83cc8ea23?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D"
-                            class="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                            src="https://plus.unsplash.com/premium_photo-1669748157617-a3a83cc8ea23?fm=jpg&q=60&w=2000"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
                         />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent"
+                        >
+                            <h3 class="text-3xl font-semibold text-white">
+                                Place One
+                            </h3>
+                            <p class="text-white/80 mt-2 text-sm">
+                                Short intro about this beautiful place.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="lg:w-1/2">
-                        <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
-                            Place One
-                        </h3>
-                        <p class="text-[#0D1112]/70 text-base leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Vestibulum at dui eget nunc facilisis posuere
-                            sed nec lorem. Integer id orci vel ligula efficitur
-                            tempus sed vitae neque.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="flex flex-col-reverse lg:flex-row items-center gap-10 mb-16"
-                >
-                    <div class="lg:w-1/2">
-                        <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
+                    <!-- TOP RIGHT — TEXT CARD -->
+                    <div
+                        class="bg-white border border-gray-200 p-8 flex flex-col justify-center shadow-sm mt-12 lg:mt-0"
+                    >
+                        <h3 class="text-2xl font-semibold text-[#043915] mb-3">
                             Place Two
                         </h3>
-                        <p class="text-[#0D1112]/70 text-base leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Praesent volutpat massa non tortor eleifend,
-                            vitae fermentum nisl feugiat. Nulla facilisi.
+                        <p class="text-[#0D1112]/70 leading-relaxed">
+                            A clean text-only card providing detailed insight
+                            about the location. Perfect for highlighting
+                            historic spots, markets or cultural hubs.
                         </p>
                     </div>
 
-                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+                    <!-- BOTTOM MIDDLE — IMAGE + TEXT TOP -->
+                    <div
+                        class="relative overflow-hidden group bg-black/10 h-[250px] sm:h-[300px] lg:h-auto"
+                    >
                         <img
                             src="https://www.thegari.in/blog/wp-content/uploads/2025/08/nandi-hills-1024x538.jpg"
-                            class="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
                         />
-                    </div>
-                </div>
 
-                <div class="flex flex-col lg:flex-row items-center gap-10">
-                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+                        <div
+                            class="absolute top-0 left-0 p-4 bg-[#043915] text-white"
+                        >
+                            <h3 class="text-xl font-semibold">Place Three</h3>
+                        </div>
+                    </div>
+
+                    <!-- BOTTOM RIGHT — IMAGE + TEXT OVERLAY CENTER -->
+                    <div
+                        class="relative overflow-hidden group bg-black/10 col-span-1 lg:col-span-2 h-[250px] sm:h-[300px] lg:h-auto"
+                    >
                         <img
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0f/81/d0/christ-church-shimla.jpg?w=900&h=500&s=1"
-                            class="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
                         />
-                    </div>
 
-                    <div class="lg:w-1/2">
-                        <h3 class="text-2xl font-semibold text-[#C10817] mb-2">
-                            Place Three
-                        </h3>
-                        <p class="text-[#0D1112]/70 text-base leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Sed dapibus diam sit amet mauris dignissim, at
-                            pellentesque lectus euismod. Proin pulvinar neque
-                            vel nulla pretium, quis gravida elit feugiat.
-                        </p>
+                        <div
+                            class="absolute inset-0 bg-black/40 flex items-end p-6"
+                        >
+                            <div>
+                                <h3 class="text-2xl font-semibold text-white">
+                                    Place Four
+                                </h3>
+                                <p class="text-white/80 text-sm mt-2">
+                                    A landmark destination you must see.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1827,30 +1895,32 @@
 
         <!-- SPONSORS -->
         <section
-            class="py-10 px-4 xl:py-20 lg:px-10 xl:px-20 bg-[#f9f9f9] relative overflow-hidden"
             id="sponsor-block"
+            class="py-16 px-4 xl:py-24 bg-[#f5f8f6] relative overflow-hidden"
             data-moj-web-fixed="false"
             data-moj-web-type="sponsor"
             data-moj-web-label="Sponsors "
             data-moj-web-category="structural"
         >
             <div class="max-w-7xl mx-auto">
+                <!-- TITLE -->
                 <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1112] text-center leading-tight mb-12"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0D1112] mb-14"
                 >
-                    Our <span class="text-[#C10817]">Sponsors</span>
+                    Our <span class="text-[#043915]">Sponsors</span>
                 </h2>
 
-                <div class="mb-14">
+                <!-- PLATINUM -->
+                <div class="mb-16">
                     <h3
-                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                        class="text-2xl font-semibold text-[#043915] text-center mb-6 tracking-wide"
                     >
                         Platinum Sponsors
                     </h3>
 
-                    <div class="flex flex-wrap justify-center gap-6">
+                    <div class="flex flex-wrap justify-center gap-8">
                         <div
-                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/15 rounded-xl p-6 w-40 h-32 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
@@ -1859,7 +1929,7 @@
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/15 rounded-xl p-6 w-40 h-32 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
@@ -1868,7 +1938,7 @@
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-5 w-38 h-32 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/15 rounded-xl p-6 w-40 h-32 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
@@ -1878,62 +1948,64 @@
                     </div>
                 </div>
 
-                <div class="mb-14">
+                <!-- GOLD -->
+                <div class="mb-16">
                     <h3
-                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                        class="text-2xl font-semibold text-[#043915] text-center mb-6 tracking-wide"
                     >
                         Gold Sponsors
                     </h3>
 
                     <div class="flex flex-wrap justify-center gap-6">
                         <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-5 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                class="max-h-14 object-contain"
                             />
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-5 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                class="max-h-14 object-contain"
                             />
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-5 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                class="max-h-14 object-contain"
                             />
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-4 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-5 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
-                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg?semt=ais_hybrid&w=740&q=80"
-                                class="max-h-12 object-contain"
+                                src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                                class="max-h-14 object-contain"
                             />
                         </div>
                     </div>
                 </div>
 
+                <!-- SILVER -->
                 <div class="">
                     <h3
-                        class="text-2xl font-semibold text-[#C10817] text-center mb-6"
+                        class="text-2xl font-semibold text-[#043915] text-center mb-6 tracking-wide"
                     >
                         Silver Sponsors
                     </h3>
 
-                    <div class="flex flex-wrap justify-center gap-4">
+                    <div class="flex flex-wrap justify-center gap-6">
                         <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-4 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
@@ -1942,7 +2014,7 @@
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-4 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
@@ -1951,7 +2023,7 @@
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-4 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
@@ -1960,7 +2032,7 @@
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-4 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
@@ -1969,7 +2041,7 @@
                         </div>
 
                         <div
-                            class="bg-white rounded-xl shadow p-3 w-32 h-28 flex items-center justify-center"
+                            class="bg-white border border-[#043915]/10 rounded-xl p-4 w-36 h-28 flex items-center justify-center hover:shadow-md hover:border-[#043915]/30 transition"
                         >
                             <img
                                 src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
@@ -1983,68 +2055,80 @@
 
         <!-- FOOTER -->
         <section
-            class="bg-[#C10817] text-white pt-14 pb-6 px-6 lg:px-20"
             id="footer-block"
+            class="bg-[#043915] text-white pt-16 pb-8 px-6 lg:px-20"
             data-moj-web-fixed="false"
             data-moj-web-type="footer"
             data-moj-web-label="Footer"
             data-moj-web-category="structural"
         >
             <div
-                class="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+                class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
             >
+                <!-- ABOUT -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">About Event</h3>
-                    <p class="text-sm text-white/90 leading-relaxed">
-                        A premier conference bringing together experts,
-                        innovators, and professionals from across the country
-                        for learning, collaboration, and meaningful exchange.
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        About Event
+                    </h3>
+                    <p class="text-sm text-white/80 leading-relaxed">
+                        A premier conference uniting experts, innovators, and
+                        professionals for meaningful learning, collaboration,
+                        and impactful discussions.
                     </p>
                 </div>
 
+                <!-- QUICK LINKS -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-sm text-white/90">
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-2 text-sm text-white/80">
                         <li>
-                            <a href="#" class="hover:text-yellow-300 transition"
+                            <a href="#" class="hover:text-white transition"
                                 >Home</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="hover:text-yellow-300 transition"
+                            <a href="#" class="hover:text-white transition"
                                 >About</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="hover:text-yellow-300 transition"
+                            <a href="#" class="hover:text-white transition"
                                 >Venue</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="hover:text-yellow-300 transition"
+                            <a href="#" class="hover:text-white transition"
                                 >Sessions</a
                             >
                         </li>
                         <li>
-                            <a href="#" class="hover:text-yellow-300 transition"
+                            <a href="#" class="hover:text-white transition"
                                 >Contact</a
                             >
                         </li>
                     </ul>
                 </div>
 
+                <!-- ADDRESS -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Address</h3>
-                    <p class="text-sm text-white/90 leading-relaxed">
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        Address
+                    </h3>
+                    <p class="text-sm text-white/80 leading-relaxed">
                         Conference Venue,<br />
                         City Center,<br />
                         Your Location, Country.
                     </p>
                 </div>
 
+                <!-- CONTACT -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                    <ul class="space-y-2 text-sm text-white/90">
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        Contact Us
+                    </h3>
+                    <ul class="space-y-2 text-sm text-white/80">
                         <li>Email: info@conference.com</li>
                         <li>Phone: +91 98765 43210</li>
                         <li>Support: support@conference.com</li>
@@ -2052,8 +2136,9 @@
                 </div>
             </div>
 
-            <div class="mt-10 pt-6 border-t border-white/20 text-center">
-                <p class="text-sm text-white/80">
+            <!-- COPYRIGHT -->
+            <div class="mt-12 pt-6 border-t border-white/20 text-center">
+                <p class="text-sm text-white/70">
                     © 2025 Conference Name. All Rights Reserved.
                 </p>
             </div>

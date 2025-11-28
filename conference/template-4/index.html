@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 4</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <section
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav class="bg-white pt-5 fixed w-full top-0 pb-5 z-50 shadow-xs">
+                <div class="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <!-- Logo -->
+                        <a href="/">
+                            <div class="flex items-center gap-2">
+                                <div class="h-16 border-r border-gray-100">
+                                    <img
+                                        src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                                        class="object-contain h-16"
+                                        alt="Logo"
+                                    />
+                                </div>
+                                <div
+                                    class="uppercase font-medium text-[#393D7E] text-sm lg:text-base leading-tight"
+                                >
+                                    <h2>Conference</h2>
+                                    <h2>title</h2>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Desktop Navigation -->
+                        <div
+                            class="hidden lg:flex items-center space-x-4 lg:space-x-8"
+                        >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium"
+                                >Gallery</a
+                            >
+                            <div class="relative">
+                                <button
+                                    onclick="toggleDownloads()"
+                                    class="flex items-center text-[#353535] hover:text-[#393D7E] transition duration-300 text-base font-medium gap-1 cursor-pointer"
+                                >
+                                    Downloads
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="downloadsDropdown"
+                                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden z-50"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block px-4 py-3 pr-4 text-sm text-[#353535] hover:bg-gray-100 text-nowrap"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex items-center space-x-4">
+                            <a
+                                href="/#"
+                                class="bg-[#393D7E] hover:bg-[#393D7E]/80 transition duration-500 text-white px-6 py-2 rounded font-medium flex items-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Mobile menu button -->
+                        <div class="lg:hidden">
+                            <button
+                                onclick="toggleSidebar()"
+                                class="text-gray-500 hover:text-[#353535]"
+                            >
+                                <svg
+                                    class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Overlay -->
+                <div
+                    id="mobileOverlay"
+                    onclick="closeSidebar()"
+                    class="hidden fixed inset-0 bg-black/50 bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden"
+                ></div>
+                <!-- Mobile Sidebar -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50 pt-5"
+                >
+                    <div class="p-6 space-y-6 relative">
+                        <button
+                            onclick="closeSidebar()"
+                            class="absolute top-4 right-4 text-gray-500 hover:text-black"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div class="mt-10 space-y-4">
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#393D7E] transition duration-300 font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#393D7E] transition duration-300 font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#393D7E] transition duration-300 font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#393D7E] transition duration-300 font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#393D7E] transition duration-300 font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#393D7E] transition duration-300 font-medium"
+                                >Gallery</a
+                            >
+                            <!-- Downloads Dropdown in Mobile -->
+                            <div class="space-y-1">
+                                <button
+                                    onclick="toggleMobileDownloads()"
+                                    class="w-full flex justify-between items-center text-[#353535] font-medium focus:outline-none"
+                                >
+                                    <span>Downloads</span>
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="mobileDownloadsDropdown"
+                                    class="ml-4 hidden"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block text-sm text-[#353535] hover:text-[#393D7E] transition duration-300 mt-2"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                            <a
+                                href="/#contact-us"
+                                class="bg-[#393D7E] text-white px-4 py-2 rounded font-medium w-full mt-6 flex items-center justify-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <script>
+            let isOpen = false;
+
+            const toggleSidebar = () => {
+                isOpen = !isOpen;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("block");
+            };
+
+            const closeSidebar = () => {
+                isOpen = false;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.add("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.remove("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.add("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.remove("block");
+            };
+
+            const toggleDownloads = () => {
+                const dropdown = document.getElementById("downloadsDropdown");
+                dropdown.classList.toggle("hidden");
+            };
+            const toggleMobileDownloads = () => {
+                const dropdown = document.getElementById(
+                    "mobileDownloadsDropdown"
+                );
+                dropdown.classList.toggle("hidden");
+            };
+            document.addEventListener("click", (e) => {
+                const btn = e.target.closest("button");
+                const menu = document.getElementById("downloadsDropdown");
+
+                if (!btn || !btn.closest("[onclick='toggleDownloads()']")) {
+                    if (!e.target.closest("#downloadsDropdown")) {
+                        menu?.classList.add("hidden");
+                    }
+                }
+            });
+        </script>
+
+        <section
+            class="relative md:mx-5 md:rounded-3xl mt-20 md:mt-32 xl:mt-28 overflow-hidden"
+            style="background: rgba(4, 57, 21, 0.15)"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Section"
+            data-moj-web-category="structural"
+            id="hero-block"
+        >
+            <!-- Decorative Blobs -->
+            <div
+                class="absolute -left-24 top-10 w-[380px] h-[380px] rounded-full bg-gradient-to-br from-[#87C0A0] via-[#5E9F7D] to-[#393D7E] opacity-30 blur-3xl hidden lg:block"
+            ></div>
+
+            <div
+                class="absolute -left-36 bottom-10 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#CFE8D8] via-[#A4D0B0] to-[#393D7E] opacity-20 blur-2xl hidden lg:block"
+            ></div>
+
+            <div
+                class="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center"
+            >
+                <!-- RIGHT IMAGE -->
+                <div
+                    class="relative w-full h-[300px] md:h-full overflow-hidden order-2 md:order-1"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uZmVyZW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+                        class="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-[#393D7E]/20"></div>
+                </div>
+                <!-- LEFT CONTENT -->
+                <div
+                    class="px-6 md:px-12 2xl:px-16 text-[#1a1d1a] py-12 relative z-10 order-1 md:order-2"
+                >
+                    <!-- TITLE -->
+                    <h1
+                        class="font-medium leading-tight text-4xl md:text-5xl xl:text-6xl"
+                    >
+                        <span class="block text-[#0D1112]">Conference</span>
+
+                        <span
+                            class="block mt-1 px-3 py-1 inline-block bg-[#393D7E]/10 rounded-lg"
+                        >
+                            <span class="text-[#393D7E] font-medium"
+                                >Title 2026</span
+                            >
+                        </span>
+                    </h1>
+
+                    <!-- SUBTEXT -->
+                    <p
+                        class="mt-4 text-sm md:text-lg leading-relaxed text-[#1a1d1a]/90 max-w-lg"
+                    >
+                        Add a compelling one-line description for the event here
+                        — highlighting the goal, value, and unique experience
+                        your conference offers.
+                    </p>
+
+                    <!-- CTA BUTTON -->
+                    <div
+                        class="mt-8 flex flex-col gap-4 xl:flex-row justify-between md:items-center"
+                    >
+                        <div>
+                            <div
+                                class="flex flex-col xl:flex-row gap-6 xl:gap-10 mb-6"
+                            >
+                                <div>
+                                    <p
+                                        class="text-3xl md:text-4xl font-medium leading-tight text-[#0D1112]"
+                                    >
+                                        DD–DD
+                                        <span
+                                            class="text-2xl md:text-3xl font-normal text-[#393D7E]"
+                                            >Month 'YY</span
+                                        >
+                                    </p>
+
+                                    <span
+                                        class="block mt-2 h-[2px] w-40 bg-[#393D7E]/40 rounded"
+                                    ></span>
+
+                                    <p
+                                        class="text-base md:text-lg font-medium mt-3 text-[#393D7E]"
+                                    >
+                                        Venue Name, Location
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button
+                                class="group relative inline-flex items-center gap-3 bg-[#393D7E] text-white font-medium text-base 2xl:text-lg py-3 px-6 rounded shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#2f3367] overflow-hidden"
+                            >
+                                <!-- TEXT -->
+                                <span class="relative z-10 pl-1"
+                                    >Register Now</span
+                                >
+
+                                <!-- ICON -->
+                                <svg
+                                    class="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+                                    fill="none"
+                                    stroke="white"
+                                    stroke-width="2"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M5 12h14M13 5l7 7-7 7"
+                                    />
+                                </svg>
+
+                                <!-- HOVER BG SHINE -->
+                                <span
+                                    class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                                ></span>
+                            </button>
+                        </div>
+
+                        <!-- COUNTDOWN BOX -->
+                        <div
+                            class="bg-white/30 backdrop-blur-sm border border-[#393D7E]/10 rounded-2xl px-6 py-6 w-full max-w-sm"
+                        >
+                            <!-- Title -->
+                            <h4
+                                class="text-center text-xs md:text-sm font-semibold text-[#393D7E] tracking-widest mb-6"
+                            >
+                                EVENT COUNTDOWN
+                            </h4>
+
+                            <div class="grid grid-cols-4 gap-3 text-center">
+                                <!-- Days -->
+                                <div
+                                    class="bg-[#393D7E]/10 rounded-lg p-3 flex flex-col items-center"
+                                >
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                    >
+                                        12
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Days</span
+                                    >
+                                </div>
+
+                                <!-- Hours -->
+                                <div
+                                    class="bg-[#393D7E]/10 rounded-lg p-3 flex flex-col items-center"
+                                >
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                    >
+                                        08
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Hours</span
+                                    >
+                                </div>
+
+                                <!-- Minutes -->
+                                <div
+                                    class="bg-[#393D7E]/10 rounded-lg p-3 flex flex-col items-center"
+                                >
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                    >
+                                        32
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Mins</span
+                                    >
+                                </div>
+
+                                <!-- Seconds -->
+                                <div
+                                    class="bg-[#393D7E]/10 rounded-lg p-3 flex flex-col items-center"
+                                >
+                                    <p
+                                        class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                    >
+                                        45
+                                    </p>
+                                    <span
+                                        class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
+                                        >Secs</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="stats-block"
+            class="py-10 md:py-20 px-6 bg-[#f3f7f4]"
+            data-moj-web-fixed="false"
+            data-moj-web-type="stats"
+            data-moj-web-label="Event Stats"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                    <!-- ITEM -->
+                    <div class="text-center space-y-4">
+                        <div class="flex justify-center">
+                            <svg
+                                class="w-10 h-10 text-[#393D7E]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"
+                                />
+                                <circle cx="9" cy="7" r="4" />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M23 20v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold text-[#393D7E]">
+                            2000+
+                        </h3>
+
+                        <div class="mx-auto w-10 h-[2px] bg-[#393D7E]/30"></div>
+
+                        <p class="text-gray-700 text-sm md:text-base">
+                            Delegates
+                        </p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="text-center space-y-4">
+                        <div class="flex justify-center">
+                            <svg
+                                class="w-10 h-10 text-[#393D7E]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 1a3 3 0 0 1 3 3v8a3 3 0 0 1-6 0V4a3 3 0 0 1 3-3z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M19 10a7 7 0 0 1-14 0M12 17v6m-4 0h8"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold text-[#393D7E]">
+                            30+
+                        </h3>
+
+                        <div class="mx-auto w-10 h-[2px] bg-[#393D7E]/30"></div>
+
+                        <p class="text-gray-700 text-sm md:text-base">
+                            International Speakers
+                        </p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="text-center space-y-4">
+                        <div class="flex justify-center">
+                            <svg
+                                class="w-10 h-10 text-[#393D7E]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 21V4m0 17c-2-1.5-4.5-2-7-2V5c2.5 0 5 .5 7 2m0 14c2-1.5 4.5-2 7-2V5c-2.5 0-5 .5-7 2"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold text-[#393D7E]">
+                            20+
+                        </h3>
+
+                        <div class="mx-auto w-10 h-[2px] bg-[#393D7E]/30"></div>
+
+                        <p class="text-gray-700 text-sm md:text-base">
+                            Scientific Sessions
+                        </p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="text-center space-y-4">
+                        <div class="flex justify-center">
+                            <svg
+                                class="w-10 h-10 text-[#393D7E]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M8 2v3m8-3v3M4 8h16M5 22h14a2 2 0 0 0 2-2V8H3v12a2 2 0 0 0 2 2z"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-4xl font-extrabold text-[#393D7E]">
+                            3
+                        </h3>
+
+                        <div class="mx-auto w-10 h-[2px] bg-[#393D7E]/30"></div>
+
+                        <p class="text-gray-700 text-sm md:text-base">
+                            Days Event
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- welcome -->
+        <section
+            id="welcome-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="welcome"
+            data-moj-web-label="Welcome"
+            data-moj-web-category="structural"
+            class="py-10 md:py-20 px-4 relative max-w-7xl mx-auto"
+        >
+            <div
+                class="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-14 items-center"
+            >
+                <!-- CONTENT -->
+                <div class="flex flex-col justify-center">
+                    <h1
+                        class="text-4xl md:text-5xl font-medium leading-tight mb-6 text-[#0D1112]"
+                    >
+                        <span class="block">Welcome to our</span>
+                        <span class="block">
+                            <span
+                                class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                            >
+                                Conference
+                            </span>
+                        </span>
+                    </h1>
+
+                    <h2
+                        class="text-lg md:text-2xl font-semibold text-[#0D1112] mb-5"
+                    >
+                        Warm Greetings
+                    </h2>
+
+                    <!-- DESCRIPTION -->
+                    <div
+                        class="space-y-4 text-[#0D1112]/80 text-base text-justify leading-relaxed"
+                    >
+                        <p>
+                            We are delighted to welcome you to our annual
+                            conference — a gathering dedicated to innovation,
+                            collaboration, and meaningful progress. Experts,
+                            professionals, and visionaries come together for
+                            inspiring sessions, insightful discussions, and
+                            unique networking opportunities. Join us for an
+                            enriching experience filled with knowledge, culture,
+                            and community.
+                        </p>
+                    </div>
+                </div>
+                <!-- BENTO GRID IMAGES -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- LEFT — Horizontal Image -->
+                    <div>
+                        <img
+                            src="https://balticsecurityconference.lv/wp-content/uploads/fly-images/325/izstaditaji-bg@2x-scaled-1366x0-c.jpg"
+                            class="w-full h-40 md:h-48 xl:h-64 object-cover rounded-xl shadow-md"
+                        />
+                    </div>
+
+                    <!-- CENTER — Tall Image -->
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1596522354195-e84ae3c98731?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uZmVyZW5jZSUyMGhhbGx8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-64 md:h-full object-cover rounded-xl shadow-md"
+                        />
+                    </div>
+
+                    <!-- RIGHT — Horizontal Image -->
+                    <div>
+                        <img
+                            src="https://t4.ftcdn.net/jpg/02/61/20/57/360_F_261205772_J0UqLRfoc1qumAgujual72bEAdmNSVzb.jpg"
+                            class="w-full h-40 md:h-48 xl:h-64 object-cover rounded-xl shadow-md"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- message -->
+        <section
+            id="message-block"
+            class="py-10 md:py-20 px-4 lg:px-12 xl:px-20 bg-[#f3f7f4]"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <!-- HEADING -->
+                <div class="mb-4 md:mb-12">
+                    <h2
+                        class="text-3xl md:text-5xl font-medium leading-tight text-center mb-6 text-[#0D1112]"
+                    >
+                        Message from the
+                        <span
+                            class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                        >
+                            Committee
+                        </span>
+                    </h2>
+                </div>
+                <div class="max-w-7xl mx-auto mt-20 xl:mt-0">
+                    <div
+                        class="bg-white/60 p-3 md:p-10 border border-gray-100 relative"
+                    >
+                        <!-- PROFILE FLOATING CARD -->
+                        <div
+                            class="absolute -top-16 right-6 w-28 h-28 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-xs bg-gray-200 border-4 border-white/80"
+                        >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div class="pr-0 md:pr-40 text-justify">
+                            <p
+                                class="text-xl md:text-2xl text-[#393D7E] font-semibold mb-6"
+                            >
+                                Dear Participants,
+                            </p>
+
+                            <div
+                                class="space-y-6 text-[#0D1112]/85 text-base md:text-lg leading-relaxed"
+                            >
+                                <p>
+                                    We are delighted to welcome you to our
+                                    upcoming scientific and academic program —
+                                    carefully curated to blend learning,
+                                    collaboration, and meaningful engagement.
+                                </p>
+
+                                <p>
+                                    Each session has been thoughtfully designed
+                                    to highlight emerging advancements,
+                                    essential concepts, and valuable insights
+                                    relevant to professionals across all levels.
+                                </p>
+
+                                <p>
+                                    The event also provides opportunities to
+                                    interact with experts, expand your network,
+                                    and engage in inspiring conversations that
+                                    shape knowledge and innovation.
+                                </p>
+
+                                <p>
+                                    We hope that your experience here will be
+                                    enriching, memorable, and filled with new
+                                    perspectives that inspire growth.
+                                </p>
+
+                                <div class="pt-6 border-t border-gray-200">
+                                    <p class="font-semibold text-[#0D1112]">
+                                        Warm regards,
+                                    </p>
+                                    <p
+                                        class="text-xl font-bold text-[#0D1112] mt-1"
+                                    >
+                                        Name Here
+                                    </p>
+                                    <p class="text-[#393D7E] font-medium">
+                                        Designation
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- highlights -->
+        <section
+            id="highlight-block"
+            class="py-14 md:py-20 px-4 bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466]"
+                        data-moj-web-fixed="false"
+            data-moj-web-type="highlight"
+            data-moj-web-label="Conference Highlight"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- TITLE -->
+                <h2
+                    class="text-3xl md:text-5xl font-medium leading-tight text-center mb-6 text-white"
+                >
+                    Event
+                    <span
+                        class="px-3 md:py-1 bg-white/10 text-white rounded-md"
+                    >
+                        Highlights
+                    </span>
+                </h2>
+
+                <!-- SUBTEXT -->
+                <p
+                    class="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-14"
+                >
+                    Discover the key elements that shape this event — from
+                    expert-led sessions to impactful workshops and exclusive
+                    participant perks.
+                </p>
+
+                <!-- HIGHLIGHT GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- ITEM 1 -->
+                    <div class="space-y-4">
+                        <div
+                            class="mx-auto h-16 w-16 rounded-xl bg-white/10 flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3 4h18M3 4v10a1 1 0 0 0 1 1h5m10-11v10a1 1 0 0 1-1 1h-5m0 0v5m0-5h-4m4 0h4"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-white">
+                            Expert Sessions
+                        </h3>
+                        <p
+                            class="text-white/70 text-sm leading-relaxed max-w-xs mx-auto"
+                        >
+                            Learn from leading professionals sharing impactful
+                            scientific insights.
+                        </p>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="space-y-4">
+                        <div
+                            class="mx-auto h-16 w-16 rounded-xl bg-white/10 flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.232 5.232a3 3 0 1 1 4.243 4.243l-7.071 7.071a4 4 0 0 1-2.121 1.121L5 19l1.333-5.283a4 4 0 0 1 1.121-2.121l7.071-7.071z"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-white">
+                            Workshops
+                        </h3>
+                        <p
+                            class="text-white/70 text-sm leading-relaxed max-w-xs mx-auto"
+                        >
+                            Hands-on practice sessions to strengthen your
+                            technical and clinical skills.
+                        </p>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="space-y-4">
+                        <div
+                            class="mx-auto h-16 w-16 rounded-xl bg-white/10 flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-white">
+                            Participant Perks
+                        </h3>
+
+                        <p
+                            class="text-white/70 text-sm leading-relaxed max-w-xs mx-auto"
+                        >
+                            Enjoy special benefits, exclusive access, and
+                            networking opportunities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="about-block"
+            class="py-10 md:py-20 px-4 bg-[#f7f8fa] relative"
+              data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center"
+            >
+                <!-- LEFT IMAGE -->
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-[#393D7E]/20 blur-3xl rounded-3xl"
+                    ></div>
+
+                    <div class="relative overflow-hidden rounded-lg shadow">
+                        <img
+                            src="https://cdn.prod.website-files.com/685dc0d3783c5b149e061183/68c95efed61f38d8d663ecd3_Conference%20value%20prop%20her.jpg"
+                            class="w-full h-80 md:h-[430px] object-cover"
+                        />
+
+                        <!-- Glass overlay -->
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white/20 backdrop-blur-md p-6"
+                        >
+                            <p class="text-white font-semibold text-lg">
+                                Inspiring minds. Shaping the future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <div class="space-y-4">
+                    <!-- HEADING -->
+                    <h2
+                        class="text-3xl md:text-5xl font-medium leading-tight mb-6 text-[#0D1112]"
+                    >
+                        About the
+                        <span
+                            class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                        >
+                            Conference
+                        </span>
+                    </h2>
+
+                    <!-- PARAGRAPHS -->
+                    <p
+                        class="text-[#0D1112]/80 text-base md:text-lg leading-relaxed"
+                    >
+                        This conference brings together visionaries, leaders,
+                        and experts from across the region to share knowledge,
+                        explore innovations, and collaborate toward meaningful
+                        change.
+                    </p>
+
+                    <p
+                        class="text-[#0D1112]/80 text-base md:text-lg leading-relaxed"
+                    >
+                        Through keynote talks, panel discussions, and
+                        interactive workshops, participants gain powerful
+                        insights that inspire growth and fuel new possibilities.
+                    </p>
+
+                    <p
+                        class="text-[#0D1112]/80 text-base md:text-lg leading-relaxed"
+                    >
+                        Designed as a platform for impactful conversations and
+                        professional networking, this gathering empowers
+                        attendees to advance collectively and contribute to the
+                        progress of their field.
+                    </p>
+
+                    <!-- SMALL HIGHLIGHTS ROW -->
+                    <div class="grid grid-cols-3 gap-6 pt-4">
+                        <div class="text-center">
+                            <h3
+                                class="text-2xl md:text-3xl font-bold text-[#393D7E]"
+                            >
+                                30+
+                            </h3>
+                            <p class="text-sm text-gray-600">Speakers</p>
+                        </div>
+
+                        <div class="text-center">
+                            <h3
+                                class="text-2xl md:text-3xl font-bold text-[#393D7E]"
+                            >
+                                500+
+                            </h3>
+                            <p class="text-sm text-gray-600">Delegates</p>
+                        </div>
+
+                        <div class="text-center">
+                            <h3
+                                class="text-2xl md:text-3xl font-bold text-[#393D7E]"
+                            >
+                                3 Days
+                            </h3>
+                            <p class="text-sm text-gray-600">Interactive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMITTEE SECTION -->
+        <section
+            id="committee-block"
+            class="py-10 md:py-16 bg-[#f3f7f4]"
+            data-moj-web-fixed="false"
+            data-moj-web-type="committe"
+            data-moj-web-label="Committee Members"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <!-- HEADING -->
+                <h2
+                    class="text-3xl md:text-5xl font-medium leading-tight mb-4 md:mb-10 text-center text-[#0D1112]"
+                >
+                    Organizing
+                    <span
+                        class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                    >
+                        Committee
+                    </span>
+                </h2>
+
+                <!-- GRID -->
+                <div
+                    class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-10 px-4"
+                >
+                    <!-- MEMBER CARD -->
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
+                    >
+                        <!-- Image -->
+                        <div
+                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                        >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
+                            ></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                            <h3
+                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                            >
+                                Member Name
+                            </h3>
+
+                            <p
+                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                            >
+                                Committee Role
+                            </p>
+
+                            <!-- Underline -->
+                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
+                        </div>
+                    </div>
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
+                    >
+                        <!-- Image -->
+                        <div
+                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                        >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
+                            ></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                            <h3
+                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                            >
+                                Member Name
+                            </h3>
+
+                            <p
+                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                            >
+                                Committee Role
+                            </p>
+
+                            <!-- Underline -->
+                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
+                        </div>
+                    </div>
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
+                    >
+                        <!-- Image -->
+                        <div
+                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                        >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
+                            ></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                            <h3
+                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                            >
+                                Member Name
+                            </h3>
+
+                            <p
+                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                            >
+                                Committee Role
+                            </p>
+
+                            <!-- Underline -->
+                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
+                        </div>
+                    </div>
+                    <div
+                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
+                    >
+                        <!-- Image -->
+                        <div
+                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                        >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
+                            ></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                            <h3
+                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                            >
+                                Member Name
+                            </h3>
+
+                            <p
+                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                            >
+                                Committee Role
+                            </p>
+
+                            <!-- Underline -->
+                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- schedule -->
+        <section id="schedule-block" class="py-10 md:py-16 px-4 bg-white"   data-moj-web-fixed="false"
+            data-moj-web-type="Schedule"
+            data-moj-web-label="Schedule"
+            data-moj-web-category="structural">
+            <div class="max-w-7xl mx-auto">
+                <!-- TITLE -->
+                <h2
+                    class="text-3xl md:text-5xl font-medium leading-tight mb-4 md:mb-10 text-center text-[#0D1112]"
+                >
+                    Event
+                    <span
+                        class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                    >
+                        Schedule
+                    </span>
+                </h2>
+
+                <!-- Toggle Buttons -->
+                <div class="flex justify-center gap-4 mb-8">
+                    <label
+                        for="day1"
+                        class="cursor-pointer px-6 py-2 border border-[#393D7E] rounded text-[#393D7E] font-semibold hover:bg-[#393D7E] hover:text-white transition peer-checked/day1:bg-[#393D7E] peer-checked/day1:text-white"
+                    >
+                        Day 1
+                    </label>
+
+                    <label
+                        for="day2"
+                        class="cursor-pointer px-6 py-2 border border-[#393D7E] rounded text-[#393D7E] font-semibold hover:bg-[#393D7E] hover:text-white transition peer-checked/day2:bg-[#393D7E] peer-checked/day2:text-white"
+                    >
+                        Day 2
+                    </label>
+                </div>
+
+                <!-- Inputs -->
+                <input
+                    id="day1"
+                    type="radio"
+                    name="day"
+                    class="hidden peer/day1"
+                    checked
+                />
+                <input
+                    id="day2"
+                    type="radio"
+                    name="day"
+                    class="hidden peer/day2"
+                />
+                <!-- DAY 1 TABLE -->
+                <div class="peer-checked/day1:block hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[700px] border-collapse">
+                            <thead>
+                                <tr class="bg-[#393D7E]/10 text-[#393D7E]">
+                                    <th
+                                        class="py-4 px-4 text-left font-semibold text-sm uppercase tracking-wide"
+                                    >
+                                        Time
+                                    </th>
+                                    <th
+                                        class="py-4 px-4 text-left font-semibold text-sm uppercase tracking-wide"
+                                    >
+                                        Session
+                                    </th>
+                                    <th
+                                        class="py-4 px-4 text-left font-semibold text-sm uppercase tracking-wide"
+                                    >
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        8:00 AM – 9:00 AM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Registration
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Delegate check-in & welcome
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        9:00 AM – 10:00 AM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Inaugural Ceremony
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Opening keynote & inauguration
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        10:00 AM – 12:30 PM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Scientific Session 1
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Talks by invited experts
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        12:30 PM – 1:30 PM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Lunch Break
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Buffet lunch
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        1:30 PM – 4:30 PM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Workshops
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Hands-on sessions with mentors
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- DAY 2 TABLE -->
+                <div class="peer-checked/day2:block hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[700px] border-collapse">
+                            <thead>
+                                <tr class="bg-[#393D7E]/10 text-[#393D7E]">
+                                    <th
+                                        class="py-4 px-4 text-left font-semibold text-sm uppercase tracking-wide"
+                                    >
+                                        Time
+                                    </th>
+                                    <th
+                                        class="py-4 px-4 text-left font-semibold text-sm uppercase tracking-wide"
+                                    >
+                                        Session
+                                    </th>
+                                    <th
+                                        class="py-4 px-4 text-left font-semibold text-sm uppercase tracking-wide"
+                                    >
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        9:00 AM – 11:00 AM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Scientific Session 2
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Talks on emerging innovations
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        11:00 AM – 12:30 PM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Panel Discussion
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Interactive Q&A with experts
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        12:30 PM – 1:30 PM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Lunch Break
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Dining lounge
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="py-4 px-4 text-gray-700">
+                                        1:30 PM – 3:30 PM
+                                    </td>
+                                    <td
+                                        class="py-4 px-4 font-semibold text-[#393D7E]"
+                                    >
+                                        Valedictory Ceremony
+                                    </td>
+                                    <td class="py-4 px-4 text-gray-600">
+                                        Closing & certificate distribution
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARIFF -->
+        <section
+            id="tariff-block"
+            class="py-10 px-4 xl:py-16 bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466] text-white"
+              data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="Tariff"
+            data-moj-web-category="structural"
+        >
+            <div class="flex flex-col gap-6 md:gap-10 max-w-7xl mx-auto">
+                <!-- HEADING -->
+                <h2
+                    class="text-3xl md:text-5xl font-medium leading-tight text-center"
+                >
+                    Registration
+                    <span class="px-3 py-1 bg-white/10 text-white rounded-md">
+                        Charges
+                    </span>
+                </h2>
+
+                <!-- TABLE WRAPPER -->
+                <div
+                    class="overflow-x-auto bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl"
+                >
+                    <table
+                        class="min-w-[400px] w-full border-collapse text-left text-sm md:text-base"
+                    >
+                        <!-- HEADER -->
+                        <thead>
+                            <tr
+                                class="bg-white/15 text-white uppercase tracking-wide"
+                            >
+                                <th class="py-4 px-5 text-sm font-semibold">
+                                    Category
+                                </th>
+                                <th class="py-4 px-5 text-sm font-semibold">
+                                    Fee
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <!-- BODY -->
+                        <tbody class="divide-y divide-white/20 text-white/90">
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="py-4 px-5">Professional Delegate</td>
+                                <td class="py-4 px-5 font-semibold">₹4,500</td>
+                            </tr>
+
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="py-4 px-5">Non-Member Delegate</td>
+                                <td class="py-4 px-5 font-semibold">₹5,000</td>
+                            </tr>
+
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="py-4 px-5">Accompanying Person</td>
+                                <td class="py-4 px-5 font-semibold">₹2,000</td>
+                            </tr>
+
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="py-4 px-5">Student / Trainee</td>
+                                <td class="py-4 px-5 font-semibold">
+                                    Complimentary
+                                </td>
+                            </tr>
+
+                            <tr
+                                class="bg-white/10 font-semibold hover:bg-white/20 transition"
+                            >
+                                <td class="py-4 px-5">
+                                    Spot Registration – Member
+                                </td>
+                                <td class="py-4 px-5">₹6,000</td>
+                            </tr>
+
+                            <tr
+                                class="bg-white/10 font-semibold hover:bg-white/20 transition"
+                            >
+                                <td class="py-4 px-5">
+                                    Spot Registration – Non-Member
+                                </td>
+                                <td class="py-4 px-5">₹6,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BUTTON -->
+                <div class="flex justify-center">
+                    <a
+                        href="#"
+                        class="bg-white text-[#1E223F] font-medium px-7 py-3 rounded-lg shadow-md hover:bg-white/80 transition flex items-center gap-2"
+                    >
+                        Register Now
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 12H5m14 0-4 4m4-4-4-4"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT VENUE -->
+        <section
+            id="about-venue-block"
+            class="py-10 md:py-16 px-4 max-w-7xl mx-auto relative"
+             data-moj-web-fixed="false"
+            data-moj-web-type="aboutVenue"
+            data-moj-web-label="About Venue"
+            data-moj-web-category="structural"
+        >
+            <!-- Soft Background Accent -->
+            <div class="absolute inset-0 bg-[#393D7E]/5 blur-3xl -z-10"></div>
+
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center"
+            >
+                <!-- LEFT: FEATURED IMAGE WITH GRADIENT OVERLAY -->
+                <div
+                    class="relative rounded-xl overflow-hidden shadow-lg md:order-2"
+                >
+                    <img
+                        src="https://images.venuebookingz.com/14068-1658840518-wm-grand-ball-room-sterling-mac-hotel-bangalore.jpg"
+                        class="w-full h-72 md:h-[420px] object-cover"
+                    />
+
+                    <!-- Overlay Gradient -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#393D7E]/60 to-transparent"
+                    ></div>
+
+                    <!-- Caption Tag -->
+                    <div
+                        class="absolute bottom-4 left-4 bg-white/90 px-4 py-1 rounded text-[#393D7E] font-semibold text-sm shadow"
+                    >
+                        Grand Conference Hall
+                    </div>
+                </div>
+
+                <!-- RIGHT: CONTENT -->
+                <div class="space-y-4 md:space-y-6 md:order-1">
+                    <!-- Badge -->
+                    <h2
+                        class="text-3xl md:text-5xl font-medium leading-tight text-[#0D1112]"
+                    >
+                        A World-Class
+                        <span
+                            class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                        >
+                            Conference Venue
+                        </span>
+                    </h2>
+
+                    <!-- Subheading -->
+                    <p
+                        class="text-lg md:text-xl font-semibold text-[#0D1112]/90"
+                    >
+                        Designed to elevate learning, collaboration &
+                        professional exchange.
+                    </p>
+
+                    <!-- Description Block -->
+                    <div class="space-y-4 text-[#0D1112]/75 leading-relaxed">
+                        <p>
+                            The venue features state-of-the-art auditoriums,
+                            immersive AV systems, and premium meeting spaces —
+                            ensuring a smooth and enriching conference
+                            experience for all delegates.
+                        </p>
+
+                        <p>
+                            Situated in a prime city location, it offers
+                            seamless connectivity, modern amenities, and a
+                            welcoming environment ideal for academic and
+                            professional gatherings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOTELS SECTION -->
+        <section
+            id="hotels-block"
+            class="py-14 px-4 xl:py-24 bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466]"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hotels"
+            data-moj-web-label="Hotels"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <!-- Title -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-5xl font-medium text-center text-white mb-10"
+                >
+                    Hotels for
+                    <span class="px-3 py-1 bg-white/10 text-white rounded-md"
+                        >Stay</span
+                    >
+                </h2>
+
+                <!-- BENTO GRID -->
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[140px] md:auto-rows-[180px] lg:auto-rows-[220px]"
+                >
+                    <!-- CARD 1 — Tall -->
+                    <div
+                        class="relative group overflow-hidden rounded-xl col-span-2 md:row-span-2"
+                    >
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/89/11/15/hotel-facade.jpg?w=900"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-5 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-base md:text-2xl font-semibold text-white"
+                            >
+                                Hotel Name One
+                            </h3>
+                            <p class="text-white/70 text-xs mt-1">
+                                City Center • 4 Star
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 — Wide -->
+                    <div
+                        class="relative group overflow-hidden rounded-xl col-span-2"
+                    >
+                        <img
+                            src="https://m.ahstatic.com/is/image/accorhotels/HCM_P_8147067:4by3"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-5 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-base md:text-xl font-semibold text-white"
+                            >
+                                Hotel Name Two
+                            </h3>
+                            <p class="text-white/70 text-xs mt-1">
+                                Near Convention Venue
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 — Square -->
+                    <div class="relative group overflow-hidden rounded-xl">
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/86/8a/0f/the-lalit-jaipur.jpg?w=900"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-sm md:text-lg font-semibold text-white"
+                            >
+                                Hotel Name Three
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4 — Square -->
+                    <div class="relative group overflow-hidden rounded-xl">
+                        <img
+                            src="https://www.theleela.com/prod/content/2025-04/Hero%201_1920x950_9.jpg"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-sm md:text-lg font-semibold text-white"
+                            >
+                                Hotel Name Four
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLACES TO VISIT SECTION -->
+        <section
+            id="places-block"
+            class="py-10 md:py-20 px-4 bg-white relative overflow-hidden"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="Places"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- TITLE -->
+
+                <h2
+                    class="text-3xl md:text-5xl font-medium leading-tight text-[#0D1112] mb-4 md:mb-8 lg:mb-10 text-center"
+                >
+                    Explore Nearby
+                    <span
+                        class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                    >
+                        Attractions
+                    </span>
+                </h2>
+
+                <!-- BENTO GRID -->
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[140px] md:auto-rows-[180px] lg:auto-rows-[220px]"
+                >
+                    <!-- CARD 2 — Wide -->
+                    <div
+                        class="relative group overflow-hidden rounded-xl col-span-2"
+                    >
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1669748157617-a3a83cc8ea23?fm=jpg&q=60&w=2000"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-5 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-base md:text-xl font-semibold text-white"
+                            >
+                                Place Name One
+                            </h3>
+                            <p class="text-white/70 text-xs mt-1">
+                                Near Convention Venue
+                            </p>
+                        </div>
+                    </div>
+                    <!-- CARD 1 — Tall -->
+                    <div
+                        class="relative group overflow-hidden rounded-xl col-span-2 md:row-span-2"
+                    >
+                        <img
+                            src="https://www.thegari.in/blog/wp-content/uploads/2025/08/nandi-hills-1024x538.jpg"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-5 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-base md:text-2xl font-semibold text-white"
+                            >
+                                Place Name Two
+                            </h3>
+                            <p class="text-white/70 text-xs mt-1">
+                                City Center • 4 Star
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 — Square -->
+                    <div class="relative group overflow-hidden rounded-xl">
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/0f/81/d0/christ-church-shimla.jpg?w=900&h=500&s=1"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-sm md:text-lg font-semibold text-white"
+                            >
+                                Place Name Three
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4 — Square -->
+                    <div class="relative group overflow-hidden rounded-xl">
+                        <img
+                            src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWElMjB0b3VyaXNtfGVufDB8fDB8fHww"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/60 md:opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end"
+                        >
+                            <h3
+                                class="text-sm md:text-lg font-semibold text-white"
+                            >
+                                Place Name Four
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPONSORS -->
+        <section
+            id="sponsor-block"
+            class="py-10 px-4 xl:py-20 bg-[#f5f8f6] relative overflow-hidden"
+            data-moj-web-fixed="false"
+            data-moj-web-type="sponsor"
+            data-moj-web-label="Sponsors "
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <!-- TITLE (unchanged) -->
+                <h2
+                    class="text-3xl md:text-5xl font-medium leading-tight text-[#0D1112] mb-10 text-center"
+                >
+                    Our
+                    <span
+                        class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
+                    >
+                        Sponsors
+                    </span>
+                </h2>
+
+                <!-- PLATINUM -->
+                <div class="mb-10 md:mb-20">
+                    <!-- Stripe -->
+                    <div
+                        class="text-center py-2 bg-[#393D7E] text-white font-semibold rounded-full mb-10 w-fit px-6 mx-auto"
+                    >
+                        Platinum Sponsors
+                    </div>
+
+                    <!-- Logo Row -->
+                    <div class="flex flex-wrap justify-center gap-12">
+                        <img
+                            src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://thumbs.dreamstime.com/b/sponsor-badge-red-white-background-58987248.jpg"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                    </div>
+                </div>
+
+                <!-- GOLD -->
+                <div class="mb-10 md:mb-20">
+                    <div
+                        class="text-center py-2 bg-[#393D7E]/10 text-[#393D7E] font-semibold text-base rounded-full mb-8 w-fit px-6 mx-auto"
+                    >
+                        Gold Sponsors
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-10">
+                        <img
+                            src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                            class="h-16 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                            class="h-16 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                            class="h-16 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://img.freepik.com/premium-vector/official-sponsor-rubber-stamp-seal-vector_140916-33161.jpg"
+                            class="h-16 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                    </div>
+                </div>
+
+                <!-- SILVER -->
+                <div>
+                    <div
+                        class="text-center py-2 bg-[#393D7E]/5 text-[#393D7E] font-semibold rounded-full mb-8 w-fit px-6 mx-auto"
+                    >
+                        Silver Sponsors
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <img
+                            src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                            class="h-14 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                            class="h-14 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                            class="h-14 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                            class="h-14 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                        <img
+                            src="https://www.shutterstock.com/image-vector/sponsor-icon-monochrome-simple-streaming-600nw-2160323905.jpg"
+                            class="h-14 object-contain grayscale hover:grayscale-0 transition"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section
+            id="footer-block"
+            class="bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466] text-white pt-16 pb-8 px-6 lg:px-20"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Footer"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
+            >
+                <!-- ABOUT -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        About Event
+                    </h3>
+                    <p class="text-sm text-white/80 leading-relaxed">
+                        A premier conference uniting experts, innovators, and
+                        professionals for meaningful learning, collaboration,
+                        and impactful discussions.
+                    </p>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-2 text-sm text-white/80">
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Venue</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Sessions</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white transition"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ADDRESS -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        Address
+                    </h3>
+                    <p class="text-sm text-white/80 leading-relaxed">
+                        Conference Venue,<br />
+                        City Center,<br />
+                        Your Location, Country.
+                    </p>
+                </div>
+
+                <!-- CONTACT -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 tracking-wide">
+                        Contact Us
+                    </h3>
+                    <ul class="space-y-2 text-sm text-white/80">
+                        <li>Email: info@conference.com</li>
+                        <li>Phone: +91 98765 43210</li>
+                        <li>Support: support@conference.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="mt-12 pt-6 border-t border-white/20 text-center">
+                <p class="text-sm text-white/70">
+                    © 2025 Conference Name. All Rights Reserved.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
