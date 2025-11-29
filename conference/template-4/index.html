@@ -759,92 +759,117 @@
         <!-- message -->
         <section
             id="message-block"
-            class="py-10 md:py-20 px-4 lg:px-12 xl:px-20 bg-[#f3f7f4]"
-            data-moj-web-fixed="false"
-            data-moj-web-type="message"
-            data-moj-web-label="Message"
-            data-moj-web-category="structural"
+            class="py-10 px-4 lg:px-10 xl:px-20 bg-[#f3f7f4] relative overflow-hidden"
         >
-            <div class="max-w-7xl mx-auto">
-                <!-- HEADING -->
-                <div class="mb-4 md:mb-12">
-                    <h2
-                        class="text-3xl md:text-5xl font-medium leading-tight text-center mb-6 text-[#0D1112]"
+            <div class="max-w-7xl mx-auto relative z-10">
+                <h1
+                    class="text-4xl md:text-5xl font-medium leading-tight mb-6 text-[#0D1112]"
+                >
+                    Message From
+                    <span
+                        class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
                     >
-                        Message from the
-                        <span
-                            class="px-3 md:py-1 bg-[#393D7E]/10 text-[#393D7E] rounded-md"
-                        >
-                            Committee
-                        </span>
-                    </h2>
+                        Committee
+                    </span>
+                </h1>
+
+                <!-- MESSAGE TEXT -->
+                <div class="text-lg text-gray-800 leading-relaxed mb-10">
+                    <p
+                        class="text-base md:text-xl text-[#0D1112]/80 mb-4 leading-relaxed font-bold"
+                    >
+                        Dear Participants,
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        We are delighted to welcome you to our upcoming
+                        scientific and academic program — carefully curated to
+                        blend learning, collaboration, and meaningful
+                        engagement.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        Each session has been thoughtfully designed to highlight
+                        emerging advancements, essential concepts, and valuable
+                        insights relevant to professionals across all levels.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        The event also provides opportunities to interact with
+                        experts, expand your network, and engage in inspiring
+                        conversations that shape knowledge and innovation.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed font-bold"
+                    >
+                        Warm regards,
+                    </p>
                 </div>
-                <div class="max-w-7xl mx-auto mt-20 xl:mt-0">
-                    <div
-                        class="bg-white/60 p-3 md:p-10 border border-gray-100 relative"
-                    >
-                        <!-- PROFILE FLOATING CARD -->
+
+                <!-- COMMITTEE PROFILE GRID -->
+                <div
+                    class="grid grid-cols-2 md:flex flex-row justify-center gap-3 md:gap-10"
+                >
+                    <!-- Profile 1 -->
+                    <div class="w-full md:w-64">
                         <div
-                            class="absolute -top-16 right-6 w-28 h-28 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-xs bg-gray-200 border-4 border-white/80"
+                            class="relative h-64 md:h-72 rounded-t-[25px] rounded-br-[25px] md:rounded-t-[50px] md:rounded-br-[50px] border border-[#c9c9c970] overflow-hidden"
                         >
                             <img
-                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
-                                class="w-full h-full object-cover"
+                                src="https://media.istockphoto.com/id/1388253782/photo/positive-successful-millennial-business-professional-man-head-shot-portrait.jpg?s=612x612&w=0&k=20&c=uS4knmZ88zNA_OjNaE_JCRuq9qn3ycgtHKDKdJSnGdY="
+                                class="w-full h-full object-cover object-center"
                             />
                         </div>
 
-                        <!-- MESSAGE -->
-                        <div class="pr-0 md:pr-40 text-justify">
+                        <div
+                            class="p-2 text-center mt-2 border-2 rounded-t-[15px] rounded-br-[15px] border-[#393D7E40] border-tr-[#393D7E] border-br-[#393D7E]"
+                        >
+                            <h3
+                                class="text-xs md:text-lg text-[#0D1112]/80 font-bold"
+                            >
+                                Dr. Name Here
+                            </h3>
                             <p
-                                class="text-xl md:text-2xl text-[#393D7E] font-semibold mb-6"
+                                class="text-xs md:text-sm text-[#393D7E] font-light leading-relaxed mt-2"
                             >
-                                Dear Participants,
+                                President<br />
+                                Committee
                             </p>
+                        </div>
+                    </div>
 
-                            <div
-                                class="space-y-6 text-[#0D1112]/85 text-base md:text-lg leading-relaxed"
+                    <!-- Profile 2 -->
+                    <div class="w-full md:w-64">
+                        <div
+                            class="relative h-64 md:h-72 rounded-t-[25px] rounded-br-[25px] md:rounded-t-[50px] md:rounded-br-[50px] border border-[#c9c9c970] overflow-hidden"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                class="w-full h-full object-cover object-center"
+                            />
+                        </div>
+
+                        <div
+                            class="p-2 text-center mt-2 border-2 rounded-t-[15px] rounded-br-[15px] border-[#393D7E40] border-tr-[#393D7E] border-br-[#393D7E]"
+                        >
+                            <h3
+                                class="text-xs md:text-lg text-[#0D1112]/80 font-bold"
                             >
-                                <p>
-                                    We are delighted to welcome you to our
-                                    upcoming scientific and academic program —
-                                    carefully curated to blend learning,
-                                    collaboration, and meaningful engagement.
-                                </p>
-
-                                <p>
-                                    Each session has been thoughtfully designed
-                                    to highlight emerging advancements,
-                                    essential concepts, and valuable insights
-                                    relevant to professionals across all levels.
-                                </p>
-
-                                <p>
-                                    The event also provides opportunities to
-                                    interact with experts, expand your network,
-                                    and engage in inspiring conversations that
-                                    shape knowledge and innovation.
-                                </p>
-
-                                <p>
-                                    We hope that your experience here will be
-                                    enriching, memorable, and filled with new
-                                    perspectives that inspire growth.
-                                </p>
-
-                                <div class="pt-6 border-t border-gray-200">
-                                    <p class="font-semibold text-[#0D1112]">
-                                        Warm regards,
-                                    </p>
-                                    <p
-                                        class="text-xl font-bold text-[#0D1112] mt-1"
-                                    >
-                                        Name Here
-                                    </p>
-                                    <p class="text-[#393D7E] font-medium">
-                                        Designation
-                                    </p>
-                                </div>
-                            </div>
+                                Dr. Second Name
+                            </h3>
+                            <p
+                                class="text-xs md:text-sm text-[#393D7E] font-light leading-relaxed mt-2"
+                            >
+                                Secretary<br />
+                                Committee
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -855,7 +880,7 @@
         <section
             id="highlight-block"
             class="py-14 md:py-20 px-4 bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466]"
-                        data-moj-web-fixed="false"
+            data-moj-web-fixed="false"
             data-moj-web-type="highlight"
             data-moj-web-label="Conference Highlight"
             data-moj-web-category="structural"
@@ -984,7 +1009,7 @@
         <section
             id="about-block"
             class="py-10 md:py-20 px-4 bg-[#f7f8fa] relative"
-              data-moj-web-fixed="false"
+            data-moj-web-fixed="false"
             data-moj-web-type="about"
             data-moj-web-label="About Conference"
             data-moj-web-category="structural"
@@ -1116,148 +1141,108 @@
                     class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-10 px-4"
                 >
                     <!-- MEMBER CARD -->
-                    <div
-                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
-                    >
-                        <!-- Image -->
+                   <div class="w-full md:w-64">
                         <div
-                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                            class="relative h-64 md:h-72 rounded-t-[25px] rounded-br-[25px] md:rounded-t-[50px] md:rounded-br-[50px] border border-[#c9c9c970] overflow-hidden"
                         >
                             <img
-                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                src="https://media.istockphoto.com/id/1485052530/photo/portrait-fashion-and-braids-with-a-black-woman-on-an-orange-background-outdoor-for-style-or.jpg?s=612x612&w=0&k=20&c=fAox0qvGFqgFl1QbUXQ4Y6t_yW5Bl4HqFnvmD6uppHI="
+                                class="w-full h-full object-cover object-center"
                             />
-
-                            <!-- Gradient Overlay -->
-                            <div
-                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
-                            ></div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                        <div
+                            class="p-2 text-center mt-2 border-2 rounded-t-[15px] rounded-br-[15px] border-[#393D7E40] border-tr-[#393D7E] border-br-[#393D7E]"
+                        >
                             <h3
-                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                                class="text-xs md:text-lg text-[#0D1112]/80 font-bold"
                             >
-                                Member Name
+                                Dr. Name Here
                             </h3>
-
                             <p
-                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                                class="text-xs md:text-sm text-[#393D7E] font-light leading-relaxed mt-2"
                             >
-                                Committee Role
+                                President<br />
+                                Committee
                             </p>
-
-                            <!-- Underline -->
-                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
                         </div>
                     </div>
-                    <div
-                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
-                    >
-                        <!-- Image -->
+                   <div class="w-full md:w-64">
                         <div
-                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                            class="relative h-64 md:h-72 rounded-t-[25px] rounded-br-[25px] md:rounded-t-[50px] md:rounded-br-[50px] border border-[#c9c9c970] overflow-hidden"
                         >
                             <img
-                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                src="https://images.unsplash.com/photo-1619895862022-09114b41f16f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D"
+                                class="w-full h-full object-cover object-center"
                             />
-
-                            <!-- Gradient Overlay -->
-                            <div
-                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
-                            ></div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                        <div
+                            class="p-2 text-center mt-2 border-2 rounded-t-[15px] rounded-br-[15px] border-[#393D7E40] border-tr-[#393D7E] border-br-[#393D7E]"
+                        >
                             <h3
-                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                                class="text-xs md:text-lg text-[#0D1112]/80 font-bold"
                             >
-                                Member Name
+                                Dr. Name Here
                             </h3>
-
                             <p
-                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                                class="text-xs md:text-sm text-[#393D7E] font-light leading-relaxed mt-2"
                             >
-                                Committee Role
+                                President<br />
+                                Committee
                             </p>
-
-                            <!-- Underline -->
-                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
                         </div>
                     </div>
-                    <div
-                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
-                    >
-                        <!-- Image -->
+                   <div class="w-full md:w-64">
                         <div
-                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                            class="relative h-64 md:h-72 rounded-t-[25px] rounded-br-[25px] md:rounded-t-[50px] md:rounded-br-[50px] border border-[#c9c9c970] overflow-hidden"
                         >
                             <img
-                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D"
+                                class="w-full h-full object-cover object-center"
                             />
-
-                            <!-- Gradient Overlay -->
-                            <div
-                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
-                            ></div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                        <div
+                            class="p-2 text-center mt-2 border-2 rounded-t-[15px] rounded-br-[15px] border-[#393D7E40] border-tr-[#393D7E] border-br-[#393D7E]"
+                        >
                             <h3
-                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                                class="text-xs md:text-lg text-[#0D1112]/80 font-bold"
                             >
-                                Member Name
+                                Dr. Name Here
                             </h3>
-
                             <p
-                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                                class="text-xs md:text-sm text-[#393D7E] font-light leading-relaxed mt-2"
                             >
-                                Committee Role
+                                President<br />
+                                Committee
                             </p>
-
-                            <!-- Underline -->
-                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
                         </div>
                     </div>
-                    <div
-                        class="group border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg relative overflow-hidden"
-                    >
-                        <!-- Image -->
+                   <div class="w-full md:w-64">
                         <div
-                            class="w-full h-52 md:h-80 overflow-hidden bg-gray-200 relative"
+                            class="relative h-64 md:h-72 rounded-t-[25px] rounded-br-[25px] md:rounded-t-[50px] md:rounded-br-[50px] border border-[#c9c9c970] overflow-hidden"
                         >
                             <img
-                                src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                src="https://www.shutterstock.com/image-photo/head-shot-portrait-smart-confident-600nw-1721092123.jpg"
+                                class="w-full h-full object-cover object-center"
                             />
-
-                            <!-- Gradient Overlay -->
-                            <div
-                                class="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-[#393D7E]/80 via-[#393D7E]/50 to-transparent"
-                            ></div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="p-2 md:p-4 absolute bottom-2 z-10">
+                        <div
+                            class="p-2 text-center mt-2 border-2 rounded-t-[15px] rounded-br-[15px] border-[#393D7E40] border-tr-[#393D7E] border-br-[#393D7E]"
+                        >
                             <h3
-                                class="text-base md:text-xl font-bold text-white drop-shadow-sm"
+                                class="text-xs md:text-lg text-[#0D1112]/80 font-bold"
                             >
-                                Member Name
+                                Dr. Name Here
                             </h3>
-
                             <p
-                                class="text-xs md:text-sm font-semibold text-white/90 tracking-wide"
+                                class="text-xs md:text-sm text-[#393D7E] font-light leading-relaxed mt-2"
                             >
-                                Committee Role
+                                President<br />
+                                Committee
                             </p>
-
-                            <!-- Underline -->
-                            <div class="mt-1 h-[2px] w-14 bg-white/80"></div>
                         </div>
                     </div>
                 </div>
@@ -1265,10 +1250,14 @@
         </section>
 
         <!-- schedule -->
-        <section id="schedule-block" class="py-10 md:py-16 px-4 bg-white"   data-moj-web-fixed="false"
+        <section
+            id="schedule-block"
+            class="py-10 md:py-16 px-4 bg-white"
+            data-moj-web-fixed="false"
             data-moj-web-type="Schedule"
             data-moj-web-label="Schedule"
-            data-moj-web-category="structural">
+            data-moj-web-category="structural"
+        >
             <div class="max-w-7xl mx-auto">
                 <!-- TITLE -->
                 <h2
@@ -1503,7 +1492,7 @@
         <section
             id="tariff-block"
             class="py-10 px-4 xl:py-16 bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466] text-white"
-              data-moj-web-fixed="false"
+            data-moj-web-fixed="false"
             data-moj-web-type="tariff"
             data-moj-web-label="Tariff"
             data-moj-web-category="structural"
@@ -1614,7 +1603,7 @@
         <section
             id="about-venue-block"
             class="py-10 md:py-16 px-4 max-w-7xl mx-auto relative"
-             data-moj-web-fixed="false"
+            data-moj-web-fixed="false"
             data-moj-web-type="aboutVenue"
             data-moj-web-label="About Venue"
             data-moj-web-category="structural"

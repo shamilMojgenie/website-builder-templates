@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Template 1</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- nav bar  -->
+        <section>
+            <main>
+                <!-- PLACE CHECKBOX AT TOP LEVEL -->
+                <input type="checkbox" id="navToggle" class="peer hidden" />
+
+                <!-- HEADER -->
+                <header
+                    class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200/50"
+                >
+                    <div
+                        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+                    >
+                        <!-- Logo -->
+                        <a href="/#" class="flex items-center">
+                            <img
+                                src="https://logodix.com/logo/2045179.png"
+                                class="h-12 w-auto"
+                            />
+                        </a>
+
+                        <!-- Desktop Nav -->
+                        <nav
+                            class="hidden md:flex items-center space-x-8 font-medium text-sm"
+                        >
+                            <a href="/#" class="hover:text-[#0C2B4E]">Home</a>
+                            <a href="/#" class="hover:text-[#0C2B4E]">About</a>
+                            <a href="/#" class="hover:text-[#0C2B4E]"
+                                >Highlights</a
+                            >
+                            <a href="/#" class="hover:text-[#0C2B4E]">Venue</a>
+                            <a href="/#" class="hover:text-[#0C2B4E]"
+                                >Gallery</a
+                            >
+
+                            <a
+                                href="#"
+                                class="ml-4 px-5 py-2 bg-[#0C2B4E] text-white rounded-full"
+                            >
+                                Register Now
+                            </a>
+                        </nav>
+
+                        <!-- Mobile Menu Button -->
+                        <label for="navToggle" class="md:hidden cursor-pointer">
+                            <svg
+                                class="w-8 h-8 text-[#0C2B4E]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </label>
+                    </div>
+                </header>
+
+                <!-- FULL SCREEN OVERLAY -->
+                <label
+                    for="navToggle"
+                    class="fixed inset-0 bg-black/40 backdrop-blur-sm md:hidden z-40 opacity-0 invisible transition-all duration-300 peer-checked:opacity-100 peer-checked:visible"
+                ></label>
+
+                <!-- SIDEBAR -->
+                <div
+                    class="fixed top-0 right-0 h-full w-72 bg-white shadow-xl z-50 md:hidden translate-x-full transition-transform duration-300 peer-checked:translate-x-0"
+                >
+                    <div class="flex justify-end p-5 border-b border-gray-300">
+                        <label for="navToggle" class="cursor-pointer">
+                            <svg
+                                class="w-6 h-6 text-gray-700 hover:text-[#0C2B4E]"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </label>
+                    </div>
+
+                    <!-- Sidebar Links -->
+                    <nav
+                        class="flex flex-col px-6 py-6 space-y-6 font-medium text-sm"
+                    >
+                        <a
+                            href="/#"
+                            class="py-2 border-b border-gray-300 hover:text-[#0C2B4E]"
+                            >Home</a
+                        >
+                        <a
+                            href="/#"
+                            class="py-2 border-b border-gray-300 hover:text-[#0C2B4E]"
+                            >About</a
+                        >
+                        <a
+                            href="/#"
+                            class="py-2 border-b border-gray-300 hover:text-[#0C2B4E]"
+                            >Highlights</a
+                        >
+                        <a
+                            href="/#"
+                            class="py-2 border-b border-gray-300 hover:text-[#0C2B4E]"
+                            >Venue</a
+                        >
+                        <a
+                            href="/#"
+                            class="py-2 border-b border-gray-300 hover:text-[#0C2B4E]"
+                            >Gallery</a
+                        >
+
+                        <a
+                            href="#"
+                            class="mt-4 text-center px-4 py-3 rounded-full bg-[#0C2B4E] text-white"
+                        >
+                            Register Now
+                        </a>
+                    </nav>
+                </div>
+            </main>
+        </section>
+
+        <!-- HERO -->
+        <section
+            class="relative md:mx-5 md:rounded-3xl mt-14 md:mt-24 overflow-hidden"
+            aria-label="Event Hero Template"
+        >
+            <!-- FULL BACKGROUND IMAGE -->
+            <img
+                src="https://images.unsplash.com/photo-1585607344893-43a4bd91169a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZmVzdGl2YWx8ZW58MHx8MHx8fDA%3D"
+                class="absolute inset-0 w-full h-full object-cover"
+                alt="Event Background"
+            />
+
+            <!-- BLUE OVERLAY BLOCK (ABSOLUTE) -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-[#0C2B4E] via-[#0C2B4E]/80 to-transparent"
+            ></div>
+
+            <!-- CONTENT -->
+            <div
+                class="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center text-white"
+            >
+                <!-- LEFT SIDE CONTENT -->
+                <div class="px-6 md:px-12 2xl:px-16 py-12 md:py-24">
+                    <p
+                        class="text-sm md:text-base 2xl:text-lg font-semibold text-white/90"
+                    >
+                        Event Title
+                    </p>
+
+                    <h1
+                        class="font-bold leading-tight text-[2rem] md:text-5xl 2xl:text-6xl mt-2"
+                    >
+                        <span class="block text-white">Main Heading —</span>
+                        <span class="block text-white">Subheading Here</span>
+                    </h1>
+
+                    <p
+                        class="mt-4 text-sm md:text-base 2xl:text-lg leading-relaxed text-white/90"
+                    >
+                        Write a short tagline or event introduction. This area
+                        describes the purpose, theme, or significance of the
+                        event.
+                    </p>
+
+                    <p
+                        class="mt-3 text-base md:text-xl font-medium text-white/90"
+                    >
+                        Organized by Your Club / Institution
+                    </p>
+
+                    <!-- DATE + VENUE -->
+           <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:gap-6 text-white">
+    <!-- LINE 1 -->
+    <div class="flex items-center gap-3">
+        <p class="text-lg md:text-2xl font-semibold">10–12 Jan ’26</p>
+        <span class="w-2 h-2 rounded-full bg-white/60 hidden sm:block"></span>
+        <p class="text-lg md:text-2xl font-semibold">Your Venue Name</p>
+    </div>
+
+</div>
+
+
+                    <!-- BUTTONS -->
+                    <div class="mt-4 2xl:mt-6 flex gap-4 items-center">
+                        <a
+                            href="#book"
+                            class="inline-block px-6 py-3 bg-white text-[#0C2B4E] border-2 border-white font-semibold rounded-lg shadow-lg hover:bg-white/80 transition duration-300"
+                        >
+                            Book Now
+                        </a>
+
+                        <a
+                            href="#more"
+                            class="inline-block px-6 py-3 border-2 border-white text-white font-semibold rounded-lg shadow-lg hover:bg-white/10 transition duration-300"
+                        >
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- EMPTY RIGHT COLUMN (Image already full background) -->
+                <div class="hidden lg:block"></div>
+            </div>
+        </section>
+
+        <!-- about event -->
+        <section class="py-10 md:py-16 px-4 lg:px-12 bg-white">
+            <div
+                class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-12 items-center"
+            >
+                <!-- IMAGE SECTION -->
+                <div class="relative w-full">
+                    <div class="overflow-hidden rounded-2xl shadow-lg">
+                        <img
+                            src="https://t3.ftcdn.net/jpg/08/60/88/24/360_F_860882400_EK54Br8FQwkbqk0oRDMEOwQUAb7SuyS5.jpg"
+                            alt="Image"
+                            class="w-full h-full lg:min-h-150 xl:min-h-100 object-cover"
+                        />
+                    </div>
+                </div>
+
+                <!-- TEXT SECTION -->
+                <div class="space-y-3 md:space-y-6">
+                    <h2 class="leading-tight">
+                        <span
+                            class="block text-[#0D1112]/60 text-lg md:text-xl tracking-wide"
+                        >
+                            Introducing
+                        </span>
+                        <span
+                            class="text-4xl md:text-5xl font-bold text-[#0C2B4E]"
+                        >
+                            Your Main Heading Goes Here
+                        </span>
+                    </h2>
+
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed"
+                    >
+                        This is your introductory section. Replace this text
+                        with your own description, context, mission statement,
+                        message, or event details. Clean, simple, and
+                        distraction-free.
+                    </p>
+
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed"
+                    >
+                        Keep the content focused on what matters. This design
+                        gives maximum clarity and avoids unnecessary design
+                        clutter. Ideal for professional or minimal websites.
+                    </p>
+
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed"
+                    >
+                        Add any additional paragraph here to elaborate further,
+                        share insights, or highlight key points for your
+                        audience.
+                    </p>
+
+                    <!-- CTA BUTTONS -->
+                    <div class="flex gap-4 pt-4">
+                        <a
+                            href="#"
+                            class="bg-[#0C2B4E] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#10345F] transition"
+                        >
+                            Learn More
+                        </a>
+                        <a
+                            href="#"
+                            class="border border-[#0C2B4E] text-[#0C2B4E] px-6 py-3 rounded-lg hover:bg-[#0C2B4E]/5 transition"
+                        >
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- event highlights -->
+        <section
+            id="highlights"
+            class="relative py-10 md:py-20 px-4 lg:px-12 bg-[#0C2B4E] text-white overflow-hidden"
+        >
+            <!-- Dark gradient overlay -->
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40 z-0"
+            ></div>
+
+            <!-- Background Texture -->
+            <div
+                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')] opacity-10 z-0"
+            ></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto">
+                <!-- Heading -->
+                <div class="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+                        Event Highlights
+                    </h2>
+                    <p class="mt-4 md:text-lg text-white/80 leading-relaxed">
+                        A glimpse into the signature experiences curated
+                        exclusively for this event.
+                    </p>
+                </div>
+
+                <div class="space-y-7 md:space-y-10">
+                    <!-- ITEM 1 -->
+                    <div class="relative h-64 w-full overflow-hidden group">
+                        <img
+                            src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-lead-b8893808-f062-46b3-aef1-a755d1eb03bd.jpg?w=1500&h=900&crop=1"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
+                        ></div>
+
+                        <div class="absolute left-6 top-1/2 -translate-y-1/2">
+                            <h3 class="text-xl md:text-3xl font-semibold">
+                                Grand Opening Ceremony
+                            </h3>
+                            <p class="text-white/80 mt-2 max-w-md">
+                                A spectacular start with immersive lighting,
+                                live orchestra, and ceremonial launch.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="relative h-64 w-full overflow-hidden group">
+                        <img
+                            src="https://www.erikblackpainting.com/wp-content/uploads/2023/05/img-20191125-wa0016.webp"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent"
+                        ></div>
+
+                        <div
+                            class="absolute right-6 top-1/2 -translate-y-1/2 text-right"
+                        >
+                            <h3 class="text-xl md:text-3xl font-semibold">
+                                Live Art Performances
+                            </h3>
+                            <p class="text-white/80 mt-2 max-w-md">
+                                Witness dynamic street art, cultural fusion
+                                acts, and live installations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 4 -->
+                    <div class="relative h-64 w-full overflow-hidden group">
+                        <img
+                            src="https://ewp4b2izhd8.exactdn.com/wp-content/uploads/2024/01/NIGHT-BEATS-PRESS-PIC-2024--scaled.jpg?strip=all&quality=90&webp=90&avif=80"
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent"
+                        ></div>
+
+                        <div class="absolute left-6 top-1/2 -translate-y-1/2">
+                            <h3 class="text-xl md:text-3xl font-semibold">
+                                Rhythm & Beats Night
+                            </h3>
+                            <p class="text-white/80 mt-2 max-w-md">
+                                A night of high-energy performances with
+                                electrifying DJs and percussion acts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- venue -->
+        <section class="py-10 md:py-20 px-4 lg:px-12 bg-white">
+            <div
+                class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-12 items-center"
+            >
+                <!-- TEXT SECTION (LEFT) -->
+                <div class="space-y-3 md:space-y-6 order-2 lg:order-1">
+                    <h2 class="leading-tight">
+                        <span
+                            class="block text-[#0D1112]/60 text-lg md:text-xl tracking-wide"
+                        >
+                            Venue Highlight
+                        </span>
+                        <span
+                            class="text-4xl md:text-5xl font-bold text-[#0C2B4E]"
+                        >
+                            Discover the Perfect Venue
+                        </span>
+                    </h2>
+
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed"
+                    >
+                        Explore a beautifully curated space designed for
+                        conferences, gatherings, and premium events. The venue
+                        blends functionality with refined architectural
+                        aesthetics.
+                    </p>
+
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed"
+                    >
+                        Convenient location, modern interiors, and a serene
+                        atmosphere make this venue ideal for hosting meaningful
+                        experiences.
+                    </p>
+
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed"
+                    >
+                        Every detail is crafted to ensure comfort, seamless
+                        flow, and an unforgettable ambience for all attendees.
+                    </p>
+
+                    <!-- CTA BUTTONS -->
+                    <div class="flex gap-4 pt-4">
+                        <a
+                            href="#"
+                            class="bg-[#0C2B4E] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#10345F] transition"
+                        >
+                            Explore Venue
+                        </a>
+                        <a
+                            href="#"
+                            class="border border-[#0C2B4E] text-[#0C2B4E] px-6 py-3 rounded-lg hover:bg-[#0C2B4E]/5 transition"
+                        >
+                            View Map
+                        </a>
+                    </div>
+                </div>
+
+                <!-- IMAGE SECTION (RIGHT) -->
+                <div class="relative w-full order-1 lg:order-2">
+                    <div class="overflow-hidden rounded-2xl shadow-lg">
+                        <img
+                            src="https://www.micemag.com/wp-content/uploads/2022/10/venues-mice-luxembourg-eccl-00.jpg"
+                            alt="Venue Image"
+                            class="w-full h-full lg:min-h-150 xl:min-h-100 object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARIFF -->
+        <section class="py-10 md:py-20 px-4 md:px-10 bg-[#0C2B4E]/5 relative">
+            <div class="max-w-7xl mx-auto">
+                <!-- Heading -->
+                <div class="text-center mb-6 md:mb-14">
+                    <h2 class="text-4xl md:text-5xl font-bold text-[#0C2B4E]">
+                        Ticket Pricing
+                    </h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+                        Simple pricing. No hidden charges. Pick what suits you
+                        best.
+                    </p>
+                </div>
+
+                <!-- Pricing Grid -->
+                <div class="grid md:grid-cols-3 gap-4 md:gap-10">
+                    <!-- Early Bird -->
+                    <div
+                        class="rounded-lg md:rounded-2xl p-6 md:p-10 border border-gray-200 shadow-sm hover:shadow-md transition bg-white"
+                    >
+                        <h3 class="text-2xl font-bold text-[#0C2B4E]">
+                            Early Bird
+                        </h3>
+                        <p class="text-gray-500 mt-2 text-sm">
+                            Limited time discount
+                        </p>
+
+                        <div
+                            class="mt-6 text-4xl font-extrabold text-[#0D1112]"
+                        >
+                            ₹999
+                        </div>
+
+                        <ul class="mt-6 space-y-3 text-sm text-gray-700">
+                            <li>✔ Full Day Access</li>
+                            <li>✔ Priority Seating</li>
+                            <li>✔ Workshop Entry</li>
+                            <li>✔ Free Welcome Kit</li>
+                        </ul>
+
+                        <a
+                            href="#"
+                            class="block mt-8 text-center bg-[#0C2B4E] text-white py-3 rounded-lg font-semibold hover:bg-[#10345F] transition"
+                        >
+                            Buy Pass
+                        </a>
+                    </div>
+
+                    <!-- Standard -->
+                    <div
+                        class="rounded-lg md:rounded-2xl p-6 md:p-10 border border-gray-200 shadow-sm hover:shadow-md transition bg-[#F7FBFC]"
+                    >
+                        <h3 class="text-2xl font-bold text-[#0C2B4E]">
+                            Standard Pass
+                        </h3>
+                        <p class="text-gray-500 mt-2 text-sm">
+                            Most popular choice
+                        </p>
+
+                        <div
+                            class="mt-6 text-4xl font-extrabold text-[#0D1112]"
+                        >
+                            ₹1499
+                        </div>
+
+                        <ul class="mt-6 space-y-3 text-sm text-gray-700">
+                            <li>✔ Full Event Access</li>
+                            <li>✔ Main Stage Shows</li>
+                            <li>✔ Networking Areas</li>
+                            <li>✔ Access to Food Court</li>
+                        </ul>
+
+                        <a
+                            href="#"
+                            class="block mt-8 text-center bg-[#0C2B4E] text-white py-3 rounded-lg font-semibold hover:bg-[#10345F] transition"
+                        >
+                            Buy Pass
+                        </a>
+                    </div>
+
+                    <!-- VIP -->
+                    <div
+                        class="rounded-lg md:rounded-2xl p-6 md:p-10 border border-gray-200 shadow-sm hover:shadow-md transition bg-[#FFFAEB]"
+                    >
+                        <h3 class="text-2xl font-bold text-[#0C2B4E]">
+                            VIP Pass
+                        </h3>
+                        <p class="text-gray-500 mt-2 text-sm">
+                            Premium experience
+                        </p>
+
+                        <div
+                            class="mt-6 text-4xl font-extrabold text-[#0D1112]"
+                        >
+                            ₹2999
+                        </div>
+
+                        <ul class="mt-6 space-y-3 text-sm text-gray-700">
+                            <li>✔ Front Row Seating</li>
+                            <li>✔ VIP Lounge Entry</li>
+                            <li>✔ Backstage Meet</li>
+                            <li>✔ Premium Gift Bag</li>
+                        </ul>
+
+                        <a
+                            href="#"
+                            class="block mt-8 text-center bg-[#0C2B4E] text-white py-3 rounded-lg font-semibold hover:bg-[#10345F] transition"
+                        >
+                            Buy VIP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- gallery -->
+        <section
+            class="relative py-10 md:py-20 px-4 lg:px-12 bg-[#0C2B4E] text-white overflow-hidden"
+        >
+            <!-- Texture -->
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div
+                class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10"
+            ></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto">
+                <!-- HEADER -->
+                <div class="text-center mb-6 md:mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+                        Event Gallery
+                    </h2>
+                    <p class="mt-4 md:text-lg text-white/80 leading-relaxed">
+                        Cinematic highlights from the unforgettable event.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- TALL IMAGE LEFT -->
+                    <div class="relative overflow-hidden group">
+                        <img
+                            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnR8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80"
+                        ></div>
+                    </div>
+
+                    <!-- MIDDLE COLUMN -->
+                    <div class="flex flex-col gap-6">
+                        <div class="relative h-60 overflow-hidden group">
+                            <img
+                                src="https://shikararestaurant.com/wp-content/uploads/2018/01/events-banner.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            />
+                        </div>
+                        <div class="relative h-60 overflow-hidden group">
+                            <img
+                                src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?cs=srgb&dl=pexels-wolfgang-1002140-2747449.jpg&fm=jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="flex flex-col gap-6">
+                        <div class="relative h-60 overflow-hidden group">
+                            <img
+                                src="https://imageevents.org.uk/wp-content/uploads/2016/02/event-management-placeholder.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            />
+                        </div>
+                        <div class="relative h-60 overflow-hidden group">
+                            <img
+                                src="https://www.mmu.ac.uk/sites/default/files/styles/1440px/public/2021-10/christmas-event-dummy.jpg?itok=5LExrRNH"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- scedule -->
+        <section class="py-10 px-4 md:px-10 xl:py-20 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <!-- HEADING -->
+                <div class="mb-8 md:mb-14 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-[#0C2B4E]">
+                        Event Schedule
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-3">
+                        A clear breakdown of everything planned across the two
+                        days.
+                    </p>
+                </div>
+
+                <!-- ================= DAY 1 ================= -->
+                <div class="mb-8 md:mb-14">
+                    <h3
+                        class="text-2xl md:text-3xl font-bold text-[#0C2B4E] mb-6"
+                    >
+                        Day 01 — Wednesday
+                    </h3>
+
+                    <div class="space-y-3">
+                        <!-- ITEM -->
+                        <div
+                            class="bg-[#F7FAFC] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                10:00am – 10:50am
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Opening Ceremony
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 60 min
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-[#F7FAFC] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                11:00am – 12:00pm
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Creative Workshop
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 60 min
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-[#F7FAFC] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                5:30pm – 6:50pm
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Music Flow Session
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 80 min
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-[#F7FAFC] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                6:00pm – 7:10pm
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Dance Performance
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 70 min
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= DAY 2 ================= -->
+                <div>
+                    <h3
+                        class="text-2xl md:text-3xl font-bold text-[#0C2B4E] mb-6"
+                    >
+                        Day 02 — Thursday
+                    </h3>
+
+                    <div class="space-y-3">
+                        <div
+                            class="bg-[#F1FEFF] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                6:00pm – 7:20pm
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Art Exhibition
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 60 min
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-[#F1FEFF] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                11:00am – 12:30pm
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Cultural Showcase
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 90 min
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-[#F1FEFF] border-l-4 border-[#0C2B4E] rounded-lg p-5"
+                        >
+                            <p class="text-sm text-gray-500 font-medium">
+                                6:00pm – 8:00pm
+                            </p>
+                            <h4 class="text-xl font-semibold text-[#0C2B4E]">
+                                Final Evening Concert
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                Duration: 120 min
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- banner -->
+        <section class="relative overflow-hidden py-20 md:py-28">
+            <!-- FULL BACKGROUND IMAGE USING IMG TAG -->
+            <div class="absolute inset-0 overflow-hidden">
+                <img
+                    src="https://images.pexels.com/photos/3373053/pexels-photo-3373053.jpeg?cs=srgb&dl=pexels-yogendras31-3373053.jpg&fm=jpg"
+                    alt="Festival Background"
+                    class="w-full h-full object-cover scale-105"
+                />
+            </div>
+
+            <!-- DARK GRADIENT OVERLAY -->
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"
+            ></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+                <!-- Top Label -->
+                <p
+                    class="text-white/80 tracking-widest text-xs md:text-sm mb-4 uppercase"
+                >
+                    A Week of Art • Music • Culture
+                </p>
+
+                <!-- Main Heading -->
+                <h2
+                    class="text-4xl md:text-6xl font-extrabold leading-tight text-white"
+                >
+                    Welcome to the
+                    <span class="text-[#F1FEFF]">Festival of Lights</span>
+                </h2>
+
+                <!-- Subtext -->
+                <p
+                    class="mt-5 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+                >
+                    Step into an immersive world of creativity and celebration —
+                    where colors, music, and experiences unfold like never
+                    before.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mt-8 flex items-center justify-center gap-4">
+                    <a
+                        href="#"
+                        class="px-8 py-3 bg-[#F1FEFF] text-[#0C2B4E] font-semibold rounded-full shadow-lg hover:bg-[#F1FEFF]/70 transition text-sm md:text-base"
+                    >
+                        Get Tickets
+                    </a>
+
+                    <a
+                        href="#"
+                        class="px-8 py-3 border border-white text-white rounded-full hover:bg-white/10 transition text-sm md:text-base"
+                    >
+                        View Schedule
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <section class="bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 md:px-10 py-14">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+                >
+                    <!-- About Event -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#0C2B4E] mb-4">
+                            About Event
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            A vibrant celebration bringing together music,
+                            culture, arts, and entertainment for an
+                            unforgettable week-long experience.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#0C2B4E] mb-4">
+                            Quick Links
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>
+                                <a
+                                    href="/#"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/#"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >About</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/#"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >Highlights</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/#"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >Schedule</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/#"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >Venue</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Address -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#0C2B4E] mb-4">
+                            Address
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            123 Event Street<br />
+                            Festival City, Dreamland 000000<br />
+                            Wonderland
+                        </p>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#0C2B4E] mb-4">
+                            Contact Us
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>
+                                Email:
+                                <a
+                                    href="mailto:info@example.com"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >info@example.com</a
+                                >
+                            </li>
+                            <li>
+                                Phone:
+                                <a
+                                    href="tel:+911234567890"
+                                    class="hover:text-[#0C2B4E] transition"
+                                    >+91 12345 67890</a
+                                >
+                            </li>
+                            <li>
+                                Support Hours:<br />
+                                Mon – Fri, 9am – 5pm
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bottom -->
+                <div class="mt-12 text-center text-gray-500 text-sm">
+                    © 2025 Event Festival. All Rights Reserved.
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

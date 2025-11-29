@@ -193,7 +193,7 @@
 
                     <!-- CENTER HEART -->
                     <div class="flex flex-col items-center justify-center">
-                        <div class="text-center mb-14">
+                        <div class="text-center mb-6 md:mb-14">
                             <p
                                 class="uppercase tracking-[0.25em] text-xs text-[#4B352A]/70 mb-2"
                             >
@@ -270,560 +270,392 @@
         </section>
 
         <!-- brief intro  -->
-        <section
-            class="relative py-10 md:py-20 px-4 bg-[#f3f2ef]"
-            id="welcome-intro-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="welcome"
-            data-moj-web-label="Welcome Section"
-            data-moj-web-category="structural"
-        >
+        <section class="bg-[#F7F5F2] py-10 md:py-20 px-4">
             <div
-                class="max-w-4xl mx-auto relative flex flex-col-reverse md:flex-col"
+                class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center"
             >
-                <img
-                    src="https://fetch.getnarrativeapp.com/static/d7ec1e91-00c1-4cb0-a5ad-42087e7f607e/European-inspired-session.jpg?w=1500"
-                    class="rounded-xl md:rounded-3xl shadow-xl w-full h-80 md:h-[500px] object-cover mt-8 md:mb-16 object-[center_70%]"
-                />
+                <!-- Left Image -->
+                <div>
+                    <img
+                        src="https://cdn0.hitched.co.uk/article/1212/3_2/960/jpg/42121-Romantic-cirty-breaks-europe-main-eeffc18.jpeg"
+                        class="w-full h-[480px] object-cover rounded-3xl shadow-2xl object-[center_70%]"
+                    />
+                </div>
 
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-arizonia text-[#4B352A] mb-4">
+                <!-- Right Content -->
+                <div class="space-y-5 md:pr-10 text-center md:text-left">
+                    <h2
+                        class="text-4xl md:text-5xl font-arizonia text-[#4B352A] leading-tight"
+                    >
                         A Swipe, A Spark, A Forever
                     </h2>
 
-                    <p class="text-gray-700 md:text-lg italic leading-relaxed">
-                        What began with a swipe soon became a beautiful story —
-                        a connection built on timing, warmth, and quiet magic.
+                    <p
+                        class="text-gray-700 italic md:text-lg leading-relaxed max-w-md"
+                    >
+                        What began with a simple swipe soon unfolded into
+                        something far deeper — a connection filled with warmth,
+                        laughter, and gentle moments that felt effortlessly
+                        right. What started as chance quickly became comfort,
+                        companionship, and a love that simply made sense.
+                        <br /><br />
+                        Sometimes, all it takes is one spark to change
+                        everything.
+                    </p>
+
+                    <div
+                        class="h-[2px] w-20 bg-[#4B352A]/30 mx-auto md:mx-0"
+                    ></div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 md:py-20 bg-white relative overflow-hidden"
+            id="story-block"
+        >
+            <!-- Decorative Flower (Top Left) -->
+            <img
+                src="https://www.pngall.com/wp-content/uploads/15/Orange-Flower-PNG-Photo.png"
+                class="absolute top-10 left-0 w-50 opacity-40 pointer-events-none select-none"
+                alt=""
+            />
+
+            <!-- Decorative Flower (Bottom Right) -->
+            <img
+                src="https://www.pngall.com/wp-content/uploads/15/Orange-Flower-PNG-Photo.png"
+                class="absolute bottom-10 right-0 w-58 opacity-40 rotate-12 pointer-events-none select-none"
+                alt=""
+            />
+
+            <!-- WHITE BOX WRAPPER -->
+            <div
+                class="relative z-10 max-w-3xl mx-4 md:mx-auto bg-white border border-[#4B352A]/30 rounded-3xl p-4 md:p-12 shadow-sm space-y-8 md:space-y-16"
+            >
+                <div class="text-center relative z-10">
+                    <h2
+                        class="text-4xl md:text-6xl font-arizonia text-[#4B352A]"
+                    >
+                        Our Love Story
+                    </h2>
+                    <p class="text-gray-600 italic mt-3">
+                        Moments that shaped a forever.
+                    </p>
+                </div>
+
+                <!-- Story Item -->
+                <div>
+                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
+                        The Perfect Swipe
+                    </h3>
+                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
+                        March 2024
+                    </p>
+                    <p class="text-gray-700 mt-4 leading-relaxed">
+                        It began with a match at the most unexpected moment —
+                        one arriving, the other ready to leave. A simple swipe
+                        that changed everything.
+                    </p>
+                </div>
+
+                <!-- Story Item (Right aligned) -->
+                <div class="text-right">
+                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
+                        First Connection
+                    </h3>
+                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
+                        March 2024
+                    </p>
+                    <p class="text-gray-700 mt-4 leading-relaxed">
+                        A quiet pizza, laughter, and an instant comfort — their
+                        first moments together were simple but unforgettable.
+                    </p>
+                </div>
+
+                <!-- Story Item -->
+                <div>
+                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
+                        Moments Together
+                    </h3>
+                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
+                        Mar – Jun 2024
+                    </p>
+                    <p class="text-gray-700 mt-4 leading-relaxed">
+                        Long calls, boba dates, walks, and movies — little joys
+                        stitched their story with warmth and ease.
+                    </p>
+                </div>
+
+                <!-- Story Item (Right aligned) -->
+                <div class="text-right">
+                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
+                        Forever Begins
+                    </h3>
+                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
+                        2024 – 2025
+                    </p>
+                    <p class="text-gray-700 mt-4 leading-relaxed">
+                        Their journey grew into a quiet promise — steady,
+                        certain, and built on love, trust, and shared dreams.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section
-            class="pt-10 md:pt-20 bg-[#F7F6F3]"
-            id="story-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="story"
-            data-moj-web-label="story Section"
-            data-moj-web-category="structural"
-        >
-            <div class="text-center mb-10 md:mb-20">
-                <h2 class="text-4xl md:text-6xl font-arizonia text-[#4B352A]">
-                    Our Love Story
-                </h2>
-                <p class="text-gray-600 italic mt-3">
-                    Moments that shaped a forever.
-                </p>
-            </div>
-
-            <div class="relative max-w-5xl mx-auto space-y-32 px-4">
-                <div class="sticky top-24">
-                    <div
-                        class="flex flex-col md:flex-row items-center gap-12 bg-white/90 rounded-xl md:rounded-[40px] p-4 md:p-10 border-2 border-[#4B352A]/40 shadow-xl relative overflow-hidden"
-                    >
-                        <div class="w-full md:w-1/2 relative">
-                            <div
-                                class="bg-white p-3 rounded-xl md:rounded-2xl shadow-xl border border-[#4B352A]/30 md:rotate-[-2deg]"
-                            >
-                                <img
-                                    src="https://relationshipsmdd.com/wp-content/uploads/2023/05/Can-you-send-pictures-on-hinge.jpeg"
-                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="md:w-1/2 text-center md:text-left">
-                            <h3 class="text-4xl font-arizonia text-[#4B352A]">
-                                The Perfect Swipe
-                            </h3>
-                            <p
-                                class="text-xs text-[#4B352A] mt-1 tracking-widest"
-                            >
-                                March 2024
-                            </p>
-                            <p class="text-gray-700 mt-5 leading-relaxed">
-                                It began with a match at the most unexpected
-                                moment — one person arriving, the other ready to
-                                leave. A swipe that felt ordinary but became
-                                everything.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sticky top-30">
-                    <div
-                        class="flex flex-col md:flex-row-reverse items-center gap-12 bg-white/90 rounded-xl md:rounded-[40px] p-4 md:p-10 border-2 border-[#4B352A]/40 shadow-xl relative overflow-hidden"
-                    >
-                        <div class="w-full md:w-1/2 relative">
-                            <div
-                                class="bg-white p-3 rounded-xl md:rounded-2xl shadow-xl border border-[#4B352A]/30 md:rotate-[2deg]"
-                            >
-                                <img
-                                    src="https://img.freepik.com/premium-photo/indian-couple-date-restaurant-capturing-selfie-terrace-boyfriend_868783-43332.jpg"
-                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="md:w-1/2 text-center md:text-right">
-                            <h3 class="text-4xl font-arizonia text-[#4B352A]">
-                                First Connection
-                            </h3>
-                            <p
-                                class="text-xs text-[#4B352A] mt-1 tracking-widest"
-                            >
-                                March 2024
-                            </p>
-                            <p class="text-gray-700 mt-5 leading-relaxed">
-                                A quiet pizza, laughter, and a calmness that
-                                felt rare. Their first date was simple — but
-                                unforgettable.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sticky top-36">
-                    <div
-                        class="flex flex-col md:flex-row items-center gap-12 bg-white/90 rounded-xl md:rounded-[40px] p-4 md:p-10 border-2 border-[#4B352A]/40 shadow-xl relative overflow-hidden"
-                    >
-                        <div class="w-full md:w-1/2 relative">
-                            <div
-                                class="bg-white p-3 rounded-xl md:rounded-2xl shadow-xl border border-[#4B352A]/30 md:rotate-[-2deg]"
-                            >
-                                <img
-                                    src="https://fetch.getnarrativeapp.com/static/9727d264-ff8b-40a7-9a06-1b08097351c3/europe-engagement-session.jpg?w=750"
-                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="md:w-1/2 text-center md:text-left">
-                            <h3 class="text-4xl font-arizonia text-[#4B352A]">
-                                Moments Together
-                            </h3>
-                            <p
-                                class="text-xs text-[#4B352A] mt-1 tracking-widest"
-                            >
-                                Mar – Jun 2024
-                            </p>
-                            <p class="text-gray-700 mt-5 leading-relaxed">
-                                Long calls, boba dates, autumn walks, Broadway
-                                shows — joy stitched their story together
-                                beautifully.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sticky top-42">
-                    <div
-                        class="flex flex-col md:flex-row-reverse items-center gap-12 bg-white/90 rounded-xl md:rounded-[40px] p-4 md:p-10 border-2 border-[#4B352A]/40 shadow-xl relative overflow-hidden"
-                    >
-                        <div class="w-full md:w-1/2 relative">
-                            <div
-                                class="bg-white p-3 rounded-xl md:rounded-2xl shadow-xl border border-[#4B352A]/30 md:rotate-[2deg]"
-                            >
-                                <img
-                                    src="https://eventsmanagementkerala.com/wp-content/uploads/2023/08/kerala-christian-wedding-rituals-and-procedure-1024x683.webp"
-                                    class="w-full h-40 md:h-96 object-cover rounded-xl"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="md:w-1/2 text-center md:text-right">
-                            <h3 class="text-4xl font-arizonia text-[#4B352A]">
-                                Forever Begins
-                            </h3>
-                            <p
-                                class="text-xs text-[#4B352A] mt-1 tracking-widest"
-                            >
-                                2024 – 2025
-                            </p>
-                            <p class="text-gray-700 mt-5 leading-relaxed">
-                                Their journey became a promise — one step at a
-                                time, built on faith, timing, and deep love.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="h-20"></div>
-            </div>
-        </section>
-
         <!-- wedding details -->
-        <section
-            class="py-10 md:py-24 px-4 bg-[#FAF8F5] relative overflow-hidden"
-            id="itinerary-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="itinerary"
-            data-moj-web-label="Wedding itinerary"
-            data-moj-web-category="structural"
-        >
-            <div
-                class="absolute top-0 left-0 w-96 h-96 bg-[#E4DED6]/40 blur-3xl rounded-full"
-            ></div>
-            <div
-                class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#D8D2C9]/40 blur-3xl rounded-full"
-            ></div>
-
-            <div class="relative max-w-6xl mx-auto z-10">
-                <h2
-                    class="text-5xl md:text-7xl text-center font-arizonia text-[#4B352A]"
-                >
+        <section class="py-10 md:py-20 bg-[#F7F5F2]" id="itinerary-block">
+            <div class="text-center mb-6 md:mb-16">
+                <h2 class="text-5xl md:text-7xl font-arizonia text-[#4B352A]">
                     Wedding Details
                 </h2>
-                <p
-                    class="text-center text-gray-600 italic max-w-xl mx-auto mt-4"
-                >
-                    A glimpse of the beautiful moments planned for our
-                    celebration.
+                <p class="text-gray-600 italic mt-3">
+                    Moments cherished in our celebration.
                 </p>
+            </div>
 
-                <div
-                    class="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-14"
-                >
-                    <div
-                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-xl md:rounded-3xl border-2 border-[#4B352A]/30"
-                    >
-                        <div class="absolute -top-8 left-10">
-                            <div
-                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4B352A]/40 shadow-lg"
-                            >
-                                <img
-                                    src="https://cdn-icons-png.flaticon.com/512/1059/1059802.png"
-                                    class="w-10 icon-green"
-                                />
-                            </div>
-                        </div>
+            <div class="max-w-3xl mx-auto px-6 space-y-6 md:space-y-14">
+                <!-- ITEM -->
+                <div class="text-center">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/1059/1059802.png"
+                        class="w-12 mx-auto opacity-80 mb-4"
+                    />
+                    <h3 class="text-2xl font-semibold text-[#4B352A]">
+                        Ceremony
+                    </h3>
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        A heartfelt beginning — surrounded by blessings, joy,
+                        and the warmth of everyone we hold close.
+                    </p>
+                </div>
 
-                        <h3
-                            class="text-xl md:text-2xl font-semibold text-[#4B352A] mt-14"
-                        >
-                            Ceremony
-                        </h3>
-                        <p class="text-gray-600 mt-3 leading-relaxed">
-                            A heartfelt gathering where our journey begins —
-                            surrounded by blessings, joy, and loved ones.
-                        </p>
-                    </div>
+                <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
 
-                    <div
-                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-xl md:rounded-3xl border-2 border-[#4B352A]/30"
-                    >
-                        <div class="absolute -top-8 left-10">
-                            <div
-                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4B352A]/40 shadow-lg"
-                            >
-                                <img
-                                    src="https://cdn-icons-png.flaticon.com/512/3480/3480718.png"
-                                    class="w-10 icon-green"
-                                />
-                            </div>
-                        </div>
+                <!-- ITEM -->
+                <div class="text-center">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/3480/3480718.png"
+                        class="w-12 mx-auto opacity-80 mb-4"
+                    />
+                    <h3 class="text-2xl font-semibold text-[#4B352A]">
+                        Toast & Dinner
+                    </h3>
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        A warm evening filled with celebration, clinking
+                        glasses, and heartfelt conversations.
+                    </p>
+                </div>
 
-                        <h3
-                            class="text-xl md:text-2xl font-semibold text-[#4B352A] mt-14"
-                        >
-                            Toast & Dinner
-                        </h3>
-                        <p class="text-gray-600 mt-3 leading-relaxed">
-                            A warm feast with clinking glasses, laughter, and
-                            the perfect start to a beautiful evening.
-                        </p>
-                    </div>
+                <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
 
-                    <div
-                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-xl md:rounded-3xl border-2 border-[#4B352A]/30"
-                    >
-                        <div class="absolute -top-8 left-10">
-                            <div
-                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4B352A]/40 shadow-lg"
-                            >
-                                <img
-                                    src="https://cdn-icons-png.flaticon.com/512/1683/1683807.png"
-                                    class="w-10 icon-green"
-                                />
-                            </div>
-                        </div>
+                <!-- ITEM -->
+                <div class="text-center">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/1683/1683807.png"
+                        class="w-12 mx-auto opacity-80 mb-4"
+                    />
+                    <h3 class="text-2xl font-semibold text-[#4B352A]">
+                        Wedding Cake
+                    </h3>
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        A sweet moment of unity — celebrated with smiles, love,
+                        and a hint of magic.
+                    </p>
+                </div>
 
-                        <h3
-                            class="text-xl md:text-2xl font-semibold text-[#4B352A] mt-14"
-                        >
-                            Wedding Cake
-                        </h3>
-                        <p class="text-gray-600 mt-3 leading-relaxed">
-                            A sweet symbol of unity — shared with smiles, love,
-                            and a sprinkle of magic.
-                        </p>
-                    </div>
+                <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
 
-                    <div
-                        class="relative bg-white/80 backdrop-blur-xl p-6 md:p-10 rounded-xl md:rounded-3xl border-2 border-[#4B352A]/30"
-                    >
-                        <div class="absolute -top-8 left-10">
-                            <div
-                                class="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-[#4B352A]/40 shadow-lg"
-                            >
-                                <img
-                                    src="https://www.freeiconspng.com/uploads/camera-icon-21.png"
-                                    class="w-10 icon-green"
-                                />
-                            </div>
-                        </div>
-
-                        <h3
-                            class="text-xl md:text-2xl font-semibold text-[#4B352A] mt-14"
-                        >
-                            Photography
-                        </h3>
-                        <p class="text-gray-600 mt-3 leading-relaxed">
-                            Every precious moment — beautifully captured,
-                            framed, and cherished forever.
-                        </p>
-                    </div>
+                <!-- ITEM -->
+                <div class="text-center">
+                    <img
+                        src="https://www.freeiconspng.com/uploads/camera-icon-21.png"
+                        class="w-12 mx-auto opacity-80 mb-4"
+                    />
+                    <h3 class="text-2xl font-semibold text-[#4B352A]">
+                        Photography
+                    </h3>
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        Capturing the magic of every moment — preserved forever
+                        with love and care.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- wedding venue -->
         <section
-            class="relative py-10 md:py-20 bg-[#F7F5F2] overflow-hidden"
             id="venue-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="venue"
-            data-moj-web-label="Wedding Venue"
-            data-moj-web-category="structural"
+            class="relative h-[600px] md:h-[750px] w-full overflow-hidden"
         >
+            <!-- Background Image -->
+            <img
+                src="https://images-pw.pixieset.com/elementfield/0JaDaRG/redchapelbarn-b978a4e7-1500.jpg"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- Gradient Overlay -->
             <div
-                class="absolute top-10 left-0 w-[450px] h-[450px] bg-[#E8E3DC]/40 blur-3xl rounded-full"
-            ></div>
-            <div
-                class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#D6D0C8]/40 blur-[120px] rounded-full"
+                class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90"
             ></div>
 
-            <div class="relative max-w-7xl mx-auto px-4 z-10">
-                <div class="text-center mb-10 lg:mb-20">
-                    <h2
-                        class="text-5xl md:text-7xl font-arizonia text-[#4B352A] leading-tight"
-                    >
-                        Wedding Venue
-                    </h2>
-                    <p class="text-gray-600 italic mt-4 max-w-xl mx-auto">
-                        A serene place chosen to begin the next chapter of our
-                        story.
-                    </p>
-                </div>
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-center h-full"
+            <!-- Text Block -->
+            <div
+                class="absolute bottom-12 left-1/2 -translate-x-1/2 w-[90%] md:w-[70%] text-center text-white"
+            >
+                <h2 class="text-5xl md:text-7xl font-arizonia drop-shadow-xl">
+                    Wedding Venue
+                </h2>
+
+                <p
+                    class="italic text-lg md:text-xl mt-3 opacity-90 max-w-2xl mx-auto"
                 >
-                    <div class="rounded-xl md:rounded-3xl overflow-hidden">
-                        <img
-                            src="https://eventsmanagementkerala.com/wp-content/uploads/2023/08/outdoor-wedding-venues-in-calicut-1.webp"
-                            class="w-full h-80 md:h-full object-cover"
-                        />
-                    </div>
+                    A serene and timeless place where our forever begins.
+                </p>
 
-                    <div class="relative">
-                        <div
-                            class="absolute -left-8 top-0 h-full w-1 bg-[#4B352A]/20 rounded-full"
-                        ></div>
+                <div
+                    class="mt-10 bg-white/5 backdrop-blur-[2px] rounded-3xl p-6 md:p-10 border border-white/30"
+                >
+                    <h3 class="text-3xl md:text-4xl font-semibold">
+                        St. Mary’s Cathedral
+                    </h3>
 
-                        <div
-                            class="bg-white/80 backdrop-blur-xl rounded-xl md:rounded-3xl shadow-xl p-6 md:p-10 border border-[#4B352A]/20"
-                        >
-                            <div
-                                class="w-20 h-20 rounded-full bg-[#4B352A]/10 border border-[#4B352A]/20 flex items-center justify-center mx-auto mb-6"
-                            >
-                                <img
-                                    src="https://cdn-icons-png.flaticon.com/512/3917/3917132.png"
-                                    class="w-10 opacity-80"
-                                />
-                            </div>
+                    <p class="mt-2 text-gray-200">
+                        MG Road, Ernakulam, Kerala — 682011
+                    </p>
 
-                            <h3
-                                class="text-3xl md:text-4xl font-semibold text-[#4B352A] text-center"
-                            >
-                                St. Mary’s Cathedral
-                            </h3>
+                    <div class="w-20 h-px bg-white/40 mx-auto my-6"></div>
 
-                            <p class="text-gray-600 text-center mt-3">
-                                MG Road, Ernakulam, Kerala — 682011
-                            </p>
+                    <p class="text-xl tracking-wide">
+                        Ceremony at <span class="font-bold">10:00 AM</span>
+                    </p>
 
-                            <div
-                                class="w-16 h-px bg-[#4B352A]/20 mx-auto my-6"
-                            ></div>
-
-                            <p
-                                class="text-center text-lg md:text-xl text-[#4B352A] tracking-wide"
-                            >
-                                Ceremony at
-                                <span class="font-bold">10:00 AM</span>
-                            </p>
-
-                            <div class="text-center mt-10">
-                                <a
-                                    href="#"
-                                    class="inline-block border border-[#4B352A] text-[#4B352A] px-8 py-3 rounded-full tracking-widest uppercase text-sm hover:bg-[#4B352A] hover:text-white transition-all duration-300"
-                                >
-                                    View Map
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <a
+                        href="#"
+                        class="inline-block mt-8 border border-white text-white px-10 py-3 rounded-full tracking-widest uppercase text-sm hover:bg-white hover:text-[#4B352A] transition-all duration-300"
+                    >
+                        View Map
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- dress code -->
         <section
-            class="py-10 md:py-20 px-4 md:px-12 bg-[#faf9f7] text-[#333]"
+            class="py-10 md:py-20 bg-[#F7F5F2] text-[#333]"
             id="dress-code-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="dress-code"
-            data-moj-web-label="Wedding Dress Code"
-            data-moj-web-category="structural"
         >
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2
-                        class="text-4xl md:text-6xl font-arizonia text-[#4B352A] mb-3"
-                    >
-                        Dress Code
-                    </h2>
-                    <p class="text-gray-600 italic max-w-xl mx-auto">
-                        Soft pastels, elegant neutrals, and understated
-                        textures.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-14">
-                    <div class="flex flex-col">
-                        <div
-                            class="w-full h-64 lg:h-72 2xl:h-80 overflow-hidden border border-gray-300"
-                        >
-                            <img
-                                src="https://plus.unsplash.com/premium_photo-1664540415112-f6afc235c8e2?ixlib=rb-4.1.0&auto=format&fit=crop&w=800&q=60"
-                                alt="Women's Outfit"
-                                class="w-full h-full object-cover object-[center_20%]"
-                            />
-                        </div>
-
-                        <h3
-                            class="text-xl font-semibold text-[#4B352A] tracking-wide mt-6"
-                        >
-                            Women
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
-                            Pastels, florals, soft shimmer.<br />
-                            Sarees, gowns, structured ethnic wear.
-                        </p>
-                    </div>
-
-                    <div class="lg:px-8">
-                        <h4 class="text-lg font-medium text-[#4B352A] mb-4">
-                            Colour Direction
-                        </h4>
-                        <p class="text-gray-700 text-sm leading-relaxed mb-8">
-                            A palette curated for subtlety. Choose tones that
-                            complement the overall theme — gentle, muted and
-                            effortlessly refined.
-                        </p>
-
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                            <div class="flex flex-col items-center">
-                                <div
-                                    class="w-14 h-14 border border-gray-300"
-                                    style="background: #f7dde2"
-                                ></div>
-                                <p
-                                    class="mt-2 text-xs text-gray-700 text-center"
-                                >
-                                    Blush<br />
-                                    <span class="text-[10px] text-gray-400"
-                                        >#F7DDE2</span
-                                    >
-                                </p>
-                            </div>
-
-                            <div class="flex flex-col items-center">
-                                <div
-                                    class="w-14 h-14 border border-gray-300"
-                                    style="background: #fffff4"
-                                ></div>
-                                <p
-                                    class="mt-2 text-xs text-gray-700 text-center"
-                                >
-                                    Ivory<br />
-                                    <span class="text-[10px] text-gray-400"
-                                        >#FFFFF4</span
-                                    >
-                                </p>
-                            </div>
-
-                            <div class="flex flex-col items-center">
-                                <div
-                                    class="w-14 h-14 border border-gray-300"
-                                    style="background: #d8a7b4"
-                                ></div>
-                                <p
-                                    class="mt-2 text-xs text-gray-700 text-center"
-                                >
-                                    Dusty Rose<br />
-                                    <span class="text-[10px] text-gray-400"
-                                        >#D8A7B4</span
-                                    >
-                                </p>
-                            </div>
-
-                            <div class="flex flex-col items-center">
-                                <div
-                                    class="w-14 h-14 border border-gray-300"
-                                    style="background: #f3e5c3"
-                                ></div>
-                                <p
-                                    class="mt-2 text-xs text-gray-700 text-center"
-                                >
-                                    Champagne<br />
-                                    <span class="text-[10px] text-gray-400"
-                                        >#F3E5C3</span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col">
-                        <div
-                            class="w-full h-64 lg:h-72 2xl:h-80 overflow-hidden border border-gray-300"
-                        >
-                            <img
-                                src="https://cityvibes.in/cdn/shop/files/19_51c02ba6-fa98-4bb6-b6e5-02d82ce31488.png?v=1728973821&width=800"
-                                alt="Men's Outfit"
-                                class="w-full h-full object-cover object-[center_20%]"
-                            />
-                        </div>
-
-                        <h3
-                            class="text-xl font-semibold text-[#4B352A] tracking-wide mt-6"
-                        >
-                            Men
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
-                            Ivory, beige, champagne tones.<br />
-                            Suits, sherwanis, or structured ethnic wear.
-                        </p>
-                    </div>
-                </div>
-
-                <p
-                    class="text-center text-gray-500 mt-10 md:mt-16 text-sm max-w-xl mx-auto"
+            <div class="text-center mb-8 md:mb-16">
+                <h2
+                    class="text-4xl md:text-6xl font-arizonia text-[#4B352A] mb-3"
                 >
-                    Avoid neon tones, heavy glitter, or high-contrast colours
-                    for a seamless aesthetic.
+                    Dress Code
+                </h2>
+                <p class="text-gray-600 italic max-w-xl mx-auto">
+                    A refined palette curated for our celebration.
+                </p>
+            </div>
+
+            <!-- NEW HORIZONTAL LOOKBOOK LAYOUT -->
+            <div class="max-w-7xl mx-auto px-4 space-y-8 md:space-y-10">
+                <!-- WOMEN SECTION -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center"
+                >
+                    <!-- Text -->
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-[#4B352A] mb-3">
+                            For Women
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Soft silhouettes, pastel tones, and graceful
+                            textures. Choose sarees, gowns, or elegant ethnic
+                            ensembles in subtle hues that complement the wedding
+                            palette.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4">
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F7DDE2] border border-gray-300 text-gray-700"
+                                >Blush</span
+                            >
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#FFFFF4] border border-gray-300 text-gray-700"
+                                >Ivory</span
+                            >
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#D8A7B4] border border-gray-300 text-gray-700"
+                                >Dusty Rose</span
+                            >
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F3E5C3] border border-gray-300 text-gray-700"
+                                >Champagne</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div
+                        class="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#4B352A]/20"
+                    >
+                        <img
+                            src="https://oldsite.nationalweddingshow.co.uk/uploads/2019/02/pink-r-.jpg"
+                            class="w-full h-full object-cover object-center"
+                        />
+                    </div>
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="w-full h-px bg-[#4B352A]/20"></div>
+
+                <!-- MEN SECTION -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center mb-10"
+                >
+                    <!-- Image (left this time, alternating layout) -->
+                    <div
+                        class="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#4B352A]/20 order-2 md:order-1"
+                    >
+                        <img
+                            src="https://static.showit.co/1200/01vZUQWnHb1gJy_jsCFHfg/114838/dsc04343.jpg"
+                            class="w-full h-full object-cover object-center"
+                        />
+                    </div>
+
+                    <!-- Text -->
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-2xl md:text-3xl font-semibold text-[#4B352A] mb-3">
+                            For Men
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Neutral tones and structured fits. Opt for
+                            sherwanis, suits, bandhgala sets, or simple ethnic
+                            wear in ivory, beige, champagne, or soft pastel
+                            variants.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#FFFFF4] border border-gray-300 text-gray-700"
+                                >Ivory</span
+                            >
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F3E5C3] border border-gray-300 text-gray-700"
+                                >Champagne</span
+                            >
+                            <span
+                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#EDE0CB] border border-gray-300 text-gray-700"
+                                >Beige</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NOTE -->
+                <p
+                    class="text-center text-gray-500  text-sm max-w-xl mx-auto"
+                >
+                    Kindly avoid neon shades, heavy glitter, or stark contrasts
+                    to ensure a soft cohesive palette.
                 </p>
             </div>
         </section>
