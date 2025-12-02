@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 4</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <!-- nav -->
+        <section
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav class="bg-white pt-4 fixed w-full top-0 pb-4 z-50 shadow-xs">
+                <div class="px-4 sm:px-6 lg:px-8 max-w-[1536px] mx-auto">
+                    <div class="flex justify-between items-center h-16">
+                        <!-- Logo -->
+                        <a href="/">
+                            <div class="flex items-center gap-2">
+                                <div class="h-16 border-r border-gray-100">
+                                    <img
+                                        src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                                        class="object-contain h-16"
+                                        alt="Logo"
+                                    />
+                                </div>
+                                <div
+                                    class="uppercase font-bold text-[#628141] text-xl lg:text-3xl leading-tight"
+                                >
+                                    <h2>MEDICON '26</h2>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Desktop Navigation -->
+                        <div
+                            class="hidden lg:flex items-center space-x-4 lg:space-x-8"
+                        >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium"
+                                >Gallery</a
+                            >
+                            <div class="relative">
+                                <button
+                                    onclick="toggleDownloads()"
+                                    class="flex items-center text-[#353535] hover:text-[#628141] transition duration-300 text-base font-medium gap-1 cursor-pointer"
+                                >
+                                    Downloads
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="downloadsDropdown"
+                                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden z-50"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block px-4 py-3 pr-4 text-sm text-[#353535] hover:bg-gray-100 text-nowrap"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="hidden lg:flex items-center space-x-4">
+                                <a
+                                    href="/#"
+                                    class="bg-[#628141] hover:bg-[#628141]/80 transition duration-500 text-white px-6 py-2 rounded font-medium flex items-center space-x-2 cursor-pointer"
+                                >
+                                    <span>Contact Us</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Mobile menu button -->
+                        <div class="lg:hidden">
+                            <button
+                                onclick="toggleSidebar()"
+                                class="text-gray-500 hover:text-[#353535]"
+                            >
+                                <svg
+                                    class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Overlay -->
+                <div
+                    id="mobileOverlay"
+                    onclick="closeSidebar()"
+                    class="hidden fixed inset-0 bg-black/50 bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden"
+                ></div>
+                <!-- Mobile Sidebar -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50 pt-5"
+                >
+                    <div class="p-6 space-y-6 relative">
+                        <button
+                            onclick="closeSidebar()"
+                            class="absolute top-4 right-4 text-gray-500 hover:text-black"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div class="mt-10 space-y-4">
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#628141] transition duration-300 font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#628141] transition duration-300 font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#628141] transition duration-300 font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#628141] transition duration-300 font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#628141] transition duration-300 font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#628141] transition duration-300 font-medium"
+                                >Gallery</a
+                            >
+                            <!-- Downloads Dropdown in Mobile -->
+                            <div class="space-y-1">
+                                <button
+                                    onclick="toggleMobileDownloads()"
+                                    class="w-full flex justify-between items-center text-[#353535] font-medium focus:outline-none"
+                                >
+                                    <span>Downloads</span>
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="mobileDownloadsDropdown"
+                                    class="ml-4 hidden"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block text-sm text-[#353535] hover:text-[#628141] transition duration-300 mt-2"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                            <a
+                                href="/#contact-us"
+                                class="bg-[#628141] text-white px-4 py-2 rounded font-medium w-full mt-6 flex items-center justify-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <script>
+            let isOpen = false;
+
+            const toggleSidebar = () => {
+                isOpen = !isOpen;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("block");
+            };
+
+            const closeSidebar = () => {
+                isOpen = false;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.add("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.remove("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.add("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.remove("block");
+            };
+
+            const toggleDownloads = () => {
+                const dropdown = document.getElementById("downloadsDropdown");
+                dropdown.classList.toggle("hidden");
+            };
+            const toggleMobileDownloads = () => {
+                const dropdown = document.getElementById(
+                    "mobileDownloadsDropdown"
+                );
+                dropdown.classList.toggle("hidden");
+            };
+            document.addEventListener("click", (e) => {
+                const btn = e.target.closest("button");
+                const menu = document.getElementById("downloadsDropdown");
+
+                if (!btn || !btn.closest("[onclick='toggleDownloads()']")) {
+                    if (!e.target.closest("#downloadsDropdown")) {
+                        menu?.classList.add("hidden");
+                    }
+                }
+            });
+        </script>
+
+        <!-- hero  -->
+        <section id="hero" class="relative overflow-hidden pt-24 md:pt-20">
+            <!-- Background Image -->
+            <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Fvillage-life-of-kerala-1724834604_4d4c454510429d2388d7.webp&w=3840&q=75"
+                alt="Conference Background"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-[#2f4555]/40"></div>
+
+            <!-- Content -->
+            <div
+                class="relative z-10 text-white px-4 py-10 md:px-16 md:py-28 lg:px-24 lg:py-32 flex flex-col items-center md:flex-row gap-10"
+            >
+                <div class="flex flex-col w-fit">
+                    <!-- Badge -->
+                    <div class="mb-6 max-w-2xl">
+                        <div
+                            class="inline-flex items-center gap-2 bg-[#628141]/80 px-6 py-3 rounded-sm shadow text-sm md:text-base"
+                        >
+                            <span class="text-lg md:text-xl font-extrabold"
+                                >20<sup class="text-[10px] md:text-sm"
+                                    >th</sup
+                                ></span
+                            >
+                            <span
+                                >International Medical Science Conference</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="flex mb-4 items-center gap-4">
+                        <img
+                            src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                            alt="Logo"
+                            class="w-12 h-12 md:w-16 md:h -16 xl:w-20 xl:h-20 object-contain rounded-md"
+                        />
+                        <h2
+                            class="text-4xl md:text-6xl xl:text-[76px] font-extrabold tracking-tight border-l-4 border-[#628141] pl-3 md:pl-4"
+                        >
+                            MEDICON '26
+                        </h2>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="space-y-6 flex flex-col">
+                        <h4
+                            class="text-sm md:text-xl xl:text-[22px] font-semibold"
+                        >
+                            Organized by Global Medical Research Council
+                        </h4>
+
+                        <div
+                            class="flex flex-col gap-4 text-sm md:text-base font-medium"
+                        >
+                            <!-- Location + Date -->
+                            <div
+                                class="flex flex-col md:flex-row md:gap-4 text-white"
+                            >
+                                <div class="flex gap-2 items-center">
+                                    <p>Grand Convention Center, New Delhi</p>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <p>October 10–12, 2025</p>
+                                </div>
+                            </div>
+
+                            <!-- Status -->
+                            <p class="font-medium text-lg md:text-xl">
+                                Registration opens soon — stay tuned!
+                            </p>
+
+                            <!-- Buttons -->
+                            <div class="flex flex-wrap gap-4 items-center">
+                                <button
+                                    onclick="window.location.href='/brochure'"
+                                    class="bg-transparent text-white border-2 border-white hover:bg-[#2591c5] hover:border-[#2591c5] font-semibold md:text-lg px-4 py-2 md:px-6 md:py-3 rounded transition-all shadow-md hover:shadow-lg"
+                                >
+                                    View Brochure
+                                </button>
+
+                                <button
+                                    onclick="window.location.href='#'"
+                                    class="bg-[#628141] border-2 border-[#628141] hover:bg-[#2591c5] hover:border-[#2591c5] font-semibold md:text-lg px-4 py-2 md:px-6 md:py-3 rounded transition-all shadow-md hover:shadow-lg"
+                                >
+                                    Register Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="py-10 px-4 xl:py-20 lg:px-10 relative overflow-hidden">
+            <div
+                class="flex flex-col xl:flex-row lg:items-center xl:items-stretch gap-7 xl:gap-10 max-w-[1536px] mx-auto"
+            >
+                <!-- IMAGE -->
+                <div class="relative z-10 xl:w-1/2">
+                    <img
+                        src="https://www.shutterstock.com/image-photo/group-nursing-medical-students-posing-600nw-2433457227.jpg"
+                        alt="Conference Illustration"
+                        class="w-full rounded-[14px] xl:rounded-2xl lg:h-[420px] xl:h-full shadow-xl object-cover object-center"
+                    />
+                </div>
+
+                <!-- TEXT CONTENT -->
+                <div class="xl:w-1/2 flex flex-col justify-center">
+                    <h1
+                        class="text-4xl md:text-5xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
+                    >
+                        Welcome to
+                        <span class="text-[#628141]">MEDICON 2026</span>
+                    </h1>
+
+                    <h2
+                        class="text-2xl md:text-2xl font-semibold text-[#0D1112] mb-4 tracking-wide"
+                    >
+                        Greetings from the Organising Committee!
+                    </h2>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        We are delighted to welcome you to the Annual Medical
+                        Sciences Conference, bringing together distinguished
+                        clinicians, researchers, and healthcare innovators from
+                        across the nation.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        The event features keynote lectures, breakthrough
+                        research presentations, hands-on workshops, and
+                        opportunities for meaningful professional networking —
+                        all designed to elevate clinical excellence.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-2 leading-relaxed"
+                    >
+                        Hosted in the vibrant city of Chandigarh, the conference
+                        provides an inspiring environment to share knowledge,
+                        build collaborations, and shape the future of
+                        healthcare.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="message-secretary"
+            class="pb-10 px-4 xl:pb-16 lg:px-10 relative overflow-hidden scroll-animated"
+        >
+            <div class="max-w-[1536px] mx-auto" data-aos="fade-up">
+                <!-- Heading -->
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">
+                    Message From the
+                    <span class="text-[#628141]">Organising Committee</span>
+                </h2>
+
+                <!-- Content -->
+                <div
+                    class="space-y-4 lg:space-y-6 text-lg text-gray-800 leading-relaxed"
+                >
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Dear Delegates and Participants,
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Greetings from the Organising Committee of
+                        <strong>MEDICON 2026</strong>! It is our pleasure to
+                        welcome you to this national conference designed to
+                        bring together professionals, innovators, and
+                        academicians committed to advancing modern medical
+                        science.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        This year’s event focuses on meaningful collaboration,
+                        cutting-edge research, and impactful discussions aimed
+                        at enhancing clinical excellence and patient outcomes
+                        across specialties.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Our scientific program is thoughtfully curated to
+                        inspire, educate, and encourage innovative thinking
+                        through lectures, panel discussions, case sessions, and
+                        interactive learning formats.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        The host city provides a refreshing blend of modern
+                        infrastructure, cultural richness, and warm
+                        hospitality—making it an ideal location for academic
+                        engagement as well as leisure.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        We encourage you to not only immerse yourself in the
+                        scientific sessions but also explore the city's iconic
+                        landmarks, serene outdoor spaces, and vibrant culinary
+                        culture during your stay.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        We look forward to welcoming you to
+                        <strong>MEDICON 2026</strong>—a gathering dedicated to
+                        shaping the future of healthcare through collaboration
+                        and innovation.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Warm regards,
+                        <br />Organising Committee
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#D2DCB6] overflow-hidden" id="about">
+            <div class="flex flex-col lg:flex-row text-gray-800">
+                <!-- LEFT CONTENT -->
+                <div
+                    class="py-10 pl-4 lg:pl-10 pr-8 lg:w-1/2 flex flex-col justify-center relative"
+                    data-aos="fade-right"
+                >
+                    <div class="mb-5 lg:mb-10">
+                        <h2
+                            class="text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900 mb-2"
+                        >
+                            Medicon ’26: Advancing Medical Excellence
+                        </h2>
+                    </div>
+
+                    <div class="space-y-3 lg:space-y-5 text-lg leading-relaxed">
+                        <p class="text-base md:text-lg scroll-animated">
+                            Medicon ’26 was founded by a group of senior medical
+                            professionals with the aim of bringing healthcare
+                            experts together and fostering meaningful exchange
+                            of ideas. The platform encourages collaboration,
+                            shared learning, and continuous growth across
+                            various medical specialties.
+                        </p>
+
+                        <p class="text-base md:text-lg scroll-animated">
+                            The conference emphasizes academic sessions, public
+                            awareness initiatives, and training-focused programs
+                            designed to support professional development
+                            throughout the healthcare community.
+                        </p>
+
+                        <p
+                            class="text-base md:text-lg scroll-animated hidden lg:block"
+                        >
+                            Medicon ’26 also features hands-on workshops,
+                            clinical case discussions, and interactive learning
+                            formats that help participants stay informed about
+                            the latest advancements. The initiative promotes
+                            knowledge exchange, skill enhancement, and
+                            excellence in modern medical practice.
+                        </p>
+                    </div>
+
+                    <!-- Decorative Waves -->
+                    <div
+                        class="absolute bottom-0 right-0 w-full h-12 overflow-hidden"
+                    >
+                        <!-- Wave SVGs -->
+                        <svg
+                            class="absolute bottom-0 left-0 w-full"
+                            viewBox="0 0 1200 60"
+                            preserveAspectRatio="none"
+                        >
+                            <path
+                                d="M0,0 C150,40 350,10 500,30 C650,50 800,20 1000,40 C1100,50 1200,30 1200,30 L1200,60 L0,60 Z"
+                                fill="#628141"
+                                fill-opacity="0.1"
+                            ></path>
+                            <path
+                                d="M0,20 C150,60 350,30 500,50 C650,70 800,40 1000,60 C1100,70 1200,50 1200,50 L1200,60 L0,60 Z"
+                                fill="#628141"
+                                fill-opacity="0.15"
+                            ></path>
+                        </svg>
+
+                        <!-- Dot Pattern -->
+                        <div
+                            class="absolute bottom-0 left-0 w-full h-6 flex justify-around items-center"
+                        >
+                            <div
+                                class="w-2 h-2 rounded-full bg-[#628141] opacity-40"
+                            ></div>
+                            <div
+                                class="w-1 h-1 rounded-full bg-[#628141] opacity-30"
+                            ></div>
+                            <div
+                                class="w-3 h-3 rounded-full bg-[#628141] opacity-20"
+                            ></div>
+                            <div
+                                class="w-1 h-1 rounded-full bg-[#628141] opacity-40"
+                            ></div>
+                            <div
+                                class="w-2 h-2 rounded-full bg-[#628141] opacity-30"
+                            ></div>
+                            <div
+                                class="w-1 h-1 rounded-full bg-[#628141] opacity-20"
+                            ></div>
+                            <div
+                                class="w-2 h-2 rounded-full bg-[#628141] opacity-40"
+                            ></div>
+                            <div
+                                class="w-3 h-3 rounded-full bg-[#628141] opacity-30"
+                            ></div>
+                            <div
+                                class="w-1 h-1 rounded-full bg-[#628141] opacity-20"
+                            ></div>
+                            <div
+                                class="w-2 h-2 rounded-full bg-[#628141] opacity-40"
+                            ></div>
+                            <div
+                                class="w-1 h-1 rounded-full bg-[#628141] opacity-30"
+                            ></div>
+                            <div
+                                class="w-2 h-2 rounded-full bg-[#628141] opacity-20"
+                            ></div>
+                            <div
+                                class="w-1 h-1 rounded-full bg-[#628141] opacity-40"
+                            ></div>
+                            <div
+                                class="w-3 h-3 rounded-full bg-[#628141] opacity-30"
+                            ></div>
+                            <div
+                                class="w-2 h-2 rounded-full bg-[#628141] opacity-20"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT IMAGE (REPLACED BACKGROUND WITH IMG TAG) -->
+                <div
+                    class="lg:w-1/2 min-h-60 md:min-h-[400px] lg:min-h-full relative overflow-hidden"
+                >
+                    <img
+                        src="https://media.istockphoto.com/id/1212298476/photo/young-asian-doctor-talking-to-senior-patient-in-hospital.jpg?s=612x612&w=0&k=20&c=jm4c5HpWa6s2yW7-mJYmeawq8r-svGMJD1VgiViuyGc="
+                        alt="About CRIS"
+                        class="w-full min-h-full object-cover object-center"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 relative overflow-hidden"
+            id="team"
+        >
+            <div class="max-w-[1536px] mx-auto relative z-10">
+                <!-- Heading -->
+                <div class="flex items-center md:justify-center w-full">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Organizing Core
+                        <span class="text-[#628141]">Committee</span>
+                    </h2>
+                </div>
+
+                <!-- Team Grid -->
+                <div
+                    class="mt-16 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10"
+                >
+                    <!-- MEMBER 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+
+                            <img
+                                src="https://randomuser.me/api/portraits/men/11.jpg"
+                                alt="Committee Member"
+                                class="w-40 h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-lg group-hover:scale-105 transition duration-300"
+                            />
+                        </div>
+
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. A. Williams
+                        </h3>
+                        <p
+                            class="text-[#628141] text-xs sm:text-sm font-medium mt-1"
+                        >
+                            Committee Chair
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 2 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+
+                            <img
+                                src="https://randomuser.me/api/portraits/men/23.jpg"
+                                alt="Committee Member"
+                                class="w-40 h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-lg group-hover:scale-105 transition duration-300"
+                            />
+                        </div>
+
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. M. Turner
+                        </h3>
+                        <p
+                            class="text-[#628141] text-xs sm:text-sm font-medium mt-1"
+                        >
+                            Vice Chair
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 3 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+
+                            <img
+                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                alt="Committee Member"
+                                class="w-40 h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-lg group-hover:scale-105 transition duration-300"
+                            />
+                        </div>
+
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. S. Mitchell
+                        </h3>
+                        <p
+                            class="text-[#628141] text-xs sm:text-sm font-medium mt-1"
+                        >
+                            Scientific Chair
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+
+                            <img
+                                src="https://randomuser.me/api/portraits/men/52.jpg"
+                                alt="Committee Member"
+                                class="w-40 h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-lg group-hover:scale-105 transition duration-300"
+                            />
+                        </div>
+
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. J. Reed
+                        </h3>
+                        <p
+                            class="text-[#628141] text-xs sm:text-sm font-medium mt-1"
+                        >
+                            Treasurer
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 px-4 xl:py-20 bg-[#D2DCB6] lg:px-10 relative overflow-hidden"
+        >
+            <div class="max-w-[1536px] mx-auto relative z-10">
+                <!-- Heading -->
+                <div class="flex items-center md:justify-center w-full">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Joint Organizing
+                        <span class="text-[#628141]">Committee</span>
+                    </h2>
+                </div>
+
+                <!-- Team Grid -->
+                <div
+                    class="grid grid-cols-2 mt-16 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10"
+                >
+                    <!-- MEMBER 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/31.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. A. Brennan
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Uttarakhand
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 2 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/12.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. R. Verma
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Uttar Pradesh
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 3 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/85.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. K. Malhotra
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Himachal Pradesh
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/44.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. M. Rathore
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Rajasthan
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 5 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/19.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. H. Singh
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Punjab
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 6 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/78.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. N. Prasad
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Karnataka
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 7 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/67.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. S. Gupta
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            New Delhi
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 8 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 rounded-full border-[3px] border-[#628141] scale-110 opacity-40 group-hover:opacity-60 transition duration-300"
+                            ></div>
+                            <img
+                                src="https://randomuser.me/api/portraits/men/72.jpg"
+                                class="w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-full object-cover shadow group-hover:scale-105 transition"
+                            />
+                        </div>
+                        <h3
+                            class="text-lg md:text-xl font-semibold text-gray-900"
+                        >
+                            Dr. A. Rao
+                        </h3>
+                        <p class="text-[#628141] text-xs sm:text-sm mt-1">
+                            Puducherry
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waves + dots (unchanged) -->
+            <div class="absolute bottom-0 right-0 w-full h-12 overflow-hidden">
+                <svg
+                    class="absolute bottom-0 left-0 w-full"
+                    viewBox="0 0 1200 60"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,0 C150,40 350,10 500,30 C650,50 800,20 1000,40 C1100,50 1200,30 1200,30 L1200,60 L0,60 Z"
+                        fill="#628141"
+                        fill-opacity="0.1"
+                    ></path>
+                    <path
+                        d="M0,20 C150,60 350,30 500,50 C650,70 800,40 1000,60 C1100,70 1200,50 1200,50 L1200,60 L0,60 Z"
+                        fill="#628141"
+                        fill-opacity="0.15"
+                    ></path>
+                </svg>
+            </div>
+        </section>
+
+        <section
+            id="tariff"
+            class="py-10 md:py-20 px-4 md:px-20 overflow-hidden"
+        >
+            <div class="max-w-[1500px] mx-auto">
+                <!-- Heading -->
+                <div class="md:text-center">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Registration Categories
+                        <span class="text-[#628141]">&amp; Pricing</span>
+                    </h2>
+                </div>
+
+                <!-- Table Wrapper -->
+                <div
+                    class="mt-10 bg-white border border-gray-200 rounded-lg shadow-sm overflow-auto scrollbar-hidden"
+                >
+                    <table class="w-full min-w-[750px]">
+                        <thead class="bg-blue-50 text-gray-900">
+                            <tr>
+                                <th class="text-left py-4 px-6 font-semibold">
+                                    Category
+                                </th>
+                                <th class="text-center py-4 px-6 font-semibold">
+                                    Upto Aug 15th
+                                </th>
+                                <th class="text-center py-4 px-6 font-semibold">
+                                    Upto Aug 30th
+                                </th>
+                                <th class="text-center py-4 px-6 font-semibold">
+                                    Upto Sept 15th
+                                </th>
+                                <th class="text-center py-4 px-6 font-semibold">
+                                    Spot Registration
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody
+                            class="divide-y divide-gray-100 text-sm md:text-base"
+                        >
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="py-4 px-6 text-gray-900 font-medium">
+                                    Delegate
+                                </td>
+                                <td class="py-4 px-6 text-center">
+                                    ₹ 10,000 + GST
+                                </td>
+                                <td class="py-4 px-6 text-center">
+                                    ₹ 12,000 + GST
+                                </td>
+                                <td class="py-4 px-6 text-center">
+                                    ₹ 15,000 + GST
+                                </td>
+                                <td
+                                    class="py-4 px-6 text-center font-semibold text-green-700"
+                                >
+                                    ₹ 25,000 + GST
+                                </td>
+                            </tr>
+
+                            <tr class="bg-blue-50 hover:bg-blue-100 transition">
+                                <td class="py-4 px-6 text-gray-900 font-medium">
+                                    PG / Fellow
+                                </td>
+                                <td class="py-4 px-6 text-center">
+                                    ₹ 7,000 + GST
+                                </td>
+                                <td class="py-4 px-6 text-center">
+                                    ₹ 8,000 + GST
+                                </td>
+                                <td class="py-4 px-6 text-center">
+                                    ₹ 9,000 + GST
+                                </td>
+                                <td
+                                    class="py-4 px-6 text-center font-semibold text-green-700"
+                                >
+                                    ₹ 10,000 + GST
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[1536px] mx-auto pb-10 md:pb-20 px-4">
+            <div class="md:text-center">
+                <h2 class="text-4xl font-semibold mb-5 md:mb-0">
+                    Explore The City Beautiful
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 2xl:mt-8">
+                <!-- IMAGE 1 -->
+                <div class="grid gap-4">
+                    <div
+                        class="relative rounded md:rounded-xl overflow-hidden group h-[250px] md:h-[320px]"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-photo/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand_335224-849.jpg?semt=ais_hybrid&w=740&q=80"
+                            alt="Image One"
+                            class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                        />
+                        <p
+                            class="absolute left-2 bottom-2 bg-white text-xs md:text-sm px-3 py-1 rounded"
+                        >
+                            Scenic View
+                        </p>
+                    </div>
+
+                    <!-- IMAGE 2 + 3 -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="relative rounded overflow-hidden group h-[110px] md:h-[180px]"
+                        >
+                            <img
+                                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Fplaces-of-interest-1714050979_4abaf0adf688ab174185.webp&w=3840&q=75"
+                                alt="Image Two"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <p
+                                class="absolute left-2 bottom-2 bg-white text-xs md:text-sm px-3 py-1 rounded"
+                            >
+                                Art Garden
+                            </p>
+                        </div>
+
+                        <div
+                            class="relative rounded overflow-hidden group h-[110px] md:h-[180px]"
+                        >
+                            <img
+                                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fveli-tourist-village-1713443687_161622e0218384a21539.webp&w=3840&q=75"
+                                alt="Image Three"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <p
+                                class="absolute left-2 bottom-2 bg-white text-xs md:text-sm px-3 py-1 rounded"
+                            >
+                                Nature Park
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- IMAGE 4 -->
+                    <div
+                        class="relative rounded overflow-hidden group h-[250px] md:h-[320px] lg:h-full"
+                    >
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1661930618375-aafabc2bf3e7?fm=jpg&q=60&w=3000"
+                            alt="Image Four"
+                            class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                        />
+                        <p
+                            class="absolute left-2 bottom-2 bg-white text-xs md:text-sm px-3 py-1 rounded"
+                        >
+                            Serenity Trail
+                        </p>
+                    </div>
+
+                    <!-- IMAGE 5 + 6 -->
+                    <div class="grid grid-cols-2 md:grid-cols-1 gap-4">
+                        <div
+                            class="relative rounded overflow-hidden group h-[110px] md:h-[180px] lg:h-full"
+                        >
+                            <img
+                                src="https://tourismteacher.com/wp-content/uploads/2020/09/pexels-photo-753626.jpeg"
+                                alt="Image Five"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <p
+                                class="absolute left-2 bottom-2 bg-white text-xs md:text-sm px-3 py-1 rounded"
+                            >
+                                Blossom Park
+                            </p>
+                        </div>
+
+                        <div
+                            class="relative rounded overflow-hidden group h-[110px] md:h-[180px] lg:h-full"
+                        >
+                            <img
+                                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Flarge-desktop%2Funique-destinations-1742209267_cdabac52588bb0d62709.webp&w=3840&q=75"
+                                alt="Image Six"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <p
+                                class="absolute left-2 bottom-2 bg-white text-xs md:text-sm px-3 py-1 rounded"
+                            >
+                                Heritage Block
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative overflow-hidden">
+            <!-- Background Image -->
+            <img
+                src="https://cdn.create.vista.com/api/media/small/367262304/stock-photo-quality-medical-services-unrecognizable-doctor-in-uniform-taking-notes-to-clipboard"
+                alt="Conference Background"
+                class="absolute inset-0 w-full h-full object-cover object-center z-0"
+            />
+
+            <!-- Dark overlay -->
+            <div class="absolute inset-0 bg-[#213153a2] z-10"></div>
+
+            <!-- Content -->
+            <div
+                class="relative z-20 flex items-center justify-end py-8 px-8 md:pr-16 xl:pr-56 xl:py-24 md:py-20 scroll-animated"
+            >
+                <div class="text-white max-w-md lg:max-w-lg text-right">
+                    <h2
+                        class="text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4"
+                    >
+                        Join Us at the Annual<br />
+                        Medical Sciences Conference
+                    </h2>
+
+                    <p
+                        class="text-sm md:text-base lg:text-lg mb-6 opacity-90 leading-relaxed"
+                    >
+                        Participate in insightful discussions, interactive case
+                        studies, and expert-led scientific sessions. Be part of
+                        a transformative gathering focused on advancing
+                        healthcare innovation and clinical excellence.
+                    </p>
+                       <button
+                                    onclick="window.location.href='#'"
+                                    class="bg-[#628141] border-2 border-[#628141] hover:bg-[#2591c5] hover:border-[#2591c5] font-semibold md:text-lg px-4 py-2 md:px-6 md:py-3 rounded transition-all shadow-md hover:shadow-lg"
+                                >
+                                    Register Now
+                                </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-[#272626] relative">
+            <div
+                class="p-5 gap-5 flex flex-col md:flex-wrap md:flex-row xl:gap-0 md:grid md:grid-cols-2 lg:flex lg:flex-wrap xl:flex-nowrap lg:justify-center xl:pl-[59px] xl:pr-[39px] lg:py-18 md:py-12 md:px-[10px]"
+            >
+                <!-- ABOUT -->
+                <div
+                    class="md:border md:border-y-0 md:border-l-0 md:border-[#ffffff40]"
+                >
+                    <div class="max-w-[328px] md:px-2 lg:px-6 xl:px-10">
+                        <p
+                            class="mb-2 md:mb-[16px] font-semibold text-xl md:text-[25px] text-white"
+                        >
+                            About Conference '25
+                        </p>
+                        <p class="font-semibold text-[15px] text-white">
+                            Annual Medical Sciences Summit<br />
+                            Organised by | Global Health & Innovation Forum
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CONTACT -->
+                <div
+                    class="md:border md:border-y-0 md:border-l-0 md:border-[#ffffff40]"
+                >
+                    <div class="md:px-2 lg:px-6 xl:px-10">
+                        <p
+                            class="text-xl md:text-[25px] font-semibold mb-2 text-white"
+                        >
+                            Contact Us
+                        </p>
+                        <ul class="flex flex-col gap-2">
+                            <li class="flex items-center gap-2 text-white">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-4 h-4 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-.59 1.41l-1.42 1.42a16 16 0 006.59 6.59l1.42-1.42A2 2 0 0117 15h2a2 2 0 012 2v2a2 2 0 01-2 2h-1c-9.39 0-17-7.61-17-17V5z"
+                                    ></path>
+                                </svg>
+                                <a
+                                    href="tel:+910000000000"
+                                    class="text-[15px] font-semibold text-white"
+                                >
+                                    +91 00000 00000
+                                </a>
+                            </li>
+
+                            <li class="flex items-center gap-2 text-white">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-4 h-4 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-.59 1.41l-1.42 1.42a16 16 0 006.59 6.59l1.42-1.42A2 2 0 0117 15h2a2 2 0 012 2v2a2 2 0 01-2 2h-1c-9.39 0-17-7.61-17-17V5z"
+                                    ></path>
+                                </svg>
+                                <a
+                                    href="tel:+910000000001"
+                                    class="text-[15px] font-semibold text-white"
+                                >
+                                    +91 00000 00001
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- LINKS -->
+                <div
+                    class="md:border md:border-y-0 md:border-l-0 md:border-[#ffffff40]"
+                >
+                    <div class="md:px-2 lg:px-6 xl:px-10">
+                        <p
+                            class="text-xl md:text-[25px] font-semibold mb-2 text-white"
+                        >
+                            Learn More
+                        </p>
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a
+                                    href="/#about"
+                                    class="font-semibold text-[15px] text-white"
+                                >
+                                    About Conference
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/contact-us"
+                                    class="font-semibold text-[15px] text-white"
+                                >
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/terms-and-conditions"
+                                    class="font-semibold text-[15px] text-white"
+                                >
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/privacy-policy"
+                                    class="font-semibold text-[15px] text-white"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ADDRESS -->
+                <div class="md:px-2 lg:px-6 xl:px-10">
+                    <p
+                        class="text-xl md:text-[25px] font-semibold mb-2 text-white"
+                    >
+                        Address
+                    </p>
+                    <p
+                        class="font-semibold text-[15px] text-white max-w-[260px]"
+                    >
+                        123 Conference Road,<br />
+                        Innovation District, India
+                    </p>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border border-x-0 border-t-0 border-[#ffffff40]" />
+
+            <!-- Bottom -->
+            <div class="flex flex-col gap-1 p-5">
+                <p class="text-[15px] font-[300] text-white">
+                    © conference2025.com. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

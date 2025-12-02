@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 4</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <!-- nav -->
+        <section
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav class="bg-white pt-5 fixed w-full top-0 pb-5 z-50 shadow-xs">
+                <div class="px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <!-- Logo -->
+                        <a href="/">
+                            <div class="flex items-center gap-2">
+                                <div class="h-16 border-r border-gray-100">
+                                    <img
+                                        src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                                        class="object-contain h-16"
+                                        alt="Logo"
+                                    />
+                                </div>
+                                <div
+                                    class="uppercase font-medium text-[#76153C] text-sm lg:text-base leading-tight"
+                                >
+                                    <h2>Conference</h2>
+                                    <h2>title</h2>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Desktop Navigation -->
+                        <div
+                            class="hidden lg:flex items-center space-x-4 lg:space-x-8"
+                        >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium"
+                                >Gallery</a
+                            >
+                            <div class="relative">
+                                <button
+                                    onclick="toggleDownloads()"
+                                    class="flex items-center text-[#353535] hover:text-[#76153C] transition duration-300 text-base font-medium gap-1 cursor-pointer"
+                                >
+                                    Downloads
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="downloadsDropdown"
+                                    class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden z-50"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block px-4 py-3 pr-4 text-sm text-[#353535] hover:bg-gray-100 text-nowrap"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex items-center space-x-4">
+                            <a
+                                href="/#"
+                                class="bg-[#76153C] hover:bg-[#76153C]/80 transition duration-500 text-white px-6 py-2 rounded font-medium flex items-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Mobile menu button -->
+                        <div class="lg:hidden">
+                            <button
+                                onclick="toggleSidebar()"
+                                class="text-gray-500 hover:text-[#353535]"
+                            >
+                                <svg
+                                    class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Overlay -->
+                <div
+                    id="mobileOverlay"
+                    onclick="closeSidebar()"
+                    class="hidden fixed inset-0 bg-black/50 bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden"
+                ></div>
+                <!-- Mobile Sidebar -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50 pt-5"
+                >
+                    <div class="p-6 space-y-6 relative">
+                        <button
+                            onclick="closeSidebar()"
+                            class="absolute top-4 right-4 text-gray-500 hover:text-black"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div class="mt-10 space-y-4">
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#76153C] transition duration-300 font-medium"
+                                >Home</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#76153C] transition duration-300 font-medium"
+                                >About</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#76153C] transition duration-300 font-medium"
+                                >Vision</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#76153C] transition duration-300 font-medium"
+                                >Leaders</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#76153C] transition duration-300 font-medium"
+                                >Members</a
+                            >
+                            <a
+                                href="/#"
+                                class="block text-[#353535] hover:text-[#76153C] transition duration-300 font-medium"
+                                >Gallery</a
+                            >
+                            <!-- Downloads Dropdown in Mobile -->
+                            <div class="space-y-1">
+                                <button
+                                    onclick="toggleMobileDownloads()"
+                                    class="w-full flex justify-between items-center text-[#353535] font-medium focus:outline-none"
+                                >
+                                    <span>Downloads</span>
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="mobileDownloadsDropdown"
+                                    class="ml-4 hidden"
+                                >
+                                    <a
+                                        href="/#"
+                                        class="block text-sm text-[#353535] hover:text-[#76153C] transition duration-300 mt-2"
+                                        download=""
+                                    >
+                                        download file
+                                    </a>
+                                </div>
+                            </div>
+                            <a
+                                href="/#contact-us"
+                                class="bg-[#76153C] text-white px-4 py-2 rounded font-medium w-full mt-6 flex items-center justify-center space-x-2 cursor-pointer"
+                            >
+                                <span>Contact Us</span>
+                                <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <script>
+            let isOpen = false;
+
+            const toggleSidebar = () => {
+                isOpen = !isOpen;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.toggle("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.toggle("block");
+            };
+
+            const closeSidebar = () => {
+                isOpen = false;
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.add("translate-x-full");
+                document
+                    .getElementById("mobileSidebar")
+                    .classList.remove("translate-x-0");
+
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.add("hidden");
+                document
+                    .getElementById("mobileOverlay")
+                    .classList.remove("block");
+            };
+
+            const toggleDownloads = () => {
+                const dropdown = document.getElementById("downloadsDropdown");
+                dropdown.classList.toggle("hidden");
+            };
+            const toggleMobileDownloads = () => {
+                const dropdown = document.getElementById(
+                    "mobileDownloadsDropdown"
+                );
+                dropdown.classList.toggle("hidden");
+            };
+            document.addEventListener("click", (e) => {
+                const btn = e.target.closest("button");
+                const menu = document.getElementById("downloadsDropdown");
+
+                if (!btn || !btn.closest("[onclick='toggleDownloads()']")) {
+                    if (!e.target.closest("#downloadsDropdown")) {
+                        menu?.classList.add("hidden");
+                    }
+                }
+            });
+        </script>
+
+        <!-- hero  -->
+        <section
+            class="min-h-[740px] md:min-h-[800px] intro relative"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Section"
+            data-moj-web-category="structural"
+            id="hero-block"
+        >
+            <div class="intro-slideshow">
+                <img
+                    src="https://www.cvent.com/sites/default/files/image/2019-11/the-best-of-connect.jpg"
+                    alt=""
+                    style="opacity: 0"
+                />
+                <img
+                    src="https://www.cvent.com/sites/default/files/image/2025-05/Conference%20Planning%20Event%20-%20Cvent%20CONNECT%20Europe%202024.jpg"
+                    alt=""
+                    style="opacity: 0"
+                />
+                <img
+                    src="https://t4.ftcdn.net/jpg/02/98/35/71/360_F_298357190_yjGRacL1FZ75l6wyRROrAdq6q3rMPCqD.jpg"
+                    alt=""
+                    style="opacity: 1"
+                />
+            </div>
+
+            <div
+                class="pt-[130px] pb-5 md:pt-[223px] xl:pt-[180px] px-5 md:px-0 flex flex-col items-center"
+            >
+                <div class="w-screen md:w-full">
+                    <div
+                        class="relative z-10 overflow-hidden rounded-lg mb-6 md:mb-10"
+                    >
+                        <div>
+                            <p
+                                class="kanit title font-light leading-12 md:text-5xl text-base text-white text-center z-10 md:leading-16 w-full mb-5 aos-init aos-animate"
+                            >
+                                <span class="text-xl md:text-4xl font-bold">
+                                    12<sup>th</sup> International Summit on
+                                    Innovation
+                                </span>
+                                <br />
+                                <span
+                                    class="text-3xl md:text-5xl font-bold text-white"
+                                >
+                                    GLOBAL SCIENCE COMMUNITY
+                                </span>
+                                <br />
+                                <span
+                                    class="text-3xl md:text-5xl font-bold text-white"
+                                >
+                                    WORLD RESEARCH ALLIANCE
+                                </span>
+                            </p>
+
+                            <p
+                                class="text-lg text-white text-center mb-5 aos-init aos-animate"
+                                data-aos-delay="200"
+                            >
+                                Organized by the Universal Research Forum
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    onclick=""
+                    type="button"
+                    class="text-white bg-[#76153C] hover:scale-105 cursor-pointer duration-300 focus:outline-none font-normal rounded-[13px] text-lg px-[62px] py-[15px] text-center relative z-10 hidden md:block"
+                >
+                    <span>Register Now</span>
+                </button>
+
+                <button
+                    type="button"
+                    onclick=""
+                    class="text-white bg-[#76153C] focus:outline-none cursor-pointer font-normal hover:scale-105 duration-300 rounded-[13px] text-base px-[62px] py-[15px] text-center relative z-10 md:hidden"
+                >
+                    <span>Register Now</span>
+                </button>
+
+                <div
+                    class="countdown-container backdrop-blur-sm backdrop-filter mx-auto rounded-[20px] mb-5 md:mb-0 mt-[10px] relative z-10"
+                >
+                    <div
+                        class="flex justify-center items-center space-x-2 p-4 w-full pb-[30px] md:pb-0"
+                    >
+                        <!-- Days -->
+                        <div
+                            class="bg-white counter-shadow rounded-lg w-[60px] md:w-40 md:max-w-[unset] text-center flex-shrink-0 overflow-hidden"
+                        >
+                            <div class="p-2 py-4">
+                                <div
+                                    class="text-2xl md:text-5xl font-semibold text-[#76153C] countdown-digit"
+                                    id="days"
+                                >
+                                    24
+                                </div>
+                                <div
+                                    class="text-xs font-[300] md:text-sm kanit"
+                                >
+                                    Days
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div
+                            class="bg-white counter-shadow rounded-lg w-[60px] md:w-40 md:max-w-[unset] text-center flex-shrink-0 overflow-hidden"
+                        >
+                            <div class="p-2 py-4">
+                                <div
+                                    class="text-2xl md:text-5xl font-semibold text-[#76153C] countdown-digit"
+                                    id="hours"
+                                >
+                                    11
+                                </div>
+                                <div
+                                    class="text-xs font-[300] md:text-sm font-light kanit"
+                                >
+                                    Hours
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Minutes -->
+                        <div
+                            class="bg-white counter-shadow rounded-lg w-[60px] md:w-40 md:max-w-[unset] text-center flex-shrink-0 overflow-hidden"
+                        >
+                            <div class="p-2 py-4">
+                                <div
+                                    class="text-2xl md:text-5xl font-semibold text-[#76153C] countdown-digit"
+                                    id="minutes"
+                                >
+                                    31
+                                </div>
+                                <div
+                                    class="text-xs font-[300] md:text-sm font-light kanit"
+                                >
+                                    Minutes
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seconds -->
+                        <div
+                            class="bg-white counter-shadow rounded-lg w-[60px] md:w-40 md:max-w-[unset] text-center flex-shrink-0 overflow-hidden"
+                        >
+                            <div class="p-2 py-4">
+                                <div
+                                    class="text-2xl md:text-5xl font-semibold text-[#76153C] countdown-digit"
+                                    id="seconds"
+                                >
+                                    10
+                                </div>
+                                <div
+                                    class="text-xs md:text-sm font-light kanit"
+                                >
+                                    Seconds
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="absolute h-full w-full top-0 bottom-0 left-0 right-0 bg-black/40"
+            ></div>
+        </section>
+
+        <script>
+            const slideshowImages = document.querySelectorAll(
+                ".intro-slideshow img"
+            );
+
+            const nextImageDelay = 2500;
+            let currentImageCounter = 0;
+            slideshowImages[currentImageCounter].style.opacity = 1;
+
+            setInterval(nextImage, nextImageDelay);
+
+            function nextImage() {
+                slideshowImages[currentImageCounter].style.opacity = 0;
+
+                currentImageCounter =
+                    (currentImageCounter + 1) % slideshowImages.length;
+
+                slideshowImages[currentImageCounter].style.opacity = 1;
+            }
+        </script>
+        <style>
+            .intro {
+                height: 500px;
+                position: relative;
+            }
+            .intro-slideshow img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0;
+                transition: opacity 0.75s ease-in-out;
+            }
+        </style>
+
+        <!-- message -->
+        <section
+            id="message"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="relative xl:px-10 px-4 py-10 md:py-[50px] delay-[300ms] [animation-iteration-count:infinite] duration-[800ms] taos:translate-y-[200px] taos:opacity-0 max-w-[1536px] mx-auto"
+            >
+                <div
+                    class="flex flex-col-reverse lg:flex-row items-center gap-5 md:gap-[55px] overflow-hidden"
+                >
+                    <div
+                        class="flex md:flex-wrap md:flex-row flex-col justify-around gap-8 min-w-80"
+                    >
+                        <div
+                            class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-200 transition-all duration-300 p-6 max-w-[320px] w-full flex flex-col items-center text-center"
+                        >
+                            <!-- Avatar -->
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80"
+                                    class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-white"
+                                    alt=""
+                                />
+                                <!-- Accent Circle -->
+                                <span
+                                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-[#76153C] rounded-full border-2 border-white"
+                                ></span>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="mt-4">
+                                <p class="text-xl font-semibold text-gray-900">
+                                    Dr. Alex Morgan
+                                </p>
+
+                                <p class="text-[#76153C] font-medium mt-1">
+                                    Conference Chair
+                                </p>
+
+                                <p
+                                    class="text-sm text-gray-500 mt-2 tracking-wide"
+                                >
+                                    GLOBALCON 2025
+                                </p>
+                            </div>
+
+                            <!-- Divider -->
+                            <div class="w-full h-[1px] bg-gray-200 my-4"></div>
+
+                            <!-- Optional CTA or Tag -->
+                            <span
+                                class="text-xs font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full"
+                            >
+                                Keynote Speaker
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <p
+                            class="text-[32px] md:text-[40px] font-semibold pb-[25px] md:py-0"
+                        >
+                            Message from the Conference Chair
+                        </p>
+
+                        <p
+                            class="text-base md:text-[16px] mb-2 md:mt-[20px] font-light"
+                        >
+                            Warm greetings to all our esteemed participants!
+                        </p>
+
+                        <p
+                            class="text-base md:text-[16px] mb-2 md:mt-[20px] font-light"
+                        >
+                            It gives us immense pleasure to welcome you to the
+                            upcoming GLOBALCON 2025—an international gathering
+                            focused on innovation, leadership, and collaborative
+                            progress. The event will feature keynote sessions,
+                            panel discussions, and interactive workshops
+                            designed to inspire and empower professionals from
+                            around the world.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            Our organizing team is committed to ensuring a
+                            dynamic and engaging experience for every attendee.
+                            We look forward to insightful conversations,
+                            meaningful networking, and a truly memorable event
+                            atmosphere.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            We invite each one of you to join us and make this
+                            conference a remarkable success.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            Thank you and see you there!
+                        </p>
+
+                        <p
+                            class="mb-3 text-[16px] font-semibold text-[#45505E]"
+                        >
+                            Dr. Alex Morgan<br />
+                            <span
+                                class="font-semibold text-[16px] text-[#45505E]"
+                            >
+                                Conference Chair, GLOBALCON 2025
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECOND BLOCK -->
+            <div
+                class="xl:pl-[55px] relative xl:pr-[30px] bg-gray-50 xl:px-[50px] px-4 py-10 md:py-[50px] overflow-hidden delay-[300ms] [animation-iteration-count:infinite] duration-[800ms] taos:translate-y-[200px] taos:opacity-0"
+            >
+                <div
+                    class="flex flex-col-reverse lg:flex-row-reverse items-center gap-5 md:gap-[55px] relative z-10 max-w-[1536px] mx-auto"
+                >
+                     <div
+                        class="flex md:flex-wrap md:flex-row flex-col justify-around gap-8 min-w-80"
+                    >
+                        <div
+                            class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-200 transition-all duration-300 p-6 max-w-[320px] w-full flex flex-col items-center text-center"
+                        >
+                            <!-- Avatar -->
+                            <div class="relative">
+                                <img
+                                    src="https://media.istockphoto.com/id/1587604256/photo/portrait-lawyer-and-black-woman-with-tablet-smile-and-happy-in-office-workplace-african.jpg?s=612x612&w=0&k=20&c=n9yulMNKdIYIQC-Qns8agFj6GBDbiKyPRruaUTh4MKs="
+                                    class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-white"
+                                    alt=""
+                                />
+                                <!-- Accent Circle -->
+                                <span
+                                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-[#76153C] rounded-full border-2 border-white"
+                                ></span>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="mt-4">
+                                <p class="text-xl font-semibold text-gray-900">
+                                    Dr. Sara Morgan
+                                </p>
+
+                                <p class="text-[#76153C] font-medium mt-1">
+                                    Conference President
+                                </p>
+
+                                <p
+                                    class="text-sm text-gray-500 mt-2 tracking-wide"
+                                >
+                                    GLOBALCON 2025
+                                </p>
+                            </div>
+
+                            <!-- Divider -->
+                            <div class="w-full h-[1px] bg-gray-200 my-4"></div>
+
+                            <!-- Optional CTA or Tag -->
+                            <span
+                                class="text-xs font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full"
+                            >
+                                Keynote Speaker
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="relative aos-init aos-animate">
+                        <p
+                            class="text-[32px] md:text-[40px] font-semibold pb-[25px] md:py-0"
+                        >
+                            Message from the Conference Secretary
+                        </p>
+
+                        <p
+                            class="text-base md:text-[16px] mb-2 md:mt-[20px] font-light"
+                        >
+                            Dear participants and collaborators,
+                        </p>
+
+                        <p
+                            class="text-base md:text-[16px] mb-2 md:mt-[20px] font-light"
+                        >
+                            Our team is excited to bring together professionals
+                            from diverse backgrounds for GLOBALCON 2025. This
+                            event aims to foster knowledge exchange, innovative
+                            thinking, and impactful dialogues across various
+                            disciplines.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            Set in a vibrant and collaborative environment, the
+                            conference promises a blend of academic rigor,
+                            interactive engagements, and meaningful networking
+                            opportunities.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            We encourage you to register early and be part of a
+                            truly enriching experience filled with insights,
+                            connections, and inspiration.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            We look forward to welcoming you to GLOBALCON 2025.
+                        </p>
+
+                        <p class="text-base md:text-[16px] mb-2 font-light">
+                            Thank you.
+                        </p>
+
+                        <p
+                            class="mb-3 text-[16px] font-semibold text-[#45505E]"
+                        >
+                            Prof. Dana Whitmore<br />
+                            <span
+                                class="font-semibold text-[16px] text-[#45505E]"
+                            >
+                                Conference Secretary, GLOBALCON 2025
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section
+            id="about"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="xl:pl-[55px] relative xl:pr-[30px] xl:px-[50px] px-4 py-10 md:py-[50px]"
+            >
+                <p
+                    class="text-[32px] text-center md:text-[40px] font-semibold pb-[25px] md:py-0 md:mb-5"
+                >
+                    About GLOBALCON 2025
+                </p>
+
+                <div
+                    class="[animation-iteration-count:infinite] duration-[800ms] taos:translate-y-[200px] taos:opacity-0 overflow-hidden"
+                >
+                    <div
+                        class="grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 2xl:items-center overflow-hidden"
+                    >
+                        <div class="mb-6 aos-init aos-animate">
+                            <img
+                                src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg"
+                                alt=""
+                                class="rounded-lg shadow-lg w-full object-cover h-full"
+                            />
+                        </div>
+
+                        <div class="aos-init aos-animate">
+                            <p
+                                class="text-base md:text-lg mb-2 text-[#3C4242] font-light"
+                            >
+                                GLOBALCON 2025 is an international summit
+                                dedicated to innovation, research, and
+                                multidisciplinary collaboration. This year's
+                                edition brings together professionals,
+                                educators, and researchers from across the world
+                                for a two-day immersive experience.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#3C4242] font-light mb-2"
+                            >
+                                The conference features expert-led discussions,
+                                keynote sessions, hands-on workshops, and
+                                opportunities for cross-industry networking.
+                                Delegates can look forward to thought-provoking
+                                conversations, new perspectives, and sessions
+                                that highlight emerging trends across multiple
+                                fields.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg mb-2 text-[#3C4242] font-light"
+                            >
+                                A special highlight of GLOBALCON 2025 includes
+                                the unveiling of the incoming leadership panel
+                                for the upcoming year, along with a recognition
+                                ceremony honoring outstanding contributors
+                                within the global community.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg md:mb-3 text-[#3C4242] font-light"
+                            >
+                                Designed to balance academic rigor with an
+                                engaging event atmosphere, the conference offers
+                                a perfect platform for learning, collaboration,
+                                and meaningful professional growth.
+                                Registrations are now open—reserve your seat and
+                                be a part of this inspiring global meet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- org. committee -->
+        <section
+            id="Organizing-committe"
+            class="relative"
+            data-moj-web-fixed="false"
+            data-moj-web-type="orgCommitte"
+            data-moj-web-label="Organizing Committee"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="2xl:pl-[100px] 2xl:pr-[100px] xl:pl-[80px] xl:pr-[50px] px-4 md:px-[50px] pt-10 md:py-[50px] text-white bg-no-repeat bg-cover bg-[#1B70B3] md:bg-gradient-to-r from-[white] to-[#1B70B3]"
+            >
+                <div
+                    class="flex flex-col xl:flex-row items-center gap-[50px] md:gap-[100px] relative z-10 text-white md:text-black"
+                >
+                    <div class="xl:max-w-[378px] w-full">
+                        <p class="font-semibold text-3xl md:text-[40px]">
+                            GLOBALCON 2025
+                        </p>
+                        <p class="text-2xl md:text-[26px] mb-5">
+                            Organizing Committee
+                        </p>
+                        <p class="text-base md:text-[20px]">
+                            Meet the dedicated organizing team behind GLOBALCON
+                            2025—a group committed to delivering an impactful
+                            and inspiring international conference experience.
+                        </p>
+
+                        <button
+                            onclick="window.location.href='#'"
+                            class="inline-flex items-center px-6 py-3 bg-[#76153C] text-white font-medium rounded hover:bg-[#76153C]/80 transition-colors duration-500 cursor-pointer mt-4"
+                        >
+                            View All
+                        </button>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-2 lg:grid-cols-3 gap-[40px] md:gap-[25px] w-full pb-10 text-white md:text-black"
+                    >
+                        <!-- Member 1 -->
+                        <div
+                            class="w-full flex flex-col gap-4 items-center relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://media.istockphoto.com/id/1587604256/photo/portrait-lawyer-and-black-woman-with-tablet-smile-and-happy-in-office-workplace-african.jpg?s=612x612&w=0&k=20&c=n9yulMNKdIYIQC-Qns8agFj6GBDbiKyPRruaUTh4MKs="
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Alex Morgan
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Conference Chair, GLOBALCON 2025
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Member 2 -->
+                        <div
+                            class="w-full flex flex-col gap-4 items-center relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://img.freepik.com/free-photo/portrait-elegant-professional-businessman-speaking-conference_23-2150917212.jpg?semt=ais_hybrid&w=740&q=80"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Prof. Dana Whitmore
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Conference Secretary, GLOBALCON 2025
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Member 3 -->
+                        <div
+                            class="w-full flex flex-col gap-4 items-center relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/7-speaker-on-stage-at-conference-gorodenkoff-productionsscience-photo-library.jpg"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Samuel Reyes
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Treasurer, GLOBALCON 2025
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- tariff -->
+        <section
+            id="tariff"
+            class="py-10 md:py-[50px]"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="Tariff"
+            data-moj-web-category="structural"
+        >
+            <div class="container mx-auto px-4">
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-left md:text-center mb-10 md:mb-[50px]"
+                >
+                    Registration Tariff
+                </h2>
+
+                <div class="max-w-7xl mx-auto overflow-hidden">
+                    <div
+                        class="overflow-x-auto scrollbar-hidden rounded-xl shadow-lg bg-white"
+                    >
+                        <table class="w-full">
+                            <thead>
+                                <tr
+                                    class="bg-[#76153C] text-white text-xs md:text-base"
+                                >
+                                    <th class="px-6 py-4 text-left">
+                                        Category
+                                    </th>
+
+                                    <th class="px-6 py-4 text-center">
+                                        Early Bird<br />
+                                        (Up to 15 March 2026)
+                                    </th>
+
+                                    <th class="px-6 py-4 text-center">
+                                        Regular<br />
+                                        (Up to 30 June 2026)
+                                    </th>
+
+                                    <th class="px-6 py-4 text-center">
+                                        Late<br />
+                                        (Up to 01 September 2026)
+                                    </th>
+
+                                    <th class="px-6 py-4 text-center">
+                                        Spot<br />
+                                        (After 01 September 2026)
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="text-sm md:text-base">
+                                <!-- Member -->
+                                <tr
+                                    class="border-b hover:bg-blue-50 transition-colors duration-300"
+                                >
+                                    <td class="px-6 py-4 font-medium">
+                                        Member
+                                    </td>
+                                    <td class="px-6 py-4 text-center">₹1500</td>
+                                    <td class="px-6 py-4 text-center">₹1800</td>
+                                    <td class="px-6 py-4 text-center">₹2100</td>
+                                    <td class="px-6 py-4 text-center">₹2500</td>
+                                </tr>
+
+                                <!-- Non Member -->
+                                <tr
+                                    class="border-b hover:bg-blue-50 transition-colors duration-300"
+                                >
+                                    <td class="px-6 py-4 font-medium">
+                                        Non Member
+                                    </td>
+                                    <td class="px-6 py-4 text-center">₹2000</td>
+                                    <td class="px-6 py-4 text-center">₹2400</td>
+                                    <td class="px-6 py-4 text-center">₹2800</td>
+                                    <td class="px-6 py-4 text-center">₹3200</td>
+                                </tr>
+
+                                <!-- Couple -->
+                                <tr
+                                    class="border-b hover:bg-blue-50 transition-colors duration-300"
+                                >
+                                    <td class="px-6 py-4 font-medium">
+                                        Couple (both attendees)
+                                    </td>
+                                    <td class="px-6 py-4 text-center">₹3000</td>
+                                    <td class="px-6 py-4 text-center">₹3500</td>
+                                    <td class="px-6 py-4 text-center">₹4000</td>
+                                    <td class="px-6 py-4 text-center">₹4500</td>
+                                </tr>
+
+                                <!-- Accompanying Person -->
+                                <tr
+                                    class="border-b hover:bg-blue-50 transition-colors duration-300"
+                                >
+                                    <td class="px-6 py-4 font-medium">
+                                        Accompanying Person
+                                    </td>
+                                    <td class="px-6 py-4 text-center">₹1200</td>
+                                    <td class="px-6 py-4 text-center">₹1500</td>
+                                    <td class="px-6 py-4 text-center">₹1800</td>
+                                    <td class="px-6 py-4 text-center">₹2000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p
+                            class="my-4 text-center text-gray-600 font-medium text-xs p-4"
+                        >
+                            All registration fees are exclusive of GST.<br
+                                class="md:hidden"
+                            />
+                            Applicable GST will be added during payment.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 text-center">
+                        <button
+                            type="button"
+                            class="bg-[#76153C] hover:bg-[#009DD8] cursor-pointer duration-300 text-white font-normal rounded-[13px] md:text-lg py-3 px-10 text-base md:px-[62px] md:py-[15px] focus:outline-none focus:ring focus:ring-offset-2 text-center"
+                        >
+                            <span>Register Now</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- executive committee -->
+        <section
+            id="executive-committee"
+            class="relative"
+            data-moj-web-fixed="false"
+            data-moj-web-type="executiveCommitte"
+            data-moj-web-label="Executive Committee"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="2xl:pl-[100px] 2xl:pr-[100px] xl:pl-[50px] xl:pr-[50px] px-4 md:px-[50px] py-10 md:py-[50px] text-white bg-no-repeat bg-cover bg-[#6BA386] md:bg-gradient-to-r from-[#6BA386] to-white"
+            >
+                <div
+                    class="flex flex-col xl:flex-row-reverse items-center gap-[50px] md:gap-[50px] relative z-10 text-black"
+                >
+                    <div
+                        class="xl:max-w-[378px] w-full text-white md:text-black"
+                    >
+                        <p
+                            class="font-medium md:font-semibold text-[24px] md:text-[40px] mb-[15px]"
+                        >
+                            Executive Committee
+                        </p>
+                        <p class="md:text-[20px]">
+                            Meet the dedicated members of our organizing
+                            board—each contributing their expertise and
+                            leadership to help shape a successful and inspiring
+                            conference experience.
+                        </p>
+
+                        <button
+                            onclick="window.location.href='#'"
+                            class="inline-flex items-center px-6 py-3 bg-[#76153C] text-white font-medium rounded hover:bg-[#76153C]/80 transition-colors duration-500 cursor-pointer mt-4"
+                        >
+                            View All
+                        </button>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-2 lg:grid-cols-3 gap-[40px] md:pb-10 md:gap-[25px] w-full text-white md:text-black"
+                    >
+                        <!-- Member 1 -->
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-white md:text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Adrian Wells
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Committee Chair
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Member 2 -->
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-white md:text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://media.istockphoto.com/id/1587604256/photo/portrait-lawyer-and-black-woman-with-tablet-smile-and-happy-in-office-workplace-african.jpg?s=612x612&w=0&k=20&c=n9yulMNKdIYIQC-Qns8agFj6GBDbiKyPRruaUTh4MKs="
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Melissa Brown
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Senior Advisor
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Member 3 -->
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-white md:text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://media.istockphoto.com/id/1175266114/photo/every-day-is-a-new-start.jpg?s=612x612&w=0&k=20&c=Xe6QMcj2TprrzrjqVLft9C_aiiDnsDh6hi3p0zH6gvU="
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Ethan Clarke
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Committee Secretary
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- bearers -->
+        <section
+            id="bearers"
+            class="py-10 md:py-[50px] bg-gray-50"
+            data-moj-web-fixed="false"
+            data-moj-web-type="officeBearers"
+            data-moj-web-label="Office Bearers"
+            data-moj-web-category="structural"
+        >
+            <div class="container mx-auto px-4">
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-left md:text-center mb-10 md:mb-16"
+                >
+                    District Office Bearers
+                </h2>
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[40px] md:gap-[25px] w-full text-black"
+                >
+                    <!-- Member 1 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Helen Carter
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    District Chairperson
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Marcus Hill
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Immediate Past Chairperson
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Aisha Rahman
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    District Secretary
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Samuel Ortiz
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    District Treasurer
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 5 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Priya Sen
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Senior Vice Chairperson
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 6 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Thomas Reed
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Junior Vice Chairperson
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 7 -->
+                    <div>
+                        <div
+                            class="w-full flex flex-col gap-4 items-center text-black relative"
+                        >
+                            <img
+                                class="min-w-[152px] min-h-[152px] md:min-w-[200px] md:min-h-[200px] max-w-[152px] max-h-[152px] md:max-w-[200px] md:max-h-[200px] rounded-full object-cover shadow-2xl object-top bg-white"
+                                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600"
+                                alt=""
+                            />
+                            <div class="text-center">
+                                <p
+                                    class="md:text-xl font-bold whitespace-pre-line lg:whitespace-nowrap"
+                                >
+                                    Dr. Emily Roy
+                                </p>
+                                <p
+                                    class="text-xs md:text-base font-medium whitespace-pre-line"
+                                >
+                                    Assistant Secretary
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about-venue -->
+        <section
+            id="about-venue"
+            class="bg-white px-4 md:px-[30px] lg:pl-[74px] lg:pr-[66px] py-10 md:py-[50px] flex flex-col gap-5 md:gap-[25px] xl:items-center overflow-hidden"
+            data-moj-web-fixed="false"
+            data-moj-web-type="aboutVenue"
+            data-moj-web-label="About Venue"
+            data-moj-web-category="structural"
+        >
+            <div>
+                <p
+                    class="kanit xl:text-center font-medium md:mb-2 text-[40px] lg:text-[64px] text-[#313131] leading-[44px] lg:leading-[73.6px] mb-5"
+                >
+                    Venue
+                </p>
+
+                <p class="text-[#3C4242] font-semibold text-[20px]">
+                    Horizon Event Centre, Riverside City
+                </p>
+            </div>
+
+            <div class="flex flex-col-reverse gap-5 md:gap-[25px] items-center">
+                <div>
+                    <p
+                        class="text-base md:text-lg font-normal text-left text-[#3C4242] mb-[20px]"
+                    >
+                        The Horizon Event Centre is a modern, spacious venue
+                        located near the scenic riverside district of Riverside
+                        City.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg font-normal text-left text-[#3C4242] mb-[20px]"
+                    >
+                        Designed for both intimate gatherings and large-scale
+                        events, the venue offers multiple halls, open outdoor
+                        areas, and state-of-the-art facilities. The main indoor
+                        hall accommodates up to 2,000 guests comfortably.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg font-normal text-left text-[#3C4242] mb-[20px]"
+                    >
+                        With dedicated technical support, ample parking space,
+                        and a flexible layout, the Horizon Event Centre is ideal
+                        for conferences, exhibitions, and social functions of
+                        every scale.
+                    </p>
+                </div>
+
+                <!-- SINGLE IMAGE (No Carousel) -->
+                <div class="w-full">
+                    <img
+                        src="https://www.exordo.com/hubfs/Imported_Blog_Media/Resized-image-4.jpg"
+                        class="rounded-[20px] w-full h-[250px] md:h-[500px] object-cover"
+                        alt="Event Venue"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- places -->
+        <section
+            id="places-block"
+            class="bg-[#F9FAFB] py-10 md:py-[50px] px-[20px] xl:px-[50px] overflow-hidden"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="Places"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="hidden xl:flex flex-col xl:flex-row items-end gap-[33px] max-w-max mx-auto"
+            >
+                <div class="aos-init aos-animate">
+                    <div class="flex flex-col gap-[33px]">
+                        <div
+                            class="relative w-[248px] h-[339px] rounded-[30px] group overflow-hidden"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                                class="w-[248px] h-[339px] object-cover rounded-[30px]"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col absolute z-10 bottom-0 pl-[20px] overflow-hidden w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white pt-1 h-[40px] text-[15px] font-medium max-w-[158px] xl:max-w-[170px] duration-1000"
+                                >
+                                    Riverside Promenade
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                        <div
+                            class="relative w-[248px] h-[120px] rounded-[30px] group overflow-hidden"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/3073666/pexels-photo-3073666.jpeg?cs=srgb&dl=pexels-pierre-blache-651604-3073666.jpg&fm=jpg"
+                                class="w-[248px] h-[120px] object-cover rounded-[30px]"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col h-[40px] absolute pt-1 z-10 bottom-0 pl-[20px] w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white text-[15px] font-medium max-w-[158px] xl:max-w-[170px]"
+                                >
+                                    Botanical Walkway
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="xl:flex flex-col items-center justify-between gap-[49px] h-full aos-init aos-animate"
+                >
+                    <div>
+                        <p
+                            class="kanit text-[38px] md:text-[64px] text-center leading-none font-medium text-[#3C4242]"
+                        >
+                            Popular
+                            <br />
+                            Destinations
+                        </p>
+                    </div>
+                    <div class="flex gap-[36px]">
+                        <div
+                            class="relative h-[286px] w-1/3 rounded-[30px] group overflow-hidden aos-init aos-animate"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-photo/traditional-cobblestone-street-plovdiv-old-600nw-2670697189.jpg"
+                                class="h-[286px] w-[248px] rounded-[30px] object-cover"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col absolute z-10 bottom-0 pl-[20px] overflow-hidden w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white h-[40px] text-[15px] font-medium max-w-[200px]"
+                                >
+                                    Base Street
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                        <div
+                            class="relative h-[286px] w-1/3 rounded-[30px] group overflow-hidden aos-init aos-animate"
+                        >
+                            <img
+                                src="https://media.istockphoto.com/id/1442179368/photo/maldives-island.jpg?s=612x612&w=0&k=20&c=t38FJQ6YhyyZGN91A8tpn3nz9Aqcy_aXolImsOXOZ34="
+                                class="h-[286px] w-[248px] rounded-[30px] object-cover"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col absolute h-[40px] z-10 bottom-0 pt-1 pl-[20px] overflow-hidden w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white text-[15px] font-medium max-w-[200px]"
+                                >
+                                    Beach
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 pt-1 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                        <div
+                            class="relative h-[286px] w-1/3 rounded-[30px] group overflow-hidden aos-init aos-animate"
+                        >
+                            <img
+                                src="https://plus.unsplash.com/premium_photo-1721654789105-43ff4bb0a486?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhY2VzfGVufDB8fDB8fHww"
+                                class="h-[286px] w-[248px] rounded-[30px] object-cover"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col h-[40px] absolute z-10 bottom-0 pt-1 pl-[20px] overflow-hidden w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white text-[15px] font-medium max-w-[158px] xl:max-w-[170px]"
+                                >
+                                    Sunset Bay Lookout
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aos-init aos-animate">
+                    <div class="flex flex-col-reverse gap-[33px]">
+                        <div
+                            class="relative w-[248px] h-[339px] rounded-[30px] group overflow-hidden"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/14520365/pexels-photo-14520365.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                class="w-[248px] h-[339px] object-cover rounded-[30px]"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col absolute z-10 bottom-0 pl-[20px] overflow-hidden w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white pt-1 h-[40px] text-[15px] font-medium max-w-[158px] xl:max-w-[170px] duration-1000"
+                                >
+                                    India Gate
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                        <div
+                            class="relative w-[248px] h-[120px] rounded-[30px] group overflow-hidden"
+                        >
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/071/111/936/small/the-taj-mahal-a-symbol-of-eternal-love-stands-majestically-with-its-perfect-reflection-in-the-tranquil-water-photo.jpeg"
+                                class="w-[248px] h-[120px] object-cover rounded-[30px]"
+                                alt=""
+                            />
+                            <div
+                                class="flex flex-col h-[40px] absolute pt-1 z-10 bottom-0 pl-[20px] w-full bg-[#00000070] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-80"
+                            >
+                                <p
+                                    class="text-white text-[15px] font-medium max-w-[158px] xl:max-w-[170px]"
+                                >
+                                    Taj Mahal
+                                </p>
+                            </div>
+                            <div
+                                class="absolute w-full h-full right-0 bottom-0 overlay-investment top-0 left-0 rounded-[30px]"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div
+                class="lg:pt-[64px] flex gap-[15px] md:gap-[40px] flex-col xl:hidden md:items-center justify-center"
+            >
+                <p
+                    class="kanit text-3xl md:text-5xl lg:text-[64px] md:leading-[73px] font-medium text-[#3C4242]"
+                >
+                    Popular Destinations
+                </p>
+
+                <!-- Horizontal Scroll Container -->
+                <div
+                    id="mobileScroll"
+                    class="overflow-x-auto scrollbar-hidden scroll-smooth flex gap-[25px] mt-3 md:mt-[30px] w-full"
+                >
+                    <!-- 1: Riverside Promenade -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Riverside Promenade
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2: Botanical Walkway -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/3073666/pexels-photo-3073666.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Botanical Walkway
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3: Base Street -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://www.shutterstock.com/image-photo/traditional-cobblestone-street-plovdiv-old-600nw-2670697189.jpg"
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Base Street
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4: Beach -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://media.istockphoto.com/id/1442179368/photo/maldives-island.jpg?s=612x612&w=0&k=20&c=t38FJQ6YhyyZGN91A8tpn3nz9Aqcy_aXolImsOXOZ34="
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Beach
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5: Sunset Bay Lookout -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://plus.unsplash.com/premium_photo-1721654789105-43ff4bb0a486?fm=jpg&q=60&w=1600"
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Sunset Bay Lookout
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6: Aurora Heritage Gallery -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/14520365/pexels-photo-14520365.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Aurora Heritage Gallery
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7: Grand City Square -->
+                    <div class="snap-center">
+                        <div
+                            class="relative w-screen max-w-xs md:w-[248px] h-[400px] md:h-[339px] rounded-[20px]"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1517713982677-4b66332f98de?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGxhY2VzfGVufDB8fDB8fHww"
+                                class="w-full h-full object-cover rounded-[20px]"
+                            />
+                            <div
+                                class="absolute bottom-0 p-[20px] w-full bg-[#00000070] backdrop-blur-sm rounded-b-[20px]"
+                            >
+                                <p
+                                    class="md:text-[16px] text-[22px] kanit text-white"
+                                >
+                                    Grand City Square
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner -->
+        <section
+            class="relative overflow-hidden"
+            id="joinUsBanner"
+            data-moj-web-fixed="false"
+            data-moj-web-type="banner"
+            data-moj-web-label="Join Us Banner"
+            data-moj-web-category="structural"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1600&q=80"
+                alt="Conference Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-[#213153a2]"></div>
+
+            <div
+                class="relative z-10 flex items-center justify-center text-center py-10 md:py-24 px-4"
+            >
+                <div class="text-white max-w-md lg:max-w-xl">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+                    >
+                        Welcome to Our Annual Conference
+                    </h2>
+
+                    <p
+                        class="text-sm md:text-base lg:text-lg mb-6 opacity-90 leading-relaxed"
+                    >
+                        Join professionals, innovators, and leaders from across
+                        the country for a transformative learning experience
+                        designed to inspire collaboration and growth.
+                    </p>
+
+                    <button
+                        onclick="window.location.href='#'"
+                        class="inline-flex items-center px-6 py-3 bg-[#76153C] text-white font-medium rounded hover:bg-[#76153C]/80 transition-colors duration-500 cursor-pointer"
+                    >
+                        Register Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section class="bg-gray-200 shadow border-t border-gray-300">
+            <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                <!-- Logo + About -->
+                <div class="sm:flex sm:items-start sm:justify-between">
+                    <!-- Logo -->
+                    <div class="flex flex-col gap-5 max-w-xl">
+                        <a href="/">
+                            <div class="flex items-center gap-2">
+                                <div class="h-16 border-r border-gray-100">
+                                    <img
+                                        src="https://i.pinimg.com/736x/79/a2/f8/79a2f850afe2b2bf0611511731cf63e0.jpg"
+                                        class="object-contain h-16"
+                                        alt="Logo"
+                                    />
+                                </div>
+                                <div
+                                    class="uppercase font-medium text-[#76153C] text-sm lg:text-base leading-tight"
+                                >
+                                    <h2>Conference</h2>
+                                    <h2>title</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                        <p class="text-sm text-gray-500 mb-6 sm:mb-0">
+                            Welcome to our annual event platform — connecting
+                            professionals, innovators, and learners from around
+                            the world. Stay informed, stay inspired, and join us
+                            for an unforgettable experience.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="text-sm text-gray-500 mb-6 sm:mb-0">
+                        <h3 class="font-semibold mb-2">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/" class="hover:underline">Home</a>
+                            </li>
+                            <li>
+                                <a href="/#about" class="hover:underline"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/terms-and-condition"
+                                    class="hover:underline"
+                                    >Terms &amp; Conditions</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/privacy-policy"
+                                    class="hover:underline"
+                                    >Privacy Policy</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="text-sm text-gray-500">
+                        <h3 class="font-semibold mb-2">Contact Us:</h3>
+                        <address class="not-italic">
+                            <div class="mt-2">
+                                <p>
+                                    <span class="font-medium">Email:</span>
+                                    <a
+                                        href="mailto:info@example.com"
+                                        class="hover:underline"
+                                    >
+                                        info@example.com
+                                    </a>
+                                </p>
+                                <p>
+                                    <span class="font-medium">Phone:</span>
+                                    <a
+                                        href="tel:+910000000000"
+                                        class="hover:underline"
+                                    >
+                                        +91 00000 00000
+                                    </a>
+                                </p>
+                            </div>
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <hr class="my-6 border-gray-300 sm:mx-auto lg:my-8" />
+
+                <!-- Copyright -->
+                <span class="block text-sm text-gray-500 sm:text-center">
+                    © 2025 All Rights Reserved.
+                </span>
+            </div>
+        </section>
+    </body>
+</html>

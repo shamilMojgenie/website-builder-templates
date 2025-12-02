@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 5</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <!-- nav -->
+        <section
+            id="navbar-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <!-- NAVBAR -->
+            <nav
+                id="mainNavbar"
+                class="w-full fixed top-0 left-0 z-50 transition-all duration-300"
+            >
+                <!-- BACKGROUND CONTAINER (Scroll bg only here) -->
+                <div id="navbarContainer" class="transition-all duration-300">
+                    <div
+                        class="max-w-[1500px] mx-auto px-6 py-4 flex items-center justify-between text-white"
+                    >
+                        <!-- LOGO -->
+                        <a href="/" class="flex items-center gap-2">
+                            <img
+                                src="https://t3.ftcdn.net/jpg/05/19/56/58/360_F_519565879_VMMqfudnF1kiOE7ARyhMPaWSq8eQilZi.jpg"
+                                class="h-10 object-contain"
+                            />
+                        </a>
+
+                        <!-- DESKTOP MENU -->
+                        <div
+                            class="hidden lg:flex items-center gap-8 text-white font-medium"
+                        >
+                            <a href="#" class="hover:text-orange-300 transition"
+                                >Home</a
+                            >
+                            <a href="#" class="hover:text-orange-300 transition"
+                                >About</a
+                            >
+                            <button
+                                class="hover:text-orange-300 transition flex items-center gap-1"
+                            >
+                                Schedule
+                            </button>
+                            <button
+                                class="hover:text-orange-300 transition flex items-center gap-1"
+                            >
+                                Pages
+                            </button>
+                            <button
+                                class="hover:text-orange-300 transition flex items-center gap-1"
+                            >
+                                Elements
+                            </button>
+                        </div>
+
+                        <!-- DESKTOP RIGHT SIDE -->
+                        <div class="hidden lg:flex items-center gap-6">
+                            <button
+                                class="bg-[#FC6042] text-white px-5 py-2 rounded-md text-sm font-semibold shadow-md"
+                            >
+                                Get Ticket
+                            </button>
+                        </div>
+
+                        <!-- MOBILE MENU ICON -->
+                        <button
+                            id="mobileMenuBtn"
+                            class="lg:hidden text-white text-2xl"
+                        >
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MOBILE OVERLAY -->
+                <div
+                    id="mobileOverlay"
+                    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+                ></div>
+
+                <!-- MOBILE SIDEBAR -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-[#0C1B3A] text-white z-50 transform translate-x-full transition-transform duration-300 p-6"
+                >
+                    <button
+                        id="closeSidebar"
+                        class="text-white text-2xl absolute top-4 right-4"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div class="mt-10 space-y-6 text-lg font-medium">
+                        <a href="#" class="block hover:text-orange-300">Home</a>
+                        <a href="#" class="block hover:text-orange-300"
+                            >About</a
+                        >
+                        <a href="#" class="block hover:text-orange-300"
+                            >Schedule</a
+                        >
+                        <a href="#" class="block hover:text-orange-300"
+                            >Pages</a
+                        >
+                        <a href="#" class="block hover:text-orange-300"
+                            >Elements</a
+                        >
+
+                        <button
+                            class="bg-[#FC6042] text-white px-4 py-2 rounded-md font-semibold mt-4"
+                        >
+                            Get Ticket
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <script>
+            /* MOBILE SIDEBAR */
+            const mobileBtn = document.getElementById("mobileMenuBtn");
+            const sidebar = document.getElementById("mobileSidebar");
+            const overlay = document.getElementById("mobileOverlay");
+            const closeBtn = document.getElementById("closeSidebar");
+
+            function openMenu() {
+                sidebar.classList.remove("translate-x-full");
+                overlay.classList.remove("hidden");
+                setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+            }
+
+            function closeMenu() {
+                sidebar.classList.add("translate-x-full");
+                overlay.classList.add("opacity-0");
+                setTimeout(() => overlay.classList.add("hidden"), 300);
+            }
+
+            mobileBtn.addEventListener("click", openMenu);
+            closeBtn.addEventListener("click", closeMenu);
+            overlay.addEventListener("click", closeMenu);
+
+            /* NAVBAR SCROLL BACKGROUND */
+            const navbarContainer = document.getElementById("navbarContainer");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbarContainer.classList.add(
+                        "bg-[#0C1B3A]/90",
+                        "shadow-lg",
+                        "backdrop-blur-md"
+                    );
+                } else {
+                    navbarContainer.classList.remove(
+                        "bg-[#0C1B3A]/90",
+                        "shadow-lg",
+                        "backdrop-blur-md"
+                    );
+                }
+            });
+        </script>
+
+        <!-- hero -->
+        <section
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+            class="relative w-full md:h-[90vh] min-h-[500px] md:min-h-[700px] 2xl:h-screen flex items-center justify-center overflow-hidden pt-20"
+        >
+            <!-- HERO BACKGROUND IMAGE -->
+            <img
+                src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?cs=srgb&dl=pexels-jibarofoto-2774556.jpg&fm=jpg"
+                class="absolute inset-0 w-full h-full object-cover opacity-70"
+            />
+            <img
+                src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/banner-left-shape.png"
+                class="absolute -bottom-5 left-0 z-20 h-62 md:h-auto xl:h-auto"
+                alt=""
+            />
+            <img
+                src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/banner-left-shape.png"
+                class="absolute -top-20 right-0 z-20 scale-x-[-1] h-42 md:h-72 xl:h-auto"
+                alt=""
+            />
+
+            <!-- BLUE OVERLAY -->
+            <div class="absolute inset-0 bg-[#1a237e]/80"></div>
+
+            <!-- HERO CONTENT -->
+            <div class="relative z-10 text-center text-white px-4 max-w-[90%]">
+                <!-- LOCATION -->
+                <div
+                    class="flex items-center justify-center gap-2 mb-3 text-sm md:text-lg"
+                >
+                    <i
+                        class="fa-solid fa-location-dot text-base md:text-lg"
+                    ></i>
+                    <span>Gotham Hall, Broadway</span>
+                </div>
+
+                <!-- MAIN HEADING -->
+                <h2 class="text-2xl sm:text-3xl md:text-6xl font-semibold mb-2">
+                    Annual Developer
+                </h2>
+
+                <!-- STROKE TEXT - RESPONSIVE -->
+                <h1
+                    class="text-4xl md:text-8xl lg:text-9xl font-extrabold tracking-wide mb-3 text-transparent [--tw-stroke:2px] md:[--tw-stroke:3px] [-webkit-text-stroke:var(--tw-stroke)_white]"
+                >
+                    CONFERENCE
+                </h1>
+
+                <p class="text-base sm:text-lg 2xl:text-xl mb-4">by ASI</p>
+
+                <!-- DATE -->
+                <p
+                    class="tracking-[0.25em] font-medium mb-4 text-sm sm:text-base 2xl:text-lg"
+                >
+                    SEPTEMBER 20 - 22
+                </p>
+
+                <!-- COUNTDOWN TIMER -->
+                <div
+                    id="countdown"
+                    class="flex justify-center gap-4 sm:gap-6 mt-6 mb-8"
+                >
+                    <div class="text-center">
+                        <div
+                            class="p-3 md:p-6 min-w-16 md:min-w-30 rounded-xl bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-center text-2xl md:text-4xl font-extrabold text-white shadow-lg"
+                        >
+                            <span id="days">00</span>
+                        </div>
+                        <p class="mt-2 text-white/80 text-xs sm:text-sm">
+                            Days
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div
+                            class="p-3 md:p-6 min-w-16 md:min-w-30 rounded-xl bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-center text-2xl md:text-4xl font-extrabold text-white shadow-lg"
+                        >
+                            <span id="hours">00</span>
+                        </div>
+                        <p class="mt-2 text-white/80 text-xs sm:text-sm">
+                            Hours
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div
+                            class="p-3 md:p-6 min-w-16 md:min-w-30 rounded-xl bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-center text-2xl md:text-4xl font-extrabold text-white shadow-lg"
+                        >
+                            <span id="minutes">00</span>
+                        </div>
+                        <p class="mt-2 text-white/80 text-xs sm:text-sm">
+                            Minutes
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div
+                            class="p-3 md:p-6 min-w-16 md:min-w-30 rounded-xl bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-center text-2xl md:text-4xl font-extrabold text-white shadow-lg"
+                        >
+                            <span id="seconds">00</span>
+                        </div>
+                        <p class="mt-2 text-white/80 text-xs sm:text-sm">
+                            Seconds
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA BUTTON -->
+                <button
+                    class="bg-[#FC6042] cursor-pointer hover:bg-[#ff734f] transition text-white px-6 py-2 sm:px-8 sm:py-3 rounded-md font-semibold shadow-lg flex items-center gap-2 mx-auto text-sm sm:text-base"
+                >
+                    Purchase Ticket
+                    <i class="fa-solid fa-ticket"></i>
+                </button>
+
+                <!-- SCROLL INDICATOR -->
+                <div class="mt-8 sm:mt-10 flex justify-center animate-bounce">
+                    <div
+                        class="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex items-center justify-center"
+                    >
+                        <div
+                            class="w-1 h-2.5 sm:h-3 bg-white rounded-full"
+                        ></div>
+                    </div>
+                </div>
+
+                <!-- DOWN ARROW -->
+                <div class="mt-3 sm:mt-4 flex justify-center">
+                    <i
+                        class="fa fa-angle-down text-white text-lg sm:text-xl animate-pulse"
+                    ></i>
+                </div>
+            </div>
+        </section>
+        <script>
+            const eventDate = new Date("September 20, 2026 09:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const difference = eventDate - now;
+
+                if (difference < 0) return;
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor(
+                    (difference % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").textContent = days;
+                document.getElementById("hours").textContent = hours;
+                document.getElementById("minutes").textContent = minutes;
+                document.getElementById("seconds").textContent = seconds;
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+
+        <section class="w-full py-10 md:py-20 overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-4 md:gap-12"
+            >
+                <!-- LEFT SIDE -->
+                <div>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold leading-tight text-[#111]"
+                    >
+                        Get the latest <br />
+                        info about <br class="hidden md:block" />
+                        Evenex
+                    </h2>
+
+                    <div class="mt-10 space-y-4">
+                        <!-- WHEN -->
+                        <div class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-calendar-days text-[#ff5e62] text-xl"
+                            ></i>
+                            <p class="text-sm font-medium">
+                                <span class="">When:</span>
+                                September 20 - September 22
+                            </p>
+                        </div>
+
+                        <!-- WHERE -->
+                        <div class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-location-dot text-[#ff5e62] text-xl"
+                            ></i>
+                            <p class="text-sm font-medium">
+                                <span class="">Where:</span>
+                                Gotham Hall, Broadway
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div>
+                    <p class="text-gray-600 text-[15px] leading-relaxed mb-10">
+                        We have dedicated tracks for every industry Whether you
+                        want to hire tech’s top talent meet with the
+                        policymakers influencing your industry or exchange notes
+                        with your peers and competitors. Maybe you want to place
+                        your company.
+                    </p>
+
+                    <!-- TICKET CARD WRAPPER -->
+                    <div class="relative">
+                        <!-- MAIN GRADIENT CARD -->
+                        <div
+                            class="relative bg-gradient-to-r from-[#ff5e62] to-[#ff9966] rounded-xl shadow-md py-8 px-4 md:px-10 flex items-center justify-between text-white"
+                        >
+                            <!-- Left Cutout -->
+                            <div
+                                class="absolute -left-2 top-1/2 -translate-y-1/2"
+                            >
+                                <div
+                                    class="w-5 h-5 bg-white rounded-full"
+                                ></div>
+                            </div>
+
+                            <!-- Right Cutout -->
+                            <div
+                                class="absolute -right-2 top-1/2 -translate-y-1/2"
+                            >
+                                <div
+                                    class="w-5 h-5 bg-white rounded-full"
+                                ></div>
+                            </div>
+
+                            <!-- STATS -->
+                            <div
+                                class="flex items-center justify-between w-full"
+                            >
+                                <div class="text-center px-3 md:px-6">
+                                    <p class="text-xl md:text-3xl font-bold">
+                                        45
+                                    </p>
+                                    <p class="mt-1 text-sm">Speakers</p>
+                                </div>
+
+                                <div class="h-10 w-px bg-white/40"></div>
+
+                                <div class="text-center px-3 md:px-6">
+                                    <p class="text-xl md:text-3xl font-bold">
+                                        500
+                                    </p>
+                                    <p class="mt-1 text-sm">Tickets</p>
+                                </div>
+
+                                <div class="h-10 w-px bg-white/40"></div>
+
+                                <div class="text-center px-3 md:px-6">
+                                    <p class="text-xl md:text-3xl font-bold">
+                                        30
+                                    </p>
+                                    <p class="mt-1 text-sm">Sessions</p>
+                                </div>
+
+                                <div class="h-10 w-px bg-white/40"></div>
+
+                                <div class="text-center px-3 md:px-6">
+                                    <p class="text-xl md:text-3xl font-bold">
+                                        20
+                                    </p>
+                                    <p class="mt-1 text-sm">Sponsors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-4 md:gap-10 items-center mt-10"
+            >
+                <!-- LEFT: VIDEO THUMBNAIL -->
+                <div class="relative">
+                    <img
+                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                        class="rounded-xl w-full h-[380px] object-cover"
+                    />
+                </div>
+
+                <!-- RIGHT: BLUE CARD -->
+                <div class="bg-[#0C1A6B] text-white rounded-xl p-10 shadow-lg">
+                    <h3
+                        class="text-3xl md:text-4xl font-extrabold leading-snug"
+                    >
+                        Last year was <br />
+                        mind blowing
+                    </h3>
+
+                    <p class="mt-6 text-gray-300 text-[15px] leading-relaxed">
+                        We have dedicated tracks for every industry Whether you
+                        want to hire tech’s top talent meet with the
+                        policymakers or exchange notes with your peers and
+                        competitors.
+                    </p>
+
+                    <button
+                        class="mt-8 bg-[#FF5F6D] hover:bg-[#ff4657] text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 transition shadow-md"
+                    >
+                        Book Ticket
+                        <i class="fa-solid fa-ticket"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full pt-0 py-10 md:py-20">
+            <div class="max-w-6xl mx-auto px-4">
+                <!-- Title -->
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold text-center mb-8 md:mb-16"
+                >
+                    Conference Schedule
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-4 md:gap-12">
+                    <!-- MOBILE DROPDOWN -->
+                    <div class="md:hidden mb-6">
+                        <button
+                            id="mobileDayToggle"
+                            class="w-full bg-white border border-gray-300 rounded-lg p-3 flex justify-between items-center font-semibold text-gray-700"
+                        >
+                            <span id="mobileDayLabel">1st Day</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <!-- DROPDOWN LIST -->
+                        <div
+                            id="mobileDayMenu"
+                            class="hidden border border-gray-200 rounded-lg mt-2 bg-white shadow-md"
+                        >
+                            <div
+                                class="mobile-day-option p-3 border-b cursor-pointer hover:bg-gray-100"
+                                data-day="1"
+                            >
+                                1st Day
+                            </div>
+                            <div
+                                class="mobile-day-option p-3 border-b cursor-pointer hover:bg-gray-100"
+                                data-day="2"
+                            >
+                                2nd Day
+                            </div>
+                            <div
+                                class="mobile-day-option p-3 cursor-pointer hover:bg-gray-100"
+                                data-day="3"
+                            >
+                                3rd Day
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DESKTOP DAY CARDS -->
+                    <div class="space-y-8 hidden md:block">
+                        <!-- 1st Day -->
+                        <div
+                            data-day="1"
+                            class="day-card active-day cursor-pointer bg-gradient-to-br from-[#ff5e62] to-[#ff9966] text-white rounded-xl p-8 shadow-lg transition-all duration-300"
+                        >
+                            <div class="opacity-40 mb-4">
+                                <i class="fa-regular fa-calendar text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">1st Day</h3>
+                            <p class="font-semibold mt-1">September 29, 2020</p>
+                            <p class="mt-4 text-sm leading-relaxed">
+                                2390 NW 2nd Ave, Miami, FL 33127 <br />
+                                William Mathew Theater
+                            </p>
+                        </div>
+
+                        <!-- 2nd Day -->
+                        <div
+                            data-day="2"
+                            class="day-card cursor-pointer bg-white rounded-xl p-8 shadow-md transition-all duration-300"
+                        >
+                            <div class="opacity-30 mb-4">
+                                <i class="fa-regular fa-calendar text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">2nd Day</h3>
+                            <p class="font-semibold mt-1">September 30, 2020</p>
+                            <p class="mt-4 text-sm leading-relaxed">
+                                2390 NW 2nd Ave, Miami, FL 33127 <br />
+                                William Mathew Theater
+                            </p>
+                        </div>
+
+                        <!-- 3rd Day -->
+                        <div
+                            data-day="3"
+                            class="day-card cursor-pointer bg-white rounded-xl p-8 shadow-md transition-all duration-300"
+                        >
+                            <div class="opacity-30 mb-4">
+                                <i class="fa-regular fa-calendar text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">3rd Day</h3>
+                            <p class="font-semibold mt-1">October 1, 2020</p>
+                            <p class="mt-4 text-sm leading-relaxed">
+                                2390 NW 2nd Ave, Miami, FL 33127 <br />
+                                William Mathew Theater
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT — SCHEDULE CONTENT -->
+                    <div
+                        id="scheduleContent"
+                        class="space-y-6 opacity-100 transition-opacity duration-300"
+                    >
+                        <!-- Default loads Day 1 -->
+                        <!-- DAY 1 CONTENT -->
+                        <div class="schedule-day" data-day="1">
+                            <!-- SESSION: REGISTRATION -->
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    REGISTRATION & BREAKFAST
+                                </h3>
+                                <p
+                                    class="text-gray-600 text-[15px] mb-4 leading-relaxed"
+                                >
+                                    Meet fellow attendees and enjoy a light
+                                    breakfast before the sessions begin.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        08:00 – 09:00 AM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Lobby Hall A
+                                    </div>
+                                    <div class="flex">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=1"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <!-- SESSION: OPENING KEYNOTE -->
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    OPENING KEYNOTE: THE FUTURE OF TECH
+                                </h3>
+                                <p
+                                    class="text-gray-600 text-[15px] mb-4 leading-relaxed"
+                                >
+                                    A powerful keynote exploring AI, robotics,
+                                    and the evolution of global industries.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        09:00 – 10:30 AM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Main Theater
+                                    </div>
+                                    <div class="flex -space-x-3">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=25"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=29"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <!-- SESSION: PANEL DISCUSSION -->
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    PANEL: WOMEN LEADING TECH
+                                </h3>
+                                <p
+                                    class="text-gray-600 text-[15px] mb-4 leading-relaxed"
+                                >
+                                    Inspiring leaders talk about innovation,
+                                    leadership, and breaking boundaries.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        11:00 – 12:00 PM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Room 204
+                                    </div>
+                                    <div class="flex -space-x-3">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=14"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=15"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=16"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <!-- LUNCH -->
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    NETWORKING LUNCH
+                                </h3>
+                                <p
+                                    class="text-gray-600 text-[15px] mb-4 leading-relaxed"
+                                >
+                                    Connect with speakers, founders, and
+                                    attendees over a catered lunch.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        12:00 – 01:30 PM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Dining Hall B
+                                    </div>
+                                    <div class="flex">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=7"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 2 CONTENT -->
+                        <div class="schedule-day hidden" data-day="2">
+                            <!-- SESSION -->
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    AI IN BUSINESS — REAL WORLD CASE STUDIES
+                                </h3>
+                                <p class="text-gray-600 text-[15px] mb-4">
+                                    Learn how companies are using AI to
+                                    streamline manufacturing, marketing, and
+                                    logistics.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        09:00 – 10:30 AM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Room 401
+                                    </div>
+                                    <div class="flex -space-x-3">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=20"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=21"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    WORKSHOP: BUILDING WITH AI TOOLS
+                                </h3>
+                                <p
+                                    class="text-gray-600 mb-4 text-[15px] leading-relaxed"
+                                >
+                                    A hands-on session for developers and
+                                    creators exploring generative AI.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        11:00 – 01:00 PM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Lab 3A
+                                    </div>
+                                    <div class="flex -space-x-3">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=18"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=19"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    AFTERNOON KEYNOTE: DIGITAL FUTURES
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-[15px]">
+                                    A vision of the next 10 years of
+                                    interconnected industries.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        02:00 – 03:30 PM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Main Theater
+                                    </div>
+                                    <div class="flex">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=22"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 3 CONTENT -->
+                        <div class="schedule-day hidden" data-day="3">
+                            <!-- SESSION -->
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    CLOSING CEO PANEL
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-[15px]">
+                                    Top CEOs discuss leadership during rapid
+                                    change and global uncertainty.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        09:00 – 10:30 AM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Room 101
+                                    </div>
+                                    <div class="flex -space-x-3">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=30"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=31"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    WORKSHOP: PRODUCT SCALING
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-[15px]">
+                                    Learn how to scale products from MVP to
+                                    millions of users efficiently.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        11:00 – 01:00 PM
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Lab 2D
+                                    </div>
+                                    <div class="flex -space-x-3">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=9"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=10"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-200 my-6" />
+
+                            <div>
+                                <h3 class="text-lg font-extrabold mb-2">
+                                    GALA DINNER & AWARDS
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-[15px]">
+                                    Celebrate the closing evening with awards,
+                                    music, networking, and fine dining.
+                                </p>
+
+                                <div
+                                    class="flex items-center gap-6 text-sm font-medium"
+                                >
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-regular fa-clock"></i>
+                                        06:00 – 09:00 PM
+                                    </div>
+
+                                    <div
+                                        class="flex items-center gap-2 text-[#ff5e62] text-xs md:text-sm"
+                                    >
+                                        <i class="fa-solid fa-door-open"></i>
+                                        Grand Ballroom
+                                    </div>
+
+                                    <div class="flex">
+                                        <img
+                                            src="https://i.pravatar.cc/50?img=33"
+                                            class="w-8 h-8 rounded-full border-2 border-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            const dropdownBtn = document.getElementById("mobileDayToggle");
+            const dropdownMenu = document.getElementById("mobileDayMenu");
+            const dropdownLabel = document.getElementById("mobileDayLabel");
+
+            dropdownBtn.addEventListener("click", () => {
+                dropdownMenu.classList.toggle("hidden");
+            });
+
+            // Mobile day selection
+            document
+                .querySelectorAll(".mobile-day-option")
+                .forEach((option) => {
+                    option.addEventListener("click", () => {
+                        const selectedDay = option.getAttribute("data-day");
+                        dropdownLabel.textContent = option.textContent;
+                        dropdownMenu.classList.add("hidden");
+
+                        // Sync with big desktop cards (optional)
+                        document
+                            .querySelectorAll(".day-card")
+                            .forEach((card) => {
+                                card.classList.remove("active-day");
+                                card.classList.remove(
+                                    "bg-gradient-to-br",
+                                    "from-[#ff5e62]",
+                                    "to-[#ff9966]",
+                                    "text-white"
+                                );
+                                card.classList.add("bg-white", "text-black");
+                            });
+
+                        const active = document.querySelector(
+                            `.day-card[data-day="${selectedDay}"]`
+                        );
+
+                        if (active) {
+                            active.classList.add(
+                                "active-day",
+                                "bg-gradient-to-br",
+                                "from-[#ff5e62]",
+                                "to-[#ff9966]",
+                                "text-white"
+                            );
+                            active.classList.remove("bg-white", "text-black");
+                        }
+                    });
+                });
+        </script>
+        <script>
+            const dayCards = document.querySelectorAll(".day-card");
+            const scheduleDays = document.querySelectorAll(".schedule-day");
+            const scheduleContent = document.getElementById("scheduleContent");
+
+            dayCards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    const selectedDay = card.dataset.day;
+
+                    // Update active state on left cards
+                    dayCards.forEach((c) => c.classList.remove("active-day"));
+                    card.classList.add("active-day");
+
+                    // Update card styles
+                    dayCards.forEach((c) => {
+                        if (c.classList.contains("active-day")) {
+                            c.className =
+                                "day-card active-day cursor-pointer bg-gradient-to-br from-[#ff5e62] to-[#ff9966] text-white rounded-xl p-8 shadow-lg transition-all duration-300";
+                        } else {
+                            c.className =
+                                "day-card cursor-pointer bg-white rounded-xl p-8 shadow-md transition-all duration-300";
+                        }
+                    });
+
+                    // Fade-out animation
+                    scheduleContent.style.opacity = 0;
+
+                    setTimeout(() => {
+                        // Show correct schedule
+                        scheduleDays.forEach((day) => {
+                            day.classList.toggle(
+                                "hidden",
+                                day.dataset.day !== selectedDay
+                            );
+                        });
+
+                        // Fade-in animation
+                        scheduleContent.style.opacity = 1;
+                    }, 300);
+                });
+            });
+        </script>
+
+        <!-- VENUE SECTION -->
+        <section class="w-full bg-white">
+            <div class="grid md:grid-cols-2 w-full">
+                <!-- LEFT SIDE VENUE BOX -->
+                <div
+                    class="relative bg-[#0C1B5A] text-white px-6 py-10 md:p-12 flex flex-col justify-center"
+                >
+                    <!-- Curved Top Shape -->
+                    <img
+                        src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/home-2-map-shape.png"
+                        class="absolute top-0 left-0 w-full h-auto object-cover pointer-events-none"
+                    />
+
+                    <!-- Title -->
+                    <h2
+                        class="relative inline-block text-white text-4xl font-extrabold mb-8"
+                    >
+                        About venue
+                    </h2>
+
+                    <!-- Location Block -->
+                    <div class="flex items-start gap-4 mb-10 relative">
+                        <i class="fa-solid fa-house text-2xl"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold">Gotham Hall</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                1356 Broadway, New York<br />
+                                NY 10018, USA
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Entry Time Block -->
+                    <div class="flex items-start gap-4 relative">
+                        <i class="fa-solid fa-clock text-2xl"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold">Entry Time</h3>
+
+                            <div class="flex gap-10 mt-3 text-sm">
+                                <div>
+                                    <p class="text-gray-300">Day 01:</p>
+                                    <p class="font-bold mt-1">09 am</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Day 02:</p>
+                                    <p class="font-bold mt-1">12 pm</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Day 03:</p>
+                                    <p class="font-bold mt-1">10 am</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE MAP -->
+                <div class="w-full h-[450px] md:h-full">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19804.53721742846!2d-0.141!3d51.5033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ce3e6c3f3d%3A0xbadc001!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1700000000000"
+                        class="w-full h-full border-0"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="relative w-full md:pt-0 pt-10 py-16 md:py-20 overflow-hidden"
+        >
+            <!-- BACKGROUND IMAGE (faded) -->
+            <div class="absolute inset-0">
+                <img
+                    src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/home-2-counter-bg.jpg"
+                    class="w-full h-full object-cover opacity-70"
+                />
+            </div>
+
+            <!-- CONTENT -->
+            <div class="relative max-w-3xl mx-auto text-center px-6">
+                <!-- ICON -->
+                <img
+                    src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/clock-image.png"
+                    class="w-28 md:w-36 mx-auto mb-6"
+                />
+
+                <!-- TITLE -->
+                <h2 class="text-4xl font-extrabold text-[#ff4d4d] mb-2">
+                    Hurry Up!
+                </h2>
+
+                <!-- SUBTITLE -->
+                <p class="text-gray-700 text-sm font-medium mb-6">
+                    The clock is ticking and the seats are limited
+                </p>
+
+                <!-- DESCRIPTION -->
+                <p class="text-gray-600 text-sm leading-relaxed mb-10">
+                    Countdown is finished! <br />
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s.
+                </p>
+
+                <!-- BUTTON -->
+                <button
+                    class="bg-gradient-to-r from-[#ff5e62] to-[#ff9966] text-white px-8 py-3 rounded-lg font-semibold text-sm shadow-md hover:opacity-90 transition flex items-center gap-2 mx-auto"
+                >
+                    Book Ticket
+                    <i class="fa-solid fa-ticket"></i>
+                </button>
+            </div>
+
+            <!-- BOTTOM CURVED SVG -->
+            <div
+                class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180"
+            >
+                <svg
+                    class="relative block w-[200%] h-20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 1200 120"
+                >
+                    <path
+                        d="M985.66 83.14c-56.24-21.93-117.66-29.13-176.78-17.18C756 77.09 704.5 106 651.29 117.34c-70.08 14.27-142.68-14.43-211.84-35.1C369.67 61.71 297.54 38 231.8 52.66c-49.94 11.14-95.36 36.49-142.59 57.57C61.68 121.12 32.82 122.19 0 119.62V0h1200v90.59c-67.2 13.47-138.6 11.9-214.34-7.45z"
+                        fill="#ffffff"
+                    />
+                </svg>
+            </div>
+        </section>
+
+        <section class="w-full relative">
+            <!-- TOP RED GRADIENT BACKGROUND -->
+            <div
+                class="relative w-full px-4 pb-20 md:h-[280px] flex items-center justify-center overflow-hidden py-10 md:py-20"
+            >
+                <!-- BACKGROUND IMAGE -->
+                <img
+                    src="https://t4.ftcdn.net/jpg/02/98/35/71/360_F_298357190_yjGRacL1FZ75l6wyRROrAdq6q3rMPCqD.jpg"
+                    class="absolute inset-0 w-full h-full object-cover"
+                />
+
+                <!-- COLOR OVERLAY (GRADIENT) -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-[#e64444]/90 to-[#f07b3f]/90"
+                ></div>
+
+                <!-- CONTENT -->
+                <h2
+                    class="relative text-white text-4xl md:text-5xl font-extrabold z-10"
+                >
+                    Conference Committee
+                </h2>
+            </div>
+
+            <!-- SPEAKERS SECTION -->
+            <div class="max-w-6xl mx-auto px-4 pb-10 -mt-16">
+                <!-- ROW 1 -->
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10 mb-5 md:mb-16">
+                    <!-- Speaker 1 -->
+                    <div
+                        class="relative bg-white rounded-xl shadow-md p-6 flex items-center gap-6"
+                    >
+                        <img
+                            src="https://i.pravatar.cc/250?img=32"
+                            class="w-36 h-36 object-cover rounded-lg shadow-md"
+                        />
+
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0A1A3A]">
+                                Ava Charlotte
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                UX Researcher,
+                            </p>
+
+                            <!-- Social Icons -->
+                            <div
+                                class="flex items-center gap-4 text-gray-600 text-sm"
+                            >
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 2 -->
+                    <div
+                        class="relative bg-white rounded-xl shadow-md p-6 flex items-center gap-6"
+                    >
+                        <img
+                            src="https://i.pravatar.cc/250?img=55"
+                            class="w-36 h-36 object-cover rounded-lg shadow-md"
+                        />
+
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0A1A3A]">
+                                Chris Matt
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                Backend Dev,
+                            </p>
+
+                            <div
+                                class="flex items-center gap-4 text-gray-600 text-sm"
+                            >
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROW 2 -->
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10">
+                    <!-- Speaker 3 -->
+                    <div
+                        class="relative bg-white rounded-xl shadow-md p-6 flex items-center gap-6"
+                    >
+                        <img
+                            src="https://i.pravatar.cc/250?img=47"
+                            class="w-36 h-36 object-cover rounded-lg shadow-md"
+                        />
+
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0A1A3A]">
+                                Linda Patricia
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                Product Owner,
+                            </p>
+
+                            <div
+                                class="flex items-center gap-4 text-gray-600 text-sm"
+                            >
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 4 -->
+                    <div
+                        class="relative bg-white rounded-xl shadow-md p-6 flex items-center gap-6"
+                    >
+                        <img
+                            src="https://i.pravatar.cc/250?img=12"
+                            class="w-36 h-36 object-cover rounded-lg shadow-md"
+                        />
+
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0A1A3A]">
+                                Jacob Keith
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                Frontend Dev,
+                            </p>
+
+                            <div
+                                class="flex items-center gap-4 text-gray-600 text-sm"
+                            >
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative w-full py-10 md:py-20 overflow-hidden">
+            <!-- Background -->
+            <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                class="absolute inset-0 w-full h-full object-cover opacity-20"
+            />
+            <div class="absolute inset-0 bg-[#0a1b4a]/90"></div>
+
+            <div class="relative max-w-7xl mx-auto px-6 text-center">
+                <h2
+                    class="text-white text-4xl md:text-5xl font-extrabold mb-6 md:mb-16"
+                >
+                    Explore flexible pricing plans
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <!-- LEFT CARD (WHITE) -->
+                    <div class="relative w-full max-w-[360px] mx-auto">
+                        <div
+                            class="relative p-10 shadow-xl h-100 md:h-120 flex flex-col justify-center"
+                            style="
+                                -webkit-mask-image: url('https://i.ibb.co/myRzgmC/masking-pricing-table.png');
+                                mask-image: url('https://i.ibb.co/myRzgmC/masking-pricing-table.png');
+                                -webkit-mask-size: 100% 100%;
+                                mask-size: 100% 100%;
+                                background: white;
+                            "
+                        >
+                            <h4 class="text-red-500 font-semibold mb-3">
+                                Single day pass
+                            </h4>
+                            <p class="text-5xl font-extrabold mb-2">$150</p>
+                            <div
+                                class="w-10 mx-auto h-[2px] bg-gray-300 mb-6"
+                            ></div>
+
+                            <ul
+                                class="text-gray-600 text-[15px] leading-tight space-y-1 mb-8"
+                            >
+                                <li>One catered lunch</li>
+                                <li>Afternoon snacks</li>
+                                <li>Fun swag</li>
+                                <li>Entrance Afterparty</li>
+                            </ul>
+
+                            <button
+                                class="bg-white shadow-md px-6 py-2 rounded-md flex items-center gap-2 mx-auto text-sm hover:shadow-lg transition"
+                            >
+                                <i class="fa-solid fa-ticket text-red-500"></i>
+                                Purchase Ticket
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CENTER CARD (GRADIENT) -->
+                    <div
+                        class="relative w-full max-w-[360px] mx-auto scale-[1.05]"
+                    >
+                        <div
+                            class="relative p-10 pb-14 shadow-2xl text-white h-120 flex flex-col justify-center"
+                            style="
+                                -webkit-mask-image: url('https://i.ibb.co/myRzgmC/masking-pricing-table.png');
+                                mask-image: url('https://i.ibb.co/myRzgmC/masking-pricing-table.png');
+                                -webkit-mask-size: 100% 100%;
+                                mask-size: 100% 100%;
+                                background: linear-gradient(
+                                    135deg,
+                                    #ff5e62,
+                                    #ff9966
+                                );
+                            "
+                        >
+                            <h4 class="font-semibold mb-3">All day pass</h4>
+                            <p class="text-5xl font-extrabold mb-2">$250</p>
+                            <div
+                                class="w-10 mx-auto h-[2px] bg-white/60 mb-6"
+                            ></div>
+
+                            <ul
+                                class="text-white/90 text-[15px] leading-tight space-y-1 mb-8"
+                            >
+                                <li>Fun swag</li>
+                                <li>Afternoon snacks</li>
+                                <li>One catered lunch</li>
+                                <li>Entrance Afterparty</li>
+                            </ul>
+
+                            <button
+                                class="bg-white text-[#ff5e62] shadow-md px-6 py-2 rounded-md flex items-center gap-2 mx-auto text-sm hover:shadow-lg transition"
+                            >
+                                <i class="fa-solid fa-ticket"></i>
+                                Purchase Ticket
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT CARD (WHITE) -->
+                    <div class="relative w-full max-w-[360px] mx-auto">
+                        <div
+                            class="relative p-10 shadow-xl h-100 md:h-120 flex flex-col justify-center"
+                            style="
+                                -webkit-mask-image: url('https://i.ibb.co/myRzgmC/masking-pricing-table.png');
+                                mask-image: url('https://i.ibb.co/myRzgmC/masking-pricing-table.png');
+                                -webkit-mask-size: 100% 100%;
+                                mask-size: 100% 100%;
+                                background: white;
+                            "
+                        >
+                            <h4 class="text-red-500 font-semibold mb-3">
+                                VIP seat with food
+                            </h4>
+                            <p class="text-5xl font-extrabold mb-2">$450</p>
+                            <div
+                                class="w-10 mx-auto h-[2px] bg-gray-300 mb-6"
+                            ></div>
+
+                            <ul
+                                class="text-gray-600 text-[15px] leading-tight space-y-1 mb-8"
+                            >
+                                <li>Unlimited Entrance</li>
+                                <li>Afternoon snacks</li>
+                                <li>One catered lunch</li>
+                                <li>Fun swag</li>
+                            </ul>
+
+                            <button
+                                class="bg-white shadow-md px-6 py-2 rounded-md flex items-center gap-2 mx-auto text-sm hover:shadow-lg transition"
+                            >
+                                <i class="fa-solid fa-ticket text-red-500"></i>
+                                Purchase Ticket
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-white/80 text-sm mt-14">
+                    All prices exclude 25% VAT. For more details, view our
+                    <a href="#" class="underline font-semibold text-white"
+                        >Terms & Conditions</a
+                    >
+                </p>
+            </div>
+        </section>
+
+        <section class="w-full py-10 md:py-20 bg-white">
+            <div
+                class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-16 items-center"
+            >
+                <!-- LEFT SIDE -->
+                <div>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold leading-snug text-[#111]"
+                    >
+                        Our official <br />
+                        sponsors
+                    </h2>
+
+                    <p class="text-gray-600 text-[15px] mt-6 leading-relaxed">
+                        We have dedicated tracks for every industry. Whether you
+                        want to hire tech’s top talent or meet the
+                        <br class="hidden md:block" />
+                        policymakers influencing your industry.
+                    </p>
+
+                    <button
+                        class="mt-8 px-6 py-3 rounded-md text-white font-semibold text-sm shadow-md bg-gradient-to-r from-[#ff5e62] to-[#ff9966] flex items-center gap-2"
+                    >
+                        Become a Sponsor
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- RIGHT SIDE LOGO GRID -->
+                <div class="grid grid-cols-3 border border-gray-200">
+                    <!-- LOGO 1 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-b border-r border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/sponsor_medusis.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 2 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-b border-r border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor_healthy-habits.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 3 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-b border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor_sleep-in-genoa.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 4 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-r border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor-maison-rasmi.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 5 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-r border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor_melrose.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 6 -->
+                    <div class="flex items-center justify-center p-8 bg-white">
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor_encore.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 7 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-r border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor_encore.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+
+                    <!-- LOGO 8 -->
+                    <div
+                        class="flex items-center justify-center p-8 bg-white border-r border-gray-200"
+                    >
+                        <img
+                            src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/venue-sponsor-korum.png"
+                            class="h-10 object-contain"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATTRACTIONS SECTION -->
+        <section
+            class="relative w-full pb-10 px-4 md:py-24 bg-white overflow-hidden"
+        >
+            <!-- TITLE AREA -->
+            <div class="text-center mb-6 md:mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#111]">
+                    Local Attractions
+                </h2>
+                <p
+                    class="text-gray-600 text-[15px] max-w-2xl mx-auto mt-4 leading-relaxed"
+                >
+                    Discover must-visit destinations around Gotham Hall while
+                    you attend the conference.
+                </p>
+            </div>
+
+            <!-- ATTRACTIONS GRID -->
+            <div
+                class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10"
+            >
+                <!-- CARD TEMPLATE (Repeated for all cards, each with different image + icon + text) -->
+
+                <!-- CARD 1 -->
+                <div
+                    class="relative bg-white rounded-xl p-8 shadow-lg group overflow-hidden hover:shadow-2xl transition"
+                >
+                    <!-- BG Image -->
+                    <img
+                        src="https://images.unsplash.com/photo-1534447677768-be436bb09401"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition"
+                    />
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"
+                    ></div>
+
+                    <!-- Big Icon -->
+                    <i
+                        class="fa-solid fa-city absolute -right-6 -bottom-6 text-[120px] text-gray-200 opacity-40"
+                    ></i>
+
+                    <div class="relative z-10">
+                        <h3
+                            class="text-2xl font-bold text-[#0A1A3A] mb-2 flex items-center gap-2"
+                        >
+                            <i class="fa-solid fa-landmark text-[#ff5e62]"></i>
+                            Times Square
+                        </h3>
+
+                        <p
+                            class="text-gray-600 text-[15px] leading-relaxed mb-4"
+                        >
+                            Experience the dazzling lights, theatres, and
+                            nightlife.
+                        </p>
+
+                        <button
+                            class="text-[#ff5e62] font-semibold text-sm hover:underline"
+                        >
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="relative bg-white rounded-xl p-8 shadow-lg group overflow-hidden hover:shadow-2xl transition"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1506377295352-e3154d43ea9e"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"
+                    ></div>
+
+                    <i
+                        class="fa-solid fa-tree absolute -right-6 -bottom-6 text-[120px] text-gray-200 opacity-40"
+                    ></i>
+
+                    <div class="relative z-10">
+                        <h3
+                            class="text-2xl font-bold text-[#0A1A3A] mb-2 flex items-center gap-2"
+                        >
+                            <i class="fa-solid fa-tree text-[#ff5e62]"></i>
+                            Central Park
+                        </h3>
+
+                        <p
+                            class="text-gray-600 text-[15px] leading-relaxed mb-4"
+                        >
+                            Relax between sessions with scenic trails, lakes,
+                            and city views.
+                        </p>
+
+                        <button
+                            class="text-[#ff5e62] font-semibold text-sm hover:underline"
+                        >
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div
+                    class="relative bg-white rounded-xl p-8 shadow-lg group overflow-hidden hover:shadow-2xl transition"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1509395176047-4a66953fd231"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"
+                    ></div>
+
+                    <i
+                        class="fa-solid fa-ship absolute -right-6 -bottom-6 text-[120px] text-gray-200 opacity-40"
+                    ></i>
+
+                    <div class="relative z-10">
+                        <h3
+                            class="text-2xl font-bold text-[#0A1A3A] mb-2 flex items-center gap-2"
+                        >
+                            <i class="fa-solid fa-ship text-[#ff5e62]"></i>
+                            Statue of Liberty
+                        </h3>
+
+                        <p
+                            class="text-gray-600 text-[15px] leading-relaxed mb-4"
+                        >
+                            Experience the symbol of freedom — ferry rides
+                            available throughout the day.
+                        </p>
+
+                        <button
+                            class="text-[#ff5e62] font-semibold text-sm hover:underline"
+                        >
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div
+                    class="relative bg-white rounded-xl p-8 shadow-lg group overflow-hidden hover:shadow-2xl transition"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1523731407965-2430cd12f5e4"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"
+                    ></div>
+
+                    <i
+                        class="fa-solid fa-landmark absolute -right-6 -bottom-6 text-[120px] text-gray-200 opacity-40"
+                    ></i>
+
+                    <div class="relative z-10">
+                        <h3
+                            class="text-2xl font-bold text-[#0A1A3A] mb-2 flex items-center gap-2"
+                        >
+                            <i class="fa-solid fa-landmark text-[#ff5e62]"></i>
+                            Times Square
+                        </h3>
+
+                        <p
+                            class="text-gray-600 text-[15px] leading-relaxed mb-4"
+                        >
+                            Enjoy the energy of NYC’s entertainment hub —
+                            lights, shopping, nightlife.
+                        </p>
+
+                        <button
+                            class="text-[#ff5e62] font-semibold text-sm hover:underline"
+                        >
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div
+                    class="relative bg-white rounded-xl p-8 shadow-lg group overflow-hidden hover:shadow-2xl transition"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"
+                    ></div>
+
+                    <i
+                        class="fa-solid fa-subway absolute -right-6 -bottom-6 text-[120px] text-gray-200 opacity-40"
+                    ></i>
+
+                    <div class="relative z-10">
+                        <h3
+                            class="text-2xl font-bold text-[#0A1A3A] mb-2 flex items-center gap-2"
+                        >
+                            <i class="fa-solid fa-subway text-[#ff5e62]"></i>
+                            Grand Central Terminal
+                        </h3>
+
+                        <p
+                            class="text-gray-600 text-[15px] leading-relaxed mb-4"
+                        >
+                            Historic architecture, dining, and the famous
+                            celestial ceiling.
+                        </p>
+
+                        <button
+                            class="text-[#ff5e62] font-semibold text-sm hover:underline"
+                        >
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div
+                    class="relative bg-white rounded-xl p-8 shadow-lg group overflow-hidden hover:shadow-2xl transition"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/533769/pexels-photo-533769.jpeg?cs=srgb&dl=pexels-pixabay-533769.jpg&fm=jpg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-white/55 backdrop-blur-[1px]"
+                    ></div>
+
+                    <i
+                        class="fa-solid fa-masks-theater absolute -right-6 -bottom-6 text-[120px] text-gray-200 opacity-40"
+                    ></i>
+
+                    <div class="relative z-10">
+                        <h3
+                            class="text-2xl font-bold text-[#0A1A3A] mb-2 flex items-center gap-2"
+                        >
+                            <i
+                                class="fa-solid fa-masks-theater text-[#ff5e62]"
+                            ></i>
+                            Broadway Theaters
+                        </h3>
+
+                        <p
+                            class="text-gray-600 text-[15px] leading-relaxed mb-4"
+                        >
+                            Enjoy world-class performances just walking distance
+                            from the venue.
+                        </p>
+
+                        <button
+                            class="text-[#ff5e62] font-semibold text-sm hover:underline"
+                        >
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+        <section
+            class="relative w-full text-center py-14 md:py-20 overflow-hidden"
+        >
+            <!-- BACKGROUND IMAGE -->
+            <img
+                src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/01/contact_page_newsletter_bg.jpg"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- DARK OVERLAY -->
+            <div class="absolute inset-0 bg-[#0a1b4a]/50"></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-10">
+                <!-- Logo -->
+                <img
+                    src="https://t3.ftcdn.net/jpg/05/19/56/58/360_F_519565879_VMMqfudnF1kiOE7ARyhMPaWSq8eQilZi.jpg"
+                    class="mx-auto w-28 mb-6 brightness-110"
+                />
+
+                <!-- Description -->
+                <p
+                    class="text-white/80 max-w-xl mx-auto text-[15px] leading-relaxed mb-10"
+                >
+                    We bring over 2,600 journalists from the world’s leading
+                    publications to Web Summit. They’re part of the reason why
+                    the event grows every year.
+                </p>
+
+                <!-- Social Icons -->
+                <div class="flex items-center justify-center gap-5 mb-10">
+                    <a
+                        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                    >
+                        <i class="fa-brands fa-facebook-f text-white"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                    >
+                        <i class="fa-brands fa-twitter text-white"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                    >
+                        <i class="fa-brands fa-whatsapp text-white"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                    >
+                        <i class="fa-brands fa-linkedin-in text-white"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                    >
+                        <i class="fa-brands fa-instagram text-white"></i>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition"
+                    >
+                        <i class="fa-solid fa-music text-white"></i>
+                    </a>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-white/70 text-sm">
+                    © 2021, All Rights Reserved.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
