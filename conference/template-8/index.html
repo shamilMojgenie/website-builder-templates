@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 8</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <!-- nav -->
+        <section
+            class="bg-white border-gray-200 sticky top-0 w-full z-50 shadow-2xl"
+            id="navbar-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-[1536px] flex flex-wrap items-center justify-between mx-auto p-4"
+            >
+                <!-- Logo Section -->
+                <a
+                    href="/"
+                    class="flex items-center gap-2 md:gap-4 rtl:space-x-reverse"
+                >
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Qig2OXIehcjM1pasoCtMIVgFKFEz7wqFcA&s"
+                        alt="Logo"
+                        class="h-14 w-auto"
+                    />
+                </a>
+                <!-- Mobile Menu Button -->
+                <button
+                    id="menuToggle"
+                    type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 z-50 relative"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                >
+                    <span class="sr-only">Open main menu</span>
+                    <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 14"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        ></path>
+                    </svg>
+                </button>
+                <!-- Desktop Navigation -->
+                <div
+                    class="hidden w-full xl:block xl:w-auto"
+                    id="navbar-default"
+                >
+                    <ul
+                        class="flex flex-col xl:items-center p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-8 rtl:space-x-reverse xl:mt-0 xl:border-0 xl:bg-white"
+                    >
+                        <li>
+                            <a
+                                href="/"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/#about"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/team"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >Team</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/#tariff"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >Tariff</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/sessions"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >Sessions</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/#abstract"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >Abstract</a
+                            >
+                        </li>
+                        <li class="relative hidden xl:block">
+                            <button
+                                id="desktopDropdownToggle"
+                                type="button"
+                                class="py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors cursor-pointer inline-flex items-center gap-1"
+                            >
+                                Download
+                                <svg
+                                    class="w-4 h-4 mt-[1px]"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.25a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <div
+                                id="desktopDropdownContent"
+                                class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 hover:bg-gray-50 rounded-lg shadow-lg hidden transition-opacity duration-200 z-50"
+                            >
+                                <a
+                                    href="/assets/pdf/IACTS-mid-term-brochure.pdf"
+                                    class="block px-4 py-2 text-sm hover:text-[#177CC2]"
+                                    download=""
+                                >
+                                    Download Brochure
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a
+                                href="/contact-us"
+                                class="block py-2 px-3 rounded-sm xl:p-0 hover:text-[#177CC2] transition-colors"
+                                aria-current="page"
+                                >Contact Us</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://app.iactsctcme2025.in/"
+                                class="inline-flex items-center max-w-fit ml-3 xl:ml-0 mt-1 xl:mt-0 px-6 py-3 bg-[#3B38A0] text-white font-medium rounded hover:bg-[#678091] duration-500 cursor-pointer transition-colors"
+                            >
+                                Register Now
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Mobile Nav Overlay -->
+            <div
+                id="overlay"
+                class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden opacity-0 invisible transition-all duration-300 ease-in-out"
+            ></div>
+            <!-- Mobile Sidebar -->
+            <div
+                id="mobileMenu"
+                class="xl:hidden z-50 fixed top-0 right-0 w-80 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+            >
+                <!-- Close Button -->
+                <div
+                    class="flex justify-between items-center p-6 border-b border-gray-100"
+                >
+                    <div class="flex items-center gap-2">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Qig2OXIehcjM1pasoCtMIVgFKFEz7wqFcA&s"
+                            alt="Logo"
+                            class="h-6 w-auto"
+                        />
+                        <div class="h-4 w-px bg-gray-300"></div>
+                        <img
+                            src="/assets/images/png/sct-logo.png"
+                            alt="Partner Logo"
+                            class="h-6 w-auto object-cover"
+                        />
+                    </div>
+                    <button
+                        id="closeMenu"
+                        class="text-gray-600 hover:text-[#177CC2] focus:outline-none transition-colors p-2 rounded-lg hover:bg-gray-10 cursor-pointer"
+                    >
+                        <span class="sr-only">Close</span>
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Mobile Navigation Links -->
+                <nav class="flex flex-col px-6 py-4">
+                    <a
+                        href="/"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="/#about"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        About
+                    </a>
+                    <a
+                        href="/team"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        Team
+                    </a>
+                    <a
+                        href="/#tariff"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        Tariff
+                    </a>
+                    <a
+                        href="/sessions"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        Sessions
+                    </a>
+                    <a
+                        href="/#abstract"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        Abstract
+                    </a>
+                    <div>
+                        <button
+                            id="accordionToggle"
+                            class="w-full py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100 text-left inline-flex gap-2"
+                        >
+                            Download
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="w-6 h-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                        fill="#000000"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </button>
+                        <div
+                            id="accordionContent"
+                            class="hidden flex-col space-y-1 pl-4"
+                        >
+                            <a
+                                href="/assets/pdf/IACTS-mid-term-brochure.pdf"
+                                class="block px-2 py-1 text-sm rounded hover:bg-gray-100 hover:text-[#177CC2] transition"
+                                download=""
+                            >
+                                Download Brochure
+                            </a>
+                        </div>
+                    </div>
+                    <a
+                        href="/contact-us"
+                        class="block py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-[#177CC2] transition-colors border-b border-gray-100"
+                    >
+                        Contact Us
+                    </a>
+                    <!-- Mobile Register Button -->
+                    <div class="pt-4 px-4">
+                        <a
+                            href="https://app.iactsctcme2025.in/auth/register"
+                            class="w-full inline-flex items-center justify-center px-6 py-3 bg-[#3B38A0] text-white font-medium rounded-lg hover:bg-[#678091] duration-500 cursor-pointer transition-colors"
+                        >
+                            Register Now
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <script>
+            const mobileToggleBtn = document.getElementById("accordionToggle");
+            const mobileContent = document.getElementById("accordionContent");
+
+            document.addEventListener("click", function (event) {
+                const clickedInsideMobile =
+                    mobileToggleBtn.contains(event.target) ||
+                    mobileContent.contains(event.target);
+
+                if (clickedInsideMobile) {
+                    if (mobileToggleBtn.contains(event.target)) {
+                        mobileContent.classList.toggle("hidden");
+                    }
+                } else {
+                    mobileContent.classList.add("hidden");
+                }
+            });
+
+            // Desktop dropdown toggle
+            const desktopToggleBtn = document.getElementById(
+                "desktopDropdownToggle"
+            );
+            const desktopContent = document.getElementById(
+                "desktopDropdownContent"
+            );
+
+            document.addEventListener("click", function (event) {
+                const clickedInsideDesktop =
+                    desktopToggleBtn.contains(event.target) ||
+                    desktopContent.contains(event.target);
+
+                if (clickedInsideDesktop) {
+                    if (desktopToggleBtn.contains(event.target)) {
+                        desktopContent.classList.toggle("hidden");
+                    }
+                } else {
+                    desktopContent.classList.add("hidden");
+                }
+            });
+
+            const menuToggle = document.getElementById("menuToggle");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const overlay = document.getElementById("overlay");
+            const closeMenu = document.getElementById("closeMenu");
+
+            function openSidebar() {
+                mobileMenu.classList.remove("translate-x-full");
+                overlay.classList.remove("invisible", "opacity-0");
+                overlay.classList.add("opacity-100");
+            }
+
+            function closeSidebar() {
+                mobileMenu.classList.add("translate-x-full");
+                overlay.classList.remove("opacity-100");
+                overlay.classList.add("opacity-0");
+
+                setTimeout(() => {
+                    overlay.classList.add("invisible");
+                }, 300);
+            }
+
+            // Open sidebar
+            menuToggle.addEventListener("click", openSidebar);
+
+            // Close sidebar (X button)
+            closeMenu.addEventListener("click", closeSidebar);
+
+            // Close sidebar when clicking overlay
+            overlay.addEventListener("click", closeSidebar);
+        </script>
+
+        <!-- hero  -->
+        <section
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+            class="hero-gradient hero inter px-4 py-10 md:p-6 md:pb-20 relative z-40 overflow-hidden flex items-end"
+        >
+            <!-- BACKGROUND SLIDES -->
+            <div class="absolute inset-0 z-0">
+                <div class="carousel-container relative w-full h-full">
+                    <div class="carousel-slide opacity-100">
+                        <img
+                            src="https://lp-cms-production.imgix.net/2025-04/shutterstock2454866115.jpg?auto=format,compress&q=72&w=1440&h=810&fit=crop"
+                            class="carousel-img w-full"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!-- DARK OVERLAY -->
+            <div class="bg-black/70 absolute inset-0 z-30"></div>
+
+            <!-- HERO CONTENT -->
+            <div class="relative z-40 container mx-auto h-full text-left">
+                <div class="h-full flex flex-col justify-between">
+                    <!-- TOP CONTENT -->
+                    <div class="w-full overflow-hidden">
+                        <!-- TITLE + LOGO -->
+                        <div class="flex mt-16">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Qig2OXIehcjM1pasoCtMIVgFKFEz7wqFcA&s"
+                                alt="Event Logo"
+                                class="h-16 md:h-32 lg:h-36 mb-4 object-contain"
+                            />
+
+                            <h1
+                                class="md:border-l-2 ml-4 md:ml-8 md:pl-6 border-[#FF2DD1] text-[26px] md:text-5xl lg:text-6xl text-[#FF2DD1] font-bold leading-tight mb-4"
+                            >
+                                Global Innovations Summit
+                                <br class="hidden md:block xl:hidden" />
+                                & Leadership Forum
+                            </h1>
+                        </div>
+
+                        <!-- SUBTITLE -->
+                        <h2
+                            class="text-xl md:text-3xl text-white font-semibold mb-4"
+                        >
+                            Redefining Ideas • Inspiring Tomorrow
+                        </h2>
+
+                        <h2
+                            class="text-xl md:text-3xl text-white font-semibold mb-6"
+                        >
+                            Theme: Transforming Vision Into Impact
+                        </h2>
+
+                        <!-- ORGANIZERS -->
+                        <div class="mb-6">
+                            <h3
+                                class="text-lg md:text-xl text-[#FF2DD1] font-semibold mb-2"
+                            >
+                                Presented By
+                            </h3>
+
+                            <div class="flex flex-wrap gap-2 justify-start">
+                                <span
+                                    class="bg-white/20 text-white px-4 py-2 rounded-xl md:rounded-full text-sm md:text-base"
+                                >
+                                    Center for Strategic Research & Institute of
+                                    Advanced Studies
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- DESCRIPTION -->
+                        <div class="max-w-3xl mb-6">
+                            <p
+                                class="text-white/90 leading-relaxed text-sm md:text-base"
+                            >
+                                Join leading thinkers, innovators, and
+                                professionals at this year’s Global Innovations
+                                Summit. Engage in thought-provoking sessions,
+                                interactive discussions, and networking
+                                opportunities designed to push boundaries and
+                                inspire new solutions for a rapidly evolving
+                                world.
+                            </p>
+                        </div>
+
+                        <!-- BUTTONS -->
+                        <div
+                            class="mb-6 flex flex-wrap justify-center md:justify-start gap-4"
+                        >
+                            <button
+                                class="inline-flex items-center px-6 py-3 bg-[#3B38A0] text-white font-medium rounded hover:bg-[#678091] duration-500"
+                            >
+                                Register Now
+                            </button>
+
+                            <button
+                                class="inline-flex items-center px-6 py-3 bg-[#3B38A0] text-white font-medium rounded hover:bg-[#678091] duration-500"
+                            >
+                                Submit Paper
+                            </button>
+
+                            <button
+                                class="inline-flex items-center px-6 py-3 bg-[#3B38A0] text-white font-medium rounded hover:bg-[#678091] duration-500"
+                            >
+                                View Program
+                            </button>
+                        </div>
+
+                        <!-- DATE + LOCATION -->
+                        <div
+                            class="flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center"
+                        >
+                            <!-- DATE BLOCK -->
+                            <div class="flex flex-col items-start">
+                                <div class="flex gap-2">
+                                    <div
+                                        class="bg-[#FF2DD1] font-bold text-3xl md:text-4xl rounded-lg text-white px-4 py-2"
+                                    >
+                                        14
+                                    </div>
+                                    <div
+                                        class="bg-[#3B38A0] font-bold text-3xl md:text-4xl rounded-lg text-white px-4 py-2"
+                                    >
+                                        15
+                                    </div>
+                                </div>
+                                <p
+                                    class="font-bold text-xl md:text-2xl text-white mt-2 bg-[#3B38A0]/90 px-3 py-1 rounded-lg"
+                                >
+                                    October 2026
+                                </p>
+                            </div>
+
+                            <!-- LOCATION BLOCK -->
+                            <div
+                                class="flex flex-col border-y border-white py-3 items-start w-full md:w-fit"
+                            >
+                                <p
+                                    class="font-bold text-xl md:text-2xl text-white"
+                                >
+                                    Meridian Convention Centre
+                                </p>
+
+                                <div class="flex items-center gap-2 mt-1">
+                                    <p
+                                        class="font-light text-lg md:text-xl text-white leading-none"
+                                    >
+                                        Crestview City, Northshore
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COUNTDOWN -->
+                    <div class="flex justify-start mt-8">
+                        <div
+                            class="bg-white/20 backdrop-blur-md rounded-2xl p-5 w-full max-w-lg border border-white/10 shadow-lg"
+                        >
+                            <h3 class="text-white font-medium mb-4 text-lg">
+                                Event Starts In
+                            </h3>
+
+                            <div class="grid grid-cols-4 gap-3">
+                                <!-- DAYS -->
+                                <div class="flex flex-col items-center">
+                                    <div
+                                        class="bg-[#3B38A0] font-bold text-3xl md:text-4xl rounded-lg text-white px-3 py-4 w-full text-center"
+                                    >
+                                        <span id="days">00</span>
+                                    </div>
+                                    <p
+                                        class="font-medium text-white/90 mt-2 text-sm uppercase tracking-wider"
+                                    >
+                                        Days
+                                    </p>
+                                </div>
+
+                                <!-- HOURS -->
+                                <div class="flex flex-col items-center">
+                                    <div
+                                        class="bg-[#FF2DD1] font-bold text-3xl md:text-4xl rounded-lg text-white px-3 py-4 w-full text-center"
+                                    >
+                                        <span id="hours">00</span>
+                                    </div>
+                                    <p
+                                        class="font-medium text-white/90 mt-2 text-sm uppercase tracking-wider"
+                                    >
+                                        Hours
+                                    </p>
+                                </div>
+
+                                <!-- MIN -->
+                                <div class="flex flex-col items-center">
+                                    <div
+                                        class="bg-[#3B38A0] font-bold text-3xl md:text-4xl rounded-lg text-white px-3 py-4 w-full text-center"
+                                    >
+                                        <span id="minutes">00</span>
+                                    </div>
+                                    <p
+                                        class="font-medium text-white/90 mt-2 text-sm uppercase tracking-wider"
+                                    >
+                                        Minutes
+                                    </p>
+                                </div>
+
+                                <!-- SEC -->
+                                <div class="flex flex-col items-center">
+                                    <div
+                                        class="bg-[#FF2DD1] font-bold text-3xl md:text-4xl rounded-lg text-white px-3 py-4 w-full text-center"
+                                    >
+                                        <span id="seconds">00</span>
+                                    </div>
+                                    <p
+                                        class="font-medium text-white/90 mt-2 text-sm uppercase tracking-wider"
+                                    >
+                                        Seconds
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            function updateCountdown() {
+                const conferenceDate = new Date("2026-08-09T00:00:00");
+                const now = new Date();
+                const timeLeft = conferenceDate - now;
+
+                if (timeLeft > 0) {
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor(
+                        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                    );
+                    const minutes = Math.floor(
+                        (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+                    );
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    document.getElementById("days").textContent = days
+                        .toString()
+                        .padStart(2, "0");
+                    document.getElementById("hours").textContent = hours
+                        .toString()
+                        .padStart(2, "0");
+                    document.getElementById("minutes").textContent = minutes
+                        .toString()
+                        .padStart(2, "0");
+                    document.getElementById("seconds").textContent = seconds
+                        .toString()
+                        .padStart(2, "0");
+                } else {
+                    document.getElementById("days").textContent = "00";
+                    document.getElementById("hours").textContent = "00";
+                    document.getElementById("minutes").textContent = "00";
+                    document.getElementById("seconds").textContent = "00";
+                }
+            }
+
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+
+        <!-- About -->
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 relative section overflow-hidden scroll-animated max-w-[1536px] mx-auto"
+            id="about"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="flex flex-col-reverse xl:flex-row lg:items-center xl:items-stretch gap-5 xl:gap-8 max-w-8xl mx-auto"
+            >
+                <div class="xl:w-1/2 relative">
+                    <div
+                        class="grid grid-cols-2 grid-rows-2 gap-5 w-full aspect-square"
+                    >
+                        <div
+                            class="rounded-xl overflow-hidden mt-14 transition-all duration-500 hover:shadow-lg hover:scale-[1.02]"
+                        >
+                            <img
+                                src="https://www.tourmyindia.com/blog//wp-content/uploads/2023/02/Village-Tour-Kerala-Backwater.jpg"
+                                alt="grid image"
+                                class="w-full h-full object-cover hover:brightness-90 transition-all duration-500"
+                            />
+                        </div>
+                        <div
+                            class="rounded-xl overflow-hidden transition-all duration-500 hover:shadow-lg hover:scale-[1.02]"
+                        >
+                            <img
+                                src="https://images.stockcake.com/public/1/9/2/192f1f24-a1a2-474e-a104-03aa9be210f3_large/doctor-consulting-patient-stockcake.jpg"
+                                alt="grid image"
+                                class="w-full h-full object-cover hover:brightness-90 transition-all duration-500"
+                            />
+                        </div>
+                        <div
+                            class="rounded-xl overflow-hidden transition-all duration-500 hover:shadow-lg hover:scale-[1.02]"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO6Ye7VwAul_UIy2oqFfND51S8XIieyvJHlA&s"
+                                alt="grid image"
+                                class="w-full h-full object-cover hover:brightness-90 transition-all duration-500"
+                            />
+                        </div>
+                        <div
+                            class="rounded-xl overflow-hidden mb-14 transition-all duration-500 hover:shadow-lg hover:scale-[1.02]"
+                        >
+                            <img
+                                src="https://w0.peakpx.com/wallpaper/955/713/HD-wallpaper-doctor-medical.jpg"
+                                alt="grid image"
+                                class="w-full h-full object-cover hover:brightness-90 transition-all duration-500"
+                            />
+                        </div>
+
+                        <!-- CENTER BADGE -->
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-32 h-32 flex flex-col items-center justify-center rounded-full shadow-lg z-10 border border-gray-100"
+                        >
+                            <p
+                                class="text-base text-[#FF2DD1] font-bold tracking-wide text-center"
+                            >
+                                GIS
+                            </p>
+                            <div
+                                class="text-base font-bold text-center text-[#FF2DD1]"
+                            >
+                                2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <div class="xl:w-1/2 flex flex-col justify-center">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] mb-4 md:mb-5 leading-tight"
+                    >
+                        Welcome to the
+                        <span class="text-[#FF2DD1]"
+                            >Global Innovations Summit</span
+                        >
+                    </h2>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        The Global Innovations Summit brings together leaders,
+                        professionals, and emerging talents from diverse fields
+                        to explore breakthrough ideas that are shaping the
+                        future. Hosted in a vibrant coastal setting, the summit
+                        blends insightful discussions with immersive learning
+                        experiences.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 mb-4 leading-relaxed"
+                    >
+                        Through expert-led sessions, collaborative workshops,
+                        and networking opportunities, participants gain fresh
+                        perspectives on innovation, leadership, and
+                        transformative technologies impacting industries
+                        worldwide.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 relative bg-[#f5f5f5] section overflow-hidden"
+            id="message"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-8xl mx-auto relative z-10 scroll-animated max-w-[1536px] mx-auto"
+            >
+                <h2
+                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] mb-8 md:mb-12 leading-tight md:text-center lg:text-left"
+                >
+                    Message From
+                    <span class="text-[#FF2DD1]">Organising Secretary</span>
+                </h2>
+
+                <div
+                    class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center"
+                >
+                    <!-- TEXT CONTENT -->
+                    <div class="flex-1 order-2 lg:order-1">
+                        <div class="text-lg text-gray-800 leading-relaxed">
+                            <p
+                                class="text-base md:text-xl text-[#0D1112]/80 mb-4 font-bold"
+                            >
+                                Dear Participants,
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-4"
+                            >
+                                It is my pleasure to welcome you to this year’s
+                                Global Innovations Summit, a platform created to
+                                foster collaboration, share insights, and
+                                celebrate transformative ideas. We are delighted
+                                to host a diverse community of professionals,
+                                students, and innovators from across the
+                                country.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-4"
+                            >
+                                This summit is designed to highlight emerging
+                                trends, breakthrough research, and practical
+                                applications across various domains. Our program
+                                brings together thought leaders who will share
+                                their expertise through keynote sessions, panel
+                                discussions, and interactive workshops tailored
+                                for both early-career professionals and
+                                experienced practitioners.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-4"
+                            >
+                                We have also introduced a dedicated Innovation
+                                Showcase, offering participants the opportunity
+                                to present their projects, prototypes, and
+                                research findings. This segment aims to
+                                encourage creative thinking and recognize
+                                outstanding contributions to scientific and
+                                technological advancement.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-4"
+                            >
+                                Beyond the academic sessions, the summit
+                                provides a welcoming environment for networking
+                                and meaningful dialogue. We hope you take
+                                advantage of the collaborative spaces and build
+                                connections that extend well beyond the event.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-4"
+                            >
+                                Thank you for being a part of this gathering. We
+                                look forward to two enriching days of learning,
+                                engagement, and inspiration.
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-2 font-bold"
+                            >
+                                Warm regards,
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 mb-1 font-bold"
+                            >
+                                Dr. Arjun Mehra
+                            </p>
+
+                            <p
+                                class="text-base md:text-lg text-[#0D1112]/80 font-medium"
+                            >
+                                Organising Secretary
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PROFILE CARD -->
+                    <div
+                        class="w-full lg:w-80 xl:w-96 order-1 lg:order-2 flex justify-center lg:justify-end lg:sticky lg:top-8 px-4 sm:px-0"
+                    >
+                        <div class="relative group w-full max-w-sm">
+                            <!-- Decorative glows -->
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-r from-[#FF2DD1]/10 to-[#FF2DD1]/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"
+                            ></div>
+
+                            <div
+                                class="absolute -inset-2 bg-gradient-to-r from-[#FF2DD1]/20 to-transparent rounded-xl opacity-50 group-hover:opacity-70 transition-all duration-300"
+                            ></div>
+
+                            <!-- Card -->
+                            <div
+                                class="relative bg-white rounded-xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                            >
+                                <!-- Header background -->
+                                <div
+                                    class="h-20 bg-gradient-to-r from-[#FF2DD1] to-[#FF2DD1]/80 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute inset-0 bg-black/10"
+                                    ></div>
+                                    <div
+                                        class="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full"
+                                    ></div>
+                                    <div
+                                        class="absolute -bottom-2 -left-2 w-16 h-16 bg-white/10 rounded-full"
+                                    ></div>
+                                </div>
+
+                                <!-- Profile Image -->
+                                <div
+                                    class="relative -mt-12 flex justify-center"
+                                >
+                                    <div
+                                        class="w-40 h-40 rounded-full border-4 border-white shadow-lg overflow-hidden bg-white"
+                                    >
+                                        <img
+                                            src="https://thumbs.dreamstime.com/b/portrait-black-male-doctor-stethoscope-white-background-smiling-176051856.jpg"
+                                            alt="Organising Secretary"
+                                            class="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Name + Details -->
+                                <div class="px-4 sm:px-6 pt-4 pb-6 text-center">
+                                    <h3
+                                        class="text-lg sm:text-xl font-bold text-[#0D1112] mb-1"
+                                    >
+                                        Dr. Arjun Mehra
+                                    </h3>
+
+                                    <p
+                                        class="text-[#FF2DD1] font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wide"
+                                    >
+                                        Organising Secretary
+                                    </p>
+
+                                    <div
+                                        class="w-8 h-0.5 bg-gradient-to-r from-[#FF2DD1] to-[#FF2DD1]/50 mx-auto mb-3"
+                                    ></div>
+
+                                    <p
+                                        class="text-sm text-gray-600 leading-relaxed"
+                                    >
+                                        Global Innovations Summit 2025<br />
+                                        <span class="font-medium text-[#0D1112]"
+                                            >Innovation Council</span
+                                        >
+                                    </p>
+                                </div>
+
+                                <div
+                                    class="h-1 bg-gradient-to-r from-[#FF2DD1] to-[#FF2DD1]/50"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 mx-auto flex flex-col justify-between overflow-hidden scroll-animated max-w-[1536px]"
+            id="highlights"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlights"
+            data-moj-web-label="highlights"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="flex justify-between lg:flex-row flex-col items-center gap-4 md:gap-10 lg:gap-10 max-w-8xl mx-auto"
+            >
+                <div class="flex flex-col gap-4 lg:gap-[20px] lg:w-1/2">
+                    <div class="lg:max-w-2xl">
+                        <h2
+                            class="text-3xl md:text-4xl lg:text-6xl font-bold leading-[1.22] lg:mb-2"
+                        >
+                            Event
+                            <span class="text-[#FF2DD1]"> Highlights </span>
+                        </h2>
+                    </div>
+
+                    <p class="text-[#0D1112]/80 text-base md:text-lg">
+                        Our summit features a curated blend of immersive
+                        learning, hands-on demonstrations, and interactive
+                        discussions. Designed to inspire creativity and spark
+                        meaningful conversations, the event provides
+                        participants with the tools and insights needed to
+                        navigate innovation in a rapidly evolving world.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:w-1/2"
+                >
+                    <!-- Highlight 1 -->
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
+                    >
+                        <div class="flex items-start space-x-4">
+                            <div>
+                                <h3
+                                    class="text-xl font-bold text-[#FF2DD1] mb-2"
+                                >
+                                    Insightful Knowledge Sessions
+                                </h3>
+                                <p class="text-gray-600">
+                                    Engage with thought-provoking talks
+                                    delivered by experts, innovators, and
+                                    industry leaders from diverse fields.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 2 -->
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
+                    >
+                        <div class="flex items-start space-x-4">
+                            <div>
+                                <h3
+                                    class="text-xl font-bold text-[#FF2DD1] mb-2"
+                                >
+                                    Live Demonstrations
+                                </h3>
+                                <p class="text-gray-600">
+                                    Experience step-by-step walkthroughs and
+                                    practical demonstrations that bring complex
+                                    concepts to life.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 3 -->
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
+                    >
+                        <div class="flex items-start space-x-4">
+                            <div>
+                                <h3
+                                    class="text-xl font-bold text-[#FF2DD1] mb-2"
+                                >
+                                    Competitions & Showcases
+                                </h3>
+                                <p class="text-gray-600">
+                                    Participate in interactive quizzes and
+                                    submit your creative ideas, projects, or
+                                    research to the showcase arena.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 4 -->
+                    <div
+                        class="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-500"
+                    >
+                        <div class="flex items-start space-x-4">
+                            <div>
+                                <h3
+                                    class="text-xl font-bold text-[#FF2DD1] mb-2"
+                                >
+                                    Exclusive Delegate Perks
+                                </h3>
+                                <p class="text-gray-600">
+                                    Enjoy special benefits, curated experiences,
+                                    and complimentary access designed to make
+                                    your participation more rewarding.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 relative bg-[#F5F5F5] section overflow-hidden"
+            id="venue"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue"
+            data-moj-web-label="venue"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto">
+                <!-- Section Header -->
+                <div class="md:text-center mb-12">
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] mb-4 leading-tight"
+                    >
+                        Conference <span class="text-[#FF2DD1]">Venue</span>
+                    </h2>
+                    <p class="md:text-lg text-[#0D1112]/80 max-w-3xl mx-auto">
+                        Join us at the state-of-the-art Aurora Convention
+                        Pavilion, thoughtfully designed to host world-class
+                        conferences and immersive experiences.
+                    </p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 h-full">
+                    <!-- Left Side - Image Carousel -->
+                    <div class="w-full lg:w-1/2 min-h-[500px]">
+                        <div class="relative h-full">
+                            <!-- Main Image Container -->
+                            <div
+                                class="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+                            >
+                                <img
+                                    id="mainImage"
+                                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                    alt="Convention Venue"
+                                    class="w-full h-full object-cover transition-all duration-500"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                                ></div>
+
+                                <!-- Navigation -->
+                                <button
+                                    id="prevBtn"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#FF2DD1] p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
+                                >
+                                    <span class="sr-only">Previous</span>
+                                    <svg
+                                        class="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 19l-7-7 7-7"
+                                        ></path>
+                                    </svg>
+                                </button>
+
+                                <button
+                                    id="nextBtn"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#FF2DD1] p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
+                                >
+                                    <span class="sr-only">Next</span>
+                                    <svg
+                                        class="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 5l7 7-7 7"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Thumbnails -->
+                            <div class="flex gap-2 mt-4 justify-center">
+                                <button
+                                    class="thumbnail-btn w-20 h-16 rounded-lg overflow-hidden border-2 cursor-pointer transition duration-500 border-[#FF2DD1] opacity-100"
+                                    data-index="0"
+                                >
+                                    <img
+                                        src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZyUyMGhhbGx8ZW58MHx8MHx8fDA%3D"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </button>
+                                <button
+                                    class="thumbnail-btn w-20 h-16 rounded-lg overflow-hidden border-2 cursor-pointer transition duration-500 border-transparent opacity-60"
+                                    data-index="1"
+                                >
+                                    <img
+                                        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </button>
+                                <button
+                                    class="thumbnail-btn w-20 h-16 rounded-lg overflow-hidden border-2 cursor-pointer transition duration-500 border-transparent opacity-60"
+                                    data-index="2"
+                                >
+                                    <img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-vVW9lcg2HBMI6U5AluVffM67bR3anoW1fw&s"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </button>
+                                <button
+                                    class="thumbnail-btn w-20 h-16 rounded-lg overflow-hidden border-2 cursor-pointer transition duration-500 border-transparent opacity-60"
+                                    data-index="3"
+                                >
+                                    <img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmlZ28pLZi7akavyJzSzkBcuaivoUsKcIdiQ&s"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </button>
+                                <button
+                                    class="thumbnail-btn w-20 h-16 rounded-lg overflow-hidden border-2 cursor-pointer transition duration-500 border-transparent opacity-60"
+                                    data-index="4"
+                                >
+                                    <img
+                                        src="https://cdn.prod.website-files.com/63d06722a6f6c82db2e3292f/67582adf64ceccc35b031e3d_675829bc536cf89baceaed39_pvb6.3.jpeg"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Content -->
+                    <div class="w-full lg:w-1/2 min-h-[500px]">
+                        <div
+                            class="bg-[#FF2DD1]/5 p-4 md:p-6 rounded-xl border border-[#FF2DD1]/20 h-full"
+                        >
+                            <h3
+                                class="text-xl md:text-3xl font-bold text-[#0D1112] mb-6"
+                            >
+                                Aurora Convention Pavilion
+                            </h3>
+
+                            <div class="space-y-6">
+                                <!-- Address -->
+                                <div class="flex items-start gap-4">
+                                    <div class="text-[#FF2DD1] mt-1">
+                                        <svg
+                                            class="w-6 h-6"
+                                            fill="none"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                            />
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-semibold text-lg text-gray-800 mb-1"
+                                        >
+                                            Address
+                                        </h4>
+                                        <p class="text-gray-600">
+                                            Aurora District, Skyline
+                                            Boulevard,<br />
+                                            Northshore City – 482019<br />
+                                            Nexus Region
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Contact -->
+                                <div class="flex items-start gap-4">
+                                    <div class="text-[#FF2DD1] mt-1">
+                                        <svg
+                                            class="w-6 h-6"
+                                            fill="none"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28l1.5 4.5-2.26 1.13a11 11 0 005.52 5.52l1.13-2.26 4.5 1.5V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-semibold text-lg text-gray-800 mb-1"
+                                        >
+                                            Contact
+                                        </h4>
+                                        <p class="text-gray-600">
+                                            Phone: +101 4456 2298<br />
+                                            Fax: +101 4456 2201<br />
+                                            Email:
+                                            <a
+                                                class="text-[#FF2DD1] hover:underline"
+                                            >
+                                                info@aurorapavilion.org
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- About Venue -->
+                                <div>
+                                    <h4
+                                        class="font-semibold text-lg text-gray-800 mb-3"
+                                    >
+                                        About the Venue
+                                    </h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Aurora Convention Pavilion is equipped
+                                        with modern auditoriums, expansive
+                                        breakout rooms, and panoramic views of
+                                        the Skyline Bay. Its elegant design and
+                                        cutting-edge infrastructure make it the
+                                        ideal destination for global events and
+                                        professional gatherings.
+                                    </p>
+
+                                    <a
+                                        class="inline-flex items-center max-w-fit ml-3 xl:ml-0 px-6 mt-4 py-3 bg-[#3B38A0] text-white font-medium rounded hover:bg-[#678091] duration-500 cursor-pointer"
+                                    >
+                                        View in map
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            const images = [
+                "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZyUyMGhhbGx8ZW58MHx8MHx8fDA%3D",
+                "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-vVW9lcg2HBMI6U5AluVffM67bR3anoW1fw&s",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmlZ28pLZi7akavyJzSzkBcuaivoUsKcIdiQ&s",
+                "https://cdn.prod.website-files.com/63d06722a6f6c82db2e3292f/67582adf64ceccc35b031e3d_675829bc536cf89baceaed39_pvb6.3.jpeg",
+            ];
+
+            let currentImageIndex = 0;
+            const mainImage = document.getElementById("mainImage");
+            const thumbnails = document.querySelectorAll(".thumbnail-btn");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+
+            function updateImage(index) {
+                mainImage.src = images[index];
+                thumbnails.forEach((thumb, i) => {
+                    thumb.classList.toggle("border-[#FF2DD1]", i === index);
+                    thumb.classList.toggle("opacity-100", i === index);
+                    thumb.classList.toggle("border-transparent", i !== index);
+                    thumb.classList.toggle("opacity-60", i !== index);
+                });
+                currentImageIndex = index;
+            }
+
+            thumbnails.forEach((thumb, index) =>
+                thumb.addEventListener("click", () => updateImage(index))
+            );
+
+            prevBtn.addEventListener("click", () => {
+                const prev =
+                    currentImageIndex === 0
+                        ? images.length - 1
+                        : currentImageIndex - 1;
+                updateImage(prev);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                const next =
+                    currentImageIndex === images.length - 1
+                        ? 0
+                        : currentImageIndex + 1;
+                updateImage(next);
+            });
+
+            setInterval(() => {
+                const next =
+                    currentImageIndex === images.length - 1
+                        ? 0
+                        : currentImageIndex + 1;
+                updateImage(next);
+            }, 5000);
+
+            updateImage(0);
+        </script>
+
+        <section
+            class="relative py-10 px-4 xl:py-20 lg:px-10 bg-gradient-to-br from-[#FF2DD1] to-[#A12A20] overflow-hidden"
+            id="executive"
+            data-moj-web-fixed="false"
+            data-moj-web-type="executive"
+            data-moj-web-label="executive"
+            data-moj-web-category="structural"
+        >
+            <!-- Background Grid -->
+            <div
+                class="bg-[url('https://images.unsplash.com/photo-1535223289827-42f1e9919769')] absolute z-10 w-full bottom-0 left-0 h-full opacity-20 bg-no-repeat bg-cover"
+            ></div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- Section Header -->
+                <div class="md:text-center mb-10 md:px-4">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Organizing Committee
+                    </h2>
+                    <div class="w-24 h-1 bg-white/80 mx-auto mb-4"></div>
+                    <p
+                        class="text-white/80 text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
+                    >
+                        Dedicated professionals bringing vision, leadership, and
+                        excellence to this year’s conference.
+                    </p>
+                </div>
+
+                <!-- Patrons -->
+                <div class="mb-4 md:mb-14">
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto"
+                    >
+                        <!-- Patron 1 -->
+                        <div
+                            class="rounded-xl overflow-hidden shadow-md transform transition duration-300 hover:scale-105 w-full md:w-60 mx-auto"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                                alt="Patron"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center min-h-[117px]"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                    >
+                                        Patron
+                                    </span>
+                                </div>
+                                <h1 class="text-sm font-semibold text-white">
+                                    Dr. Arvind Mathur
+                                </h1>
+                                <p class="text-white/70 text-[11px] md:text-xs">
+                                    Director, Skyline Institute of Medical
+                                    Sciences
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Patron 2 -->
+                        <div
+                            class="rounded-xl overflow-hidden shadow-md transform transition duration-300 hover:scale-105 w-full md:w-60 mx-auto"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1554151228-14d9def656e4"
+                                alt="Patron"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                    >
+                                        Patron
+                                    </span>
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Kavita Raman
+                                </h4>
+                                <p class="text-white/70 text-[11px] md:text-xs">
+                                    Former Dean, Crestview Medical University
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Team -->
+                <div class="mb-10">
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
+                    >
+                        <!-- Leader 1 -->
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mx-auto"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                    >
+                                        Organising Chairman
+                                    </span>
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Rohan Deshpande
+                                </h4>
+                                <p class="text-white/70 text-[11px] md:text-xs">
+                                    Skyline Institute
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Leader 2 -->
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mx-auto"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1560250097-0b93528c311a"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                    >
+                                        Organising Secretary
+                                    </span>
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Ishaan Prakash
+                                </h4>
+                                <p class="text-white/70 text-[11px] md:text-xs">
+                                    Skyline Institute
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Leader 3 -->
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 w-full mx-auto"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                    >
+                                        Joint Secretary & Treasurer
+                                    </span>
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Aarav Menon
+                                </h4>
+                                <p class="text-white/70 text-[11px] md:text-xs">
+                                    Skyline Institute
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Remaining Members (8 more) -->
+                        <!-- Each gets a unique dummy headshot & name -->
+
+                        <!-- Member Template -->
+                        <!-- Repeat following blocks with different dummy names & images -->
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Neeraj Varma
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Mira Solanki
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1552058544-f2b08422138a"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Yash Thakur
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1511485977113-f34c92461ad9"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Rhea Mukherjee
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Alia Fernandes
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Karan Joshi
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1542596768-5d1d21f1cf98"
+                                class="w-full h-40 md:h-60 object-cover"
+                            />
+                            <div
+                                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-b-xl px-3 py-3 text-center"
+                            >
+                                <div
+                                    class="bg-gradient-to-r from-[#FF2DD1] to-[#A12A20] inline-block px-3 py-1 rounded-2xl mb-2"
+                                >
+                                    <span
+                                        class="text-white text-[10px] md:text-xs font-semibold"
+                                        >Organising Committee</span
+                                    >
+                                </div>
+                                <h4 class="text-sm font-semibold text-white">
+                                    Dr. Larissa Bennet
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View Button -->
+                <div class="text-center">
+                    <a
+                        class="group px-8 py-3 text-white font-semibold rounded-lg border border-white hover:border-white/40 hover:bg-white/20 transition duration-300 cursor-pointer"
+                    >
+                        View All Committee Members
+                        <svg
+                            class="w-4 h-4 ml-2 inline-block group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-10 px-4 xl:py-20 lg:px-10 relative section overflow-hidden scroll-animated max-w-[1536px] mx-auto"
+            id="tariff"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="tariff"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-8xl mx-auto flex flex-col gap-5">
+                <!-- Registration Tariff -->
+                <div>
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] leading-tight md:text-center mb-10"
+                    >
+                        Registration <span class="text-[#FF2DD1]">Charges</span>
+                    </h2>
+                    <div
+                        class="overflow-x-auto rounded-xl border border-[#D1E2F3] aos-init aos-animate"
+                    >
+                        <table class="min-w-full text-left text-base">
+                            <thead
+                                class="bg-[#E8F1F8] text-[#3B38A0] font-semibold"
+                            >
+                                <tr>
+                                    <th class="px-6 py-4">Category</th>
+                                    <th class="px-6 py-4">Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[#3B38A0]">
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">IACTS Member</td>
+                                    <td class="px-6 py-4">₹5,900</td>
+                                </tr>
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">IACTS Non-Member</td>
+                                    <td class="px-6 py-4">₹6,400</td>
+                                </tr>
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">
+                                        Accompanying Person
+                                    </td>
+                                    <td class="px-6 py-4">₹2,500</td>
+                                </tr>
+                                <tr class="even:bg-[#F5FAFD]">
+                                    <td class="px-6 py-4">Students</td>
+                                    <td class="px-6 py-4">Complimentary</td>
+                                </tr>
+                                <tr class="bg-[#E8F1F8] font-semibold">
+                                    <td class="px-6 py-4">
+                                        Spot Registration – IACTS Member
+                                    </td>
+                                    <td class="px-6 py-4">₹6,900</td>
+                                </tr>
+                                <tr class="bg-[#E8F1F8] font-semibold">
+                                    <td class="px-6 py-4">
+                                        Spot Registration – IACTS Non-Member
+                                    </td>
+                                    <td class="px-6 py-4">₹7,400</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm mt-4 text-[#0D1112]/60 italic">
+                        (Inclusive of 18% GST)
+                    </p>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-700 mt-3">
+                    Benefits for Students
+                </h3>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center mt-"
+                >
+                    <div class="bg-[#E8F1F8] rounded-xl p-4 shadow aos-init">
+                        <h4 class="text-lg font-semibold text-[#FF2DD1] mb-1">
+                            Complimentary Registration
+                        </h4>
+                        <p class="text-sm text-[#3B38A0]">
+                            For all students attending the event.
+                        </p>
+                    </div>
+                    <div class="bg-[#E8F1F8] rounded-xl p-4 shadow aos-init">
+                        <h4 class="text-lg font-semibold text-[#FF2DD1] mb-1">
+                            Complimentary Stay
+                        </h4>
+                        <p class="text-sm text-[#3B38A0]">
+                            Accommodation is fully covered for students.
+                        </p>
+                    </div>
+                    <div class="bg-[#E8F1F8] rounded-xl p-4 shadow aos-init">
+                        <h4 class="text-lg font-semibold text-[#FF2DD1] mb-1">
+                            AC 2-Tier Fare Reimbursement
+                        </h4>
+                        <p class="text-sm text-[#3B38A0]">
+                            Travel support included for eligible students.
+                        </p>
+                    </div>
+                </div>
+                <!-- CTA Section -->
+                <div
+                    class="bg-[#8F0177] rounded-xl py-10 px-6 text-center text-white relative"
+                >
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-semibold mb-3">
+                            Ready to Register?
+                        </h3>
+                        <p class="text-white/90 text-base md:text-lg mb-6">
+                            Secure your spot now! Limited seats available.
+                        </p>
+                        <div
+                            class="flex flex-col sm:flex-row justify-center gap-4"
+                        >
+                            <a
+                                href="https://app.iactsctcme2025.in/"
+                                class="inline-block px-6 py-3 bg-white text-[#8F0177] border border-white hover:text-white font-semibold rounded-md shadow hover:bg-[#8F0177] transition-all duration-300"
+                            >
+                                Register Now
+                            </a>
+                            <a
+                                href="/assets/pdf/IACTS-mid-term-brochure.pdf"
+                                download=""
+                                class="inline-block px-6 py-3 border border-white text-white font-semibold rounded-md hover:bg-white hover:text-[#8F0177] transition-all duration-300"
+                            >
+                                Download Brochure
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="pb-10 px-4 xl:pb-20 lg:px-10 overflow-hidden"
+              id="places"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="places"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto">
+                <!-- Heading -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] leading-tight md:text-center mb-5 md:mb-10"
+                >
+                    Places to <span class="text-[#FF2DD1]">Visit</span>
+                </h2>
+
+                <!-- Cards -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+                >
+                    <!-- Card 1 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad"
+                            alt="Azure Bay Beachfront"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Azure Bay Beachfront
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Crystal waters & peaceful shoreline
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                            alt="Grand Meridian Temple"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Grand Meridian Temple
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Timeless architecture & heritage
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://media.istockphoto.com/id/1442179368/photo/maldives-island.jpg?s=612x612&w=0&k=20&c=t38FJQ6YhyyZGN91A8tpn3nz9Aqcy_aXolImsOXOZ34="
+                            alt="Silvermist Lake"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">Silvermist Lake</h3>
+                            <p class="text-sm opacity-90">
+                                Calm waters & scenic trails
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff"
+                            alt="Coralview Island"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">Coralview Island</h3>
+                            <p class="text-sm opacity-90">
+                                Tropical landscapes & boat rides
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.pexels.com/photos/257499/pexels-photo-257499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            alt="Heritage Museum Hall"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Heritage Museum Hall
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Art, culture & historic artifacts
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mt-10 text-left md:text-center max-w-4xl mx-auto">
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        Explore a curated selection of breathtaking destinations
+                        offering a blend of nature, culture, and memorable
+                        experiences. Each location provides a unique opportunity
+                        to unwind and discover the essence of the region during
+                        your visit.
+                    </p>
+                </div>
+
+                <!-- Button -->
+                <div class="mt-7 md:mt-10 flex justify-center">
+                    <a
+                        href="/places"
+                        class="inline-flex items-center max-w-fit px-6 py-3 bg-[#3B38A0] text-white font-medium rounded hover:bg-[#678091] duration-500 cursor-pointer transition-colors"
+                    >
+                        View More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="pb-10 px-4 xl:pb-20 lg:px-10 overflow-hidden"
+              id="hotels"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hotels"
+            data-moj-web-label="hotels"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto">
+                <!-- Heading -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0D1112] leading-tight md:text-center mb-5 md:mb-10"
+                >
+                    Nearby <span class="text-[#FF2DD1]">Hotels for Stay</span>
+                </h2>
+
+                <!-- Hotel Cards -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+                >
+                    <!-- Hotel 1 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOvfMxy4oY7lfxWGm_Vr4yO6LKhEge7b9VIg&s"
+                            alt="Harborview Retreat"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Harborview Retreat
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Coastal suites with ocean panorama
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hotel 2 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"
+                            alt="Luminara Grand"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">Luminara Grand</h3>
+                            <p class="text-sm opacity-90">
+                                Premium stay with fine dining
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hotel 3 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
+                            alt="Serenity Cliffs Resort"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Serenity Cliffs Resort
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Luxury resort overlooking cliffs
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hotel 4 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                            alt="Blue Horizon Suites"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Blue Horizon Suites
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Modern comfort near waterfront
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hotel 5 -->
+                    <div
+                        class="rounded-xl overflow-hidden shadow-md group relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+                            alt="Urban Orchid Hotel"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-300"
+                        ></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-lg">
+                                Urban Orchid Hotel
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Stylish rooms close to city hub
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mt-10 text-left md:text-center max-w-4xl mx-auto">
+                    <p
+                        class="text-base md:text-lg text-[#0D1112]/80 leading-relaxed"
+                    >
+                        A curated selection of comfortable stays located
+                        conveniently near the event venue. Whether you prefer
+                        premium hospitality or peaceful boutique accommodations,
+                        these hotels ensure a restful and memorable experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="flex flex-col relative px-4 md:px-10 py-20 overflow-hidden"
+             id="banner"
+            data-moj-web-fixed="false"
+            data-moj-web-type="banner"
+            data-moj-web-label="banner"
+            data-moj-web-category="structural"
+        >
+            <!-- Background Image -->
+            <img
+                src="https://media.licdn.com/dms/image/v2/D4E12AQFGi3z5ww21ZA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1707833890814?e=2147483647&v=beta&t=SNCHKzzkszJMgeICOUPqUOgKG550pWFfyBRgrbqUgp8"
+                alt="conference background"
+                class="absolute inset-0 w-full h-full object-cover object-center"
+            />
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/70"></div>
+
+            <!-- Content -->
+            <div
+                class="relative z-10 max-w-5xl mx-auto text-left md:text-center text-white"
+            >
+                <!-- Heading -->
+                <h2
+                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-[#FF2DD1] mb-6 leading-tight"
+                >
+                    Join Us for the Global
+                    <br />
+                    Leadership & Innovation Forum 2026
+                </h2>
+
+                <!-- Subheading -->
+                <p class="text-lg md:text-xl mb-8 text-white/90">
+                    Hosted by the
+                    <strong>Institute of Strategic Excellence</strong>, this
+                    flagship gathering unites thought-leaders, industry
+                    pioneers, and emerging professionals from around the world.
+                </p>
+
+                <!-- CTA Button -->
+                <a
+                    href="#"
+                    class="inline-block px-6 md:px-8 py-2 md:py-3 text-lg font-semibold rounded-lg bg-[#FF2DD1] hover:scale-105 duration-700 transition"
+                >
+                    Register Now
+                </a>
+            </div>
+        </section>
+
+        <section
+            class="bg-gradient-to-br from-[#FF2DD1] to-[#A12A20] text-[#ffffff] p-8 px-6 md:pt-[70px] relative"
+              id="footer"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="footer"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-[1536px] mx-auto flex flex-col md:flex-row justify-between items-start relative z-10 gap-0 md:gap-8"
+            >
+                <!-- Left Side - About -->
+                <div class="mb-6 md:mb-0 md:w-1/3">
+                    <h3 class="font-bold text-lg mb-3">ABOUT THE EVENT</h3>
+                    <p class="text-white/90">
+                        The Global Leadership & Innovation Forum brings together
+                        experts, thinkers, and creators from around the world
+                        for two days of collaboration, dialogue, and visionary
+                        exploration.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mb-6 md:mb-0">
+                    <h3 class="font-bold text-lg mb-3">QUICK LINKS</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline">Home</a></li>
+                        <li><a href="#" class="hover:underline">About</a></li>
+                        <li>
+                            <a href="#" class="hover:underline">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Speakers</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3">CONTACT INFO</h3>
+                    <p class="text-white/90 mb-3">
+                        <a href="#" class="hover:underline"
+                            >info@gli-forum.org</a
+                        >
+                    </p>
+
+                    <div class="mb-6">
+                        <p class="text-white/90 mb-1">Alex Morgan</p>
+                        <p class="text-white/90 mb-1">Event Coordinator</p>
+                        <p class="text-white/90 mb-3">
+                            <a href="#" class="hover:underline"
+                                >+1 234 567 890</a
+                            >
+                        </p>
+                        <p class="text-white/90 mb-1">Technical Support</p>
+                        <p class="text-white/90 mb-1">
+                            Jordan Lee –
+                            <a href="#" class="hover:underline"
+                                >+1 987 654 321</a
+                            >
+                        </p>
+                        <p class="text-white/90">
+                            <a href="#" class="hover:underline"
+                                >support@gli-forum.org</a
+                            >
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3">LOCATION</h3>
+                    <p class="mb-4 text-white/90">
+                        Aurora Convention Centre <br />
+                        Nova City District,<br />
+                        Northshore, USA – 445500
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-8 pt-8 border-t border-white/20 relative">
+                <div class="max-w-7xl mx-auto flex flex-col">
+                    <div
+                        class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0"
+                    >
+                        <div class="text-sm text-white">
+                            <p>
+                                © 2026, Global Leadership & Innovation Forum |
+                                All rights reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
