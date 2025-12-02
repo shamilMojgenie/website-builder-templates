@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conference Template 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- nav -->
+    <section
+      id="navbar-main"
+      data-moj-web-fixed="false"
+      data-moj-web-type="navbar"
+      data-moj-web-label="Navbar"
+      data-moj-web-category="structural"
+    >
+      <nav class="w-full fixed top-0 left-0 z-50 bg-transparent">
+        <div
+          class="max-w-[1500px] mx-auto px-6 py-4 flex items-center justify-between text-white"
+        >
+          <!-- LOGO -->
+          <a href="/" class="flex items-center gap-2">
+            <img
+              src="https://t3.ftcdn.net/jpg/05/19/56/58/360_F_519565879_VMMqfudnF1kiOE7ARyhMPaWSq8eQilZi.jpg"
+              class="h-10 object-contain"
+            />
+          </a>
+
+          <!-- DESKTOP MENU -->
+          <div class="hidden lg:flex items-center gap-8 text-white font-medium">
+            <a href="#" class="hover:text-orange-300 transition cursor-pointer"
+              >Home</a
+            >
+            <a href="#" class="hover:text-orange-300 transition cursor-pointer"
+              >About</a
+            >
+
+            <button
+              class="hover:text-orange-300 transition cursor-pointer flex items-center gap-1"
+            >
+              Schedule
+            </button>
+
+            <button
+              class="hover:text-orange-300 transition cursor-pointer flex items-center gap-1"
+            >
+              Pages
+            </button>
+
+            <button
+              class="hover:text-orange-300 transition cursor-pointer flex items-center gap-1"
+            >
+              Elements
+            </button>
+          </div>
+
+          <!-- DESKTOP RIGHT AREA -->
+          <div class="hidden lg:flex items-center gap-6">
+            <button
+              class="bg-[#FC6042] text-white px-5 py-2 rounded-md text-sm font-semibold shadow-md"
+            >
+              Get Ticket
+            </button>
+
+            <button class="text-white text-2xl lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <!-- MOBILE MENU ICON -->
+          <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- MOBILE OVERLAY -->
+        <div
+          id="mobileOverlay"
+          class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+        ></div>
+
+        <!-- MOBILE SIDEBAR -->
+        <div
+          id="mobileSidebar"
+          class="fixed top-0 right-0 w-64 h-full bg-[#0C1B3A] text-white z-50 transform translate-x-full transition-transform duration-300 p-6"
+        >
+          <button
+            id="closeSidebar"
+            class="text-white text-2xl absolute top-4 right-4"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+          <div class="mt-10 space-y-6 text-lg font-medium">
+            <a href="#" class="block hover:text-orange-300">Home</a>
+            <a href="#" class="block hover:text-orange-300">About</a>
+            <a href="#" class="block hover:text-orange-300">Schedule</a>
+            <a href="#" class="block hover:text-orange-300">Pages</a>
+            <a href="#" class="block hover:text-orange-300">Elements</a>
+
+            <button
+              class="bg-[#FC6042] text-white px-4 py-2 rounded-md font-semibold mt-4"
+            >
+              Get Ticket
+            </button>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <script>
+      const mobileBtn = document.getElementById("mobileMenuBtn");
+      const sidebar = document.getElementById("mobileSidebar");
+      const overlay = document.getElementById("mobileOverlay");
+      const closeBtn = document.getElementById("closeSidebar");
+
+      function openMenu() {
+        sidebar.classList.remove("translate-x-full");
+        overlay.classList.remove("hidden");
+        setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+      }
+
+      function closeMenu() {
+        sidebar.classList.add("translate-x-full");
+        overlay.classList.add("opacity-0");
+        setTimeout(() => overlay.classList.add("hidden"), 300);
+      }
+
+      mobileBtn.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      overlay.addEventListener("click", closeMenu);
+    </script>
+
+    <!-- hero -->
+    <section
+      id="hero-main"
+      data-moj-web-fixed="false"
+      data-moj-web-type="hero"
+      data-moj-web-label="Hero Banner"
+      data-moj-web-category="structural"
+      class="relative w-full md:h-[90vh] min-h-[500px] md:min-h-[700px] 2xl:h-screen flex items-center justify-center overflow-hidden"
+    >
+      <!-- HERO BACKGROUND IMAGE -->
+      <img
+        src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?cs=srgb&dl=pexels-jibarofoto-2774556.jpg&fm=jpg"
+        class="absolute inset-0 w-full h-full object-cover opacity-70"
+      />
+      <img
+        src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/banner-left-shape.png"
+        class="absolute -bottom-5 left-0 z-20 h-62 md:h-auto xl:h-auto"
+        alt=""
+      />
+
+      <img
+        src="https://demo.xpeedstudio.com/evenex/conference/wp-content/uploads/sites/2/2020/02/banner-left-shape.png"
+        class="absolute -top-20 right-0 z-20 scale-x-[-1] h-42 md:h-72 xl:h-auto"
+        alt=""
+      />
+
+      <!-- BLUE OVERLAY -->
+      <div class="absolute inset-0 bg-[#1a237e]/80"></div>
+
+      <!-- HERO CONTENT -->
+      <div class="relative z-10 text-center text-white px-4 max-w-[90%]">
+        <!-- LOCATION -->
+        <div
+          class="flex items-center justify-center gap-2 mb-3 text-sm md:text-lg"
+        >
+          <i class="fa-solid fa-location-dot text-base md:text-lg"></i>
+          <span>Gotham Hall, Broadway</span>
+        </div>
+
+        <!-- MAIN HEADING -->
+        <h2 class="text-2xl sm:text-3xl md:text-6xl font-semibold mb-2">
+          Annual Developer
+        </h2>
+
+        <!-- STROKE TEXT - RESPONSIVE -->
+        <h1
+          class="text-4xl md:text-8xl lg:text-9xl font-extrabold tracking-wide mb-3 text-transparent [--tw-stroke:2px] md:[--tw-stroke:3px] [-webkit-text-stroke:var(--tw-stroke)_white]"
+        >
+          CONFERENCE
+        </h1>
+
+        <p class="text-base sm:text-lg 2xl:text-xl mb-4">by ASI</p>
+
+        <!-- DATE -->
+        <p
+          class="tracking-[0.25em] font-medium mb-6 text-sm sm:text-base 2xl:text-lg"
+        >
+          SEPTEMBER 20 - 22
+        </p>
+
+        <!-- CTA BUTTON -->
+        <button
+          class="bg-[#FC6042] cursor-pointer hover:bg-[#ff734f] transition text-white px-6 py-2 sm:px-8 sm:py-3 rounded-md font-semibold shadow-lg flex items-center gap-2 mx-auto text-sm sm:text-base"
+        >
+          Purchase Ticket
+          <i class="fa-solid fa-ticket"></i>
+        </button>
+
+        <!-- SCROLL INDICATOR -->
+        <div class="mt-8 sm:mt-10 flex justify-center animate-bounce">
+          <div
+            class="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex items-center justify-center"
+          >
+            <div class="w-1 h-2.5 sm:h-3 bg-white rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- DOWN ARROW -->
+        <div class="mt-3 sm:mt-4 flex justify-center">
+          <i
+            class="fa fa-angle-down text-white text-lg sm:text-xl animate-pulse"
+          ></i>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
