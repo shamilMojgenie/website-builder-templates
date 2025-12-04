@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wedding Template - 2</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <style>
+            .font-serif {
+                font-family: "Playfair Display", serif;
+            }
+        </style>
+
+        <!-- NAVIGATION -->
+        <section class="fixed top-0 left-0 w-full z-50">
+            <div
+                class="w-full backdrop-blur-xl bg-white border-b border-black/5"
+            >
+                <div
+                    class="max-w-[1536px] mx-auto flex items-center justify-between py-4 px-6"
+                >
+                    <!-- LOGO -->
+                    <a
+                        href="#"
+                        class="font-serif text-2xl tracking-wide text-black"
+                    >
+                        M + D
+                    </a>
+
+                    <!-- DESKTOP MENU -->
+                    <ul
+                        class="hidden md:flex gap-10 text-sm uppercase tracking-wide text-gray-700"
+                    >
+                        <li><a href="#" class="hover:text-black">Home</a></li>
+                        <li><a href="#" class="hover:text-black">Story</a></li>
+                        <li><a href="#" class="hover:text-black">Plans</a></li>
+                        <li>
+                            <a href="#" class="hover:text-black">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-black">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- RSVP Desktop -->
+                    <a
+                        href="#"
+                        class="hidden md:inline-block uppercase tracking-wide text-xs px-5 py-2 border border-black hover:bg-black hover:text-white transition-all"
+                    >
+                        RSVP
+                    </a>
+
+                    <!-- MOBILE MENU ICON -->
+                    <button
+                        class="md:hidden flex flex-col gap-1.5"
+                        onclick="openMobileMenu()"
+                    >
+                        <span class="w-6 h-[2px] bg-black"></span>
+                        <span class="w-6 h-[2px] bg-black"></span>
+                        <span class="w-6 h-[2px] bg-black"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- FULL-SCREEN MOBILE MENU -->
+            <div
+                id="mobileMenu"
+                class="fixed inset-0 bg-white/90 backdrop-blur-2xl flex flex-col items-center justify-center gap-10 text-center uppercase tracking-wide text-gray-800 text-xl pointer-events-none opacity-0 translate-y-[-20px] transition-all duration-500 ease-out"
+            >
+                <!-- CLOSE BUTTON -->
+                <button
+                    class="absolute top-6 right-6 text-4xl"
+                    onclick="closeMobileMenu()"
+                >
+                    &times;
+                </button>
+
+                <!-- MENU LINKS -->
+                <a href="#" class="hover:text-black transition-all duration-300"
+                    >Home</a
+                >
+                <a href="#" class="hover:text-black transition-all duration-300"
+                    >Story</a
+                >
+                <a href="#" class="hover:text-black transition-all duration-300"
+                    >Plans</a
+                >
+                <a href="#" class="hover:text-black transition-all duration-300"
+                    >Gallery</a
+                >
+                <a href="#" class="hover:text-black transition-all duration-300"
+                    >Contact</a
+                >
+
+                <!-- RSVP BUTTON -->
+                <a
+                    href="#"
+                    class="mt-6 px-6 py-3 border border-black text-sm hover:bg-black hover:text-white transition-all duration-300"
+                >
+                    RSVP
+                </a>
+            </div>
+        </section>
+        <script>
+            function openMobileMenu() {
+                const menu = document.getElementById("mobileMenu");
+                menu.classList.remove(
+                    "opacity-0",
+                    "translate-y-[-20px]",
+                    "pointer-events-none"
+                );
+                menu.classList.add("opacity-100", "translate-y-0");
+            }
+
+            function closeMobileMenu() {
+                const menu = document.getElementById("mobileMenu");
+                menu.classList.add(
+                    "opacity-0",
+                    "translate-y-[-20px]",
+                    "pointer-events-none"
+                );
+                menu.classList.remove("opacity-100", "translate-y-0");
+            }
+        </script>
+
+        <!-- HERO SECTION -->
+        <section class="w-full relative overflow-hidden bg-white">
+            <div class="absolute inset-0 bg-black/10 md:hidden"></div>
+            <div class="w-full lg:w-[55%] h-[85vh] lg:h-screen overflow-hidden">
+                <img
+                    src="https://bisou.qodeinteractive.com/wp-content/uploads/2024/07/home-3-rev-img.jpg"
+                    class="w-full h-full object-cover object-center"
+                />
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div
+                class="absolute top-0 right-0 h-full flex flex-col justify-center pr-4 md:pr-10"
+            >
+                <!-- DATE / VENUE / TIME -->
+                <div
+                    class="text-right leading-relaxed tracking-[0.25em] text-base uppercase text-black mb-10"
+                >
+                    <p>MAY 21</p>
+                    <p>RITZ HOTEL</p>
+                    <p>4PM</p>
+                </div>
+
+                <!-- LARGE NAMES -->
+                <h1
+                    class="text-[70px] md:text-[120px] lg:text-[170px] xl:text-[200px] font-[Playfair] text-[#B47244] leading-[0.9]"
+                >
+                    MELANI
+                </h1>
+                <h1
+                    class="text-[70px] md:text-[120px] lg:text-[170px] xl:text-[200px] font-[Playfair] text-[#B47244] leading-[0.9] -mt-8"
+                >
+                    & DANIEL
+                </h1>
+            </div>
+        </section>
+
+        <section class="w-full py-10 md:py-20 ">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-16 px-4"
+            >
+                <!-- LEFT TEXT BLOCK -->
+                <div
+                    class="flex flex-col items-center text-center lg:items-start justify-center lg:text-left col-span-1"
+                >
+                    <h3
+                        class="text-2xl tracking-wide font-medium text-black mb-4"
+                    >
+                        OUR WAY
+                    </h3>
+
+                    <p class="text-gray-700 italic leading-relaxed max-w-sm">
+                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        sed do eiusmod tempor incididunt ut labore dolore magna
+                        aliqua. Ut enim ad.”
+                    </p>
+
+                    <p class="mt-6 text-gray-500 italic tracking-wider text-lg">
+                        Melani + Daniel
+                    </p>
+                </div>
+
+                <!-- IMAGE 1 -->
+                <div class="col-span-1">
+                    <img
+                        src="https://bisou.qodeinteractive.com/wp-content/uploads/2024/05/home-3-img-2.jpg"
+                        class="w-full h-[380px] object-cover grayscale"
+                    />
+                </div>
+
+                <!-- IMAGE 2 -->
+                <div class="col-span-1">
+                    <img
+                        src="https://bisou.qodeinteractive.com/wp-content/uploads/2024/05/home-3-img-3.jpg"
+                        class="w-full h-[380px] object-cover grayscale"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full bg-[#F5F2ED] py-10 md:py-20 px-4 lg:px-20">
+            <!-- MAIN TITLE -->
+            <div class="text-center mb-10 md:mb-20">
+                <h2 class="font-serif text-3xl md:text-5xl tracking-wide">
+                    Meet the Bride & Groom
+                </h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Two stories, two hearts — beautifully intertwined into one
+                    journey.
+                </p>
+            </div>
+
+            <div class="max-w-7xl mx-auto space-y-10 md:space-y-0">
+                <!-- BRIDE BLOCK -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12 items-center"
+                >
+                    <div>
+                        <img
+                            src="https://img.freepik.com/free-photo/bride-smiling-with-city-background_1157-323.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="w-full h-60 md:h-100 object-cover grayscale "
+                        />
+                    </div>
+
+                    <div class="text-center md:text-left px-6">
+                        <h3 class="font-serif text-2xl md:text-4xl text-[#5A4A42] mb-4">
+                            Melani — The Bride
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Graceful, kind-hearted, and full of life — Melani
+                            brings warmth wherever she goes. Her love for art,
+                            meaningful conversations, and gentle moments defines
+                            her beautiful spirit.
+                        </p>
+
+                        <p class="italic mt-6 text-gray-500">
+                            “She finds love in details, beauty in simplicity,
+                            and joy in togetherness.”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- GROOM BLOCK -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12 items-center"
+                >
+                    <!-- TEXT FIRST ON DESKTOP -->
+                    <div
+                        class="order-2 md:order-1 text-center md:text-left px-6"
+                    >
+                        <h3 class="font-serif text-2xl md:text-4xl text-[#5A4A42] mb-4">
+                            Daniel — The Groom
+                        </h3>
+
+                        <p class="text-gray-700 leading-relaxed">
+                            Calm, thoughtful, and incredibly devoted — Daniel is
+                            a man of sincerity and warmth. His passion for
+                            adventure and his loyalty to those he loves define
+                            him.
+                        </p>
+
+                        <p class="italic mt-6 text-gray-500">
+                            “He is her anchor — steady, strong, and endlessly
+                            loving.”
+                        </p>
+                    </div>
+
+                    <div class="order-1 md:order-2">
+                        <img
+                            src="https://t3.ftcdn.net/jpg/03/06/90/76/360_F_306907644_u9E1yhKnVhJtfZV8V3L0ZZ3WnIF13dmn.jpg"
+                            class="w-full h-60 md:h-100 object-cover grayscale "
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full bg-white pt-10 md:pt-20">
+            <!-- Section Header -->
+            <div class="text-center mb-10 px-4">
+                <h2
+                    class="font-serif text-3xl md:text-5xl font-[Playfair] tracking-wide"
+                >
+                    Our Story
+                </h2>
+                <p class="mt-4 text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                    Moments that defined us. Memories that shaped us. A journey
+                    told through time, emotion, and love.
+                </p>
+            </div>
+
+            <!-- STORY BLOCK 1 -->
+            <div class="relative w-full">
+                <img
+                    src="https://images.unsplash.com/photo-1509927083803-4bd519298ac4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="w-full h-70 md:h-100 object-cover grayscale"
+                />
+
+                <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"
+                ></div>
+
+                <!-- Text -->
+                <div
+                    class="absolute left-5 pr-5 md:left-20 top-1/2 -translate-y-1/2 max-w-lg"
+                >
+                    <h3
+                        class="font-serif text-4xl md:text-5xl text-white mb-4 drop-shadow"
+                    >
+                        How We Met
+                    </h3>
+                    <p class="text-white/90 leading-relaxed drop-shadow">
+                        A simple moment that changed everything. A glance, a
+                        smile, and suddenly, we knew something beautiful had
+                        begun.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STORY BLOCK 2 -->
+            <div class="relative w-full">
+                <img
+                    src="https://images.unsplash.com/photo-1542415719-96b33a38d73d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="w-full h-70 md:h-100 object-cover grayscale"
+                />
+
+                <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"
+                ></div>
+
+                <!-- Text -->
+                <div
+                    class="absolute right-5 pl-5 md:right-20 top-1/2 -translate-y-1/2 max-w-lg text-right"
+                >
+                    <h3
+                        class="font-serif text-4xl md:text-5xl text-white mb-4 drop-shadow"
+                    >
+                        The First Date
+                    </h3>
+                    <p class="text-white/90 leading-relaxed drop-shadow">
+                        A night filled with laughter, soft glances, and the
+                        quiet feeling that our hearts had found a home.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STORY BLOCK 3 -->
+            <div class="relative w-full">
+                <img
+                    src="https://images.unsplash.com/photo-1595662000432-f8cdba893fa4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="w-full h-70 md:h-100 object-cover grayscale"
+                />
+
+                <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"
+                ></div>
+
+                <!-- Text -->
+                <div
+                    class="absolute left-5 pr-5 md:left-20 top-1/2 -translate-y-1/2 max-w-lg"
+                >
+                    <h3
+                        class="font-serif text-4xl md:text-5xl text-white mb-4 drop-shadow"
+                    >
+                        The Proposal
+                    </h3>
+                    <p class="text-white/90 leading-relaxed drop-shadow">
+                        Under soft lights and trembling smiles, forever began
+                        with a single question— and the easiest “yes” of our
+                        lives.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="w-full bg-white py-10 md:py-20 px-4 lg:px-20 max-w-[1536px] mx-auto"
+        >
+            <!-- TOP SUBTITLE -->
+            <p
+                class="text-center tracking-[0.35em] text-xs text-gray-600 uppercase mb-1"
+            >
+                Welcome to our wedding
+            </p>
+
+            <!-- MAIN HEADING -->
+            <h1
+                class="text-center font-serif text-3xl md:text-5xl text-black font-[100] leading-tight"
+            >
+                HAPPY TO HAVE YOU WITH US
+            </h1>
+
+            <!-- SUBTEXT -->
+            <p class="mt-6 text-center italic text-gray-600 max-w-2xl mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et
+            </p>
+
+            <!-- DATE • VENUE • TIME -->
+            <div
+                class="flex justify-center items-center gap-6 md:gap-10 mt-10 text-sm tracking-wide text-gray-800 uppercase"
+            >
+                <span>MAY 21, 2026</span>
+                <span class="text-2xl">•</span>
+                <span>VENUE</span>
+                <span class="text-2xl">•</span>
+                <span>17:00H</span>
+            </div>
+
+            <!-- 3-COLUMN IMAGE ROW -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+                <!-- LOCATION -->
+                <div class="flex flex-col items-center">
+                    <img
+                        src="https://www.theweddingsecret.co.uk/img/uploads/businessimage/live_6400767db8f25_shortlisting.jpg"
+                        class="w-full h-[300px] object-cover grayscale"
+                    />
+                    <p
+                        class="uppercase tracking-[0.25em] text-xs mt-6 text-gray-700"
+                    >
+                        Location
+                    </p>
+                </div>
+
+                <!-- RESTAURANT -->
+                <div class="flex flex-col items-center">
+                    <img
+                        src="https://wishnwed-blog-media.s3.ap-southeast-1.amazonaws.com/wordpress/uploads/2021/09/242608450_982921392284141_60391391883284560_n-876x1024.jpg"
+                        class="w-full h-[300px] object-cover grayscale"
+                    />
+                    <p
+                        class="uppercase tracking-[0.25em] text-xs mt-6 text-gray-700"
+                    >
+                        Venue
+                    </p>
+                </div>
+
+                <!-- INSTAGRAM -->
+                <div class="flex flex-col items-center">
+                    <img
+                        src="https://wpolive.com/html/bohu-live/assets/images/story/image-right-1.jpg"
+                        class="w-full h-[300px] object-cover grayscale"
+                    />
+                    <p
+                        class="uppercase tracking-[0.25em] text-xs mt-6 text-gray-700"
+                    >
+                        @MELANIDANIELDAY
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full bg-[#F9F7F3] py-10 md:py-20 px-4 lg:px-20">
+            <!-- TITLE -->
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl md:text-5xl tracking-wide">
+                    The Plans
+                </h2>
+
+                <p class="text-gray-600 mt-4 max-w-xl mx-auto leading-relaxed">
+                    A celebration in three beautiful moments — each crafted with
+                    love, joy, and the people who matter most.
+                </p>
+            </div>
+
+            <!-- PLANS GRID -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10">
+                <!-- CARD 1 -->
+                <div class="bg-white p-10 shadow transition-all">
+                    <h3 class="font-serif text-2xl text-[#4A403A] mb-6">
+                        The Day Before
+                    </h3>
+
+                    <div class="space-y-6 text-gray-700 text-sm">
+                        <div class="flex justify-between items-center">
+                            <span>Event One</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >03:00 PM</span
+                            >
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Event Two</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >05:00 PM</span
+                            >
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Event Three</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >08:00 PM</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="bg-white p-10 shadow transition-all">
+                    <h3 class="font-serif text-2xl text-[#4A403A] mb-6">
+                        The Wedding Day
+                    </h3>
+
+                    <div class="space-y-6 text-gray-700 text-sm">
+                        <div class="flex justify-between">
+                            <span>Ceremony</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >03:00 PM</span
+                            >
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Reception</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >05:00 PM</span
+                            >
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Farewell</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >08:00 PM</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="bg-white p-10 shadow transition-all">
+                    <h3 class="font-serif text-2xl text-[#4A403A] mb-6">
+                        The Day After
+                    </h3>
+
+                    <div class="space-y-6 text-gray-700 text-sm">
+                        <div class="flex justify-between">
+                            <span>Event One</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >03:00 PM</span
+                            >
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Event Two</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >05:00 PM</span
+                            >
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Event Three</span>
+                            <span class="font-medium text-[#B28A6A]"
+                                >08:00 PM</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="w-full bg-white py-10 md:py-20 px-4 lg:px-20 overflow-hidden"
+        >
+            <h2
+                class="font-serif text-3xl md:text-5xl text-center mb-10 md:mb-16 tracking-wide"
+            >
+                Gallery
+            </h2>
+            <!-- MOBILE SCROLL CONTAINER -->
+            <div
+                class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+            >
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-7.jpg"
+                    class="w-56 2xl:w-72 snap-start object-cover flex-shrink-0 grayscale"
+                />
+
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-2.jpg"
+                    class="w-56 2xl:w-72 snap-start object-cover flex-shrink-0 grayscale"
+                />
+
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-8.jpg"
+                    class="w-60 2xl:w-72 snap-start object-cover flex-shrink-0 grayscale"
+                />
+
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-9.jpg"
+                    class="w-56 2xl:w-72 snap-start object-cover flex-shrink-0 grayscale"
+                />
+
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-1.jpg"
+                    class="w-56 2xl:w-72 snap-start object-cover flex-shrink-0 grayscale"
+                />
+
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-6.jpg"
+                    class="w-52 2xl:w-72 snap-start object-cover flex-shrink-0 grayscale"
+                />
+            </div>
+        </section>
+        <style>
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+
+        <!-- FOOTER -->
+        <section
+            class="w-full bg-[#6B3F69] text-white py-10 md:py-20 px-4 lg:px-20 grayscale"
+        >
+            <div
+                class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16"
+            >
+                <!-- LEFT BIG MESSAGE -->
+                <div class="lg:col-span-2">
+                    <p
+                        class="font-serif text-xl md:text-4xl leading-relaxed max-w-xl"
+                    >
+                        We can’t wait to see all of our beloved friends and
+                        relatives at our wedding. Your presence will make our
+                        day truly special!
+                    </p>
+                </div>
+
+                <!-- RIGHT LINKS + CONTACTS -->
+                <div
+                    class="flex justify-between lg:justify-end gap-20 text-white"
+                >
+                    <!-- LINKS -->
+                    <div>
+                        <h3 class="font-serif text-xl mb-4">Links</h3>
+                        <ul class="space-y-2 text-white/90">
+                            <li>
+                                <a href="#" class="hover:opacity-70"
+                                    >About As</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="hover:opacity-70">Story</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:opacity-70">RSVP</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:opacity-70">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:opacity-70">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CONTACTS -->
+                    <div>
+                        <h3 class="font-serif text-xl mb-4">Contacts</h3>
+                        <ul class="space-y-2 text-white/90">
+                            <li>example@gmail.com</li>
+                            <li>+316555–0116</li>
+                            <li class="leading-relaxed">
+                                4517 Washington Ave.<br />
+                                Manchester, Kentucky<br />
+                                39495
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIVIDER LINE -->
+            <div class="w-full h-px bg-white/20 mt-16"></div>
+
+            <!-- BOTTOM BAR -->
+            <div
+                class="max-w-[1500px] mx-auto flex flex-col md:flex-row justify-between items-center py-6"
+            >
+                <!-- COPYRIGHT -->
+                <p class="text-white/80 text-sm mb-4 md:mb-0">
+                    Copyright © 2025 | All Rights Reserved
+                </p>
+
+                <!-- SOCIAL ICONS -->
+                <div class="flex gap-5 text-white">
+                    <!-- Facebook -->
+                    <a href="#" class="hover:opacity-70">
+                        <i class="fa-brands fa-facebook-f text-xl"></i>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="#" class="hover:opacity-70">
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" class="hover:opacity-70">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
