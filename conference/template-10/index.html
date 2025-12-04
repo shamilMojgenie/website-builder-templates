@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 10</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <section
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav
+                id="navbar"
+                class="w-full fixed top-0 left-0 z-40 transition-all duration-300"
+            >
+                <div
+                    class="max-w-[1536px] mx-auto flex items-center justify-between px-8 py-6"
+                >
+                    <a href="#" class="flex items-center gap-2">
+                        <div>
+                            <p
+                                class="text-white text-[22px] font-bold leading-none"
+                            >
+                                Designers Con 2026
+                            </p>
+                            <p
+                                class="text-white/80 text-[10px] tracking-widest uppercase"
+                            >
+                                Digital Conference.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- DESKTOP LINKS -->
+                    <div
+                        class="hidden lg:flex items-center gap-10 text-white font-semibold text-[14px]"
+                    >
+                        <a href="#" class="hover:text-yellow-400 transition"
+                            >HOME</a
+                        >
+                        <a href="#" class="hover:text-yellow-400 transition"
+                            >SPEAKERS</a
+                        >
+                        <a href="#" class="hover:text-yellow-400 transition"
+                            >SCHEDULE</a
+                        >
+                        <a href="#" class="hover:text-yellow-400 transition"
+                            >BLOG</a
+                        >
+                        <a href="#" class="hover:text-yellow-400 transition"
+                            >CONTACT</a
+                        >
+                    </div>
+
+                    <button
+                        class="hidden cursor-pointer tracking-[0.18em] text-[13px] lg:block bg-yellow-400 text-black font-semibold px-5 py-3 rounded-sm hover:bg-yellow-300 transition"
+                    >
+                        REGISTER NOW
+                    </button>
+
+                    <!-- MOBILE MENU BUTTON -->
+                    <button
+                        id="mobileBtn"
+                        class="lg:hidden text-white text-3xl focus:outline-none"
+                    >
+                        ☰
+                    </button>
+                </div>
+            </nav>
+
+            <!-- MOBILE SIDEBAR OVERLAY -->
+            <div
+                id="sidebarOverlay"
+                class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden z-40"
+            ></div>
+
+            <!-- MOBILE SIDEBAR -->
+            <div
+                id="mobileMenu"
+                class="fixed top-0 right-0 h-full w-[75%] max-w-[300px] bg-[#3e006f] text-white px-8 py-8 space-y-6 text-lg font-medium z-50 slide-out transition-all duration-300"
+            >
+                <button
+                    id="closeSidebar"
+                    class="text-3xl mb-4 text-right w-full"
+                >
+                    ✕
+                </button>
+
+                <a href="#" class="block hover:text-yellow-300">HOME</a>
+                <a href="#" class="block hover:text-yellow-300">SPEAKERS</a>
+                <a href="#" class="block hover:text-yellow-300">SCHEDULE</a>
+                <a href="#" class="block hover:text-yellow-300">BLOG</a>
+                <a href="#" class="block hover:text-yellow-300">CONTACT</a>
+
+                <button
+                    class="bg-yellow-400 tracking-[0.18em] text-[13px] text-black font-semibold px-5 py-3 rounded-sm hover:bg-yellow-300 transition w-max"
+                >
+                    REGISTER NOW
+                </button>
+            </div>
+        </section>
+        <script>
+            const mobileBtn = document.getElementById("mobileBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const sidebarOverlay = document.getElementById("sidebarOverlay");
+            const closeSidebar = document.getElementById("closeSidebar");
+            const navbar = document.getElementById("navbar");
+
+            // OPEN SIDEBAR
+            mobileBtn.addEventListener("click", () => {
+                mobileMenu.classList.remove("slide-out");
+                mobileMenu.classList.add("slide-in");
+                sidebarOverlay.classList.remove("hidden");
+            });
+
+            // CLOSE SIDEBAR
+            const closeMenu = () => {
+                mobileMenu.classList.remove("slide-in");
+                mobileMenu.classList.add("slide-out");
+                sidebarOverlay.classList.add("hidden");
+            };
+
+            sidebarOverlay.addEventListener("click", closeMenu);
+            closeSidebar.addEventListener("click", closeMenu);
+
+            // MAKE NAVBAR SOLID ON SCROLL
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add("bg-[#3e006f]/80", "backdrop-blur-lg");
+                } else {
+                    navbar.classList.remove(
+                        "bg-[#3e006f]/80",
+                        "backdrop-blur-lg"
+                    );
+                }
+            });
+        </script>
+        <style>
+            .slide-in {
+                transform: translateX(0%);
+            }
+            .slide-out {
+                transform: translateX(100%);
+            }
+        </style>
+
+        <!-- HERO -->
+        <section
+            class="relative w-full overflow-hidden text-white"
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+        >
+            <img
+                src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/layerslider/slider-6/slider-6.jpg"
+                alt="Event crowd"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-[#3e006f] via-[#3e006f]/50 to-transparent"
+            ></div>
+
+            <div
+                class="hidden lg:block absolute inset-y-0 right-0 w-[55%] bg-gradient-to-t from-[#ff6db0]/100 via-[#ff6db0]/40 to-[#ff6db0]/40"
+                style="clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%)"
+            ></div>
+
+            <div
+                class="relative z-10 max-w-6xl xl:max-w-[1536px] mx-auto px-4 lg:px-10 pt-30 pb-20 xl:py-50 flex items-center"
+            >
+                <div class="max-w-xl relative">
+                    <p class="text-xl md:text-2xl lg:text-3xl font-light mb-4">
+                        <span class="align-middle">January 27, 2026</span>
+                    </p>
+                    <h1
+                        class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight"
+                    >
+                        Designers <br />
+                        Con 2026
+                    </h1>
+                    <button
+                        class="mt-10 cursor-pointer border border-[#f6c53b] bg-[#f6c53b] text-black text-[13px] font-semibold tracking-[0.18em] px-8 py-3 uppercase rounded-sm hover:bg-transparent hover:text-white transition"
+                    >
+                        Register Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section
+            class="relative w-full bg-[#f5f5f5] overflow-hidden"
+            id="about-event"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about-event"
+            data-moj-web-label="about-event"
+            data-moj-web-category="structural"
+        >
+            <!-- BACKGROUND TEXTURE -->
+            <div
+                class="absolute inset-0 bg-[url('https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2019/03/bg-6.jpg')] bg-cover bg-center"
+            ></div>
+
+            <!-- CONTENT WRAPPER -->
+            <div
+                class="relative max-w-7xl mx-auto px-4 lg:px-10 py-10 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center"
+            >
+                <!-- RIGHT IMAGE -->
+                <div class="flex justify-center">
+                    <img
+                        src="https://www.eventbrite.com/blog/wp-content/uploads/2016/08/image5-min.png"
+                        class="w-full max-w-[420px] h-70 md:h-100 object-cover drop-shadow-2xl"
+                        alt="Model"
+                    />
+                </div>
+                <!-- LEFT TEXT -->
+                <div>
+                    <h2
+                        class="text-3xl lg:text-5xl font-extrabold text-[#212121] leading-tight mb-4"
+                    >
+                        Designers Con 2026
+                    </h2>
+
+                    <p class="text-gray-600 leading-relaxed">
+                        Emply dummy text of the printing and typesetting
+                        industry orem Ipsum haser been the industry’s standard
+                        dummy text ever since their whenaner uknown printer
+                        took.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MESSAGE FROM THE CHAIRMAN -->
+        <section
+            class="w-full bg-white py-10 md:py-20"
+            id="message-secretary"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message-secretary"
+            data-moj-web-label="message-secretary"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-6 items-center"
+            >
+                <div>
+                    <h2
+                        class="text-3xl md:text-5xl font-extrabold text-[#222] mb-4"
+                    >
+                        Message from the Chairman
+                    </h2>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        It is with great pleasure that we welcome you to
+                        <span class="font-semibold text-[#5e117a]"
+                            >Designers Con 2026</span
+                        >. Our vision is to bring together the brightest minds
+                        in the design and creative industry to learn,
+                        collaborate, and shape the future. This year’s
+                        conference promises inspiring keynote sessions, hands-on
+                        workshops, and unparalleled networking opportunities.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        We thank you for being part of this journey and hope
+                        your experience at this event leaves you enriched,
+                        motivated, and ready to create the next big innovation.
+                    </p>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-[#222]">
+                            Dr. Arvind K. Menon
+                        </h3>
+                        <p class="text-gray-500 text-sm">
+                            Chairman, Designers Con 2026
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img
+                        src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6"
+                        class="min-w-72 h-72 md:w-80 md:h-80 rounded-2xl object-cover shadow-xl border-4 border-[#5e117a]/20"
+                        alt="Chairman"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT WE DO SECTION -->
+        <section
+            class="w-full bg-white py-10 md:py-20"
+            id="highlights"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlights"
+            data-moj-web-label="highlights"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-[1400px] mx-auto px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            >
+                <!-- LEFT VIDEO PREVIEW -->
+                <div class="flex justify-center">
+                    <div
+                        class="relative w-full max-w-[500px] overflow-hidden shadow-lg"
+                    >
+                        <!-- Video Thumbnail -->
+                        <img
+                            src="https://img.freepik.com/premium-photo/diverse-group-social-event-mingling-chatting-people-enjoying-drinks-socializing-networking-casual-friendly-gathering-entrepreneurs-mingle-business-event_53876-1091055.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="w-full h-80 md:h-100 object-cover grayscale"
+                        />
+                    </div>
+                </div>
+
+                <!-- RIGHT TEXT -->
+                <div class="space-y-10">
+                    <!-- Heading -->
+                    <h2 class="text-3xl lg:text-5xl font-extrabold text-[#222]">
+                        What we do in this Designers Con 2026
+                    </h2>
+
+                    <!-- Feature 1 -->
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="min-w-16 min-h-16 lg:min-w-20 lg:min-h-20 rounded-full bg-yellow-400 flex items-center justify-center border-[3px] border-yellow-500 border-dashed"
+                        >
+                            <i
+                                class="fa fa-file-text text-white text-2xl lg:text-3xl"
+                            ></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-[#222]">
+                                Registration
+                            </h4>
+                            <p class="text-gray-500">
+                                Eorem ipsum dolor consectetur adipisicing elit
+                                sed eiusmod tempor incididunt.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="min-w-16 min-h-16 lg:min-w-20 lg:min-h-20 rounded-full bg-yellow-400 flex items-center justify-center border-[3px] border-yellow-500 border-dashed"
+                        >
+                            <i
+                                class="fa fa-users text-white text-2xl lg:text-3xl"
+                            ></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-[#222]">
+                                Live Workshop
+                            </h4>
+                            <p class="text-gray-500">
+                                Eorem ipsum dolor consectetur adipisicing elit
+                                sed eiusmod tempor incididunt.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="min-w-16 min-h-16 lg:min-w-20 lg:min-h-20 rounded-full bg-yellow-400 flex items-center justify-center border-[3px] border-yellow-500 border-dashed"
+                        >
+                            <i
+                                class="fa fa-trophy text-white text-2xl lg:text-3xl"
+                            ></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-[#222]">
+                                Award Prize
+                            </h4>
+                            <p class="text-gray-500">
+                                Eorem ipsum dolor consectetur adipisicing elit
+                                sed eiusmod tempor incididunt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT SPEAKERS SECTION -->
+        <section
+            class="relative w-full py-10 md:py-20 bg-[#5e117a] overflow-hidden"
+            id="speakers"
+            data-moj-web-fixed="false"
+            data-moj-web-type="speakers"
+            data-moj-web-label="speakers"
+            data-moj-web-category="structural"
+        >
+            <!-- TOP WAVY BACKGROUND -->
+            <div class="absolute inset-0">
+                <svg class="w-full h-full opacity-40" viewBox="0 0 1440 320">
+                    <path
+                        fill="#7b1fa2"
+                        fill-opacity="1"
+                        d="M0,128L80,133.3C160,139,320,149,480,165.3C640,181,800,203,960,213.3C1120,224,1280,224,1360,224L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+                    ></path>
+                </svg>
+            </div>
+
+            <!-- TEXT CENTER -->
+            <div class="relative z-10 text-center mb-16 px-4">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-white">
+                    Speakers
+                </h2>
+                <p class="text-white/80 mt-2 max-w-2xl mx-auto">
+                    Dorem Ipsum Dolor Sitincididunt Laborum Beatae Earum Nihil
+                    Onsequuntur Officia
+                </p>
+            </div>
+
+            <!-- SPEAKERS GRID -->
+            <div
+                class="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 px-4"
+            >
+                <!-- CARD -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+                        class="w-40 h-40 mx-auto rounded-full object-cover mb-6"
+                    />
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        James Morgan
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-5">
+                        Senior Visual Designer
+                    </p>
+                    <div class="flex justify-center gap-4 text-white text-xl">
+                        <div
+                            class="w-9 h-9 bg-[#3b5998] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#1da1f2] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#0077b5] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#ff0000] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+                        class="w-40 h-40 mx-auto rounded-full object-cover mb-6"
+                    />
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Cristian Zozo
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-5">
+                        Senior Visual Designer
+                    </p>
+                    <div class="flex justify-center gap-4 text-white text-xl">
+                        <div
+                            class="w-9 h-9 bg-[#3b5998] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#1da1f2] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#0077b5] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#ff0000] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <img
+                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+                        class="w-40 h-40 mx-auto rounded-full object-cover mb-6"
+                    />
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Steve John
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-5">
+                        Senior Visual Designer
+                    </p>
+                    <div class="flex justify-center gap-4 text-white text-xl">
+                        <div
+                            class="w-9 h-9 bg-[#3b5998] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#1da1f2] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#0077b5] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#ff0000] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <img
+                        src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe"
+                        class="w-40 h-40 mx-auto rounded-full object-cover mb-6"
+                    />
+                    <h3 class="text-xl font-semibold text-gray-800">
+                        Cristian Zozo
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-5">
+                        Senior Visual Designer
+                    </p>
+                    <div class="flex justify-center gap-4 text-white text-xl">
+                        <div
+                            class="w-9 h-9 bg-[#3b5998] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#1da1f2] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#0077b5] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div
+                            class="w-9 h-9 bg-[#ff0000] rounded-full flex items-center justify-center"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- sessions -->
+        <section
+            class="w-full bg-[#f3f3f3] py-10 md:py-20"
+            id="sessions"
+            data-moj-web-fixed="false"
+            data-moj-web-type="sessions"
+            data-moj-web-label="sessions"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1300px] mx-auto px-4">
+                <!-- Title -->
+                <div class="text-center mb-10 md:mb-14">
+                    <h2 class="text-3xl lg:text-5xl font-extrabold text-[#222]">
+                        Conference Schedule
+                    </h2>
+                    <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+                        Dorem Ipsum Dolor SitIncidunt Laborum Beatae Earum Nihil
+                        Onsequuntur Officia
+                    </p>
+                </div>
+
+                <!-- ============= DAY 1 PANEL ============= -->
+                <div
+                    class="bg-white shadow rounded-xl overflow-hidden mb-8 md:mb-10"
+                >
+                    <div
+                        class="w-full border-b border-gray-300 p-5 flex items-center justify-between text-gray-700 font-semibold text-xl"
+                    >
+                        <span>Sunday, Dec 01 :</span>
+                        <span class="font-bold">Day - 01</span>
+                    </div>
+
+                    <!-- ------------ ITEM 1 ------------ -->
+                    <div class="border-b border-gray-300" data-accordion>
+                        <div
+                            class="p-6 flex flex-col md:flex-row md:items-center gap-6"
+                        >
+                            <div
+                                class="flex items-center gap-3 text-gray-700 text-[15px]"
+                            >
+                                <i
+                                    class="fa-regular fa-clock text-yellow-500"
+                                ></i>
+                                09:30 - 10:30
+                            </div>
+
+                            <img
+                                src="https://i.pravatar.cc/80?img=32"
+                                class="w-14 h-14 rounded-full"
+                            />
+
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-[#222]">
+                                    Marketing Workshop
+                                </h3>
+                                <div
+                                    class="flex items-center gap-5 text-gray-600 text-sm mt-1"
+                                >
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-user text-yellow-500"
+                                        ></i>
+                                        Lara Quize
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-location-dot text-yellow-500"
+                                        ></i>
+                                        Times Complex
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="accordion-btn text-purple-700 font-medium text-sm flex items-center gap-1 cursor-pointer"
+                            >
+                                Details
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="accordion-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-50"
+                        >
+                            <div class="p-6 text-gray-600 text-sm">
+                                Full description or additional details about
+                                Marketing Workshop...
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ------------ ITEM 2 ------------ -->
+                    <div class="border-b border-gray-300" data-accordion>
+                        <div
+                            class="p-6 flex flex-col md:flex-row md:items-center gap-6"
+                        >
+                            <div
+                                class="flex items-center gap-3 text-gray-700 text-[15px]"
+                            >
+                                <i
+                                    class="fa-regular fa-clock text-yellow-500"
+                                ></i>
+                                10:30 - 12:00
+                            </div>
+
+                            <img
+                                src="https://i.pravatar.cc/80?img=12"
+                                class="w-14 h-14 rounded-full"
+                            />
+
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold">
+                                    Introduction Business
+                                </h3>
+                                <div
+                                    class="flex items-center gap-5 text-gray-600 text-sm mt-1"
+                                >
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-user text-yellow-500"
+                                        ></i>
+                                        Daizy Chirs
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-location-dot text-yellow-500"
+                                        ></i>
+                                        B.City Complex
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="accordion-btn text-purple-700 font-medium text-sm flex items-center gap-1 cursor-pointer"
+                            >
+                                Details
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="accordion-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-50"
+                        >
+                            <div class="p-6 text-gray-600 text-sm">
+                                Extra details about Introduction Business...
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ------------ ITEM 3 ------------ -->
+                    <div data-accordion>
+                        <div
+                            class="p-6 flex flex-col md:flex-row md:items-center gap-6"
+                        >
+                            <div
+                                class="flex items-center gap-3 text-gray-700 text-[15px]"
+                            >
+                                <i
+                                    class="fa-regular fa-clock text-yellow-500"
+                                ></i>
+                                00:30 - 02:00
+                            </div>
+
+                            <img
+                                src="https://i.pravatar.cc/80?img=49"
+                                class="w-14 h-14 rounded-full"
+                            />
+
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold">
+                                    Marketing Strategy
+                                </h3>
+                                <div
+                                    class="flex items-center gap-5 text-gray-600 text-sm mt-1"
+                                >
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-user text-yellow-500"
+                                        ></i>
+                                        Steve John
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-location-dot text-yellow-500"
+                                        ></i>
+                                        Times Complex
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="accordion-btn text-purple-700 font-medium text-sm flex items-center gap-1 cursor-pointer"
+                            >
+                                Details
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="accordion-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-50"
+                        >
+                            <div class="p-6 text-gray-600 text-sm">
+                                More info about Marketing Strategy…
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============= DAY 2 PANEL ============= -->
+                <div class="bg-white shadow rounded-xl overflow-hidden">
+                    <div
+                        class="w-full border-b border-gray-300 p-5 flex items-center justify-between text-gray-700 font-semibold text-xl"
+                    >
+                        <span>Monday, Dec 02 :</span>
+                        <span class="font-bold">Day - 02</span>
+                    </div>
+
+                    <!-- ------------ D2 ITEM 1 ------------ -->
+                    <div class="border-b border-gray-300" data-accordion>
+                        <div
+                            class="p-6 flex flex-col md:flex-row md:items-center gap-6"
+                        >
+                            <div
+                                class="flex items-center gap-3 text-gray-700 text-[15px]"
+                            >
+                                <i
+                                    class="fa-regular fa-clock text-yellow-500"
+                                ></i>
+                                09:00 - 10:00
+                            </div>
+
+                            <img
+                                src="https://i.pravatar.cc/80?img=45"
+                                class="w-14 h-14 rounded-full"
+                            />
+
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold">
+                                    Digital Branding
+                                </h3>
+
+                                <div
+                                    class="flex items-center gap-5 text-gray-600 text-sm mt-1"
+                                >
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-user text-yellow-500"
+                                        ></i>
+                                        Maria Hopkins
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-location-dot text-yellow-500"
+                                        ></i>
+                                        Metro Hall A
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="accordion-btn text-purple-700 font-medium text-sm flex items-center gap-1 cursor-pointer"
+                            >
+                                Details
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="accordion-content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300"
+                        >
+                            <div class="p-6 text-gray-600 text-sm">
+                                More info about Digital Branding…
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ------------ D2 ITEM 2 ------------ -->
+                    <div class="border-b border-gray-300" data-accordion>
+                        <div
+                            class="p-6 flex flex-col md:flex-row md:items-center gap-6"
+                        >
+                            <div
+                                class="flex items-center gap-3 text-gray-700 text-[15px]"
+                            >
+                                <i
+                                    class="fa-regular fa-clock text-yellow-500"
+                                ></i>
+                                10:00 - 12:00
+                            </div>
+
+                            <img
+                                src="https://i.pravatar.cc/80?img=53"
+                                class="w-14 h-14 rounded-full"
+                            />
+
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold">
+                                    UI/UX Workshop
+                                </h3>
+
+                                <div
+                                    class="flex items-center gap-5 text-gray-600 text-sm mt-1"
+                                >
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-user text-yellow-500"
+                                        ></i>
+                                        John Carter
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-location-dot text-yellow-500"
+                                        ></i>
+                                        Creative Studio
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="accordion-btn text-purple-700 font-medium text-sm flex items-center gap-1 cursor-pointer"
+                            >
+                                Details
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="accordion-content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300"
+                        >
+                            <div class="p-6 text-gray-600 text-sm">
+                                More info about the UI/UX Workshop…
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ------------ D2 ITEM 3 ------------ -->
+                    <div data-accordion>
+                        <div
+                            class="p-6 flex flex-col md:flex-row md:items-center gap-6"
+                        >
+                            <div
+                                class="flex items-center gap-3 text-gray-700 text-[15px]"
+                            >
+                                <i
+                                    class="fa-regular fa-clock text-yellow-500"
+                                ></i>
+                                12:00 - 01:00
+                            </div>
+
+                            <img
+                                src="https://i.pravatar.cc/80?img=23"
+                                class="w-14 h-14 rounded-full"
+                            />
+
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold">
+                                    SEO Boost Session
+                                </h3>
+
+                                <div
+                                    class="flex items-center gap-5 text-gray-600 text-sm mt-1"
+                                >
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-user text-yellow-500"
+                                        ></i>
+                                        Paul Smith
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i
+                                            class="fa-solid fa-location-dot text-yellow-500"
+                                        ></i>
+                                        Main Audio Hall
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="accordion-btn text-purple-700 font-medium text-sm flex items-center gap-1 cursor-pointer"
+                            >
+                                Details
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+
+                        <div
+                            class="accordion-content max-h-0 overflow-hidden bg-gray-50 transition-all duration-300"
+                        >
+                            <div class="p-6 text-gray-600 text-sm">
+                                More info about the SEO Boost session…
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            document.querySelectorAll("[data-accordion]").forEach((item) => {
+                const btn = item.querySelector(".accordion-btn");
+                const content = item.querySelector(".accordion-content");
+
+                btn.addEventListener("click", () => {
+                    const isOpen = content.style.maxHeight;
+
+                    // CLOSE ALL OTHER ACCORDIONS
+                    document
+                        .querySelectorAll("[data-accordion] .accordion-content")
+                        .forEach((el) => {
+                            el.style.maxHeight = null;
+                        });
+
+                    // TOGGLE CURRENT ONE
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            });
+        </script>
+
+        <!-- banner -->
+        <section
+            class="relative w-full py-10 md:py-20 lg:py-24 2xl:py-30 overflow-hidden bg-[#140d1d]"
+            id="banner"
+            data-moj-web-fixed="false"
+            data-moj-web-type="banner"
+            data-moj-web-label="banner"
+            data-moj-web-category="structural"
+        >
+            <img
+                src="https://www.hire4event.com/blogs/wp-content/uploads/2019/03/Type-of-events.jpg"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-[#140d1d]/70"></div>
+
+            <div
+                class="relative z-30 h-full flex items-center justify-end px-8 max-w-7xl mx-auto text-right"
+            >
+                <div>
+                    <h2
+                        class="text-3xl md:text-5xl font-extrabold text-white leading-snug mb-6 md:mb-8"
+                    >
+                        Predict, Discuss & <br />
+                        Invent Designers Con 2026
+                    </h2>
+
+                    <button
+                        class="px-8 cursor-pointer py-3 border border-yellow-500 text-white text-sm font-semibold tracking-wider hover:bg-yellow-500 hover:text-black transition rounded-sm"
+                    >
+                        BOOK YOUR TICKET
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- tariff  -->
+        <section
+            class="w-full bg-white py-10 md:py-20"
+            id="registration-section"
+            data-moj-web-fixed="false"
+            data-moj-web-type="registration-section"
+            data-moj-web-label="registration-section"
+            data-moj-web-category="structural"
+        >
+            <!-- TITLE -->
+            <div class="text-center mb-8 px-4 md:mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-[#222]">
+                    Ticket Pricing
+                </h2>
+                <p class="text-gray-600 mt-3 max-w-xl mx-auto">
+                    Dorem Ipsum Dolor SitIncidunt Laborum Beatae Earum Nihil
+                    Onsequuntur Officia
+                </p>
+            </div>
+
+            <!-- PRICING CARDS -->
+            <div
+                class="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-4"
+            >
+                <!-- CARD 1 -->
+                <div
+                    class="bg-white shadow-xl rounded-[30px] pt-3 pb-10 border-6 border-gray-200 border-t-purple-700"
+                >
+                    <div class="text-center px-10 mt-6">
+                        <h3
+                            class="text-sm tracking-widest font-semibold text-gray-700"
+                        >
+                            STANDARD
+                        </h3>
+
+                        <p class="text-5xl font-extrabold mt-4 text-[#222]">
+                            <span class="text-3xl">₹</span>499
+                        </p>
+
+                        <ul class="mt-6 space-y-2 text-gray-600 text-sm">
+                            <li class="text-[#222]">Entrance</li>
+                            <li class="text-[#222]">Coffee Break</li>
+                            <li class="text-[#222]">Certificate</li>
+                            <li class="text-gray-400">Workshop</li>
+                            <li class="text-gray-400">Prize</li>
+                        </ul>
+
+                        <button
+                            class="mt-8 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 text-sm rounded"
+                        >
+                            BUY NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="bg-white shadow-xl rounded-[30px] pt-3 pb-10 border-6 border-gray-200 border-t-pink-600"
+                >
+                    <div class="text-center px-10 mt-6">
+                        <h3
+                            class="text-sm tracking-widest font-semibold text-gray-700"
+                        >
+                            BUSINESS
+                        </h3>
+
+                        <p class="text-5xl font-extrabold mt-4 text-[#222]">
+                            <span class="text-3xl">₹</span>699
+                        </p>
+
+                        <ul class="mt-6 space-y-2 text-gray-600 text-sm">
+                            <li class="text-[#222]">Entrance</li>
+                            <li class="text-[#222]">Coffee Break</li>
+                            <li class="text-[#222]">Certificate</li>
+                            <li class="text-[#222]">Workshop</li>
+                            <li class="text-gray-400">Prize</li>
+                        </ul>
+
+                        <button
+                            class="mt-8 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 text-sm rounded"
+                        >
+                            BUY NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div
+                    class="bg-white shadow-xl rounded-[30px] pt-3 pb-10 border-6 border-gray-200 border-t-yellow-500"
+                >
+                    <div class="text-center px-10 mt-6">
+                        <h3
+                            class="text-sm tracking-widest font-semibold text-gray-700"
+                        >
+                            PERSONAL PLAN
+                        </h3>
+
+                        <p class="text-5xl font-extrabold mt-4 text-[#222]">
+                            <span class="text-3xl">₹</span>999
+                        </p>
+
+                        <ul class="mt-6 space-y-2 text-gray-600 text-sm">
+                            <li class="text-[#222]">Entrance</li>
+                            <li class="text-[#222]">Coffee Break</li>
+                            <li class="text-[#222]">Certificate</li>
+                            <li class="text-[#222]">Workshop</li>
+                            <li class="text-[#222]">Prize</li>
+                        </ul>
+
+                        <button
+                            class="mt-8 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 text-sm rounded"
+                        >
+                            BUY NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION — MATCH SPEAKER BACKGROUND -->
+        <section
+            class="relative w-full py-10 md:py-20 overflow-hidden bg-[#5e117a]"
+            id="stats"
+            data-moj-web-fixed="false"
+            data-moj-web-type="stats"
+            data-moj-web-label="stats"
+            data-moj-web-category="structural"
+        >
+            <!-- WAVY BACKGROUND -->
+            <div class="absolute inset-0">
+                <svg
+                    class="w-full h-full object-cover opacity-40"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 1440 320"
+                >
+                    <path
+                        fill="#7b1fa2"
+                        fill-opacity="1"
+                        d="M0,128L80,133.3C160,139,320,149,480,165.3C640,181,800,203,960,213.3C1120,224,1280,224,1360,224L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+                    ></path>
+                </svg>
+            </div>
+
+            <!-- STATS CONTENT -->
+            <div
+                class="relative max-w-[1536px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white"
+            >
+                <!-- ITEM 1 -->
+                <div class="space-y-2 md:space-y-3">
+                    <i class="fa-solid fa-ticket text-4xl md:text-5xl"></i>
+                    <p class="text-2xl md:text-4xl font-extrabold">1,500+</p>
+                    <p class="text-gray-200 text-sm md:text-lg">
+                        Available Tickets
+                    </p>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="space-y-2 md:space-y-3">
+                    <i
+                        class="fa-solid fa-people-group text-4xl md:text-5xl"
+                    ></i>
+                    <p class="text-2xl md:text-4xl font-extrabold">1,099+</p>
+                    <p class="text-gray-200 text-sm md:text-lg">
+                        Registered People
+                    </p>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="space-y-2 md:space-y-3">
+                    <i
+                        class="fa-solid fa-file-signature text-4xl md:text-5xl"
+                    ></i>
+                    <p class="text-2xl md:text-4xl font-extrabold">850+</p>
+                    <p class="text-gray-200 text-sm md:text-lg">Tickets Sold</p>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="space-y-2 md:space-y-3">
+                    <i class="fa-solid fa-building text-4xl md:text-5xl"></i>
+                    <p class="text-2xl md:text-4xl font-extrabold">40+</p>
+                    <p class="text-gray-200 text-sm md:text-lg">
+                        Event Sponsors
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section
+            class="w-full bg-white py-10 md:py-20"
+            id="partners"
+            data-moj-web-fixed="false"
+            data-moj-web-type="partners"
+            data-moj-web-label="partners"
+            data-moj-web-category="structural"
+        >
+            <!-- TITLE -->
+            <div class="text-center px-4 mb-6 md:mb-14">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-[#222]">
+                    Official Sponsors & Partners
+                </h2>
+                <p class="text-gray-600 mt-3 max-w-xl mx-auto">
+                    Dorem Ipsum Dolor SitIncidunt Laborum Beatae Earum Nihil
+                    Onsequuntur Officia
+                </p>
+            </div>
+
+            <!-- LOGO GRID -->
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-14 px-4 items-center justify-center"
+            >
+                <!-- Row 1 -->
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand1.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/08/brand2.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/08/brand3.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand4.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <!-- Row 2 -->
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand5.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand6.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand7.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+
+                <img
+                    src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand8.png"
+                    class="grayscale hover:grayscale-0 duration-300 mx-auto"
+                />
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section
+            class="w-full bg-[#140d1d] text-white pt-16 pb-8 relative overflow-hidden"
+                        id="footer"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="footer"
+            data-moj-web-category="structural"
+        >
+            <!-- TOP WAVY BACKGROUND -->
+            <div class="absolute inset-0 object-cover opacity-20">
+                <svg
+                    class="w-full md:h-full object-cover"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 1440 320"
+                >
+                    <path
+                        fill="#7b1fa2"
+                        fill-opacity="1"
+                        d="M0,256L48,229.3C96,203,192,149,288,133.3C384,117,480,139,576,160C672,181,768,203,864,181.3C960,160,1056,96,1152,101.3C1248,107,1344,181,1392,218.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+                    ></path>
+                </svg>
+            </div>
+
+            <div
+                class="relative max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12"
+            >
+                <!-- COLUMN 1: LOGO + ABOUT -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-3">Designers Con 2026</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        The ultimate digital marketing & tech event. Learn,
+                        collaborate & grow with industry leaders.
+                    </p>
+
+                    <!-- SOCIAL ICONS -->
+                    <div class="flex gap-4 mt-5 text-xl">
+                        <a href="#" class="hover:text-yellow-400"
+                            ><i class="fa-brands fa-facebook-f"></i
+                        ></a>
+                        <a href="#" class="hover:text-yellow-400"
+                            ><i class="fa-brands fa-twitter"></i
+                        ></a>
+                        <a href="#" class="hover:text-yellow-400"
+                            ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                        <a href="#" class="hover:text-yellow-400"
+                            ><i class="fa-brands fa-linkedin-in"></i
+                        ></a>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: QUICK LINKS -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>
+                            <a href="#" class="hover:text-yellow-400">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400"
+                                >Speakers</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400"
+                                >Schedule</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-yellow-400"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3: CONTACT INFO -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>
+                            <i
+                                class="fa-solid fa-location-dot text-yellow-400 mr-2"
+                            ></i>
+                            Kochi, Kerala, India
+                        </li>
+                        <li>
+                            <i
+                                class="fa-solid fa-phone text-yellow-400 mr-2"
+                            ></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i
+                                class="fa-solid fa-envelope text-yellow-400 mr-2"
+                            ></i>
+                            info@designerscon2026.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BOTTOM BAR -->
+            <div
+                class="relative px-6 text-center mt-16 border-t border-white/10 pt-6"
+            >
+                <p class="text-gray-400 text-sm">
+                    © 2025 Designers Con 2026 Event. All Rights Reserved.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>

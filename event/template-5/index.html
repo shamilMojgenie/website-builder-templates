@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Template 5</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <section
+            id="navbar"
+            class="fixed top-0 left-0 w-full z-50 duration-300"
+        >
+            <nav
+                class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6"
+            >
+                <!-- LOGO -->
+                <h1
+                    class="text-2xl md:text-3xl font-extrabold tracking-tight text-white"
+                >
+                    GLOBAL<span class="text-[#76E6CF]">EVENT</span>
+                </h1>
+
+                <!-- DESKTOP MENU -->
+                <ul
+                    class="hidden lg:flex items-center space-x-10 text-white/90 text-sm font-medium"
+                >
+                    <li><a href="#" class="hover:text-[#76E6CF]">HOME</a></li>
+                    <li><a href="#" class="hover:text-[#76E6CF]">ABOUT</a></li>
+                    <li>
+                        <a href="#" class="hover:text-[#76E6CF]">SCHEDULES</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-[#76E6CF]">SPEAKERS</a>
+                    </li>
+                </ul>
+
+                <!-- TICKET BUTTON (DESKTOP) -->
+                <a
+                    href="#"
+                    class="hidden lg:block bg-[#76E6CF] text-black px-6 py-2 rounded-full font-semibold hover:bg-white transition"
+                >
+                    GET TICKETS
+                </a>
+
+                <button id="openSidebar" class="lg:hidden text-white text-3xl">
+                    ☰
+                </button>
+            </nav>
+
+            <!-- SIDEBAR OVERLAY -->
+            <div
+                id="sidebarOverlay"
+                class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[98] hidden"
+            ></div>
+
+            <!-- RIGHT SIDEBAR -->
+            <aside
+                id="sidebarPanel"
+                class="fixed top-0 right-0 w-64 h-full bg-[#0b0b30]/95 backdrop-blur-xl text-white z-[99] transform translate-x-full transition-transform duration-300 p-6"
+            >
+                <!-- Close Button -->
+                <button
+                    id="closeSidebar"
+                    class="text-white text-3xl absolute top-5 right-5"
+                >
+                    ✕
+                </button>
+
+                <h1 class="text-xl font-extrabold tracking-tight mb-10">
+                    GLOBAL<span class="text-[#76E6CF]">EVENT</span>
+                </h1>
+
+                <nav class="space-y-6 text-lg">
+                    <a href="#" class="block hover:text-[#76E6CF]">HOME</a>
+                    <a href="#" class="block hover:text-[#76E6CF]">ABOUT</a>
+                    <a href="#" class="block hover:text-[#76E6CF]">SCHEDULES</a>
+                    <a href="#" class="block hover:text-[#76E6CF]">SPEAKERS</a>
+
+                    <a
+                        href="#"
+                        class="inline-block bg-[#76E6CF] text-black px-6 py-2 mt-6 rounded-full font-semibold hover:bg-white transition"
+                    >
+                        GET TICKETS
+                    </a>
+                </nav>
+            </aside>
+        </section>
+        <script>
+            const openSidebar = document.getElementById("openSidebar");
+            const closeSidebar = document.getElementById("closeSidebar");
+            const sidebarPanel = document.getElementById("sidebarPanel");
+            const sidebarOverlay = document.getElementById("sidebarOverlay");
+            const navbar = document.getElementById("navbar");
+
+            openSidebar.addEventListener("click", () => {
+                sidebarPanel.classList.remove("translate-x-full");
+                sidebarOverlay.classList.remove("hidden");
+            });
+
+            closeSidebar.addEventListener("click", () => {
+                sidebarPanel.classList.add("translate-x-full");
+                sidebarOverlay.classList.add("hidden");
+            });
+
+            sidebarOverlay.addEventListener("click", () => {
+                sidebarPanel.classList.add("translate-x-full");
+                sidebarOverlay.classList.add("hidden");
+            });
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add(
+                        "bg-[#0b0b30]/80",
+                        "backdrop-blur-md",
+                        "shadow-lg"
+                    );
+                } else {
+                    navbar.classList.remove(
+                        "bg-[#0b0b30]/80",
+                        "backdrop-blur-md",
+                        "shadow-lg"
+                    );
+                }
+            });
+        </script>
+
+        <!-- HERO SECTION -->
+        <section class="relative w-full py-30 md:py-50 overflow-hidden">
+            <img
+                src="https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?cs=srgb&dl=pexels-jibarofoto-2833037.jpg&fm=jpg"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-[#0b0b30]/70"></div>
+
+            <div
+                class="relative z-10 flex flex-col max-w-7xl mx-auto justify-center h-full px-4 md:px-6"
+            >
+                <h2
+                    class="text-4xl md:text-6xl font-extrabold leading-tight text-white"
+                >
+                    <span class="text-[#76E6CF]">GLOBAL TECH</span>
+                    <br />
+                    INNOVATION EVENT
+                </h2>
+
+                <p class="mt-4 text-white/80 text-lg">
+                    23-25 August 2027 @ The Times Center, Manhattan, New York
+                </p>
+
+                <!-- COUNTDOWN -->
+                <div class="flex gap-3 md:gap-8 mt-10">
+                    <div
+                        class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                    >
+                        <h3
+                            class="count-days text-2xl md:text-4xl font-bold text-white"
+                        >
+                            00
+                        </h3>
+                        <p
+                            class="text-[11px] md:text-xs uppercase text-white/70"
+                        >
+                            days
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                    >
+                        <h3
+                            class="count-hours text-2xl md:text-4xl font-bold text-white"
+                        >
+                            0
+                        </h3>
+                        <p
+                            class="text-[11px] md:text-xs uppercase text-white/70"
+                        >
+                            hours
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                    >
+                        <h3
+                            class="count-minutes text-2xl md:text-4xl font-bold text-white"
+                        >
+                            0
+                        </h3>
+                        <p
+                            class="text-[11px] md:text-xs uppercase text-white/70"
+                        >
+                            minutes
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                    >
+                        <h3
+                            class="count-seconds text-2xl md:text-4xl font-bold text-white"
+                        >
+                            0
+                        </h3>
+                        <p
+                            class="text-[11px] md:text-xs uppercase text-white/70"
+                        >
+                            seconds
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-4 mt-8">
+                    <a
+                        href="#"
+                        class="bg-[#76E6CF] text-black px-6 py-3 rounded-full font-semibold hover:bg-white transition"
+                    >
+                        GET TICKETS
+                    </a>
+
+                    <a
+                        href="#"
+                        class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+                    >
+                        VIEW MORE
+                    </a>
+                </div>
+            </div>
+
+            <svg
+                class="absolute bottom-0 left-0 w-full h-10 md:h-21"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1000 100"
+                preserveAspectRatio="none"
+            >
+                <path
+                    fill="white"
+                    d="M615.2,96.7C240.2,97.8,0,18.9,0,0v100h1000V0C1000,19.2,989.8,96,615.2,96.7z"
+                ></path>
+            </svg>
+        </section>
+        <script>
+            function startCountdown() {
+                const eventDate = new Date(
+                    "August 23, 2027 00:00:00"
+                ).getTime();
+
+                setInterval(() => {
+                    const now = new Date().getTime();
+                    const diff = eventDate - now;
+
+                    if (diff <= 0) return;
+
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor(
+                        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                    );
+                    const minutes = Math.floor(
+                        (diff % (1000 * 60 * 60)) / (1000 * 60)
+                    );
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    // Update ALL countdown elements
+                    document
+                        .querySelectorAll(".count-days")
+                        .forEach((el) => (el.textContent = days));
+                    document
+                        .querySelectorAll(".count-hours")
+                        .forEach((el) => (el.textContent = hours));
+                    document
+                        .querySelectorAll(".count-minutes")
+                        .forEach((el) => (el.textContent = minutes));
+                    document
+                        .querySelectorAll(".count-seconds")
+                        .forEach((el) => (el.textContent = seconds));
+                }, 1000);
+            }
+
+            startCountdown();
+        </script>
+
+        <!-- ABOUT SECTION -->
+        <section
+            class="w-full relative bg-white pt-10 md:pt-20 relative overflow-hidden"
+        >
+            <div
+                class="absolute bottom-0 top-3/5 left-0 right-0 bg-[#76E6CF]/50"
+            ></div>
+            <!-- CONTENT -->
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <!-- TITLE -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-[#0b0b30]">
+                    INNOVATION <span class="text-[#76E6CF]">BEGINS</span>
+                </h2>
+
+                <!-- IMAGE ROW -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6 md:mt-16">
+                    <!-- IMAGE -->
+                    <div>
+                        <img
+                            src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+                            class="rounded-2xl shadow-lg w-full object-cover"
+                        />
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="flex flex-col justify-center">
+                        <p class="leading-relaxed mb-6">
+                            Step into a world of breakthrough technology,
+                            immersive digital environments, and revolutionary
+                            human–tech synergy. This event pushes the boundaries
+                            of imagination, engineering, and future-driven
+                            innovation.
+                        </p>
+
+                        <p class="leading-relaxed mb-6">
+                            Explore next-generation interfaces, cutting-edge
+                            automation, and bold transformations in how we
+                            build, create, and connect. Every moment is designed
+                            to inspire progress and ignite curiosity.
+                        </p>
+
+                        <p class="leading-relaxed mb-6">
+                            Discover pioneering research, visionary concepts,
+                            and real-world applications redefining the future of
+                            industries across the globe. It’s a space where
+                            technology meets creativity without limits.
+                        </p>
+
+                        <p class="leading-relaxed">
+                            Join global innovators, developers, and creators as
+                            we shape the next era of digital evolution.
+                            Experience powerful ideas, transformative tools, and
+                            industry-defining breakthroughs all in one dynamic
+                            environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <svg
+                class="rotate-180 -mb-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1000 100"
+                preserveAspectRatio="none"
+            >
+                <path
+                    fill="white"
+                    opacity="0.33"
+                    d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"
+                ></path>
+                <path
+                    fill="white"
+                    opacity="0.66"
+                    d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"
+                ></path>
+                <path
+                    fill="white"
+                    d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"
+                ></path>
+            </svg>
+        </section>
+
+        <!-- EVENT STATS SECTION -->
+        <section class="w-full bg-white py-10 md:pb-24">
+            <div
+                class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-12 text-center"
+            >
+                <!-- ITEM 1: EVENT SPEAKERS -->
+                <div>
+                    <div
+                        class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-[#76E6CF]/40 mb-4"
+                    >
+                        <i
+                            class="fa-solid fa-microphone-lines text-4xl text-black/80"
+                        ></i>
+                    </div>
+                    <h3 class="text-3xl font-bold">40+</h3>
+                    <p class="text-sm text-gray-700 mt-1">
+                        Inspirational Speakers
+                    </p>
+                </div>
+
+                <!-- ITEM 2: GLOBAL AUDIENCE -->
+                <div>
+                    <div
+                        class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-[#76E6CF]/40 mb-4"
+                    >
+                        <i class="fa-solid fa-globe text-4xl text-black/80"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold">25</h3>
+                    <p class="text-sm text-gray-700 mt-1">
+                        Countries Represented
+                    </p>
+                </div>
+
+                <!-- ITEM 3: WORKSHOPS / EXPERIENCES -->
+                <div>
+                    <div
+                        class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-[#76E6CF]/40 mb-4"
+                    >
+                        <i
+                            class="fa-solid fa-people-group text-4xl text-black/80"
+                        ></i>
+                    </div>
+                    <h3 class="text-3xl font-bold">80+</h3>
+                    <p class="text-sm text-gray-700 mt-1">
+                        Interactive Sessions
+                    </p>
+                </div>
+
+                <!-- ITEM 4: ATTENDEE COUNT -->
+                <div>
+                    <div
+                        class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-[#76E6CF]/40 mb-4"
+                    >
+                        <i
+                            class="fa-solid fa-user-group text-4xl text-black/80"
+                        ></i>
+                    </div>
+                    <h3 class="text-3xl font-bold">1200+</h3>
+                    <p class="text-sm text-gray-700 mt-1">Event Attendees</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT HIGHLIGHTS SECTION -->
+        <section class="w-full bg-[#76E6CF]/20 py-10 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <!-- Title -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-[#0b0b30]">
+                    EVENT <span class="text-[#76E6CF]">HIGHLIGHTS</span>
+                </h2>
+                <p class="text-gray-600 max-w-xl mx-auto mt-4">
+                    A glimpse of the world-class experiences waiting for you.
+                </p>
+
+                <!-- IMAGE GRID -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-14"
+                >
+                    <!-- Highlight Item -->
+                    <div>
+                        <div class="w-full h-60 rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">
+                            Keynote Sessions
+                        </h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Hear from global leaders transforming the technology
+                            landscape.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Item -->
+                    <div>
+                        <div class="w-full h-60 rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">Tech Expo</h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Explore cutting-edge innovations in robotics, AI and
+                            VR.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Item -->
+                    <div>
+                        <div class="w-full h-60 rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.pexels.com/photos/3184312/pexels-photo-3184312.jpeg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">
+                            Workshops & Labs
+                        </h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Hands-on sessions with experts in product design &
+                            engineering.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Item -->
+                    <div>
+                        <div class="w-full h-60 rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.pexels.com/photos/7640740/pexels-photo-7640740.jpeg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">
+                            Startup Showcase
+                        </h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Discover innovative startups pitching groundbreaking
+                            ideas.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Item -->
+                    <div>
+                        <div class="w-full h-60 rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">
+                            Networking Arena
+                        </h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Connect with tech leaders, creators, developers and
+                            investors.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Item -->
+                    <div>
+                        <div class="w-full h-60 rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.pexels.com/photos/3321793/pexels-photo-3321793.jpeg"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4">After-Party</h3>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Celebrate with music, lights and unforgettable
+                            experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SESSION LIST SECTION -->
+        <section class="w-full bg-white py-10 md:py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Title -->
+                <h2
+                    class="text-3xl md:text-5xl font-extrabold text-[#0b0b30] text-center"
+                >
+                    EVENT <span class="text-[#76E6CF]">SCHEDULES</span>
+                </h2>
+                <p class="text-gray-600 max-w-xl mx-auto text-center mt-4">
+                    Explore the key sessions featured at this year's global
+                    innovation event.
+                </p>
+
+                <!-- SESSION LIST -->
+                <div class="mt-14 space-y-10">
+                    <!-- ITEM -->
+                    <div class="border-l-4 border-[#76E6CF] pl-6">
+                        <p class="text-sm text-[#76E6CF] font-semibold">
+                            10:00 AM – 11:00 AM
+                        </p>
+                        <h3 class="text-2xl font-bold mt-1">
+                            The Future of AI & Automation
+                        </h3>
+                        <p class="text-gray-600 mt-1">
+                            Speaker: Dr. Sarah Thompson
+                        </p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="border-l-4 border-[#76E6CF] pl-6">
+                        <p class="text-sm text-[#76E6CF] font-semibold">
+                            11:30 AM – 12:30 PM
+                        </p>
+                        <h3 class="text-2xl font-bold mt-1">
+                            Designing Immersive XR Experiences
+                        </h3>
+                        <p class="text-gray-600 mt-1">Speaker: Kevin Ramirez</p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="border-l-4 border-[#76E6CF] pl-6">
+                        <p class="text-sm text-[#76E6CF] font-semibold">
+                            2:00 PM – 3:00 PM
+                        </p>
+                        <h3 class="text-2xl font-bold mt-1">
+                            Building Scalable Cloud Systems
+                        </h3>
+                        <p class="text-gray-600 mt-1">Speaker: Priya Desai</p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="border-l-4 border-[#76E6CF] pl-6">
+                        <p class="text-sm text-[#76E6CF] font-semibold">
+                            3:30 PM – 4:30 PM
+                        </p>
+                        <h3 class="text-2xl font-bold mt-1">
+                            Next-Gen Networking & Security
+                        </h3>
+                        <p class="text-gray-600 mt-1">Speaker: John Carter</p>
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="border-l-4 border-[#76E6CF] pl-6">
+                        <p class="text-sm text-[#76E6CF] font-semibold">
+                            5:00 PM – 6:00 PM
+                        </p>
+                        <h3 class="text-2xl font-bold mt-1">
+                            Human-Centered Tech Leadership
+                        </h3>
+                        <p class="text-gray-600 mt-1">Speaker: Diana Hughes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TICKETS SECTION -->
+        <section
+            class="relative w-full bg-[#0b0f4a] py-10 md:py-20 text-white mt-24 md:mt-16"
+        >
+            <!-- CTA BANNER -->
+            <div
+                class="md:w-2/3 bg-[#BAF2E6] py-10 md:py-16 text-center absolute z-20 -top-24"
+            >
+                <h2 class="text-3xl md:text-5xl font-extrabold text-black">
+                    DON'T WAIT! <span class="underline">GET TICKETS NOW.</span>
+                </h2>
+            </div>
+            <!-- Background Image (optional, can remove if needed) -->
+            <img
+                src="https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg"
+                class="absolute inset-0 w-full h-full object-cover opacity-20"
+            />
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-[#0b0f4a]/80"></div>
+
+            <div
+                class="relative z-10 max-w-[1536px] mx-auto px-4 grid grid-cols-1 md:grid-cols-3 items-center gap-8 mt-10"
+            >
+                <!-- LEFT CONTENT -->
+                <div>
+                    <h2
+                        class="text-3xl md:text-5xl font-extrabold leading-tight"
+                    >
+                        <span class="text-[#76E6CF]">GET</span><br />
+                        THE TICKETS
+                    </h2>
+
+                    <p class="mt-4 text-white/80">
+                        23–25 August 2027 @ The Times Center, Manhattan NYC
+                    </p>
+
+                    <div class="flex gap-3 md:gap-4 mt-10">
+                        <div
+                            class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                        >
+                            <h3
+                                class="count-days text-2xl md:text-4xl font-bold text-white"
+                            >
+                                00
+                            </h3>
+                            <p
+                                class="text-[11px] md:text-xs uppercase text-white/70"
+                            >
+                                days
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                        >
+                            <h3
+                                class="count-hours text-2xl md:text-4xl font-bold text-white"
+                            >
+                                0
+                            </h3>
+                            <p
+                                class="text-[11px] md:text-xs uppercase text-white/70"
+                            >
+                                hours
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                        >
+                            <h3
+                                class="count-minutes text-2xl md:text-4xl font-bold text-white"
+                            >
+                                0
+                            </h3>
+                            <p
+                                class="text-[11px] md:text-xs uppercase text-white/70"
+                            >
+                                minutes
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
+                        >
+                            <h3
+                                class="count-seconds text-2xl md:text-4xl font-bold text-white"
+                            >
+                                0
+                            </h3>
+                            <p
+                                class="text-[11px] md:text-xs uppercase text-white/70"
+                            >
+                                seconds
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 1: STANDARD PASS -->
+                <div class="flex justify-center md:justify-end">
+                    <div
+                        class="border-2 border-[#76E6CF] rounded-3xl p-6 md:p-10 w-full max-w-sm backdrop-blur-xl bg-white/5"
+                    >
+                        <h3
+                            class="text-lg font-semibold tracking-wide mb-3 text-center text-[#76E6CF]"
+                        >
+                            STANDARD PASS
+                        </h3>
+
+                        <h2
+                            class="text-3xl md:text-5xl font-extrabold text-center mb-6 text-[#76E6CF]"
+                        >
+                            ₹499
+                        </h2>
+
+                        <ul class="space-y-3 text-sm text-white/90">
+                            <li>
+                                <i class="fas fa-check text-[#76E6CF] mr-2"></i
+                                >Access to Expo Hall
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-[#76E6CF] mr-2"></i
+                                >General Sessions
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-[#76E6CF] mr-2"></i
+                                >1 Workshop Included
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-[#76E6CF] mr-2"></i
+                                >Basic Networking
+                            </li>
+                        </ul>
+
+                        <button
+                            class="mt-8 w-full bg-[#76E6CF] text-black font-semibold py-3 rounded-full hover:bg-white transition"
+                        >
+                            BUY STANDARD
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: VIP PASS -->
+                <div class="flex justify-center md:justify-end">
+                    <div
+                        class="border-2 border-[#FFB657] rounded-3xl p-6 md:p-10 w-full max-w-sm backdrop-blur-xl bg-white/5"
+                    >
+                        <h3
+                            class="text-lg font-semibold tracking-wide mb-3 text-center text-[#FFB657]"
+                        >
+                            VIP PASS
+                        </h3>
+
+                        <h2
+                            class="text-3xl md:text-5xl font-extrabold text-center mb-6 text-[#FFB657]"
+                        >
+                            ₹799
+                        </h2>
+
+                        <ul class="space-y-3 text-sm text-white/90">
+                            <li>
+                                <i class="fas fa-check text-[#FFB657] mr-2"></i
+                                >Front-Row VIP Seating
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-[#FFB657] mr-2"></i
+                                >All Workshops + Masterclasses
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-[#FFB657] mr-2"></i
+                                >VIP Lounge Access
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-[#FFB657] mr-2"></i
+                                >VIP After-Party
+                            </li>
+                        </ul>
+
+                        <button
+                            class="mt-8 w-full bg-[#FFB657] text-black font-semibold py-3 rounded-full hover:bg-white transition"
+                        >
+                            BUY VIP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFICIAL SPONSORS & PARTNERS -->
+        <section class="w-full bg-white py-10 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <!-- TITLE -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-[#0b0b30]">
+                    OFFICIAL <span class="text-[#76E6CF]">SPONSORS</span> &
+                    PARTNERS
+                </h2>
+                <p class="text-gray-600 max-w-xl mx-auto mt-4">
+                    Thanks to our amazing partners who support this global
+                    innovation event.
+                </p>
+
+                <!-- GRID WRAPPER -->
+                <div
+                    class="mt-4 lg:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 items-center gap-4 md:gap-10"
+                >
+                    <!-- LOGO ITEM -->
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand1.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/08/brand2.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/08/brand3.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand4.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand5.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand6.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand7.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="w-40 lg:w-50 h-20 flex justify-center items-center"
+                    >
+                        <img
+                            src="https://radiustheme.com/demo/wordpress/eventalk/wp-content/uploads/2018/06/brand8.png"
+                            class="max-h-16 object-contain"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-[#0b0b30] text-white pt-10 md:pt-16 pb-10">
+            <div
+                class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12"
+            >
+                <!-- COLUMN 1: LOGO + ABOUT -->
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight">
+                        GLOBAL<span class="text-[#76E6CF]">EVENT</span>
+                    </h2>
+                    <p class="text-gray-400 mt-4">
+                        A global gathering of innovators, creators, developers
+                        and leaders shaping the future of technology.
+                    </p>
+                </div>
+
+                <!-- COLUMN 2: QUICK LINKS -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>
+                            <a href="#" class="hover:text-[#76E6CF]">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#76E6CF]">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#76E6CF]"
+                                >Schedules</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#76E6CF]"
+                                >Speakers</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3: CONTACT -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>
+                            <i
+                                class="fa-solid fa-location-dot text-[#76E6CF] mr-2"
+                            ></i>
+                            Manhattan, New York
+                        </li>
+                        <li>
+                            <i
+                                class="fa-solid fa-envelope text-[#76E6CF] mr-2"
+                            ></i>
+                            info@globalevent.com
+                        </li>
+                        <li>
+                            <i
+                                class="fa-solid fa-phone text-[#76E6CF] mr-2"
+                            ></i>
+                            +1 234 567 890
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 4: SOCIAL -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex items-center gap-4">
+                        <a
+                            href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-[#76E6CF] hover:text-black transition"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-[#76E6CF] hover:text-black transition"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-[#76E6CF] hover:text-black transition"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-[#76E6CF] hover:text-black transition"
+                        >
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 mt-16 pt-6 text-center text-gray-400 text-sm"
+            >
+                © 2027 GlobalEvent. All rights reserved.
+            </div>
+        </footer>
+    </body>
+</html>

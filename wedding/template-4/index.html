@@ -35,10 +35,10 @@
             <!-- Background Image -->
             <div class="absolute inset-0">
                 <img
-                    src="https://wpolive.com/html/bohu-live/assets/images/hero/image-3.jpg"
+                    src="https://images.squarespace-cdn.com/content/v1/537bac83e4b0462bc17bdf84/1707904476156-Q1XFK0USB5Q9TYO4J3SY/Scotland+Pre+Wedding+Photo+Shoot+Glencoe+30.jpg"
                     class="w-full h-full object-cover"
                 />
-                <div class="absolute inset-0 bg-[#806967]/50"></div>
+                <div class="absolute inset-0 bg-[#8D5F8C]/50"></div>
             </div>
 
             <!-- CENTER CONTENT -->
@@ -48,11 +48,11 @@
                 <h1
                     class="text-white font-serif text-[70px] md:text-[110px] leading-none"
                 >
-                    Wilson
+                    Adam
                     <span class="text-[140px] md:text-[180px] align-middle"
                         >&</span
                     ><br />
-                    Amanda
+                    Eve
                 </h1>
 
                 <p class="text-white mt-6 text-lg md:text-xl tracking-wide">
@@ -71,24 +71,20 @@
                 </p>
             </div>
             <!-- MOBILE MENU BUTTON -->
-        
 
             <!-- MOBILE SIDEBAR -->
             <div
                 id="mobileSidebar"
-                class="fixed top-0 right-[-300px] w-[260px] h-full bg-[#806967]/95 backdrop-blur-md z-40 p-8 flex flex-col gap-6 text-white transition-all duration-300 lg:hidden"
+                class="fixed top-0 right-[-300px] w-[260px] h-full bg-[#8D5F8C]/95 backdrop-blur-md z-40 p-8 flex flex-col gap-6 text-white transition-all duration-300 lg:hidden"
             >
                 <button id="closeSidebar" class="text-3xl self-end">×</button>
 
                 <a class="mt-6 uppercase tracking-wide text-lg" href="#"
                     >Home</a
                 >
-                <a class="uppercase tracking-wide text-lg" href="#">Pages</a>
-                <a class="uppercase tracking-wide text-lg" href="#"
-                    >Portfolio</a
-                >
-                <a class="uppercase tracking-wide text-lg" href="#">Shop</a>
-                <a class="uppercase tracking-wide text-lg" href="#">Blog</a>
+                <a class="uppercase tracking-wide text-lg" href="#">Story</a>
+                <a class="uppercase tracking-wide text-lg" href="#">Plans</a>
+                <a class="uppercase tracking-wide text-lg" href="#">Gallery</a>
                 <a class="uppercase tracking-wide text-lg" href="#">Contact</a>
             </div>
 
@@ -98,19 +94,18 @@
                 class="block absolute bottom-0 w-full border-t border-white/30 py-6 transition-all duration-300 z-20"
             >
                 <button
-                id="mobileMenuBtn"
-                class="lg:hidden px-4 ml-auto flex justify-end text-white text-3xl"
-            >
-                ☰
-            </button>
+                    id="mobileMenuBtn"
+                    class="lg:hidden px-4 ml-auto flex justify-end text-white text-3xl"
+                >
+                    ☰
+                </button>
                 <nav
                     class="hidden lg:flex items-center justify-center gap-12 uppercase tracking-wide text-sm"
                 >
                     <a class="nav-link text-white" href="#">Home</a>
-                    <a class="nav-link text-white" href="#">Pages</a>
-                    <a class="nav-link text-white" href="#">Portfolio</a>
-                    <a class="nav-link text-white" href="#">Shop</a>
-                    <a class="nav-link text-white" href="#">Blog</a>
+                    <a class="nav-link text-white" href="#">Story</a>
+                    <a class="nav-link text-white" href="#">Plans</a>
+                    <a class="nav-link text-white" href="#">Gallery</a>
                     <a class="nav-link text-white" href="#">Contact</a>
                 </nav>
             </div>
@@ -121,12 +116,11 @@
 
             // Sticky behavior for DESKTOP ONLY
             window.addEventListener("scroll", () => {
-
                 if (window.scrollY > window.innerHeight - 120) {
                     nav.classList.add(
                         "fixed",
                         "top-0",
-                        "bg-[#806967]/80",
+                        "bg-[#8D5F8C]/80",
                         "backdrop-blur-md"
                     );
                     nav.classList.remove(
@@ -140,7 +134,7 @@
                     nav.classList.remove(
                         "fixed",
                         "top-0",
-                        "bg-[#806967]/80",
+                        "bg-[#8D5F8C]/80",
                         "backdrop-blur-md"
                     );
                     nav.classList.add(
@@ -171,7 +165,7 @@
             class="relative w-full py-10 md:py-24 px-4 lg:px-20 bg-white overflow-hidden max-w-[1536px] mx-auto"
         >
             <!-- MOBILE IMAGES (Grid Layout) -->
-            <div class="grid grid-cols-2 gap-4 mb-10 md:hidden">
+            <div class="grid grid-cols-2 gap-4 mb-10 lg:hidden">
                 <img
                     src="https://wpolive.com/html/bohu-live/assets/images/quote/image-1.jpg"
                     class="w-full rounded-md shadow-sm"
@@ -194,25 +188,25 @@
             <!-- TOP LEFT -->
             <img
                 src="https://wpolive.com/html/bohu-live/assets/images/quote/image-1.jpg"
-                class="hidden md:block absolute top-10 left-0 w-56 lg:w-80 h-auto object-cover rounded-md shadow-sm"
+                class="hidden lg:block absolute top-10 left-0 w-46 2xl:w-80 h-auto object-cover rounded-md shadow-sm"
             />
 
             <!-- BOTTOM LEFT -->
             <img
                 src="https://wpolive.com/html/bohu-live/assets/images/quote/image-2.jpg"
-                class="hidden md:block absolute bottom-10 left-10 lg:left-24 w-44 lg:w-64 h-auto object-cover rounded-md shadow-sm"
+                class="hidden lg:block absolute bottom-10 left-10 lg:left-24 w-44 2xl:w-64 h-auto object-cover rounded-md shadow-sm"
             />
 
             <!-- TOP RIGHT -->
             <img
                 src="https://wpolive.com/html/bohu-live/assets/images/quote/image-4.jpg"
-                class="hidden md:block absolute top-20 right-5 lg:right-10 w-40 lg:w-56 h-auto object-cover rounded-md shadow-sm"
+                class="hidden lg:block absolute top-20 right-5 lg:right-10 w-40 2xl:w-56 h-auto object-cover rounded-md shadow-sm"
             />
 
             <!-- BOTTOM RIGHT -->
             <img
                 src="https://wpolive.com/html/bohu-live/assets/images/quote/image-3.jpg"
-                class="hidden md:block absolute bottom-10 right-10 lg:right-20 w-60 lg:w-80 h-auto object-cover rounded-md shadow-sm"
+                class="hidden lg:block absolute bottom-10 right-10 lg:right-20 w-50 2xl:w-80 h-auto object-cover rounded-md shadow-sm"
             />
 
             <!-- QUOTE BLOCK -->
@@ -257,7 +251,7 @@
                         class="w-72 mx-auto lg:mx-0 rounded-md shadow-sm mb-8"
                     />
 
-                    <h3 class="font-serif text-3xl mb-4">Amanda Jenny</h3>
+                    <h3 class="font-serif text-3xl mb-4">Eve </h3>
 
                     <p
                         class="text-gray-600 leading-relaxed max-w-sm mx-auto lg:mx-0"
@@ -278,7 +272,7 @@
 
                 <!-- RIGHT COLUMN -->
                 <div class="text-center lg:text-right mt-10 lg:mt-0">
-                    <h3 class="font-serif text-3xl mb-4">Max Wilson</h3>
+                    <h3 class="font-serif text-3xl mb-4">Adam</h3>
 
                     <p
                         class="text-gray-600 leading-relaxed max-w-sm mx-auto lg:mr-0 lg:ml-auto"
@@ -335,7 +329,7 @@
 
             <!-- STORY BLOCK 2 -->
             <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 md:-mt-60"
+                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 md:-mt-40 lg:-mt-60"
             >
                 <div class="order-2 md:order-1 text-center md:text-left">
                     <h3 class="font-serif text-3xl mb-4">The First Date</h3>
@@ -357,7 +351,7 @@
 
             <!-- STORY BLOCK 3 -->
             <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:-mt-60"
+                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:-mt-40 lg:-mt-60"
             >
                 <div>
                     <img
@@ -491,63 +485,59 @@
             </div>
         </section>
 
-        <section class="w-full bg-white py-10 md:py-20 px-4 lg:px-20 overflow-hidden">
+        <section
+            class="w-full bg-white py-10 md:py-20 px-4 lg:px-20 overflow-hidden"
+        >
+            <!-- MOBILE SCROLL CONTAINER -->
+            <div
+                class=" flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+            >
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-7.jpg"
+                    class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
+                />
 
-    <!-- MOBILE SCROLL CONTAINER -->
-    <div class="lg:hidden flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
-        
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-7.jpg"
-             class="w-56 snap-start rounded-md shadow-sm object-cover flex-shrink-0" />
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-2.jpg"
+                    class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
+                />
 
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-2.jpg"
-             class="w-56 snap-start rounded-md shadow-sm object-cover flex-shrink-0" />
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-8.jpg"
+                    class="w-60 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
+                />
 
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-8.jpg"
-             class="w-60 snap-start rounded-md shadow-sm object-cover flex-shrink-0" />
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-9.jpg"
+                    class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
+                />
 
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-9.jpg"
-             class="w-56 snap-start rounded-md shadow-sm object-cover flex-shrink-0" />
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-1.jpg"
+                    class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
+                />
 
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-1.jpg"
-             class="w-56 snap-start rounded-md shadow-sm object-cover flex-shrink-0" />
+                <img
+                    src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-6.jpg"
+                    class="w-52 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
+                />
+            </div>
 
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-6.jpg"
-             class="w-52 snap-start rounded-md shadow-sm object-cover flex-shrink-0" />
-    </div>
-
-
-    <!-- DESKTOP ROW (unchanged) -->
-    <div class="hidden lg:flex justify-center gap-12 max-w-[1600px] mx-auto">
-        
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-7.jpg"
-             class="w-64 object-cover rounded-md shadow-sm" />
-
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-2.jpg"
-             class="w-64 object-cover rounded-md shadow-sm" />
-
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-8.jpg"
-             class="w-72 object-cover rounded-md shadow-sm" />
-
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-9.jpg"
-             class="w-64 object-cover rounded-md shadow-sm" />
-
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-1.jpg"
-             class="w-64 object-cover rounded-md shadow-sm" />
-
-        <img src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-6.jpg"
-             class="w-60 object-cover rounded-md shadow-sm" />
-    </div>
-
-</section>
-<style>
-    .scrollbar-hide::-webkit-scrollbar { display: none; }
-    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
-
-
+        </section>
+        <style>
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
 
         <!-- FOOTER -->
-        <section class="w-full bg-[#7d6462] text-white py-10 md:py-20 px-4 lg:px-20">
+        <section
+            class="w-full bg-[#6B3F69] text-white py-10 md:py-20 px-4 lg:px-20"
+        >
             <div
                 class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16"
             >

@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Template 9</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <section
+            id="navbar-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav
+                class="w-full fixed top-0 left-0 z-50 bg-transparent transition-all duration-700"
+                id="navbarMain"
+            >
+                <div
+                    class="max-w-[1500px] mx-auto px-6 py-4 flex items-center justify-between text-white"
+                >
+                    <!-- LOGO -->
+                    <a href="/" class="flex items-center gap-2 nav-item">
+                        <span
+                            class="text-2xl md:text-3xl font-semibold tracking-wide"
+                        >
+                            HEXACON<span class="text-3xl">.</span>
+                        </span>
+                    </a>
+
+                    <!-- DESKTOP MENU (CENTER) -->
+                    <div
+                        class="hidden lg:flex items-center gap-10 text-sm font-semibold tracking-wide"
+                    >
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            >Schedule</a
+                        >
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            >Workshops</a
+                        >
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            >Speakers</a
+                        >
+                        <a
+                            href="#"
+                            class="relative pb-1 nav-item hover:text-cyan-300 transition"
+                        >
+                            Pages
+                        </a>
+                    </div>
+
+                    <!-- RIGHT AREA (SOCIAL + SEARCH) -->
+                    <div class="hidden lg:flex items-center gap-5 text-lg">
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            ><i class="fa-brands fa-twitter"></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            ><i class="fa-brands fa-facebook-f"></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                    </div>
+
+                    <!-- MOBILE MENU ICON -->
+                    <button
+                        id="mobileMenuBtn"
+                        class="lg:hidden text-white text-2xl"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- MOBILE OVERLAY -->
+                <div
+                    id="mobileOverlay"
+                    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+                ></div>
+
+                <!-- MOBILE SIDEBAR -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-[#151935]/95 text-white z-50 transform translate-x-full transition-transform duration-300 p-6"
+                >
+                    <button
+                        id="closeSidebar"
+                        class="text-white text-2xl absolute top-4 right-4"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div class="mt-10 space-y-6 text-lg font-medium">
+                        <a href="#" class="block hover:text-cyan-300"
+                            >Schedule</a
+                        >
+                        <a href="#" class="block hover:text-cyan-300"
+                            >Workshops</a
+                        >
+                        <a href="#" class="block hover:text-cyan-300"
+                            >Speakers</a
+                        >
+                        <a href="#" class="block hover:text-cyan-300">Pages</a>
+
+                        <div class="flex items-center gap-4 pt-4 text-xl">
+                            <a href="#" class="hover:text-cyan-300"
+                                ><i class="fa-brands fa-twitter"></i
+                            ></a>
+                            <a href="#" class="hover:text-cyan-300"
+                                ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="hover:text-cyan-300"
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <script>
+            const navbar = document.getElementById("navbarMain");
+            const navItems = document.querySelectorAll(".nav-item");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    // SCROLLED → White background + blue text
+                    navbar.classList.add("bg-white", "shadow-lg");
+                    navbar.classList.remove("bg-transparent");
+
+                    navItems.forEach((item) => {
+                        item.classList.add("text-[#3EA2E0]");
+                        item.classList.remove("text-white");
+                    });
+                } else {
+                    // TOP → Transparent background + white text
+                    navbar.classList.remove("bg-white", "shadow-lg");
+                    navbar.classList.add("bg-transparent");
+
+                    navItems.forEach((item) => {
+                        item.classList.add("text-white");
+                        item.classList.remove("text-[#3EA2E0]");
+                    });
+                }
+            });
+        </script>
+        <script>
+            const mobileBtn = document.getElementById("mobileMenuBtn");
+            const sidebar = document.getElementById("mobileSidebar");
+            const overlay = document.getElementById("mobileOverlay");
+            const closeBtn = document.getElementById("closeSidebar");
+
+            function openMenu() {
+                sidebar.classList.remove("translate-x-full");
+                overlay.classList.remove("hidden");
+                setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+            }
+
+            function closeMenu() {
+                sidebar.classList.add("translate-x-full");
+                overlay.classList.add("opacity-0");
+                setTimeout(() => overlay.classList.add("hidden"), 300);
+            }
+
+            mobileBtn.addEventListener("click", openMenu);
+            closeBtn.addEventListener("click", closeMenu);
+            overlay.addEventListener("click", closeMenu);
+        </script>
+
+        <!-- HERO -->
+        <section
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+            class="relative w-full h-screen flex items-stretch justify-center overflow-hidden"
+        >
+            <!-- BACKGROUND IMAGE -->
+            <img
+                src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- COLOR OVERLAY -->
+            <div
+                class="absolute inset-0 bg-gradient-to-tr from-[#050816]/80 via-[#14143b]/80 to-[#1a237e]/80 mix-blend-multiply"
+            ></div>
+
+            <!-- HERO CONTENT -->
+            <div class="relative z-10 w-full mx-auto px-6 pb-24 flex items-end">
+                <div class="max-w-4xl mb-8 md:mb-20 text-white relative">
+                    <!-- LOCATION -->
+                    <p
+                        class="uppercase tracking-[0.35em] text-sm md:text-lg mb-2 font-semibold text-[#3EA2E0]"
+                    >
+                        Copenhagen
+                    </p>
+
+                    <div
+                        class="text-4xl md:text-6xl font-bold leading-tight mb-4"
+                    >
+                        <span class="text-[#3EA2E0]">20</span> speakers /
+                        <span class="text-[#3EA2E0]">6</span> workshops
+                    </div>
+
+                    <p class="text-4xl md:text-6xl font-extrabold mb-6">
+                        Awesome and great
+                        <span class="text-[#3EA2E0]">speakers</span>
+                    </p>
+
+                    <!-- DATE + VENUE -->
+                    <div
+                        class="flex flex-wrap mt-4 border-t-4 border-[#3EA2E0] max-w-fit gap-4 md:gap-10 pt-5"
+                    >
+                        <!-- DATE -->
+                        <div class="flex items-center gap-3 md:text-xl">
+                            <i
+                                class="fa-regular fa-calendar text-[#3EA2E0] text-xl"
+                            ></i>
+                            January 25–27
+                        </div>
+
+                        <!-- LOCATION -->
+                        <div class="flex items-center gap-3 md:text-xl">
+                            <i
+                                class="fa-solid fa-location-dot text-[#3EA2E0] text-xl"
+                            ></i>
+                            Copenhagen, Denmark
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COUNTDOWN BAR -->
+            <div
+                class="absolute bottom-0 right-0 z-30 left-0 md:left-auto w-full md:min-w-[420px] bg-[#3EA2E0] text-white text-base md:text-lg flex items-center justify-center gap-8 px-6 py-4 shadow-lg"
+            >
+                <div class="flex flex-col items-center">
+                    <span
+                        id="cd-days"
+                        class="text-3xl md:text-4xl font-extrabold"
+                    ></span>
+                    <span class="text-sm uppercase tracking-wide">Days</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span
+                        id="cd-hours"
+                        class="text-3xl md:text-4xl font-extrabold"
+                    ></span>
+                    <span class="text-sm uppercase tracking-wide">Hours</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span
+                        id="cd-mins"
+                        class="text-3xl md:text-4xl font-extrabold"
+                    ></span>
+                    <span class="text-sm uppercase tracking-wide">Minutes</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span
+                        id="cd-secs"
+                        class="text-3xl md:text-4xl font-extrabold"
+                    ></span>
+                    <span class="text-sm uppercase tracking-wide">Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // COUNTDOWN LOGIC
+            const eventDate = new Date("2026-01-25T00:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = eventDate - now;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const mins = Math.floor(
+                    (diff % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("cd-days").innerText = days;
+                document.getElementById("cd-hours").innerText = hours;
+                document.getElementById("cd-mins").innerText = mins;
+                document.getElementById("cd-secs").innerText = secs;
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+
+        <!-- about -->
+        <section
+            id="about-event"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about-event"
+            data-moj-web-label="about-event"
+            data-moj-web-category="structural"
+            class="w-full py-10 md:py-20 px-6 md:px-16 lg:px-24 bg-white"
+        >
+            <div
+                class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 2xl:gap-16"
+            >
+                <!-- LEFT CONTENT -->
+                <div>
+                    <p
+                        class="uppercase text-[#3EA2E0] font-semibold tracking-wide mb-3"
+                    >
+                        About The Event
+                    </p>
+
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        A global conference for innovators
+                    </h2>
+
+                    <div class="h-[3px] w-24 bg-[#3EA2E0] mb-6"></div>
+
+                    <p
+                        class="text-base leading-relaxed text-gray-700 mb-4 md:mb-6"
+                    >
+                        Our annual event brings together top minds in
+                        technology, design, and innovation. Join powerful
+                        sessions, hands-on workshops, and thought-provoking
+                        discussions led by industry pioneers.
+                    </p>
+
+                    <p class="text-base leading-relaxed text-gray-700">
+                        Experience unmatched networking opportunities, gain
+                        expert insights, and stay ahead with the latest
+                        advancements shaping the future.
+                    </p>
+                    <p
+                        class="text-base leading-relaxed text-gray-700 mb-4 md:mb-5"
+                    >
+                        Experience unmatched networking opportunities, gain
+                        expert insights, and stay ahead with the latest
+                        advancements shaping the future.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-700">
+                        Experience unmatched networking opportunities, gain
+                        expert insights, and stay ahead with the latest
+                        advancements shaping the future.
+                    </p>
+                </div>
+
+                <!-- RIGHT IMAGE -->
+                <div class="flex justify-center lg:justify-end">
+                    <img
+                        src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        class="w-full rounded-lg shadow-xl object-cover grayscale"
+                        alt="Event"
+                    />
+                </div>
+            </div>
+
+            <!-- EVENT HIGHLIGHTS -->
+            <div class="max-w-[1500px] mx-auto mt-10 2xl:mt-20">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10"
+                >
+                    <div>
+                        <p class="text-sm text-[#3EA2E0] font-semibold mb-1">
+                            Speakers
+                        </p>
+                        <h3
+                            class="text-2xl font-bold mb-2 border-b-2 border-[#3EA2E0] pb-1"
+                        >
+                            20+ Experts
+                        </h3>
+                        <p class="text-gray-700">
+                            Leading professionals sharing insights & real-world
+                            experience.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-[#3EA2E0] font-semibold mb-1">
+                            Workshops
+                        </p>
+                        <h3
+                            class="text-2xl font-bold mb-2 border-b-2 border-[#3EA2E0] pb-1"
+                        >
+                            Hands-on Labs
+                        </h3>
+                        <p class="text-gray-700">
+                            Practical learning sessions designed to boost your
+                            skill set.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-[#3EA2E0] font-semibold mb-1">
+                            Networking
+                        </p>
+                        <h3
+                            class="text-2xl font-bold mb-2 border-b-2 border-[#3EA2E0] pb-1"
+                        >
+                            Meet Innovators
+                        </h3>
+                        <p class="text-gray-700">
+                            Connect with peers, mentors, and leaders from around
+                            the world.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-[#3EA2E0] font-semibold mb-1">
+                            Experience
+                        </p>
+                        <h3
+                            class="text-2xl font-bold mb-2 border-b-2 border-[#3EA2E0] pb-1"
+                        >
+                            Premium Sessions
+                        </h3>
+                        <p class="text-gray-700">
+                            Gain insights from advanced sessions crafted for
+                            future growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- message  -->
+        <section
+            id="message-secretary"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message-secretary"
+            data-moj-web-label="message-secretary"
+            data-moj-web-category="structural"
+            class="w-full bg-[#111111] text-white py-20 px-6 md:px-16 lg:px-24"
+        >
+            <div
+                class="max-w-[1550px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-5 items-start lg:items-center"
+            >
+                <!-- LEFT PROFILE CARD -->
+                <div
+                    class="w-full lg:w-[30%] flex justify-center lg:justify-start"
+                >
+                    <div
+                        class="relative w-64 sm:w-72 md:w-80 lg:w-full max-w-xs bg-[#1A1A1A] h-60 md:h-96 rounded-xl overflow-hidden shadow-xl border border-[#3EA2E0]/20"
+                    >
+                        <!-- IMAGE -->
+                        <img
+                            src="https://img.freepik.com/free-photo/portrait-african-american-model_23-2149072141.jpg?semt=ais_hybrid&w=740&q=80"
+                            alt="Secretary"
+                            class="w-full h-full object-cover"
+                        />
+
+                        <!-- BOTTOM CARD -->
+                        <div
+                            class="absolute bottom-5 left-0 right-0 bg-[#111111]/90 backdrop-blur-sm max-w-fit mx-auto p-3 md:p-5 rounded-xl border-t border-[#3EA2E0]/30"
+                        >
+                            <h3
+                                class="text-center text-base md:text-lg font-semibold text-white"
+                            >
+                                Dr. John Mathew
+                            </h3>
+
+                            <p
+                                class="text-center text-[#3EA2E0] text-xs font-medium"
+                            >
+                                Secretary, Organizing Committee
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT MESSAGE CONTENT -->
+                <div class="w-full lg:w-[60%]">
+                    <p
+                        class="uppercase text-[#3EA2E0] tracking-wide font-semibold mb-3"
+                    >
+                        Message From
+                    </p>
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-5">
+                        The Secretary
+                    </h2>
+
+                    <div class="h-[3px] w-20 bg-[#3EA2E0] mb-8"></div>
+
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-gray-300 mb-6"
+                    >
+                        It gives me immense pleasure to welcome you all to this
+                        year’s event. Our mission is to create a vibrant
+                        platform where professionals, innovators, and leaders
+                        come together to share knowledge and spark new ideas.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-gray-300 mb-6"
+                    >
+                        We believe that collaboration and learning are the
+                        cornerstones of progress, and this conference is an
+                        opportunity to foster both. I look forward to meaningful
+                        discussions, valuable insights, and shared experiences
+                        throughout the event.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-gray-300 mb-6"
+                    >
+                        We believe that collaboration and learning are the
+                        cornerstones of progress, and this conference is an
+                        opportunity to foster both. I look forward to meaningful
+                        discussions, valuable insights, and shared experiences
+                        throughout the event.
+                    </p>
+
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-gray-300 mb-6"
+                    >
+                        We believe that collaboration and learning are the
+                        cornerstones of progress, and this conference is an
+                        opportunity to foster both. I look forward to meaningful
+                        discussions, valuable insights, and shared experiences
+                        throughout the event.
+                    </p>
+
+                    <!-- REGARDS / SIGNATURE BLOCK -->
+                    <div class="mt-10">
+                        <p class="text-lg text-gray-300 mb-2">
+                            With warm regards,
+                        </p>
+
+                        <h3
+                            class="text-2xl md:text-3xl font-semibold text-white"
+                        >
+                            Dr. John Mathew
+                        </h3>
+
+                        <p class="text-[#3EA2E0] font-medium">
+                            Secretary, Organizing Committee
+                        </p>
+
+                        <div
+                            class="h-[3px] w-16 bg-[#3EA2E0] mt-3 rounded-full"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- org comite -->
+        <section
+            id="org-committee"
+            data-moj-web-fixed="false"
+            data-moj-web-type="org-committee"
+            data-moj-web-label="org-committee"
+            data-moj-web-category="structural"
+            class="w-full bg-white py-10 md:py-20 px-6 md:px-16 lg:px-24"
+        >
+            <div class="max-w-[1500px] mx-auto">
+                <!-- TOP ROW -->
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-10 mb-5 md:mb-10"
+                >
+                    <!-- LEFT SIDE TEXT -->
+                    <div class="lg:col-span-1">
+                        <p
+                            class="text-[#3EA2E0] font-semibold tracking-wide mb-2"
+                        >
+                            Meet the
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                            Organizing Committee
+                        </h2>
+
+                        <div class="h-[3px] w-24 bg-[#3EA2E0] mb-6"></div>
+
+                        <p
+                            class="text-gray-600 leading-relaxed max-w-md text-base"
+                        >
+                            Our committee members bring leadership, expertise,
+                            and passion to make this event a meaningful success.
+                        </p>
+                    </div>
+
+                    <!-- RIGHT 2 MEMBERS -->
+                    <div
+                        class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-10"
+                    >
+                        <!-- MEMBER 1 -->
+                        <div>
+                            <div
+                                class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                            >
+                                <img
+                                    src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg"
+                                    class="w-full h-full object-cover grayscale"
+                                    alt="Profile"
+                                />
+                            </div>
+                            <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                                President
+                            </p>
+                            <h3 class="text-3xl font-bold mb-2">
+                                Dr. Rajesh V P
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Leading the team with clarity, vision, and
+                                commitment.
+                            </p>
+                        </div>
+
+                        <!-- MEMBER 2 -->
+                        <div>
+                            <div
+                                class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                            >
+                                <img
+                                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                                    class="w-full h-full object-cover grayscale"
+                                    alt="Profile"
+                                />
+                            </div>
+                            <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                                Secretary
+                            </p>
+                            <h3 class="text-3xl font-bold mb-2">
+                                Dr. John Mathew
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Ensures coordination and smooth functioning of
+                                all activities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND ROW — 3 MEMBERS -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10"
+                >
+                    <!-- MEMBER 3 -->
+                    <div>
+                        <div
+                            class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg"
+                                class="w-full h-full object-cover grayscale"
+                                alt="Profile"
+                            />
+                        </div>
+                        <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                            Treasurer
+                        </p>
+                        <h3 class="text-2xl font-bold mb-2">
+                            Dr. Meera Sebastian
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            Oversees financial planning and ensures
+                            transparency.
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 4 -->
+                    <div>
+                        <div
+                            class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+                                class="w-full h-full object-cover grayscale"
+                                alt="Profile"
+                            />
+                        </div>
+                        <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                            Program Chair
+                        </p>
+                        <h3 class="text-2xl font-bold mb-2">
+                            Dr. Anjali Menon
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            Curates sessions and builds a strong academic
+                            lineup.
+                        </p>
+                    </div>
+
+                    <!-- MEMBER 5 -->
+                    <div>
+                        <div
+                            class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+                                class="w-full h-full object-cover grayscale"
+                                alt="Profile"
+                            />
+                        </div>
+                        <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                            Coordinator
+                        </p>
+                        <h3 class="text-2xl font-bold mb-2">Dr. Nikhil R</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            Ensures smooth flow of communication and scheduling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- venue -->
+        <section
+            id="venue-section"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue-section"
+            data-moj-web-label="venue-section"
+            data-moj-web-category="structural"
+            class="w-full bg-[#041E42] text-white pt-10 pb-17 md:pt-20 md:pb-36 px-6 md:px-16 lg:px-24 relative"
+        >
+            <div
+                class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 v gap-5 md:gap-10 items-center relative z-10"
+            >
+                <!-- LEFT SIDE CONTENT -->
+                <div data-aos="fade-right" data-aos-duration="1200">
+                    <p
+                        class="text-[#3EA2E0] uppercase tracking-wide font-semibold mb-3"
+                    >
+                        Venue
+                    </p>
+
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        Calicut Trade Centre
+                    </h2>
+
+                    <!-- Blue Underline -->
+                    <div class="h-[3px] w-24 bg-[#3EA2E0] mb-8"></div>
+
+                    <p
+                        class="text0base md:text-lg leading-relaxed text-gray-200 mb-6"
+                    >
+                        A premium destination designed for large-scale
+                        conferences, events, and exhibitions with world-class
+                        infrastructure and seamless facilities.
+                    </p>
+
+                    <p
+                        class="text0base md:text-lg leading-relaxed text-gray-200 mb-6"
+                    >
+                        Located in the heart of Calicut, the venue offers
+                        exceptional convenience with modern amenities, spacious
+                        halls, powerful AV systems, and elegant ambience.
+                    </p>
+
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-center gap-3">
+                            <i
+                                class="fa-solid fa-location-dot text-[#3EA2E0] text-xl"
+                            ></i>
+                            <span class="text-gray-200"
+                                >Prime accessible location</span
+                            >
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i
+                                class="fa-solid fa-building text-[#3EA2E0] text-xl"
+                            ></i>
+                            <span class="text-gray-200"
+                                >Modern event & conference halls</span
+                            >
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i
+                                class="fa-solid fa-car text-[#3EA2E0] text-xl"
+                            ></i>
+                            <span class="text-gray-200"
+                                >Ample parking & visitor facilities</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT SIDE DOUBLE IMAGE STACK -->
+                <div
+                    class="w-full md:w-1/2 relative z-10 min-h-[300px] md:min-h-[500px] lg:min-h-[550px] md:max-w-[600px] md:mx-auto xl:max-w-[unset] xl:mx-[unset]"
+                    data-aos="fade-left"
+                    data-aos-duration="1200"
+                    data-aos-easing="ease-in-out"
+                >
+                    <!-- IMAGE 1 -->
+                    <img
+                        src="https://img.freepik.com/free-photo/type-entertainment-complex-popular-resort-with-pools-water-parks-turkey-with-more-than-5-million-visitors-year-amara-dolce-vita-luxury-hotel-resort-tekirova-kemer_146671-18728.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="Calicut Trade Center"
+                        class="absolute top-8 left-4 sm:left-6 md:left-6 xl:left-6 w-[240px] sm:w-[260px] md:w-[300px] lg:w-[300px] xl:w-[360px] h-[200px] md:h-[320px] lg:h-[380px] xl:h-[450px] rounded-lg shadow-lg object-cover grayscale z-10"
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                        data-aos-delay="200"
+                    />
+
+                    <!-- IMAGE 2 -->
+                    <img
+                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D"
+                        alt="Calicut Trade Center Interior"
+                        class="absolute top-28 sm:top-36 2xl:top-44 left-24 sm:left-28 md:left-30 2xl:left-56 w-[240px] sm:w-[260px] md:w-[300px] lg:w-[300px] xl:w-[360px] h-[200px] md:h-[320px] lg:h-[380px] xl:h-[450px] rounded-lg shadow-lg object-cover grayscale z-20"
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
+                    />
+                </div>
+            </div>
+        </section>
+        <!-- speakers -->
+        <section
+            id="meet-speakers"
+            data-moj-web-fixed="false"
+            data-moj-web-type="meet-speakers"
+            data-moj-web-label="meet-speakers"
+            data-moj-web-category="structural"
+            class="w-full bg-white py-10 md:py-20 px-6 md:px-16 lg:px-24"
+        >
+            <div class="max-w-[1500px] mx-auto">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-10 mb-5 md:mb-10"
+                >
+                    <!-- HEADING (MOBILE FIRST, DESKTOP RIGHT) -->
+                    <div class="lg:col-span-1 order-1 lg:order-2">
+                        <p
+                            class="text-[#3EA2E0] font-semibold tracking-wide mb-2"
+                        >
+                            Meet the
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                            Speakers
+                        </h2>
+
+                        <div class="h-[3px] w-24 bg-[#3EA2E0] mb-6"></div>
+
+                        <p
+                            class="text-gray-600 leading-relaxed max-w-md text-base"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aperiam hic nobis ipsa ab laborum dignissimos
+                            asperiores nam error fugit explicabo ea, sapiente
+                            porro? Nam quos dicta facilis! Illum, est ratione?
+                        </p>
+                    </div>
+
+                    <!-- IMAGES (MOBILE SECOND, DESKTOP LEFT) -->
+                    <div
+                        class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-10 order-2 lg:order-1"
+                    >
+                        <!-- SPEAKER 1 -->
+                        <div>
+                            <div
+                                class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                            >
+                                <img
+                                    src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg"
+                                    class="w-full h-full object-cover grayscale"
+                                />
+                            </div>
+                            <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                                Keynote Speaker
+                            </p>
+                            <h3 class="text-3xl font-bold mb-2">
+                                Dr. Arjun Menon
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Odio eveniet debitis commodi
+                                dolorem eaque ipsam quo a est aliquid laborum
+                                explicabo perferendis voluptates rerum eum
+                                temporibus, amet unde veritatis odit.
+                            </p>
+                        </div>
+
+                        <!-- SPEAKER 2 -->
+                        <div>
+                            <div
+                                class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                            >
+                                <img
+                                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                                    class="w-full h-full object-cover grayscale"
+                                />
+                            </div>
+                            <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                                Guest Speaker
+                            </p>
+                            <h3 class="text-3xl font-bold mb-2">
+                                Dr. Maya Krishnan
+                            </h3>
+                            <p
+                                class="text-gray-600 leading-relaxed max-w-md text-base"
+                            >
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Aperiam hic nobis ipsa ab
+                                laborum dignissimos asperiores nam error fugit
+                                explicabo ea, sapiente porro? Nam quos dicta
+                                facilis! Illum, est ratione?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND ROW — 3 SPEAKERS -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10"
+                >
+                    <!-- SPEAKER 3 -->
+                    <div>
+                        <div
+                            class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg"
+                                class="w-full h-full object-cover grayscale"
+                                alt="Speaker"
+                            />
+                        </div>
+                        <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                            Consultant Surgeon
+                        </p>
+                        <h3 class="text-2xl font-bold mb-2">
+                            Dr. Meera Sebastian
+                        </h3>
+                        <p
+                            class="text-gray-600 leading-relaxed max-w-md text-base"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aperiam hic nobis ipsa ab laborum dignissimos
+                            asperiores nam error fugit explicabo ea, sapiente
+                            porro? Nam quos dicta facilis! Illum, est ratione?
+                        </p>
+                    </div>
+
+                    <!-- SPEAKER 4 -->
+                    <div>
+                        <div
+                            class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+                                class="w-full h-full object-cover grayscale"
+                                alt="Speaker"
+                            />
+                        </div>
+                        <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                            Panel Expert
+                        </p>
+                        <h3 class="text-2xl font-bold mb-2">
+                            Dr. Anjali Menon
+                        </h3>
+                        <p
+                            class="text-gray-600 leading-relaxed max-w-md text-base"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aperiam hic nobis ipsa ab laborum dignissimos
+                            asperiores nam error fugit explicabo ea, sapiente
+                            porro? Nam quos dicta facilis! Illum, est ratione?
+                        </p>
+                    </div>
+
+                    <!-- SPEAKER 5 -->
+                    <div>
+                        <div
+                            class="w-full h-74 aspect-square overflow-hidden rounded-md mb-4"
+                        >
+                            <img
+                                src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+                                class="w-full h-full object-cover grayscale"
+                                alt="Speaker"
+                            />
+                        </div>
+                        <p class="text-sm text-[#3EA2E0] font-medium mb-1">
+                            Session Speaker
+                        </p>
+                        <h3 class="text-2xl font-bold mb-2">Dr. Nikhil R</h3>
+                        <p
+                            class="text-gray-600 leading-relaxed max-w-md text-base"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aperiam hic nobis ipsa ab laborum dignissimos
+                            asperiores nam error fugit explicabo ea, sapiente
+                            porro? Nam quos dicta facilis! Illum, est ratione?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- charges -->
+
+        <section
+            id="registration-section"
+            data-moj-web-fixed="false"
+            data-moj-web-type="registration-section"
+            data-moj-web-label="registration-section"
+            data-moj-web-category="structural"
+            class="w-full bg-[#111111] text-white py-10 md:py-20 px-6 md:px-16 lg:px-24 relative"
+        >
+            <div class="max-w-[1500px] mx-auto relative z-10">
+                <!-- HEADING -->
+                <div class="text-center mb-12">
+                    <p
+                        class="text-[#3EA2E0] uppercase font-semibold tracking-wide mb-2"
+                    >
+                        Tariff
+                    </p>
+
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        Registration Plans
+                    </h2>
+
+                    <div class="h-[3px] w-24 bg-[#3EA2E0] mx-auto"></div>
+                </div>
+
+                <!-- THREE CARDS: EARLY BIRD / REGULAR / SPOT -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                    <!-- EARLY BIRD -->
+                    <div
+                        class="bg-[#0A2E63]/60 border border-[#3EA2E0]/40 rounded-xl p-8 shadow-xl backdrop-blur"
+                    >
+                        <h3 class="text-2xl font-bold mb-2">Early Bird</h3>
+                        <p class="text-[#3EA2E0] font-medium mb-4">
+                            Limited Period Offer
+                        </p>
+
+                        <ul class="space-y-3 text-gray-200 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Member: ₹1500
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Non-Member: ₹1800
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Accompanying: ₹1000
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full py-2 bg-[#3EA2E0] text-[#041E42] font-bold rounded-lg hover:bg-white transition"
+                        >
+                            Register Now
+                        </button>
+                    </div>
+
+                    <!-- REGULAR -->
+                    <div
+                        class="bg-[#0A2E63]/60 border border-[#3EA2E0]/40 rounded-xl p-8 shadow-xl backdrop-blur"
+                    >
+                        <h3 class="text-2xl font-bold mb-2">Regular</h3>
+                        <p class="text-[#3EA2E0] font-medium mb-4">
+                            Standard Pricing
+                        </p>
+
+                        <ul class="space-y-3 text-gray-200 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Member: ₹2000
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Non-Member: ₹2500
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Accompanying: ₹1200
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full py-2 bg-[#3EA2E0] text-[#041E42] font-bold rounded-lg hover:bg-white transition"
+                        >
+                            Register Now
+                        </button>
+                    </div>
+
+                    <!-- SPOT REGISTRATION -->
+                    <div
+                        class="bg-[#0A2E63]/60 border border-[#3EA2E0]/40 rounded-xl p-8 shadow-xl backdrop-blur"
+                    >
+                        <h3 class="text-2xl font-bold mb-2">
+                            Spot Registration
+                        </h3>
+                        <p class="text-[#3EA2E0] font-medium mb-4">
+                            On-Venue Pricing
+                        </p>
+
+                        <ul class="space-y-3 text-gray-200 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Member: ₹2500
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Non-Member: ₹3000
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-[#3EA2E0]"></i>
+                                Accompanying: ₹1500
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full py-2 bg-[#3EA2E0] text-[#041E42] font-bold rounded-lg hover:bg-white transition"
+                        >
+                            Register Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- hotels -->
+        <section
+            id="places"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="places"
+            data-moj-web-category="structural"
+            class="bg-white py-10 md:py-20"
+        >
+            <!-- Heading -->
+            <div class="text-center flex flex-col items-center">
+                <p class="text-[#3EA2E0] font-semibold tracking-wide mb-1">
+                    Explore
+                </p>
+
+                <h2 class="text-4xl md:text-6xl font-bold mb-2">Places to Visit</h2>
+
+                <div class="h-[3px] w-24 bg-[#3EA2E0] mb-6"></div>
+            </div>
+
+            <!-- Grid -->
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 px-6 mt-3 md:mt-8"
+            >
+                <!-- Card 1 -->
+                <div
+                    class="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                    <div class="overflow-hidden">
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/10/2f/fe/united-kingdom.jpg?w=1200&h=700&s=1"
+                            class="w-full h-56 object-cover rounded-t-2xl group-hover:scale-110 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#2A2A2A] mb-2">
+                            Golden Beach
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            A beautiful stretch of shoreline perfect for sunsets
+                            and evening walks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                    <div class="overflow-hidden">
+                        <img
+                            src="https://www.fabhotels.com/blog/wp-content/uploads/2019/12/Ladakh-winter.jpg"
+                            class="w-full h-56 object-cover rounded-t-2xl group-hover:scale-110 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#2A2A2A] mb-2">
+                            City Museum
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Explore the rich cultural heritage and history of
+                            the region.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                    <div class="overflow-hidden">
+                        <img
+                            src="https://www.usnews.com/object/image/00000163-8d5b-d398-ad7f-8dfff5760000/3-eiffel-tower-getty.jpg?update-time=1739553789196&size=responsive640"
+                            class="w-full h-56 object-cover rounded-t-2xl group-hover:scale-110 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#2A2A2A] mb-2">
+                            Hilltop Viewpoint
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Stunning hill views surrounded by greenery and cool
+                            breeze.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 1 -->
+                <div
+                    class="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                    <div class="overflow-hidden">
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1661915320026-84ca2c96faa7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhY2VzJTIwdG8lMjB2aXNpdCUyMGluJTIwaW5kaWF8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-56 object-cover rounded-t-2xl group-hover:scale-110 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#2A2A2A] mb-2">
+                            Golden Beach
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            A beautiful stretch of shoreline perfect for sunsets
+                            and evening walks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                    <div class="overflow-hidden">
+                        <img
+                            src="https://hips.hearstapps.com/hmg-prod/images/scenic-sunrise-above-bagan-in-myanmar-royalty-free-image-1658261755.jpg"
+                            class="w-full h-56 object-cover rounded-t-2xl group-hover:scale-110 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#2A2A2A] mb-2">
+                            City Museum
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Explore the rich cultural heritage and history of
+                            the region.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                    <div class="overflow-hidden">
+                        <img
+                            src="https://www.indianholiday.com/wordpress/wp-content/uploads/2025/06/Most-Beautiful-Places-in-the-World.jpg"
+                            class="w-full h-56 object-cover rounded-t-2xl group-hover:scale-110 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#2A2A2A] mb-2">
+                            Hilltop Viewpoint
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Stunning hill views surrounded by greenery and cool
+                            breeze.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer
+            id="footer-section"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer-section"
+            data-moj-web-label="footer-section"
+            data-moj-web-category="structural"
+            class="w-full bg-[#041E42] text-white pt-10 pb-10 px-6 md:px-16 lg:px-24 relative"
+        >
+            <div
+                class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 relative z-10"
+            >
+                <!-- LEFT COLUMN – ABOUT -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Conference 2025</h3>
+                    <div class="h-[3px] w-20 bg-[#3EA2E0] mb-5"></div>
+
+                    <p class="text-gray-300 leading-relaxed">
+                        Bringing together leaders, specialists, and innovators
+                        to share knowledge, inspire growth, and advance the
+                        future of orthopaedic care.
+                    </p>
+
+                    <!-- SOCIAL ICONS -->
+                    <div class="flex items-center gap-4 mt-5">
+                        <a
+                            href="#"
+                            class="text-[#3EA2E0] text-xl hover:text-white transition"
+                        >
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-[#3EA2E0] text-xl hover:text-white transition"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-[#3EA2E0] text-xl hover:text-white transition"
+                        >
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-[#3EA2E0] text-xl hover:text-white transition"
+                        >
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MIDDLE COLUMN – QUICK LINKS -->
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Quick Links</h3>
+                    <div class="h-[3px] w-14 bg-[#3EA2E0] mb-4"></div>
+
+                    <ul class="space-y-3 text-gray-300">
+                        <li>
+                            <a href="#" class="hover:text-[#3EA2E0] transition"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#3EA2E0] transition"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#3EA2E0] transition"
+                                >Speakers</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#3EA2E0] transition"
+                                >Schedule</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#3EA2E0] transition"
+                                >Registration</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#3EA2E0] transition"
+                                >Venue</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT COLUMN – CONTACT -->
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Contact Us</h3>
+                    <div class="h-[3px] w-14 bg-[#3EA2E0] mb-4"></div>
+
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-location-dot text-[#3EA2E0] mt-1"
+                            ></i>
+                            <span>
+                                Example Convention Centre,<br />
+                                Sample City, Country
+                            </span>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-[#3EA2E0]"></i>
+                            <a
+                                href="tel:+10000000000"
+                                class="hover:text-[#3EA2E0] transition"
+                            >
+                                +1 000 000 0000
+                            </a>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-[#3EA2E0]"></i>
+                            <a
+                                href="mailto:contact@example.com"
+                                class="hover:text-[#3EA2E0] transition"
+                            >
+                                contact@example.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BOTTOM COPYRIGHT -->
+            <div
+                class="mt-8 md:mt-14 text-center text-gray-400 text-sm relative z-10"
+            >
+                © 2025 Conference. All Rights Reserved.
+            </div>
+
+            <!-- BOTTOM BLUE BAR -->
+            <div class="absolute bottom-0 left-0 w-full h-2 bg-[#3EA2E0]"></div>
+        </footer>
+    </body>
+</html>
