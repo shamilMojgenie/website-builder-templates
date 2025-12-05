@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Template 6</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <section
+            id="navbar"
+            class="fixed top-0 left-0 w-full z-50 duration-300"
+        >
+            <nav
+                class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6"
+                id="navbarContent"
+            >
+                <!-- LOGO -->
+                <h1
+                    class="text-2xl md:text-3xl font-extrabold tracking-tight text-white"
+                >
+                    DIGITAL<span class="text-[#850E35]">EVENT</span>
+                </h1>
+
+                <!-- DESKTOP MENU -->
+                <ul
+                    class="hidden lg:flex items-center space-x-10 text-white/90 text-base font-semibold"
+                >
+                    <li>
+                        <a href="#" class="hover:text-[#850E35]/80">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-[#850E35]/80">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-[#850E35]/80"
+                            >SCHEDULES</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-[#850E35]/80">SPEAKERS</a>
+                    </li>
+                </ul>
+
+                <!-- TICKET BUTTON (DESKTOP) -->
+                <a
+                    href="#"
+                    class="hidden lg:block bg-[#850E35] text-white hover:text-black px-6 py-2 rounded font-semibold hover:bg-white transition"
+                >
+                    GET TICKETS
+                </a>
+
+                <button id="openSidebar" class="lg:hidden text-white text-3xl">
+                    ☰
+                </button>
+            </nav>
+
+            <!-- SIDEBAR OVERLAY -->
+            <div
+                id="sidebarOverlay"
+                class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[98] hidden"
+            ></div>
+
+            <!-- RIGHT SIDEBAR -->
+            <aside
+                id="sidebarPanel"
+                class="fixed top-0 right-0 w-64 h-full bg-[#0b0b30]/95 backdrop-blur-xl text-white z-[99] transform translate-x-full transition-transform duration-300 p-6"
+            >
+                <!-- Close Button -->
+                <button
+                    id="closeSidebar"
+                    class="text-white text-3xl absolute top-5 right-5"
+                >
+                    ✕
+                </button>
+
+                <h1 class="text-xl font-extrabold tracking-tight mb-10">
+                    DIGITAL<span class="text-[#850E35]">EVENT</span>
+                </h1>
+
+                <nav class="space-y-6 text-lg">
+                    <a href="#" class="block hover:text-[#850E35]/80">HOME</a>
+                    <a href="#" class="block hover:text-[#850E35]/80">ABOUT</a>
+                    <a href="#" class="block hover:text-[#850E35]/80"
+                        >SCHEDULES</a
+                    >
+                    <a href="#" class="block hover:text-[#850E35]/80"
+                        >SPEAKERS</a
+                    >
+
+                    <a
+                        href="#"
+                        class="inline-block bg-[#850E35] text-black px-6 py-2 mt-6 rounded font-semibold hover:bg-white transition"
+                    >
+                        GET TICKETS
+                    </a>
+                </nav>
+            </aside>
+        </section>
+        <script>
+            const openSidebar = document.getElementById("openSidebar");
+            const closeSidebar = document.getElementById("closeSidebar");
+            const sidebarPanel = document.getElementById("sidebarPanel");
+            const sidebarOverlay = document.getElementById("sidebarOverlay");
+            const navbar = document.getElementById("navbar");
+            const navbarContent = document.getElementById("navbarContent");
+            const logoText = navbarContent.querySelector("h1");
+            const menuLinks = navbarContent.querySelectorAll("ul li a");
+            const ticketBtn = navbarContent.querySelector(
+                "a.hidden.lg\\:block"
+            );
+            const openSidebarBtn = document.getElementById("openSidebar");
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 20;
+
+                if (scrolled) {
+                    // Navbar background + shadow
+                    navbar.classList.add(
+                        "bg-white/90",
+                        "backdrop-blur-md",
+                        "shadow-lg"
+                    );
+
+                    // Logo main text → black
+                    logoText.classList.add("!text-gray-800");
+                    // The green span remains unchanged
+
+                    // Desktop menu text black
+                    menuLinks.forEach((l) =>
+                        l.classList.add("text-black", "hover:text-[#0b0b30]")
+                    );
+
+                    // Ticket button black text
+                    ticketBtn.classList.add("text-black");
+
+                    // Mobile icon black
+                    openSidebarBtn.classList.add("text-black");
+                } else {
+                    navbar.classList.remove(
+                        "bg-white/90",
+                        "backdrop-blur-md",
+                        "shadow-lg"
+                    );
+
+                    logoText.classList.remove("!text-gray-800");
+
+                    menuLinks.forEach((l) =>
+                        l.classList.remove("text-black", "hover:text-[#0b0b30]")
+                    );
+
+                    ticketBtn.classList.remove("text-black");
+
+                    openSidebarBtn.classList.remove("text-black");
+                }
+            });
+
+            openSidebar.addEventListener("click", () => {
+                sidebarPanel.classList.remove("translate-x-full");
+                sidebarOverlay.classList.remove("hidden");
+            });
+
+            closeSidebar.addEventListener("click", () => {
+                sidebarPanel.classList.add("translate-x-full");
+                sidebarOverlay.classList.add("hidden");
+            });
+
+            sidebarOverlay.addEventListener("click", () => {
+                sidebarPanel.classList.add("translate-x-full");
+                sidebarOverlay.classList.add("hidden");
+            });
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add(
+                        "bg-white/80",
+                        "backdrop-blur-md",
+                        "shadow-lg"
+                    );
+                } else {
+                    navbar.classList.remove(
+                        "bg-white/80",
+                        "backdrop-blur-md",
+                        "shadow-lg"
+                    );
+                }
+            });
+        </script>
+
+        <!-- HERO SECTION -->
+        <section
+            class="relative w-full min-h-[650px] flex items-center overflow-hidden"
+        >
+            <!-- BACKGROUND IMAGE -->
+            <img
+                src="https://media.licdn.com/dms/image/v2/D5612AQEmfdNUHxyA_g/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1685680617425?e=2147483647&v=beta&t=ItEgJBnLHAXnH1EtNYG1sJ23lQ9AIeKjye8pwygvGhA"
+                alt="Tech Conference"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- DARK OVERLAY -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <!-- LEFT COLOR BAR -->
+                    <div
+                        class="hidden md:block w-3 h-40 bg-[#850E35] rounded-full"
+                    ></div>
+
+                    <!-- CONTENT BOX -->
+                    <div
+                        class=" bg-white/10 border border-white/20 rounded-2xl p-10 max-w-xl"
+                    >
+                        <p
+                            class="text-white/90 font-semibold tracking-wide text-sm mb-2 uppercase"
+                        >
+                            18 – 22 Nov, 2026
+                        </p>
+
+                        <h1
+                            class="text-white font-extrabold text-4xl md:text-6xl leading-tight mb-4"
+                        >
+                            Tech Conference<br />Meetup 2026
+                        </h1>
+
+                        <p class="text-white/80 text-base mb-6 max-w-md">
+                            The world’s leading event for innovators, creators
+                            and digital leaders across the globe.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="inline-flex items-center gap-2 bg-[#850E35] hover:bg-[#aa244b] text-white px-6 py-3 rounded-lg font-semibold transition"
+                        >
+                            Book Your Seat
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLOATING DECOR SHAPES -->
+            <div
+                class="absolute bottom-10 right-10 w-28 h-28 bg-[#850E35]/20 blur-2xl rounded-full"
+            ></div>
+            <div
+                class="absolute top-20 left-10 w-20 h-20 bg-white/10 blur-xl rounded-full"
+            ></div>
+        </section>
+
+        <!-- BOTTOM INFO BAR -->
+        <section class="bg-[#850E35] py-10 px-6 relative overflow-hidden">
+            <div
+                class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-10"
+            >
+                <!-- LOCATION -->
+                <div class="flex items-start gap-3 text-white w-full lg:w-1/3">
+                    <div class="text-3xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <p class="text-lg leading-relaxed underline">
+                        23rd Avenue, 4th Street,<br />
+                        Chicago, Illinois, USA
+                    </p>
+                </div>
+
+                <!-- HURRY UP TEXT -->
+                <div class="text-center text-white lg:w-1/3">
+                    <h3 class="text-2xl font-bold">Hurry Up!</h3>
+                    <p class="text-lg font-medium">Book Your Seat Now</p>
+                </div>
+
+                <!-- COUNTDOWN -->
+                <div class="flex gap-2 md:gap-4">
+                    <!-- DAY -->
+                    <div
+                        class="bg-yellow-400 text-black px-4 min-w-20 md:px-6 py-4 text-center rounded-lg"
+                    >
+                        <h3 id="days" class="text-3xl font-bold">00</h3>
+                        <p class="text-xs font-semibold">DAYS</p>
+                    </div>
+
+                    <!-- HOURS -->
+                    <div
+                        class="bg-yellow-400 text-black px-4 min-w-20 md:px-6 py-4 text-center rounded-lg"
+                    >
+                        <h3 id="hours" class="text-3xl font-bold">00</h3>
+                        <p class="text-xs font-semibold">HRS</p>
+                    </div>
+
+                    <!-- MINS -->
+                    <div
+                        class="bg-yellow-400 text-black px-4 min-w-20 md:px-6 py-4 text-center rounded-lg"
+                    >
+                        <h3 id="minutes" class="text-3xl font-bold">00</h3>
+                        <p class="text-xs font-semibold">MINS</p>
+                    </div>
+
+                    <!-- SECS -->
+                    <div
+                        class="bg-yellow-400 text-black px-4 min-w-20 md:px-6 py-4 text-center rounded-lg"
+                    >
+                        <h3 id="seconds" class="text-3xl font-bold">00</h3>
+                        <p class="text-xs font-semibold">SECS</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            // Set your event date here:
+            const eventDate = new Date("November 18, 2026 00:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = eventDate - now;
+
+                // Time calculations
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor(
+                    (diff % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                // Display values
+                document.getElementById("days").textContent =
+                    days < 0 ? "00" : days;
+                document.getElementById("hours").textContent =
+                    hours < 0 ? "00" : hours;
+                document.getElementById("minutes").textContent =
+                    minutes < 0 ? "00" : minutes;
+                document.getElementById("seconds").textContent =
+                    seconds < 0 ? "00" : seconds;
+            }
+
+            // Update every second
+            setInterval(updateCountdown, 1000);
+
+            // Initial call
+            updateCountdown();
+        </script>
+
+        <!-- ABOUT SECTION -->
+        <section class="py-10 md:py-20 bg-white relative overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-4 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center"
+            >
+                <!-- IMAGE SIDE -->
+                <div class="relative h-full">
+                    <img
+                        src="https://amrax.ai/wp-content/uploads/2024/01/Tech-events.png"
+                        alt="About Event"
+                        class="rounded-2xl shadow h-full object-cover object-left"
+                    />
+
+                    <!-- Accent Shape -->
+                    <div
+                        class="absolute -bottom-6 -left-6 w-40 h-40 bg-[#850E35]/10 rounded-full blur-2xl"
+                    ></div>
+                </div>
+
+                <!-- CONTENT SIDE -->
+                <div>
+                    <p
+                        class="text-[#850E35] font-semibold tracking-wide mb-3 uppercase"
+                    >
+                        About The Event
+                    </p>
+
+                    <h2
+                        class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-gray-900"
+                    >
+                        A Premier Tech Conference Designed for Innovators &
+                        Future Leaders
+                    </h2>
+
+                    <p class="text-gray-600 leading-relaxed md:text-lg mb-6">
+                        Join industry experts, innovators, and technology
+                        enthusiasts at one of the most influential tech
+                        gatherings of the year. Discover upcoming trends,
+                        witness interactive demos, collaborate with visionaries,
+                        and explore what's next in AI, VR, robotics, and digital
+                        transformation.
+                    </p>
+
+                    <ul class="space-y-3 text-gray-700 font-medium md:text-lg">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-[#850E35]"></i>
+                            World-class keynote sessions
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-[#850E35]"></i>
+                            Hands-on workshops & live demos
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-[#850E35]"></i>
+                            Networking with DIGITAL leaders
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-[#850E35]"></i>
+                            Insights on the future of tech
+                        </li>
+                    </ul>
+
+                    <a
+                        href="#"
+                        class="inline-block mt-5 md:mt-8 bg-[#850E35] text-white px-8 py-3 rounded font-semibold text-lg hover:bg-black transition"
+                    >
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT HIGHLIGHTS SECTION -->
+        <section class="py-10 md:py-20 bg-[#F3F4F6]">
+            <div class="max-w-7xl mx-auto px-4 lg:px-12 text-center">
+                <!-- Section Header -->
+                <p
+                    class="text-[#850E35] font-semibold tracking-wide uppercase mb-2"
+                >
+                    Event Highlights
+                </p>
+
+                <h2
+                    class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-10"
+                >
+                    What You Will Experience
+                </h2>
+
+                <!-- Highlight Cards Grid -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                >
+                    <!-- CARD 1 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition"
+                    >
+                        <div class="text-4xl text-[#850E35] mb-4">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Inspiring Keynotes
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Hear from industry leaders sharing insights on
+                            future tech.
+                        </p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition"
+                    >
+                        <div class="text-4xl text-[#850E35] mb-4">
+                            <i class="fa-solid fa-vr-cardboard"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Live VR Demos
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Explore immersive VR experiences designed for
+                            innovation.
+                        </p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition"
+                    >
+                        <div class="text-4xl text-[#850E35] mb-4">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Networking Sessions
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Connect with CEOs, innovators, creators & tech
+                            leaders.
+                        </p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition"
+                    >
+                        <div class="text-4xl text-[#850E35] mb-4">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            AI & Robotics Expo
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Witness cutting-edge AI, automation & robotics
+                            evolution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE BANNER SECTION -->
+        <section
+            class="relative w-full min-h-[550px] flex items-center bg-fixed bg-center bg-cover"
+            style="
+                background-image: url('https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=2070');
+            "
+        >
+            <!-- DARK OVERLAY -->
+            <div class="absolute inset-0 bg-black/60"></div>
+
+            <!-- CONTENT -->
+            <div
+                class="relative z-10 max-w-7xl mx-auto w-full px-4 lg:px-12 py-10 md:py-20"
+            >
+                <p
+                    class="text-white/80 text-sm font-semibold tracking-wide mb-4 uppercase"
+                >
+                    GET EXPERIENCE
+                </p>
+
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4"
+                >
+                    Get The Best Experience<br />
+                    In Business Objective
+                </h2>
+
+                <p class="text-white/80 text-base md:text-lg mb-8">
+                    Like Previous Year This Year We Are Arranging World
+                    Marketing Summit 2025. It's The Gathering Of All The Big.
+                </p>
+
+                <!-- CTA BUTTON -->
+                <a
+                    href="#"
+                    class="inline-flex items-center gap-2 bg-[#850E35] hover:bg-[#aa244b] text-white font-semibold px-6 py-3 rounded transition"
+                >
+                    SEE EVENT DETAILS
+                    <i
+                        class="fa-solid fa-arrow-up-right-from-square text-sm"
+                    ></i>
+                </a>
+            </div>
+
+            <!-- DECORATIVE SHAPES (RIGHT SIDE) -->
+            <div
+                class="absolute right-10 top-1/2 -translate-y-1/2 hidden md:block"
+            >
+                <div class="w-32 h-3 bg-[#850E35] rotate-45 mb-6"></div>
+                <div class="w-32 h-3 bg-[#850E35] rotate-45"></div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section class="bg-[#F3F4F6] py-10 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 lg:px-12 text-center">
+                <!-- Heading -->
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-3">
+                    Ticket Pricing
+                </h2>
+                <p class="text-gray-500 mb-6 md:mb-10">
+                    Simple pricing. No hidden charges. Pick what suits you best.
+                </p>
+
+                <!-- Pricing Cards -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mt-10"
+                >
+                    <!-- Early Bird -->
+                    <div
+                        class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"
+                    >
+                        <h3 class="text-xl font-bold text-[#850E35]">
+                            Early Bird
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-4">
+                            Limited time discount
+                        </p>
+
+                        <p class="text-3xl font-extrabold text-gray-900 mb-6">
+                            ₹999
+                        </p>
+
+                        <ul class="text-gray-700 space-y-2 mb-8 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Full Day Access
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Priority Seating
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Workshop Entry
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Free Welcome Kit
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full bg-[#850E35] text-white py-3 rounded-lg font-semibold hover:bg-[#A64A58] transition"
+                        >
+                            Buy Pass
+                        </button>
+                    </div>
+
+                    <!-- Standard Pass -->
+                    <div
+                        class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"
+                    >
+                        <h3 class="text-xl font-bold text-[#850E35]">
+                            Standard Pass
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-4">
+                            Most popular choice
+                        </p>
+
+                        <p class="text-3xl font-extrabold text-gray-900 mb-6">
+                            ₹1499
+                        </p>
+
+                        <ul class="text-gray-700 space-y-2 mb-8 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Full Event Access
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Main Stage Shows
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Networking Areas
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Access to Food Court
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full bg-[#850E35] text-white py-3 rounded-lg font-semibold hover:bg-[#A64A58] transition"
+                        >
+                            Buy Pass
+                        </button>
+                    </div>
+
+                    <!-- VIP PASS -->
+                    <div
+                        class="bg-[#FFF7E5] p-6 md:p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition"
+                    >
+                        <h3 class="text-xl font-bold text-[#850E35]">
+                            VIP Pass
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-4">
+                            Premium experience
+                        </p>
+
+                        <p class="text-3xl font-extrabold text-gray-900 mb-6">
+                            ₹2999
+                        </p>
+
+                        <ul class="text-gray-700 space-y-2 mb-8 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Front Row Seating
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                VIP Lounge Entry
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Backstage Meet
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[#850E35]"></i>
+                                Premium Gift Bag
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full bg-[#850E35] text-white py-3 rounded-lg font-semibold hover:bg-[#A64A58] transition"
+                        >
+                            Buy VIP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT SCHEDULE SECTION -->
+        <section class="py-10 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 lg:px-12">
+                <!-- Section Title -->
+                <div class="text-center mb-12">
+                    <p
+                        class="text-[#850E35] font-semibold tracking-wide uppercase mb-2"
+                    >
+                        Event Schedule
+                    </p>
+                    <h2
+                        class="text-3xl md:text-4xl font-extrabold text-gray-900"
+                    >
+                        Conference Day Breakdown
+                    </h2>
+                </div>
+
+                <!-- Date Tabs -->
+                <div class="flex justify-center gap-4 mb-10 flex-wrap">
+                    <button
+                        class="schedule-tab bg-[#850E35] text-white px-6 py-2 rounded font-semibold shadow-md"
+                        data-day="day1"
+                    >
+                        Day 1 — 18 Nov
+                    </button>
+                    <button
+                        class="schedule-tab bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded font-semibold"
+                        data-day="day2"
+                    >
+                        Day 2 — 19 Nov
+                    </button>
+                    <button
+                        class="schedule-tab bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded font-semibold"
+                        data-day="day3"
+                    >
+                        Day 3 — 20 Nov
+                    </button>
+                </div>
+
+                <!-- DAY 1 SCHEDULE -->
+                <div id="day1" class="schedule-content block">
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div
+                            class="flex gap-6 p-6 bg-[#F3F4F6] rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                09:30 AM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Opening Ceremony
+                                </h3>
+                                <p class="text-gray-600">
+                                    Welcome address & event overview
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div
+                            class="flex gap-6 p-6 bg-white rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                11:00 AM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Keynote: Future of AI
+                                </h3>
+                                <p class="text-gray-600">
+                                    Speaker: Dr. Michael Reeves
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div
+                            class="flex gap-6 p-6 bg-[#F3F4F6] rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                02:00 PM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Panel Discussion
+                                </h3>
+                                <p class="text-gray-600">
+                                    Tech Leaders on Innovation & Ethics
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 SCHEDULE -->
+                <div id="day2" class="schedule-content hidden">
+                    <div class="space-y-6">
+                        <div
+                            class="flex gap-6 p-6 bg-[#F3F4F6] rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                10:00 AM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Workshop: VR Prototyping
+                                </h3>
+                                <p class="text-gray-600">
+                                    Hands-on session with VR tools
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex gap-6 p-6 bg-white rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                01:00 PM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Tech Expo Tour
+                                </h3>
+                                <p class="text-gray-600">
+                                    Showcase of AI & robotic devices
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 3 SCHEDULE -->
+                <div id="day3" class="schedule-content hidden">
+                    <div class="space-y-6">
+                        <div
+                            class="flex gap-6 p-6 bg-[#F3F4F6] rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                09:00 AM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Startup Pitch Event
+                                </h3>
+                                <p class="text-gray-600">
+                                    Top 10 startups compete
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex gap-6 p-6 bg-white rounded-xl shadow-sm border border-gray-200"
+                        >
+                            <div
+                                class="text-[#850E35] text-lg my-auto font-bold w-28"
+                            >
+                                12:00 PM
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Closing Remarks
+                                </h3>
+                                <p class="text-gray-600">
+                                    Final summary & farewell
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            const tabs = document.querySelectorAll(".schedule-tab");
+            const contents = document.querySelectorAll(".schedule-content");
+
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    const day = tab.getAttribute("data-day");
+
+                    // Reset tab styles
+                    tabs.forEach((t) =>
+                        t.classList.remove("bg-[#850E35]", "text-white")
+                    );
+                    tabs.forEach((t) =>
+                        t.classList.add("bg-gray-200", "text-gray-700")
+                    );
+
+                    // Activate current tab
+                    tab.classList.add("bg-[#850E35]", "text-white");
+                    tab.classList.remove("bg-gray-200", "text-gray-700");
+
+                    // Switch content
+                    contents.forEach((c) => c.classList.add("hidden"));
+                    document.getElementById(day).classList.remove("hidden");
+                });
+            });
+        </script>
+
+        <!-- VENUE SECTION -->
+        <section class="py-10 md:py-20 bg-[#F3F4F6]">
+            <div
+                class="max-w-7xl mx-auto px-4 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+            >
+                <!-- LEFT SIDE — TEXT INFO -->
+                <div>
+                    <p
+                        class="text-[#850E35] font-semibold tracking-wide uppercase mb-3"
+                    >
+                        Event Venue
+                    </p>
+
+                    <h2
+                        class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6"
+                    >
+                        Join Us at Our Premium<br />Conference Location
+                    </h2>
+
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Our international venue is designed for seamless
+                        experiences — world-class halls, premium seating,
+                        breakout rooms, and more. Perfectly located for easy
+                        travel and stay.
+                    </p>
+
+                    <!-- INFO LIST -->
+                    <ul class="space-y-4 text-gray-700 text-lg">
+                        <li class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-location-dot text-2xl text-[#850E35]"
+                            ></i>
+                            <span>
+                                23rd Avenue, 4th Street,<br />
+                                Chicago, Illinois, USA
+                            </span>
+                        </li>
+
+                        <li class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-calendar-days text-2xl text-[#850E35]"
+                            ></i>
+                            <span>18 – 22 November, 2026</span>
+                        </li>
+
+                        <li class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-clock text-2xl text-[#850E35]"
+                            ></i>
+                            <span>10:00 AM – 6:00 PM Daily</span>
+                        </li>
+                    </ul>
+
+                    <!-- BUTTON -->
+                    <a
+                        href="#"
+                        class="inline-flex items-center gap-2 mt-8 bg-[#850E35] text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition"
+                    >
+                        View in Map
+                    </a>
+                </div>
+
+                <!-- RIGHT SIDE — MAP / IMAGE -->
+                <div
+                    class="relative rounded-2xl overflow-hidden shadow-lg border border-gray-300 h-full"
+                >
+                    <img
+                        src="https://agcdn-1d97e.kxcdn.com/wp-content/uploads/2021/07/alphagamma-tech-conferences-you-cannot-miss-entrepreneurship-2021-1021x580.jpg"
+                        alt="Venue Map"
+                        class="w-full h-[350px] md:h-full object-cover"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-[#0b0b30] text-white pt-16 pb-10">
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-10"
+            >
+                <!-- LOGO + ABOUT -->
+                <div>
+                    <h2 class="text-3xl font-extrabold">
+                        DIGITAL<span class="text-[#850E35]">EVENT</span>
+                    </h2>
+                    <p class="text-white/70 mt-4 leading-relaxed">
+                        A world-class tech conference bringing innovators,
+                        creators, and leaders together to shape the future of
+                        technology.
+                    </p>
+
+                    <!-- SOCIAL ICONS -->
+                    <div class="flex gap-4 mt-5">
+                        <a
+                            href="#"
+                            class="text-white/70 hover:text-[#850E35] text-xl"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-white/70 hover:text-[#850E35] text-xl"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-white/70 hover:text-[#850E35] text-xl"
+                        >
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-white/70 hover:text-[#850E35] text-xl"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-3 text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]"
+                                >Speakers</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]"
+                                >Schedules</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SUPPORT LINKS -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Support</h3>
+                    <ul class="space-y-3 text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]"
+                                >Terms & Conditions</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]"
+                                >Privacy Policy</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#850E35]"
+                                >Contact Us</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Stay Connected</h3>
+                    <p class="text-white/70 mb-4">
+                        Reach out to us anytime for queries, updates, or event
+                        information.
+                    </p>
+
+                    <div class="space-y-4 text-white/80">
+                        <!-- EMAIL -->
+                        <div class="flex items-center gap-3">
+                            <i
+                                class="fa-solid fa-envelope text-[#850E35] text-xl"
+                            ></i>
+                            <span class="text-white/80"
+                                >support@DIGITALevent.com</span
+                            >
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="flex items-center gap-3">
+                            <i
+                                class="fa-solid fa-phone text-[#850E35] text-xl"
+                            ></i>
+                            <span class="text-white/80">+1 (234) 567-8900</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div
+                class="text-center text-white/60 mt-12 border-t border-white/10 pt-6"
+            >
+                © 2026 DIGITAL EVENT. All Rights Reserved.
+            </div>
+        </footer>
+    </body>
+</html>
