@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Template - 7</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                content: [],
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            kanit: ["Kanit", "sans-serif"],
+                            remixicon: ["remixicon"],
+                            outfit: ["Outfit", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <style>
+            @font-face {
+                font-family: "Kanit";
+                src: url("https://fonts.gstatic.com/s/kanit/v17/nKKS-Go6G5tXcraQI6miZaNhNA.ttf")
+                    format("truetype");
+                font-weight: 300;
+                font-style: italic;
+            }
+
+            @font-face {
+                font-family: "Kanit";
+                src: url("https://fonts.gstatic.com/s/kanit/v17/nKKU-Go6G5tXcr4-ORWnVaQ.ttf")
+                    format("truetype");
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Kanit";
+                src: url("https://fonts.gstatic.com/s/kanit/v17/nKKZ-Go6G5tXcraVGwU.ttf")
+                    format("truetype");
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Kanit";
+                src: url("https://fonts.gstatic.com/s/kanit/v17/nKKU-Go6G5tXcr5mOBWnVaQ.ttf")
+                    format("truetype");
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Kanit";
+                src: url("https://fonts.gstatic.com/s/kanit/v17/nKKU-Go6G5tXcr5KPxWnVaQ.ttf")
+                    format("truetype");
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Kanit";
+                src: url("https://fonts.gstatic.com/s/kanit/v17/nKKU-Go6G5tXcr4uPhWnVaQ.ttf")
+                    format("truetype");
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "Outfit";
+                src: url("https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyO4a0Fg.ttf")
+                    format("truetype");
+                font-weight: 700;
+                font-style: normal;
+            }
+        </style>
+    </head>
+    <body class="font-light font-kanit overflow-x-hidden">
+        <section
+            id="navbar"
+            class="w-full fixed top-0 left-0 z-50 transition-all duration-300 font-kanit overflow-x-hidden"
+        >
+            <div
+                class="max-w-[1536px] mx-auto flex items-center justify-between px-6 py-4"
+            >
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img
+                        src="https://st3.depositphotos.com/8089676/33133/v/450/depositphotos_331334244-stock-illustration-color-events-letters-banner-white.jpg"
+                        class="h-10"
+                        alt="logo"
+                    />
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-10 text-white/80">
+                    <a href="#home" class="hover:text-white">Home</a>
+                    <a href="#about" class="hover:text-white">About</a>
+                    <a href="#schedule" class="hover:text-white">Schedule</a>
+                    <a href="#speakers" class="hover:text-white">Speakers</a>
+                    <a href="#blog" class="hover:text-white">Blog</a>
+                    <a href="#contact" class="hover:text-white">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <a
+                    href="#"
+                    class="relative text-gray-900 font-medium bg-white inline-block leading-[22.78px] overflow-hidden px-[15px] py-2 rounded-[30px] md:px-[18px] md:py-3 hover:bg-white/80"
+                    ><span
+                        class="items-center gap-x-2.5 flex justify-center gap-y-2.5 z-[1]"
+                        >Get Ticket
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-2.svg"
+                            style="
+                                height: 18px;
+                                width: 18px;
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                            alt="icon"
+                        />
+                    </span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileBtn" class="md:hidden text-white text-3xl">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Mobile Sidebar Background -->
+            <div
+                id="sidebarOverlay"
+                class="fixed inset-0 bg-black/60 backdrop-blur-md hidden"
+            ></div>
+
+            <!-- Mobile Sidebar -->
+            <div
+                id="mobileSidebar"
+                class="fixed left-0 top-0 h-full w-[260px] bg-[#181D27] text-white transform -translate-x-full transition-transform duration-300 p-6 space-y-6 md:hidden"
+            >
+                <button id="closeSidebar" class="text-2xl mb-4">✕</button>
+
+                <a href="#home" class="block text-lg">Home</a>
+                <a href="#about" class="block text-lg">About</a>
+                <a href="#schedule" class="block text-lg">Schedule</a>
+                <a href="#speakers" class="block text-lg">Speakers</a>
+                <a href="#blog" class="block text-lg">Blog</a>
+                <a href="#contact" class="block text-lg">Contact</a>
+
+                <a
+                    href="#"
+                    class="inline-block bg-white text-gray-900 px-6 py-2 rounded-full font-medium mt-4"
+                >
+                    Get Ticket
+                </a>
+            </div>
+        </section>
+        <script>
+            const navbar = document.getElementById("navbar");
+            const mobileBtn = document.getElementById("mobileBtn");
+            const mobileSidebar = document.getElementById("mobileSidebar");
+            const sidebarOverlay = document.getElementById("sidebarOverlay");
+            const closeSidebar = document.getElementById("closeSidebar");
+
+            // SCROLL BG CHANGE
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("bg-[#181D27]");
+                } else {
+                    navbar.classList.remove("bg-[#181D27]");
+                }
+            });
+
+            // OPEN SIDEBAR
+            mobileBtn.addEventListener("click", () => {
+                mobileSidebar.classList.remove("-translate-x-full");
+                sidebarOverlay.classList.remove("hidden");
+            });
+
+            // CLOSE SIDEBAR
+            closeSidebar.addEventListener("click", () => {
+                mobileSidebar.classList.add("-translate-x-full");
+                sidebarOverlay.classList.add("hidden");
+            });
+
+            sidebarOverlay.addEventListener("click", () => {
+                mobileSidebar.classList.add("-translate-x-full");
+                sidebarOverlay.classList.add("hidden");
+            });
+        </script>
+
+        <section
+            class="relative overflow-x-hidden w-full bg-[url('https://wallpapergod.com/images/hd/plain-1920X1200-wallpaper-xvabox3s0ap7sgu0.jpeg')] bg-cover bg-center bg-no-repeat font-kanit pt-[200px] pb-10 px-2.5 md:pt-[170px] md:pb-20 md:px-5 flex justify-center overflow-hidden"
+        >
+            <div
+                class="w-full max-w-[1580px] flex flex-wrap justify-between gap-5 p-2.5 md:p-0 relative z-10"
+            >
+                <!-- LEFT TITLE -->
+                <div class="w-full md:w-3/5">
+                    <h1
+                        class="text-white text-6xl md:text-[86px] font-bold uppercase leading-[70px] md:leading-[96px]"
+                    >
+                        <span
+                            class="relative bg-[url('https://demo.rstheme.com/wordpress/vibent/wp-content/uploads/2025/10/review.png')] bg-no-repeat bg-[position:left_50%] pl-0 pt-[180px] md:pt-0 md:pl-[210px]"
+                        >
+                            Digital
+                        </span>
+                        Design Event
+                    </h1>
+                </div>
+
+                <!-- RIGHT DESCRIPTION -->
+                <div class="w-full md:w-[37%] mt-5">
+                    <p class="text-white text-lg mb-5">
+                        Step into the world where imagination meets innovation —
+                        the Digital Design Event 2026 is your gateway to the
+                        cutting edge of design, technology, and creative
+                        expression.
+                    </p>
+
+                    <div
+                        class="border-t border-b border-white/20 pt-3 pb-2.5 md:pt-2.5"
+                    >
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <!-- Date -->
+                            <div
+                                class="flex items-center w-full md:w-auto mb-4 md:mb-0 pb-4 md:pb-0 md:pr-5 md:mr-5 border-b border-white/20 md:border-b-0 md:border-r"
+                            >
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-6.svg"
+                                    class="h-[18px] w-[18px] mr-2"
+                                />
+                                <span class="text-white"
+                                    >24–27, Sep – 2026</span
+                                >
+                            </div>
+
+                            <!-- Time -->
+                            <div class="flex items-center w-full md:w-auto">
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-7.svg"
+                                    class="h-[18px] w-[18px] mr-2"
+                                />
+                                <span class="text-white"
+                                    >10.00 AM – 2.00 PM</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THREE WORD TAGS -->
+                <div class="w-full md:w-[35%] mt-6 md:mt-[60px]">
+                    <div
+                        class="flex justify-between text-white uppercase font-medium text-sm md:text-lg mb-5"
+                    >
+                        <span>Digital</span>
+                        <span>Connect</span>
+                        <span>Community</span>
+                    </div>
+
+                    <div></div>
+                    <!-- EVENT CARD BOX -->
+                    <div
+                        class="bg-white/20 rounded-lg p-2.5 flex flex-col md:flex-row gap-5"
+                    >
+                        <!-- IMAGE -->
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/cadr_image.jpg"
+                            class="w-full md:w-[205px] rounded-lg"
+                        />
+
+                        <!-- EVENT TEXT -->
+                        <div class="pt-2 md:py-0">
+                            <span
+                                class="text-white text-xl uppercase block mb-1"
+                                >Next Event: Meetup</span
+                            >
+                            <p class="text-white text-base uppercase">
+                                10–08 November 2026
+                            </p>
+                            <p class="text-white text-base uppercase mt-5">
+                                Get 50% Off Tickets
+                            </p>
+                        </div>
+
+                        <!-- ARROW ICON -->
+                        <div class="flex items-center justify-center">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-8.svg"
+                                class="h-9 w-9"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event TITLE -->
+                <div class="relative z-10 text-white">
+                    <p
+                        class="text-6xl md:text-[86px] font-bold uppercase leading-[70px] md:leading-[96px]"
+                    >
+                        Event
+                    </p>
+                </div>
+            </div>
+
+            <!-- STONE IMAGE -->
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/stone.png"
+                class="absolute right-0 bottom-0 w-[19%] md:w-auto z-[1]"
+                alt="stone"
+            />
+        </section>
+
+        <section
+            class="relative overflow-x-hidden bg-gray-900 w-full py-10 md:py-20 font-kanit"
+        >
+            <!-- Floating Arrow -->
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/arrow-top-icon-2-1.svg"
+                class="absolute right-[50px] bottom-[360px] z-[1]"
+                alt="arrow-top"
+            />
+
+            <div class="w-full max-w-[1500px] mx-auto flex flex-col px-5">
+                <!-- MAIN WRAPPER -->
+                <div
+                    class="flex flex-col md:flex-row justify-between w-full gap-10 mx-auto max-w-[1300px]"
+                >
+                    <!-- LEFT IMAGE -->
+                    <div
+                        class="w-full md:w-2/5 flex justify-center md:justify-start"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/about_02-min.png"
+                            alt="about"
+                            class="w-full max-w-full"
+                        />
+                    </div>
+
+                    <!-- RIGHT CONTENT -->
+                    <div class="w-full md:w-[57%] pt-5 md:pt-0">
+                        <!-- HEADLINE -->
+                        <div>
+                            <span
+                                class="text-[#0C6DD4] text-base md:text-[17px] uppercase inline-flex items-center mb-2"
+                            >
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-9.svg"
+                                    class="h-[34px] w-[34px] mx-2"
+                                    style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                                />
+                                WELCOME TO the event
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-10.svg"
+                                    class="h-[34px] w-[34px] mx-2"
+                                    style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                                />
+                            </span>
+
+                            <h2
+                                class="text-white text-3xl md:text-[40px] leading-10 md:leading-[50px] font-semibold"
+                            >
+                                Exploring The Future of Digital Design Together
+                            </h2>
+                        </div>
+
+                        <!-- DESCRIPTION -->
+                        <p class="text-white mt-5 md:w-[86%]">
+                            Event is a creative platform dedicated to
+                            organizing world-class design events that bring
+                            together professionals, students, and innovators
+                            from industry.
+                        </p>
+
+                        <!-- BUTTON -->
+                        <div class="mt-5">
+                            <a
+                                href="#"
+                                class="text-white hover:text-[#0C6DD4] inline-flex items-center"
+                            >
+                                Book Event Now
+                                <span
+                                    class="relative ml-2 h-[18px] w-[18px] inline-block"
+                                >
+                                    <img
+                                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-11.svg"
+                                        class="absolute inset-0"
+                                    />
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- DIVIDER -->
+                        <div class="py-[15px] mt-3">
+                            <span
+                                class="block border-t border-white/10 w-full md:w-[90%]"
+                            ></span>
+                        </div>
+
+                        <!-- FEATURES -->
+                        <div
+                            class="flex flex-wrap md:flex-nowrap gap-10 md:gap-5 mt-5"
+                        >
+                            <!-- Feature 1 -->
+                            <div class="w-full md:w-1/3 text-white">
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-13.svg"
+                                    class="h-[51px] w-[51px] mb-3"
+                                    style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                                />
+                                <h4
+                                    class="text-[22px] font-semibold leading-[34px]"
+                                >
+                                    Live Sections
+                                </h4>
+                                <p class="text-white/70">We are dedicated</p>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div class="w-full md:w-1/3 text-white">
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-14.svg"
+                                    class="h-[51px] w-[51px] mb-3"
+                                    style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                                />
+                                <h4
+                                    class="text-[22px] font-semibold leading-[34px]"
+                                >
+                                    Online Ticket
+                                </h4>
+                                <p class="text-white/70">We are dedicated</p>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div class="w-full md:w-1/3 text-white">
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-15.svg"
+                                    class="h-[51px] w-[51px] mb-3"
+                                    style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                                />
+                                <h4
+                                    class="text-[22px] font-semibold leading-[34px]"
+                                >
+                                    Expert Spikers
+                                </h4>
+                                <p class="text-white/70">We are dedicated</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COUNTDOWN SECTION -->
+                <div
+                    class="relative w-full bg-[url('https://wallpapergod.com/images/hd/plain-1920X1200-wallpaper-xvabox3s0ap7sgu0.jpeg')]  bg-cover bg-center mt-[90px] py-[50px] md:py-20 flex justify-center"
+                >
+                    <div
+                        class="w-full max-w-[1300px] flex flex-wrap px-3 md:px-5 justify-between"
+                    >
+                        <!-- LEFT TEXT -->
+                        <div class="w-full md:w-6/12">
+                            <span
+                                class="text-white text-base md:text-[17px] uppercase inline-flex items-center mb-2"
+                            >
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-16.svg"
+                                    class="h-[34px] w-[34px] mx-2"
+                                />
+                                Countdown
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-17.svg"
+                                    class="h-[34px] w-[34px] mx-2"
+                                />
+                            </span>
+
+                            <h2
+                                class="text-white text-3xl md:text-[40px] font-semibold leading-10 md:leading-[50px] mb-5"
+                            >
+                                The Most Anticipated Multi Event is Coming
+                            </h2>
+                        </div>
+
+                        <!-- COUNTDOWN VISUAL -->
+                        <div
+                            class="w-full md:w-6/12 flex items-center mt-5 md:mt-0 "
+                        >
+                            <div
+                                class="w-full flex justify-center text-white text-3xl md:text-[50px] font-bold space-x-6"
+                            >
+                                <span id="count-days">0</span>
+                                <span>:</span>
+                                <span id="count-hours">0</span>
+                                <span>:</span>
+                                <span id="count-mins">0</span>
+                                <span>:</span>
+                                <span id="count-secs">0</span>
+                            </div>
+                        </div>
+
+                        <!-- FLOATING DECOR LEFT -->
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/count_bg_02.svg"
+                            class="absolute left-[-93px] top-[91px] md:top-[-19px] max-w-[178px] hidden md:block z-0"
+                        />
+
+                        <!-- FLOATING DECOR RIGHT -->
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/count_bg_01.svg"
+                            class="absolute right-[-108px] bottom-[11px] w-[225px] hidden md:block z-0"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+    function startCountdown() {
+        const eventDate = new Date("2026-12-17T00:00:00"); // <<< YOUR DATE
+        const dayEl = document.getElementById("count-days");
+        const hourEl = document.getElementById("count-hours");
+        const minEl = document.getElementById("count-mins");
+        const secEl = document.getElementById("count-secs");
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                dayEl.innerHTML = "00";
+                hourEl.innerHTML = "00";
+                minEl.innerHTML = "00";
+                secEl.innerHTML = "00";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            const secs = Math.floor((diff / 1000) % 60);
+
+            dayEl.innerHTML = String(days).padStart(2, "0");
+            hourEl.innerHTML = String(hours).padStart(2, "0");
+            minEl.innerHTML = String(mins).padStart(2, "0");
+            secEl.innerHTML = String(secs).padStart(2, "0");
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
+    startCountdown();
+</script>
+
+
+        <section
+            class="w-full bg-zinc-800 uppercase overflow-hidden pb-10 md:pb-20"
+        >
+            <!-- REPEATED SET STARTS HERE -->
+     <style>
+    /* Marquee wrapper */
+    .marquee-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Track that scrolls */
+    .marquee-track {
+        display: flex;
+        gap: 4rem;
+        width: max-content;
+        animation: marqueeScroll 50s linear infinite;
+    }
+
+    /* Animation */
+    @keyframes marqueeScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>
+
+<div class="marquee-container py-10">
+    <div class="marquee-track">
+
+        <!-- 1 -->
+        <div class="inline-flex items-center flex-row-reverse">
+            <p
+                class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+            >
+                Business Conference
+            </p>
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
+            />
+        </div>
+
+        <!-- 2 -->
+        <div class="inline-flex items-center flex-row-reverse">
+            <p
+                class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+            >
+                Business Solution
+            </p>
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
+            />
+        </div>
+
+        <!-- 3 -->
+        <div class="inline-flex items-center flex-row-reverse">
+            <p
+                class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+            >
+                Business Conference
+            </p>
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
+            />
+        </div>
+
+        <!-- 4 -->
+        <div class="inline-flex items-center flex-row-reverse">
+            <p
+                class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+            >
+                Business Solution
+            </p>
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
+            />
+        </div>
+
+        <!-- duplicated for infinite loop smoothness -->
+        <!-- 5 -->
+        <div class="inline-flex items-center flex-row-reverse">
+            <p
+                class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+            >
+                Business Conference
+            </p>
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
+            />
+        </div>
+
+        <!-- 6 -->
+        <div class="inline-flex items-center flex-row-reverse">
+            <p
+                class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+            >
+                Business Solution
+            </p>
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
+            />
+        </div>
+
+    </div>
+</div>
+
+
+            <div class="max-w-7xl mx-auto px-4">
+                <input
+                    type="radio"
+                    name="day"
+                    id="day1"
+                    class="hidden"
+                    checked
+                />
+                <label
+                    for="day1"
+                    class="cursor-pointer px-6 py-2 rounded-full border border-[#0C6DD4] text-[#0C6DD4] font-semibold inline-flex justify-center mb-6 mx-2"
+                >
+                    Day 01
+                </label>
+
+                <input type="radio" name="day" id="day2" class="hidden" />
+                <label
+                    for="day2"
+                    class="cursor-pointer px-6 py-2 rounded-full border border-[#0C6DD4] text-[#0C6DD4] font-semibold inline-flex justify-center mb-6 mx-2"
+                >
+                    Day 02
+                </label>
+
+                <!-- CONTENT WRAPPER (now a sibling of radios) -->
+                <div class="content">
+                    <!-- 🌟 DAY 1 CONTENT -->
+                    <div id="content-day1" class="tab-content space-y-10">
+                        <!-- CARD WRAPPER -->
+                        <div class="space-y-10">
+                            <!-- 1️⃣ PRODUCT DESIGN – DIAMOND TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT CONTENT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-[#0C6DD4] bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-org-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/30 border-dashed"
+                                >
+                                    <!-- Title + Ticket Button -->
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/30 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Product Design
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Diamond Ticket
+                                        </a>
+                                    </div>
+
+                                    <!-- Price + Description + Time -->
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹799.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            We are dedicated to safeguarding
+                                            innovation, trust and resilience. We
+                                            specialize in providing cutting-edge
+                                            creative solutions.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT SIDE (Address + Button) -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-18.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 2️⃣ INTERACTION DESIGN – GOLDEN TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-gray-900 bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10 border-dashed"
+                                >
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/10 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Interaction Design
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Golden Ticket
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹699.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            We specialize in providing
+                                            cutting-edge experiences and
+                                            innovative interactions.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-21.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 3️⃣ DIGITAL STORYTELLING – SILVER TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-[#0C6DD4] bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-org-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/30 border-dashed"
+                                >
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/30 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Digital Storytelling
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Silver Ticket
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹599.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            Enhancing narrative design with
+                                            immersive digital experiences.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-18.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 4️⃣ MOTION GRAPHIC – BUSINESS TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-gray-900 bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10 border-dashed"
+                                >
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/10 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Motion Graphic
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Business Ticket
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹499.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            Creative animations that elevate
+                                            visual storytelling and branding.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-21.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🌟 DAY 2 CONTENT -->
+                    <div id="content-day2" class="tab-content space-y-10">
+                        <!-- CARD WRAPPER -->
+                        <div class="space-y-10">
+                            <!-- 1️⃣ PRODUCT DESIGN – DIAMOND TICKET -->
+
+                            <!-- 3️⃣ DIGITAL STORYTELLING – SILVER TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-[#0C6DD4] bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-org-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/30 border-dashed"
+                                >
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/30 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Digital Storytelling
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Silver Ticket
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹599.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            Enhancing narrative design with
+                                            immersive digital experiences.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-18.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 2️⃣ INTERACTION DESIGN – GOLDEN TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-gray-900 bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10 border-dashed"
+                                >
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/10 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Interaction Design
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Golden Ticket
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹699.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            We specialize in providing
+                                            cutting-edge experiences and
+                                            innovative interactions.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-21.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT CONTENT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-[#0C6DD4] bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-org-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/30 border-dashed"
+                                >
+                                    <!-- Title + Ticket Button -->
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/30 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Product Design
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Diamond Ticket
+                                        </a>
+                                    </div>
+
+                                    <!-- Price + Description + Time -->
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹799.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            We are dedicated to safeguarding
+                                            innovation, trust and resilience. We
+                                            specialize in providing cutting-edge
+                                            creative solutions.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT SIDE (Address + Button) -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-18.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- 4️⃣ MOTION GRAPHIC – BUSINESS TICKET -->
+                            <div
+                                class="flex flex-col md:flex-row rounded-2xl overflow-hidden"
+                            >
+                                <!-- LEFT -->
+                                <div
+                                    class="w-full md:w-7/12 bg-gray-900 bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/price-bg.png')] bg-top bg-no-repeat p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10 border-dashed"
+                                >
+                                    <div
+                                        class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-white/10 border-dashed"
+                                    >
+                                        <h3
+                                            class="text-white text-2xl md:text-3xl font-semibold"
+                                        >
+                                            Motion Graphic
+                                        </h3>
+
+                                        <a
+                                            href="#"
+                                            class="mt-3 md:mt-0 bg-white text-gray-900 border border-[#0C6DD4] border-dashed px-8 py-3 rounded-md text-xl font-medium"
+                                        >
+                                            Business Ticket
+                                        </a>
+                                    </div>
+
+                                    <div
+                                        class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6"
+                                    >
+                                        <h3
+                                            class="text-white text-3xl font-semibold"
+                                        >
+                                            ₹499.00
+                                        </h3>
+
+                                        <p class="text-white/90 md:w-1/2">
+                                            Creative animations that elevate
+                                            visual storytelling and branding.
+                                        </p>
+
+                                        <p
+                                            class="text-white text-xl font-medium leading-tight"
+                                        >
+                                            24 Sep<br />09:00
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div
+                                    class="w-full md:w-5/12 bg-gray-900 p-6 md:p-8 flex flex-col justify-center items-center"
+                                >
+                                    <p
+                                        class="text-white text-lg leading-relaxed mb-4"
+                                    >
+                                        4517 Washington Ave.<br />Manchester,
+                                        Kentucky
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="bg-[#0C6DD4] text-white px-8 py-3 rounded-full font-medium inline-flex items-center gap-2"
+                                    >
+                                        Get Ticket
+                                        <img
+                                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-21.svg"
+                                            class="w-6 h-6"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            .tab-content {
+                display: none;
+            }
+
+            input:checked + label {
+                background-color: #0c6dd4;
+                color: white;
+            }
+
+            /* WORKS NOW ✔ */
+            #day1:checked ~ .content #content-day1 {
+                display: block;
+            }
+
+            #day2:checked ~ .content #content-day2 {
+                display: block;
+            }
+        </style>
+
+        <section class="bg-gray-900 py-20 px-5">
+            <!-- TITLE -->
+            <div class="text-center max-w-3xl mx-auto">
+                <span
+                    class="text-[#0C6DD4] text-base md:text-lg font-medium uppercase inline-flex items-center gap-2"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-9.svg"
+                        class="h-7 w-7"
+                        style="
+                            filter: invert(36%) sepia(92%) saturate(748%)
+                                hue-rotate(184deg) brightness(90%)
+                                contrast(101%);
+                        "
+                    />
+                    Power Sponsors
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-10.svg"
+                        class="h-7 w-7"
+                        style="
+                            filter: invert(36%) sepia(92%) saturate(748%)
+                                hue-rotate(184deg) brightness(90%)
+                                contrast(101%);
+                        "
+                    />
+                </span>
+
+                <h2 class="text-white text-3xl md:text-4xl font-semibold mt-2">
+                    Proud Sponsors Behind Event
+                </h2>
+
+                <p class="text-white/70 mt-4">
+                    Events are made possible thanks to our amazing sponsors.
+                    They fuel creativity, empower ideas, and help us create
+                    memorable experiences.
+                </p>
+            </div>
+
+            <!-- SPONSOR GRID -->
+            <div
+                class="max-w-6xl mx-auto mt-12 grid grid-cols-2 md:grid-cols-4 gap-5"
+            >
+                <!-- CARD -->
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/partner_001.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/partner_02.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/partner_03.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/partner_02.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/partner_03.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/partner_04.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/sponsors-logo-4.png"
+                        class="w-[150px]"
+                    />
+                </a>
+
+                <a
+                    href="#"
+                    class="bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/partnar_bg.svg')] bg-cover bg-center py-10 px-6 flex justify-center rounded-lg"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/sponsors-logo-5.png"
+                        class="w-[150px]"
+                    />
+                </a>
+            </div>
+        </section>
+
+        <!-- VENUE & LOCATION SECTION -->
+        <section
+            class="relative bg-[#0C6DD4] bg-[url('https://wallpapergod.com/images/hd/plain-1920X1200-wallpaper-xvabox3s0ap7sgu0.jpeg')] bg-cover bg-top px-4"
+        >
+            <div class="max-w-[1380px] mx-auto py-10 md:pb-0 md:pt-[100px]">
+                <!-- BG SHAPE -->
+                <img
+                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/vanue-shape.png"
+                    class="absolute left-0 bottom-0 z-0"
+                />
+
+                <!-- TITLE -->
+                <h2
+                    class="text-transparent text-4xl md:text-8xl font-semibold text-center mb-10"
+                    style="-webkit-text-stroke: 2px rgba(255, 255, 255, 0.5)"
+                >
+                    Venue & Location
+                </h2>
+
+                <!-- CONTENT WRAPPER -->
+                <div
+                    class="bg-zinc-800 rounded-t-lg p-5 md:p-[30px] flex flex-col md:flex-row gap-5 relative z-10"
+                >
+                    <!-- LEFT – IMAGE SLIDER -->
+                    <div class="md:w-2/5 w-full">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <div class="flex w-full">
+                                <div class="shrink-0 w-full md:w-[472px]">
+                                    <img
+                                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/hotel-home.jpg"
+                                        class="h-[398px] w-full object-cover"
+                                    />
+                                </div>
+                                <div class="shrink-0 w-full md:w-[472px]">
+                                    <img
+                                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/hotel-room-2.jpg"
+                                        class="h-[398px] w-full object-cover"
+                                    />
+                                </div>
+                                <div class="shrink-0 w-full md:w-[472px]">
+                                    <img
+                                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/hotel-home-3.jpg"
+                                        class="h-[398px] w-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE CONTENT -->
+                    <div class="md:w-3/5 w-full space-y-[30px]">
+                        <!-- MAP -->
+                        <div class="rounded-lg overflow-hidden">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Downtown%20Ottawa&t=m&z=10&output=embed"
+                                class="w-full h-[280px]"
+                            ></iframe>
+                        </div>
+
+                        <!-- INFO ROW -->
+                        <div class="flex flex-wrap justify-between gap-5">
+                            <!-- ADDRESS -->
+                            <div
+                                class="bg-gray-900 border-l-4 border-[#0C6DD4] p-4 rounded-r-lg flex items-center w-full md:w-[48%]"
+                            >
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-23.svg"
+                                    class="w-[30px] h-[30px] mr-3"
+                                />
+                                <p class="text-white">
+                                    4517 Washington Ave. mal <br />Manchester,
+                                    Kentucky
+                                </p>
+                            </div>
+
+                            <!-- PHONE + EMAIL -->
+                            <div
+                                class="bg-gray-900 border-l-4 border-[#0C6DD4] p-4 rounded-r-lg flex items-center w-full md:w-[48%]"
+                            >
+                                <img
+                                    src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-24.svg"
+                                    class="w-[30px] h-[30px] mr-3"
+                                />
+                                <p class="text-white">
+                                    +990 123 456 789 <br />
+                                    <a
+                                        href="mailto:exmple@gmail.com"
+                                        class="hover:text-[#0C6DD4]"
+                                        >exmple@gmail.com</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="relative bg-gray-900 bg-[url('https://c.animaapp.com/miwnxunvQd8fQQ/assets/team-shape-img1-1.png')] bg-no-repeat bg-bottom py-10 md:py-28"
+        >
+            <!-- Heading -->
+            <div class="text-center max-w-3xl mx-auto px-5">
+                <span
+                    class="text-[#0C6DD4] text-base md:text-lg font-medium uppercase inline-flex items-center gap-2"
+                >
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-9.svg"
+                        class="h-2"
+                          style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                    />
+                    Our Speakers
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-10.svg"
+                        class="h-2"
+                          style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                    />
+                </span>
+
+                <h2
+                    class="text-3xl md:text-4xl font-semibold text-white leading-tight mt-2"
+                >
+                    Expert Speakers Lineup
+                </h2>
+
+                <p class="text-white/70 mt-4">
+                    Our speakers are industry leaders, innovators, and creative
+                    professionals who bring valuable insights and real-world
+                    experience to Event.
+                </p>
+            </div>
+
+            <!-- Speaker Cards Wrapper -->
+            <div class="mt-12 px-4">
+                <div
+                    class="grid grid-cols-2 md:grid-cols-5 max-w-7xl mx-auto gap-3 md:gap-5 overflow-x-auto md:pb-10"
+                >
+                    <!-- CARD TEMPLATE (reuse for all 6) -->
+                    <!-- 1 -->
+                    <div class="bg-zinc-800 p-3 shadow-xl rounded-lg">
+                        <div class="relative overflow-hidden rounded">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/team-c-e-img2-min.jpg"
+                                class="w-full"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-white text-xl font-semibold">
+                                Sophia Malik
+                            </h3>
+                            <p class="text-white/70 text-sm">
+                                Principal Advisor
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="bg-zinc-800 p-3 shadow-xl rounded-lg">
+                        <div class="relative overflow-hidden rounded">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/team-c-e-img3-min.jpg"
+                                class="w-full"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-white text-xl font-semibold">
+                                Olivia Roy
+                            </h3>
+                            <p class="text-white/70 text-sm">
+                                Digital Marketer
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="bg-zinc-800 p-3 shadow-xl rounded-lg">
+                        <div class="relative overflow-hidden rounded">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/team-c-e-img4-min.jpg"
+                                class="w-full"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-white text-xl font-semibold">
+                                Kathryn Murphy
+                            </h3>
+                            <p class="text-white/70 text-sm">CEO & Founder</p>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="bg-zinc-800 p-3 shadow-xl rounded-lg">
+                        <div class="relative overflow-hidden rounded">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/team-c-e-img5-min.jpg"
+                                class="w-full"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-white text-xl font-semibold">
+                                Leslie Alexander
+                            </h3>
+                            <p class="text-white/70 text-sm">
+                                Creative Director
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="bg-zinc-800 p-3 shadow-xl rounded-lg">
+                        <div class="relative overflow-hidden rounded">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/team-h3-e-img6-min.jpg"
+                                class="w-full"
+                            />
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="text-white text-xl font-semibold">
+                                Darlene Robertson
+                            </h3>
+                            <p class="text-white/70 text-sm">Web Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL + SATISFACTION + FAQ COMBINED SECTION -->
+        <section
+            class="w-full bg-cover bg-no-repeat bg-center bg-[url('https://wallpapergod.com/images/hd/plain-1920X1200-wallpaper-xvabox3s0ap7sgu0.jpeg')] px-4 pt-10 -mb-20 md:pt-24 relative"
+        >
+            <!-- LEFT: Heading + Subtitle -->
+            <div
+                class="max-w-[1300px] mx-auto relative z-10 flex flex-col md:flex-row items-start gap-10"
+            >
+                <div class="w-full md:w-3/4">
+                    <span
+                        class="flex items-center text-white text-base font-medium uppercase mb-2"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-26.svg"
+                            class="w-8 mx-2"
+                        />
+                        Testimonials
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-27.svg"
+                            class="w-8 mx-2"
+                        />
+                    </span>
+
+
+                    <p class="text-white/70 mt-4 max-w-xl">
+                        Hear directly from our attendees and partners about
+                        their experiences.
+                    </p>
+                </div>
+
+                <!-- RIGHT: Satisfaction Counter -->
+                <div
+                    class="w-full md:w-1/3 flex flex-col items-start md:items-end"
+                >
+                    <div class="flex items-end">
+                        <div
+                            class="text-white text-6xl md:text-[70px] font-medium leading-none"
+                        >
+                            82
+                        </div>
+                        <span
+                            class="text-white text-6xl md:text-[70px] font-medium"
+                            >%</span
+                        >
+                    </div>
+                    <span class="text-white text-base"
+                        >Customer Satisfaction</span
+                    >
+                </div>
+            </div>
+
+            <!-- TESTIMONIAL CARD + SLIDER -->
+            <div
+                class="max-w-[1300px] mx-auto mt-10 bg-zinc-800 rounded-md p-5 md:p-6 relative z-20 flex flex-col md:flex-row gap-6"
+            >
+                <!-- IMAGE -->
+                <div class="w-full md:w-2/5">
+                    <img
+                        src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/testi-img1-2-min.jpg"
+                        class="w-full rounded-md"
+                    />
+                </div>
+
+                <!-- TEXT SLIDER (Static) -->
+                <div class="w-full md:flex-1">
+                    <div class="relative pb-6">
+                        <h4 class="text-white text-xl font-semibold mb-4 mt-12">
+                            Business Consulting
+                        </h4>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-28.svg"
+                            class="w-12"
+                        />
+
+                        <p class="text-white/80 text-lg italic mb-5">
+                            “The standard chunk of Lorem Ipsum used since the
+                            1500s is reproduced for those interested. Bonorum
+                            Malorum Cicero are also in their original form.”
+                        </p>
+
+                        <div class="flex items-center gap-4">
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/2-1.jpg"
+                                class="h-14 w-14 rounded-full border border-blue-700/10"
+                            />
+                            <div>
+                                <h5 class="text-white text-lg font-medium">
+                                    Abdur Rashid
+                                </h5>
+                                <p class="text-white/70 text-sm">
+                                    Founder & CEO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Smooth accordion animation */
+            .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+            }
+
+            /* Expand content only when radio is checked */
+            input:checked + label + .accordion-content {
+                max-height: 200px;
+            }
+        </style>
+
+        <section class="w-full bg-gray-900 px-5 pt-32 pb-20 relative">
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/testi-shape1-1.png"
+                class="absolute right-0 -top-20 w-64 opacity-80"
+            />
+
+            <div class="max-w-[1300px] mx-auto relative">
+                <!-- HEADING -->
+                <div class="text-center mb-12 max-w-2xl mx-auto">
+                    <span
+                        class="flex justify-center text-[#0C6DD4] text-base font-medium uppercase mb-2"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-9.svg"
+                            class="w-8 mx-2"
+                              style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                        />
+                        Quick Answers
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-10.svg"
+                            class="w-8 mx-2"
+                              style="
+                                        filter: invert(36%) sepia(92%)
+                                            saturate(748%) hue-rotate(184deg)
+                                            brightness(90%) contrast(101%);
+                                    "
+                        />
+                    </span>
+
+                    <h2
+                        class="text-white text-3xl md:text-[40px] font-semibold leading-tight"
+                    >
+                        Frequently Asked Questions
+                    </h2>
+
+                    <p class="text-white/70 mt-4">
+                        Curious about our event? Find answers to the most common
+                        questions here.
+                    </p>
+                </div>
+
+                <!-- FAQ GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- LEFT FAQ LIST -->
+                    <div class="space-y-4 h-full">
+                        <!-- FAQ 1 -->
+                        <div
+                            class="bg-zinc-800 border border-white/10 p-5 rounded-md"
+                        >
+                            <input
+                                type="radio"
+                                name="faq"
+                                id="faq1"
+                                class="hidden"
+                            />
+                            <label
+                                for="faq1"
+                                class="cursor-pointer block text-white text-lg transition !bg-transparent"
+                            >
+                                Find answers to all your event questions?
+                            </label>
+
+                            <div
+                                class="accordion-content text-white/80 text-base"
+                            >
+                                Nullam faucibus eleifend mi eu varius Integer
+                                vel tincidunt massa semper quam.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 (default open) -->
+                        <div
+                            class="bg-zinc-800 border border-white/10 p-5 rounded-md"
+                        >
+                            <input
+                                type="radio"
+                                name="faq"
+                                id="faq2"
+                                class="hidden"
+                            />
+                            <label
+                                for="faq2"
+                                class="cursor-pointer block text-white text-lg transition !bg-transparent"
+                            >
+                                Everything you need about  events?
+                            </label>
+
+                            <div
+                                class="accordion-content text-white/80 text-base"
+                            >
+                                Nullam faucibus eleifend mi eu varius Integer
+                                vel tincidunt massa semper quam.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div
+                            class="bg-zinc-800 border border-white/10 p-5 rounded-md"
+                        >
+                            <input
+                                type="radio"
+                                name="faq"
+                                id="faq3"
+                                class="hidden"
+                            />
+                            <label
+                                for="faq3"
+                                class="cursor-pointer block text-white text-lg transition !bg-transparent"
+                            >
+                                Quick guidance for speakers and partners?
+                            </label>
+
+                            <div
+                                class="accordion-content text-white/80 text-base"
+                            >
+                                Nullam faucibus eleifend mi eu varius Integer
+                                vel tincidunt massa semper quam.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div
+                            class="bg-zinc-800 border border-white/10 p-5 rounded-md"
+                        >
+                            <input
+                                type="radio"
+                                name="faq"
+                                id="faq4"
+                                class="hidden"
+                            />
+                            <label
+                                for="faq4"
+                                class="cursor-pointer block text-white text-lg transition !bg-transparent"
+                            >
+                                Have questions about our events?
+                            </label>
+
+                            <div
+                                class="accordion-content text-white/80 text-base"
+                            >
+                                Nullam faucibus eleifend mi eu varius Integer
+                                vel tincidunt massa semper quam.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div
+                            class="bg-zinc-800 border border-white/10 p-5 rounded-md"
+                        >
+                            <input
+                                type="radio"
+                                name="faq"
+                                id="faq5"
+                                class="hidden"
+                            />
+                            <label
+                                for="faq5"
+                                class="cursor-pointer block text-white text-lg transition !bg-transparent"
+                            >
+                                Can you work with our in-house team?
+                            </label>
+
+                            <div
+                                class="accordion-content text-white/80 text-base"
+                            >
+                                Nullam faucibus eleifend mi eu varius Integer
+                                vel tincidunt massa semper quam.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT IMAGE -->
+                    <div class="">
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/faq-thumb.jpg"
+                            class="w-full rounded-md h-[410px] object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-wrap justify-end w-full mx-auto">
+            <div class="w-full">
+                <div class="flex flex-wrap">
+                    <!-- IMAGE ITEM -->
+                    <a
+                        href="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img1-min.jpg"
+                        class="w-6/12 md:w-1/6 block overflow-hidden"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img1-min.jpg"
+                            class="w-80 object-cover"
+                        />
+                    </a>
+
+                    <a
+                        href="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img2-min.jpg"
+                        class="w-6/12 md:w-1/6 block overflow-hidden"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img2-min.jpg"
+                            class="w-80 object-cover"
+                        />
+                    </a>
+
+                    <a
+                        href="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img3-min.jpg"
+                        class="w-6/12 md:w-1/6 block overflow-hidden"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img3-min.jpg"
+                            class="w-80 object-cover"
+                        />
+                    </a>
+
+                    <a
+                        href="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img4-min.jpg"
+                        class="w-6/12 md:w-1/6 block overflow-hidden"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img4-min.jpg"
+                            class="w-80 object-cover"
+                        />
+                    </a>
+
+                    <a
+                        href="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img5-min.jpg"
+                        class="w-6/12 md:w-1/6 block overflow-hidden"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img5-min.jpg"
+                            class="w-80 object-cover"
+                        />
+                    </a>
+
+                    <a
+                        href="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img6-min.jpg"
+                        class="w-6/12 md:w-1/6 block overflow-hidden"
+                    >
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/gallery-e-img6-min.jpg"
+                            class="w-80 object-cover"
+                        />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#1F242D] relative">
+            <img
+                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/footer-icon-left1.png"
+                class="absolute right-10 bottom-10 z-10"
+            />
+
+            <div
+                class="max-w-[1400px] mx-auto px-5 pt-20 pb-10 flex flex-col md:flex-row gap-10"
+            >
+                <!-- LEFT COLUMN -->
+                <div class="w-full md:w-1/3">
+                    <img
+                        src="https://st3.depositphotos.com/8089676/33133/v/450/depositphotos_331334244-stock-illustration-color-events-letters-banner-white.jpg"
+                        class="h-11 mb-6"
+                    />
+
+                    <h6 class="text-white text-base mb-4">Social Link</h6>
+
+                    <div class="flex gap-4">
+                        <a
+                            href="#"
+                            class="bg-white/10 h-9 w-9 flex items-center justify-center rounded"
+                        >
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-36.svg"
+                                class="h-4"
+                            />
+                        </a>
+                        <a
+                            href="#"
+                            class="bg-white/10 h-9 w-9 flex items-center justify-center rounded"
+                        >
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-37.svg"
+                                class="h-4"
+                            />
+                        </a>
+                        <a
+                            href="#"
+                            class="bg-white/10 h-9 w-9 flex items-center justify-center rounded"
+                        >
+                            <img
+                                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-38.svg"
+                                class="h-4"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <div class="w-full md:w-2/3 flex gap-10">
+                    <!-- OFFICE -->
+                    <div class="w-full md:w-1/2">
+                        <h4 class="text-white text-2xl font-medium mb-4">
+                            New York Office
+                        </h4>
+                        <p class="text-white text-base font-bold mb-1">
+                            Address:
+                        </p>
+                        <p class="text-white/80">
+                            4517 Washington, Manchester,<br />
+                            Kentucky 39495
+                        </p>
+                    </div>
+
+                    <!-- CONTACT -->
+                    <div class="w-full md:w-1/2">
+                        <h4 class="text-white text-2xl font-medium mb-4">
+                            Say Hello
+                        </h4>
+                        <p class="text-white text-base font-bold mb-1">
+                            Phone Call:
+                        </p>
+
+                        <p class="text-white/80">
+                            <a
+                                href="tel://2080666600112"
+                                class="hover:text-[#0C6DD4]"
+                                >208-6666-0112</a
+                            ><br />
+                            <a
+                                href="tel://30855550113"
+                                class="hover:text-[#0C6DD4]"
+                                >308-5555-0113</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTOM BAR -->
+            <div
+                class="border-t border-white/10 py-5 px-5 flex flex-col md:flex-row justify-between text-center text-white"
+            >
+                <p>
+                    ©2025 All rights reserved for Event.
+                </p>
+
+            </div>
+        </section>
+    </body>
+</html>

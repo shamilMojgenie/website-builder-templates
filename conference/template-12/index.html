@@ -60,16 +60,6 @@
                             <a
                                 href="/#"
                                 class="text-[#353535] hover:text-[#434E78] transition duration-300 text-base font-medium"
-                                >Vision</a
-                            >
-                            <a
-                                href="/#"
-                                class="text-[#353535] hover:text-[#434E78] transition duration-300 text-base font-medium"
-                                >Leaders</a
-                            >
-                            <a
-                                href="/#"
-                                class="text-[#353535] hover:text-[#434E78] transition duration-300 text-base font-medium"
                                 >Members</a
                             >
                             <a
@@ -182,16 +172,6 @@
                                 href="/#"
                                 class="block text-[#353535] hover:text-[#434E78] transition duration-300 font-medium"
                                 >About</a
-                            >
-                            <a
-                                href="/#"
-                                class="block text-[#353535] hover:text-[#434E78] transition duration-300 font-medium"
-                                >Vision</a
-                            >
-                            <a
-                                href="/#"
-                                class="block text-[#353535] hover:text-[#434E78] transition duration-300 font-medium"
-                                >Leaders</a
                             >
                             <a
                                 href="/#"
@@ -322,7 +302,12 @@
 
         <!-- hero  -->
         <section
-            class="relative w-full flex items-center overflow-hidden pt-20 lg:pt-50 lg:pb-30"
+            class="relative w-full flex items-center overflow-hidden pt-30 lg:pt-50 lg:pb-30"
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
         >
             <!-- BACKGROUND IMAGE -->
             <img
@@ -338,7 +323,7 @@
 
             <!-- CONTENT WRAPPER -->
             <div
-                class="relative z-10 max-w-7xl mx-auto w-full px-4 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-10"
+                class="relative z-10 max-w-7xl mx-auto w-full px-4 lg:px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-10 mb-10"
             >
                 <!-- LEFT: BIG CIRCULAR DATE + COUNTDOWN -->
                 <div
@@ -374,8 +359,11 @@
                             >
                                 <!-- Days -->
                                 <div class="py-2 flex flex-col justify-center">
-                                    <div class="text-base md:text-lg font-bold">
-                                        212
+                                    <div
+                                        id="count-days"
+                                        class="text-base md:text-lg font-bold"
+                                    >
+                                        0
                                     </div>
                                     <div class="uppercase tracking-wide mt-1">
                                         Day
@@ -384,8 +372,11 @@
 
                                 <!-- Hours -->
                                 <div class="py-2 flex flex-col justify-center">
-                                    <div class="text-base md:text-lg font-bold">
-                                        06
+                                    <div
+                                        id="count-hours"
+                                        class="text-base md:text-lg font-bold"
+                                    >
+                                        0
                                     </div>
                                     <div class="uppercase tracking-wide mt-1">
                                         Hours
@@ -394,8 +385,11 @@
 
                                 <!-- Minutes -->
                                 <div class="py-2 flex flex-col justify-center">
-                                    <div class="text-base md:text-lg font-bold">
-                                        55
+                                    <div
+                                        id="count-mins"
+                                        class="text-base md:text-lg font-bold"
+                                    >
+                                        0
                                     </div>
                                     <div class="uppercase tracking-wide mt-1">
                                         Mins
@@ -404,8 +398,11 @@
 
                                 <!-- Seconds -->
                                 <div class="py-2 flex flex-col justify-center">
-                                    <div class="text-base md:text-lg font-bold">
-                                        06
+                                    <div
+                                        id="count-secs"
+                                        class="text-base md:text-lg font-bold"
+                                    >
+                                        0
                                     </div>
                                     <div class="uppercase tracking-wide mt-1">
                                         Secs
@@ -430,8 +427,8 @@
                         class="text-4xl md:text-6xl font-medium leading-tight mb-4 text-center md:text-left"
                     >
                         EDUCATION<br />
-                        CONFERENCE<br />
-                        2025
+                        CONFERENCE<br class="hidden md:block" />
+                        2026
                     </h1>
 
                     <p
@@ -451,11 +448,59 @@
                 </div>
             </div>
         </section>
+        <script>
+            // Set your event date here
+            const eventDate = new Date("2026-09-17T00:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = eventDate - now;
+
+                if (diff < 0) {
+                    document.getElementById("count-days").innerText = "0";
+                    document.getElementById("count-hours").innerText = "0";
+                    document.getElementById("count-mins").innerText = "0";
+                    document.getElementById("count-secs").innerText = "0";
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor(
+                    (diff % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("count-days").innerText = days;
+                document.getElementById("count-hours").innerText = String(
+                    hours
+                ).padStart(2, "0");
+                document.getElementById("count-mins").innerText = String(
+                    minutes
+                ).padStart(2, "0");
+                document.getElementById("count-secs").innerText = String(
+                    seconds
+                ).padStart(2, "0");
+            }
+
+            // Run every second
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
 
         <!-- WELCOME SECTION -->
-        <section class="py-10 md:py-20 bg-white">
+        <section
+            class="py-10 md:py-20 bg-white"
+            id="welcome-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="welcome"
+            data-moj-web-label="Welcome"
+            data-moj-web-category="structural"
+        >
             <div
-                class="max-w-[1536px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+                class="max-w-[1536px] mx-auto px-4 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
             >
                 <!-- LEFT TEXT -->
                 <div>
@@ -464,7 +509,7 @@
                     >
                         Welcome to our
                         <span
-                            class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 py-1 rounded-md shadow"
+                            class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 md:py-1 rounded-md shadow"
                         >
                             Conference
                         </span>
@@ -486,7 +531,7 @@
                 </div>
 
                 <!-- RIGHT IMAGES -->
-                <div class="grid grid-cols-3 gap-4 items-center">
+                <div class="grid grid-cols-3 gap-2 md:gap-4 items-center">
                     <img
                         src="https://html.themeadapt.com/evente/assets/img/about/thumb.jpg"
                         class="rounded-xl shadow-md w-full h-60 object-cover opacity-90 hover:opacity-100 transition"
@@ -512,15 +557,22 @@
             </div>
         </section>
 
-        <section class="py-10 md:py-20 bg-[#F4F6F8]">
-            <div class="max-w-[1536px] mx-auto px-6 lg:px-12">
+        <section
+            class="py-10 md:py-20 bg-[#F4F6F8]"
+            id="message-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto px-4 lg:px-12">
                 <!-- HEADING -->
                 <h2
                     class="text-4xl md:text-5xl font-medium leading-tight text-gray-900 mb-6"
                 >
                     Message From
                     <span
-                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 py-1 rounded-md shadow"
+                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 md:py-1 rounded-md shadow"
                     >
                         Committee
                     </span>
@@ -564,12 +616,12 @@
 
                 <!-- COMMITTEE CARDS -->
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 place-items-center max-w-2xl mx-auto"
+                    class="grid grid-cols-2 sm:grid-cols-2 gap-4 mt-8 place-items-center max-w-2xl mx-auto"
                 >
                     <!-- MEMBER CARD -->
                     <div class="flex flex-col items-center">
                         <div
-                            class="overflow-hidden relative w-50 h-58 lg:w-64 lg:h-72 rounded-tr-[50px] rounded-bl-[50px] shadow-2xl"
+                            class="overflow-hidden relative w-40 h-58 lg:w-64 lg:h-72 rounded-tr-[50px] rounded-bl-[50px] shadow-2xl"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80"
@@ -590,7 +642,7 @@
                     <!-- MEMBER CARD -->
                     <div class="flex flex-col items-center">
                         <div
-                            class="overflow-hidden relative w-50 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-2xl"
+                            class="overflow-hidden relative w-40 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-2xl"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80"
@@ -614,6 +666,11 @@
         <!-- EVENT HIGHLIGHTS BANNER -->
         <section
             class="relative w-full py-10 md:py-20 flex items-center justify-center overflow-hidden"
+            id="highlight-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlight"
+            data-moj-web-label="Conference Highlight"
+            data-moj-web-category="structural"
         >
             <!-- BACKGROUND IMAGE -->
             <img
@@ -763,27 +820,34 @@
         </section>
 
         <!-- COMMITTEE SECTION -->
-        <section class="py-16 md:py-20 bg-white">
-            <div class="max-w-[1536px] mx-auto px-6 lg:px-12">
+        <section
+            class="py-10 md:py-20 bg-white"
+            id="committee-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="committe"
+            data-moj-web-label="Committee Members"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto px-4 lg:px-12">
                 <!-- HEADING -->
                 <h2
                     class="text-4xl md:text-5xl font-medium leading-tight text-gray-900 mb-10"
                 >
                     Meet Our
                     <span
-                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 py-1 rounded-md shadow"
+                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 md:py-1 rounded-md shadow"
                     >
                         Committee
                     </span>
                 </h2>
                 <!-- GRID (8 Members) -->
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-10"
+                    class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10 mt-10"
                 >
                     <!-- MEMBER 1 -->
                     <div class="flex flex-col items-center text-center">
                         <div
-                            class="overflow-hidden relative w-50 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
+                            class="overflow-hidden relative w-40 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80"
@@ -801,7 +865,7 @@
                     <!-- MEMBER 2 -->
                     <div class="flex flex-col items-center text-center">
                         <div
-                            class="overflow-hidden relative w-50 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
+                            class="overflow-hidden relative w-40 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80"
@@ -819,7 +883,7 @@
                     <!-- MEMBER 3 -->
                     <div class="flex flex-col items-center text-center">
                         <div
-                            class="overflow-hidden relative w-50 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
+                            class="overflow-hidden relative w-40 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80"
@@ -837,7 +901,7 @@
                     <!-- MEMBER 4 -->
                     <div class="flex flex-col items-center text-center">
                         <div
-                            class="overflow-hidden relative w-50 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
+                            class="overflow-hidden relative w-40 h-58 lg:w-64 lg:h-72 rounded-tr-[40px] rounded-bl-[40px] shadow-xl"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80"
@@ -856,8 +920,15 @@
         </section>
 
         <!-- EVENT SESSIONS SECTION -->
-        <section class="py-12 md:py-20 bg-[#434E78]/7" id="sessions">
-            <div class="max-w-[1536px] mx-auto px-6 lg:px-12">
+        <section
+            class="py-12 md:py-20 bg-[#434E78]/7"
+            id="sessions"
+            data-moj-web-fixed="false"
+            data-moj-web-type="Schedule"
+            data-moj-web-label="Schedule"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto px-4 lg:px-12">
                 <!-- Heading -->
                 <div class="mb-10">
                     <h2
@@ -865,7 +936,7 @@
                     >
                         Event
                         <span
-                            class="bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 py-1 rounded-md shadow"
+                            class="bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 md:py-1 rounded-md shadow"
                         >
                             Sessions
                         </span>
@@ -873,7 +944,7 @@
                 </div>
 
                 <!-- DAY TOGGLE BUTTONS -->
-                <div class="flex gap-3 mb-10">
+                <div class="flex gap-3 mb-6 md:mb-10">
                     <button
                         id="day1Btn"
                         class="px-5 py-2 bg-[#434E78] text-white rounded-full text-sm font-medium shadow transition"
@@ -890,7 +961,7 @@
                 </div>
 
                 <!-- ================= DAY 1 ================= -->
-                <div id="day1" class="space-y-12">
+                <div id="day1" class="space-y-6 md:space-y-12">
                     <!-- SESSION ITEM 1 -->
                     <div
                         class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between gap-6"
@@ -930,7 +1001,7 @@
                                         <i
                                             class="fa-solid fa-clock text-[#434E78]"
                                         ></i>
-                                        09:30 a.m. – 10:45 a.m.
+                                        9 AM – 10 AM
                                     </span>
                                 </div>
                             </div>
@@ -985,7 +1056,7 @@
                                         <i
                                             class="fa-solid fa-clock text-[#434E78]"
                                         ></i>
-                                        11:00 a.m. – 01:00 p.m.
+                                        11 AM – 01 PM
                                     </span>
                                 </div>
                             </div>
@@ -1041,7 +1112,7 @@
                                         <i
                                             class="fa-solid fa-clock text-[#434E78]"
                                         ></i>
-                                        02:30 p.m. – 04:00 p.m.
+                                        02 PM – 04 PM
                                     </span>
                                 </div>
                             </div>
@@ -1060,7 +1131,7 @@
                 </div>
 
                 <!-- ================= DAY 2 ================= -->
-                <div id="day2" class="space-y-12 hidden">
+                <div id="day2" class="space-y-6 md:space-y-12 hidden">
                     <!-- SESSION ITEM 1 -->
                     <div
                         class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between gap-6"
@@ -1100,7 +1171,7 @@
                                         <i
                                             class="fa-solid fa-clock text-[#434E78]"
                                         ></i>
-                                        09:00 a.m. – 10:30 a.m.
+                                        09 AM – 10 AM
                                     </span>
                                 </div>
                             </div>
@@ -1156,7 +1227,7 @@
                                         <i
                                             class="fa-solid fa-clock text-[#434E78]"
                                         ></i>
-                                        11:00 a.m. – 12:45 p.m.
+                                        11 AM – 12 PM
                                     </span>
                                 </div>
                             </div>
@@ -1212,7 +1283,7 @@
                                         <i
                                             class="fa-solid fa-clock text-[#434E78]"
                                         ></i>
-                                        02:00 p.m. – 03:30 p.m.
+                                        02 PM – 03 PM
                                     </span>
                                 </div>
                             </div>
@@ -1262,15 +1333,22 @@
         </script>
 
         <!-- TARIFF SECTION -->
-        <section class="py-10 md:py-20 bg-white">
-            <div class="max-w-[1536px] mx-auto px-6 lg:px-12">
+        <section
+            class="py-10 md:py-20 bg-white"
+            id="tariff-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="Tariff"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto px-4 lg:px-12">
                 <!-- Heading -->
                 <h2
                     class="text-4xl md:text-5xl font-medium leading-tight text-gray-900 mb-4"
                 >
                     Registration
                     <span
-                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 py-1 rounded-md shadow"
+                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 md:py-1 rounded-md shadow"
                     >
                         Tariff
                     </span>
@@ -1284,11 +1362,11 @@
 
                 <!-- Pricing Grid -->
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mt-8"
                 >
                     <!-- CARD 1 -->
                     <div
-                        class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-1 p-8"
+                        class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-1 p-6 md:p-8"
                     >
                         <h3 class="text-xl font-semibold text-gray-900">
                             Student Pass
@@ -1330,7 +1408,7 @@
 
                     <!-- CARD 2 -->
                     <div
-                        class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-1 p-8"
+                        class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-1 p-6 md:p-8"
                     >
                         <h3 class="text-xl font-semibold text-gray-900">
                             Professional Pass
@@ -1372,7 +1450,7 @@
 
                     <!-- CARD 3 -->
                     <div
-                        class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-1 p-8"
+                        class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-1 p-6 md:p-8"
                     >
                         <h3 class="text-xl font-semibold text-gray-900">
                             Premium Delegate
@@ -1416,21 +1494,28 @@
         </section>
 
         <!-- HOTELS SECTION -->
-        <section class="py-12 md:py-20 bg-[#F4F6F8]">
-            <div class="max-w-[1536px] mx-auto px-6 lg:px-12">
+        <section
+            class="py-10 md:py-20 bg-[#F4F6F8]"
+            id="hotels-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hotels"
+            data-moj-web-label="Hotels"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-[1536px] mx-auto px-4 lg:px-12">
                 <!-- Heading -->
                 <h2
                     class="text-4xl md:text-5xl font-medium leading-tight text-gray-900 mb-4"
                 >
                     Recommended
                     <span
-                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 py-1 rounded-md shadow"
+                        class="ml-2 bg-gradient-to-r from-[#434E78] to-[#6b78a8] text-white px-4 md:py-1 rounded-md shadow"
                     >
                         Hotels
                     </span>
                 </h2>
 
-                <p class="text-gray-600 max-w-3xl mb-12">
+                <p class="text-gray-600 max-w-3xl mb-6 md:mb-12">
                     We have partnered with comfortable and premium hotels near
                     the venue to ensure a pleasant stay for all participants.
                     Special conference rates are available upon request.
@@ -1632,7 +1717,14 @@
         </section>
 
         <!-- JOIN US BANNER -->
-        <section class="relative w-full py-16 md:py-24 overflow-hidden">
+        <section
+            class="relative w-full py-16 md:py-24 overflow-hidden"
+            id="joinUsBanner"
+            data-moj-web-fixed="false"
+            data-moj-web-type="banner"
+            data-moj-web-label="Join Us Banner"
+            data-moj-web-category="structural"
+        >
             <!-- Background Image -->
             <img
                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80"
@@ -1659,7 +1751,7 @@
                 <h2 class="text-4xl md:text-5xl font-medium leading-tight">
                     Join Us for an
                     <span
-                        class="px-3 py-1 rounded-md bg-white/20 backdrop-blur-md"
+                        class="px-3 md:py-1 rounded-md bg-white/20 backdrop-blur-md"
                     >
                         Inspiring Event
                     </span>
@@ -1686,8 +1778,13 @@
         </section>
 
         <!-- FOOTER -->
-        <footer
-            class=" bg-[#434E78]  text-white pt-14 pb-8"
+        <section
+            class="bg-[#434E78] text-white pt-10 md:pt-14 pb-8"
+            id="footer-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Footer"
+            data-moj-web-category="structural"
         >
             <div
                 class="max-w-[1536px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12"
@@ -1806,6 +1903,6 @@
             >
                 © 2026 EDUCON. All Rights Reserved.
             </div>
-        </footer>
+        </section>
     </body>
 </html>
