@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wedding Template - 6</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <style>
+            .caudex {
+                font-family: "Caudex", serif;
+            }
+            body {
+                background-color: #effaf1;
+            }
+        </style>
+
+        <!-- navbar -->
+        <section
+            id="navbar"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <nav
+                id="mainNav"
+                class="fixed top-0 w-full z-50 bg-transparent px-8 py-4 flex justify-between items-center text-[#102C57] font-medium uppercase tracking-widest transition-colors duration-300"
+            >
+                <!-- Logo -->
+                <a href="/" class="text-xl caudex">
+                    <img
+                        src="https://penji.co/wp-content/uploads/2019/06/calligraphy-wedding-logo-design.jpg.webp"
+                        alt="logo"
+                        class="h-16 mx-auto transition-opacity duration-500 opacity-0 xl:opacity-100"
+                        id="mobileLogo"
+                    />
+                </a>
+
+                <!-- Center Nav Links (Desktop) -->
+                <div
+                    class="hidden xl:flex space-x-6 text-sm justify-center items-center"
+                >
+                    <a href="/" class="hover:text-[#102C57]/70 transition"
+                        >Home</a
+                    >
+                    <a href="#couple" class="hover:text-[#102C57]/70 transition"
+                        >Couple</a
+                    >
+
+                    <a href="#story" class="hover:text-[#102C57]/70 transition"
+                        >Our Story</a
+                    >
+                    <a
+                        href="#inner-circle"
+                        class="hover:text-[#102C57]/70 transition"
+                        >Inner Circle</a
+                    >
+                    <a
+                        href="#itinerary"
+                        class="hover:text-[#102C57]/70 transition"
+                        >Wedding Itinerary</a
+                    >
+                    <a href="#venue" class="hover:text-[#102C57]/70 transition"
+                        >Venue</a
+                    >
+                    <a
+                        href="#location"
+                        class="hover:text-[#102C57]/70 transition"
+                        >Location</a
+                    >
+
+                    <a
+                        href="#gallery"
+                        class="hover:text-[#102C57]/70 transition"
+                        >Gallery</a
+                    >
+                </div>
+
+                <!-- RSVP Button (Desktop) -->
+                <a
+                    href="#rsvp"
+                    class="hidden xl:inline-block text-sm border border-[#102C57] px-4 py-1 rounded hover:bg-[#102C57] hover:text-white transition duration-500"
+                >
+                    RSVP
+                </a>
+
+                <!-- Hamburger (Mobile) -->
+                <button id="menuToggle" class="xl:hidden focus:outline-none">
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+            <div
+                id="mobileMenu"
+                class="fixed top-0 left-0 w-full h-screen bg-white text-[#224C30] flex flex-col items-center justify-center space-y-6 text-lg uppercase font-medium z-100 transition-transform duration-300 translate-x-full"
+            >
+                <!-- Close Button -->
+                <button
+                    onclick="toggleMenu()"
+                    class="absolute top-9 right-8 text-2xl text-[#224C30] hover:text-[#102C57] focus:outline-none"
+                    aria-label="Close Menu"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="#102C57"
+                        viewBox="0 0 50 50"
+                    >
+                        <path
+                            d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"
+                        ></path>
+                    </svg>
+                </button>
+
+                <a href="/" class="hover:text-[#102C57]" onclick="toggleMenu()"
+                    >Home</a
+                >
+                <a
+                    href="#couple"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Couple</a
+                >
+
+                <a
+                    href="#story"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Our Story</a
+                >
+                <a
+                    href="#inner-circle"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Inner Circle</a
+                >
+                <a
+                    href="#itinerary"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Wedding Itinerary</a
+                >
+                <a
+                    href="#venue"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Venue</a
+                >
+                <a
+                    href="#location"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Location</a
+                >
+
+                <a
+                    href="#gallery"
+                    class="hover:text-[#102C57]"
+                    onclick="toggleMenu()"
+                    >Gallery</a
+                >
+
+                <a
+                    href="#rsvp"
+                    class="border border-[#102C57] px-6 py-2 rounded hover:bg-[#102C57] hover:text-white transition"
+                    onclick="toggleMenu()"
+                >
+                    RSVP
+                </a>
+            </div>
+            <div
+                id="menuOverlay"
+                class="fixed inset-0 bg-black/50 z-30 hidden"
+                onclick="toggleMenu()"
+            ></div>
+        </section>
+        <script>
+            const nav = document.getElementById("mainNav");
+            const menu = document.getElementById("mobileMenu");
+            const overlay = document.getElementById("menuOverlay");
+            const mobileLogo = document.getElementById("mobileLogo");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 10) {
+                    nav.classList.add(
+                        "bg-white",
+                        "text-[#224C30]",
+                        "shadow-md"
+                    );
+
+                    if (window.innerWidth < 1280) {
+                        mobileLogo.classList.add("opacity-100");
+                    }
+                } else {
+                    nav.classList.remove(
+                        "bg-white",
+                        "text-[#224C30]",
+                        "shadow-md"
+                    );
+                    if (window.innerWidth < 1280) {
+                        mobileLogo.classList.remove("opacity-100");
+                    }
+                }
+            });
+
+            function toggleMenu() {
+                menu.classList.toggle("translate-x-full");
+                menu.classList.toggle("translate-x-0");
+                overlay.classList.toggle("hidden");
+            }
+
+            document
+                .getElementById("menuToggle")
+                .addEventListener("click", toggleMenu);
+        </script>
+
+        <!-- Hero -->
+        <section
+            class="lg:pl-4 relative overflow-x-clip pb-10 lg:py-24 caudex pt-20"
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+        >
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                alt=""
+                class="flower-decoration absolute -left-66 md:-left-72 xl:-left-68 2xl:-left-52 opacity-40 -top-48 md:-top-52 lg:-top-10 xl:top-16 2xl:top-10 h-[350px] md:h-auto"
+            />
+            <div
+                class="flex flex-col-reverse lg:flex-row items-end w-full gap-10 lg:gap-0 mt-5"
+            >
+                <!-- Left Content -->
+                <div
+                    class="left-content w-full xl:w-1/2 flex items-center justify-center xl:ml-24 px-4"
+                >
+                    <div class="text-center max-w-xl w-full">
+                        <!-- Logo -->
+                        <img
+                            src="https://penji.co/wp-content/uploads/2019/06/calligraphy-wedding-logo-design.jpg.webp"
+                            alt="Sara & Tom"
+                            class="logo-image h-20 mx-auto hidden md:block"
+                        />
+
+                        <!-- Heading -->
+                        <div class="relative inline-block">
+                            <h1
+                                class="text-[57px] = lg:text-8xl leading-tight xl:text-[120px] font-arizonia mb-4 text-transparent bg-clip-text drop-shadow-[0_3px_4px_rgba(0,0,0,0.3)]"
+                                style="
+                                    background-image: linear-gradient(
+                                        to right,
+                                        #102c57,
+                                        #2c6ac7,
+                                        #102c57
+                                    );
+                                    background-size: 300%;
+                                    background-position: center;
+                                    -webkit-background-clip: text;
+                                    background-clip: text;
+                                    color: transparent;
+                                "
+                            >
+                                Sara & Tom
+                            </h1>
+                        </div>
+
+                        <!-- Date -->
+                        <p
+                            class="text-[#102C57] text-lg xl:text-xl font-semibold mb-5"
+                        >
+                            26<sup>th</sup> & 27<sup>th</sup> December 2025
+                        </p>
+
+                        <div class="w-full">
+                            <div class="flex justify-center gap-4">
+                                <!-- Days -->
+                                <div
+                                    class="w-20 h-20 md:w-24 md:h-24 rounded-xl shadow-lg bg-gradient-to-r from-[#102C57] to-[#215096] flex flex-col items-center justify-center text-white text-center"
+                                >
+                                    <div
+                                        class="text-lg md:text-xl lg:text-2xl xl:text-[25px] -mt-1 font-bold tabular-nums"
+                                        id="days"
+                                    >
+                                        00
+                                    </div>
+                                    <div
+                                        class="lg:text-sm xl:text-base md:text-xs text-[9px] font-medium uppercase"
+                                    >
+                                        Days
+                                    </div>
+                                </div>
+
+                                <!-- Hours -->
+                                <div
+                                    class="w-20 h-20 md:w-24 md:h-24 rounded-xl shadow-lg bg-gradient-to-r from-[#102C57] to-[#215096] flex flex-col items-center justify-center text-white text-center"
+                                >
+                                    <div
+                                        class="text-lg md:text-xl lg:text-2xl xl:text-[26px] -mt-1 font-bold tabular-nums"
+                                        id="hours"
+                                    >
+                                        00
+                                    </div>
+                                    <div
+                                        class="lg:text-sm xl:text-base md:text-xs text-[9px] font-medium uppercase"
+                                    >
+                                        Hours
+                                    </div>
+                                </div>
+
+                                <!-- Minutes -->
+                                <div
+                                    class="w-20 h-20 md:w-24 md:h-24 rounded-xl shadow-lg bg-gradient-to-r from-[#102C57] to-[#215096] flex flex-col items-center justify-center text-white text-center"
+                                >
+                                    <div
+                                        class="text-lg md:text-xl lg:text-2xl xl:text-[26px] -mt-1 font-bold tabular-nums"
+                                        id="minutes"
+                                    >
+                                        00
+                                    </div>
+                                    <div
+                                        class="lg:text-sm xl:text-base md:text-xs text-[9px] font-medium uppercase"
+                                    >
+                                        Min
+                                    </div>
+                                </div>
+
+                                <!-- Seconds -->
+                                <div
+                                    class="w-20 h-20 md:w-24 md:h-24 rounded-xl shadow-lg bg-gradient-to-r from-[#102C57] to-[#215096] flex flex-col items-center justify-center text-white text-center"
+                                >
+                                    <div
+                                        class="text-lg md:text-xl lg:text-2xl xl:text-[26px] -mt-1 font-bold tabular-nums"
+                                        id="seconds"
+                                    >
+                                        00
+                                    </div>
+                                    <div
+                                        class="lg:text-sm xl:text-base md:text-xs text-[9px] font-medium uppercase"
+                                    >
+                                        Sec
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="right-section w-full xl:w-1/2 relative pl-4 mt-20 lg:mt-0 mx-2 md:mx-0"
+                >
+                    <!-- Background Beach Image -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279135/new-beautiful-couple-having-their-wedding-beach_1_ifowvv.png"
+                        alt="Beach Background"
+                        class="w-full h-full object-cover rounded-tl-[120px] rounded-br-[120px] md:rounded-br-none"
+                    />
+
+                    <!-- Glitter 1 -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279325/glitters_misjdi.png"
+                        alt="Glitter Decoration"
+                        class="glitter-decoration absolute opacity-70 -bottom-24 xl:left-0 left-3/4 md:left-3/5 md:w-[600px] lg:w-[unset] xl:translate-x-0 -translate-x-1/2 pointer-events-none z-0"
+                        style="
+                            filter: brightness(0) saturate(100%) invert(11%)
+                                sepia(25%) saturate(661%) hue-rotate(180deg)
+                                brightness(91%) contrast(85%);
+                        "
+                    />
+
+                    <!-- Glitter 2 -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279225/glitter-2_g8pwgv.png"
+                        alt="Glitter Decoration"
+                        style="
+                            filter: brightness(0) saturate(100%) invert(11%)
+                                sepia(25%) saturate(661%) hue-rotate(180deg)
+                                brightness(91%) contrast(85%);
+                        "
+                        class="glitter-decoration absolute opacity-70 -bottom-20 xl:right-52 right-1/2 xl:translate-x-0 translate-x-1/2 pointer-events-none z-0 w-[400px]"
+                    />
+
+                    <!-- Couple Image -->
+                    <img
+                        src="https://static.vecteezy.com/system/resources/previews/048/415/699/non_2x/young-couple-embracing-isolated-over-transparent-background-free-png.png"
+                        alt="Couple"
+                        class="couple-image absolute bottom-0 xl:left-10 right-1/2 xl:translate-x-0 translate-x-1/2 z-10 h-72 md:h-[420px] lg:h-[500px] xl:h-[540px]"
+                    />
+
+                    <!-- Leaf Bottom Left -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                        alt="Leaf Decoration"
+                        class="absolute 2xl:-bottom-20 -bottom-10 xl:left-0 md:left-2/5 left-40 xl:translate-x-0 -translate-x-1/2 w-50 md:w-72 xl:w-60 2xl:w-84 pointer-events-none z-20 opacity-70"
+                    />
+
+                    <!-- Leaf Top Left Rotated -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                        alt="Leaf Decoration"
+                        class="absolute -top-20 xl:left-66 2xl:left-60 left-1/2 xl:translate-x-0 w-50 md:w-70 xl:w-84 2xl:w-84 pointer-events-none z-0 rotate-[330deg] xl:rotate-[330deg] scale-x-[-1] opacity-70"
+                    />
+                </div>
+            </div>
+        </section>
+        <script is:inline>
+            const weddingDate = new Date("2025-12-26T00:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance < 0) {
+                    document.getElementById("days").innerText = "00";
+                    document.getElementById("hours").innerText = "00";
+                    document.getElementById("minutes").innerText = "00";
+                    document.getElementById("seconds").innerText = "00";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = String(
+                    days
+                ).padStart(2, "0");
+                document.getElementById("hours").innerText = String(
+                    hours
+                ).padStart(2, "0");
+                document.getElementById("minutes").innerText = String(
+                    minutes
+                ).padStart(2, "0");
+                document.getElementById("seconds").innerText = String(
+                    seconds
+                ).padStart(2, "0");
+            }
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+        <style>
+            #blue {
+                opacity: 1;
+                background-image: linear-gradient(
+                    to right,
+                    #102c57,
+                    #2c6ac7,
+                    #102c57
+                );
+                background-size: 300%;
+                background-position: center;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            #gold {
+                opacity: 0;
+                background-image: linear-gradient(
+                    to right,
+                    #c8b560,
+                    #d4af37,
+                    #b89030,
+                    #d4af37,
+                    #c8b560
+                );
+                background-size: 300%;
+                background-position: 0% 50%;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        </style>
+
+        <!-- couple -->
+        <section
+            class="pt-4 pb-8 px-4 xl:pt-10 xl:pb-20 md:px-6 relative overflow-hidden"
+            id="couple"
+            data-moj-web-fixed="false"
+            data-moj-web-type="couples"
+            data-moj-web-label="Couples Intro Section"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 xl:gap-10 items-center text-center relative z-10"
+            >
+                <!-- Bride Card -->
+                <div class="relative">
+                    <!-- Floral Left -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                        alt="Floral Left"
+                        class="absolute -left-20 bottom-0 w-52 hidden lg:block opacity-60"
+                    />
+
+                    <div
+                        class="bg-white rounded-t-[200px] max-w-100 mx-auto overflow-hidden shadow-xl relative"
+                    >
+                        <div class="relative">
+                            <img
+                                src="https://images.pexels.com/photos/19797385/pexels-photo-19797385.jpeg?cs=srgb&dl=pexels-lance-reis-255748881-19797385.jpg&fm=jpg"
+                                alt="Sara"
+                                class="w-full h-100 md:h-[500px] xl:h-[534px] object-cover"
+                            />
+
+                            <svg
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="absolute -bottom-20 -left-10 xl:left-0 w-[500px] h-60 scale-x-[-1]"
+                            >
+                                <path
+                                    d="M500 28.0003C500 28.0003 460 -20.2942 422 11.0001C409.925 20.9443 405.623 37.833 404.858 54.6979C404.084 71.7365 382.445 85.4249 368.836 75.1428C366.964 73.7282 364.83 72.6975 362.559 72.11L357.558 70.8167C331.547 64.0898 305.684 82.2112 303.126 108.956L302.607 114.379C299.705 144.721 269.789 164.837 240.595 156.079L237 155C209.695 139.265 175.332 157.485 173.034 188.914L171.265 213.107C170.157 228.267 157.534 240 142.333 240C140.118 240 137.911 239.747 135.754 239.244L123.945 236.494C95.3837 229.843 68.6684 253.052 71.2621 282.263L72.436 295.484C74.2567 315.988 56.7136 332.954 36.2814 330.449C17.0009 328.085 0 343.128 0 362.553V433H500V28.0003Z"
+                                    fill="white"
+                                ></path>
+                            </svg>
+                            <div
+                                class="absolute bottom-4 left-0 w-full px-6 z-10 flex flex-col items-start text-left"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-10 w-10 mb-2"
+                                    viewBox="0 0 60 60"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M12.8571 56.2029C12.2657 56.2029 11.7857 55.7239 11.7857 55.1314V49.4947C11.7857 46.9564 13.4186 44.7568 15.8486 44.0218L24.0118 41.3711C24.4553 41.2275 24.7521 40.8172 24.7521 40.3522V37.6007C24.7521 37.0082 25.2321 36.5293 25.8236 36.5293C26.415 36.5293 26.895 37.0082 26.895 37.6007V40.3522C26.895 41.7504 26.0025 42.9782 24.6728 43.41L16.4893 46.0661C14.9496 46.5332 13.9286 47.9079 13.9286 49.4947V55.1314C13.9286 55.7239 13.4486 56.2029 12.8571 56.2029Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M47.1428 56.203C46.5503 56.203 46.0714 55.724 46.0714 55.1315V49.4948C46.0714 47.908 45.0503 46.5323 43.53 46.0726L35.2639 43.2033C33.9718 42.7544 33.1039 41.534 33.1039 40.1669V37.5997C33.1039 37.0072 33.5828 36.5283 34.1753 36.5283C34.7678 36.5283 35.2468 37.0072 35.2468 37.5997V40.1669C35.2468 40.6233 35.5371 41.0305 35.9668 41.1794L44.1921 44.0347C46.5814 44.7569 48.2143 46.9565 48.2143 49.4948V55.1315C48.2143 55.724 47.7353 56.203 47.1428 56.203Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M19.6243 56.2308C19.0329 56.2308 18.5529 55.7519 18.5529 55.1594V52.1144C18.5529 51.5219 19.0329 51.043 19.6243 51.043C20.2157 51.043 20.6957 51.5219 20.6957 52.1144V55.1594C20.6957 55.7519 20.2157 56.2308 19.6243 56.2308Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M40.3918 56.3068C39.7993 56.3068 39.3203 55.8279 39.3203 55.2354V52.1154C39.3203 51.5229 39.7993 51.0439 40.3918 51.0439C40.9843 51.0439 41.4632 51.5229 41.4632 52.1154V55.2354C41.4632 55.8268 40.9843 56.3068 40.3918 56.3068Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M20.4225 32.2029C17.8307 29.6304 16.4036 26.2018 16.4036 22.5504C16.4036 15.0526 22.5032 8.95398 30 8.95398C37.4968 8.95398 43.5964 15.0536 43.5964 22.5504C43.5964 26.1118 42.1821 29.4611 39.6139 31.979L38.1139 30.449C40.2675 28.3372 41.4536 25.5322 41.4536 22.5504C41.4536 16.2343 36.315 11.0968 30 11.0968C23.685 11.0968 18.5464 16.2354 18.5464 22.5504C18.5464 25.6265 19.7496 28.514 21.9332 30.6815L20.4225 32.2029Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M29.9946 39.0912C25.3425 39.0912 21.2839 35.9498 20.1728 31.3748C19.9832 30.5958 19.8878 29.7912 19.8878 28.9844V24.569C19.8878 23.9605 20.1621 23.4001 20.64 23.0294C21.5464 22.3298 22.9575 20.9123 23.955 19.2215C24.2003 18.8058 24.6321 18.5487 25.11 18.5348C25.5707 18.5198 26.0089 18.7469 26.2682 19.1358C26.2982 19.1819 29.3261 23.578 38.6411 22.7755C39.015 22.7444 39.3964 22.8708 39.6761 23.128C39.9525 23.3819 40.1111 23.7419 40.1111 24.1158V28.9833C40.1111 29.7923 40.0157 30.5969 39.8261 31.3748C38.7161 35.9487 34.6586 39.088 30.0075 39.0901C30.0043 39.0912 30 39.0912 29.9946 39.0912ZM29.3678 36.9237C29.37 36.9248 29.3732 36.9248 29.3753 36.9248C29.5918 36.9419 29.8125 36.9548 30.0182 36.9483C30.2186 36.9473 30.42 36.9398 30.6236 36.9248H30.63C34.0307 36.6601 36.9203 34.2676 37.7443 30.8701C37.8932 30.2573 37.9682 29.623 37.9682 28.9844V24.9719C31.1882 25.3501 27.0793 23.1065 25.2214 21.2165C23.9314 23.0819 22.4861 24.3012 22.0307 24.6623V28.9844C22.0307 29.6219 22.1057 30.2562 22.2546 30.8701C23.0796 34.2655 25.9682 36.659 29.3678 36.9237Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M40.3907 56.3068C39.8925 56.3068 39.4457 55.9575 39.3418 55.4497C38.9464 53.5168 37.2246 52.1154 35.2489 52.1154C33.8828 52.1154 32.5993 52.7861 31.8182 53.91C31.4036 54.5047 30.7243 54.8593 30 54.8593C29.2757 54.8593 28.5953 54.5047 28.1818 53.91C27.3996 52.7861 26.1171 52.1154 24.75 52.1154C22.8043 52.1154 21.0878 53.4922 20.67 55.3908C20.5436 55.9683 19.9682 56.3304 19.3939 56.2072C18.8153 56.0797 18.4511 55.5086 18.5775 54.9311C19.2096 52.0586 21.8057 49.9736 24.75 49.9736C26.8168 49.9736 28.7571 50.9872 29.94 52.6865L30 52.7583L30.0589 52.6854C31.2407 50.9861 33.1821 49.9725 35.2489 49.9725C38.2382 49.9725 40.8428 52.095 41.4407 55.0211C41.5596 55.6008 41.1857 56.1665 40.6061 56.2854C40.5343 56.2993 40.4625 56.3068 40.3907 56.3068Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M18.8314 41.2307C18.7553 41.2307 18.6771 41.2222 18.6 41.2061C14.58 40.3189 12.9953 38.7482 12.8271 38.5714C12.6439 38.3786 12.5389 38.1247 12.5336 37.8579C12.2378 24.7307 16.1753 17.5639 19.5311 13.8632C19.9286 13.4261 20.6057 13.3918 21.045 13.7893C21.4832 14.1868 21.5164 14.8639 21.1189 15.3032C18.0653 18.6707 14.49 25.215 14.6668 37.3286C15.2121 37.7304 16.5728 38.5639 19.0618 39.1136C19.6403 39.2411 20.0046 39.8122 19.8771 40.3907C19.7657 40.8911 19.3232 41.2307 18.8314 41.2307Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M41.1696 41.2308C40.6779 41.2308 40.2354 40.8911 40.1239 40.3908C39.9964 39.8122 40.3618 39.2411 40.9393 39.1136C43.4218 38.565 44.7836 37.7336 45.3354 37.3265C45.51 25.214 41.9357 18.6686 38.8832 15.3032C38.4868 14.865 38.5189 14.1868 38.9571 13.7893C39.3943 13.3918 40.0714 13.424 40.4711 13.8632C43.8257 17.5629 47.7632 24.7297 47.4686 37.8579C47.4621 38.1247 47.3571 38.3786 47.1739 38.5725C47.0068 38.7483 45.4221 40.319 41.4021 41.2061C41.3229 41.2233 41.2457 41.2308 41.1696 41.2308Z"
+                                        fill="#102C57"
+                                    ></path>
+                                    <path
+                                        d="M36.8314 10.8976L34.7196 10.5354L35.055 8.5822C33.7489 8.35613 31.635 7.7797 30 6.32041C28.365 7.77863 26.2511 8.35613 24.945 8.5822L25.2793 10.5279L23.1664 10.8901L22.6425 7.83541C22.5911 7.5322 22.6714 7.22041 22.8653 6.98148C23.0593 6.74255 23.3464 6.59684 23.6539 6.58398C23.6882 6.58291 27.3578 6.38791 29.1578 4.10148C29.5639 3.58613 30.435 3.58613 30.8411 4.10148C32.6539 6.40398 36.3075 6.58184 36.345 6.58398C36.6525 6.59684 36.9396 6.74148 37.1325 6.98148C37.3275 7.22148 37.4078 7.5322 37.3553 7.83541L36.8314 10.8976Z"
+                                        fill="#102C57"
+                                    ></path>
+                                </svg>
+                                <h3
+                                    class="text-xl font-bold text-gray-800 mb-1"
+                                >
+                                    Sara
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img
+                    src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279989/heart_ljjjgc.png"
+                    alt=""
+                    class="max-w-80 mx-auto"
+                />
+
+                <!-- Groom Card -->
+                <div class="relative">
+                    <!-- Floral Right -->
+                    <img
+                        src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                        alt="Floral Right"
+                        class="absolute -right-20 bottom-10 w-52 hidden lg:block scale-x-[-1] opacity-60"
+                    />
+
+                    <div
+                        class="bg-white rounded-t-[200px] max-w-100 mx-auto overflow-hidden shadow-xl relative"
+                    >
+                        <div class="relative">
+                            <img
+                                src="https://img.freepik.com/free-photo/front-view-cheerful-man-holding-phone-looking-straight_176420-11748.jpg?semt=ais_hybrid&w=740&q=80"
+                                alt="Tom"
+                                class="w-full h-100 md:h-[500px] xl:h-[534px] object-cover object-center"
+                            />
+                            <!-- SVG Shape Overlay -->
+                            <svg
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="absolute -bottom-20 -right-10 xl:right-0 w-[500px] h-60"
+                            >
+                                <path
+                                    d="M500 28.0003C500 28.0003 460 -20.2942 422 11.0001C409.925 20.9443 405.623 37.833 404.858 54.6979C404.084 71.7365 382.445 85.4249 368.836 75.1428C366.964 73.7282 364.83 72.6975 362.559 72.11L357.558 70.8167C331.547 64.0898 305.684 82.2112 303.126 108.956L302.607 114.379C299.705 144.721 269.789 164.837 240.595 156.079L237 155C209.695 139.265 175.332 157.485 173.034 188.914L171.265 213.107C170.157 228.267 157.534 240 142.333 240C140.118 240 137.911 239.747 135.754 239.244L123.945 236.494C95.3837 229.843 68.6684 253.052 71.2621 282.263L72.436 295.484C74.2567 315.988 56.7136 332.954 36.2814 330.449C17.0009 328.085 0 343.128 0 362.553V433H500V28.0003Z"
+                                    fill="white"
+                                ></path>
+                            </svg>
+                            <div
+                                class="absolute bottom-4 left-0 w-full px-6 z-10 flex flex-col items-end text-right"
+                            >
+                                <img
+                                    src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279811/male_egr4gr.svg"
+                                    alt=""
+                                    class="h-10 w-10 mb-2"
+                                />
+                                <h3
+                                    class="text-xl font-bold text-gray-800 mb-1"
+                                >
+                                    Tom
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279780/Vector_aloz4s.svg"
+                alt="Heart"
+                class="absolute top-12 left-8 w-6 opacity-50 rotate-12 z-0"
+            />
+
+            <!-- Center floating heart -->
+
+            <!-- Bottom right heart -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279780/Vector_aloz4s.svg"
+                alt="Heart"
+                class="absolute bottom-10 right-16 w-6 opacity-50 rotate-[25deg] z-0"
+            />
+            <!-- Top right -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279780/Vector_aloz4s.svg"
+                alt="Heart"
+                class="absolute top-6 right-12 w-5 opacity-40 rotate-[15deg] z-0"
+            />
+
+            <!-- Left middle -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279780/Vector_aloz4s.svg"
+                alt="Heart"
+                class="absolute top-1/3 left-6 w-6 opacity-30 -rotate-12 z-0"
+            />
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279780/Vector_aloz4s.svg"
+                alt="Heart"
+                class="absolute top-1/3 right-6 w-6 opacity-30 -rotate-12 z-0"
+            />
+
+            <!-- Bottom left -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279780/Vector_aloz4s.svg"
+                alt="Heart"
+                class="absolute bottom-14 left-20 w-7 opacity-40 rotate-45 z-0"
+            />
+        </section>
+
+        <!-- Bride -->
+        <section
+            class="py-8 xl:py-20 px-4 md:px-8 relative bg-[#FEFAF6] overflow-hidden"
+            id="bride-intro-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="bride"
+            data-moj-web-label="bride Intro Section"
+            data-moj-web-category="structural"
+        >
+            <!-- Background decorative elements -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                alt=""
+                class="absolute -left-52 top-20 opacity-60"
+            />
+            <div class="max-w-7xl mx-auto">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+                >
+                    <!-- Left Side - Images -->
+                    <div class="relative">
+                        <!-- Main large image with rounded bottom-right -->
+                        <div
+                            class="relative z-10 w-full h-[380px] md:h-[500px] lg:h-[450px]"
+                        >
+                            <div
+                                class="w-full h-full rounded-br-[80px] md:rounded-br-[120px] overflow-hidden shadow-2xl rounded-2xl"
+                            >
+                                <img
+                                    src="https://images.unsplash.com/photo-1611880147493-7542bdb0f024?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW1lcmljYW4lMjBnaXJsfGVufDB8fDB8fHww"
+                                    alt="Bride Sara"
+                                    class="w-full h-full object-cover object-[center_70%]"
+                                />
+                            </div>
+
+                            <!-- Vertical image positioned absolutely -->
+                            <div
+                                class="absolute -bottom-8 right-10 md:-bottom-12 lg:right-20 w-32 h-48 md:w-40 md:h-60 z-10 rounded-br-[50px] rounded-tl-[50px]"
+                            >
+                                <div
+                                    class="w-full h-full overflow-hidden shadow-xl rounded-br-[50px] rounded-tl-[50px]"
+                                >
+                                    <img
+                                        src="https://as1.ftcdn.net/jpg/01/36/55/16/1000_F_136551637_nEHsXaW8X38MYWL8sezelnMrU5EsJcAw.jpg"
+                                        alt="Bride Portlait"
+                                        class="w-full h-full object-cover rounded-br-[50px] rounded-tl-[50px] border-4 border-white"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative elements around images -->
+                        <div
+                            class="absolute -bottom-20 -right-16 w-52 h-52 scale-x-[-1] rotate-180"
+                        >
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                                alt=""
+                                class="w-full h-full opacity-70"
+                            />
+                        </div>
+
+                        <div class="absolute -bottom-44 -left-36 h-96">
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279225/glitter-2_g8pwgv.png"
+                                alt=""
+                                class="w-full h-full opacity-70"
+                                style="
+                                    filter: brightness(0) saturate(100%)
+                                        invert(11%) sepia(25%) saturate(661%)
+                                        hue-rotate(180deg) brightness(91%)
+                                        contrast(85%);
+                                "
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Content -->
+                    <div class="xl:pl-8">
+                        <!-- Small decorative text -->
+
+                        <!-- Main heading -->
+                        <h2
+                            class="text-3xl md:text-5xl lg:text-6xl caudex text-[#102C57] text-center lg:text-left leading-tight"
+                        >
+                            Sara
+                        </h2>
+
+                        <!-- Subheading -->
+                        <h3
+                            class="text-xl md:text-2xl font-medium text-[#102C57] text-center lg:text-left mb-4"
+                        >
+                            The Bride
+                        </h3>
+
+                        <!-- Content -->
+                        <div class="space-y-2">
+                            <p
+                                class="text-gray-700 text-sm xl:text-base text-justify"
+                            >
+                                Elegant in her thoughts and effortless in the
+                                way she carries herself, Sara is someone who
+                                brings a sense of steadiness into every room she
+                                enters. Born in the early weeks of spring and
+                                raised in a family that celebrated both
+                                discipline and imagination, she grew up learning
+                                how to observe the world with intention. Her
+                                early years were shaped by a love for science
+                                and a quiet determination that pushed her to
+                                constantly explore beyond what was familiar.
+                                After excelling through school, she followed her
+                                fascination with how the human body works and is
+                                now pursuing a career in biomedical research — a
+                                field that mirrors her patience, precision, and
+                                deep desire to help others. Yet, Sara is far
+                                more than her academic brilliance; she is
+                                defined by her gentle humor, thoughtful
+                                presence, and the way she listens as though
+                                every story holds something worth treasuring.
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm xl:text-base text-justify"
+                            >
+                                Her creative side is just as alive. She sketches
+                                when she needs clarity, plays the piano when she
+                                wants to breathe, and captures fleeting moments
+                                with her camera as a way of remembering the
+                                quiet details most people overlook. She finds
+                                comfort in soft music, winding roads, and
+                                evenings spent watching the sky shift colors.
+                                Books, films, and documentaries are her
+                                companions — she loves stories that make her
+                                think and characters who feel real enough to
+                                know. Animals hold a tender place in her heart,
+                                especially the strays she’s always trying to
+                                feed or protect. And while she enjoys trying new
+                                cuisines, nothing makes her happier than a
+                                simple meal shared with people who matter. Sara
+                                has a calm strength, an intuitive warmth, and a
+                                sincerity that draws others toward her. As she
+                                steps into the next chapter of her life, she
+                                carries with her a deep sense of purpose,
+                                kindness, and a quiet fire that has always
+                                guided her path.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Groom -->
+        <section
+            class="py-8 xl:py-20 px-4 md:px-8 relative overflow-x-clip"
+            id="groom-intro-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="groom"
+            data-moj-web-label="groom Intro Section"
+            data-moj-web-category="structural"
+        >
+            <!-- Background decorative elements -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                alt=""
+                class="absolute -right-52 top-10 md:top-[380px] scale-x-[-1] -z-10 opacity-70"
+            />
+            <div class="max-w-7xl mx-auto">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+                >
+                    <!-- Left Side - Content (Mirror: Content comes first) -->
+                    <div class="xl:pr-8 order-2 lg:order-1">
+                        <!-- Main heading -->
+                        <h2
+                            class="text-3xl md:text-5xl lg:text-6xl caudex text-[#102C57] text-center lg:text-right leading-tight"
+                        >
+                            Tom
+                        </h2>
+
+                        <!-- Subheading -->
+                        <h3
+                            class="text-xl md:text-2xl font-medium text-[#102C57] text-center lg:text-right mb-4"
+                        >
+                            The Groom
+                        </h3>
+
+                        <!-- Content -->
+                        <div class="space-y-2">
+                            <p
+                                class="text-gray-700 text-sm xl:text-base text-justify"
+                            >
+                                Tom is the kind of person you feel comfortable
+                                with almost instantly — easygoing, sharp-minded,
+                                and quietly funny in a way that sneaks up on
+                                you. Born in mid-September and raised in a small
+                                Midwestern town, he grew up surrounded by people
+                                who valued curiosity and hard work. That
+                                foundation shaped him into someone who
+                                approaches life with equal parts logic and
+                                imagination. After studying technology and
+                                business, he found his stride in the world of
+                                product development, where he now works as a
+                                thoughtful, detail-driven bridge between ideas
+                                and execution.
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm xl:text-base text-justify"
+                            >
+                                He loves food that packs a punch and stories
+                                that build entire universes. Give him a
+                                well-seasoned meal and an evening with an
+                                animated film or a gripping series, and he’s
+                                fully in his element. Vibrant visuals, clever
+                                writing, and worlds that feel larger than life
+                                are what truly captivate him. When it comes to
+                                drinks, he enjoys cocktails that balance
+                                personality with finesse — the kind you sip
+                                slowly because the flavor keeps unfolding.
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm xl:text-base text-justify"
+                            >
+                                At his core, Tom appreciates the small,
+                                meaningful things: meals that bring people
+                                together, narratives that linger long after they
+                                end, and spaces where conversations feel
+                                effortless. He gravitates toward moments that
+                                are unpretentious yet memorable — the kind that
+                                leave you smiling without even realizing it.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Images (Mirror: Images on right) -->
+                    <div class="relative order-1 lg:order-2">
+                        <!-- Main large image with rounded bottom-LEFT (mirror) -->
+                        <div
+                            class="relative z-10 w-full h-[380px] md:h-[500px] lg:h-[450px]"
+                        >
+                            <div
+                                class="w-full h-full rounded-bl-[80px] md:rounded-bl-[120px] overflow-hidden shadow-2xl rounded-2xl"
+                            >
+                                <img
+                                    src="https://img.freepik.com/free-photo/portrait-young-handsome-man-smiling-holding-bunch-roses_158595-3682.jpg?semt=ais_se_enriched&w=740&q=80"
+                                    alt="Groom Tom"
+                                    class="w-full h-full object-cover object-[center_70%]"
+                                />
+                            </div>
+
+                            <!-- Vertical image positioned absolutely (mirror: left side) -->
+                            <div
+                                class="absolute -bottom-8 left-10 md:-bottom-12 md:left-20 w-32 h-48 md:w-40 md:h-60 z-10 rounded-bl-[50px] rounded-tr-[50px]"
+                            >
+                                <div
+                                    class="w-full h-full overflow-hidden shadow-xl rounded-bl-[50px] rounded-tr-[50px]"
+                                >
+                                    <img
+                                        src="https://img.freepik.com/free-photo/close-up-portrait-handsome-smiling-young-man-white-t-shirt-blurry-outdoor-nature_176420-6305.jpg?semt=ais_se_enriched&w=740&q=80"
+                                        alt="Groom Portrait"
+                                        class="w-full h-full object-cover object-top rounded-bl-[50px] rounded-tr-[50px] border-4 border-white"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative elements around images (mirror positions) -->
+                        <div
+                            class="absolute -bottom-20 -left-16 w-52 h-52 scale-x-[1] rotate-180"
+                        >
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                                alt=""
+                                class="w-full h-full opacity-50"
+                            />
+                        </div>
+
+                        <div class="absolute -bottom-44 -right-36 h-96">
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279225/glitter-2_g8pwgv.png"
+                                alt=""
+                                class="w-full h-full opacity-70"
+                                style="
+                                    filter: brightness(0) saturate(100%)
+                                        invert(11%) sepia(25%) saturate(661%)
+                                        hue-rotate(180deg) brightness(91%)
+                                        contrast(85%);
+                                "
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- family -->
+        <section
+            id="inner-circle"
+            data-moj-web-fixed="false"
+            data-moj-web-type="inner-circle"
+            data-moj-web-label="inner circle Section"
+            data-moj-web-category="structural"
+            class="py-10 lg:py-20 px-4 md:px-16 relative overflow-hidden bg-[#FEFAF6]"
+        >
+            <h2
+                class="text-5xl md:text-6xl caudex text-[#102C57] mb-10 text-center"
+            >
+                Family
+            </h2>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- Tabs -->
+                <div
+                    id="family-tabs"
+                    class="grid grid-cols-2 gap-4 md:flex md:justify-center mb-7 overflow-x-auto"
+                    role="tablist"
+                >
+                    <button
+                        class="family-tab px-6 py-2 rounded-full font-semibold cursor-pointer bg-[#102C57] text-white caudex"
+                        data-tab="familyA"
+                    >
+                        Sara's Family
+                    </button>
+                    <button
+                        class="family-tab px-6 py-2 rounded-full font-semibold cursor-pointer bg-[#F3F3F3] text-[#102C57] caudex"
+                        data-tab="familyB"
+                    >
+                        Tom's Family
+                    </button>
+                    <button
+                        class="family-tab px-6 py-2 rounded-full font-semibold cursor-pointer bg-[#F3F3F3] text-[#102C57] caudex"
+                        data-tab="bridesmaids"
+                    >
+                        Bridesmaids
+                    </button>
+                    <button
+                        class="family-tab px-6 py-2 rounded-full font-semibold cursor-pointer bg-[#F3F3F3] text-[#102C57] caudex"
+                        data-tab="groomsmen"
+                    >
+                        Groomsmen
+                    </button>
+                </div>
+
+                <div class="family-panes">
+                    <!-- Sara's Family -->
+                    <div
+                        data-pane="familyA"
+                        class="family-pane opacity-100 transition-opacity"
+                    >
+                        <div class="text-center mb-10 space-y-4">
+                            <h3
+                                class="text-2xl font-semibold text-[#102C57] caudex"
+                            >
+                                About Sara's Family
+                            </h3>
+                            <p class="text-gray-700 text-sm md:text-base">
+                                Sara's Family comes from a warm and loving
+                                background. Known for their kindness and
+                                hospitality, they have always believed in
+                                celebrating life’s simple joys.
+                            </p>
+
+                            <h3
+                                class="text-2xl font-semibold text-[#102C57] caudex"
+                            >
+                                A Message About Their Child
+                            </h3>
+                            <p class="text-gray-700 text-sm md:text-base">
+                                “Our child has always been a bright light in our
+                                lives — curious, compassionate, and full of
+                                laughter. We’ve watched them grow into someone
+                                thoughtful, strong, and full of dreams.”
+                            </p>
+
+                            <h3
+                                class="text-2xl font-semibold text-[#102C57] caudex"
+                            >
+                                A Family’s Blessing
+                            </h3>
+                            <p class="text-gray-700 text-sm md:text-base">
+                                “We are delighted to witness this new chapter
+                                and send all our blessings as they build a
+                                beautiful journey together.”
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center gap-3 md:gap-8">
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://plus.unsplash.com/premium_photo-1665461700564-78476e329876?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2hpdGUlMjBndXl8ZW58MHx8MHx8fDA%3D"
+                                    class="h-52 w-full max-w-72 md:h-96 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">Sam</h4>
+                                <p class="text-sm text-[#102C57]">
+                                    Sara's Father
+                                </p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://media.istockphoto.com/id/1483329842/photo/studio-portrait-of-attractive-woman-wearing-shirt-and-laughing-while-sitting-at-isolated-grey.webp?b=1&s=612x612&w=0&k=20&c=wE-CCntjb3Q4BlhDC7UA2K0VR485eVinp8pDagrErCw="
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">Lily</h4>
+                                <p class="text-sm text-[#102C57]">
+                                    Sara's Mother
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tom's Family -->
+                    <div
+                        data-pane="familyB"
+                        class="family-pane hidden opacity-0 transition-opacity"
+                    >
+                        <div class="text-center mb-10 space-y-4">
+                            <h3
+                                class="text-2xl font-semibold text-[#102C57] caudex"
+                            >
+                                About Tom's Family
+                            </h3>
+                            <p class="text-gray-700 text-sm md:text-base">
+                                Tom's Family is known for their cheerful spirit
+                                and strong values. They cherish togetherness and
+                                always bring warmth wherever they go.
+                            </p>
+                            <h3
+                                class="text-2xl font-semibold text-[#102C57] caudex"
+                            >
+                                A Message About Their Child
+                            </h3>
+                            <p class="text-gray-700 text-sm md:text-base">
+                                “Growing up, our child has always shown
+                                creativity and resilience. We are incredibly
+                                proud of the thoughtful and inspiring person
+                                they’ve become.”
+                            </p>
+                            <h3
+                                class="text-2xl font-semibold text-[#102C57] caudex"
+                            >
+                                Their Wishes
+                            </h3>
+                            <p class="text-gray-700 text-sm md:text-base">
+                                “We are excited to celebrate this union and pray
+                                that their future is filled with joy, love, and
+                                endless support.”
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center gap-3 md:gap-8">
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://t4.ftcdn.net/jpg/00/00/50/83/360_F_508306_TbTGZsAy8naFgLnxF3iNoTvE2KGD1o.jpg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Thomas
+                                </h4>
+                                <p class="text-sm text-[#102C57]">
+                                    Tom's Father
+                                </p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg?semt=ais_se_enriched&w=740&q=80"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">Mary</h4>
+                                <p class="text-sm text-[#102C57]">
+                                    Tom's Mother
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BRIDESMAIDS -->
+                    <div
+                        data-pane="bridesmaids"
+                        class="family-pane hidden opacity-0 transition-opacity"
+                    >
+                        <div class="text-center mb-8">
+                            <p class="text-[#102C57]">
+                                The bride’s closest friends who have shared her
+                                journey through laughter, memories, and
+                                countless stories.
+                            </p>
+                        </div>
+                        <div
+                            class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8"
+                        >
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://images.pexels.com/photos/17691789/pexels-photo-17691789.jpeg?cs=srgb&dl=pexels-bave-pictures-64453798-17691789.jpg&fm=jpg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://images.pexels.com/photos/17691789/pexels-photo-17691789.jpeg?cs=srgb&dl=pexels-bave-pictures-64453798-17691789.jpg&fm=jpg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://images.pexels.com/photos/17691789/pexels-photo-17691789.jpeg?cs=srgb&dl=pexels-bave-pictures-64453798-17691789.jpg&fm=jpg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://images.pexels.com/photos/17691789/pexels-photo-17691789.jpeg?cs=srgb&dl=pexels-bave-pictures-64453798-17691789.jpg&fm=jpg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GROOMSMEN -->
+                    <div
+                        data-pane="groomsmen"
+                        class="family-pane hidden opacity-0 transition-opacity"
+                    >
+                        <div class="text-center mb-8">
+                            <p class="text-[#102C57]">
+                                The groom’s lifelong companions who’ve stood by
+                                his side through every milestone.
+                            </p>
+                        </div>
+                        <div
+                            class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8"
+                        >
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/073/306/911/small/smiling-young-man-in-a-black-t-shirt-points-to-the-side-against-a-textured-gray-wall-showcasing-a-cheerful-expression-and-inviting-engagement-in-a-casual-setting-photo.jpeg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/073/306/911/small/smiling-young-man-in-a-black-t-shirt-points-to-the-side-against-a-textured-gray-wall-showcasing-a-cheerful-expression-and-inviting-engagement-in-a-casual-setting-photo.jpeg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/073/306/911/small/smiling-young-man-in-a-black-t-shirt-points-to-the-side-against-a-textured-gray-wall-showcasing-a-cheerful-expression-and-inviting-engagement-in-a-casual-setting-photo.jpeg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                            <div class="text-center p-1.5">
+                                <img
+                                    src="https://static.vecteezy.com/system/resources/thumbnails/073/306/911/small/smiling-young-man-in-a-black-t-shirt-points-to-the-side-against-a-textured-gray-wall-showcasing-a-cheerful-expression-and-inviting-engagement-in-a-casual-setting-photo.jpeg"
+                                    class="h-52 w-full md:h-96 max-w-72 object-cover"
+                                />
+                                <h4 class="mt-4 font-semibold text-lg">
+                                    Groomsman
+                                </h4>
+                                <p class="text-sm text-[#102C57]">Friend</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            (function () {
+                const AUTO_MS = 5000;
+
+                const container = document.getElementById("inner-circle");
+                const tabs = Array.from(
+                    container.querySelectorAll(".family-tab")
+                );
+                const panes = Array.from(
+                    container.querySelectorAll(".family-pane")
+                );
+                const tabKeys = tabs.map((t) => t.dataset.tab);
+
+                let index = 0;
+                let hover = false;
+                let timer = null;
+
+                function show(tab) {
+                    tabs.forEach((btn) => {
+                        const active = btn.dataset.tab === tab;
+                        btn.classList.toggle("bg-[#102C57]", active);
+                        btn.classList.toggle("text-white", active);
+                        btn.classList.toggle("bg-[#F3F3F3]", !active);
+                        btn.classList.toggle("text-[#102C57]", !active);
+                    });
+
+                    panes.forEach((pane) => {
+                        const active = pane.dataset.pane === tab;
+                        if (active) {
+                            pane.classList.remove("hidden", "opacity-0");
+                            pane.classList.add("opacity-100");
+                        } else {
+                            pane.classList.remove("opacity-100");
+                            pane.classList.add("opacity-0");
+                            setTimeout(() => pane.classList.add("hidden"), 300);
+                        }
+                    });
+
+                    index = tabKeys.indexOf(tab);
+                }
+
+                function auto() {
+                    if (timer) return;
+                    timer = setInterval(() => {
+                        if (hover) return;
+                        index = (index + 1) % tabKeys.length;
+                        show(tabKeys[index]);
+                    }, AUTO_MS);
+                }
+
+                container.addEventListener("mouseenter", () => (hover = true));
+                container.addEventListener("mouseleave", () => (hover = false));
+
+                tabs.forEach(
+                    (btn) => (btn.onclick = () => show(btn.dataset.tab))
+                );
+
+                show(tabKeys[0]);
+                auto();
+            })();
+        </script>
+
+        <!-- itinerary -->
+        <style>
+            button:focus {
+                outline: none !important;
+            }
+        </style>
+        <section
+            class="relative py-10 px-4 md:px-16"
+            id="itinerary"
+            data-moj-web-fixed="false"
+            data-moj-web-type="itinerary"
+            data-moj-web-label="itinerary Section"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto">
+                <h2
+                    class="text-3xl md:text-5xl lg:text-6xl caudex text-[#102C57] text-center leading-tight mb-2"
+                >
+                    Wedding Itinerary
+                </h2>
+                <h3
+                    class="text-xl md:text-2xl font-medium text-[#102C57] text-center lg:mb-10"
+                >
+                    Itinerary and Dress code of the events
+                </h3>
+
+                <!-- Slider container -->
+                <div class="relative overflow-hidden">
+                    <div
+                        id="slides"
+                        class="flex transition-transform duration-500 ease-in-out w-full"
+                    >
+                        <!-- SLIDE 1 -->
+                        <div
+                            class="min-w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+                        >
+                            <!-- LEFT CONTENT -->
+                            <div
+                                class="lg:w-1/2 space-y-6 lg:p-6 min-h-[328px]"
+                            >
+                                <h4
+                                    class="text-[#102C57] text-2xl lg:text-5xl font-semibold mt-4 caudex"
+                                >
+                                    Welcome Evening & Rhythm Night
+                                </h4>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M19 3h-1V1h-2v2H8V1H6v2H5c-.11 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >November 18, 2025</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >07:30 PM onwards</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >Azure Hall, Lakeside Pavilion</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >Starlit Harmony Theme</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-start gap-3 mt-2">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5
+                                                class="font-semibold text-[#102C57] mb-1"
+                                            >
+                                                Dress Code:
+                                            </h5>
+                                            <p class="text-sm text-gray-700">
+                                                Contemporary ethnic outfits —
+                                                <strong class="text-[#102C57]"
+                                                    >silver, navy, or muted gold
+                                                    accents.</strong
+                                                >
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT IMAGES -->
+                            <div class="lg:w-1/2 grid grid-cols-3 gap-3">
+                                <div class="space-y-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                </div>
+
+                                <div class="space-y-3 mt-6">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                </div>
+
+                                <div class="space-y-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div
+                            class="min-w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+                        >
+                            <!-- LEFT CONTENT -->
+                            <div
+                                class="lg:w-1/2 space-y-6 lg:p-6 min-h-[328px]"
+                            >
+                                <h4
+                                    class="text-[#102C57] text-2xl lg:text-5xl font-semibold mt-4 caudex"
+                                >
+                                    Church Wedding Ceremony
+                                </h4>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M19 3h-1V1h-2v2H8V1H6v2H5c-.11 0-2 
+.9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 
+2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >December 27, 2025</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 20c-4.42 0-8-3.58-8-8s3.58-8 
+8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >01:30 PM onwards</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 
+5.25 7 13 7 13s7-7.75 7-13c0-3.87-
+3.13-7-7-7z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >St. Teresa's Monastery Church</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 
+2l3.09 6.26L22 
+9.27l-5 4.87 1.18 
+6.88L12 17.77l-6.18 
+3.25L7 14.14 2 
+9.27z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >Timeless Elegance Theme</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-start gap-3 mt-2">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 
+2l3.09 6.26L22 
+9.27l-5 4.87 1.18 
+6.88L12 17.77l-6.18 
+3.25L7 14.14 2 
+9.27z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5
+                                                class="font-semibold text-[#102C57] mb-1"
+                                            >
+                                                Dress Code:
+                                            </h5>
+                                            <p class="text-sm text-gray-700">
+                                                Pastel-coloured suits, gowns, or
+                                                sarees —
+                                                <strong class="text-[#102C57]"
+                                                    >soft & graceful</strong
+                                                >.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT IMAGES -->
+                            <div class="lg:w-1/2 grid grid-cols-3 gap-3">
+                                <!-- Column 1 -->
+                                <div class="space-y-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="space-y-3 mt-6">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                </div>
+
+                                <!-- Column 3 -->
+                                <div class="space-y-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div
+                            class="min-w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+                        >
+                            <!-- LEFT CONTENT -->
+                            <div
+                                class="lg:w-1/2 space-y-6 lg:p-6 min-h-[328px]"
+                            >
+                                <h4
+                                    class="text-[#102C57] text-2xl lg:text-5xl font-semibold mt-4 caudex"
+                                >
+                                    Wedding Reception
+                                </h4>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M19 
+3h-1V1h-2v2H8V1H6v2H5c-.11 0-2 
+.9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 
+2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >December 27, 2025</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M11.99 
+2C6.47 2 2 6.48 2 12s4.47 10 
+9.99 10C17.52 22 22 17.52 22 
+12S17.52 2 11.99 2z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >07:00 PM onwards</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 
+2C8.13 2 5 5.13 5 9c0 
+5.25 7 13 7 13s7-7.75 7-13c0-3.87-
+3.13-7-7-7z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >Grand Hyatt, Kochi</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 
+2l3.09 6.26L22 
+9.27l-5 4.87 1.18 
+6.88L12 17.77l-6.18 
+3.25L7 14.14 2 
+9.27z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-800 font-medium"
+                                            >Garden of Eden Theme</span
+                                        >
+                                    </div>
+
+                                    <div class="flex items-start gap-3 mt-2">
+                                        <div
+                                            class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
+                                        >
+                                            <svg class="w-4 h-4 text-white">
+                                                <path
+                                                    d="M12 
+2l3.09 6.26L22 
+9.27l-5 4.87 1.18 
+6.88L12 17.77l-6.18 
+3.25L7 14.14 2 
+9.27z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5
+                                                class="font-semibold text-[#102C57] mb-1"
+                                            >
+                                                Dress Code:
+                                            </h5>
+                                            <p class="text-sm text-gray-700">
+                                                Glamorous & bling —
+                                                <strong class="text-[#102C57]"
+                                                    >bold or dark tones</strong
+                                                >.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT IMAGES -->
+                            <div class="lg:w-1/2 grid grid-cols-3 gap-3">
+                                <!-- Column 1 -->
+                                <div class="space-y-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="space-y-3 mt-6">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                </div>
+
+                                <!-- Column 3 -->
+                                <div class="space-y-3">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+                                        class="w-full h-72 object-cover rounded-lg"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces"
+                                        class="w-full h-52 object-cover rounded-lg"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INDICATORS -->
+                    <div class="flex justify-center space-x-2 my-6">
+                        <button
+                            tabindex="-1"
+                            class="w-3 h-3 bg-[#102C57] rounded-full"
+                            data-slide="0"
+                        ></button>
+                        <button
+                            tabindex="-1"
+                            class="w-3 h-3 bg-[#102C57] rounded-full opacity-50"
+                            data-slide="1"
+                        ></button>
+                        <button
+                            tabindex="-1"
+                            class="w-3 h-3 bg-[#102C57] rounded-full opacity-50"
+                            data-slide="2"
+                        ></button>
+                    </div>
+
+                    <!-- NAVIGATION -->
+                    <div class="flex justify-center space-x-6 mt-6">
+                        <button
+                            id="prev"
+                            class="px-6 py-2 border border-[#102C57] text-[#102C57] rounded hover:bg-[#102C57] hover:text-white transition"
+                        >
+                            ← Previous
+                        </button>
+                        <button
+                            id="next"
+                            class="px-6 py-2 border border-[#102C57] text-[#102C57] rounded hover:bg-[#102C57] hover:text-white transition"
+                        >
+                            Next →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script is:inline>
+            const slidesContainer = document.getElementById("slides");
+            const indicatorBtns = document.querySelectorAll("[data-slide]");
+            const nextBtn = document.getElementById("next");
+            const prevBtn = document.getElementById("prev");
+
+            let currentSlide = 0;
+            const totalSlides =
+                document.querySelectorAll("#slides > div").length;
+
+            function updateSlider(index) {
+                slidesContainer.style.transform = `translateX(-${
+                    index * 100
+                }%)`;
+
+                indicatorBtns.forEach((btn, i) => {
+                    btn.classList.toggle("opacity-50", i !== index);
+                    btn.blur(); // prevent page scroll during auto-slide
+                });
+            }
+
+            function goToNextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider(currentSlide);
+            }
+
+            function goToPrevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider(currentSlide);
+            }
+
+            // Buttons
+            nextBtn.addEventListener("click", () => {
+                goToNextSlide();
+                resetAutoSlide();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                goToPrevSlide();
+                resetAutoSlide();
+            });
+
+            indicatorBtns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    currentSlide = i;
+                    updateSlider(currentSlide);
+                    resetAutoSlide();
+                });
+            });
+
+            // ⭐ AUTO SCROLL (RESTORED)
+            let autoSlideTimer = setInterval(goToNextSlide, 6000);
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideTimer);
+                autoSlideTimer = setInterval(goToNextSlide, 6000);
+            }
+
+            // Init
+            updateSlider(currentSlide);
+        </script>
+
+        <!-- venue -->
+        <section
+            class="relative overflow-x-clip"
+            id="venue"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue"
+            data-moj-web-label="Wedding Venue"
+            data-moj-web-category="structural"
+        >
+            <!-- Curved Background -->
+            <div
+                class="absolute inset-0 bg-[#FEFAF6] min-h-[750px] lg:max-w-[50%] lg:rounded-br-[120px]"
+            ></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 py-10 md:px-16">
+                <!-- Header -->
+                <div class="mb-6 md:mb-10 max-w-fit">
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl caudex text-[#102C57] leading-tight text-center mb-2"
+                    >
+                        The Grand Day
+                    </h2>
+                    <h3
+                        class="text-xl md:text-2xl font-medium text-[#102C57] mb-5 text-center"
+                    >
+                        Venue
+                    </h3>
+                    <p class="text-gray-700 text-sm md:text-base text-center">
+                        Our wedding day unfolds across places that reflect our
+                        journey — sacred, serene, and full of love. Each venue
+                        has been chosen not just for its beauty, but for the
+                        memories we hope to create with those dearest to us.
+                    </p>
+                </div>
+
+                <!-- Venue Cards Grid with Depth Effect -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                >
+                    <!-- Card 1: Aurora Resort -->
+                    <div class="relative">
+                        <div
+                            class="group relative z-10 overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm transform lg:scale-90 lg:rotate-y-12 lg:-translate-x-4 lg:translate-z-[50px] transition-all duration-700 hover:scale-100 hover:rotate-y-0 hover:translate-x-0 hover:translate-z-0 hover:shadow-2xl"
+                        >
+                            <div class="aspect-[4/5] relative overflow-hidden">
+                                <img
+                                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/32/16/d6/caption.jpg?w=900&h=500&s=1"
+                                    alt="Aurora Resort"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+                                ></div>
+
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-6 text-white"
+                                >
+                                    <h3 class="text-xl mb-2 text-white">
+                                        Aurora Resort & Spa
+                                    </h3>
+                                    <p
+                                        class="text-sm text-white/90 leading-relaxed"
+                                    >
+                                        A serene luxury retreat nestled beside a
+                                        crystal-clear lakeside. Aurora Resort
+                                        features modern architecture blended
+                                        with artistic interiors — perfect for
+                                        welcoming your guests with warmth and
+                                        charm.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <img
+                            src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                            alt="Decorative Floral"
+                            class="absolute right-0 -bottom-10 w-52 hidden lg:block scale-x-[-1] rotate-60 opacity-60"
+                        />
+                        <div class="absolute -top-44 -right-36 h-96">
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279225/glitter-2_g8pwgv.png"
+                                alt=""
+                                class="w-full h-full"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Evergreen Chapel -->
+                    <div class="relative">
+                        <div
+                            class="group relative z-10 overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm transform lg:scale-90 lg:rotate-y-12 lg:-translate-x-4 lg:translate-z-[50px] transition-all duration-700 hover:scale-100 hover:translate-z-0 hover:shadow-2xl"
+                        >
+                            <div class="aspect-[4/5] relative overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1503264116251-35a269479413"
+                                    alt="Evergreen Chapel"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+                                ></div>
+
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-6 text-white"
+                                >
+                                    <h3 class="text-xl mb-2 text-white">
+                                        Evergreen Chapel
+                                    </h3>
+                                    <p
+                                        class="text-sm text-white/90 leading-relaxed"
+                                    >
+                                        A quaint countryside chapel surrounded
+                                        by lush greenery. Known for its peaceful
+                                        ambiance and vintage charm, it provides
+                                        the perfect backdrop for a timeless and
+                                        intimate ceremony.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <img
+                            src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                            alt="Decorative Floral"
+                            class="absolute right-0 -bottom-10 w-52 hidden lg:block scale-x-[-1] rotate-60 opacity-60"
+                        />
+                        <div class="absolute -top-44 -right-36 h-96">
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279225/glitter-2_g8pwgv.png"
+                                alt=""
+                                class="w-full h-full"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Meridian Palace -->
+                    <div class="relative">
+                        <div
+                            class="group relative z-10 overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm transform lg:scale-90 lg:-rotate-y-12 lg:translate-x-4 transition-all duration-700 hover:scale-100 hover:rotate-y-0 hover:translate-x-0 hover:translate-z-0 hover:shadow-2xl"
+                        >
+                            <div class="aspect-[4/5] relative overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba"
+                                    alt="Meridian Palace"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+                                ></div>
+
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-6 text-white"
+                                >
+                                    <h3 class="text-xl mb-2 text-white">
+                                        Meridian Palace
+                                    </h3>
+                                    <p
+                                        class="text-sm text-white/90 leading-relaxed"
+                                    >
+                                        A grand contemporary palace overlooking
+                                        the city skyline. Meridian Palace blends
+                                        luxury with sophistication, offering
+                                        breathtaking venues ideal for lavish
+                                        celebrations and unforgettable
+                                        receptions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <img
+                            src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279281/download_kbtawg.svg"
+                            alt="Decorative Floral"
+                            class="absolute -right-32 -bottom-10 w-52 hidden lg:block scale-x-[-1] rotate-45 opacity-60"
+                        />
+                        <div class="absolute -top-44 -right-36 h-96">
+                            <img
+                                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279225/glitter-2_g8pwgv.png"
+                                alt=""
+                                class="w-full h-full"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- gallery -->
+        <section
+            class="overflow-hidden relative pt-10"
+            id="gallery"
+            data-moj-web-fixed="false"
+            data-moj-web-type="gallery"
+            data-moj-web-label="Wedding Gallery"
+            data-moj-web-category="structural"
+        >
+            <!-- Decorative Images -->
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                alt=""
+                class="absolute opacity-60 -left-36 bottom-0 h-[300px] hidden md:block"
+            />
+            <img
+                src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
+                alt=""
+                class="absolute opacity-60 -right-36 top-20 md:top-0 h-[300px] rotate-180 hidden md:block"
+            />
+
+            <!-- Title -->
+            <div class="text-center mb-6 md:mb-12">
+                <h2
+                    class="text-3xl md:text-5xl lg:text-6xl caudex text-[#102C57] leading-tight mb-2"
+                >
+                    Gallery
+                </h2>
+                <h3
+                    class="text-xl md:text-2xl font-medium text-[#102C57] md:mb-6"
+                >
+                    Moments of love, laughter, and forever memories
+                </h3>
+            </div>
+
+            <!-- Row 1 -->
+            <div
+                id="galleryContainer"
+                class="flex flex-row overflow-x-auto relative z-10 scroll-hide"
+            >
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1519681393784-d120267933ba"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div
+                id="galleryContainer2"
+                class="flex flex-row overflow-x-auto relative z-10 scroll-hide"
+            >
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?crop=faces"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=faces"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="md:w-80 w-60 h-60 md:h-80 flex-shrink-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+        </section>
+        <script>
+            const scrollSpeed = 1; // pixels per frame
+            const intervalDelay = 16; // ~60fps
+            let isPaused = false; // shared pause state
+
+            function setupInfiniteScroll(containerId) {
+                const container = document.getElementById(containerId);
+                const children = [...container.children];
+
+                // Clone children for seamless loop
+                children.forEach((child) => {
+                    const clone = child.cloneNode(true);
+                    container.appendChild(clone);
+                });
+
+                const scroll = () => {
+                    if (!isPaused) {
+                        container.scrollLeft += scrollSpeed;
+                        if (container.scrollLeft >= container.scrollWidth / 2) {
+                            container.scrollLeft = 0;
+                        }
+                    }
+                };
+
+                const interval = setInterval(scroll, intervalDelay);
+
+                // Shared hover handlers
+                container.addEventListener(
+                    "mouseenter",
+                    () => (isPaused = true)
+                );
+                container.addEventListener(
+                    "mouseleave",
+                    () => (isPaused = false)
+                );
+            }
+
+            // Setup both scroll containers
+            setupInfiniteScroll("galleryContainer");
+            setupInfiniteScroll("galleryContainer2");
+        </script>
+        <style>
+            .scroll-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+
+        <!-- footer -->
+        <section
+            class="bg-transparent px-8 py-4 flex flex-col md:flex-row justify-between items-center text-[#102C57] font-medium tracking-widest"
+                   id="footer-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Wedding footer"
+            data-moj-web-category="structural"
+        >
+            <!-- Left Logo -->
+            <div class="text-xl font-sail mb-2 md:mb-0">
+                <img
+                    src="https://penji.co/wp-content/uploads/2019/06/calligraphy-wedding-logo-design.jpg.webp"
+                    alt="Sara & Tom"
+                    class="h-16 mx-auto md:mx-0"
+                />
+            </div>
+
+            <!-- Center Copyright -->
+            <div class="text-xs text-center text-[#102C57] mb-2 md:mb-0">
+                © 2025 Sara & Tom. All rights reserved.
+            </div>
+        </section>
+    </body>
+</html>
