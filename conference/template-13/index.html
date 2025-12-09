@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Global Medical Summit 2025</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            body {
+                font-family: "Kumbh Sans", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body class="text-gray-800 bg-[#fcf5e8]">
+        <!-- ================= NAVBAR SECTION ================= -->
+        <section
+            id="navbar"
+            class="w-full py-5 bg-white relative z-50"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="max-w-[1500px] mx-auto px-6 flex items-center justify-between"
+            >
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <i
+                        class="fa-solid fa-shield-heart text-3xl text-[#2E3B2A]"
+                    ></i>
+                    <h1 class="text-xl font-semibold text-[#2E3B2A]">
+                        MedExpo
+                    </h1>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav
+                    class="hidden md:flex items-center gap-8 text-sm font-medium"
+                >
+                    <a href="#" class="hover:text-[#6B7F47]">Home</a>
+                    <a href="#" class="hover:text-[#6B7F47]">Agenda</a>
+                    <a href="#" class="hover:text-[#6B7F47]">Speakers</a>
+                    <a href="#" class="hover:text-[#6B7F47]">Workshops</a>
+                    <a href="#" class="hover:text-[#6B7F47]">Exhibitors</a>
+                    <a href="#" class="hover:text-[#6B7F47]">Contact</a>
+                </nav>
+
+                <!-- Mobile Hamburger -->
+                <button id="openMenu" class="md:hidden text-[#2E3B2A] text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Register Button (Desktop only) -->
+                <div class="hidden md:flex items-center gap-5">
+                    <button
+                        class="px-5 py-2 rounded-md font-semibold text-white bg-[#6B7F47]"
+                    >
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- ================= MOBILE SIDEBAR ================= -->
+            <div
+                id="mobileSidebar"
+                class="fixed top-0 right-0 w-72 h-full bg-[#2E3B2A] text-white shadow-lg transform translate-x-full transition-transform duration-300 z-50"
+            >
+                <!-- Close Button -->
+                <div class="flex justify-end p-5">
+                    <button id="closeMenu" class="text-white text-2xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Sidebar Links -->
+                <nav class="flex flex-col gap-6 text-lg font-medium px-8">
+                    <a href="#" class="hover:text-[#A5B89B]">Home</a>
+                    <a href="#" class="hover:text-[#A5B89B]">Agenda</a>
+                    <a href="#" class="hover:text-[#A5B89B]">Speakers</a>
+                    <a href="#" class="hover:text-[#A5B89B]">Workshops</a>
+                    <a href="#" class="hover:text-[#A5B89B]">Exhibitors</a>
+                    <a href="#" class="hover:text-[#A5B89B]">Contact</a>
+
+                    <button
+                        class="mt-6 bg-[#6B7F47] text-white px-5 py-2 rounded-md w-fit"
+                    >
+                        Register Now
+                    </button>
+                </nav>
+            </div>
+        </section>
+        <script>
+            const sidebar = document.getElementById("mobileSidebar");
+            const openBtn = document.getElementById("openMenu");
+            const closeBtn = document.getElementById("closeMenu");
+
+            openBtn.addEventListener("click", () => {
+                sidebar.classList.remove("translate-x-full");
+            });
+
+            closeBtn.addEventListener("click", () => {
+                sidebar.classList.add("translate-x-full");
+            });
+        </script>
+
+        <!-- Hero -->
+        <section
+            id="hero"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+            class="relative overflow-hidden"
+        >
+            <!-- ================= MAIN HERO ================= -->
+            <section class="relative w-full">
+                <div
+                    class="flex flex-col-reverse lg:flex-row justify-center 2xl:justify-between items-center max-w-[1500px] mx-auto px-6 py-12 md:py-16 gap-3 md:gap-10"
+                >
+                    <!-- LEFT CONTENT -->
+                    <div class="w-full lg:w-1/2 2xl:w-[80%] relative z-10">
+                        <h1
+                            class="text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold leading-tight text-[#2E3B2A]"
+                        >
+                            GLOBAL MEDICAL <br />
+                            SUMMIT 2025
+                        </h1>
+
+                        <p
+                            class="mt-4 md:mt-6 text-gray-700 text-base md:text-lg max-w-xl leading-relaxed"
+                        >
+                            Join world-renowned physicians, researchers, and
+                            innovators as we explore cutting-edge advancements
+                            in surgery, AI-driven diagnostics, regenerative
+                            medicine, and global healthcare solutions.
+                        </p>
+                    </div>
+
+                    <!-- RIGHT IMAGE CARD -->
+                    <div class="w-full lg:w-auto flex flex-col items-end">
+                        <div
+                            class="w-full max-w-[350px] overflow-hidden bg-white shadow-md"
+                        >
+                            <img
+                                src="https://img.freepik.com/free-photo/people-taking-part-high-protocol-event_23-2150951243.jpg"
+                                alt="Medical Panel"
+                                class="w-full h-40 sm:h-48 object-cover"
+                            />
+                        </div>
+
+                        <div class="flex items-center gap-2 mt-3">
+                            <p
+                                class="font-medium text-[#2E3B2A] text-sm md:text-base"
+                            >
+                                View Schedule
+                            </p>
+                            <i
+                                class="fa-solid fa-arrow-right text-[#6B7F47]"
+                            ></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DECORATIVE SHAPES -->
+                <img
+                    src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/244303410_f3d85cca-9db8-4063-88f1-5084d8762324-1.png"
+                    class="absolute left-0 top-0 w-20 md:w-32 opacity-70"
+                    alt=""
+                />
+                <img
+                    src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/244302735_96612cf9-dfa7-45fd-80ac-362f6df262cf-1.png"
+                    class="absolute right-3 bottom-3 rotate-180 w-20 md:w-32 opacity-60"
+                    alt=""
+                />
+            </section>
+
+            <!-- ================= FULL-WIDTH IMAGE ================= -->
+            <section
+                class="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]"
+            >
+                <img
+                    src="https://img.freepik.com/free-photo/retro-world-theatre-day-scenes-with-audience-sitting-stalls-theatre_23-2151211355.jpg?t=st=1765274285~exp=1765277885~hmac=569b14fb6b9b93a270bd654a2f626da0cf086237de09146ea08309d42f6d2943&w=1060"
+                    alt="Medical Conference Crowd"
+                    class="w-full h-full object-cover object-[center_20%]"
+                />
+            </section>
+        </section>
+
+        <!-- ================= Marquee SECTION ================= -->
+        <section
+            id="marquee"
+            data-moj-web-fixed="false"
+            data-moj-web-type="marquee"
+            data-moj-web-label="Marquee Conference"
+            data-moj-web-category="structural"
+            class="w-full py-5 md:py-10 bg-[#fcf5e8] overflow-hidden"
+        >
+            <style>
+                @keyframes marqueeslide {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
+
+            <div class="whitespace-nowrap flex items-center">
+                <div
+                    class="flex items-center gap-10 text-4xl font-semibold text-[#6B7F47] animate-[marqueeslide_20s_linear_infinite]"
+                >
+                    <!-- ITEM 1 -->
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-star text-[#6B7F47]"></i>
+                        <span>GLOBAL NETWORKING OPPORTUNITIES</span>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-globe text-[#6B7F47]"></i>
+                        <span>WORLD–CLASS SPEAKERS</span>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="flex items-center gap-3">
+                        <i
+                            class="fa-solid fa-handshake-angle text-[#6B7F47]"
+                        ></i>
+                        <span>COLLABORATION WITH TOP INSTITUTIONS</span>
+                    </div>
+
+                    <!-- ITEM 4 -->
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-microscope text-[#6B7F47]"></i>
+                        <span>BREAKTHROUGH MEDICAL RESEARCH</span>
+                    </div>
+
+                    <!-- DUPLICATE FOR SMOOTH LOOP -->
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-star text-[#6B7F47]"></i>
+                        <span>GLOBAL NETWORKING OPPORTUNITIES</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-globe text-[#6B7F47]"></i>
+                        <span>WORLD–CLASS SPEAKERS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= About SECTION ================= -->
+        <section
+            id="about"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+            class="w-full pt-8 pb-10 md:pb-20 bg-[#fcf5e8] relative"
+        >
+            <div
+                class="max-w-[1500px] mx-auto px-6 grid md:grid-cols-2 gap-5 md:gap-12 items-center"
+            >
+                <!-- Left Image -->
+                <div class="w-full">
+                    <img
+                        src="https://img.freepik.com/free-photo/women-s-panel-discussion_23-2151932835.jpg?t=st=1765260351~exp=1765263951~hmac=e662e528b4bcfa30e843fab93f4b44ceb428e04ffa7016a2ef1a719d7f635542&w=2000"
+                        class="w-full h-[350px] md:h-[500px] object-cover rounded-lg shadow-md"
+                        alt="Medical Conference Image"
+                    />
+                </div>
+
+                <!-- Right Content -->
+                <div>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold text-[#2E3B2A] leading-tight mt-3"
+                    >
+                        The Global Medical Summit 2025 - Place of Innovation &
+                        Collaboration
+                    </h2>
+
+                    <p class="mt-6 text-gray-700 leading-relaxed">
+                        The Global Medical Summit brings together leading
+                        physicians, researchers, surgeons, and healthcare
+                        innovators to shape the future of modern medicine. Our
+                        event focuses on breakthrough clinical research,
+                        hands-on training, multidisciplinary collaboration, and
+                        transformative healthcare technologies.
+                    </p>
+
+                    <!-- Bullet List -->
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-check text-[#6B7F47] mt-1"
+                            ></i>
+                            <p class="text-gray-700">
+                                Cutting-edge Surgical Workshops
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-check text-[#6B7F47] mt-1"
+                            ></i>
+                            <p class="text-gray-700">
+                                Global Expert Faculty & Speakers
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-check text-[#6B7F47] mt-1"
+                            ></i>
+                            <p class="text-gray-700">
+                                Innovation-driven Scientific Sessions
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i
+                                class="fa-solid fa-check text-[#6B7F47] mt-1"
+                            ></i>
+                            <p class="text-gray-700">
+                                Networking with Healthcare Leaders
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/197604413_974ce5d0-a491-483f-af55-6322e64007db-1.png"
+                alt=""
+                class="absolute right-0 bottom-0 w-20 xl:w-auto"
+            />
+        </section>
+
+        <!-- ================= Message SECTION ================= -->
+        <section
+            id="message"
+            data-moj-web-fixed="false"
+            data-moj-web-type="message"
+            data-moj-web-label="Message Conference"
+            data-moj-web-category="structural"
+            class="md:py-20 py-6 px-6 bg-[#f7f0cf] relative overflow-hidden"
+        >
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/Clip-path-group.png"
+                class="absolute right-5 bottom-5 w-30 animate-[spin_5s_linear_infinite]"
+                style="filter: hue-rotate(90deg) saturate(0.4) brightness(0.8)"
+                alt=""
+            />
+            <div class="max-w-[1500px] mx-auto relative z-10">
+                <!-- CONTENT GRID -->
+                <div
+                    class="flex flex-col-reverse lg:flex-row gap-6 md:gap-10 xl:gap-20 items-center xl:px-5"
+                >
+                    <!-- IMAGE -->
+                    <div
+                        class="order-1 lg:order-2 flex justify-center lg:justify-end w-full lg:w-auto xl:-mt-10"
+                    >
+                        <div class="relative w-60 sm:w-72 md:w-80 h-80 sm:h-96">
+                            <img
+                                src="https://img.freepik.com/premium-photo/indian-ayurvedic-doctor-green-uniform-cozy-ayurvedic-clinic_6751-174.jpg"
+                                alt="Chairperson"
+                                class="w-full h-full object-cover rounded-2xl shadow-xl"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- TEXT CONTENT -->
+                    <div class="order-2 lg:order-1 w-full">
+                        <h4
+                            class="text-4xl md:text-5xl font-extrabold text-[#2E3B2A] mb-4 md:mb-6 lg:mb-8"
+                        >
+                            MESSAGE FROM THE CHAIRMAN
+                        </h4>
+
+                        <div
+                            class="space-y-4 md:space-y-5 text-gray-700 text-sm md:text-lg md:leading-relaxed"
+                        >
+                            <p>
+                                It is with immense pride that we welcome you to
+                                the
+                                <strong>Global Medical Summit 2025</strong>, a
+                                landmark gathering dedicated to advancing
+                                clinical excellence, medical research, and
+                                transformative healthcare innovation.
+                            </p>
+
+                            <p>
+                                This year’s summit brings together
+                                world-renowned physicians, surgeons, scientists,
+                                technologists, and healthcare leaders to explore
+                                breakthroughs that are reshaping the future of
+                                patient care. From robotics and AI-assisted
+                                surgery to regenerative medicine and advanced
+                                diagnostics, our multidisciplinary approach
+                                reflects the evolving landscape of modern
+                                medicine.
+                            </p>
+
+                            <p>
+                                As we navigate a rapidly changing healthcare
+                                environment, collaboration and knowledge-sharing
+                                have never been more critical. The summit offers
+                                a powerful platform for exchanging ideas,
+                                strengthening global partnerships, and fostering
+                                innovations that improve outcomes for patients
+                                everywhere.
+                            </p>
+
+                            <p>
+                                We invite you to engage with thought-provoking
+                                sessions, world-class speakers, hands-on
+                                workshops, and meaningful networking
+                                opportunities throughout the event.
+                            </p>
+                        </div>
+
+                        <!-- SIGNATURE -->
+                        <div
+                            class="mt-4 pt-4 md:mt-6 md:pt-6 border-t border-[#6B7F47]"
+                        >
+                            <p class="text-gray-800 text-base md:text-lg">
+                                Warm regards,
+                            </p>
+
+                            <div class="mt-3 md:mt-4">
+                                <p class="text-[#2E3B2A] font-bold text-xl">
+                                    Dr. Jonathan Reed
+                                </p>
+                                <p class="text-[#6B7F47] font-semibold">
+                                    Chairman, Organizing Committee
+                                </p>
+                                <p class="text-gray-700 text-sm">
+                                    Global Medical Summit 2025
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Highlights SECTION ================= -->
+        <section
+            id="highlights"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlights"
+            data-moj-web-label="Highlights Conference"
+            data-moj-web-category="structural"
+            class="w-full py-10 md:py-20 bg-[#6B7F47] relative"
+        >
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/Clip-path-group.png"
+                class="absolute left-5 bottom-5 w-30 animate-[spin_5s_linear_infinite]"
+                style="filter: brightness(0) invert(1)"
+                alt=""
+            />
+
+            <div class="max-w-[1500px] mx-auto px-6">
+                <!-- HEADER -->
+                <div
+                    class="lg:flex-row flex-col flex lg:items-center justify-between mb-8 gap-5 lg:gap-0"
+                >
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white">
+                            Event Highlights
+                        </h2>
+                        <p class="text-white/80 mt-2">
+                            Explore the key sessions, workshops, and experiences
+                            at our medical summit.
+                        </p>
+                    </div>
+
+                    <a
+                        href="#"
+                        class="text-white max-w-fit font-semibold text-lg flex items-center gap-2 items-center rounded-full border px-4 py-2 hover:underline"
+                    >
+                        Register now
+                        <i class="fa-solid fa-arrow-right text-base"></i>
+                    </a>
+                </div>
+
+                <!-- HIGHLIGHT CARDS GRID (6 ITEMS) -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- CARD 1 -->
+                    <div
+                        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
+                    >
+                        <h3 class="text-white font-semibold text-lg">
+                            Opening Keynote: The Future of Medicine
+                        </h3>
+                        <p class="text-white/80 text-sm mt-3">
+                            A deep dive into innovations shaping the next decade
+                            of global healthcare.
+                        </p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
+                    >
+                        <h3 class="text-white font-semibold text-lg">
+                            AI & Robotic Surgery Workshop
+                        </h3>
+                        <p class="text-white/80 text-sm mt-3">
+                            Hands-on training demonstrating AI-assisted surgical
+                            workflows.
+                        </p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div
+                        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
+                    >
+                        <h3 class="text-white font-semibold text-lg">
+                            Global Health Leaders Panel
+                        </h3>
+                        <p class="text-white/80 text-sm mt-3">
+                            Leading clinicians and researchers discuss global
+                            healthcare challenges.
+                        </p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div
+                        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
+                    >
+                        <h3 class="text-white font-semibold text-lg">
+                            Innovations in Diagnostics
+                        </h3>
+                        <p class="text-white/80 text-sm mt-3">
+                            Next-generation imaging, biomarkers, and early
+                            disease detection breakthroughs.
+                        </p>
+                    </div>
+
+                    <!-- CARD 5 -->
+                    <div
+                        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
+                    >
+                        <h3 class="text-white font-semibold text-lg">
+                            Regenerative Medicine Showcase
+                        </h3>
+                        <p class="text-white/80 text-sm mt-3">
+                            Exploring stem-cell therapies, tissue engineering,
+                            and future clinical applications.
+                        </p>
+                    </div>
+
+                    <!-- CARD 6 -->
+                    <div
+                        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
+                    >
+                        <h3 class="text-white font-semibold text-lg">
+                            Networking With Global Experts
+                        </h3>
+                        <p class="text-white/80 text-sm mt-3">
+                            Build meaningful connections with industry leaders,
+                            researchers, and innovators.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Stats SECTION ================= -->
+        <section
+            id="stats"
+            data-moj-web-fixed="false"
+            data-moj-web-type="stats"
+            data-moj-web-label="stats Conference"
+            data-moj-web-category="structural"
+            class="w-full pb-20 bg-[#6B7F47] relative overflow-hidden"
+        >
+            <!-- Decorative Icon -->
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/Clip-path-group.png"
+                class="absolute right-5 bottom-5 w-32 opacity-30 animate-[spin_10s_linear_infinite]"
+                style="filter: brightness(0) invert(1)"
+                alt=""
+            />
+
+            <div class="max-w-[1500px] mx-auto px-6 relative z-10">
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 text-center"
+                >
+                    <!-- STAT 1 -->
+                    <div>
+                        <h3 class="text-4xl md:text-6xl font-bold text-white">
+                            3000+
+                        </h3>
+                        <p class="text-white/80 text-sm md:text-lg mt-2">
+                            Delegates
+                        </p>
+                    </div>
+
+                    <!-- STAT 2 -->
+                    <div>
+                        <h3 class="text-4xl md:text-6xl font-bold text-white">
+                            120+
+                        </h3>
+                        <p class="text-white/80 text-sm md:text-lg mt-2">
+                            Speakers
+                        </p>
+                    </div>
+
+                    <!-- STAT 3 -->
+                    <div>
+                        <h3 class="text-4xl md:text-6xl font-bold text-white">
+                            40+
+                        </h3>
+                        <p class="text-white/80 text-sm md:text-lg mt-2">
+                            Scientific Sessions
+                        </p>
+                    </div>
+
+                    <!-- STAT 4 -->
+                    <div>
+                        <h3 class="text-4xl md:text-6xl font-bold text-white">
+                            25+
+                        </h3>
+                        <p class="text-white/80 text-sm md:text-lg mt-2">
+                            Countries Represented
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Venue SECTION ================= -->
+        <section
+            id="venue"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue"
+            data-moj-web-label="Venue Conference"
+            data-moj-web-category="structural"
+            class="py-10 md:py-20 px-4 relative bg-[#F7F0CF]"
+        >
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/244302735_96612cf9-dfa7-45fd-80ac-362f6df262cf-1.png"
+                class="absolute top-5 right-0 md:right-5 w-32"
+                alt=""
+            />
+
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/244303410_f3d85cca-9db8-4063-88f1-5084d8762324-1.png"
+                class="bottom-0 left-0 w-32 absolute"
+                alt=""
+            />
+
+            <div class="max-w-[1500px] mx-auto md:mb-[100px]">
+                <h4
+                    class="text-4xl md:text-5xl font-extrabold md:text-center text-[#2E3B2A] mb-4 md:mb-6 lg:mb-8"
+                >
+                    Venue
+                </h4>
+                <div
+                    class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                >
+                    <!-- Venue Image -->
+                    <div
+                        class="relative rounded-xl overflow-hidden shadow-lg h-full"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1594122230689-45899d9e6f69?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uZmVyZW5jZSUyMGhhbGx8ZW58MHx8MHx8fDA%3D"
+                            alt="International Convention Center"
+                            class="w-full h-full object-cover"
+                        />
+
+                        <!-- Olive overlay -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#6B7F47]/85 to-transparent"
+                        ></div>
+
+                        <!-- Caption -->
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl md:text-3xl font-bold">
+                                International Medical Convention Center
+                            </h3>
+                            <p class="mt-2 text-lg">
+                                A World-Class Venue for Global Healthcare Events
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Venue Details -->
+                    <div class="space-y-6 relative z-10">
+                        <!-- Description Card -->
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p
+                                class="text-base md:text-lg lg:text-xl text-gray-800 leading-relaxed"
+                            >
+                                The International Medical Convention Center
+                                (IMCC) is a state-of-the-art venue designed to
+                                host global medical summits, scientific
+                                conferences, and advanced training programs.
+                                Equipped with modern auditoriums, simulation
+                                labs, breakout halls, and digital media
+                                facilities, it provides the perfect environment
+                                for collaboration, innovation, and knowledge
+                                exchange.
+                            </p>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h3
+                                class="text-xl font-semibold text-[#6B7F47] mb-4"
+                            >
+                                Venue Information
+                            </h3>
+
+                            <div class="space-y-4">
+                                <!-- Address -->
+                                <div class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 mt-1 mr-3 text-[#6B7F47]"
+                                    >
+                                        <i
+                                            class="fa-solid fa-location-dot text-lg"
+                                        ></i>
+                                    </span>
+                                    <span class="text-gray-700">
+                                        International Medical Convention Center,
+                                        City Hub, India
+                                    </span>
+                                </div>
+
+                                <!-- Dates -->
+                                <div class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 mt-1 mr-3 text-[#6B7F47]"
+                                    >
+                                        <i
+                                            class="fa-solid fa-calendar-days text-lg"
+                                        ></i>
+                                    </span>
+                                    <span class="text-gray-700"
+                                        >June 12–14, 2025</span
+                                    >
+                                </div>
+
+                                <!-- Capacity -->
+                                <div class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 mt-1 mr-3 text-[#6B7F47]"
+                                    >
+                                        <i
+                                            class="fa-solid fa-users text-lg"
+                                        ></i>
+                                    </span>
+                                    <span class="text-gray-700"
+                                        >Capacity: 3,500+ Delegates</span
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Map Button -->
+                            <div class="mt-6">
+                                <a
+                                    href="https://maps.app.goo.gl/"
+                                    target="_blank"
+                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#6B7F47] hover:bg-[#4E5C33] transition-colors duration-500"
+                                >
+                                    <i
+                                        class="fa-solid fa-map-location-dot h-4 w-4 mr-2"
+                                    ></i>
+                                    View on Map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Team SECTION ================= -->
+        <section
+            id="team"
+            data-moj-web-fixed="false"
+            data-moj-web-type="team"
+            data-moj-web-label="Team Conference"
+            data-moj-web-category="structural"
+            class="py-10 md:py-20 px-6 bg-[#FCF5E8] relative"
+        >
+            <div
+                class="absolute inset-0 hidden lg:flex items-center justify-center z-0"
+            >
+                <div
+                    class="w-full h-[300px] relative"
+                    style="
+                        background: linear-gradient(136deg, #4e5c33, #6b7f47);
+                    "
+                ></div>
+            </div>
+            <div class="max-w-7xl mx-auto">
+                <!-- Heading -->
+                <div class="md:text-center mb-7 md:mb-12">
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold text-[#2E3B2A]"
+                    >
+                        Organizing Committee
+                    </h2>
+                    <p class="text-gray-600 mt-3 md:text-lg max-w-xl mx-auto">
+                        Meet the core team behind the Global Medical Summit
+                        2025.
+                    </p>
+                </div>
+
+                <!-- Grid with 5 cards -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10">
+                    <!-- MEMBER 1 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://static.vecteezy.com/system/resources/previews/036/453/521/large_2x/ai-generated-medical-hospital-doctor-image-by-ai-generator-free-photo.jpg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Jonathan Reed
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Chairman
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 2 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://t3.ftcdn.net/jpg/06/64/62/08/360_F_664620894_KN7WA859syQPK6rwNWBSky1iLwYhb3Gt.jpg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Sophia Martinez
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Co-Chairperson
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 3 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://r2.photoaistudio.com/photo_demo_flux/doctor/9d2ee8f8-72b9-413e-966d-fb058f480e66.jpeg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Ahmed Farooq
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Scientific Chair
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 4 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://img.freepik.com/premium-photo/indian-ayurvedic-doctor-green-uniform-cozy-ayurvedic-clinic_6751-174.jpg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Emily Chen
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Workshop Director
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 1 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://static.vecteezy.com/system/resources/previews/036/453/521/large_2x/ai-generated-medical-hospital-doctor-image-by-ai-generator-free-photo.jpg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Jonathan Reed
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Chairman
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 2 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://t3.ftcdn.net/jpg/06/64/62/08/360_F_664620894_KN7WA859syQPK6rwNWBSky1iLwYhb3Gt.jpg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Sophia Martinez
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Co-Chairperson
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 3 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://r2.photoaistudio.com/photo_demo_flux/doctor/9d2ee8f8-72b9-413e-966d-fb058f480e66.jpeg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Ahmed Farooq
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Scientific Chair
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MEMBER 4 -->
+                    <div
+                        class="relative w-full bg-[#E9F0E3] h-62 md:h-96 rounded-xl overflow-hidden shadow-md"
+                    >
+                        <img
+                            src="https://img.freepik.com/premium-photo/indian-ayurvedic-doctor-green-uniform-cozy-ayurvedic-clinic_6751-174.jpg"
+                            class="w-full object-cover h-52 md:min-h-96"
+                            alt=""
+                        />
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-3 md:rounded-xl shadow-lg md:mx-4 md:mb-2"
+                        >
+                            <h3
+                                class="text-center text-sm md:text-lg font-semibold text-[#2E3B2A]"
+                            >
+                                Dr. Emily Chen
+                            </h3>
+                            <p
+                                class="text-center text-[#6B7F47] text-xs md:text-sm"
+                            >
+                                Workshop Director
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Tariff SECTION ================= -->
+        <section
+            id="tariff"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="tariff Conference"
+            data-moj-web-category="structural"
+            class="w-full py-10 md:py-20 px-6 bg-[#6B7F47] relative overflow-hidden"
+        >
+            <!-- Decorative rotating shape -->
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/Clip-path-group.png"
+                class="absolute right-5 top-5 w-28 opacity-30 animate-[spin_8s_linear_infinite]"
+                style="filter: brightness(0) invert(1)"
+                alt=""
+            />
+
+            <div class="max-w-[1500px] mx-auto relative z-10">
+                <!-- Heading -->
+                <div class="md:text-center mb-7 md:mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white">
+                        Registration Charges
+                    </h2>
+                    <p class="text-white/80 mt-3 md:text-lg">
+                        Choose the suitable registration category for the
+                        conference.
+                    </p>
+                </div>
+
+                <!-- TABLE -->
+                <!-- TABLE WRAPPER -->
+                <div class="w-full overflow-x-auto">
+                    <div
+                        class="min-w-[600px] bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 sm:p-6"
+                    >
+                        <table
+                            class="w-full text-left text-white border-collapse"
+                        >
+                            <!-- TABLE HEAD -->
+                            <thead class="bg-white/5">
+                                <tr class="border-b border-white/20">
+                                    <th
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-semibold text-base sm:text-lg"
+                                    >
+                                        Category
+                                    </th>
+                                    <th
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-semibold text-base sm:text-lg"
+                                    >
+                                        Early Bird<br />
+                                        <span
+                                            class="text-xs sm:text-sm text-white/70"
+                                            >(Until Feb 28)</span
+                                        >
+                                    </th>
+                                    <th
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-semibold text-base sm:text-lg"
+                                    >
+                                        Regular<br />
+                                        <span
+                                            class="text-xs sm:text-sm text-white/70"
+                                            >(Mar 1 – Apr 20)</span
+                                        >
+                                    </th>
+                                    <th
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-semibold text-base sm:text-lg"
+                                    >
+                                        On-Spot<br />
+                                        <span
+                                            class="text-xs sm:text-sm text-white/70"
+                                            >(Apr 25)</span
+                                        >
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <!-- TABLE BODY -->
+                            <tbody class="text-white/90">
+                                <tr class="border-b border-white/10">
+                                    <td
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-medium"
+                                    >
+                                        Doctors
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 4,999
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 6,499
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 7,999
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b border-white/10">
+                                    <td
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-medium"
+                                    >
+                                        Post Graduates
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 2,999
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 3,999
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 4,999
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td
+                                        class="py-3 px-3 sm:py-4 sm:px-4 font-medium"
+                                    >
+                                        Industry Delegates
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 7,999
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 9,499
+                                    </td>
+                                    <td class="py-3 px-3 sm:py-4 sm:px-4">
+                                        ₹ 10,999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-8 max-w-fit mx-auto">
+                    <a
+                        href="#"
+                        class="text-white font-semibold text-lg flex items-center gap-2 items-center rounded-full border px-4 py-2 hover:underline"
+                    >
+                        Register now
+                        <i class="fa-solid fa-arrow-right text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Places SECTION ================= -->
+        <section
+            id="places"
+            data-moj-web-fixed="false"
+            data-moj-web-type="places"
+            data-moj-web-label="places Conference"
+            data-moj-web-category="structural"
+            class="py-10 md:py-16 bg-[#FAFAF7] px-4 lg:px-10 relative overflow-hidden"
+        >
+            <!-- Decorative olive icon -->
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/244302483_5813b401-8444-4037-bf9e-a1d262231484-2.png"
+                class="absolute right-10 bottom-10 w-40 hidden lg:block"
+            />
+
+            <!-- Decorative olive icon -->
+            <img
+                src="https://softivuslab.com/wp/evendo/wp-content/uploads/2024/12/244302483_5813b401-8444-4037-bf9e-a1d262231484-2.png"
+                class="absolute left-10 top-10 rotate-180 w-40 hidden lg:block"
+            />
+
+            <div class="flex flex-col items-center max-w-[1200px] mx-auto">
+                <!-- SECTION HEADING -->
+                <div class="text-left md:text-center mb-8">
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#2E3B2A] tracking-tight mb-4"
+                    >
+                        Explore Places &
+                        <span class="block font-normal text-[#6B7F47]"
+                            >Nearby Attractions</span
+                        >
+                    </h2>
+                    <p
+                        class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto"
+                    >
+                        Enhance your summit experience with curated local tours,
+                        wellness hubs, and cultural landmarks around. Perfect
+                        for delegates seeking relaxation, exploration, and
+                        unique regional experiences.
+                    </p>
+                </div>
+
+                <!-- GRID SECTION -->
+                <div class="grid grid-cols-1 w-full gap-4 md:grid-cols-2">
+                    <!-- LEFT COLUMN (2 STACKED) -->
+                    <div class="grid gap-4">
+                        <!-- PLACE 1 -->
+                        <div
+                            class="relative h-[250px] md:h-[320px] overflow-hidden group rounded-xl cursor-pointer"
+                        >
+                            <img
+                                src="https://images.travelandleisureasia.com/wp-content/uploads/sites/7/2023/12/21115611/kohzikode.jpeg"
+                                class="w-full h-full object-cover group-hover:scale-105 duration-300"
+                                alt="Medical Wellness Retreat"
+                            />
+
+                            <div
+                                class="absolute left-3 bottom-3 bg-white px-3 py-2 rounded-lg text-[#2E3B2A] shadow"
+                            >
+                                <p class="text-sm font-medium">
+                                    Wellness Retreat
+                                </p>
+                                <div
+                                    class="flex items-center gap-1 text-[11px]"
+                                >
+                                    <span>View Details</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PLACE 2 -->
+                        <div
+                            class="relative h-[110px] md:h-[180px] overflow-hidden group rounded-xl cursor-pointer"
+                        >
+                            <img
+                                src="https://statics.vinpearl.com/nam-du-island-04_1687418084.jpg"
+                                class="w-full h-full object-cover group-hover:scale-105 duration-300"
+                                alt="City Heritage Walk"
+                            />
+
+                            <div
+                                class="absolute left-3 bottom-3 bg-white px-3 py-2 rounded-lg text-[#2E3B2A] shadow"
+                            >
+                                <p class="text-sm font-medium">Heritage Walk</p>
+                                <div
+                                    class="flex items-center gap-1 text-[11px]"
+                                >
+                                    <span>View Details</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN (3 STACKED) -->
+                    <div
+                        class="md:grid flex flex-col-reverse md:grid-cols-2 gap-4 h-full"
+                    >
+                        <!-- PLACE 3 (Tall Image) -->
+                        <div
+                            class="relative h-[250px] md:h-full overflow-hidden group rounded-xl cursor-pointer"
+                        >
+                            <img
+                                src="https://images.travelandleisureasia.com/wp-content/uploads/sites/6/2023/12/21105512/alleppey.jpeg"
+                                class="w-full h-full object-cover group-hover:scale-105 duration-300"
+                                alt="Backwater Cruise"
+                            />
+
+                            <div
+                                class="absolute left-3 bottom-3 bg-white px-3 py-2 rounded-lg text-[#2E3B2A] shadow"
+                            >
+                                <p class="text-sm font-medium">
+                                    Backwater Cruise
+                                </p>
+                                <div
+                                    class="flex items-center gap-1 text-[11px]"
+                                >
+                                    <span>View Details</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SMALL STACKED RIGHT SIDE -->
+                        <div
+                            class="grid grid-cols-2 md:grid-cols-1 gap-3 h-full"
+                        >
+                            <!-- PLACE 4 -->
+                            <div
+                                class="relative h-full md:h-[300px] overflow-hidden group rounded-xl cursor-pointer"
+                            >
+                                <img
+                                    src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg"
+                                    class="w-full h-full object-cover group-hover:scale-105 duration-300"
+                                    alt="Botanical Garden"
+                                />
+
+                                <div
+                                    class="absolute left-3 bottom-3 bg-white px-3 py-2 rounded-lg text-[#2E3B2A] shadow"
+                                >
+                                    <p class="text-sm font-medium">
+                                        Botanical Garden
+                                    </p>
+                                    <div
+                                        class="flex items-center gap-1 text-[11px]"
+                                    >
+                                        <span>View Details</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PLACE 5 -->
+                            <div
+                                class="relative h-full md:h-[210px] overflow-hidden group rounded-xl cursor-pointer"
+                            >
+                                <img
+                                    src="https://images.pexels.com/photos/417142/pexels-photo-417142.jpeg"
+                                    class="w-full h-full object-cover group-hover:scale-105 duration-300"
+                                    alt="Mountain Viewpoint"
+                                />
+
+                                <div
+                                    class="absolute left-3 bottom-3 bg-white px-3 py-2 rounded-lg text-[#2E3B2A] shadow"
+                                >
+                                    <p class="text-sm font-medium">
+                                        Hill Viewpoint
+                                    </p>
+                                    <div
+                                        class="flex items-center gap-1 text-[11px]"
+                                    >
+                                        <span>View Details</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Banner SECTION ================= -->
+        <section
+            id="banner"
+            data-moj-web-fixed="false"
+            data-moj-web-type="banner"
+            data-moj-web-label="banner Conference"
+            data-moj-web-category="structural"
+            class="relative w-full overflow-hidden"
+        >
+            <!-- IMAGE TAG -->
+            <img
+                src="https://static.vecteezy.com/system/resources/previews/028/534/342/non_2x/doctor-and-his-team-smiling-generative-ai-free-photo.jpeg"
+                class="w-full h-[300px] md:h-[450px] lg:h-[550px] object-cover"
+                alt="Event Banner"
+            />
+
+            <!-- OLIVE OVERLAY -->
+            <div class="absolute inset-0 bg-[#2E3B2A]/70"></div>
+
+            <!-- CONTENT -->
+            <div
+                class="absolute inset-0 flex items-center justify-end py-10 px-6 md:pr-16 xl:pr-40"
+            >
+                <div class="text-white max-w-md lg:max-w-lg text-right">
+                    <h1
+                        class="text-xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+                    >
+                        Elevate Your Expertise,<br />
+                        Join Us in this Global Summit
+                    </h1>
+
+                    <p
+                        class="text-sm md:text-base lg:text-lg mb-6 text-white/90 leading-relaxed"
+                    >
+                        Participate in immersive learning sessions,
+                        collaborative discussions, and hands-on clinical
+                        experiences. Discover new perspectives, refine your
+                        skills, and connect with leaders shaping the future of
+                        modern medicine.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Footer SECTION ================= -->
+        <section class="bg-[#2E3B2A] text-white py-10 md:py-16 px-6">
+            <div
+                class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10"
+            >
+                <!-- COLUMN 1 – BRAND -->
+                <div>
+                    <h3 class="text-2xl font-bold">
+                        Global Medical Summit 2025
+                    </h3>
+                    <p class="text-white/70 text-sm mt-3 max-w-xs">
+                        Advancing healthcare, innovation, and clinical
+                        excellence through global collaboration.
+                    </p>
+                </div>
+
+                <!-- COLUMN 2 – QUICK LINKS -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li>
+                            <a
+                                href="#highlights"
+                                class="hover:text-white transition"
+                                >Event Highlights</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#venue" class="hover:text-white transition"
+                                >Venue</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#committee"
+                                class="hover:text-white transition"
+                                >Organizing Committee</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#registration-charges"
+                                class="hover:text-white transition"
+                                >Registration</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#contact"
+                                class="hover:text-white transition"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3 – CONTACT -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <p class="text-white/70 text-sm flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-white"></i>
+                        Poadskn, Lopaosd, India
+                    </p>
+
+                    <p
+                        class="text-white/70 text-sm flex items-start gap-2 mt-2"
+                    >
+                        <i class="fa-solid fa-envelope text-white"></i>
+                        info@globalsummit2025.org
+                    </p>
+
+                    <p
+                        class="text-white/70 text-sm flex items-start gap-2 mt-2"
+                    >
+                        <i class="fa-solid fa-phone text-white"></i>
+                        +91 98765 43210
+                    </p>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="border-t border-white/20 mt-10 pt-6 text-center">
+                <p class="text-white/60 text-xs md:text-sm">
+                    © 2025 Global Medical Summit. All Rights Reserved.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>

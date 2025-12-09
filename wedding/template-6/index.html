@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wedding Template - 6</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <style>
+            .caudex {
+                font-family: "Caudex", serif;
+            }
+        </style>
+
+        <section class="relative bg-[#FFF5E1] z-[49]">
+            <div class="absolute inset-0 bg-[#FFF5E1]"></div>
+
+            <div class="relative">
+                <nav
+                    class="flex justify-between items-center py-5 px-4 md:px-[62px] min-h-[80px]"
+                >
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a
+                            href="index.html"
+                            class="text-[34px] font-bold text-[#333] caudex"
+                            >A&R</a
+                        >
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex items-center gap-[30px]">
+                        <!-- RSVP -->
+                        <a
+                            href="#rsvp"
+                            class="md:inline-flex items-center justify-center py-[10px] px-[30px] border border-[#333] rounded-full text-[16px] min-h-[45px] transition-all hover:underline hidden"
+                        >
+                            RSVP
+                        </a>
+
+                        <!-- Menu -->
+                        <button
+                            class="bg-transparent border-none cursor-pointer w-10 md:w-[52px] h-6 md:h-[40px]"
+                        >
+                            <img
+                                src="https://c.animaapp.com/miy5grv627qBCK/assets/icon-3.svg"
+                                alt="Menu"
+                                class="w-full h-full"
+                            />
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- MOBILE FULLSCREEN MENU -->
+            <!-- FULLSCREEN SLIDE-IN MENU -->
+            <div
+                id="mobileMenu"
+                class="fixed inset-0 bg-[#FFF5E1] z-[999] flex flex-col items-center justify-center text-center caudex opacity-0 translate-x-full pointer-events-none transition-all duration-500 ease-out"
+            >
+                <!-- Close Button -->
+                <button id="closeMenu" class="absolute top-6 right-6 w-10 h-10">
+                    <img
+                        src="https://c.animaapp.com/miy5grv627qBCK/assets/icon-3.svg"
+                        class="w-full h-full rotate-90 opacity-80"
+                    />
+                </button>
+
+                <!-- Links -->
+                <nav class="space-y-10 text-[#3B3027] text-3xl flex flex-col">
+                    <a href="#schedule" class="hover:underline">Schedule</a>
+                    <a href="#venue" class="hover:underline">Venue</a>
+                    <a href="#story" class="hover:underline">Our Story</a>
+                    <a href="#rsvp" class="hover:underline">RSVP</a>
+                </nav>
+            </div>
+        </section>
+        <script>
+            const menuBtn = document.querySelector("nav button");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMenu = document.getElementById("closeMenu");
+
+            // OPEN MENU smoothly
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.remove(
+                    "translate-x-full",
+                    "opacity-0",
+                    "pointer-events-none"
+                );
+                mobileMenu.classList.add("translate-x-0", "opacity-100");
+            });
+
+            // CLOSE MENU smoothly
+            closeMenu.addEventListener("click", () => {
+                mobileMenu.classList.add(
+                    "translate-x-full",
+                    "opacity-0",
+                    "pointer-events-none"
+                );
+                mobileMenu.classList.remove("opacity-100");
+            });
+        </script>
+
+        <section
+            class="relative lg:min-w-[980px] bg-[#333] overflow-hidden hero-section"
+        >
+            <!-- HERO IMAGE -->
+            <div
+                class="relative w-full h-screen md:min-h-[80vh] md:max-h-screen opacity-50"
+            >
+                <img
+                    src="https://nomadweddings.jp/wp-content/uploads/2025/05/kyoto-japan-hakuryuen-elopement-wedding-photographer-10-scaled.jpg"
+                    alt="Wedding"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+
+            <!-- HERO CONTENT -->
+            <div
+                class="absolute inset-0 flex flex-col items-center pt-20 md:pt-40 caudex px-4"
+            >
+                <!-- TITLE -->
+                <h1
+                    class="text-[#FFF5E1] text-6xl md:text-[115px] md:leading-[126.5px] text-center mb-[55px]"
+                >
+                    Abigail<br />&amp; Rick
+                </h1>
+
+                <div class="text-center text-[#FFF5E1] mb-8">
+                    <p class="text-lg md:text-2xl tracking-wide">
+                        St. Mary’s Gardens • San Francisco
+                    </p>
+                    <p class="text-sm md:text-lg opacity-80 mt-1">
+                        Ceremony • Saturday, Oct. 21 — 4:00 PM
+                    </p>
+                </div>
+
+                <!-- COUNTDOWN -->
+                <div
+                    class="flex items-center gap-5 bg-transparent md:p-6 rounded-[50px] mb-[55px]"
+                >
+                    <div class="flex flex-col items-center px-1 md:px-[10px]">
+                        <span
+                            id="days"
+                            class="text-2xl md:text-3xl text-[#FFF5E1] font-bold leading-[33px]"
+                            >00</span
+                        >
+                        <span class="text-[16px] text-[#FFF5E1] mt-1"
+                            >Days</span
+                        >
+                    </div>
+
+                    <span
+                        class="text-2xl md:text-3xl text-[#FFF5E1] leading-[33px]"
+                        >:</span
+                    >
+
+                    <div class="flex flex-col items-center px-1 md:px-[10px]">
+                        <span
+                            id="hours"
+                            class="text-2xl md:text-3xl text-[#FFF5E1] font-bold leading-[33px]"
+                            >23</span
+                        >
+                        <span class="text-[16px] text-[#FFF5E1] mt-1"
+                            >Hours</span
+                        >
+                    </div>
+
+                    <span
+                        class="text-2xl md:text-3xl text-[#FFF5E1] leading-[33px]"
+                        >:</span
+                    >
+
+                    <div class="flex flex-col items-center px-1 md:px-[10px]">
+                        <span
+                            id="minutes"
+                            class="text-2xl md:text-3xl text-[#FFF5E1] font-bold leading-[33px]"
+                            >59</span
+                        >
+                        <span class="text-[16px] text-[#FFF5E1] mt-1"
+                            >Mins.</span
+                        >
+                    </div>
+
+                    <span
+                        class="text-2xl md:text-3xl text-[#FFF5E1] leading-[33px]"
+                        >:</span
+                    >
+
+                    <div class="flex flex-col items-center px-1 md:px-[10px]">
+                        <span
+                            id="seconds"
+                            class="text-2xl md:text-3xl text-[#FFF5E1] font-bold leading-[33px]"
+                            >42</span
+                        >
+                        <span class="text-[16px] text-[#FFF5E1] mt-1"
+                            >Secs.</span
+                        >
+                    </div>
+                </div>
+
+                <!-- DETAILS -->
+                <div
+                    class="flex flex-col md:flex-row items-center gap-4 md:gap-[40px] bg-[#FFF5E1] py-[18px] px-6 md:px-[85px] rounded-2xl md:rounded-[50px]"
+                >
+                    <div class="text-center">
+                        <p class="text-[18px] text-[#333] leading-[25.2px]">
+                            Friday to Sunday,<br />Oct. 20-22, 2035
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-[1px] h-[51px] bg-[#333] hidden md:block"
+                    ></div>
+
+                    <div class="text-center">
+                        <p class="text-[18px] text-[#333] leading-[25.2px]">
+                            500 Terry Francine St. San Francisco
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            // Set wedding date
+            const weddingDate = new Date("2035-10-20T00:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = weddingDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                    return;
+                }
+
+                // Time calculations
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor(
+                    (diff % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                // Update DOM
+                document.getElementById("days").innerHTML = days
+                    .toString()
+                    .padStart(2, "0");
+                document.getElementById("hours").innerHTML = hours
+                    .toString()
+                    .padStart(2, "0");
+                document.getElementById("minutes").innerHTML = minutes
+                    .toString()
+                    .padStart(2, "0");
+                document.getElementById("seconds").innerHTML = seconds
+                    .toString()
+                    .padStart(2, "0");
+            }
+
+            // Update every second
+            setInterval(updateCountdown, 1000);
+
+            // Run once immediately
+            updateCountdown();
+        </script>
+
+        <section class="w-full bg-[#B2672A] pt-10 md:pt-20 pb-50">
+            <div
+                class="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-10"
+            >
+                <!-- LEFT TEXT -->
+                <div class="md:col-span-1">
+                    <h2
+                        class="text-4xl md:text-[48px] leading-tight text-white font-serif mb-6"
+                    >
+                        The Wedding<br />Weekend
+                    </h2>
+
+                    <p class="text-white text-lg opacity-90 leading-relaxed">
+                        Friday, Oct. 20, to<br />
+                        Sunday, Oct. 22, 2035
+                    </p>
+                </div>
+
+                <!-- CENTER ICON -->
+                <div class="flex justify-center items-start pt-4">
+                    <!-- Replace this with your rings icon -->
+                    <img
+                        src="https://c.animaapp.com/miy5grv627qBCK/assets/icon-4.svg"
+                        alt="Rings"
+                        class="w-30 opacity-90"
+                    />
+                </div>
+
+                <!-- RIGHT TEXT -->
+                <div class="md:col-span-1">
+                    <h3 class="text-white text-2xl font-serif mb-4">
+                        We are delighted to invite you to<br />the celebration
+                        of our marriage
+                    </h3>
+                    <p class="text-white opacity-90 leading-relaxed">
+                        I'm a paragraph. Click here to add your own text and
+                        edit me. I'm a great place for you to tell a story and
+                        let your users know a little more about you.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOWER IMAGE SECTION -->
+        <section class="w-full bg-[#F7F3E7]">
+            <div
+                class="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20"
+            >
+                <!-- Ceremony -->
+                <div class="flex flex-col items-center text-center -mt-40">
+                    <img
+                        src="https://static.wixstatic.com/media/c837a6_d67723961f9b4fcdb31bafe7220e42c6~mv2.jpg/v1/crop/x_897,y_0,w_2665,h_4000/fill/w_490,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-119494313.jpg"
+                        class="w-[500px] h-100 md:h-150 lg:h-[700px] object-cover shadow-xl mb-10"
+                    />
+
+                    <h2
+                        class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4"
+                    >
+                        Ceremony
+                    </h2>
+
+                    <p
+                        class="text-[#3B3027] opacity-70 leading-relaxed text-[16px]"
+                    >
+                        Saturday, Oct. 21, 4 p.m. St. Mary’s Church <br />
+                        500 Terry Francine Street, San Francisco
+                    </p>
+                </div>
+
+                <!-- Reception -->
+                <div class="flex flex-col items-center text-center md:-mt-40">
+                    <img
+                        src="https://static.wixstatic.com/media/c837a6_e426c5688766440eaa807fabba2622d9~mv2.jpg/v1/fill/w_490,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1264870600%20copy.jpg"
+                        class="w-[500px] h-100 md:h-150 lg:h-[700px] object-cover shadow-xl mb-10"
+                    />
+
+                    <h2
+                        class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4"
+                    >
+                        Reception
+                    </h2>
+
+                    <p
+                        class="text-[#3B3027] opacity-70 leading-relaxed text-[16px]"
+                    >
+                        Saturday, Oct. 21, 6 p.m. — 1 a.m. St. Mary’s Gardens
+                        <br />
+                        500 Terry Francine Street, San Francisco
+                    </p>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <div class="flex justify-center mt-10 md:mt-16">
+                <a
+                    href="#schedule"
+                    class="border border-[#3B3027] text-[#3B3027] px-10 py-3 rounded-full text-lg font-light hover:bg-[#3B3027] hover:text-white transition-all"
+                >
+                    Schedule & RSVP
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT THE BRIDE SECTION -->
+        <section class="w-full bg-[#F7F3E7] py-10 md:py-20">
+            <div
+                class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 px-4 md:px-8"
+            >
+                <!-- Bride Image -->
+                <div class="flex justify-center order-2 md:order-1">
+                    <img
+                        src="https://content1.getnarrativeapp.com/static/0952c46f-4280-4f27-bfb4-d2b696e0e4bb/Fine-Art-Film-Wedding-Photos-Austin-Photographer-Bridal-Portraits.jpg?w=1500"
+                        class="w-[500px] h-80 md:h-[650px] object-cover shadow-xl rounded-md"
+                    />
+                </div>
+
+                <!-- Bride Text -->
+                <div
+                    class="flex flex-col justify-center caudex order-1 md:order-2"
+                >
+                    <h2
+                        class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4 md:mb-6"
+                    >
+                        About the Bride
+                    </h2>
+
+                    <p
+                        class="text-[#3B3027] opacity-80 leading-relaxed mb-6 text-lg max-w-[500px]"
+                    >
+                        Abigail has always been full of warmth, laughter, and
+                        kindness. Her love for art and travel brought her to
+                        many places, but it was a quiet afternoon in San
+                        Francisco that changed her life.
+                    </p>
+
+                    <p
+                        class="text-[#3B3027] opacity-80 leading-relaxed text-lg max-w-[500px]"
+                    >
+                        She enjoys small cafés, handmade crafts, and spending
+                        time with the people she loves most. Today, she feels
+                        grateful and excited to begin this new chapter with
+                        Rick.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT THE GROOM SECTION -->
+        <section class="w-full bg-[#EFE7D8] py-10 md:py-20">
+            <div
+                class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 px-4 md:px-8"
+            >
+                <!-- Groom Text -->
+                <div class="flex flex-col justify-center caudex">
+                    <h2
+                        class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4 md:mb-6"
+                    >
+                        About the Groom
+                    </h2>
+
+                    <p
+                        class="text-[#3B3027] opacity-80 leading-relaxed mb-6 text-lg max-w-[500px]"
+                    >
+                        Rick is thoughtful, adventurous, and endlessly curious.
+                        Whether he's exploring new cities or learning a new
+                        skill, he approaches life with passion and purpose.
+                    </p>
+
+                    <p
+                        class="text-[#3B3027] opacity-80 leading-relaxed text-lg max-w-[500px]"
+                    >
+                        He knew from the moment he met Abigail that she was
+                        someone special — someone who made every moment richer,
+                        every day brighter.
+                    </p>
+                </div>
+
+                <!-- Groom Image -->
+                <div class="flex justify-center">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-mature-man-tuxedo-black-background-wedding-day-concept_474717-21782.jpg"
+                        class="w-[500px] h-80 md:h-[650px] object-cover shadow-xl rounded-md"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR LOVE STORY SECTION -->
+        <section class="w-full bg-[#F7F3E7] py-10 md:py-20">
+            <div
+                class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 px-4 md:px-8"
+            >
+                <!-- LEFT COLUMN -->
+                <div>
+                    <h2
+                        class="text-[48px] font-serif text-[#3B3027] leading-tight mb-4 md:mb-6"
+                    >
+                        Our Love<br />Story
+                    </h2>
+
+                    <p
+                        class="text-[#3B3027] opacity-80 leading-relaxed mb-6 md:mb-12 max-w-[420px]"
+                    >
+                        We met on a rainy day at a local flea market. As we
+                        talked and wandered, we found that we didn’t want to go
+                        our separate ways. Before we knew it, the whole day had
+                        passed.
+                    </p>
+
+                    <img
+                        src="https://static.wixstatic.com/media/c837a6_75dd49fc463a479ea0fedc3e1745479b~mv2.jpg/v1/crop/x_1135,y_0,w_3491,h_3840/fill/w_390,h_429,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/shutterstock_402286108%20copy.jpg"
+                        class="w-[520px] h-[340px] object-cover shadow-md"
+                    />
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="md:pt-10">
+                    <img
+                        src="https://static.wixstatic.com/media/c837a6_47ee7d7472cd43799086a66ef34758ea~mv2.jpg/v1/fill/w_586,h_396,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/shutterstock_1626669631%20copy.jpg"
+                        class="w-[520px] h-[350px] object-cover mb-10 shadow-md mx-auto md:mx-0"
+                    />
+
+                    <div
+                        class="max-w-[420px] text-[#3B3027] opacity-80 leading-relaxed"
+                    >
+                        <p class="mb-6">
+                            I'm a paragraph. Click here to add your own text and
+                            edit me. It’s easy — just click “Edit Text” or
+                            double click me to add your own content. Feel free
+                            to drag and drop me anywhere you want on your page.
+                        </p>
+                        <p>
+                            This is a great space to write a long text about
+                            your company and your services. Tell your visitors
+                            the story of how you came up with the idea, what
+                            makes your company special, and what makes you stand
+                            out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFO BLOCK SECTION -->
+        <section
+            class="w-full bg-[#B2672A] text-white py-10 md:py-20 relative overflow-hidden"
+        >
+            <div
+                class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20"
+            >
+                <!-- LEFT SIDE CONTENT -->
+                <div class="space-y-10 md:space-y-16">
+                    <!-- Getting There -->
+                    <div>
+                        <h3 class="text-3xl md:text-[36px] font-serif mb-4">
+                            Getting There
+                        </h3>
+                        <div
+                            class="grid grid-cols-2 gap-6 md:gap-12 text-white/90"
+                        >
+                            <div>
+                                <p class="font-semibold mb-2">By Car</p>
+                                <p class="text-sm leading-relaxed">
+                                    Drive 1.5 hours from San Jose<br />
+                                    Drive 2 hours from Santa Rosa
+                                </p>
+                            </div>
+                            <div>
+                                <p class="font-semibold mb-2">By Flight</p>
+                                <p class="text-sm leading-relaxed">
+                                    We recommend flying into San<br />
+                                    Francisco International Airport
+                                </p>
+                            </div>
+                            <!-- Once You're There -->
+                            <div>
+                                <h3
+                                    class="text-3xl md:text-[36px] font-serif mb-4"
+                                >
+                                    Once You're There
+                                </h3>
+                                <p
+                                    class="text-white/90 text-sm leading-relaxed"
+                                >
+                                    Experience the sites, shops and<br />restaurants
+                                    in the area
+                                </p>
+                            </div>
+
+                            <!-- Where to Stay -->
+                            <div>
+                                <h3
+                                    class="text-3xl md:text-[36px] font-serif mb-4"
+                                >
+                                    Where to Stay
+                                </h3>
+                                <p
+                                    class="text-white/90 text-sm leading-relaxed"
+                                >
+                                    Hotels and B&Bs to check out
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXPLORE BUTTON -->
+                    <a
+                        href="#explore"
+                        class="inline-block border border-white text-white px-10 py-3 rounded-full text-lg hover:bg-white hover:text-[#B2672A] transition-all"
+                    >
+                        Explore
+                    </a>
+                </div>
+
+                <!-- RIGHT SIDE ICON -->
+                <div class="flex justify-end items-end">
+                    <img
+                        src="https://c.animaapp.com/miy5grv627qBCK/assets/icon-5.svg"
+                        class="w-[500px] brightness-0 invert"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- VENUE SECTION -->
+        <section class="w-full bg-[#F7F3E7] py-10 md:py-20">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-8 text-center">
+                <!-- Heading -->
+                <h2
+                    class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-6"
+                >
+                    The Venue
+                </h2>
+
+                <!-- Subtext -->
+                <p
+                    class="text-[#3B3027] opacity-80 md:text-lg leading-relaxed max-w-[650px] mx-auto mb-8 md:mb-16"
+                >
+                    Join us at the beautiful St. Mary's Gardens for our ceremony
+                    and reception. Surrounded by towering trees and warm evening
+                    lights, it's the perfect setting to celebrate love and new
+                    beginnings.
+                </p>
+
+                <!-- Venue Image -->
+                <div class="flex justify-center mb-16">
+                    <img
+                        src="https://static.wixstatic.com/media/c837a6_72b8e03b22eb4c16a341d77ddaf5caf7~mv2.jpg/v1/fill/w_1372,h_762,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_72b8e03b22eb4c16a341d77ddaf5caf7~mv2.jpg"
+                        alt="Wedding Venue"
+                        class="w-[900px] h-80 md:h-[600px] object-cover shadow-xl"
+                    />
+                </div>
+
+                <!-- Details -->
+                <div
+                    class="text-[#3B3027] opacity-80 leading-relaxed md:text-lg"
+                >
+                    <p class="font-medium mb-1">St. Mary’s Gardens</p>
+                    <p>500 Terry Francine Street, San Francisco</p>
+                    <p class="mt-4 md:mt-6">
+                        Ceremony • Saturday, Oct. 21 — 4:00 p.m.<br />
+                        Reception • 6:00 p.m. — 1:00 a.m.
+                    </p>
+                </div>
+
+                <!-- Button -->
+                <div class="mt-6 md:mt-12">
+                    <a
+                        href="#directions"
+                        class="border border-[#3B3027] text-[#3B3027] px-10 py-3 rounded-full text-lg hover:bg-[#3B3027] hover:text-white transition-all"
+                    >
+                        Get Directions
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+        <footer class="w-full bg-[#3B3027] text-[#FFF5E1] py-16">
+            <div class="max-w-[1400px] mx-auto px-8 text-center space-y-10">
+                <!-- Names -->
+                <h2 class="text-[42px] font-serif tracking-wide">
+                    Abigail & Rick
+                </h2>
+
+                <!-- Navigation -->
+                <nav
+                    class="flex justify-center gap-4 md:gap-10 text-lg opacity-90"
+                >
+                    <a href="#schedule" class="hover:underline">Schedule</a>
+                    <a href="#venue" class="hover:underline">Venue</a>
+                    <a href="#story" class="hover:underline">Our Story</a>
+                    <a href="#rsvp" class="hover:underline">RSVP</a>
+                </nav>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center gap-6 mt-6">
+                    <a href="#" class="opacity-80 hover:opacity-100 transition">
+                        <img
+                            src="https://img.icons8.com/ios-filled/50/FFF5E1/instagram-new.png"
+                            class="w-6"
+                        />
+                    </a>
+                    <a href="#" class="opacity-80 hover:opacity-100 transition">
+                        <img
+                            src="https://img.icons8.com/ios-filled/50/FFF5E1/facebook-f.png"
+                            class="w-6"
+                        />
+                    </a>
+                    <a href="#" class="opacity-80 hover:opacity-100 transition">
+                        <img
+                            src="https://img.icons8.com/ios-filled/50/FFF5E1/pinterest.png"
+                            class="w-6"
+                        />
+                    </a>
+                </div>
+
+                <!-- Divider -->
+                <div class="w-full h-px bg-[#FFF5E1]/20 mt-10"></div>
+
+                <!-- Copyright -->
+                <p class="text-sm opacity-60">
+                    © 2035 Abigail & Rick — All Rights Reserved
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

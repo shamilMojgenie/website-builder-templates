@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Template Categories</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            .playfair {
+                font-family: "Playfair Display", serif;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+
+    <body class="bg-white text-[#1a1a1a]">
+        <!-- HERO SECTION -->
+ <!-- MINIMAL HERO SECTION -->
+<section class="w-full py-24 flex flex-col items-center text-center px-6 bg-[#FAF7F2] border-b border-black/10">
+
+    <h1 class="text-4xl md:text-6xl playfair font-semibold mb-4">
+        Template Categories
+    </h1>
+
+    <p class="text-base md:text-lg opacity-60 max-w-xl mb-8">
+        Quick access to all template collections — Events, Conferences, and Weddings.
+    </p>
+
+    <a 
+        href="#categories"
+        class="px-6 py-2 border border-black/30 rounded-full text-sm hover:bg-black hover:text-white transition">
+        View Templates
+    </a>
+
+</section>
+
+
+        <!-- CATEGORIES SECTION -->
+        <section
+            id="categories"
+            class="py-24 px-10 px-8 grid grid-cols-3 gap-10"
+        >
+            <!-- Category Card -->
+            <a
+                href="/event"
+                class="group block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition"
+            >
+                <div class="relative h-[450px] overflow-hidden rounded-2xl">
+                    <img
+                        src="https://wallpapercave.com/wp/wp2349395.jpg"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                    />
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/40 flex items-end p-10"
+                    >
+                        <div>
+                            <h2 class="text-white text-4xl playfair mb-2">
+                                Events
+                            </h2>
+                            <p class="text-white/80 text-lg">
+                                Parties • Celebrations • Festivals
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Category Card -->
+            <a
+                href="/conference"
+                class="group block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition"
+            >
+                <div class="relative h-[450px] overflow-hidden rounded-2xl">
+                    <img
+                        src="https://cdn.pixabay.com/photo/2016/08/16/09/53/international-conference-1597531_1280.jpg"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                    />
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/40 flex items-end p-10"
+                    >
+                        <div>
+                            <h2 class="text-white text-4xl playfair mb-2">
+                                Conference
+                            </h2>
+                            <p class="text-white/80 text-lg">
+                                Summits • Expos • Speakers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Category Card -->
+            <a
+                href="/wedding"
+                class="group block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition"
+            >
+                <div class="relative h-[450px] overflow-hidden rounded-2xl">
+                    <img
+                        src="https://laviefactory-jp.com/wp-content/themes/laviefactory/img/front/img_mv_01.webp"
+                        class="absolute inset-0 w-full h-full object-cover object-[center_70%] group-hover:scale-105 transition duration-700"
+                    />
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/40 flex items-end p-10"
+                    >
+                        <div>
+                            <h2 class="text-white text-4xl playfair mb-2">
+                                Wedding
+                            </h2>
+                            <p class="text-white/80 text-lg">
+                                Elegant • Romantic • Aesthetic
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </body>
+</html>

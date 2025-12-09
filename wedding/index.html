@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wedding Templates</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            .playfair {
+                font-family: "Playfair Display", serif;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+
+    <body class="bg-[#FAF7F2] text-[#1a1a1a]">
+        <!-- HEADER -->
+        <header
+            class="w-full py-6 px-10 flex justify-between items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50"
+        >
+            <a href="/" class="text-3xl playfair font-bold">Templates</a>
+
+            <a
+                href="/"
+                class="px-6 py-2 border border-[#1a1a1a] rounded-full hover:bg-[#1a1a1a] hover:text-white transition"
+            >
+                Back Home
+            </a>
+        </header>
+
+        <!-- TITLE -->
+        <section class="max-w-[1500px] mx-auto px-8 pt-20 pb-6 text-center">
+            <h1 class="text-5xl playfair font-semibold">Wedding Templates</h1>
+            <p class="text-lg opacity-70 mt-3">
+                Premium layouts for concerts, parties, and celebrations
+            </p>
+        </section>
+
+        <!-- Divider -->
+        <div
+            class="w-24 mx-auto h-[3px] bg-[#1a1a1a] rounded-full mb-14 opacity-40"
+        ></div>
+
+        <!-- TEMPLATES GRID -->
+        <section class="max-w-[1500px] mx-auto px-8 pb-24">
+            <div
+                id="templateGrid"
+                class="grid grid-cols-1 md:grid-cols-3 gap-6"
+            ></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="w-full text-center py-10 text-sm opacity-70">
+            © 2025 Templates — All Rights Reserved.
+        </footer>
+
+        <!-- JAVASCRIPT TEMPLATE ARRAY + RENDERING -->
+        <script>
+            const templates = [
+                {
+                    title: "Wedding Template - 1",
+                    desc: "A romantic and timeless layout designed for modern weddings.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273215/3af95bc5-8da3-4777-977c-b8c018caa9a9.png",
+                    link: "/wedding/template-1/index.html",
+                },
+                {
+                    title: "Wedding Template - 2",
+                    desc: "Soft tones and elegant typography for a clean, stylish celebration.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273247/1e227cb6-7da5-42a4-8fa2-7b1871bef007.png",
+                    link: "/wedding/template-2/index.html",
+                },
+                {
+                    title: "Wedding Template - 3",
+                    desc: "A vibrant, joyful design perfect for lively and colorful weddings.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273277/1304aebd-6e73-4a12-a580-2da191c6d4a6.png",
+                    link: "/wedding/template-3/index.html",
+                },
+                {
+                    title: "Wedding Template - 4",
+                    desc: "A refined, classic layout with a luxury finish for premium events.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273307/aa1bd346-ba37-48c6-a39a-2d62aea5262c.png",
+                    link: "/wedding/template-4/index.html",
+                },
+                {
+                    title: "Wedding Template - 5",
+                    desc: "Minimal and modern — ideal for couples who love simplicity.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273333/121eea2a-0b53-498f-8823-8e768359d319.png",
+                    link: "/wedding/template-5/index.html",
+                },
+                {
+                    title: "Wedding Template - 6",
+                    desc: "A premium wedding card-inspired theme with refined detailing.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273501/ed15c374-568d-48be-b8fd-949c914bb5af.png",
+                    link: "/wedding/template-6/index.html",
+                },
+            ];
+
+            const templateGrid = document.getElementById("templateGrid");
+
+            templateGrid.innerHTML = templates
+                .map(
+                    (t) => `
+      <a href="${t.link}" 
+   class="block group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+
+    <!-- Full Image Card -->
+    <div class="relative h-[320px] rounded-2xl overflow-hidden">
+
+        <!-- Image -->
+        <img src="${t.img}" 
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+
+        <!-- Text Inside Image -->
+        <div class="absolute bottom-0 left-0 right-0 p-6 
+                    bg-gradient-to-t from-black/70 via-black/50 to-transparent">
+
+            <h3 class="text-2xl playfair text-white mb-1 drop-shadow-md">
+                ${t.title}
+            </h3>
+
+            <p class="text-white/80 text-sm leading-relaxed drop-shadow">
+                ${t.desc}
+            </p>
+        </div>
+
+    </div>
+
+</a>
+
+        `
+                )
+                .join("");
+        </script>
+    </body>
+</html>

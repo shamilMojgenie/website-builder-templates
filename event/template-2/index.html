@@ -1,1338 +1,1544 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Template 2</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Template 2</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      /* Show content when corresponding radio is checked */
-      #tab1:checked ~ .tab-content #day1,
-      #tab2:checked ~ .tab-content #day2,
-      #tab3:checked ~ .tab-content #day3 {
-        display: block;
-      }
-
-      /* Hide all content by default */
-      .agenda-content {
-        display: none;
-      }
-
-      /* Style active tab */
-      #tab1:checked ~ .tab-labels label[for="tab1"],
-      #tab2:checked ~ .tab-labels label[for="tab2"],
-      #tab3:checked ~ .tab-labels label[for="tab3"] {
-        background-color: white;
-        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-        color: #111827;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .stroke-blue-500 {
-        -webkit-text-stroke: 2px #3b82f6;
-      }
-      /* Outline stroke */
-      .stroke-blue-500 {
-        -webkit-text-stroke: 2px #3b82f6;
-      }
-
-      /* Smooth, infinite horizontal scroll */
-      @keyframes scrollText {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      .animate-scroll {
-        animation: scrollText 18s linear infinite;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- nav -->
-
-    <section
-      class="bg-white sticky w-full z-50 top-0 start-0 text-black shadow-md"
-    >
-      <div
-        class="px-4 md:px-8 lg:px-4 xl:px-24 flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-        <!-- LOGO -->
-        <a href="/" class="">
-          <img
-            src="https://www.logogenie.com/icons/preview/10761"
-            alt=""
-            class="h-18 object-contain"
-          />
-        </a>
-
-        <!-- HIDDEN CHECKBOX -->
-        <input type="checkbox" id="menu-toggle" class="hidden peer" />
-
-        <!-- MOBILE MENU BUTTON -->
-        <label
-          for="menu-toggle"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden cursor-pointer"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </label>
-
-        <!-- SIDEBAR MENU -->
-        <div
-          class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-50 lg:static lg:translate-x-0 lg:flex lg:w-auto lg:bg-transparent lg:shadow-none"
-        >
-          <!-- CLOSE BUTTON -->
-          <label
-            for="menu-toggle"
-            class="absolute top-4 right-4 cursor-pointer lg:hidden"
-          >
-            <svg
-              class="w-6 h-6 text-black"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </label>
-
-          <ul
-            class="flex flex-col p-6 pt-14 gap-6 lg:flex-row lg:p-0 lg:gap-6 font-medium items-center"
-          >
-            <li>
-              <a href="/" class="text-[#041945] text-base font-medium block"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="/#about"
-                class="text-[#041945] text-base font-medium block"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="/#partner"
-                class="text-[#041945] text-base font-medium block"
-                >Partner</a
-              >
-            </li>
-
-            <li>
-              <a
-                href="#"
-                class="inline-block py-2 px-5 text-white font-medium text-base rounded-lg bg-gradient-to-br from-[#0A5FFF] to-[#00C9A7] shadow-md hover:shadow-xl transition-all"
-              >
-                Book Ticket
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/assets/files/mohabath-sponsorship-brochure.pdf"
-                target="_blank"
-                class="inline-block py-2 px-5 text-white font-medium text-base rounded-lg bg-emerald-400 shadow-md hover:shadow-xl transition-all"
-              >
-                Get Sponsorship Details
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- hero -->
-
-    <section
-      class="relative w-full h-[90vh] md:h-[90vh] 2xl:h-[80vh] flex items-center bg-black"
-    >
-      <!-- Background -->
-      <div class="absolute inset-0">
-        <img
-          src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?cs=srgb&dl=pexels-sebastian-ervi-866902-1763067.jpg&fm=jpg"
-          class="w-full h-full object-cover"
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+            rel="stylesheet"
         />
-        <div class="absolute inset-0 bg-black/70"></div>
-      </div>
 
-      <div class="relative z-10 max-w-6xl mx-auto px-6">
-        <div class="max-w-3xl">
-          <!-- HERO TEXT -->
-          <h1
-            class="text-4xl md:text-6xl font-extrabold leading-tight text-white"
-          >
-            Title
-            <span
-              class="px-3 py-1 rounded-xl md:bg-blue-500 text-white md:text-black inline-block"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            /* Show content when corresponding radio is checked */
+            #tab1:checked ~ .tab-content #day1,
+            #tab2:checked ~ .tab-content #day2,
+            #tab3:checked ~ .tab-content #day3 {
+                display: block;
+            }
+
+            /* Hide all content by default */
+            .agenda-content {
+                display: none;
+            }
+
+            /* Style active tab */
+            #tab1:checked ~ .tab-labels label[for="tab1"],
+            #tab2:checked ~ .tab-labels label[for="tab2"],
+            #tab3:checked ~ .tab-labels label[for="tab3"] {
+                background-color: white;
+                box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+                color: #111827;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .stroke-blue-500 {
+                -webkit-text-stroke: 2px #3b82f6;
+            }
+            /* Outline stroke */
+            .stroke-blue-500 {
+                -webkit-text-stroke: 2px #3b82f6;
+            }
+
+            /* Smooth, infinite horizontal scroll */
+            @keyframes scrollText {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .animate-scroll {
+                animation: scrollText 18s linear infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- nav -->
+        <section
+            class="bg-white sticky w-full z-50 top-0 start-0 text-black shadow-md"
+            id="navbar-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
+            <div
+                class="px-4 md:px-8 lg:px-4 xl:px-24 flex flex-wrap items-center justify-between mx-auto p-4"
             >
-              [Event Brands]
-            </span>
-            <br />
+                <!-- LOGO -->
+                <a href="/" class="">
+                    <img
+                        src="https://www.logogenie.com/icons/preview/10761"
+                        alt=""
+                        class="h-18 object-contain"
+                    />
+                </a>
 
-            Heading or Title
-            <br />
+                <!-- HIDDEN CHECKBOX -->
+                <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
-            <span
-              class="px-3 py-1 rounded-xl bg-blue-500 text-black inline-block"
-            >
-              [Experiences]
-            </span>
-          </h1>
-
-          <p class="text-gray-300 mt-6 text-lg max-w-xl">
-            [This is your dummy event description. Replace this text to describe
-            your conference, festival, summit, or special gathering. Briefly
-            highlight the purpose and excitement of the event.]
-          </p>
-          <div class="flex flex-col 2xl:flex-row gap-4 md:gap-6 mt-6">
-            <div>
-              <p
-                class="text-[36px] text-white sm:text-[42px] md:text-[30px] xl:text-[35px] 2xl:text-[45px] font-bold leading-[40px]"
-              >
-                DD-DD
-                <span
-                  class="text-[30px] sm:text-[36px] md:text-[36px] xl:text-[30px] 2xl:text-[38px] font-[300] text-white"
+                <!-- MOBILE MENU BUTTON -->
+                <label
+                    for="menu-toggle"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden cursor-pointer"
                 >
-                  Mon'YY
-                </span>
-              </p>
-              <p
-                class="text-[16px] sm:text-[18px] md:text-[18px] font-medium text-white"
-              >
-                [Venue name as per the details]
-              </p>
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </label>
+
+                <!-- SIDEBAR MENU -->
+                <div
+                    class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-50 lg:static lg:translate-x-0 lg:flex lg:w-auto lg:bg-transparent lg:shadow-none"
+                >
+                    <!-- CLOSE BUTTON -->
+                    <label
+                        for="menu-toggle"
+                        class="absolute top-4 right-4 cursor-pointer lg:hidden"
+                    >
+                        <svg
+                            class="w-6 h-6 text-black"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"
+                            />
+                        </svg>
+                    </label>
+
+                    <ul
+                        class="flex flex-col p-6 pt-14 gap-6 lg:flex-row lg:p-0 lg:gap-6 font-medium items-center"
+                    >
+                        <li>
+                            <a
+                                href="/"
+                                class="text-[#041945] text-base font-medium block"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/#about"
+                                class="text-[#041945] text-base font-medium block"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/#partner"
+                                class="text-[#041945] text-base font-medium block"
+                                >Partner</a
+                            >
+                        </li>
+
+                        <li>
+                            <a
+                                href="#"
+                                class="inline-block py-2 px-5 text-white font-medium text-base rounded-lg bg-gradient-to-br from-[#0A5FFF] to-[#00C9A7] shadow-md hover:shadow-xl transition-all"
+                            >
+                                Book Ticket
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="/assets/files/mohabath-sponsorship-brochure.pdf"
+                                target="_blank"
+                                class="inline-block py-2 px-5 text-white font-medium text-base rounded-lg bg-emerald-400 shadow-md hover:shadow-xl transition-all"
+                            >
+                                Get Sponsorship Details
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- CTA BUTTON -->
-          <div class="mt-4 2xl:mt-6 flex gap-4 items-center">
-            <a
-              href="#book-ticket"
-              class="inline-block px-6 py-3 border-2 border-white bg-white text-[#2B7FFF] font-semibold rounded-lg shadow-lg hover:bg-white/80 transition duration-300"
-            >
-              [Button One Name]
-            </a>
-            <a
-              href="#about"
-              class="inline-block px-6 py-3 border-2 border-white text-white font-semibold rounded-lg shadow-lg hover:bg-white/5 transition duration-300"
-            >
-              [Button Two Name]
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- about  -->
-
-    <section class="py-10 md:py-20 overflow-hidden">
-      <div
-        class="max-w-7xl mx-auto px-4 md:px-16 flex flex-col lg:flex-row items-center gap-5 md:gap-10 lg:gap-16"
-      >
-        <!-- LEFT SIDE CONTENT -->
-        <div class="flex-1">
-          <div class="relative inline-block">
-            <!-- BIG faded text behind -->
-            <span
-              class="absolute hidden md:block -top-12 -left-0 2xl:-left-52 z-10 text-8xl 2xl:text-9xl font-extrabold text-transparent opacity-40 select-none"
-              style="-webkit-text-stroke: 1px #9ca3af8c"
-            >
-              ABOUT
-            </span>
-
-            <!-- Your label -->
-            <span class="text-emerald-400 text-xl font-bold mb-3 relative z-20">
-              [About the event]
-            </span>
-          </div>
-
-          <h2
-            class="text-4xl md:text-5xl font-extrabold leading-tight mt-5 md:mt-10 leading-tight"
-          >
-            Your Main Title Goes Here
-            <br />
-          </h2>
-
-          <p class="text-gray-600 mt-4 leading-relaxed">
-            This is placeholder text for your introduction. Replace this content
-            with your own description or summary when finalizing your layout.
-          </p>
-
-          <p class="text-gray-600 mt-4 leading-relaxed">
-            Add additional placeholder text here. You may use this section to
-            highlight information or explain your topic clearly.
-          </p>
-
-          <p class="text-gray-600 mt-4 leading-relaxed">
-            Continue with more dummy text to visualize spacing. Everything can
-            be customized based on your final design needs.
-          </p>
-
-          <button
-            class="inline-block py-2 mt-5 md:mt-8 px-5 text-white font-medium text-base rounded-lg bg-gradient-to-br from-[#0A5FFF] to-[#00C9A7] shadow-md hover:shadow-xl transition-all"
-          >
-            [Your Button Text]
-          </button>
-        </div>
-
-        <!-- RIGHT SIDE CREATIVE SLICED IMAGE -->
-        <div class="w-full lg:flex-1 relative lg:mt-0">
-          <div class="space-y-3 md:space-y-5 relative">
-            <!-- Slice 1 -->
-            <div
-              class="relative overflow-hidden rounded-md md:rounded-xl mr-10"
-            >
-              <img
-                src="https://st4.depositphotos.com/2352423/37824/i/450/depositphotos_378241026-stock-photo-silhouette-man-raised-hands-music.jpg"
-                class="w-full h-40 object-cover object-top"
-              />
-            </div>
-
-            <!-- Slice 2 -->
-            <div
-              class="relative overflow-hidden rounded-md md:rounded-xl ml-10"
-            >
-              <img
-                src="https://st4.depositphotos.com/2352423/37824/i/450/depositphotos_378241026-stock-photo-silhouette-man-raised-hands-music.jpg"
-                class="w-full h-40 object-cover object-[center_90%]"
-              />
-            </div>
-
-            <!-- Slice 3 -->
-            <div
-              class="relative overflow-hidden rounded-md md:rounded-xl mr-10"
-            >
-              <img
-                src="https://st4.depositphotos.com/2352423/37824/i/450/depositphotos_378241026-stock-photo-silhouette-man-raised-hands-music.jpg"
-                class="w-full h-40 object-cover object-[center_100%]"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- event highlights -->
-
-    <section class="py-10 md:py-30 bg-black text-white overflow-hidden">
-      <div
-        class="max-w-7xl mx-auto px-4 md:px-16 flex flex-col lg:flex-row items-start lg:items-center gap-10 md:gap-10"
-      >
-        <!-- LEFT -->
-        <div class="w-full lg:w-[55%] xl:w-[60%]">
-          <div class="relative inline-block">
-            <!-- BIG faded text behind -->
-            <span
-              class="absolute hidden md:block -top-12 -left-0 2xl:-left-72 z-10 text-8xl 2xl:text-9xl font-extrabold text-transparent opacity-40 select-none"
-              style="-webkit-text-stroke: 1px #9ca3af8c"
-            >
-              HIGHLIGHTS
-            </span>
-
-            <!-- Your label -->
-            <span class="text-emerald-400 text-xl font-bold mb-3 relative z-20">
-              [Section label]
-            </span>
-          </div>
-
-          <h2
-            class="text-4xl md:text-5xl font-extrabold leading-tight md:mt-10 2xl:mt-17"
-          >
-            [Your Main Heading Here]
-          </h2>
-
-          <p class="mt-5 text-gray-300 leading-relaxed">
-            [This is your dummy paragraph text for the event highlight section.
-            Replace this with your own description later.]
-          </p>
-
-          <p class="mt-4 text-gray-300 leading-relaxed">
-            [More template text goes here. You can add as much placeholder text
-            as needed. This is just a dummy description.]
-          </p>
-
-          <ul class="mt-6 space-y-3 text-gray-300">
-            <li class="flex gap-3">
-              <span class="text-emerald-400 text-xl">•</span>
-              <span>[Your first feature point goes here]</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-emerald-400 text-xl">•</span>
-              <span>[Your second highlight point goes here]</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-emerald-400 text-xl">•</span>
-              <span>[Your third dummy list item goes here]</span>
-            </li>
-          </ul>
-
-          <button
-            class="mt-8 bg-emerald-400 cursor-pointer text-black font-semibold px-8 py-3 rounded-lg hover:bg-emerald-300 transition"
-          >
-            [Your Button Text]
-          </button>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="w-full lg:w-[45%] xl:w-[40%] relative flex justify-center">
-          <!-- TOP IMAGE -->
-          <div
-            class="lg:absolute -top-110 z-10 w-[90%] sm:w-[80%] md:w-[75%] lg:w-[85%]"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1721133073235-e4b5facb27fa?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBldmVudHxlbnwwfHwwfHx8MA%3D%3D"
-              class="w-full h-[420px] sm:h-[470px] md:h-[500px] lg:h-[530px] object-cover rounded-b-[70px]"
-            />
-          </div>
-
-          <!-- BOTTOM IMAGE -->
-          <div
-            class="absolute top-[40%] md:top-[42%] lg:top-[45%] xl:top-[48%] -right-10 w-[90%] sm:w-[80%] md:w-[75%] lg:w-[85%] z-0"
-          >
-            <img
-              src="https://www.obscuresound.com/wp-content/uploads/aleksandr-popov-hTv8aaPziOQ-unsplash-600x400.jpg"
-              class="w-full h-[460px] sm:h-[520px] md:h-[560px] lg:h-[580px] object-cover rounded-t-[70px]"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- gallery -->
-    <section class="py-10 md:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 md:px-16">
-        <!-- Top Badge -->
-        <div class="flex justify-center mb-6">
-          <span
-            class="text-sm px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium"
-          >
-            [Your Gallery Label]
-          </span>
-        </div>
-
-        <!-- Title -->
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-gray-900 leading-snug"
+        <!-- hero -->
+        <section
+            class="relative w-full h-[90vh] md:h-[90vh] 2xl:h-[80vh] flex items-center bg-black"
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
         >
-          [Your Gallery Main Title Here]
-        </h2>
+            <!-- Background -->
+            <div class="absolute inset-0">
+                <img
+                    src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?cs=srgb&dl=pexels-sebastian-ervi-866902-1763067.jpg&fm=jpg"
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black/70"></div>
+            </div>
 
-        <!-- Subtext -->
-        <p class="text-center max-w-3xl mx-auto mt-4 text-gray-600">
-          [This is your gallery description text. Replace this with your own
-          content. This text is only placeholder and acts as a template.]
-        </p>
+            <div class="relative z-10 max-w-6xl mx-auto px-6">
+                <div class="max-w-3xl">
+                    <!-- HERO TEXT -->
+                    <h1
+                        class="text-4xl md:text-6xl font-extrabold leading-tight text-white"
+                    >
+                        Title
+                        <span
+                            class="px-3 py-1 rounded-xl md:bg-blue-500 text-white md:text-black inline-block"
+                        >
+                            [Event Brands]
+                        </span>
+                        <br />
 
-        <!-- Modern Gallery Grid -->
-        <div
-          class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mt-7 lg:mt-14"
+                        Heading or Title
+                        <br />
+
+                        <span
+                            class="px-3 py-1 rounded-xl bg-blue-500 text-black inline-block"
+                        >
+                            [Experiences]
+                        </span>
+                    </h1>
+
+                    <p class="text-gray-300 mt-6 text-lg max-w-xl">
+                        [This is your dummy event description. Replace this text
+                        to describe your conference, festival, summit, or
+                        special gathering. Briefly highlight the purpose and
+                        excitement of the event.]
+                    </p>
+                    <div class="flex flex-col 2xl:flex-row gap-4 md:gap-6 mt-6">
+                        <div>
+                            <p
+                                class="text-[36px] text-white sm:text-[42px] md:text-[30px] xl:text-[35px] 2xl:text-[45px] font-bold leading-[40px]"
+                            >
+                                DD-DD
+                                <span
+                                    class="text-[30px] sm:text-[36px] md:text-[36px] xl:text-[30px] 2xl:text-[38px] font-[300] text-white"
+                                >
+                                    Mon'YY
+                                </span>
+                            </p>
+                            <p
+                                class="text-[16px] sm:text-[18px] md:text-[18px] font-medium text-white"
+                            >
+                                [Venue name as per the details]
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CTA BUTTON -->
+                    <div class="mt-4 2xl:mt-6 flex gap-4 items-center">
+                        <a
+                            href="#book-ticket"
+                            class="inline-block px-6 py-3 border-2 border-white bg-white text-[#2B7FFF] font-semibold rounded-lg shadow-lg hover:bg-white/80 transition duration-300"
+                        >
+                            [Button One Name]
+                        </a>
+                        <a
+                            href="#about"
+                            class="inline-block px-6 py-3 border-2 border-white text-white font-semibold rounded-lg shadow-lg hover:bg-white/5 transition duration-300"
+                        >
+                            [Button Two Name]
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about  -->
+        <section
+            class="py-10 md:py-20 overflow-hidden"
+            id="welcome-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="welcome"
+            data-moj-web-label="Welcome"
+            data-moj-web-category="structural"
         >
-          <!-- Gallery Item 1 -->
-          <div
-            class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
-          >
-            <img
-              src="https://t4.ftcdn.net/jpg/13/03/67/05/360_F_1303670584_Xw7tymZFrgCBsxcEpguwkQMRpv9LwXaG.jpg"
-              class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
-            />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <h3 class="text-xl font-semibold">[Gallery Item Name]</h3>
-              <p class="text-sm opacity-80 mt-1">
-                [Short description placeholder]
-              </p>
+                class="max-w-7xl mx-auto px-4 md:px-16 flex flex-col lg:flex-row items-center gap-5 md:gap-10 lg:gap-16"
+            >
+                <!-- LEFT SIDE CONTENT -->
+                <div class="flex-1">
+                    <div class="relative inline-block">
+                        <!-- BIG faded text behind -->
+                        <span
+                            class="absolute hidden md:block -top-12 -left-0 2xl:-left-52 z-10 text-8xl 2xl:text-9xl font-extrabold text-transparent opacity-40 select-none"
+                            style="-webkit-text-stroke: 1px #9ca3af8c"
+                        >
+                            ABOUT
+                        </span>
+
+                        <!-- Your label -->
+                        <span
+                            class="text-emerald-400 text-xl font-bold mb-3 relative z-20"
+                        >
+                            [About the event]
+                        </span>
+                    </div>
+
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold leading-tight mt-5 md:mt-10 leading-tight"
+                    >
+                        Your Main Title Goes Here
+                        <br />
+                    </h2>
+
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        This is placeholder text for your introduction. Replace
+                        this content with your own description or summary when
+                        finalizing your layout.
+                    </p>
+
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Add additional placeholder text here. You may use this
+                        section to highlight information or explain your topic
+                        clearly.
+                    </p>
+
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Continue with more dummy text to visualize spacing.
+                        Everything can be customized based on your final design
+                        needs.
+                    </p>
+
+                    <button
+                        class="inline-block py-2 mt-5 md:mt-8 px-5 text-white font-medium text-base rounded-lg bg-gradient-to-br from-[#0A5FFF] to-[#00C9A7] shadow-md hover:shadow-xl transition-all"
+                    >
+                        [Your Button Text]
+                    </button>
+                </div>
+
+                <!-- RIGHT SIDE CREATIVE SLICED IMAGE -->
+                <div class="w-full lg:flex-1 relative lg:mt-0">
+                    <div class="space-y-3 md:space-y-5 relative">
+                        <!-- Slice 1 -->
+                        <div
+                            class="relative overflow-hidden rounded-md md:rounded-xl mr-10"
+                        >
+                            <img
+                                src="https://st4.depositphotos.com/2352423/37824/i/450/depositphotos_378241026-stock-photo-silhouette-man-raised-hands-music.jpg"
+                                class="w-full h-40 object-cover object-top"
+                            />
+                        </div>
+
+                        <!-- Slice 2 -->
+                        <div
+                            class="relative overflow-hidden rounded-md md:rounded-xl ml-10"
+                        >
+                            <img
+                                src="https://st4.depositphotos.com/2352423/37824/i/450/depositphotos_378241026-stock-photo-silhouette-man-raised-hands-music.jpg"
+                                class="w-full h-40 object-cover object-[center_90%]"
+                            />
+                        </div>
+
+                        <!-- Slice 3 -->
+                        <div
+                            class="relative overflow-hidden rounded-md md:rounded-xl mr-10"
+                        >
+                            <img
+                                src="https://st4.depositphotos.com/2352423/37824/i/450/depositphotos_378241026-stock-photo-silhouette-man-raised-hands-music.jpg"
+                                class="w-full h-40 object-cover object-[center_100%]"
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- Gallery Item 2 -->
-          <div
-            class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
-          >
-            <img
-              src="https://img.freepik.com/free-vector/gradient-grainy-texture_23-2148976750.jpg?semt=ais_hybrid&w=740&q=80"
-              class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <h3 class="text-xl font-semibold">[Gallery Item Name]</h3>
-              <p class="text-sm opacity-80 mt-1">
-                [Short description placeholder]
-              </p>
-            </div>
-          </div>
-
-          <!-- Gallery Item 3 -->
-          <div
-            class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
-          >
-            <img
-              src="https://img.freepik.com/free-vector/grainy-gradient-background-dark-blue_78370-4994.jpg?semt=ais_hybrid&w=740&q=80"
-              class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <h3 class="text-xl font-semibold">[Gallery Item Name]</h3>
-              <p class="text-sm opacity-80 mt-1">
-                [Short description placeholder]
-              </p>
-            </div>
-          </div>
-
-          <!-- Gallery Item 4 -->
-          <div
-            class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8302.jpg?semt=ais_hybrid&w=740&q=80"
-              class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <h3 class="text-xl font-semibold">[Gallery Item Name]</h3>
-              <p class="text-sm opacity-80 mt-1">
-                [Short description placeholder]
-              </p>
-            </div>
-          </div>
-
-          <!-- Gallery Item 5 -->
-          <div
-            class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
-          >
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/003/031/750/small/dark-blue-wide-background-with-radial-blurred-gradient-vector.jpg"
-              class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <h3 class="text-xl font-semibold">[Gallery Item Name]</h3>
-              <p class="text-sm opacity-80 mt-1">
-                [Short description placeholder]
-              </p>
-            </div>
-          </div>
-
-          <!-- Gallery Item 6 -->
-          <div
-            class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
-          >
-            <img
-              src="https://wallpapers.com/images/hd/gradient-blue-pictures-cic530dhznpb9mk5.jpg"
-              class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <h3 class="text-xl font-semibold">[Gallery Item Name]</h3>
-              <p class="text-sm opacity-80 mt-1">
-                [Short description placeholder]
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- venue -->
-    <section class="bg-black text-white">
-      <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
-        <!-- LEFT SIDE — FULL HEIGHT IMAGE WITH OVERLAY (NO PADDING) -->
-        <div class="relative">
-          <img
-            src="https://www.icmp.ac.uk/sites/default/files/new/how_to_promote_live_events_blog_2022_1.jpg"
-            class="w-full h-full object-cover"
-            alt="Venue Image"
-          />
-        </div>
-
-        <!-- RIGHT SIDE — CONTENT WITH PADDING -->
-        <div
-          class="px-6 md:px-10 py-14 flex flex-col justify-center overflow-hidden"
+        <!-- event highlights -->
+        <section
+            class="py-10 md:py-30 bg-black text-white overflow-hidden"
+            id="highlights"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlight"
+            data-moj-web-label="Conference Highlight"
+            data-moj-web-category="structural"
         >
-          <!-- Title -->
-          <div class="relative inline-block">
-            <!-- BIG faded text behind -->
-            <span
-              class="absolute hidden md:block -top-12 -left-0 2xl:-left-0 z-10 text-8xl 2xl:text-9xl font-extrabold text-transparent opacity-40 select-none"
-              style="-webkit-text-stroke: 1px #9ca3af8c"
-            >
-              VENUE
-            </span>
-
-            <!-- Your label -->
-            <span class="text-emerald-400 text-xl font-bold mb-3 relative z-20">
-              [Section label]
-            </span>
-          </div>
-
-          <h2
-            class="text-4xl md:text-5xl font-extrabold leading-tight md:mt-10 2xl:mt-16"
-          >
-            [Your Venue Title Here]
-          </h2>
-
-          <!-- Description -->
-          <p class="mt-6 text-gray-300 leading-relaxed">
-            [This is a dummy paragraph for the venue introduction. Replace this
-            text with your actual venue description when finalizing your
-            content.]
-          </p>
-
-          <p class="mt-4 text-gray-400 leading-relaxed">
-            [Use this area for more details about the venue, surrounding area,
-            facilities, or any event-specific information you would like to
-            highlight.]
-          </p>
-
-          <!-- Venue Details -->
-          <div class="mt-8 space-y-4">
-            <p class="text-gray-300">
-              <span class="text-emerald-400 font-semibold">[Date] :</span>
-              [Your event date goes here]
-            </p>
-
-            <p class="text-gray-300">
-              <span class="text-emerald-400 font-semibold">[Location] :</span>
-              [Your full venue address goes here]
-            </p>
-          </div>
-
-          <!-- Button -->
-          <button
-            class="mt-10 bg-emerald-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-emerald-300 transition w-fit"
-          >
-            [Button Text Here]
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- schdule -->
-
-    <section class="py-10 md:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6 md:px-16">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <!-- LEFT COLUMN -->
-          <div>
-            <p class="text-sm font-semibold text-blue-500">Schedule</p>
-
-            <h2
-              class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mt-2"
-            >
-              Melody <br />
-              Agenda
-            </h2>
-
-            <p class="mt-4 text-gray-500 max-w-sm leading-relaxed">
-              [Your event description goes here. Replace this placeholder text
-              with your own agenda overview.]
-            </p>
-          </div>
-
-          <!-- RIGHT COLUMN -->
-          <div class="lg:col-span-2">
-            <!-- RADIO INPUTS (HIDDEN) -->
-            <input
-              type="radio"
-              name="agenda"
-              id="tab1"
-              class="hidden"
-              checked
-            />
-            <input type="radio" name="agenda" id="tab2" class="hidden" />
-            <input type="radio" name="agenda" id="tab3" class="hidden" />
-
-            <!-- TABS -->
             <div
-              class="tab-labels bg-gray-100 rounded-2xl px-3 py-3 mb-10 shadow-sm grid grid-cols-3 text-center"
+                class="max-w-7xl mx-auto px-4 md:px-16 flex flex-col lg:flex-row items-start lg:items-center gap-10 md:gap-10"
             >
-              <label
-                for="tab1"
-                class="cursor-pointer py-3 rounded-xl font-semibold transition text-gray-500"
-              >
-                Day 1 <br />
-                <span class="text-gray-400 text-sm">[Date Here]</span>
-              </label>
+                <!-- LEFT -->
+                <div class="w-full lg:w-[55%] xl:w-[60%]">
+                    <div class="relative inline-block">
+                        <!-- BIG faded text behind -->
+                        <span
+                            class="absolute hidden md:block -top-12 -left-0 2xl:-left-72 z-10 text-8xl 2xl:text-9xl font-extrabold text-transparent opacity-40 select-none"
+                            style="-webkit-text-stroke: 1px #9ca3af8c"
+                        >
+                            HIGHLIGHTS
+                        </span>
 
-              <label
-                for="tab2"
-                class="cursor-pointer py-3 rounded-xl font-semibold transition text-gray-500"
-              >
-                Day 2 <br />
-                <span class="text-gray-400 text-sm">[Date Here]</span>
-              </label>
+                        <!-- Your label -->
+                        <span
+                            class="text-emerald-400 text-xl font-bold mb-3 relative z-20"
+                        >
+                            [Section label]
+                        </span>
+                    </div>
 
-              <label
-                for="tab3"
-                class="cursor-pointer py-3 rounded-xl font-semibold transition text-gray-500"
-              >
-                Day 3 <br />
-                <span class="text-gray-400 text-sm">[Date Here]</span>
-              </label>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold leading-tight md:mt-10 2xl:mt-17"
+                    >
+                        [Your Main Heading Here]
+                    </h2>
+
+                    <p class="mt-5 text-gray-300 leading-relaxed">
+                        [This is your dummy paragraph text for the event
+                        highlight section. Replace this with your own
+                        description later.]
+                    </p>
+
+                    <p class="mt-4 text-gray-300 leading-relaxed">
+                        [More template text goes here. You can add as much
+                        placeholder text as needed. This is just a dummy
+                        description.]
+                    </p>
+
+                    <ul class="mt-6 space-y-3 text-gray-300">
+                        <li class="flex gap-3">
+                            <span class="text-emerald-400 text-xl">•</span>
+                            <span>[Your first feature point goes here]</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-emerald-400 text-xl">•</span>
+                            <span>[Your second highlight point goes here]</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-emerald-400 text-xl">•</span>
+                            <span>[Your third dummy list item goes here]</span>
+                        </li>
+                    </ul>
+
+                    <button
+                        class="mt-8 bg-emerald-400 cursor-pointer text-black font-semibold px-8 py-3 rounded-lg hover:bg-emerald-300 transition"
+                    >
+                        [Your Button Text]
+                    </button>
+                </div>
+
+                <!-- RIGHT -->
+                <div
+                    class="w-full lg:w-[45%] xl:w-[40%] relative flex justify-center"
+                >
+                    <!-- TOP IMAGE -->
+                    <div
+                        class="lg:absolute -top-110 z-10 w-[90%] sm:w-[80%] md:w-[75%] lg:w-[85%]"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1721133073235-e4b5facb27fa?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBldmVudHxlbnwwfHwwfHx8MA%3D%3D"
+                            class="w-full h-[420px] sm:h-[470px] md:h-[500px] lg:h-[530px] object-cover rounded-b-[70px]"
+                        />
+                    </div>
+
+                    <!-- BOTTOM IMAGE -->
+                    <div
+                        class="absolute top-[40%] md:top-[42%] lg:top-[45%] xl:top-[48%] -right-10 w-[90%] sm:w-[80%] md:w-[75%] lg:w-[85%] z-0"
+                    >
+                        <img
+                            src="https://www.obscuresound.com/wp-content/uploads/aleksandr-popov-hTv8aaPziOQ-unsplash-600x400.jpg"
+                            class="w-full h-[460px] sm:h-[520px] md:h-[560px] lg:h-[580px] object-cover rounded-t-[70px]"
+                        />
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- TAB CONTENT WRAPPER -->
-            <div class="tab-content">
-              <!-- DAY 1 CONTENT -->
-              <div class="agenda-content space-y-10" id="day1">
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    11:00 AM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 1 - Item 1]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
+        <!-- gallery -->
+        <section class="py-10 md:py-20 bg-white"    id="gallery"
+            data-moj-web-fixed="false"
+            data-moj-web-type="gallery"
+            data-moj-web-label="Gallery"
+            data-moj-web-category="structural">
+            <div class="max-w-7xl mx-auto px-4 md:px-16">
+                <!-- Top Badge -->
+                <div class="flex justify-center mb-6">
+                    <span
+                        class="text-sm px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium"
+                    >
+                        [Your Gallery Label]
+                    </span>
                 </div>
 
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    01:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 1 - Item 2]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
+                <!-- Title -->
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-center text-gray-900 leading-snug"
+                >
+                    [Your Gallery Main Title Here]
+                </h2>
 
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    03:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 1 - Item 3]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    11:00 AM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 1 - Item 1]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    01:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 1 - Item 2]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    03:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 1 - Item 3]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- DAY 2 CONTENT -->
-              <div class="agenda-content space-y-10" id="day2">
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    10:00 AM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 2 - Item 1]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    01:30 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 2 - Item 2]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    05:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 2 - Item 3]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- DAY 3 CONTENT -->
-              <div class="agenda-content space-y-10" id="day3">
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    09:00 AM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 3 - Item 1]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    12:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 3 - Item 2]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="w-28 text-right text-gray-800 font-semibold">
-                    04:00 PM
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900">
-                      [Day 3 - Item 3]
-                    </h3>
-                    <p class="text-gray-500 mt-1 text-sm">
-                      [Dummy description text]
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- scroll -->
-    <section class="w-full bg-white overflow-hidden">
-      <div class="relative">
-        <!-- SCROLLING WRAPPER -->
-        <div class="flex gap-16 animate-scroll whitespace-nowrap">
-          <!-- BLOCK 1 -->
-          <div class="flex items-center gap-10">
-            <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900">
-              EXPERIENCE
-            </h1>
-            <span class="text-6xl md:text-7xl font-extrabold text-blue-600"
-              >/</span
-            >
-            <h1
-              class="text-6xl md:text-7xl font-extrabold text-transparent stroke-blue-500 stroke-[2px]"
-            >
-              CELEBRATE
-            </h1>
-          </div>
-
-          <!-- BLOCK 2 (duplicate for seamless loop) -->
-          <div class="flex items-center gap-10">
-            <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900">
-              INSPIRE
-            </h1>
-            <span class="text-6xl md:text-7xl font-extrabold text-blue-600"
-              >/</span
-            >
-            <h1
-              class="text-6xl md:text-7xl font-extrabold text-transparent stroke-blue-500 stroke-[2px]"
-            >
-              CONNECT
-            </h1>
-          </div>
-
-          <!-- BLOCK 3 (duplicate to make loop seamless) -->
-          <div class="flex items-center gap-10">
-            <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900">
-              EXPERIENCE
-            </h1>
-            <span class="text-6xl md:text-7xl font-extrabold text-blue-600"
-              >/</span
-            >
-            <h1
-              class="text-6xl md:text-7xl font-extrabold text-transparent stroke-blue-500 stroke-[2px]"
-            >
-              CELEBRATE
-            </h1>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- pricing -->
-    <section class="py-10 md:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Section Title -->
-        <p class="text-sm font-semibold text-blue-600">Tickets</p>
-        <h2 class="text-4xl font-extrabold text-gray-900 mt-1">
-          Registration <span class="text-blue-600">Charges</span>
-        </h2>
-        <p class="text-gray-500 mt-3 max-w-xl">
-          [Your dummy text here, replace with your real intro text later.]
-        </p>
-
-        <!-- Ticket Grid -->
-        <div class="grid md:grid-cols-3 gap-5 md:gap-10 mt-5 md:mt-10">
-          <!-- TICKET 1 -->
-          <div class="relative">
-            <div
-              class="bg-white rounded-2xl border border-gray-200 overflow-hidden"
-            >
-              <div class="p-6 sm:p-8 pb-10 text-left">
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                  [VIP Experience]
-                </h3>
-
-                <p class="text-3xl sm:text-4xl font-extrabold text-blue-600">
-                  $100
+                <!-- Subtext -->
+                <p class="text-center max-w-3xl mx-auto mt-4 text-gray-600">
+                    [This is your gallery description text. Replace this with
+                    your own content. This text is only placeholder and acts as
+                    a template.]
                 </p>
-                <p class="text-gray-500 font-medium mb-5">/ Person</p>
 
-                <ul class="space-y-2 text-gray-600 text-sm w-fit">
-                  <li>• [Premium Seating]</li>
-                  <li>• [Backstage Access]</li>
-                  <li>• [Artist Interaction]</li>
-                </ul>
-              </div>
-
-              <div class="relative h-1px w-full">
+                <!-- Modern Gallery Grid -->
                 <div
-                  class="absolute inset-0 border-t border-dashed border-gray-300"
-                ></div>
-                <div
-                  class="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-r border-gray-200"
-                ></div>
-                <div
-                  class="absolute -right-5 sm:-right-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-l border-gray-200"
-                ></div>
-              </div>
-
-              <div class="p-4 flex justify-center w-full">
-                <button
-                  class="w-full sm:w-[200px] bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
+                    class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mt-7 lg:mt-14"
                 >
-                  Buy Now
-                </button>
-              </div>
+                    <!-- Gallery Item 1 -->
+                    <div
+                        class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
+                    >
+                        <img
+                            src="https://t4.ftcdn.net/jpg/13/03/67/05/360_F_1303670584_Xw7tymZFrgCBsxcEpguwkQMRpv9LwXaG.jpg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                        ></div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 text-white"
+                        >
+                            <h3 class="text-xl font-semibold">
+                                [Gallery Item Name]
+                            </h3>
+                            <p class="text-sm opacity-80 mt-1">
+                                [Short description placeholder]
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 2 -->
+                    <div
+                        class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-vector/gradient-grainy-texture_23-2148976750.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                        ></div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 text-white"
+                        >
+                            <h3 class="text-xl font-semibold">
+                                [Gallery Item Name]
+                            </h3>
+                            <p class="text-sm opacity-80 mt-1">
+                                [Short description placeholder]
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 3 -->
+                    <div
+                        class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-vector/grainy-gradient-background-dark-blue_78370-4994.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                        ></div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 text-white"
+                        >
+                            <h3 class="text-xl font-semibold">
+                                [Gallery Item Name]
+                            </h3>
+                            <p class="text-sm opacity-80 mt-1">
+                                [Short description placeholder]
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 4 -->
+                    <div
+                        class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8302.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                        ></div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 text-white"
+                        >
+                            <h3 class="text-xl font-semibold">
+                                [Gallery Item Name]
+                            </h3>
+                            <p class="text-sm opacity-80 mt-1">
+                                [Short description placeholder]
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 5 -->
+                    <div
+                        class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
+                    >
+                        <img
+                            src="https://static.vecteezy.com/system/resources/thumbnails/003/031/750/small/dark-blue-wide-background-with-radial-blurred-gradient-vector.jpg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                        ></div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 text-white"
+                        >
+                            <h3 class="text-xl font-semibold">
+                                [Gallery Item Name]
+                            </h3>
+                            <p class="text-sm opacity-80 mt-1">
+                                [Short description placeholder]
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 6 -->
+                    <div
+                        class="group rounded-3xl overflow-hidden shadow-xl bg-gray-900 relative"
+                    >
+                        <img
+                            src="https://wallpapers.com/images/hd/gradient-blue-pictures-cic530dhznpb9mk5.jpg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                        ></div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 text-white"
+                        >
+                            <h3 class="text-xl font-semibold">
+                                [Gallery Item Name]
+                            </h3>
+                            <p class="text-sm opacity-80 mt-1">
+                                [Short description placeholder]
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- TICKET 2 -->
-          <div class="relative">
-            <div
-              class="bg-white rounded-2xl border border-gray-200 overflow-hidden"
-            >
-              <div class="p-6 sm:p-8 pb-10 text-left">
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                  [VIP Experience]
-                </h3>
-
-                <p class="text-3xl sm:text-4xl font-extrabold text-blue-600">
-                  $100
-                </p>
-                <p class="text-gray-500 font-medium mb-5">/ Person</p>
-
-                <ul class="space-y-2 text-gray-600 text-sm w-fit">
-                  <li>• [Premium Seating]</li>
-                  <li>• [Backstage Access]</li>
-                  <li>• [Artist Interaction]</li>
-                </ul>
-              </div>
-
-              <div class="relative h-1px w-full">
-                <div
-                  class="absolute inset-0 border-t border-dashed border-gray-300"
-                ></div>
-                <div
-                  class="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-r border-gray-200"
-                ></div>
-                <div
-                  class="absolute -right-5 sm:-right-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-l border-gray-200"
-                ></div>
-              </div>
-
-              <div class="p-4 flex justify-center w-full">
-                <button
-                  class="w-full sm:w-[200px] bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
-                >
-                  Buy Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- TICKET 3 -->
-          <div class="relative">
-            <div
-              class="bg-white rounded-2xl border border-gray-200 overflow-hidden"
-            >
-              <div class="p-6 sm:p-8 pb-10 text-left">
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                  [VIP Experience]
-                </h3>
-
-                <p class="text-3xl sm:text-4xl font-extrabold text-blue-600">
-                  $100
-                </p>
-                <p class="text-gray-500 font-medium mb-5">/ Person</p>
-
-                <ul class="space-y-2 text-gray-600 text-sm w-fit">
-                  <li>• [Premium Seating]</li>
-                  <li>• [Backstage Access]</li>
-                  <li>• [Artist Interaction]</li>
-                </ul>
-              </div>
-
-              <div class="relative h-1px w-full">
-                <div
-                  class="absolute inset-0 border-t border-dashed border-gray-300"
-                ></div>
-                <div
-                  class="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-r border-gray-200"
-                ></div>
-                <div
-                  class="absolute -right-5 sm:-right-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-l border-gray-200"
-                ></div>
-              </div>
-
-              <div class="p-4 flex justify-center w-full">
-                <button
-                  class="w-full sm:w-[200px] bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
-                >
-                  Buy Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- banner -->
-    <section class="relative w-full py-16 md:py-24 overflow-hidden bg-black">
-      <!-- Gradient Background -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
-      ></div>
-
-      <!-- Soft Colors Glow -->
-      <div
-        class="absolute -top-10 left-0 w-80 h-80 bg-blue-600/20 blur-[160px] rounded-full"
-      ></div>
-      <div
-        class="absolute bottom-0 right-0 w-72 h-72 bg-emerald-500/20 blur-[150px] rounded-full"
-      ></div>
-
-      <!-- Content Wrapper -->
-      <div class="relative z-10 max-w-6xl mx-auto px-6">
-        <!-- Card -->
-        <div
-          class="rounded-3xl p-8 md:p-14 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.6)]"
+        <!-- venue -->
+        <section
+            class="bg-black text-white"
+            id="venue-section"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue-section"
+            data-moj-web-label="Venue Section"
+            data-moj-web-category="structural"
         >
-          <!-- Heading -->
-          <h2
-            class="text-center text-3xl md:text-5xl font-extrabold text-white leading-tight mt-6"
-          >
-            Discover the Experience
-            <span class="text-blue-400">That Awaits You</span>
-          </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
+                <!-- LEFT SIDE — FULL HEIGHT IMAGE WITH OVERLAY (NO PADDING) -->
+                <div class="relative">
+                    <img
+                        src="https://www.icmp.ac.uk/sites/default/files/new/how_to_promote_live_events_blog_2022_1.jpg"
+                        class="w-full h-full object-cover"
+                        alt="Venue Image"
+                    />
+                </div>
 
-          <!-- Description -->
-          <p
-            class="text-center text-gray-300 max-w-3xl mx-auto mt-4 md:text-lg leading-relaxed"
-          >
-            [This banner is designed to give a subtle push to explore more. Add
-            any call-to-action message or special highlight for your audience
-            here.]
-          </p>
-
-          <!-- CTA Buttons -->
-          <div
-            class="flex flex-col md:flex-row items-center justify-center gap-4 mt-10"
-          >
-            <a
-              href="#"
-              class="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-all shadow-lg"
-            >
-              Know More
-            </a>
-
-            <a
-              href="#"
-              class="px-8 py-3 rounded-full border border-white/20 text-gray-200 font-semibold hover:bg-white/10 transition-all"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- footer  -->
-    <section class="bg-black text-gray-300 py-16 border-t border-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          <!-- ABOUT -->
-          <div>
-            <h3 class="text-white text-lg font-semibold mb-4">
-              About the Event
-            </h3>
-            <p class="text-gray-400 leading-relaxed text-sm">
-              This is a placeholder description for your event. Share your
-              story, purpose, and what attendees can look forward to.
-            </p>
-          </div>
-
-          <!-- QUICK LINKS -->
-          <div>
-            <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-3 text-sm">
-              <li><a href="#" class="hover:text-white transition">Home</a></li>
-              <li>
-                <a href="#" class="hover:text-white transition">Schedule</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-white transition">Speakers</a>
-              </li>
-              <li><a href="#" class="hover:text-white transition">Venue</a></li>
-              <li>
-                <a href="#" class="hover:text-white transition">Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- CONTACT -->
-          <div>
-            <h3 class="text-white text-lg font-semibold mb-4">Contact</h3>
-            <ul class="space-y-4 text-sm">
-              <li class="flex items-start gap-3">
-                <!-- Location Icon -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-emerald-400 mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <!-- RIGHT SIDE — CONTENT WITH PADDING -->
+                <div
+                    class="px-6 md:px-10 py-14 flex flex-col justify-center overflow-hidden"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M12 21c-4.97-4.934-8-8.247-8-11.25A8 8 0 0112 1a8 8 0 018 8.75c0 3.003-3.03 6.316-8 11.25z"
-                  />
-                  <circle cx="12" cy="10" r="3" stroke-width="1.5" />
-                </svg>
-                <span>123 Event Street, City, Country</span>
-              </li>
+                    <!-- Title -->
+                    <div class="relative inline-block">
+                        <!-- BIG faded text behind -->
+                        <span
+                            class="absolute hidden md:block -top-12 -left-0 2xl:-left-0 z-10 text-8xl 2xl:text-9xl font-extrabold text-transparent opacity-40 select-none"
+                            style="-webkit-text-stroke: 1px #9ca3af8c"
+                        >
+                            VENUE
+                        </span>
 
-              <li class="flex items-start gap-3">
-                <!-- Phone Icon -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-emerald-400 mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M2 5a2 2 0 012-2h1.28a2 2 0 011.94 1.515l.76 3.043a2 2 0 01-.58 1.99l-1.02.938a14.99 14.99 0 007.047 7.047l.938-1.02a2 2 0 011.99-.58l3.042.76A2 2 0 0121 18.72V20a2 2 0 01-2 2h-1C8.163 22 2 15.837 2 8V7z"
-                  />
-                </svg>
-                <span>+91 98765 43210</span>
-              </li>
+                        <!-- Your label -->
+                        <span
+                            class="text-emerald-400 text-xl font-bold mb-3 relative z-20"
+                        >
+                            [Section label]
+                        </span>
+                    </div>
 
-              <li class="flex items-start gap-3">
-                <!-- Mail Icon -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-emerald-400 mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 6l7.5 5.25a2 2 0 002 0L20 6m-17 0h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"
-                  />
-                </svg>
-                <span>event@example.com</span>
-              </li>
-            </ul>
-          </div>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold leading-tight md:mt-10 2xl:mt-16"
+                    >
+                        [Your Venue Title Here]
+                    </h2>
 
-          <!-- FOLLOW US -->
-          <div>
-            <h3 class="text-white text-lg font-semibold mb-4">Follow Us</h3>
-            <p class="text-gray-400 text-sm mb-4">
-              Stay connected with the latest updates.
-            </p>
+                    <!-- Description -->
+                    <p class="mt-6 text-gray-300 leading-relaxed">
+                        [This is a dummy paragraph for the venue introduction.
+                        Replace this text with your actual venue description
+                        when finalizing your content.]
+                    </p>
 
-            <div class="flex items-center gap-4">
-              <!-- Instagram -->
-              <a
-                href="#"
-                class="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"
-                  />
-                </svg>
-              </a>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        [Use this area for more details about the venue,
+                        surrounding area, facilities, or any event-specific
+                        information you would like to highlight.]
+                    </p>
 
-              <!-- Facebook -->
-              <a
-                href="#"
-                class="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13 22v-9h3l1-4h-4V6.5c0-1.083.25-1.5 1.5-1.5H17V1h-3c-3.314 0-5 1.686-5 5v3H7v4h2v9h4z"
-                  />
-                </svg>
-              </a>
+                    <!-- Venue Details -->
+                    <div class="mt-8 space-y-4">
+                        <p class="text-gray-300">
+                            <span class="text-emerald-400 font-semibold"
+                                >[Date] :</span
+                            >
+                            [Your event date goes here]
+                        </p>
 
-              <!-- YouTube -->
-              <a
-                href="#"
-                class="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-.9-1.8-.9-2.2-1C17.6 2.3 12 2.3 12 2.3h-.1s-5.6 0-8.4.4c-.4 0-1.3.1-2.2 1-.7.7-.9 2.5-.9 2.5S0 8.2 0 10.2v1.6c0 2 .2 4 0 6 0 0 .2 1.7.9 2.5.9.9 2.1.9 2.7 1 2 .2 8.4.4 8.4.4s5.6 0 8.4-.4c.4 0 1.3-.1 2.2-1 .7-.7.9-2.5.9-2.5s.2-2 .2-3.9V10c0-2-.2-3.8-.2-3.8zM9.5 14.5V8.5l6 3-6 3z"
-                  />
-                </svg>
-              </a>
+                        <p class="text-gray-300">
+                            <span class="text-emerald-400 font-semibold"
+                                >[Location] :</span
+                            >
+                            [Your full venue address goes here]
+                        </p>
+                    </div>
+
+                    <!-- Button -->
+                    <button
+                        class="mt-10 bg-emerald-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-emerald-300 transition w-fit"
+                    >
+                        [Button Text Here]
+                    </button>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <!-- BOTTOM -->
-        <div class="border-t border-gray-800 mt-12 pt-6">
-          <p class="text-center text-gray-500 text-sm">
-            © 2025 Your Event Name. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </section>
-  </body>
+        <!-- schdule -->
+
+        <section class="py-10 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-16">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- LEFT COLUMN -->
+                    <div>
+                        <p class="text-sm font-semibold text-blue-500">
+                            Schedule
+                        </p>
+
+                        <h2
+                            class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mt-2"
+                        >
+                            Melody <br />
+                            Agenda
+                        </h2>
+
+                        <p class="mt-4 text-gray-500 max-w-sm leading-relaxed">
+                            [Your event description goes here. Replace this
+                            placeholder text with your own agenda overview.]
+                        </p>
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="lg:col-span-2">
+                        <!-- RADIO INPUTS (HIDDEN) -->
+                        <input
+                            type="radio"
+                            name="agenda"
+                            id="tab1"
+                            class="hidden"
+                            checked
+                        />
+                        <input
+                            type="radio"
+                            name="agenda"
+                            id="tab2"
+                            class="hidden"
+                        />
+                        <input
+                            type="radio"
+                            name="agenda"
+                            id="tab3"
+                            class="hidden"
+                        />
+
+                        <!-- TABS -->
+                        <div
+                            class="tab-labels bg-gray-100 rounded-2xl px-3 py-3 mb-10 shadow-sm grid grid-cols-3 text-center"
+                        >
+                            <label
+                                for="tab1"
+                                class="cursor-pointer py-3 rounded-xl font-semibold transition text-gray-500"
+                            >
+                                Day 1 <br />
+                                <span class="text-gray-400 text-sm"
+                                    >[Date Here]</span
+                                >
+                            </label>
+
+                            <label
+                                for="tab2"
+                                class="cursor-pointer py-3 rounded-xl font-semibold transition text-gray-500"
+                            >
+                                Day 2 <br />
+                                <span class="text-gray-400 text-sm"
+                                    >[Date Here]</span
+                                >
+                            </label>
+
+                            <label
+                                for="tab3"
+                                class="cursor-pointer py-3 rounded-xl font-semibold transition text-gray-500"
+                            >
+                                Day 3 <br />
+                                <span class="text-gray-400 text-sm"
+                                    >[Date Here]</span
+                                >
+                            </label>
+                        </div>
+
+                        <!-- TAB CONTENT WRAPPER -->
+                        <div class="tab-content">
+                            <!-- DAY 1 CONTENT -->
+                            <div class="agenda-content space-y-10" id="day1">
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        11:00 AM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 1 - Item 1]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        01:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 1 - Item 2]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        03:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 1 - Item 3]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        11:00 AM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 1 - Item 1]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        01:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 1 - Item 2]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        03:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 1 - Item 3]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DAY 2 CONTENT -->
+                            <div class="agenda-content space-y-10" id="day2">
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        10:00 AM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 2 - Item 1]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        01:30 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 2 - Item 2]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        05:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 2 - Item 3]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DAY 3 CONTENT -->
+                            <div class="agenda-content space-y-10" id="day3">
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        09:00 AM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 3 - Item 1]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        12:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 3 - Item 2]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-6">
+                                    <div
+                                        class="w-28 text-right text-gray-800 font-semibold"
+                                    >
+                                        04:00 PM
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-semibold text-gray-900"
+                                        >
+                                            [Day 3 - Item 3]
+                                        </h3>
+                                        <p class="text-gray-500 mt-1 text-sm">
+                                            [Dummy description text]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- scroll -->
+        <section class="w-full bg-white overflow-hidden">
+            <div class="relative">
+                <!-- SCROLLING WRAPPER -->
+                <div class="flex gap-16 animate-scroll whitespace-nowrap">
+                    <!-- BLOCK 1 -->
+                    <div class="flex items-center gap-10">
+                        <h1
+                            class="text-6xl md:text-7xl font-extrabold text-gray-900"
+                        >
+                            EXPERIENCE
+                        </h1>
+                        <span
+                            class="text-6xl md:text-7xl font-extrabold text-blue-600"
+                            >/</span
+                        >
+                        <h1
+                            class="text-6xl md:text-7xl font-extrabold text-transparent stroke-blue-500 stroke-[2px]"
+                        >
+                            CELEBRATE
+                        </h1>
+                    </div>
+
+                    <!-- BLOCK 2 (duplicate for seamless loop) -->
+                    <div class="flex items-center gap-10">
+                        <h1
+                            class="text-6xl md:text-7xl font-extrabold text-gray-900"
+                        >
+                            INSPIRE
+                        </h1>
+                        <span
+                            class="text-6xl md:text-7xl font-extrabold text-blue-600"
+                            >/</span
+                        >
+                        <h1
+                            class="text-6xl md:text-7xl font-extrabold text-transparent stroke-blue-500 stroke-[2px]"
+                        >
+                            CONNECT
+                        </h1>
+                    </div>
+
+                    <!-- BLOCK 3 (duplicate to make loop seamless) -->
+                    <div class="flex items-center gap-10">
+                        <h1
+                            class="text-6xl md:text-7xl font-extrabold text-gray-900"
+                        >
+                            EXPERIENCE
+                        </h1>
+                        <span
+                            class="text-6xl md:text-7xl font-extrabold text-blue-600"
+                            >/</span
+                        >
+                        <h1
+                            class="text-6xl md:text-7xl font-extrabold text-transparent stroke-blue-500 stroke-[2px]"
+                        >
+                            CELEBRATE
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- pricing -->
+        <section class="py-10 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Section Title -->
+                <p class="text-sm font-semibold text-blue-600">Tickets</p>
+                <h2 class="text-4xl font-extrabold text-gray-900 mt-1">
+                    Registration <span class="text-blue-600">Charges</span>
+                </h2>
+                <p class="text-gray-500 mt-3 max-w-xl">
+                    [Your dummy text here, replace with your real intro text
+                    later.]
+                </p>
+
+                <!-- Ticket Grid -->
+                <div class="grid md:grid-cols-3 gap-5 md:gap-10 mt-5 md:mt-10">
+                    <!-- TICKET 1 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white rounded-2xl border border-gray-200 overflow-hidden"
+                        >
+                            <div class="p-6 sm:p-8 pb-10 text-left">
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 mb-3"
+                                >
+                                    [VIP Experience]
+                                </h3>
+
+                                <p
+                                    class="text-3xl sm:text-4xl font-extrabold text-blue-600"
+                                >
+                                    $100
+                                </p>
+                                <p class="text-gray-500 font-medium mb-5">
+                                    / Person
+                                </p>
+
+                                <ul
+                                    class="space-y-2 text-gray-600 text-sm w-fit"
+                                >
+                                    <li>• [Premium Seating]</li>
+                                    <li>• [Backstage Access]</li>
+                                    <li>• [Artist Interaction]</li>
+                                </ul>
+                            </div>
+
+                            <div class="relative h-1px w-full">
+                                <div
+                                    class="absolute inset-0 border-t border-dashed border-gray-300"
+                                ></div>
+                                <div
+                                    class="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-r border-gray-200"
+                                ></div>
+                                <div
+                                    class="absolute -right-5 sm:-right-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-l border-gray-200"
+                                ></div>
+                            </div>
+
+                            <div class="p-4 flex justify-center w-full">
+                                <button
+                                    class="w-full sm:w-[200px] bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
+                                >
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TICKET 2 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white rounded-2xl border border-gray-200 overflow-hidden"
+                        >
+                            <div class="p-6 sm:p-8 pb-10 text-left">
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 mb-3"
+                                >
+                                    [VIP Experience]
+                                </h3>
+
+                                <p
+                                    class="text-3xl sm:text-4xl font-extrabold text-blue-600"
+                                >
+                                    $100
+                                </p>
+                                <p class="text-gray-500 font-medium mb-5">
+                                    / Person
+                                </p>
+
+                                <ul
+                                    class="space-y-2 text-gray-600 text-sm w-fit"
+                                >
+                                    <li>• [Premium Seating]</li>
+                                    <li>• [Backstage Access]</li>
+                                    <li>• [Artist Interaction]</li>
+                                </ul>
+                            </div>
+
+                            <div class="relative h-1px w-full">
+                                <div
+                                    class="absolute inset-0 border-t border-dashed border-gray-300"
+                                ></div>
+                                <div
+                                    class="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-r border-gray-200"
+                                ></div>
+                                <div
+                                    class="absolute -right-5 sm:-right-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-l border-gray-200"
+                                ></div>
+                            </div>
+
+                            <div class="p-4 flex justify-center w-full">
+                                <button
+                                    class="w-full sm:w-[200px] bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
+                                >
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TICKET 3 -->
+                    <div class="relative">
+                        <div
+                            class="bg-white rounded-2xl border border-gray-200 overflow-hidden"
+                        >
+                            <div class="p-6 sm:p-8 pb-10 text-left">
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 mb-3"
+                                >
+                                    [VIP Experience]
+                                </h3>
+
+                                <p
+                                    class="text-3xl sm:text-4xl font-extrabold text-blue-600"
+                                >
+                                    $100
+                                </p>
+                                <p class="text-gray-500 font-medium mb-5">
+                                    / Person
+                                </p>
+
+                                <ul
+                                    class="space-y-2 text-gray-600 text-sm w-fit"
+                                >
+                                    <li>• [Premium Seating]</li>
+                                    <li>• [Backstage Access]</li>
+                                    <li>• [Artist Interaction]</li>
+                                </ul>
+                            </div>
+
+                            <div class="relative h-1px w-full">
+                                <div
+                                    class="absolute inset-0 border-t border-dashed border-gray-300"
+                                ></div>
+                                <div
+                                    class="absolute -left-5 sm:-left-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-r border-gray-200"
+                                ></div>
+                                <div
+                                    class="absolute -right-5 sm:-right-7 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full border-dashed border-l border-gray-200"
+                                ></div>
+                            </div>
+
+                            <div class="p-4 flex justify-center w-full">
+                                <button
+                                    class="w-full sm:w-[200px] bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
+                                >
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- banner -->
+        <section
+            class="relative w-full py-16 md:py-24 overflow-hidden bg-black"
+        >
+            <!-- Gradient Background -->
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
+            ></div>
+
+            <!-- Soft Colors Glow -->
+            <div
+                class="absolute -top-10 left-0 w-80 h-80 bg-blue-600/20 blur-[160px] rounded-full"
+            ></div>
+            <div
+                class="absolute bottom-0 right-0 w-72 h-72 bg-emerald-500/20 blur-[150px] rounded-full"
+            ></div>
+
+            <!-- Content Wrapper -->
+            <div class="relative z-10 max-w-6xl mx-auto px-6">
+                <!-- Card -->
+                <div
+                    class="rounded-3xl p-8 md:p-14 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.6)]"
+                >
+                    <!-- Heading -->
+                    <h2
+                        class="text-center text-3xl md:text-5xl font-extrabold text-white leading-tight mt-6"
+                    >
+                        Discover the Experience
+                        <span class="text-blue-400">That Awaits You</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p
+                        class="text-center text-gray-300 max-w-3xl mx-auto mt-4 md:text-lg leading-relaxed"
+                    >
+                        [This banner is designed to give a subtle push to
+                        explore more. Add any call-to-action message or special
+                        highlight for your audience here.]
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-center gap-4 mt-10"
+                    >
+                        <a
+                            href="#"
+                            class="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-all shadow-lg"
+                        >
+                            Know More
+                        </a>
+
+                        <a
+                            href="#"
+                            class="px-8 py-3 rounded-full border border-white/20 text-gray-200 font-semibold hover:bg-white/10 transition-all"
+                        >
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer  -->
+        <section class="bg-black text-gray-300 py-16 border-t border-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- GRID -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
+                >
+                    <!-- ABOUT -->
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">
+                            About the Event
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed text-sm">
+                            This is a placeholder description for your event.
+                            Share your story, purpose, and what attendees can
+                            look forward to.
+                        </p>
+                    </div>
+
+                    <!-- QUICK LINKS -->
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">
+                            Quick Links
+                        </h3>
+                        <ul class="space-y-3 text-sm">
+                            <li>
+                                <a href="#" class="hover:text-white transition"
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition"
+                                    >Schedule</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition"
+                                    >Speakers</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition"
+                                    >Venue</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CONTACT -->
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">
+                            Contact
+                        </h3>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3">
+                                <!-- Location Icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-5 h-5 text-emerald-400 mt-0.5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M12 21c-4.97-4.934-8-8.247-8-11.25A8 8 0 0112 1a8 8 0 018 8.75c0 3.003-3.03 6.316-8 11.25z"
+                                    />
+                                    <circle
+                                        cx="12"
+                                        cy="10"
+                                        r="3"
+                                        stroke-width="1.5"
+                                    />
+                                </svg>
+                                <span>123 Event Street, City, Country</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <!-- Phone Icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-5 h-5 text-emerald-400 mt-0.5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M2 5a2 2 0 012-2h1.28a2 2 0 011.94 1.515l.76 3.043a2 2 0 01-.58 1.99l-1.02.938a14.99 14.99 0 007.047 7.047l.938-1.02a2 2 0 011.99-.58l3.042.76A2 2 0 0121 18.72V20a2 2 0 01-2 2h-1C8.163 22 2 15.837 2 8V7z"
+                                    />
+                                </svg>
+                                <span>+91 98765 43210</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <!-- Mail Icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-5 h-5 text-emerald-400 mt-0.5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M3 6l7.5 5.25a2 2 0 002 0L20 6m-17 0h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"
+                                    />
+                                </svg>
+                                <span>event@example.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- FOLLOW US -->
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">
+                            Follow Us
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Stay connected with the latest updates.
+                        </p>
+
+                        <div class="flex items-center gap-4">
+                            <!-- Instagram -->
+                            <a
+                                href="#"
+                                class="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"
+                                    />
+                                </svg>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a
+                                href="#"
+                                class="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M13 22v-9h3l1-4h-4V6.5c0-1.083.25-1.5 1.5-1.5H17V1h-3c-3.314 0-5 1.686-5 5v3H7v4h2v9h4z"
+                                    />
+                                </svg>
+                            </a>
+
+                            <!-- YouTube -->
+                            <a
+                                href="#"
+                                class="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="w-5 h-5"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-.9-1.8-.9-2.2-1C17.6 2.3 12 2.3 12 2.3h-.1s-5.6 0-8.4.4c-.4 0-1.3.1-2.2 1-.7.7-.9 2.5-.9 2.5S0 8.2 0 10.2v1.6c0 2 .2 4 0 6 0 0 .2 1.7.9 2.5.9.9 2.1.9 2.7 1 2 .2 8.4.4 8.4.4s5.6 0 8.4-.4c.4 0 1.3-.1 2.2-1 .7-.7.9-2.5.9-2.5s.2-2 .2-3.9V10c0-2-.2-3.8-.2-3.8zM9.5 14.5V8.5l6 3-6 3z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM -->
+                <div class="border-t border-gray-800 mt-12 pt-6">
+                    <p class="text-center text-gray-500 text-sm">
+                        © 2025 Your Event Name. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>

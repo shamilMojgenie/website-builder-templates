@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Templates</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        .playfair { font-family: "Playfair Display", serif; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="bg-[#FAF7F2] text-[#1a1a1a]">
+
+    <!-- HEADER -->
+    <header class="w-full py-6 px-10 flex justify-between items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <a href="/" class="text-3xl playfair font-bold">Templates</a>
+
+        <a href="/" class="px-6 py-2 border border-[#1a1a1a] rounded-full hover:bg-[#1a1a1a] hover:text-white transition">
+            Back Home
+        </a>
+    </header>
+
+
+    <!-- TITLE -->
+    <section class="max-w-[1500px] mx-auto px-8 pt-20 pb-6 text-center">
+        <h1 class="text-5xl playfair font-semibold">Event Templates</h1>
+        <p class="text-lg opacity-70 mt-3">Premium layouts for concerts, parties, and celebrations</p>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-24 mx-auto h-[3px] bg-[#1a1a1a] rounded-full mb-14 opacity-40"></div>
+
+
+    <!-- TEMPLATES GRID -->
+    <section class="max-w-[1500px] mx-auto px-8 pb-24">
+        <div id="templateGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="w-full text-center py-10 text-sm opacity-70">
+        © 2025 Templates — All Rights Reserved.
+    </footer>
+
+
+    <!-- JAVASCRIPT TEMPLATE ARRAY + RENDERING -->
+    <script>
+   const templates = [
+    {
+        title: "Event Template - 1",
+        desc: "Bold visuals and a modern, energetic event layout.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765271659/Event-Template-1-12-09-2025_02_44_PM_wnb7re.png",
+        link: "/event/template-1/index.html"
+    },
+    {
+        title: "Event Template - 2",
+        desc: "A clean, stylish template ideal for formal gatherings.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765271736/Event-Template-2-12-09-2025_02_45_PM_ph1abj.png",
+        link: "/event/template-2/index.html"
+    },
+    {
+        title: "Event Template - 3",
+        desc: "Bright, high-energy design crafted for festivals and parties.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765271901/Event-Template-3-12-09-2025_02_47_PM_x8dzcm.png",
+        link: "/event/template-3/index.html"
+    },
+    {
+        title: "Event Template - 4",
+        desc: "Professional, elegant layout perfect for corporate events.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765271974/Event-Template-1-12-09-2025_02_49_PM_qd71mr.png",
+        link: "/event/template-4/index.html"
+    },
+    {
+        title: "Event Template - 5",
+        desc: "Minimal, modern presentation suited for intimate events.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272072/91b5393f-e168-4d48-9f38-8c99731e4c6e.png",
+        link: "/event/template-5/index.html"
+    },
+    {
+        title: "Event Template - 6",
+        desc: "Premium gradient styling for upscale celebrations.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272128/9bc44aa8-4dd1-442f-99b9-bcc736520ae6.png",
+        link: "/event/template-6/index.html"
+    },
+    {
+        title: "Event Template - 7",
+        desc: "Aesthetic spacing and clean typography for modern events.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272214/bd2e5872-c0c8-4ab5-96f4-b04644feb2d6.png",
+        link: "/event/template-7/index.html"
+    },
+    {
+        title: "Event Template - 8",
+        desc: "Dynamic layout crafted for high-energy parties and shows.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272262/4205b354-a37d-4e49-a046-6e0c8fe35176.png",
+        link: "/event/template-8/index.html"
+    },
+    {
+        title: "Event Template - 9",
+        desc: "Minimal, stylish theme designed for modern gatherings.",
+        img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272303/c222238d-d552-424c-8f00-dba4a101d8cf.png",
+        link: "/event/template-9/index.html"
+    },
+];
+
+        const templateGrid = document.getElementById("templateGrid");
+
+        templateGrid.innerHTML = templates.map(t => `
+            <a href="${t.link}" 
+   class="block group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+
+    <!-- Full Image Card -->
+    <div class="relative h-[320px] rounded-2xl overflow-hidden">
+
+        <!-- Image -->
+        <img src="${t.img}" 
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+
+        <!-- Text Inside Image -->
+        <div class="absolute bottom-0 left-0 right-0 p-6 
+                    bg-gradient-to-t from-black/70 via-black/50 to-transparent">
+
+            <h3 class="text-2xl playfair text-white mb-1 drop-shadow-md">
+                ${t.title}
+            </h3>
+
+            <p class="text-white/80 text-sm leading-relaxed drop-shadow">
+                ${t.desc}
+            </p>
+        </div>
+
+    </div>
+
+</a>
+
+        `).join("");
+    </script>
+
+</body>
+</html>

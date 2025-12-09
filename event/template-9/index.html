@@ -1,1688 +1,1918 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Event</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Event</title>
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script>
-      tailwind.config = {
-        content: [],
-        theme: {
-          extend: {
-            fontFamily: {
-              manrope: ["Manrope", "Helvetica", "Arial", "sans-serif"],
-              fontawesome: ["FontAwesome"],
-              icofont: ["IcoFont"],
-              font_awesome_6_brands: ["Font Awesome 6 Brands"],
-            },
-          },
-        },
-      };
-    </script>
-
-    <style>
-      @font-face {
-        font-family: "Manrope";
-        src: url("https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2")
-          format("woff2");
-        font-weight: 200;
-        font-style: normal;
-      }
-
-      .gradient {
-        background: linear-gradient(
-          0deg,
-          rgb(16, 20, 53) 0%,
-          rgba(255, 255, 255, 0) 100%
-        );
-      }
-    </style>
-  </head>
-  <body class="bg-[#101435]">
-    <!-- NAVBAR -->
-    <section
-      id="navbar-main"
-      data-moj-web-fixed="false"
-      data-moj-web-type="navbar"
-      data-moj-web-label="Navbar"
-      data-moj-web-category="structural"
-    >
-      <nav
-        class="w-full fixed top-0 left-0 z-50 bg-transparent transition-all duration-700"
-        id="navbarMain"
-      >
-        <div
-          class="max-w-[1500px] mx-auto px-6 py-4 flex items-center justify-between text-white"
-        >
-          <!-- LOGO -->
-          <a href="/" class="flex items-center gap-2 nav-item">
-            <span class="text-2xl md:text-3xl font-semibold tracking-wide">
-              HEXACON<span class="text-3xl">.</span>
-            </span>
-          </a>
-
-          <!-- DESKTOP MENU (CENTER) -->
-          <div
-            class="hidden lg:flex items-center gap-10 text-base font-semibold tracking-wide"
-          >
-            <a href="#" class="nav-item hover:text-cyan-300 transition"
-              >Schedule</a
-            >
-            <a href="#" class="nav-item hover:text-cyan-300 transition"
-              >Workshops</a
-            >
-            <a href="#" class="nav-item hover:text-cyan-300 transition"
-              >Speakers</a
-            >
-            <a
-              href="#"
-              class="relative pb-1 nav-item hover:text-cyan-300 transition"
-            >
-              Pages
-            </a>
-          </div>
-
-          <!-- RIGHT AREA (SOCIAL + SEARCH) -->
-          <div class="hidden lg:flex items-center gap-5 text-lg">
-            <a href="#" class="nav-item hover:text-cyan-300 transition"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-            <a href="#" class="nav-item hover:text-cyan-300 transition"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a href="#" class="nav-item hover:text-cyan-300 transition"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-          </div>
-
-          <!-- MOBILE MENU ICON -->
-          <button id="mobileMenuBtn" class="lg:hidden text-white text-2xl">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-
-        <!-- MOBILE OVERLAY -->
-        <div
-          id="mobileOverlay"
-          class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
-        ></div>
-
-        <!-- MOBILE SIDEBAR -->
-        <div
-          id="mobileSidebar"
-          class="fixed top-0 right-0 w-64 h-full bg-[#6B4DF7]/95 text-white z-50 transform translate-x-full transition-transform duration-300 p-6"
-        >
-          <button
-            id="closeSidebar"
-            class="text-white text-2xl absolute top-4 right-4"
-          >
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-
-          <div class="mt-10 space-y-6 text-lg font-medium">
-            <a href="#" class="block hover:text-cyan-300">Schedule</a>
-            <a href="#" class="block hover:text-cyan-300">Workshops</a>
-            <a href="#" class="block hover:text-cyan-300">Speakers</a>
-            <a href="#" class="block hover:text-cyan-300">Pages</a>
-
-            <div class="flex items-center gap-4 pt-4 text-xl">
-              <a href="#" class="hover:text-cyan-300"
-                ><i class="fa-brands fa-twitter"></i
-              ></a>
-              <a href="#" class="hover:text-cyan-300"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a href="#" class="hover:text-cyan-300"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </section>
-
-    <script>
-      const mobileBtn = document.getElementById("mobileMenuBtn");
-      const sidebar = document.getElementById("mobileSidebar");
-      const overlay = document.getElementById("mobileOverlay");
-      const closeBtn = document.getElementById("closeSidebar");
-      const navbar = document.getElementById("navbarMain");
-      const navItems = document.querySelectorAll(".nav-item");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          // SCROLLED → White background + blue text
-          navbar.classList.add("bg-white", "shadow-lg");
-          navbar.classList.remove("bg-transparent");
-
-          navItems.forEach((item) => {
-            item.classList.add("text-[#6B4DF7]");
-            item.classList.remove("text-white");
-          });
-        } else {
-          // TOP → Transparent background + white text
-          navbar.classList.remove("bg-white", "shadow-lg");
-          navbar.classList.add("bg-transparent");
-
-          navItems.forEach((item) => {
-            item.classList.add("text-white");
-            item.classList.remove("text-[#6B4DF7]");
-          });
-        }
-      });
-
-      function openMenu() {
-        sidebar.classList.remove("translate-x-full");
-        overlay.classList.remove("hidden");
-        setTimeout(() => overlay.classList.remove("opacity-0"), 10);
-      }
-
-      function closeMenu() {
-        sidebar.classList.add("translate-x-full");
-        overlay.classList.add("opacity-0");
-        setTimeout(() => overlay.classList.add("hidden"), 300);
-      }
-
-      mobileBtn.addEventListener("click", openMenu);
-      closeBtn.addEventListener("click", closeMenu);
-      overlay.addEventListener("click", closeMenu);
-    </script>
-
-    <!-- jhero -->
-    <section
-      id="hero-main"
-      data-moj-web-fixed="false"
-      data-moj-web-type="hero"
-      data-moj-web-label="Hero Banner"
-      data-moj-web-category="structural"
-    >
-      <div class="relative h-[800px] overflow-hidden">
-        <!-- IMAGE AS BACKGROUND -->
-
-        <div
-          id="jarallax-container-3"
-          style="
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -100;
-            clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-            background-size: cover;
-            background-repeat: no-repeat;
-          "
-        >
-          <img
-            src="https://img.freepik.com/free-photo/person-wearing-high-tech-vr-glasses-while-surrounded-by-bright-blue-neon-colors_23-2151255122.jpg?t=st=1765190080~exp=1765193680~hmac=a612a593bef90a5960891c9245db3ad1ab0a75cfedd08f9f7467fd1de07738af&w=2000"
-            class="h-[130vh] fixed w-screen top-0"
-            alt=""
-          />
-        </div>
-        <!-- BOTTOM HERO CONTENT -->
-        <div
-          class="absolute bottom-0 flex items-end justify-end flex-col w-full h-full z-[2] gradient"
-        >
-          <div class="relative max-w-[1400px] mx-auto px-8 mb-20">
-            <!-- TOP ROW -->
-            <div class="flex justify-between items-center">
-              <!-- LEFT: THE FUTURE -->
-              <h1
-                class="text-[48px] md:text-[150px] font-extrabold uppercase leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-              >
-                THE FUTURE
-              </h1>
-
-              <!-- RIGHT: ADDRESS WITH FA ICON -->
-              <div class="flex items-start gap-3 pt-6">
-                <!-- FA Map Marker Icon -->
-                <i
-                  class="fa fa-map-marker-alt text-purple-500 text-5xl md:text-6xl"
-                ></i>
-
-                <h4
-                  class="text-white text-lg md:text-2xl font-semibold leading-tight drop-shadow"
-                >
-                  121 AI Blvd,<br />
-                  San Francisco BCA 94107
-                </h4>
-              </div>
-            </div>
-
-            <!-- BOTTOM ROW -->
-            <div class="flex justify-between items-end gap-10">
-              <!-- LEFT: PARAGRAPH -->
-              <p
-                class="text-white text-opacity-90 text-base md:text-lg max-w-5xl leading-relaxed drop-shadow"
-              >
-                Join thought leaders, developers, researchers, and founders as
-                we explore how artificial intelligence is reshaping industries,
-                creativity.
-              </p>
-
-              <!-- RIGHT: INTELLIGENT -->
-              <h1
-                class="text-[48px] md:text-[150px] font-extrabold uppercase leading-none text-right bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-              >
-                INTELLIGENT
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- about -->
-
-    <section
-      id="about-conference"
-      data-moj-web-fixed="false"
-      data-moj-web-type="about-conference"
-      data-moj-web-label="About Conference"
-      data-moj-web-category="structural"
-      class="bg-[#101435] py-20"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start"
-      >
-        <!-- LEFT SIDE -->
-        <div>
-          <!-- Section Label -->
-          <p class="text-purple-400 text-sm font-semibold mb-3">
-            [ About the Event ]
-          </p>
-
-          <!-- Heading -->
-          <h2
-            class="text-4xl md:text-5xl font-extrabold text-white leading-tight"
-          >
-            A Global Gathering of
-          </h2>
-          <h2
-            class="text-4xl md:text-5xl font-extrabold text-gray-300 leading-tight mb-6"
-          >
-            AI Innovators
-          </h2>
-
-          <!-- Description -->
-          <p class="text-gray-300 leading-relaxed mb-8 max-w-xl">
-            Join thought leaders, developers, researchers, and founders as we
-            explore how artificial intelligence is reshaping industries,
-            creativity, and the future of work.
-          </p>
-
-          <!-- Bullet List -->
-          <ul class="space-y-4 text-gray-200">
-            <li class="flex items-start gap-3">
-              <i class="fa fa-check text-purple-400 mt-1"></i>
-              <span>5 days of keynotes, workshops, and networking</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="fa fa-check text-purple-400 mt-1"></i>
-              <span>50 world-class speakers</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="fa fa-check text-purple-400 mt-1"></i>
-              <span>Startup showcase and live demos</span>
-            </li>
-          </ul>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 max-w-lg mt-10">
-            <!-- Stat 1 -->
-            <div>
-              <h3 class="text-purple-400 text-4xl font-extrabold leading-none">
-                10+
-              </h3>
-              <p class="text-white text-sm mt-2">Workshops</p>
-            </div>
-
-            <!-- Stat 2 -->
-            <div>
-              <h3 class="text-purple-400 text-4xl font-extrabold leading-none">
-                3000+
-              </h3>
-              <p class="text-white text-sm mt-2">Attendees</p>
-            </div>
-
-            <!-- Stat 3 -->
-            <div>
-              <h3 class="text-purple-400 text-4xl font-extrabold leading-none">
-                20+
-              </h3>
-              <p class="text-white text-sm mt-2">Countries</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="grid grid-cols-2 gap-6">
-          <!-- CARD 1 -->
-          <div class="bg-[#6b4df7] rounded-xl p-10 text-center shadow-lg">
-            <h3 class="text-5xl font-bold text-white">50</h3>
-            <p class="text-white mt-2">World-class Speakers</p>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="bg-[#6b4df7] rounded-xl p-10 text-center shadow-lg">
-            <h3 class="text-5xl font-bold text-white">5</h3>
-            <p class="text-white mt-2">Days of Event</p>
-          </div>
-
-          <!-- IMAGE CARD -->
-          <div class="col-span-2">
-            <img
-              src="https://srbthemes.kcubeinfotech.com/aivent/html/images/misc/s2.webp"
-              class="w-full rounded-xl shadow-lg object-cover h-64"
-              alt="AI Eye"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MARQUEE SECTION -->
-
-    <section
-      id="marquee"
-      data-moj-web-fixed="false"
-      data-moj-web-type="marquee"
-      data-moj-web-label="Marquee"
-      data-moj-web-category="structural"
-    >
-      <!-- MARQUEE SECTION -->
-      <div class="relative overflow-x-clip py-10 bg-[#0f123a]">
-        <!-- TOP STRIP -->
-        <div
-          class="absolute left-0 w-full -rotate-2 overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600"
-        >
-          <div class="marquee-inner flex whitespace-nowrap py-4">
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Intelligence / Future Now / Empowering Innovation / Smart Tech /
-            </span>
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Intelligence / Future Now / Empowering Innovation / Smart Tech /
-            </span>
-          </div>
-        </div>
-
-        <!-- BOTTOM STRIP -->
-        <div
-          class="absolute left-0 w-full rotate-2 mt-20 overflow-hidden bg-gradient-to-r from-purple-700 to-purple-800"
-        >
-          <div class="marquee-inner flex whitespace-nowrap py-4">
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Future Shift / Next Intelligence / Future Now / Empowering
-              Innovation /
-            </span>
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Future Shift / Next Intelligence / Future Now / Empowering
-              Innovation /
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Only text moves */
-      .marquee-inner {
-        display: flex;
-        animation: marquee-scroll 15s linear infinite;
-      }
-
-      @keyframes marquee-scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-    </style>
-
-    <!-- highlihgts -->
-
-    <section
-      id="highlights"
-      data-moj-web-fixed="false"
-      data-moj-web-type="highlights"
-      data-moj-web-label="Highlights"
-      data-moj-web-category="structural"
-      class="pt-52 pb-32 gradient"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Section Heading -->
-        <div class="text-center mb-16">
-          <p class="text-purple-400 text-sm font-semibold mb-2">
-            [ Why Attend ]
-          </p>
-          <h2
-            class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl mb-3"
-          >
-            What You’ll Gain
-          </h2>
-          <p class="text-gray-300 max-w-2xl mx-auto">
-            Hear from global AI pioneers, industry disruptors, and bold thinkers
-            shaping the future across every domain.
-          </p>
-        </div>
-
-        <!-- Highlights Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div
-            class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/futuristic-ai-circuit-board_23-2151977501.jpg?t=st=1765193872~exp=1765197472~hmac=28b0cd6cc42d9f842f9b0074551c5a785f143efcb774362ff61e47fd450a2b6b&w=1480"
-              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <!-- Gradient Overlay -->
-            <div class="absolute inset-0 gradient"></div>
-            <!-- Text Overlay -->
-            <div class="absolute inset-x-0 bottom-0 p-5">
-              <h3 class="text-white font-semibold text-lg mb-1">
-                Cutting-Edge Knowledge
-              </h3>
-              <p class="text-gray-200 text-sm">
-                Stay ahead with insights from AI leaders shaping tomorrow’s
-                technology.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/hands-holding-neon-sign_23-2151922470.jpg?t=st=1765194007~exp=1765197607~hmac=ebe4eb2139cb53ba6d0db6982d3f1b8e035ef7f1ce9abe44cf9f2002de476dbe&w=2000"
-              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5">
-              <h3 class="text-white font-semibold text-lg mb-1">
-                Hands-On Learning
-              </h3>
-              <p class="text-gray-200 text-sm">
-                Join live workshops and labs to build practical skills in AI and
-                machine learning.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
-          >
-            <img
-              src="https://srbthemes.kcubeinfotech.com/aivent/html/images/misc/s5.webp"
-              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5">
-              <h3 class="text-white font-semibold text-lg mb-1">
-                Global Networking
-              </h3>
-              <p class="text-gray-200 text-sm">
-                Meet developers, founders, and researchers from around the
-                world.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
-          >
-            <img
-              src="https://srbthemes.kcubeinfotech.com/aivent/html/images/misc/s8.webp"
-              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5">
-              <h3 class="text-white font-semibold text-lg mb-1">
-                Startup Showcase
-              </h3>
-              <p class="text-gray-200 text-sm">
-                Explore the latest AI tools and ideas from promising startups
-                and research labs.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div
-            class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/abstract-plexus-blue-geometrical-shapes-connection-ai-generated-image_511042-598.jpg?t=st=1765194103~exp=1765197703~hmac=60552ec2c4bc0c50f6d35ead3726fb7cc69625439d5bee87cd0ca656dbf9c380&w=2000"
-              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5">
-              <h3 class="text-white font-semibold text-lg mb-1">
-                AI Career Boost
-              </h3>
-              <p class="text-gray-200 text-sm">
-                Access exclusive job fairs, mentorship, and recruiting events to
-                grow your career.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div
-            class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/staring-woman-with-beautiful-blue-eyes-observed-generated-by-ai_188544-16347.jpg?t=st=1765194153~exp=1765197753~hmac=a5f6d64d32b3befafa742b15462031dd8c75906521bd798c9c0b2cea86f19c2f&w=2000"
-              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div class="absolute inset-x-0 bottom-0 p-5">
-              <h3 class="text-white font-semibold text-lg mb-1">
-                Ethics & Future
-              </h3>
-              <p class="text-gray-200 text-sm">
-                Engage in vital conversations around AI ethics, policy, and the
-                future of intelligence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- venue -->
-
-    <section
-      class="h-auto py-20 overflow-hidden relative"
-      id="venue"
-      data-moj-web-fixed="false"
-      data-moj-web-type="venue"
-      data-moj-web-label="Venue"
-      data-moj-web-category="structural"
-    >
-      <!-- IMAGE BACKGROUND -->
-      <div
-        id="jarallax-container-3"
-        style="
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          z-index: -100;
-          clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-          background-size: cover;
-          background-repeat: no-repeat;
-        "
-      >
-        <img
-          src="https://img.freepik.com/free-photo/transparent-quartz-crystal-levitates-dark-background-generated-by-ai_188544-24555.jpg?t=st=1765194419~exp=1765198019~hmac=1f989ef5350df3e6da17de4e40fb253c478bc5afbece761ac07a2460b82fe8ed&w=2000"
-          class="h-[130vh] fixed w-screen top-0"
-          alt=""
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
         />
-      </div>
+        <script>
+            tailwind.config = {
+                content: [],
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            manrope: [
+                                "Manrope",
+                                "Helvetica",
+                                "Arial",
+                                "sans-serif",
+                            ],
+                            fontawesome: ["FontAwesome"],
+                            icofont: ["IcoFont"],
+                            font_awesome_6_brands: ["Font Awesome 6 Brands"],
+                        },
+                    },
+                },
+            };
+        </script>
 
-      <!-- GRADIENT TOP -->
-      <div class="rotate-180 gradient absolute inset-0 z-10"></div>
-
-      <!-- GRADIENT BOTTOM -->
-      <div class="gradient absolute inset-0 z-10"></div>
-
-      <!-- CONTENT -->
-      <div class="relative z-20 max-w-6xl mx-auto px-6 text-center">
-        <!-- Heading -->
-        <p class="text-purple-400 text-sm font-semibold mb-2">[ Venue ]</p>
-        <h2
-          class="text-4xl md:text-5xl font-extrabold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-        >
-          Venue
-        </h2>
-
-        <!-- Description -->
-        <p class="text-gray-200 max-w-34l text-lg mx-auto mb-12">
-          Join us at a world-class venue designed for innovation, collaboration,
-          and immersive experiences. Discover state-of-the-art spaces where
-          creativity and technology merge. Join us at a world-class venue
-          designed for innovation, collaboration, and immersive experiences.
-          Discover state-of-the-art spaces where creativity and technology
-          merge. Join us at a world-class venue designed for innovation,
-          collaboration, and immersive experiences. Discover state-of-the-art
-          spaces where creativity and technology merge. Join us at a world-class
-          venue designed for innovation, collaboration, and immersive
-          experiences. Discover state-of-the-art spaces where creativity and
-          technology merge.
-        </p>
-
-        <!-- 3-IMAGE GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="rounded-xl overflow-hidden shadow-lg max-h-48">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/545070b7e4b03ea792c15d50/94785988-6e49-4534-8b52-d691b1f2eaa5/Screen+Shot+2023-11-13+at+9.44.52+AM+-+Stephanie+Brown.png"
-              class="w-full h-48 object-cover"
-            />
-          </div>
-
-          <div class="rounded-xl overflow-hidden shadow-lg mt-10 max-h-48">
-            <img
-              src="https://www.shutterstock.com/image-vector/view-above-map-detailed-city-600nw-2391312469.jpg"
-              class="w-full h-48 object-cover"
-            />
-          </div>
-
-          <div class="rounded-xl overflow-hidden shadow-lg max-h-48">
-            <img
-              src="https://www.speakeragency.co.uk/media/qd5jkloq/ai-events-london.jpg"
-              class="w-full h-48 object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- schduewle -->
-    <section
-      class="py-24"
-      id="schedule-section"
-      data-moj-web-fixed="false"
-      data-moj-web-type="schedule-section"
-      data-moj-web-label="schedule Conference"
-      data-moj-web-category="structural"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Heading -->
-        <p class="text-purple-400 text-sm text-center font-semibold mb-2">
-          [ Event Schedule ]
-        </p>
-
-        <h2
-          class="text-center pb-2 text-4xl md:text-5xl font-extrabold mb-10 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-        >
-          3 Days of AI Excellence
-        </h2>
-
-        <!-- Day Tabs -->
-        <div class="flex justify-center gap-10 text-center mb-16">
-          <button
-            data-day="1"
-            class="day-tab text-white text-lg font-semibold pb-1 border-b-2 border-purple-500"
-          >
-            Day 1
-            <p class="text-gray-400 text-sm">Oct 1, 2025</p>
-          </button>
-
-          <button
-            data-day="2"
-            class="day-tab text-white text-lg font-semibold pb-1 border-b-2 border-transparent"
-          >
-            Day 2
-            <p class="text-gray-400 text-sm">Oct 2, 2025</p>
-          </button>
-
-          <button
-            data-day="3"
-            class="day-tab text-white text-lg font-semibold pb-1 border-b-2 border-transparent"
-          >
-            Day 3
-            <p class="text-gray-400 text-sm">Oct 3, 2025</p>
-          </button>
-        </div>
-
-        <!-- ALL DAY CONTENT WRAPPER -->
-        <div id="schedule-wrapper">
-          <!-- DAY 1 -->
-          <div class="day-content" data-day="1">
-            <div class="space-y-12">
-              <!-- SESSION 1 -->
-              <div>
-                <div class="flex items-start gap-8">
-                  <p class="text-gray-300 text-sm w-40">08:00 – 10:00 AM</p>
-
-                  <div class="flex items-center gap-4 w-56">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/45.jpg"
-                      class="w-14 h-14 rounded-lg object-cover"
-                    />
-                    <div>
-                      <h4 class="text-white font-semibold">Joshua Henry</h4>
-                      <p class="text-gray-400 text-sm">
-                        AI Research Lead, DeepTech Labs
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex-1">
-                    <h3
-                      class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                    >
-                      Session: Opening Keynote – The State of AI 2025
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-2">
-                      Explore breakthroughs, global shifts, and what's next in
-                      deep learning and AI ethics.
-                    </p>
-                  </div>
-                </div>
-                <div class="border-b border-white/10 mt-6"></div>
-              </div>
-
-              <!-- SESSION 2 -->
-              <div>
-                <div class="flex items-start gap-8">
-                  <p class="text-gray-300 text-sm w-40">12:00 – 14:00 PM</p>
-
-                  <div class="flex items-center gap-4 w-56">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/65.jpg"
-                      class="w-14 h-14 rounded-lg object-cover"
-                    />
-                    <div>
-                      <h4 class="text-white font-semibold">Leila Zhang</h4>
-                      <p class="text-gray-400 text-sm">
-                        VP of Machine Learning, Google
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex-1">
-                    <h3
-                      class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                    >
-                      Session: Building Human-Centered AI Products
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-2">
-                      Learn to design AI solutions that prioritize fairness,
-                      usability, and global impact.
-                    </p>
-                  </div>
-                </div>
-                <div class="border-b border-white/10 mt-6"></div>
-              </div>
-
-              <div>
-                <div class="flex items-start gap-8">
-                  <p class="text-gray-300 text-sm w-40">09:00 – 11:00 AM</p>
-
-                  <div class="flex items-center gap-4 w-56">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/22.jpg"
-                      class="w-14 h-14 rounded-lg object-cover"
-                    />
-                    <div>
-                      <h4 class="text-white font-semibold">Ava Simmons</h4>
-                      <p class="text-gray-400 text-sm">
-                        Chief AI Strategist, Meta
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex-1">
-                    <h3
-                      class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                    >
-                      Session: The Future of Responsible AI
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-2">
-                      A deep dive into ethical AI frameworks, safety, and
-                      responsible innovation.
-                    </p>
-                  </div>
-                </div>
-                <div class="border-b border-white/10 mt-6"></div>
-              </div>
-              <!-- SESSION 1 -->
-              <div>
-                <div class="flex items-start gap-8">
-                  <p class="text-gray-300 text-sm w-40">08:00 – 10:00 AM</p>
-
-                  <div class="flex items-center gap-4 w-56">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/45.jpg"
-                      class="w-14 h-14 rounded-lg object-cover"
-                    />
-                    <div>
-                      <h4 class="text-white font-semibold">Joshua Henry</h4>
-                      <p class="text-gray-400 text-sm">
-                        AI Research Lead, DeepTech Labs
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex-1">
-                    <h3
-                      class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                    >
-                      Session: Opening Keynote – The State of AI 2025
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-2">
-                      Explore breakthroughs, global shifts, and what's next in
-                      deep learning and AI ethics.
-                    </p>
-                  </div>
-                </div>
-                <div class="border-b border-white/10 mt-6"></div>
-              </div>
-
-              <!-- SESSION 2 -->
-              <div>
-                <div class="flex items-start gap-8">
-                  <p class="text-gray-300 text-sm w-40">12:00 – 14:00 PM</p>
-
-                  <div class="flex items-center gap-4 w-56">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/65.jpg"
-                      class="w-14 h-14 rounded-lg object-cover"
-                    />
-                    <div>
-                      <h4 class="text-white font-semibold">Leila Zhang</h4>
-                      <p class="text-gray-400 text-sm">
-                        VP of Machine Learning, Google
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex-1">
-                    <h3
-                      class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                    >
-                      Session: Building Human-Centered AI Products
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-2">
-                      Learn to design AI solutions that prioritize fairness,
-                      usability, and global impact.
-                    </p>
-                  </div>
-                </div>
-                <div class="border-b border-white/10 mt-6"></div>
-              </div>
-
-              <div>
-                <div class="flex items-start gap-8">
-                  <p class="text-gray-300 text-sm w-40">09:00 – 11:00 AM</p>
-
-                  <div class="flex items-center gap-4 w-56">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/22.jpg"
-                      class="w-14 h-14 rounded-lg object-cover"
-                    />
-                    <div>
-                      <h4 class="text-white font-semibold">Ava Simmons</h4>
-                      <p class="text-gray-400 text-sm">
-                        Chief AI Strategist, Meta
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="flex-1">
-                    <h3
-                      class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                    >
-                      Session: The Future of Responsible AI
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-2">
-                      A deep dive into ethical AI frameworks, safety, and
-                      responsible innovation.
-                    </p>
-                  </div>
-                </div>
-                <div class="border-b border-white/10 mt-6"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- DAY 2 -->
-          <div class="day-content hidden" data-day="2">
-            <div class="space-y-12">
-              <!-- SESSION EXAMPLE -->
-              <div class="flex items-start gap-8">
-                <p class="text-gray-300 text-sm w-40">10:00 – 12:00 PM</p>
-
-                <div class="flex items-center gap-4 w-56">
-                  <img
-                    src="https://randomuser.me/api/portraits/men/12.jpg"
-                    class="w-14 h-14 rounded-lg object-cover"
-                  />
-                  <div>
-                    <h4 class="text-white font-semibold">Adrian Cole</h4>
-                    <p class="text-gray-400 text-sm">
-                      AI Systems Architect, OpenAI
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex-1">
-                  <h3
-                    class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                  >
-                    Session: Scaling Large Language Models
-                  </h3>
-                  <p class="text-gray-400 text-sm mt-2">
-                    Explore architecture, optimization, and the future of
-                    generative AI systems.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- DAY 3 -->
-          <div class="day-content hidden" data-day="3">
-            <div class="space-y-12">
-              <div class="flex items-start gap-8">
-                <p class="text-gray-300 text-sm w-40">09:00 – 11:00 AM</p>
-
-                <div class="flex items-center gap-4 w-56">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/22.jpg"
-                    class="w-14 h-14 rounded-lg object-cover"
-                  />
-                  <div>
-                    <h4 class="text-white font-semibold">Ava Simmons</h4>
-                    <p class="text-gray-400 text-sm">
-                      Chief AI Strategist, Meta
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex-1">
-                  <h3
-                    class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-                  >
-                    Session: The Future of Responsible AI
-                  </h3>
-                  <p class="text-gray-400 text-sm mt-2">
-                    A deep dive into ethical AI frameworks, safety, and
-                    responsible innovation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <script>
-      const tabs = document.querySelectorAll(".day-tab");
-      const contents = document.querySelectorAll(".day-content");
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const day = tab.getAttribute("data-day");
-
-          // RESET all tabs
-          tabs.forEach((t) => {
-            t.classList.remove("border-purple-500");
-            t.classList.add("border-transparent");
-          });
-
-          // SET active tab
-          tab.classList.remove("border-transparent");
-          tab.classList.add("border-purple-500");
-
-          // SHOW matching content
-          contents.forEach((c) => {
-            c.classList.add("hidden");
-            if (c.getAttribute("data-day") === day) {
-              c.classList.remove("hidden");
+        <style>
+            @font-face {
+                font-family: "Manrope";
+                src: url("https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2")
+                    format("woff2");
+                font-weight: 200;
+                font-style: normal;
             }
-          });
-        });
-      });
-    </script>
 
-    <!-- pricing -->
-    <section
-      class="h-auto py-20 overflow-hidden relative"
-      id="pricing"
-      data-moj-web-fixed="false"
-      data-moj-web-type="pricing"
-      data-moj-web-label="Pricing"
-      data-moj-web-category="structural"
-    >
-      <!-- BACKGROUND IMAGE -->
-      <div
-        id="jarallax-container-3"
-        style="
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          z-index: -100;
-          clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-          background-size: cover;
-          background-repeat: no-repeat;
-        "
-      >
-        <img
-          src="https://srbthemes.kcubeinfotech.com/aivent/html/images/background/7.webp"
-          class="h-[130vh] fixed w-screen top-0"
-          alt=""
-        />
-      </div>
-
-      <!-- TOP GRADIENT -->
-      <div class="rotate-180 gradient absolute inset-0 z-10"></div>
-
-      <!-- BOTTOM GRADIENT -->
-      <div class="gradient absolute inset-0 z-10"></div>
-
-      <!-- CONTENT (PRICING) -->
-      <div class="relative z-20 max-w-7xl mx-auto px-6 text-center">
-        <!-- SMALL LABEL -->
-        <p class="text-purple-400 text-sm font-semibold mb-2">
-          [ Ticket Options ]
-        </p>
-
-        <!-- MAIN HEADING -->
-        <h2
-          class="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+            .gradient {
+                background: linear-gradient(
+                    0deg,
+                    rgb(16, 20, 53) 0%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+        </style>
+    </head>
+    <body class="bg-[#101435]">
+        <!-- NAVBAR -->
+        <section
+            id="navbar-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
         >
-          Choose Your Pass
-        </h2>
+            <nav
+                class="w-full fixed top-0 left-0 z-50 bg-transparent transition-all duration-700"
+                id="navbarMain"
+            >
+                <div
+                    class="max-w-[1500px] mx-auto px-6 py-4 flex items-center justify-between text-white"
+                >
+                    <!-- LOGO -->
+                    <a href="/" class="flex items-center gap-2 nav-item">
+                        <span
+                            class="text-2xl md:text-3xl font-semibold tracking-wide"
+                        >
+                            HEXACON<span class="text-3xl">.</span>
+                        </span>
+                    </a>
 
-        <p class="text-gray-300 max-w-2xl mx-auto mb-16">
-          Select the perfect ticket for your needs and gain access to exclusive
-          sessions, workshops, and more.
-        </p>
+                    <!-- DESKTOP MENU (CENTER) -->
+                    <div
+                        class="hidden lg:flex items-center gap-10 text-base font-semibold tracking-wide"
+                    >
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            >Schedule</a
+                        >
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            >Workshops</a
+                        >
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            >Speakers</a
+                        >
+                        <a
+                            href="#"
+                            class="relative pb-1 nav-item hover:text-cyan-300 transition"
+                        >
+                            Pages
+                        </a>
+                    </div>
 
-        <!-- PRICING GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <!-- STANDARD PASS -->
-          <div class="space-y-6">
-            <div class="relative rounded-xl overflow-hidden shadow-xl">
-              <!-- Background Image -->
-              <img
-                src="https://img.freepik.com/free-vector/abstract-colorful-low-poly-triangle-shapes-background_1035-19009.jpg?t=st=1765194482~exp=1765198082~hmac=8cb8b16f3d0c4e417146db5047cc707b14630ce66affefb5e18cadddc8809090&w=2000"
-                class="absolute inset-0 w-full h-full object-cover"
-              />
+                    <!-- RIGHT AREA (SOCIAL + SEARCH) -->
+                    <div class="hidden lg:flex items-center gap-5 text-lg">
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            ><i class="fa-brands fa-twitter"></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            ><i class="fa-brands fa-facebook-f"></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="nav-item hover:text-cyan-300 transition"
+                            ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                    </div>
 
-              <!-- Dark Overlay -->
-              <div class="absolute inset-0 bg-black/40"></div>
+                    <!-- MOBILE MENU ICON -->
+                    <button
+                        id="mobileMenuBtn"
+                        class="lg:hidden nav-item text-2xl"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
 
-              <!-- Text Content -->
-              <div class="relative px-6 py-8 text-left z-10">
-                <h3 class="text-white text-2xl font-bold">Standard</h3>
-                <p class="text-white text-xl font-semibold">$299</p>
-                <p class="text-gray-200 text-xs mt-2">
-                  October 1 to 5 — 10:00 AM
+                <!-- MOBILE OVERLAY -->
+                <div
+                    id="mobileOverlay"
+                    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+                ></div>
+
+                <!-- MOBILE SIDEBAR -->
+                <div
+                    id="mobileSidebar"
+                    class="fixed top-0 right-0 w-64 h-full bg-[#6B4DF7]/95 text-white z-50 transform translate-x-full transition-transform duration-300 p-6"
+                >
+                    <button
+                        id="closeSidebar"
+                        class="text-white text-2xl absolute top-4 right-4"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div class="mt-10 space-y-6 text-lg font-medium">
+                        <a href="#" class="block hover:text-cyan-300"
+                            >Schedule</a
+                        >
+                        <a href="#" class="block hover:text-cyan-300"
+                            >Workshops</a
+                        >
+                        <a href="#" class="block hover:text-cyan-300"
+                            >Speakers</a
+                        >
+                        <a href="#" class="block hover:text-cyan-300">Pages</a>
+
+                        <div class="flex items-center gap-4 pt-4 text-xl">
+                            <a href="#" class="hover:text-cyan-300"
+                                ><i class="fa-brands fa-twitter"></i
+                            ></a>
+                            <a href="#" class="hover:text-cyan-300"
+                                ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                            <a href="#" class="hover:text-cyan-300"
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <script>
+            const mobileBtn = document.getElementById("mobileMenuBtn");
+            const sidebar = document.getElementById("mobileSidebar");
+            const overlay = document.getElementById("mobileOverlay");
+            const closeBtn = document.getElementById("closeSidebar");
+            const navbar = document.getElementById("navbarMain");
+            const navItems = document.querySelectorAll(".nav-item");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    // SCROLLED → White background + blue text
+                    navbar.classList.add("bg-white", "shadow-lg");
+                    navbar.classList.remove("bg-transparent");
+
+                    navItems.forEach((item) => {
+                        item.classList.add("text-[#6B4DF7]");
+                        item.classList.remove("text-white");
+                    });
+                } else {
+                    // TOP → Transparent background + white text
+                    navbar.classList.remove("bg-white", "shadow-lg");
+                    navbar.classList.add("bg-transparent");
+
+                    navItems.forEach((item) => {
+                        item.classList.add("text-white");
+                        item.classList.remove("text-[#6B4DF7]");
+                    });
+                }
+            });
+
+            function openMenu() {
+                sidebar.classList.remove("translate-x-full");
+                overlay.classList.remove("hidden");
+                setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+            }
+
+            function closeMenu() {
+                sidebar.classList.add("translate-x-full");
+                overlay.classList.add("opacity-0");
+                setTimeout(() => overlay.classList.add("hidden"), 300);
+            }
+
+            mobileBtn.addEventListener("click", openMenu);
+            closeBtn.addEventListener("click", closeMenu);
+            overlay.addEventListener("click", closeMenu);
+        </script>
+
+        <!-- hero -->
+        <section
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
+        >
+            <div class="relative h-[600px] md:h-[800px] overflow-hidden">
+                <!-- IMAGE AS BACKGROUND -->
+
+                <div
+                    id="jarallax-container-3"
+                    style="
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        z-index: -100;
+                        clip-path: polygon(
+                            0px 0px,
+                            100% 0px,
+                            100% 100%,
+                            0px 100%
+                        );
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    "
+                >
+                    <img
+                        src="https://img.freepik.com/free-photo/person-wearing-high-tech-vr-glasses-while-surrounded-by-bright-blue-neon-colors_23-2151255122.jpg?t=st=1765190080~exp=1765193680~hmac=a612a593bef90a5960891c9245db3ad1ab0a75cfedd08f9f7467fd1de07738af&w=2000"
+                        class="h-[130vh] object-cover fixed w-screen top-0"
+                        alt=""
+                    />
+                </div>
+                <!-- BOTTOM HERO CONTENT -->
+                <div
+                    class="absolute bottom-0 flex items-end justify-end flex-col w-full h-full z-[2] gradient"
+                >
+                    <div
+                        class="relative max-w-[1400px] mx-auto px-6 md:px-8 mb-16 md:mb-20"
+                    >
+                        <!-- TOP ROW -->
+                        <div
+                            class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 md:gap-0"
+                        >
+                            <!-- THE FUTURE -->
+                            <h1
+                                class="text-[42px] sm:text-[60px] lg:text-[150px] font-extrabold uppercase leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                            >
+                                THE FUTURE
+                            </h1>
+                             <h1
+                                class="text-[42px] lg:hidden sm:text-[60px]  lg:text-[150px] font-extrabold uppercase leading-none text-right bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                            >
+                                INTELLIGENT
+                            </h1>
+
+                            <!-- ADDRESS -->
+                            <div class="flex items-start gap-3 md:pt-6">
+                                <i
+                                    class="fa fa-map-marker-alt text-purple-500 text-4xl sm:text-5xl lg:text-6xl"
+                                ></i>
+
+                                <h4
+                                    class="text-white text-base sm:text-lg lg:text-2xl font-semibold leading-tight drop-shadow"
+                                >
+                                    121 AI Blvd,<br />
+                                    San Francisco BCA 94107
+                                </h4>
+                            </div>
+                        </div>
+
+                        <!-- BOTTOM ROW -->
+                        <div
+                            class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-10 mt-8"
+                        >
+                            <!-- PARAGRAPH -->
+                            <p
+                                class="text-white text-opacity-90 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl drop-shadow"
+                            >
+                                Join thought leaders, developers, researchers,
+                                and founders as we explore how artificial
+                                intelligence is reshaping industries,
+                                creativity.
+                            </p>
+
+                            <!-- INTELLIGENT -->
+                            <h1
+                                class="text-[42px] hidden lg:block sm:text-[60px]  lg:text-[150px] font-extrabold uppercase leading-none text-right bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                            >
+                                INTELLIGENT
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about -->
+
+        <section
+            id="about-conference"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about-conference"
+            data-moj-web-label="About Conference"
+            data-moj-web-category="structural"
+            class="bg-[#101435] py-10 md:py-20"
+        >
+            <div
+                class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-start"
+            >
+                <!-- LEFT SIDE -->
+                <div>
+                    <!-- Section Label -->
+                    <p class="text-purple-400 text-sm font-semibold mb-3">
+                        [ About the Event ]
+                    </p>
+
+                    <!-- Heading -->
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold text-white leading-tight"
+                    >
+                        A Global Gathering of
+                    </h2>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold text-gray-300 leading-tight mb-6"
+                    >
+                        AI Innovators
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-300 leading-relaxed mb-8 max-w-xl">
+                        Join thought leaders, developers, researchers, and
+                        founders as we explore how artificial intelligence is
+                        reshaping industries, creativity, and the future of
+                        work.
+                    </p>
+
+                    <!-- Bullet List -->
+                    <ul class="space-y-4 text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check text-purple-400 mt-1"></i>
+                            <span
+                                >5 days of keynotes, workshops, and
+                                networking</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check text-purple-400 mt-1"></i>
+                            <span>50 world-class speakers</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-check text-purple-400 mt-1"></i>
+                            <span>Startup showcase and live demos</span>
+                        </li>
+                    </ul>
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-3 gap-8 max-w-lg mt-10"
+                    >
+                        <!-- Stat 1 -->
+                        <div>
+                            <h3
+                                class="text-purple-400 text-4xl font-extrabold leading-none"
+                            >
+                                10+
+                            </h3>
+                            <p class="text-white text-sm mt-2">Workshops</p>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div>
+                            <h3
+                                class="text-purple-400 text-4xl font-extrabold leading-none"
+                            >
+                                3000+
+                            </h3>
+                            <p class="text-white text-sm mt-2">Attendees</p>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div>
+                            <h3
+                                class="text-purple-400 text-4xl font-extrabold leading-none"
+                            >
+                                20+
+                            </h3>
+                            <p class="text-white text-sm mt-2">Countries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- CARD 1 -->
+                    <div
+                        class="bg-[#6b4df7] rounded-xl p-6 md:p-10 text-center shadow-lg"
+                    >
+                        <h3 class="text-5xl font-bold text-white">50</h3>
+                        <p class="text-white mt-2">World-class Speakers</p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="bg-[#6b4df7] rounded-xl p-6 md:p-10 text-center shadow-lg"
+                    >
+                        <h3 class="text-5xl font-bold text-white">5</h3>
+                        <p class="text-white mt-2">Days of Event</p>
+                    </div>
+
+                    <!-- IMAGE CARD -->
+                    <div class="col-span-2">
+                        <img
+                            src="https://srbthemes.kcubeinfotech.com/aivent/html/images/misc/s2.webp"
+                            class="w-full rounded-xl shadow-lg object-cover h-64"
+                            alt="AI Eye"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE SECTION -->
+
+        <section
+            id="marquee"
+            data-moj-web-fixed="false"
+            data-moj-web-type="marquee"
+            data-moj-web-label="Marquee"
+            data-moj-web-category="structural"
+        >
+            <!-- MARQUEE SECTION -->
+            <div class="relative overflow-x-clip py-10 bg-[#0f123a]">
+                <!-- TOP STRIP -->
+                <div
+                    class="absolute left-0 w-full -rotate-2 overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600"
+                >
+                    <div class="marquee-inner flex whitespace-nowrap py-4">
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Intelligence / Future Now / Empowering Innovation /
+                            Smart Tech /
+                        </span>
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Intelligence / Future Now / Empowering Innovation /
+                            Smart Tech /
+                        </span>
+                    </div>
+                </div>
+
+                <!-- BOTTOM STRIP -->
+                <div
+                    class="absolute left-0 w-full rotate-2 mt-20 overflow-hidden bg-gradient-to-r from-purple-700 to-purple-800"
+                >
+                    <div class="marquee-inner flex whitespace-nowrap py-4">
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Future Shift / Next Intelligence / Future Now /
+                            Empowering Innovation /
+                        </span>
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Future Shift / Next Intelligence / Future Now /
+                            Empowering Innovation /
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Only text moves */
+            .marquee-inner {
+                display: flex;
+                animation: marquee-scroll 15s linear infinite;
+            }
+
+            @keyframes marquee-scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        </style>
+
+        <!-- highlihgts -->
+
+        <section
+            id="highlights"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlights"
+            data-moj-web-label="Highlights"
+            data-moj-web-category="structural"
+            class="pt-40 md:pt-52 pb-10 md:pb-32 gradient"
+        >
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Heading -->
+                <div class="text-center mb-8 md:mb-16">
+                    <p class="text-purple-400 text-sm font-semibold mb-2">
+                        [ Why Attend ]
+                    </p>
+                    <h2
+                        class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl mb-3"
+                    >
+                        What You’ll Gain
+                    </h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        Hear from global AI pioneers, industry disruptors, and
+                        bold thinkers shaping the future across every domain.
+                    </p>
+                </div>
+
+                <!-- Highlights Grid -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                >
+                    <!-- Card 1 -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-photo/futuristic-ai-circuit-board_23-2151977501.jpg?t=st=1765193872~exp=1765197472~hmac=28b0cd6cc42d9f842f9b0074551c5a785f143efcb774362ff61e47fd450a2b6b&w=1480"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 gradient"></div>
+                        <!-- Text Overlay -->
+                        <div class="absolute inset-x-0 bottom-0 p-5">
+                            <h3 class="text-white font-semibold text-lg mb-1">
+                                Cutting-Edge Knowledge
+                            </h3>
+                            <p class="text-gray-200 text-sm">
+                                Stay ahead with insights from AI leaders shaping
+                                tomorrow’s technology.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-photo/hands-holding-neon-sign_23-2151922470.jpg?t=st=1765194007~exp=1765197607~hmac=ebe4eb2139cb53ba6d0db6982d3f1b8e035ef7f1ce9abe44cf9f2002de476dbe&w=2000"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-5">
+                            <h3 class="text-white font-semibold text-lg mb-1">
+                                Hands-On Learning
+                            </h3>
+                            <p class="text-gray-200 text-sm">
+                                Join live workshops and labs to build practical
+                                skills in AI and machine learning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
+                    >
+                        <img
+                            src="https://srbthemes.kcubeinfotech.com/aivent/html/images/misc/s5.webp"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-5">
+                            <h3 class="text-white font-semibold text-lg mb-1">
+                                Global Networking
+                            </h3>
+                            <p class="text-gray-200 text-sm">
+                                Meet developers, founders, and researchers from
+                                around the world.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
+                    >
+                        <img
+                            src="https://srbthemes.kcubeinfotech.com/aivent/html/images/misc/s8.webp"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-5">
+                            <h3 class="text-white font-semibold text-lg mb-1">
+                                Startup Showcase
+                            </h3>
+                            <p class="text-gray-200 text-sm">
+                                Explore the latest AI tools and ideas from
+                                promising startups and research labs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-photo/abstract-plexus-blue-geometrical-shapes-connection-ai-generated-image_511042-598.jpg?t=st=1765194103~exp=1765197703~hmac=60552ec2c4bc0c50f6d35ead3726fb7cc69625439d5bee87cd0ca656dbf9c380&w=2000"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-5">
+                            <h3 class="text-white font-semibold text-lg mb-1">
+                                AI Career Boost
+                            </h3>
+                            <p class="text-gray-200 text-sm">
+                                Access exclusive job fairs, mentorship, and
+                                recruiting events to grow your career.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden bg-[#12163f] group shadow-lg"
+                    >
+                        <img
+                            src="https://img.freepik.com/free-photo/staring-woman-with-beautiful-blue-eyes-observed-generated-by-ai_188544-16347.jpg?t=st=1765194153~exp=1765197753~hmac=a5f6d64d32b3befafa742b15462031dd8c75906521bd798c9c0b2cea86f19c2f&w=2000"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-5">
+                            <h3 class="text-white font-semibold text-lg mb-1">
+                                Ethics & Future
+                            </h3>
+                            <p class="text-gray-200 text-sm">
+                                Engage in vital conversations around AI ethics,
+                                policy, and the future of intelligence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- venue -->
+
+        <section
+            class="h-auto py-10 md:py-20 overflow-hidden relative"
+            id="venue"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue"
+            data-moj-web-label="Venue"
+            data-moj-web-category="structural"
+        >
+            <!-- IMAGE BACKGROUND -->
+            <div
+                id="jarallax-container-3"
+                style="
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: -100;
+                    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                "
+            >
+                <img
+                    src="https://img.freepik.com/free-photo/transparent-quartz-crystal-levitates-dark-background-generated-by-ai_188544-24555.jpg?t=st=1765194419~exp=1765198019~hmac=1f989ef5350df3e6da17de4e40fb253c478bc5afbece761ac07a2460b82fe8ed&w=2000"
+                    class="h-[130vh] fixed w-screen top-0"
+                    alt=""
+                />
+            </div>
+
+            <!-- GRADIENT TOP -->
+            <div class="rotate-180 gradient absolute inset-0 z-10"></div>
+
+            <!-- GRADIENT BOTTOM -->
+            <div class="gradient absolute inset-0 z-10"></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-20 max-w-6xl mx-auto px-4 text-center">
+                <!-- Heading -->
+                <p class="text-purple-400 text-sm font-semibold mb-2">
+                    [ Venue ]
                 </p>
-              </div>
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                >
+                    Venue
+                </h2>
 
-              <!-- Barcode -->
-            </div>
-
-            <!-- Features -->
-            <ul class="text-left text-gray-300 space-y-2">
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Access to keynotes
-                and sessions.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Exhibition & demo
-                access.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Networking
-                opportunities.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Digital recordings &
-                materials.
-              </li>
-            </ul>
-
-            <button
-              class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition"
-            >
-              BUY TICKET
-            </button>
-          </div>
-
-          <!-- VIP PASS -->
-          <div class="space-y-6">
-            <div class="relative rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://png.pngtree.com/thumb_back/fh260/background/20210429/pngtree-crystal-shape-polygon-abstract-blue-geometric-triangle-background-desgine-image_681463.jpg"
-                class="absolute inset-0 w-full h-full object-cover"
-              />
-
-              <div class="absolute inset-0 bg-black/40"></div>
-
-              <div class="relative px-6 py-8 text-left z-10">
-                <h3 class="text-white text-2xl font-bold">VIP</h3>
-                <p class="text-white text-xl font-semibold">$699</p>
-                <p class="text-gray-200 text-xs mt-2">
-                  October 1 to 5 — 10:00 AM
+                <!-- Description -->
+                <p class="text-gray-200 max-w-34l md:text-lg mx-auto mb-12">
+                    Join us at a world-class venue designed for innovation,
+                    collaboration, and immersive experiences. Discover
+                    state-of-the-art spaces where creativity and technology
+                    merge. Join us at a world-class venue designed for
+                    innovation, collaboration, and immersive experiences.
+                    Discover state-of-the-art spaces where creativity and
+                    technology merge. Join us at a world-class venue designed
+                    for innovation, collaboration, and immersive experiences.
+                    Discover state-of-the-art spaces where creativity and
+                    technology merge. Join us at a world-class venue designed
+                    for innovation, collaboration, and immersive experiences.
+                    Discover state-of-the-art spaces where creativity and
+                    technology merge.
                 </p>
-              </div>
+
+                <!-- 3-IMAGE GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-xl overflow-hidden shadow-lg max-h-48">
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/545070b7e4b03ea792c15d50/94785988-6e49-4534-8b52-d691b1f2eaa5/Screen+Shot+2023-11-13+at+9.44.52+AM+-+Stephanie+Brown.png"
+                            class="w-full h-48 object-cover"
+                        />
+                    </div>
+
+                    <div
+                        class="rounded-xl overflow-hidden shadow-lg mt-10 max-h-48"
+                    >
+                        <img
+                            src="https://www.shutterstock.com/image-vector/view-above-map-detailed-city-600nw-2391312469.jpg"
+                            class="w-full h-48 object-cover"
+                        />
+                    </div>
+
+                    <div class="rounded-xl overflow-hidden shadow-lg max-h-48">
+                        <img
+                            src="https://www.speakeragency.co.uk/media/qd5jkloq/ai-events-london.jpg"
+                            class="w-full h-48 object-cover"
+                        />
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <ul class="text-left text-gray-300 space-y-2">
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> All Standard
-                benefits.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> VIP lounge access.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Priority workshop
-                seating.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Exclusive VIP swag
-                bag.
-              </li>
-            </ul>
-
-            <button
-              class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition"
-            >
-              BUY TICKET
-            </button>
-          </div>
-
-          <!-- FULL ACCESS PASS -->
-          <div class="space-y-6">
-            <div class="relative rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://img.freepik.com/free-vector/bright-polygonal-turquoise-background_1035-6011.jpg?semt=ais_hybrid&w=740&q=80"
-                class="absolute inset-0 w-full h-full object-cover"
-              />
-
-              <div class="absolute inset-0 bg-black/40"></div>
-
-              <div class="relative px-6 py-8 text-left z-10">
-                <h3 class="text-white text-2xl font-bold">Full Access</h3>
-                <p class="text-white text-xl font-semibold">$1199</p>
-                <p class="text-gray-200 text-xs mt-2">
-                  October 1 to 5 — 10:00 AM
+        <!-- schduewle -->
+        <section
+            class="py-10 md:py-24"
+            id="schedule-section"
+            data-moj-web-fixed="false"
+            data-moj-web-type="schedule-section"
+            data-moj-web-label="schedule Conference"
+            data-moj-web-category="structural"
+        >
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Heading -->
+                <p
+                    class="text-purple-400 text-sm text-center font-semibold mb-2"
+                >
+                    [ Event Schedule ]
                 </p>
-              </div>
+
+                <h2
+                    class="text-center pb-2 text-4xl md:text-5xl font-extrabold mb-10 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                >
+                    3 Days of AI Excellence
+                </h2>
+
+                <!-- Day Tabs -->
+                <div class="flex justify-center gap-10 text-center mb-8 md:mb-16">
+                    <button
+                        data-day="1"
+                        class="day-tab text-white text-lg font-semibold pb-1 border-b-2 border-purple-500"
+                    >
+                        Day 1
+                        <p class="text-gray-400 text-sm">Oct 1, 2025</p>
+                    </button>
+
+                    <button
+                        data-day="2"
+                        class="day-tab text-white text-lg font-semibold pb-1 border-b-2 border-transparent"
+                    >
+                        Day 2
+                        <p class="text-gray-400 text-sm">Oct 2, 2025</p>
+                    </button>
+
+                    <button
+                        data-day="3"
+                        class="day-tab text-white text-lg font-semibold pb-1 border-b-2 border-transparent"
+                    >
+                        Day 3
+                        <p class="text-gray-400 text-sm">Oct 3, 2025</p>
+                    </button>
+                </div>
+
+                <!-- ALL DAY CONTENT WRAPPER -->
+                <div id="schedule-wrapper">
+                    <!-- DAY 1 -->
+                    <div class="day-content" data-day="1">
+                        <div class="space-y-12">
+                            <!-- SESSION 1 -->
+                            <div>
+                                <div class="flex items-start gap-4 md:gap-8">
+                                    <p class="text-gray-300 text-sm w-40">
+                                        08:00 – 10:00 AM
+                                    </p>
+
+                                    <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                        <img
+                                            src="https://randomuser.me/api/portraits/men/45.jpg"
+                                            class="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <h4
+                                                class="text-white font-semibold"
+                                            >
+                                                Joshua Henry
+                                            </h4>
+                                            <p class="text-gray-400 text-sm">
+                                                AI Research Lead, DeepTech Labs
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                        >
+                                            Session: Opening Keynote – The State
+                                            of AI 2025
+                                        </h3>
+                                        <p class="text-gray-400 text-sm mt-2">
+                                            Explore breakthroughs, global
+                                            shifts, and what's next in deep
+                                            learning and AI ethics.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border-b border-white/10 mt-6"
+                                ></div>
+                            </div>
+
+                            <!-- SESSION 2 -->
+                            <div>
+                                <div class="flex items-start gap-4 md:gap-8">
+                                    <p class="text-gray-300 text-sm w-40">
+                                        12:00 – 14:00 PM
+                                    </p>
+
+                                    <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                        <img
+                                            src="https://randomuser.me/api/portraits/women/65.jpg"
+                                            class="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <h4
+                                                class="text-white font-semibold"
+                                            >
+                                                Leila Zhang
+                                            </h4>
+                                            <p class="text-gray-400 text-sm">
+                                                VP of Machine Learning, Google
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                        >
+                                            Session: Building Human-Centered AI
+                                            Products
+                                        </h3>
+                                        <p class="text-gray-400 text-sm mt-2">
+                                            Learn to design AI solutions that
+                                            prioritize fairness, usability, and
+                                            global impact.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border-b border-white/10 mt-6"
+                                ></div>
+                            </div>
+
+                            <div>
+                                <div class="flex items-start gap-4 md:gap-8">
+                                    <p class="text-gray-300 text-sm w-40">
+                                        09:00 – 11:00 AM
+                                    </p>
+
+                                    <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                        <img
+                                            src="https://randomuser.me/api/portraits/women/22.jpg"
+                                            class="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <h4
+                                                class="text-white font-semibold"
+                                            >
+                                                Ava Simmons
+                                            </h4>
+                                            <p class="text-gray-400 text-sm">
+                                                Chief AI Strategist, Meta
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                        >
+                                            Session: The Future of Responsible
+                                            AI
+                                        </h3>
+                                        <p class="text-gray-400 text-sm mt-2">
+                                            A deep dive into ethical AI
+                                            frameworks, safety, and responsible
+                                            innovation.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border-b border-white/10 mt-6"
+                                ></div>
+                            </div>
+                            <!-- SESSION 1 -->
+                            <div>
+                                <div class="flex items-start gap-4 md:gap-8">
+                                    <p class="text-gray-300 text-sm w-40">
+                                        08:00 – 10:00 AM
+                                    </p>
+
+                                    <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                        <img
+                                            src="https://randomuser.me/api/portraits/men/45.jpg"
+                                            class="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <h4
+                                                class="text-white font-semibold"
+                                            >
+                                                Joshua Henry
+                                            </h4>
+                                            <p class="text-gray-400 text-sm">
+                                                AI Research Lead, DeepTech Labs
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                        >
+                                            Session: Opening Keynote – The State
+                                            of AI 2025
+                                        </h3>
+                                        <p class="text-gray-400 text-sm mt-2">
+                                            Explore breakthroughs, global
+                                            shifts, and what's next in deep
+                                            learning and AI ethics.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border-b border-white/10 mt-6"
+                                ></div>
+                            </div>
+
+                            <!-- SESSION 2 -->
+                            <div>
+                                <div class="flex items-start gap-4 md:gap-8">
+                                    <p class="text-gray-300 text-sm w-40">
+                                        12:00 – 14:00 PM
+                                    </p>
+
+                                    <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                        <img
+                                            src="https://randomuser.me/api/portraits/women/65.jpg"
+                                            class="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <h4
+                                                class="text-white font-semibold"
+                                            >
+                                                Leila Zhang
+                                            </h4>
+                                            <p class="text-gray-400 text-sm">
+                                                VP of Machine Learning, Google
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                        >
+                                            Session: Building Human-Centered AI
+                                            Products
+                                        </h3>
+                                        <p class="text-gray-400 text-sm mt-2">
+                                            Learn to design AI solutions that
+                                            prioritize fairness, usability, and
+                                            global impact.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border-b border-white/10 mt-6"
+                                ></div>
+                            </div>
+
+                            <div>
+                                <div class="flex items-start gap-4 md:gap-8">
+                                    <p class="text-gray-300 text-sm w-40">
+                                        09:00 – 11:00 AM
+                                    </p>
+
+                                    <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                        <img
+                                            src="https://randomuser.me/api/portraits/women/22.jpg"
+                                            class="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <h4
+                                                class="text-white font-semibold"
+                                            >
+                                                Ava Simmons
+                                            </h4>
+                                            <p class="text-gray-400 text-sm">
+                                                Chief AI Strategist, Meta
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                        >
+                                            Session: The Future of Responsible
+                                            AI
+                                        </h3>
+                                        <p class="text-gray-400 text-sm mt-2">
+                                            A deep dive into ethical AI
+                                            frameworks, safety, and responsible
+                                            innovation.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border-b border-white/10 mt-6"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 2 -->
+                    <div class="day-content hidden" data-day="2">
+                        <div class="space-y-12">
+                            <!-- SESSION EXAMPLE -->
+                            <div class="flex items-start gap-4 md:gap-8">
+                                <p class="text-gray-300 text-sm w-40">
+                                    10:00 – 12:00 PM
+                                </p>
+
+                                <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/men/12.jpg"
+                                        class="w-14 h-14 rounded-lg object-cover"
+                                    />
+                                    <div>
+                                        <h4 class="text-white font-semibold">
+                                            Adrian Cole
+                                        </h4>
+                                        <p class="text-gray-400 text-sm">
+                                            AI Systems Architect, OpenAI
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                    >
+                                        Session: Scaling Large Language Models
+                                    </h3>
+                                    <p class="text-gray-400 text-sm mt-2">
+                                        Explore architecture, optimization, and
+                                        the future of generative AI systems.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 3 -->
+                    <div class="day-content hidden" data-day="3">
+                        <div class="space-y-12">
+                            <div class="flex items-start gap-4 md:gap-8">
+                                <p class="text-gray-300 text-sm w-40">
+                                    09:00 – 11:00 AM
+                                </p>
+
+                                <div class="flex items-center gap-4 w-56 flex-col md:flex-row">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/women/22.jpg"
+                                        class="w-14 h-14 rounded-lg object-cover"
+                                    />
+                                    <div>
+                                        <h4 class="text-white font-semibold">
+                                            Ava Simmons
+                                        </h4>
+                                        <p class="text-gray-400 text-sm">
+                                            Chief AI Strategist, Meta
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                                    >
+                                        Session: The Future of Responsible AI
+                                    </h3>
+                                    <p class="text-gray-400 text-sm mt-2">
+                                        A deep dive into ethical AI frameworks,
+                                        safety, and responsible innovation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+        <script>
+            const tabs = document.querySelectorAll(".day-tab");
+            const contents = document.querySelectorAll(".day-content");
 
-            <ul class="text-left text-gray-300 space-y-2">
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> All VIP benefits.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> All workshops +
-                breakouts.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Personalized
-                schedules.
-              </li>
-              <li class="flex items-center gap-2">
-                <i class="fa fa-check text-purple-400"></i> Meet & greet with
-                speakers.
-              </li>
-            </ul>
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    const day = tab.getAttribute("data-day");
 
-            <button
-              class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition"
-            >
-              BUY TICKET
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+                    // RESET all tabs
+                    tabs.forEach((t) => {
+                        t.classList.remove("border-purple-500");
+                        t.classList.add("border-transparent");
+                    });
 
-    <!-- Gallery -->
+                    // SET active tab
+                    tab.classList.remove("border-transparent");
+                    tab.classList.add("border-purple-500");
 
-    <section
-      id="gallery"
-      data-moj-web-fixed="false"
-      data-moj-web-type="gallery"
-      data-moj-web-label="Gallery"
-      data-moj-web-category="structural"
-      class="bg-[#0E1230] text-white py-20"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- HEADING -->
-        <div class="text-center mb-12">
-          <p class="text-purple-400 text-sm font-semibold mb-2">
-            [ Event Gallery ]
-          </p>
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-200">
-            Highlights From Past Events
-          </h2>
-          <p class="text-gray-400 mt-3 max-w-2xl mx-auto">
-            Explore moments captured during past summits — innovation,
-            collaboration, and inspiration at their best.
-          </p>
-        </div>
+                    // SHOW matching content
+                    contents.forEach((c) => {
+                        c.classList.add("hidden");
+                        if (c.getAttribute("data-day") === day) {
+                            c.classList.remove("hidden");
+                        }
+                    });
+                });
+            });
+        </script>
 
-        <!-- GALLERY GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- IMAGE 1 -->
-          <div class="group relative overflow-hidden rounded-xl">
-            <img
-              src="https://framerusercontent.com/images/AWTyeaGJh6SP6H1FJXceu92Zjo.jpg?width=1920&height=1080"
-              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div
-              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
-            >
-              <p class="text-white text-lg font-medium">Conference Hall</p>
-            </div>
-          </div>
-
-          <!-- IMAGE 2 -->
-          <div class="group relative overflow-hidden rounded-xl">
-            <img
-              src="https://www.speakeragency.co.uk/media/qd5jkloq/ai-events-london.jpg"
-              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div
-              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
-            >
-              <p class="text-white text-lg font-medium">Keynote Session</p>
-            </div>
-          </div>
-
-          <!-- IMAGE 3 (taller) -->
-          <div class="group relative overflow-hidden rounded-xl md:row-span-2">
-            <img
-              src="https://dkpxaouzpedok.cloudfront.net/wp-content/uploads/2022/06/metaverse-to-change-the-future-of-work-all-you-need-to-know.jpg"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div
-              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
-            >
-              <p class="text-white text-lg font-medium">Networking</p>
-            </div>
-          </div>
-
-          <!-- IMAGE 4 -->
-
-          <!-- IMAGE 5 -->
-          <div class="group relative overflow-hidden rounded-xl">
-            <img
-              src="https://mersus.io/wp-content/uploads/2023/07/AI-and-VR-Integration-image-of-a-man-in-vr-headset-scaled-thegem-blog-default.jpg"
-              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div
-              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
-            >
-              <p class="text-white text-lg font-medium">Panel Discussions</p>
-            </div>
-          </div>
-
-          <div class="group relative overflow-hidden rounded-xl">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/545070b7e4b03ea792c15d50/94785988-6e49-4534-8b52-d691b1f2eaa5/Screen+Shot+2023-11-13+at+9.44.52+AM+-+Stephanie+Brown.png"
-              class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div class="absolute inset-0 gradient"></div>
-            <div
-              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
-            >
-              <p class="text-white text-lg font-medium">Workshops</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MARQUEE SECTION -->
-
-    <section
-      id="marquee"
-      data-moj-web-fixed="false"
-      data-moj-web-type="marquee"
-      data-moj-web-label="Marquee"
-      data-moj-web-category="structural"
-    >
-      <!-- MARQUEE SECTION -->
-      <div class="relative overflow-x-clip pb-20 pt-10 bg-[#0f123a]">
-        <!-- TOP STRIP -->
-        <div
-          class="absolute left-0 w-full -rotate-2 overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600"
+        <!-- pricing -->
+        <section
+            class="h-auto py-10 md:py-20 overflow-hidden relative"
+            id="pricing"
+            data-moj-web-fixed="false"
+            data-moj-web-type="pricing"
+            data-moj-web-label="Pricing"
+            data-moj-web-category="structural"
         >
-          <div class="marquee-inner flex whitespace-nowrap py-4">
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Intelligence / Future Now / Empowering Innovation / Smart Tech /
-            </span>
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Intelligence / Future Now / Empowering Innovation / Smart Tech /
-            </span>
-          </div>
-        </div>
+            <!-- BACKGROUND IMAGE -->
+            <div
+                id="jarallax-container-3"
+                style="
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: -100;
+                    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                "
+            >
+                <img
+                    src="https://srbthemes.kcubeinfotech.com/aivent/html/images/background/7.webp"
+                    class="h-[130vh] fixed w-screen top-0"
+                    alt=""
+                />
+            </div>
 
-        <!-- BOTTOM STRIP -->
-        <div
-          class="absolute left-0 w-full rotate-2 mt-20 overflow-hidden bg-gradient-to-r from-purple-700 to-purple-800"
+            <!-- TOP GRADIENT -->
+            <div class="rotate-180 gradient absolute inset-0 z-10"></div>
+
+            <!-- BOTTOM GRADIENT -->
+            <div class="gradient absolute inset-0 z-10"></div>
+
+            <!-- CONTENT (PRICING) -->
+            <div class="relative z-20 max-w-7xl mx-auto px-4 text-center">
+                <!-- SMALL LABEL -->
+                <p class="text-purple-400 text-sm font-semibold mb-2">
+                    [ Ticket Options ]
+                </p>
+
+                <!-- MAIN HEADING -->
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                >
+                    Choose Your Pass
+                </h2>
+
+                <p class="text-gray-300 max-w-2xl mx-auto mb-4 md:mb-16">
+                    Select the perfect ticket for your needs and gain access to
+                    exclusive sessions, workshops, and more.
+                </p>
+
+                <!-- PRICING GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+                    <!-- STANDARD PASS -->
+                    <div class="space-y-6">
+                        <div
+                            class="relative rounded-xl overflow-hidden shadow-xl"
+                        >
+                            <!-- Background Image -->
+                            <img
+                                src="https://img.freepik.com/free-vector/abstract-colorful-low-poly-triangle-shapes-background_1035-19009.jpg?t=st=1765194482~exp=1765198082~hmac=8cb8b16f3d0c4e417146db5047cc707b14630ce66affefb5e18cadddc8809090&w=2000"
+                                class="absolute inset-0 w-full h-full object-cover"
+                            />
+
+                            <!-- Dark Overlay -->
+                            <div class="absolute inset-0 bg-black/40"></div>
+
+                            <!-- Text Content -->
+                            <div class="relative px-6 py-8 text-left z-10">
+                                <h3 class="text-white text-2xl font-bold">
+                                    Standard
+                                </h3>
+                                <p class="text-white text-xl font-semibold">
+                                    $299
+                                </p>
+                                <p class="text-gray-200 text-xs mt-2">
+                                    October 1 to 5 — 10:00 AM
+                                </p>
+                            </div>
+
+                            <!-- Barcode -->
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="text-left text-gray-300 space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Access to keynotes and sessions.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Exhibition & demo access.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Networking opportunities.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Digital recordings & materials.
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition"
+                        >
+                            BUY TICKET
+                        </button>
+                    </div>
+
+                    <!-- VIP PASS -->
+                    <div class="space-y-6">
+                        <div
+                            class="relative rounded-xl overflow-hidden shadow-xl"
+                        >
+                            <img
+                                src="https://png.pngtree.com/thumb_back/fh260/background/20210429/pngtree-crystal-shape-polygon-abstract-blue-geometric-triangle-background-desgine-image_681463.jpg"
+                                class="absolute inset-0 w-full h-full object-cover"
+                            />
+
+                            <div class="absolute inset-0 bg-black/40"></div>
+
+                            <div class="relative px-6 py-8 text-left z-10">
+                                <h3 class="text-white text-2xl font-bold">
+                                    VIP
+                                </h3>
+                                <p class="text-white text-xl font-semibold">
+                                    $699
+                                </p>
+                                <p class="text-gray-200 text-xs mt-2">
+                                    October 1 to 5 — 10:00 AM
+                                </p>
+                            </div>
+                        </div>
+
+                        <ul class="text-left text-gray-300 space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i> All
+                                Standard benefits.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i> VIP
+                                lounge access.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Priority workshop seating.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Exclusive VIP swag bag.
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition"
+                        >
+                            BUY TICKET
+                        </button>
+                    </div>
+
+                    <!-- FULL ACCESS PASS -->
+                    <div class="space-y-6">
+                        <div
+                            class="relative rounded-xl overflow-hidden shadow-xl"
+                        >
+                            <img
+                                src="https://img.freepik.com/free-vector/bright-polygonal-turquoise-background_1035-6011.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="absolute inset-0 w-full h-full object-cover"
+                            />
+
+                            <div class="absolute inset-0 bg-black/40"></div>
+
+                            <div class="relative px-6 py-8 text-left z-10">
+                                <h3 class="text-white text-2xl font-bold">
+                                    Full Access
+                                </h3>
+                                <p class="text-white text-xl font-semibold">
+                                    $1199
+                                </p>
+                                <p class="text-gray-200 text-xs mt-2">
+                                    October 1 to 5 — 10:00 AM
+                                </p>
+                            </div>
+                        </div>
+
+                        <ul class="text-left text-gray-300 space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i> All
+                                VIP benefits.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i> All
+                                workshops + breakouts.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i>
+                                Personalized schedules.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa fa-check text-purple-400"></i> Meet
+                                & greet with speakers.
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition"
+                        >
+                            BUY TICKET
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+
+        <section  
+            id="gallery"
+            data-moj-web-fixed="false"
+            data-moj-web-type="gallery"
+            data-moj-web-label="Gallery"
+            data-moj-web-category="structural"
+            class="bg-[#0E1230] text-white py-10 md:py-20"
         >
-          <div class="marquee-inner flex whitespace-nowrap py-4">
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Future Shift / Next Intelligence / Future Now / Empowering
-              Innovation /
-            </span>
-            <span class="mx-8 text-white text-5xl font-semibold">
-              Future Shift / Next Intelligence / Future Now / Empowering
-              Innovation /
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- HEADING -->
+                <div class="text-center mb-6 md:mb-12">
+                    <p class="text-purple-400 text-sm font-semibold mb-2">
+                        [ Event Gallery ]
+                    </p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-200">
+                        Highlights From Past Events
+                    </h2>
+                    <p class="text-gray-400 mt-3 max-w-2xl mx-auto">
+                        Explore moments captured during past summits —
+                        innovation, collaboration, and inspiration at their
+                        best.
+                    </p>
+                </div>
 
-    <style>
-      /* Only text moves */
-      .marquee-inner {
-        display: flex;
-        animation: marquee-scroll 15s linear infinite;
-      }
+                <!-- GALLERY GRID -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+                >
+                    <!-- IMAGE 1 -->
+                    <div class="group relative overflow-hidden rounded-xl">
+                        <img
+                            src="https://framerusercontent.com/images/AWTyeaGJh6SP6H1FJXceu92Zjo.jpg?width=1920&height=1080"
+                            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
+                        >
+                            <p class="text-white text-lg font-medium">
+                                Conference Hall
+                            </p>
+                        </div>
+                    </div>
 
-      @keyframes marquee-scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-    </style>
+                    <!-- IMAGE 2 -->
+                    <div class="group relative overflow-hidden rounded-xl">
+                        <img
+                            src="https://www.speakeragency.co.uk/media/qd5jkloq/ai-events-london.jpg"
+                            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
+                        >
+                            <p class="text-white text-lg font-medium">
+                                Keynote Session
+                            </p>
+                        </div>
+                    </div>
 
-    <!-- FAQ -->
+                    <!-- IMAGE 3 (taller) -->
+                    <div
+                        class="group relative overflow-hidden rounded-xl md:row-span-2"
+                    >
+                        <img
+                            src="https://dkpxaouzpedok.cloudfront.net/wp-content/uploads/2022/06/metaverse-to-change-the-future-of-work-all-you-need-to-know.jpg"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
+                        >
+                            <p class="text-white text-lg font-medium">
+                                Networking
+                            </p>
+                        </div>
+                    </div>
 
-    <section
-      id="faq"
-      data-moj-web-fixed="false"
-      data-moj-web-type="faq"
-      data-moj-web-label="faq"
-      data-moj-web-category="structural"
-      class="text-white pt-44 pb-20"
-    >
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-        <!-- LEFT CONTENT -->
-        <div>
-          <p class="text-purple-400 text-sm font-semibold mb-2">
-            [ Everything You Need to Know ]
-          </p>
-          <h2
-            class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
-          >
-            Frequently Asked <span class="text-white">Questions</span>
-          </h2>
-        </div>
+                    <!-- IMAGE 4 -->
 
-        <!-- RIGHT FAQ ACCORDION -->
-        <div class="space-y-4">
-          <!-- FAQ ITEM 1 (OPENED BY DEFAULT) -->
-          <details open class="group border-b border-white/20 pb-4">
-            <summary
-              class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
-            >
-              What is the AI Summit 2025?
-              <span class="transition-transform group-open:rotate-180">⌄</span>
-            </summary>
-            <p class="mt-3 text-gray-400 leading-relaxed">
-              AI Summit 2025 is a global event bringing together innovators,
-              researchers, and tech leaders to explore the latest advancements
-              in artificial intelligence.
-            </p>
-          </details>
+                    <!-- IMAGE 5 -->
+                    <div class="group relative overflow-hidden rounded-xl">
+                        <img
+                            src="https://mersus.io/wp-content/uploads/2023/07/AI-and-VR-Integration-image-of-a-man-in-vr-headset-scaled-thegem-blog-default.jpg"
+                            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
+                        >
+                            <p class="text-white text-lg font-medium">
+                                Panel Discussions
+                            </p>
+                        </div>
+                    </div>
 
-          <!-- FAQ ITEM 2 -->
-          <details class="group border-b border-white/20 pb-4">
-            <summary
-              class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
-            >
-              When and where will the event be held?
-              <span class="transition-transform group-open:rotate-180">⌄</span>
-            </summary>
-            <p class="mt-3 text-gray-400 leading-relaxed">
-              The event will be held at an international venue, with dates and
-              location announced on our website.
-            </p>
-          </details>
+                    <div class="group relative overflow-hidden rounded-xl">
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/545070b7e4b03ea792c15d50/94785988-6e49-4534-8b52-d691b1f2eaa5/Screen+Shot+2023-11-13+at+9.44.52+AM+-+Stephanie+Brown.png"
+                            class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 gradient"></div>
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
+                        >
+                            <p class="text-white text-lg font-medium">
+                                Workshops
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <!-- FAQ ITEM 3 -->
-          <details class="group border-b border-white/20 pb-4">
-            <summary
-              class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
-            >
-              How can I register for the event?
-              <span class="transition-transform group-open:rotate-180">⌄</span>
-            </summary>
-            <p class="mt-3 text-gray-400 leading-relaxed">
-              Registration is available through our official event website.
-            </p>
-          </details>
+        <!-- MARQUEE SECTION -->
 
-          <!-- FAQ ITEM 4 -->
-          <details class="group border-b border-white/20 pb-4">
-            <summary
-              class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
-            >
-              What ticket options are available?
-              <span class="transition-transform group-open:rotate-180">⌄</span>
-            </summary>
-            <p class="mt-3 text-gray-400 leading-relaxed">
-              We offer standard, premium, and VIP ticket options.
-            </p>
-          </details>
-
-          <!-- FAQ ITEM 5 -->
-          <details class="group border-b border-white/20 pb-4">
-            <summary
-              class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
-            >
-              Can I transfer my ticket to someone else?
-              <span class="transition-transform group-open:rotate-180">⌄</span>
-            </summary>
-            <p class="mt-3 text-gray-400 leading-relaxed">
-              Yes, tickets can be transferred by contacting our support team.
-            </p>
-          </details>
-
-          <!-- FAQ ITEM 6 -->
-          <details class="group border-b border-white/20 pb-4">
-            <summary
-              class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
-            >
-              Will there be virtual participation?
-              <span class="transition-transform group-open:rotate-180">⌄</span>
-            </summary>
-            <p class="mt-3 text-gray-400 leading-relaxed">
-              Yes, the event will support both in-person and virtual attendance.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Banner -->
-
-    <section
-      class="h-auto py-20 overflow-hidden relative"
-      id="banner"
-      data-moj-web-fixed="false"
-      data-moj-web-type="banner"
-      data-moj-web-label="banner"
-      data-moj-web-category="structural"
-    >
-      <!-- IMAGE BACKGROUND -->
-      <div
-        id="jarallax-container-3"
-        style="
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          z-index: -100;
-          clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
-          background-size: cover;
-          background-repeat: no-repeat;
-        "
-      >
-        <img
-          src="https://img.freepik.com/free-photo/brain-networks-artificial-intelligence-concept_23-2151977503.jpg?t=st=1765197169~exp=1765200769~hmac=09908a089dfddba558b32690858b6d0247fbdfbe87b271adf67898353ca9d0cb&w=2000"
-          class="h-[130vh] fixed w-screen top-0"
-          alt=""
-        />
-      </div>
-
-      <!-- GRADIENT TOP -->
-      <div class="rotate-180 gradient absolute inset-0 z-10"></div>
-
-      <!-- GRADIENT BOTTOM -->
-      <div class="gradient absolute inset-0 z-10"></div>
-
-      <!-- CONTENT -->
-      <div class="relative z-20 max-w-5xl mx-auto text-center px-6">
-        <p class="text-purple-400 text-sm font-semibold mb-3">
-          [ Don’t Miss Out ]
-        </p>
-
-        <h2
-          class="text-4xl md:text-7xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60"
+        <section
+            id="marquee"
+            data-moj-web-fixed="false"
+            data-moj-web-type="marquee"
+            data-moj-web-label="Marquee"
+            data-moj-web-category="structural"
         >
-          Join the AI Summit 2025
-        </h2>
+            <!-- MARQUEE SECTION -->
+            <div class="relative overflow-x-clip pb-20 pt-10 bg-[#0f123a]">
+                <!-- TOP STRIP -->
+                <div
+                    class="absolute left-0 w-full -rotate-2 overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600"
+                >
+                    <div class="marquee-inner flex whitespace-nowrap py-4">
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Intelligence / Future Now / Empowering Innovation /
+                            Smart Tech /
+                        </span>
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Intelligence / Future Now / Empowering Innovation /
+                            Smart Tech /
+                        </span>
+                    </div>
+                </div>
 
-        <p class="text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed text-lg">
-          Be part of the world’s most influential AI gathering where industry
-          leaders, creators, researchers, and innovators unite to shape the
-          future.
-        </p>
+                <!-- BOTTOM STRIP -->
+                <div
+                    class="absolute left-0 w-full rotate-2 mt-20 overflow-hidden bg-gradient-to-r from-purple-700 to-purple-800"
+                >
+                    <div class="marquee-inner flex whitespace-nowrap py-4">
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Future Shift / Next Intelligence / Future Now /
+                            Empowering Innovation /
+                        </span>
+                        <span class="mx-8 text-white text-5xl font-semibold">
+                            Future Shift / Next Intelligence / Future Now /
+                            Empowering Innovation /
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- CTA BUTTON -->
-        <a
-          href="#registration"
-          class="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold px-10 py-4 rounded shadow-lg hover:opacity-90 transition-all duration-300 text-base"
+        <style>
+            /* Only text moves */
+            .marquee-inner {
+                display: flex;
+                animation: marquee-scroll 15s linear infinite;
+            }
+
+            @keyframes marquee-scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        </style>
+
+        <!-- FAQ -->
+
+        <section
+            id="faq"
+            data-moj-web-fixed="false"
+            data-moj-web-type="faq"
+            data-moj-web-label="faq"
+            data-moj-web-category="structural"
+            class="text-white pt-36 md:pt-44 pb-10 md:pb-20"
         >
-          Register Now
-        </a>
-      </div>
-    </section>
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+                <!-- LEFT CONTENT -->
+                <div>
+                    <p class="text-purple-400 text-sm font-semibold mb-2">
+                        [ Everything You Need to Know ]
+                    </p>
+                    <h2
+                        class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70 drop-shadow-xl"
+                    >
+                        Frequently Asked
+                        <span class="text-white">Questions</span>
+                    </h2>
+                </div>
 
-    <!-- footer -->
-    <footer class="text-gray-300 pt-16 pb-10">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-        <!-- LOGO + ABOUT -->
-        <div>
-          <h3 class="text-white text-2xl font-bold mb-4">AI Summit 2025</h3>
-          <p class="text-gray-400 leading-relaxed text-sm">
-            The global gathering of innovators, leaders, and creators shaping
-            the future of artificial intelligence.
-          </p>
+                <!-- RIGHT FAQ ACCORDION -->
+                <div class="space-y-4">
+                    <!-- FAQ ITEM 1 (OPENED BY DEFAULT) -->
+                    <details open class="group border-b border-white/20 pb-4">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
+                        >
+                            What is the AI Summit 2025?
+                            <span
+                                class="transition-transform group-open:rotate-180"
+                                >⌄</span
+                            >
+                        </summary>
+                        <p class="mt-3 text-gray-400 leading-relaxed">
+                            AI Summit 2025 is a global event bringing together
+                            innovators, researchers, and tech leaders to explore
+                            the latest advancements in artificial intelligence.
+                        </p>
+                    </details>
 
-          <!-- SOCIAL ICONS -->
-          <div class="flex gap-4 mt-6">
-            <a href="#" class="hover:text-white transition"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a href="#" class="hover:text-white transition"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-            <a href="#" class="hover:text-white transition"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a href="#" class="hover:text-white transition"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-          </div>
-        </div>
+                    <!-- FAQ ITEM 2 -->
+                    <details class="group border-b border-white/20 pb-4">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
+                        >
+                            When and where will the event be held?
+                            <span
+                                class="transition-transform group-open:rotate-180"
+                                >⌄</span
+                            >
+                        </summary>
+                        <p class="mt-3 text-gray-400 leading-relaxed">
+                            The event will be held at an international venue,
+                            with dates and location announced on our website.
+                        </p>
+                    </details>
 
-        <!-- QUICK LINKS -->
-        <div>
-          <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
-          <ul class="space-y-3 text-sm">
-            <li>
-              <a class="hover:text-white transition" href="#about"
-                >About Event</a
-              >
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#speakers"
-                >Speakers</a
-              >
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#schedule"
-                >Schedule</a
-              >
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#venue">Venue</a>
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#registration"
-                >Registration</a
-              >
-            </li>
-          </ul>
-        </div>
+                    <!-- FAQ ITEM 3 -->
+                    <details class="group border-b border-white/20 pb-4">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
+                        >
+                            How can I register for the event?
+                            <span
+                                class="transition-transform group-open:rotate-180"
+                                >⌄</span
+                            >
+                        </summary>
+                        <p class="mt-3 text-gray-400 leading-relaxed">
+                            Registration is available through our official event
+                            website.
+                        </p>
+                    </details>
 
-        <!-- SUPPORT -->
-        <div>
-          <h4 class="text-white font-semibold text-lg mb-4">Support</h4>
-          <ul class="space-y-3 text-sm">
-            <li><a class="hover:text-white transition" href="#">FAQs</a></li>
-            <li>
-              <a class="hover:text-white transition" href="#">Help Center</a>
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#">Contact Us</a>
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#"
-                >Terms & Conditions</a
-              >
-            </li>
-            <li>
-              <a class="hover:text-white transition" href="#">Privacy Policy</a>
-            </li>
-          </ul>
-        </div>
+                    <!-- FAQ ITEM 4 -->
+                    <details class="group border-b border-white/20 pb-4">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
+                        >
+                            What ticket options are available?
+                            <span
+                                class="transition-transform group-open:rotate-180"
+                                >⌄</span
+                            >
+                        </summary>
+                        <p class="mt-3 text-gray-400 leading-relaxed">
+                            We offer standard, premium, and VIP ticket options.
+                        </p>
+                    </details>
 
-        <!-- CONTACT INFO -->
-        <div>
-          <h4 class="text-white font-semibold text-lg mb-4">Contact</h4>
-          <ul class="space-y-3 text-sm">
-            <li>
-              <span class="text-gray-400">📍 </span> New York Tech Convention
-              Center
-            </li>
-            <li><span class="text-gray-400">📞 </span> +1 234 567 890</li>
-            <li>
-              <span class="text-gray-400">✉️ </span> support@aisummit2025.com
-            </li>
-          </ul>
-        </div>
-      </div>
+                    <!-- FAQ ITEM 5 -->
+                    <details class="group border-b border-white/20 pb-4">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
+                        >
+                            Can I transfer my ticket to someone else?
+                            <span
+                                class="transition-transform group-open:rotate-180"
+                                >⌄</span
+                            >
+                        </summary>
+                        <p class="mt-3 text-gray-400 leading-relaxed">
+                            Yes, tickets can be transferred by contacting our
+                            support team.
+                        </p>
+                    </details>
 
-      <!-- DIVIDER -->
-      <div
-        class="border-t border-white/10 mt-10 pt-6 text-center text-sm text-gray-500"
-      >
-        © 2025 AI Summit. All Rights Reserved.
-      </div>
-    </footer>
-  </body>
+                    <!-- FAQ ITEM 6 -->
+                    <details class="group border-b border-white/20 pb-4">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-200 group-open:text-white"
+                        >
+                            Will there be virtual participation?
+                            <span
+                                class="transition-transform group-open:rotate-180"
+                                >⌄</span
+                            >
+                        </summary>
+                        <p class="mt-3 text-gray-400 leading-relaxed">
+                            Yes, the event will support both in-person and
+                            virtual attendance.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner -->
+
+        <section
+            class="h-auto py-10 md:py-20 overflow-hidden relative"
+            id="banner"
+            data-moj-web-fixed="false"
+            data-moj-web-type="banner"
+            data-moj-web-label="banner"
+            data-moj-web-category="structural"
+        >
+            <!-- IMAGE BACKGROUND -->
+            <div
+                id="jarallax-container-3"
+                style="
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: -100;
+                    clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                "
+            >
+                <img
+                    src="https://img.freepik.com/free-photo/brain-networks-artificial-intelligence-concept_23-2151977503.jpg?t=st=1765197169~exp=1765200769~hmac=09908a089dfddba558b32690858b6d0247fbdfbe87b271adf67898353ca9d0cb&w=2000"
+                    class="h-[130vh] fixed w-screen top-0"
+                    alt=""
+                />
+            </div>
+
+            <!-- GRADIENT TOP -->
+            <div class="rotate-180 gradient absolute inset-0 z-10"></div>
+
+            <!-- GRADIENT BOTTOM -->
+            <div class="gradient absolute inset-0 z-10"></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-20 max-w-5xl mx-auto text-center px-4">
+                <p class="text-purple-400 text-sm font-semibold mb-3">
+                    [ Don’t Miss Out ]
+                </p>
+
+                <h2
+                    class="text-4xl md:text-7xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60"
+                >
+                    Join the AI Summit 2025
+                </h2>
+
+                <p
+                    class="text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed md:text-lg"
+                >
+                    Be part of the world’s most influential AI gathering where
+                    industry leaders, creators, researchers, and innovators
+                    unite to shape the future.
+                </p>
+
+                <!-- CTA BUTTON -->
+                <a
+                    href="#registration"
+                    class="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold px-10 py-4 rounded shadow-lg hover:opacity-90 transition-all duration-300 text-base"
+                >
+                    Register Now
+                </a>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="text-gray-300 pt-10 md:pt-16 pb-10">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-10">
+                <!-- LOGO + ABOUT -->
+                <div>
+                    <h3 class="text-white text-2xl font-bold mb-4">
+                        AI Summit 2025
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        The global gathering of innovators, leaders, and
+                        creators shaping the future of artificial intelligence.
+                    </p>
+
+                    <!-- SOCIAL ICONS -->
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="hover:text-white transition"
+                            ><i class="fa-brands fa-facebook-f"></i
+                        ></a>
+                        <a href="#" class="hover:text-white transition"
+                            ><i class="fa-brands fa-twitter"></i
+                        ></a>
+                        <a href="#" class="hover:text-white transition"
+                            ><i class="fa-brands fa-linkedin-in"></i
+                        ></a>
+                        <a href="#" class="hover:text-white transition"
+                            ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                    </div>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <a class="hover:text-white transition" href="#about"
+                                >About Event</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="hover:text-white transition"
+                                href="#speakers"
+                                >Speakers</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="hover:text-white transition"
+                                href="#schedule"
+                                >Schedule</a
+                            >
+                        </li>
+                        <li>
+                            <a class="hover:text-white transition" href="#venue"
+                                >Venue</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="hover:text-white transition"
+                                href="#registration"
+                                >Registration</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SUPPORT -->
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">
+                        Support
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <a class="hover:text-white transition" href="#"
+                                >FAQs</a
+                            >
+                        </li>
+                        <li>
+                            <a class="hover:text-white transition" href="#"
+                                >Help Center</a
+                            >
+                        </li>
+                        <li>
+                            <a class="hover:text-white transition" href="#"
+                                >Contact Us</a
+                            >
+                        </li>
+                        <li>
+                            <a class="hover:text-white transition" href="#"
+                                >Terms & Conditions</a
+                            >
+                        </li>
+                        <li>
+                            <a class="hover:text-white transition" href="#"
+                                >Privacy Policy</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT INFO -->
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">
+                        Contact
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <span class="text-gray-400">📍 </span> New York Tech
+                            Convention Center
+                        </li>
+                        <li>
+                            <span class="text-gray-400">📞 </span> +1 234 567
+                            890
+                        </li>
+                        <li>
+                            <span class="text-gray-400">✉️ </span>
+                            support@aisummit2025.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DIVIDER -->
+            <div
+                class="border-t border-white/10 mt-10 pt-6 text-center text-sm text-gray-500"
+            >
+                © 2025 AI Summit. All Rights Reserved.
+            </div>
+        </footer>
+    </body>
 </html>

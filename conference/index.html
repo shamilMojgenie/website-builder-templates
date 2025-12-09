@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conference Templates</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            .playfair {
+                font-family: "Playfair Display", serif;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+
+    <body class="bg-[#FAF7F2] text-[#1a1a1a]">
+        <!-- HEADER -->
+        <header
+            class="w-full py-6 px-10 flex justify-between items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50"
+        >
+            <a href="/" class="text-3xl playfair font-bold">Templates</a>
+
+            <a
+                href="/"
+                class="px-6 py-2 border border-[#1a1a1a] rounded-full hover:bg-[#1a1a1a] hover:text-white transition"
+            >
+                Back Home
+            </a>
+        </header>
+
+        <!-- TITLE -->
+        <section class="max-w-[1500px] mx-auto px-8 pt-20 pb-6 text-center">
+            <h1 class="text-5xl playfair font-semibold">
+                Conference Templates
+            </h1>
+            <p class="text-lg opacity-70 mt-3">
+                Premium layouts for concerts, parties, and celebrations
+            </p>
+        </section>
+
+        <!-- Divider -->
+        <div
+            class="w-24 mx-auto h-[3px] bg-[#1a1a1a] rounded-full mb-14 opacity-40"
+        ></div>
+
+        <!-- TEMPLATES GRID -->
+        <section class="max-w-[1500px] mx-auto px-8 pb-24">
+            <div
+                id="templateGrid"
+                class="grid grid-cols-1 md:grid-cols-3 gap-6"
+            ></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="w-full text-center py-10 text-sm opacity-70">
+            © 2025 Templates — All Rights Reserved.
+        </footer>
+
+        <!-- JAVASCRIPT TEMPLATE ARRAY + RENDERING -->
+        <script>
+            const templates = [
+                {
+                    title: "Conference Template - 1",
+                    desc: "Bold and modern layout designed for impactful conferences.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765271496/Conference-Template-1-12-09-2025_02_41_PM_n7qjze.png",
+                    link: "/conference/template-1/index.html",
+                },
+                {
+                    title: "Conference Template - 2",
+                    desc: "Clean, structured design ideal for corporate summits.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272734/4ed1c0ca-5abe-410f-a858-e0ee8c2ad85a.png",
+                    link: "/conference/template-2/index.html",
+                },
+                {
+                    title: "Conference Template - 3",
+                    desc: "Bright and engaging layout tailored for dynamic events.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272771/16c06af8-0f98-4c2c-8c5f-15ae732b2f1f.png",
+                    link: "/conference/template-3/index.html",
+                },
+                {
+                    title: "Conference Template - 4",
+                    desc: "Elegant professional theme suited for keynote sessions.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272809/3496c0be-91dd-4d2a-a0ad-e3ef3e9218f0.png",
+                    link: "/conference/template-4/index.html",
+                },
+                {
+                    title: "Conference Template - 5",
+                    desc: "Minimal and sleek layout with strong emphasis on clarity.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272865/c29a9050-eef4-4442-ac37-0e9f1bcac7b4.png",
+                    link: "/conference/template-5/index.html",
+                },
+                {
+                    title: "Conference Template - 6",
+                    desc: "Premium visual style crafted for high-end conferences.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272871/a3404207-77d6-4764-bce6-a3cc511632b3.png",
+                    link: "/conference/template-6/index.html",
+                },
+                {
+                    title: "Conference Template - 7",
+                    desc: "Aesthetic typography and spacing for modern business events.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272925/5083cfa6-b868-45e7-b11c-140276cc9bbe.png",
+                    link: "/conference/template-7/index.html",
+                },
+                {
+                    title: "Conference Template - 8",
+                    desc: "Dynamic, high-energy design perfect for creative summits.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272932/7b51bdc5-3b7d-4290-b876-ea1061449287.png",
+                    link: "/conference/template-8/index.html",
+                },
+                {
+                    title: "Conference Template - 9",
+                    desc: "Clean minimal theme built for clarity and professionalism.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272971/58e3ff6a-72e8-4e50-a5ca-6c3eca181dae.png",
+                    link: "/conference/template-9/index.html",
+                },
+                {
+                    title: "Conference Template - 10",
+                    desc: "Balanced modern layout with smooth section flow.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765272994/6fd227fa-cf47-42c1-9b27-212d25934313.png",
+                    link: "/conference/template-10/index.html",
+                },
+                {
+                    title: "Conference Template - 11",
+                    desc: "Vivid and energetic theme ideal for tech and startup events.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273061/16ce2335-85c4-4528-b33a-7af5841b7ca4.png",
+                    link: "/conference/template-11/index.html",
+                },
+                {
+                    title: "Conference Template - 12",
+                    desc: "Refined minimal layout with strong visual hierarchy.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765273080/4862ddf6-0775-46c0-8f9f-9e6d0f8ba4fd.png",
+                    link: "/conference/template-12/index.html",
+                },
+                {
+                    title: "Conference Template - 13",
+                    desc: "Refined minimal layout with strong visual hierarchy.",
+                    img: "https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765274808/439346c9-e18b-4827-acf1-86db04b1050c.png",
+                    link: "/conference/template-13/index.html",
+                },
+            ];
+
+            const templateGrid = document.getElementById("templateGrid");
+
+            templateGrid.innerHTML = templates
+                .map(
+                    (t) => `
+           <a href="${t.link}" 
+   class="block group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+
+    <!-- Full Image Card -->
+    <div class="relative h-[320px] rounded-2xl overflow-hidden">
+
+        <!-- Image -->
+        <img src="${t.img}" 
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+
+        <!-- Text Inside Image -->
+        <div class="absolute bottom-0 left-0 right-0 p-6 
+                    bg-gradient-to-t from-black/70 via-black/50 to-transparent">
+
+            <h3 class="text-2xl playfair text-white mb-1 drop-shadow-md">
+                ${t.title}
+            </h3>
+
+            <p class="text-white/80 text-sm leading-relaxed drop-shadow">
+                ${t.desc}
+            </p>
+        </div>
+
+    </div>
+
+</a>
+        `
+                )
+                .join("");
+        </script>
+    </body>
+</html>
