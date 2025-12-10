@@ -35,7 +35,14 @@
             }
         </style>
 
-        <section class="relative bg-[#FFF5E1] z-[49]">
+        <section
+            class="relative bg-[#FFF5E1] z-[49]"
+            id="navbar"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
+        >
             <div class="absolute inset-0 bg-[#FFF5E1]"></div>
 
             <div class="relative">
@@ -126,6 +133,11 @@
 
         <section
             class="relative lg:min-w-[980px] bg-[#333] overflow-hidden hero-section"
+            id="hero-main"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
+            data-moj-web-category="structural"
         >
             <!-- HERO IMAGE -->
             <div
@@ -292,111 +304,131 @@
             updateCountdown();
         </script>
 
-        <section class="w-full bg-[#B2672A] pt-10 md:pt-20 pb-50">
-            <div
-                class="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-10"
-            >
-                <!-- LEFT TEXT -->
-                <div class="md:col-span-1">
-                    <h2
-                        class="text-4xl md:text-[48px] leading-tight text-white font-serif mb-6"
-                    >
-                        The Wedding<br />Weekend
-                    </h2>
-
-                    <p class="text-white text-lg opacity-90 leading-relaxed">
-                        Friday, Oct. 20, to<br />
-                        Sunday, Oct. 22, 2035
-                    </p>
-                </div>
-
-                <!-- CENTER ICON -->
-                <div class="flex justify-center items-start pt-4">
-                    <!-- Replace this with your rings icon -->
-                    <img
-                        src="https://c.animaapp.com/miy5grv627qBCK/assets/icon-4.svg"
-                        alt="Rings"
-                        class="w-30 opacity-90"
-                    />
-                </div>
-
-                <!-- RIGHT TEXT -->
-                <div class="md:col-span-1">
-                    <h3 class="text-white text-2xl font-serif mb-4">
-                        We are delighted to invite you to<br />the celebration
-                        of our marriage
-                    </h3>
-                    <p class="text-white opacity-90 leading-relaxed">
-                        I'm a paragraph. Click here to add your own text and
-                        edit me. I'm a great place for you to tell a story and
-                        let your users know a little more about you.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- LOWER IMAGE SECTION -->
-        <section class="w-full bg-[#F7F3E7]">
-            <div
-                class="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20"
-            >
-                <!-- Ceremony -->
-                <div class="flex flex-col items-center text-center -mt-40">
-                    <img
-                        src="https://static.wixstatic.com/media/c837a6_d67723961f9b4fcdb31bafe7220e42c6~mv2.jpg/v1/crop/x_897,y_0,w_2665,h_4000/fill/w_490,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-119494313.jpg"
-                        class="w-[500px] h-100 md:h-150 lg:h-[700px] object-cover shadow-xl mb-10"
-                    />
-
-                    <h2
-                        class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4"
-                    >
-                        Ceremony
-                    </h2>
-
-                    <p
-                        class="text-[#3B3027] opacity-70 leading-relaxed text-[16px]"
-                    >
-                        Saturday, Oct. 21, 4 p.m. St. Mary’s Church <br />
-                        500 Terry Francine Street, San Francisco
-                    </p>
-                </div>
-
-                <!-- Reception -->
-                <div class="flex flex-col items-center text-center md:-mt-40">
-                    <img
-                        src="https://static.wixstatic.com/media/c837a6_e426c5688766440eaa807fabba2622d9~mv2.jpg/v1/fill/w_490,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1264870600%20copy.jpg"
-                        class="w-[500px] h-100 md:h-150 lg:h-[700px] object-cover shadow-xl mb-10"
-                    />
-
-                    <h2
-                        class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4"
-                    >
-                        Reception
-                    </h2>
-
-                    <p
-                        class="text-[#3B3027] opacity-70 leading-relaxed text-[16px]"
-                    >
-                        Saturday, Oct. 21, 6 p.m. — 1 a.m. St. Mary’s Gardens
-                        <br />
-                        500 Terry Francine Street, San Francisco
-                    </p>
-                </div>
-            </div>
-
-            <!-- BUTTON -->
-            <div class="flex justify-center mt-10 md:mt-16">
-                <a
-                    href="#schedule"
-                    class="border border-[#3B3027] text-[#3B3027] px-10 py-3 rounded-full text-lg font-light hover:bg-[#3B3027] hover:text-white transition-all"
+        <section
+            id="welcome"
+            data-moj-web-fixed="false"
+            data-moj-web-type="Welcome"
+            data-moj-web-label="Welcome Intro Section"
+            data-moj-web-category="structural"
+        >
+            <div class="w-full bg-[#B2672A] pt-10 md:pt-20 pb-50">
+                <div
+                    class="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-10"
                 >
-                    Schedule & RSVP
-                </a>
+                    <!-- LEFT TEXT -->
+                    <div class="md:col-span-1">
+                        <h2
+                            class="text-4xl md:text-[48px] leading-tight text-white font-serif mb-6"
+                        >
+                            The Wedding<br />Weekend
+                        </h2>
+
+                        <p
+                            class="text-white text-lg opacity-90 leading-relaxed"
+                        >
+                            Friday, Oct. 20, to<br />
+                            Sunday, Oct. 22, 2035
+                        </p>
+                    </div>
+
+                    <!-- CENTER ICON -->
+                    <div class="flex justify-center items-start pt-4">
+                        <!-- Replace this with your rings icon -->
+                        <img
+                            src="https://c.animaapp.com/miy5grv627qBCK/assets/icon-4.svg"
+                            alt="Rings"
+                            class="w-30 opacity-90"
+                        />
+                    </div>
+
+                    <!-- RIGHT TEXT -->
+                    <div class="md:col-span-1">
+                        <h3 class="text-white text-2xl font-serif mb-4">
+                            We are delighted to invite you to<br />the
+                            celebration of our marriage
+                        </h3>
+                        <p class="text-white opacity-90 leading-relaxed">
+                            I'm a paragraph. Click here to add your own text and
+                            edit me. I'm a great place for you to tell a story
+                            and let your users know a little more about you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOWER IMAGE SECTION -->
+            <div class="w-full bg-[#F7F3E7]">
+                <div
+                    class="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20"
+                >
+                    <!-- Ceremony -->
+                    <div class="flex flex-col items-center text-center -mt-40">
+                        <img
+                            src="https://static.wixstatic.com/media/c837a6_d67723961f9b4fcdb31bafe7220e42c6~mv2.jpg/v1/crop/x_897,y_0,w_2665,h_4000/fill/w_490,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-119494313.jpg"
+                            class="w-[500px] h-100 md:h-150 lg:h-[700px] object-cover shadow-xl mb-10"
+                        />
+
+                        <h2
+                            class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4"
+                        >
+                            Ceremony
+                        </h2>
+
+                        <p
+                            class="text-[#3B3027] opacity-70 leading-relaxed text-[16px]"
+                        >
+                            Saturday, Oct. 21, 4 p.m. St. Mary’s Church <br />
+                            500 Terry Francine Street, San Francisco
+                        </p>
+                    </div>
+
+                    <!-- Reception -->
+                    <div
+                        class="flex flex-col items-center text-center md:-mt-40"
+                    >
+                        <img
+                            src="https://static.wixstatic.com/media/c837a6_e426c5688766440eaa807fabba2622d9~mv2.jpg/v1/fill/w_490,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1264870600%20copy.jpg"
+                            class="w-[500px] h-100 md:h-150 lg:h-[700px] object-cover shadow-xl mb-10"
+                        />
+
+                        <h2
+                            class="text-4xl md:text-[48px] font-serif text-[#3B3027] mb-4"
+                        >
+                            Reception
+                        </h2>
+
+                        <p
+                            class="text-[#3B3027] opacity-70 leading-relaxed text-[16px]"
+                        >
+                            Saturday, Oct. 21, 6 p.m. — 1 a.m. St. Mary’s
+                            Gardens
+                            <br />
+                            500 Terry Francine Street, San Francisco
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BUTTON -->
+                <div class="flex justify-center mt-10 md:mt-16">
+                    <a
+                        href="#schedule"
+                        class="border border-[#3B3027] text-[#3B3027] px-10 py-3 rounded-full text-lg font-light hover:bg-[#3B3027] hover:text-white transition-all"
+                    >
+                        Schedule & RSVP
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- ABOUT THE BRIDE SECTION -->
-        <section class="w-full bg-[#F7F3E7] py-10 md:py-20">
+        <section
+            class="w-full bg-[#F7F3E7] py-10 md:py-20"
+            id="about-bride-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="bride"
+            data-moj-web-label="about bride Section"
+            data-moj-web-category="structural"
+        >
             <div
                 class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 px-4 md:px-8"
             >
@@ -440,7 +472,14 @@
         </section>
 
         <!-- ABOUT THE GROOM SECTION -->
-        <section class="w-full bg-[#EFE7D8] py-10 md:py-20">
+        <section
+            class="w-full bg-[#EFE7D8] py-10 md:py-20"
+            id="about-groom-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="groom"
+            data-moj-web-label="about groom Section"
+            data-moj-web-category="structural"
+        >
             <div
                 class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 px-4 md:px-8"
             >
@@ -480,7 +519,14 @@
         </section>
 
         <!-- OUR LOVE STORY SECTION -->
-        <section class="w-full bg-[#F7F3E7] py-10 md:py-20">
+        <section
+            class="w-full bg-[#F7F3E7] py-10 md:py-20"
+            id="story-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="story"
+            data-moj-web-label="story Section"
+            data-moj-web-category="structural"
+        >
             <div
                 class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 px-4 md:px-8"
             >
@@ -538,6 +584,11 @@
         <!-- INFO BLOCK SECTION -->
         <section
             class="w-full bg-[#B2672A] text-white py-10 md:py-20 relative overflow-hidden"
+            id="plans-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="dress-code"
+            data-moj-web-label="Wedding Plans"
+            data-moj-web-category="structural"
         >
             <div
                 class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20"
@@ -617,7 +668,14 @@
         </section>
 
         <!-- VENUE SECTION -->
-        <section class="w-full bg-[#F7F3E7] py-10 md:py-20">
+        <section
+            class="w-full bg-[#F7F3E7] py-10 md:py-20"
+            id="venue-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="venue"
+            data-moj-web-label="Wedding Venue"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-[1400px] mx-auto px-4 md:px-8 text-center">
                 <!-- Heading -->
                 <h2
@@ -670,7 +728,14 @@
         </section>
 
         <!-- FOOTER SECTION -->
-        <footer class="w-full bg-[#3B3027] text-[#FFF5E1] py-16">
+        <section
+            class="w-full bg-[#3B3027] text-[#FFF5E1] py-16"
+            id="footer-block"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="Wedding footer"
+            data-moj-web-category="structural"
+        >
             <div class="max-w-[1400px] mx-auto px-8 text-center space-y-10">
                 <!-- Names -->
                 <h2 class="text-[42px] font-serif tracking-wide">
@@ -717,6 +782,6 @@
                     © 2035 Abigail & Rick — All Rights Reserved
                 </p>
             </div>
-        </footer>
+        </section>
     </body>
 </html>
