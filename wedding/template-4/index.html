@@ -103,8 +103,77 @@
       </div>
     </section>
     <script>
-      (function () { const isEditor = window.frameElement && window.frameElement.classList.contains("gjs-frame"); const menuToggle = document.getElementById("menuToggle"); const mobileMenu = document.getElementById("mobileMenu"); const closeMenu = document.getElementById("closeMenu"); const nav = document.getElementById("heroNavbar"); const links = document.querySelectorAll("#heroNavbar .nav-link"); if (!menuToggle || !mobileMenu || !closeMenu || !nav) return; // ---- MOBILE MENU ---- function openMenu() { mobileMenu.classList.remove("translate-x-full"); document.body.style.overflow = "hidden"; } function closeMenuFunc() { mobileMenu.classList.add("translate-x-full"); document.body.style.overflow = ""; } menuToggle.addEventListener("click", (e) => { if (isEditor) { e.preventDefault(); e.stopPropagation(); } openMenu(); }); closeMenu.addEventListener("click", (e) => { if (isEditor) { e.preventDefault(); e.stopPropagation(); } closeMenuFunc(); }); // ---- SCROLL NAV EFFECT ---- function handleScroll() { if (window.scrollY > window.innerHeight - 120) { nav.classList.add( "fixed", "top-0", "bg-[#8D5F8C]/80", "backdrop-blur-md" ); nav.classList.remove("absolute", "bottom-0", "border-white/30"); links.forEach((l) => l.classList.add("text-white")); } else { nav.classList.remove( "fixed", "top-0", "bg-[#8D5F8C]/80", "backdrop-blur-md" ); nav.classList.add("absolute", "bottom-0", "border-white/30"); links.forEach((l) => l.classList.remove("text-white")); } } window.addEventListener("scroll", handleScroll); handleScroll(); })();
+      (function () {
+        const isEditor =
+          window.frameElement &&
+          window.frameElement.classList.contains("gjs-frame");
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const closeMenu = document.getElementById("closeMenu");
+
+        const nav = document.getElementById("heroNavbar");
+        const links = document.querySelectorAll("#heroNavbar .nav-link");
+
+        if (!menuToggle || !mobileMenu || !closeMenu || !nav) return;
+
+        // ---- MOBILE MENU ----
+        function openMenu() {
+          mobileMenu.classList.remove("translate-x-full");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeMenuFunc() {
+          mobileMenu.classList.add("translate-x-full");
+          document.body.style.overflow = "";
+        }
+
+        menuToggle.addEventListener("click", (e) => {
+          if (isEditor) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          openMenu();
+        });
+
+        closeMenu.addEventListener("click", (e) => {
+          if (isEditor) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          closeMenuFunc();
+        });
+
+        // ---- SCROLL NAV EFFECT ----
+        function handleScroll() {
+          if (window.scrollY > window.innerHeight - 120) {
+            nav.classList.add(
+              "fixed",
+              "top-0",
+              "bg-[#8D5F8C]/80",
+              "backdrop-blur-md"
+            );
+            nav.classList.remove("absolute", "bottom-0", "border-white/30");
+
+            links.forEach((l) => l.classList.add("text-white"));
+          } else {
+            nav.classList.remove(
+              "fixed",
+              "top-0",
+              "bg-[#8D5F8C]/80",
+              "backdrop-blur-md"
+            );
+            nav.classList.add("absolute", "bottom-0", "border-white/30");
+
+            links.forEach((l) => l.classList.remove("text-white"));
+          }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+      })();
     </script>
+
     <section
       id="about-block"
       data-moj-web-fixed="false"
