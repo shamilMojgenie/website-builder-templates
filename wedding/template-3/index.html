@@ -1,875 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wedding Template - 2</title>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Template - 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./style.css" />
-    </head>
-    <body>
-        <!-- navbar  -->
-        <section
-            id="navbar"
-            data-moj-web-fixed="false"
-            data-moj-web-type="navbar"
-            data-moj-web-label="Navbar"
-            data-moj-web-category="structural"
-            class="w-full fixed top-0 left-0 px-2 md:px-6 py-1 md:py-4 z-50 bg-white backdrop-blur-xl border-b border-[#e8d9d7] duration-300"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- navbar  -->
+    <section
+      id="navbar"
+      data-moj-web-fixed="false"
+      data-moj-web-type="navbar"
+      data-moj-web-label="Navbar"
+      data-moj-web-category="structural"
+      class="w-full fixed top-0 left-0 px-2 md:px-6 py-1 md:py-4 z-50 bg-white backdrop-blur-xl border-b border-[#e8d9d7] duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto py-4 px-4 relative flex items-center justify-between"
+      >
+        <!-- LEFT TITLE -->
+        <a class="text-4xl font-arizonia text-[#4B352A] tracking-wider">
+          Eve & Adam
+        </a>
+
+        <!-- RIGHT MENU (Desktop) -->
+        <ul
+          class="hidden lg:flex items-center gap-10 font-playfair text-[#6A5F70] uppercase tracking-widest"
         >
+          <a class="hover:text-[#4B352A] transition">Home</a>
+          <a class="hover:text-[#4B352A] transition">Our Story</a>
+          <a class="hover:text-[#4B352A] transition">The Wedding</a>
+          <a class="hover:text-[#4B352A] transition">Gallery</a>
+        </ul>
+
+        <!-- MOBILE MENU TOGGLE -->
+        <input type="checkbox" id="menu-toggle" class="peer hidden" />
+        <label for="menu-toggle" class="lg:hidden cursor-pointer z-[60]">
+          <div class="space-y-1">
+            <span class="block w-5 h-[2px] bg-[#4B352A]"></span>
+            <span class="block w-5 h-[2px] bg-[#4B352A]"></span>
+            <span class="block w-5 h-[2px] bg-[#4B352A]"></span>
+          </div>
+        </label>
+
+        <!-- MOBILE FULL-SCREEN MENU -->
+        <div
+          class="fixed inset-0 w-full h-screen bg-white z-[150] transform translate-x-full peer-checked:translate-x-0 transition duration-300 lg:hidden p-10 flex flex-col justify-center items-center space-y-10 font-playfair text-[#6A5F70] uppercase tracking-widest"
+        >
+          <label
+            for="menu-toggle"
+            class="absolute top-8 right-8 text-[#4B352A] text-4xl cursor-pointer"
+          >
+            ×
+          </label>
+
+          <a class="text-xl hover:text-[#4B352A] transition">Home</a>
+          <a class="text-xl hover:text-[#4B352A] transition">Our Story</a>
+          <a class="text-xl hover:text-[#4B352A] transition">The Wedding</a>
+          <a class="text-xl hover:text-[#4B352A] transition">Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    hero section
+    <section
+      id="hero-block"
+      class="relative w-full pt-30 pb-20 md:py-20 2xl:py-50 overflow-hidden mt-10 flex items-center"
+    >
+      <!-- BACKGROUND -->
+      <img
+        src="https://www.silviaporopat.it/wp-content/uploads/2020/03/AMSTERDAM_ENGAGEMENT_SESSION_EUROPE_WEDDING_PHOTOGRAPHER-3.jpg"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+
+      <!-- OVERLAY -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/90 to-transparent"
+      ></div>
+
+      <!-- CONTENT -->
+      <div class="relative z-10 px-6 md:px-16 lg:px-24 max-w-xl text-left">
+        <!-- Tag -->
+        <p class="uppercase text-sm tracking-[0.35em] text-white/80 mb-4">
+          Save The Date
+        </p>
+
+        <!-- Names -->
+        <h1
+          class="font-arizonia text-6xl md:text-[150px] leading-none text-white drop-shadow-2xl"
+        >
+          Eve & Adam
+        </h1>
+
+        <!-- Divider -->
+        <div class="w-24 h-[2px] bg-white/60 my-6"></div>
+
+        <!-- Date -->
+        <p class="text-lg md:text-3xl tracking-wide text-white/90 font-light">
+          26th & 27th December 2025
+        </p>
+
+        <!-- Location -->
+        <p class="text-sm md:text-lg text-white/70 mt-1">
+          Amsterdam, Netherlands
+        </p>
+
+        <!-- Button -->
+        <button
+          class="mt-10 px-12 py-3 rounded-full border border-white/40 text-white uppercase tracking-[0.25em] text-xs md:text-sm font-semibold bg-white/10 backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300"
+        >
+          More Details
+        </button>
+      </div>
+
+      <!-- BOTTOM FADE -->
+      <div
+        class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/60 to-transparent"
+      ></div>
+    </section>
+
+    <!-- couple image  -->
+    <section
+      id="couples-intro-block"
+      class="py-10 md:py-20 px-4 relative bg-white"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Title -->
+
+        <!-- COUPLES GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          <!-- EVE -->
+          <div class="relative group">
             <div
-                class="max-w-7xl mx-auto py-4 px-4 relative flex items-center justify-between"
+              class="rounded-3xl overflow-hidden shadow-lg bg-black/5 relative"
             >
-                <!-- LEFT TITLE -->
-                <a class="text-4xl font-arizonia text-[#4B352A] tracking-wider">
-                    Eve & Adam
-                </a>
+              <img
+                src="https://plus.unsplash.com/premium_photo-1711189389454-d3ec683b0400?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwYnJpZGV8ZW58MHx8MHx8fDA%3D"
+                class="w-full h-[460px] md:h-[520px] object-cover transition duration-700 group-hover:scale-105"
+              />
 
-                <!-- RIGHT MENU (Desktop) -->
-                <ul
-                    class="hidden lg:flex items-center gap-10 font-playfair text-[#6A5F70] uppercase tracking-widest"
-                >
-                    <a class="hover:text-[#4B352A] transition">Home</a>
-                    <a class="hover:text-[#4B352A] transition">Our Story</a>
-                    <a class="hover:text-[#4B352A] transition">The Wedding</a>
-                    <a class="hover:text-[#4B352A] transition">Gallery</a>
-                </ul>
+              <!-- Overlay gradient bottom -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+              ></div>
 
-                <!-- MOBILE MENU TOGGLE -->
-                <input type="checkbox" id="menu-toggle" class="peer hidden" />
-                <label
-                    for="menu-toggle"
-                    class="lg:hidden cursor-pointer z-[60]"
-                >
-                    <div class="space-y-1">
-                        <span class="block w-5 h-[2px] bg-[#4B352A]"></span>
-                        <span class="block w-5 h-[2px] bg-[#4B352A]"></span>
-                        <span class="block w-5 h-[2px] bg-[#4B352A]"></span>
-                    </div>
-                </label>
-
-                <!-- MOBILE FULL-SCREEN MENU -->
-                <div
-                    class="fixed inset-0 w-full h-screen bg-white z-[150] transform translate-x-full peer-checked:translate-x-0 transition duration-300 lg:hidden p-10 flex flex-col justify-center items-center space-y-10 font-playfair text-[#6A5F70] uppercase tracking-widest"
-                >
-                    <label
-                        for="menu-toggle"
-                        class="absolute top-8 right-8 text-[#4B352A] text-4xl cursor-pointer"
-                    >
-                        ×
-                    </label>
-
-                    <a class="text-xl hover:text-[#4B352A] transition">Home</a>
-                    <a class="text-xl hover:text-[#4B352A] transition"
-                        >Our Story</a
-                    >
-                    <a class="text-xl hover:text-[#4B352A] transition"
-                        >The Wedding</a
-                    >
-                    <a class="text-xl hover:text-[#4B352A] transition"
-                        >Gallery</a
-                    >
-                </div>
+              <!-- Name & tiny details -->
+              <div class="absolute bottom-6 left-6">
+                <h3 class="font-arizonia text-5xl text-white drop-shadow-xl">
+                  Eve
+                </h3>
+                <p class="text-white/80 tracking-wide text-sm mt-1">
+                  The Bride
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- hero section -->
-        <section
-            id="hero-block"
-            class="relative w-full pt-30 pb-20 md:py-20 2xl:py-50 overflow-hidden mt-10 flex items-center"
-        >
-            <!-- BACKGROUND -->
-            <img
-                src="https://www.silviaporopat.it/wp-content/uploads/2020/03/AMSTERDAM_ENGAGEMENT_SESSION_EUROPE_WEDDING_PHOTOGRAPHER-3.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-center"
-            />
-
-            <!-- OVERLAY -->
+          <!-- CENTER HEART -->
+          <div class="flex flex-col items-center justify-center">
+            <div class="text-center mb-6 md:mb-14">
+              <p
+                class="uppercase tracking-[0.25em] text-xs text-[#4B352A]/70 mb-2"
+              >
+                The Couple
+              </p>
+              <h2
+                class="font-playfair text-3xl md:text-5xl text-[#4B352A] tracking-wide"
+              >
+                Eve & Adam
+              </h2>
+            </div>
             <div
-                class="absolute inset-0 bg-gradient-to-r from-black/90 to-transparent"
-            ></div>
-
-            <!-- CONTENT -->
-            <div
-                class="relative z-10 px-6 md:px-16 lg:px-24 max-w-xl text-left"
+              class="w-20 h-20 rounded-full bg-[#4B352A]/10 flex items-center justify-center"
             >
-                <!-- Tag -->
-                <p
-                    class="uppercase text-sm tracking-[0.35em] text-white/80 mb-4"
-                >
-                    Save The Date
-                </p>
-
-                <!-- Names -->
-                <h1
-                    class="font-arizonia text-6xl md:text-[150px] leading-none text-white drop-shadow-2xl"
-                >
-                    Eve & Adam
-                </h1>
-
-                <!-- Divider -->
-                <div class="w-24 h-[2px] bg-white/60 my-6"></div>
-
-                <!-- Date -->
-                <p
-                    class="text-lg md:text-3xl tracking-wide text-white/90 font-light"
-                >
-                    26th & 27th December 2025
-                </p>
-
-                <!-- Location -->
-                <p class="text-sm md:text-lg text-white/70 mt-1">
-                    Amsterdam, Netherlands
-                </p>
-
-                <!-- Button -->
-                <button
-                    class="mt-10 px-12 py-3 rounded-full border border-white/40 text-white uppercase tracking-[0.25em] text-xs md:text-sm font-semibold bg-white/10 backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300"
-                >
-                    More Details
-                </button>
-            </div>
-
-            <!-- BOTTOM FADE -->
-            <div
-                class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/60 to-transparent"
-            ></div>
-        </section>
-
-        <!-- couple image  -->
-        <section
-            id="couples-intro-block"
-            class="py-10 md:py-20 px-4 relative bg-white"
-        >
-            <div class="max-w-7xl mx-auto">
-                <!-- Title -->
-
-                <!-- COUPLES GRID -->
-                <div
-                    class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center"
-                >
-                    <!-- EVE -->
-                    <div class="relative group">
-                        <div
-                            class="rounded-3xl overflow-hidden shadow-lg bg-black/5 relative"
-                        >
-                            <img
-                                src="https://plus.unsplash.com/premium_photo-1711189389454-d3ec683b0400?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwYnJpZGV8ZW58MHx8MHx8fDA%3D"
-                                class="w-full h-[460px] md:h-[520px] object-cover transition duration-700 group-hover:scale-105"
-                            />
-
-                            <!-- Overlay gradient bottom -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-                            ></div>
-
-                            <!-- Name & tiny details -->
-                            <div class="absolute bottom-6 left-6">
-                                <h3
-                                    class="font-arizonia text-5xl text-white drop-shadow-xl"
-                                >
-                                    Eve
-                                </h3>
-                                <p
-                                    class="text-white/80 tracking-wide text-sm mt-1"
-                                >
-                                    The Bride
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CENTER HEART -->
-                    <div class="flex flex-col items-center justify-center">
-                        <div class="text-center mb-6 md:mb-14">
-                            <p
-                                class="uppercase tracking-[0.25em] text-xs text-[#4B352A]/70 mb-2"
-                            >
-                                The Couple
-                            </p>
-                            <h2
-                                class="font-playfair text-3xl md:text-5xl text-[#4B352A] tracking-wide"
-                            >
-                                Eve & Adam
-                            </h2>
-                        </div>
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#4B352A]/10 flex items-center justify-center"
-                        >
-                            <svg
-                                width="40"
-                                height="40"
-                                viewBox="0 0 24 24"
-                                fill="#4B352A"
-                                class="opacity-90"
-                            >
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="#4B352A"
+                class="opacity-90"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
              2 5.42 4.42 3 7.5 3 
              9.24 3 10.91 3.81 12 5.08 
              13.09 3.81 14.76 3 16.5 3 
              19.58 3 22 5.42 22 8.5 
              22 12.28 18.6 15.36 13.45 20.03 
              L12 21.35z"
-                                />
-                            </svg>
-                        </div>
-                        <p
-                            class="text-center text-[#4B352A]/70 max-w-md mt-6 leading-relaxed"
-                        >
-                            Two hearts, two journeys, now becoming one.
-                            Celebrating love, partnership, and the beautiful
-                            beginning of Eve & Adam.
-                        </p>
-                    </div>
-
-                    <!-- ADAM -->
-                    <div class="relative group">
-                        <div
-                            class="rounded-3xl overflow-hidden shadow-lg bg-black/5 relative"
-                        >
-                            <img
-                                src="https://lillyred.it/wp-content/uploads/2021/07/CA-groom-cuffs-park-hotel-lobby.webp"
-                                class="w-full h-[460px] md:h-[520px] object-cover object-top transition duration-700 group-hover:scale-105"
-                            />
-
-                            <!-- Overlay gradient bottom -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-                            ></div>
-
-                            <!-- Name -->
-                            <div class="absolute bottom-6 right-6 text-right">
-                                <h3
-                                    class="font-arizonia text-5xl text-white drop-shadow-xl"
-                                >
-                                    Adam
-                                </h3>
-                                <p
-                                    class="text-white/80 tracking-wide text-sm mt-1"
-                                >
-                                    The Groom
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                />
+              </svg>
             </div>
-        </section>
-
-        <!-- brief intro  -->
-        <section class="bg-[#F7F5F2] py-10 md:py-20 px-4">
-            <div
-                class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center"
+            <p
+              class="text-center text-[#4B352A]/70 max-w-md mt-6 leading-relaxed"
             >
-                <!-- Left Image -->
-                <div>
-                    <img
-                        src="https://cdn0.hitched.co.uk/article/1212/3_2/960/jpg/42121-Romantic-cirty-breaks-europe-main-eeffc18.jpeg"
-                        class="w-full h-[480px] object-cover rounded-3xl shadow-2xl object-[center_70%]"
-                    />
-                </div>
+              Two hearts, two journeys, now becoming one. Celebrating love,
+              partnership, and the beautiful beginning of Eve & Adam.
+            </p>
+          </div>
 
-                <!-- Right Content -->
-                <div class="space-y-5 md:pr-10 text-center md:text-left">
-                    <h2
-                        class="text-4xl md:text-5xl font-arizonia text-[#4B352A] leading-tight"
-                    >
-                        A Swipe, A Spark, A Forever
-                    </h2>
-
-                    <p
-                        class="text-gray-700 italic md:text-lg leading-relaxed max-w-md"
-                    >
-                        What began with a simple swipe soon unfolded into
-                        something far deeper — a connection filled with warmth,
-                        laughter, and gentle moments that felt effortlessly
-                        right. What started as chance quickly became comfort,
-                        companionship, and a love that simply made sense.
-                        <br /><br />
-                        Sometimes, all it takes is one spark to change
-                        everything.
-                    </p>
-
-                    <div
-                        class="h-[2px] w-20 bg-[#4B352A]/30 mx-auto md:mx-0"
-                    ></div>
-                </div>
-            </div>
-        </section>
-
-        <section
-            class="py-10 md:py-20 bg-white relative overflow-hidden"
-            id="story-block"
-        >
-            <!-- Decorative Flower (Top Left) -->
-            <img
-                src="https://www.pngall.com/wp-content/uploads/15/Orange-Flower-PNG-Photo.png"
-                class="absolute top-10 left-0 w-50 opacity-40 pointer-events-none select-none"
-                alt=""
-            />
-
-            <!-- Decorative Flower (Bottom Right) -->
-            <img
-                src="https://www.pngall.com/wp-content/uploads/15/Orange-Flower-PNG-Photo.png"
-                class="absolute bottom-10 right-0 w-58 opacity-40 rotate-12 pointer-events-none select-none"
-                alt=""
-            />
-
-            <!-- WHITE BOX WRAPPER -->
+          <!-- ADAM -->
+          <div class="relative group">
             <div
-                class="relative z-10 max-w-3xl mx-4 md:mx-auto bg-white border border-[#4B352A]/30 rounded-3xl p-4 md:p-12 shadow-sm space-y-8 md:space-y-16"
+              class="rounded-3xl overflow-hidden shadow-lg bg-black/5 relative"
             >
-                <div class="text-center relative z-10">
-                    <h2
-                        class="text-4xl md:text-6xl font-arizonia text-[#4B352A]"
-                    >
-                        Our Love Story
-                    </h2>
-                    <p class="text-gray-600 italic mt-3">
-                        Moments that shaped a forever.
-                    </p>
-                </div>
+              <img
+                src="https://lillyred.it/wp-content/uploads/2021/07/CA-groom-cuffs-park-hotel-lobby.webp"
+                class="w-full h-[460px] md:h-[520px] object-cover object-top transition duration-700 group-hover:scale-105"
+              />
 
-                <!-- Story Item -->
-                <div>
-                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
-                        The Perfect Swipe
-                    </h3>
-                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
-                        March 2024
-                    </p>
-                    <p class="text-gray-700 mt-4 leading-relaxed">
-                        It began with a match at the most unexpected moment —
-                        one arriving, the other ready to leave. A simple swipe
-                        that changed everything.
-                    </p>
-                </div>
+              <!-- Overlay gradient bottom -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+              ></div>
 
-                <!-- Story Item (Right aligned) -->
-                <div class="text-right">
-                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
-                        First Connection
-                    </h3>
-                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
-                        March 2024
-                    </p>
-                    <p class="text-gray-700 mt-4 leading-relaxed">
-                        A quiet pizza, laughter, and an instant comfort — their
-                        first moments together were simple but unforgettable.
-                    </p>
-                </div>
-
-                <!-- Story Item -->
-                <div>
-                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
-                        Moments Together
-                    </h3>
-                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
-                        Mar – Jun 2024
-                    </p>
-                    <p class="text-gray-700 mt-4 leading-relaxed">
-                        Long calls, boba dates, walks, and movies — little joys
-                        stitched their story with warmth and ease.
-                    </p>
-                </div>
-
-                <!-- Story Item (Right aligned) -->
-                <div class="text-right">
-                    <h3 class="text-3xl font-arizonia text-[#4B352A]">
-                        Forever Begins
-                    </h3>
-                    <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
-                        2024 – 2025
-                    </p>
-                    <p class="text-gray-700 mt-4 leading-relaxed">
-                        Their journey grew into a quiet promise — steady,
-                        certain, and built on love, trust, and shared dreams.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- wedding details -->
-        <section class="py-10 md:py-20 bg-[#F7F5F2]" id="itinerary-block">
-            <div class="text-center mb-6 md:mb-16">
-                <h2 class="text-5xl md:text-7xl font-arizonia text-[#4B352A]">
-                    Wedding Details
-                </h2>
-                <p class="text-gray-600 italic mt-3">
-                    Moments cherished in our celebration.
+              <!-- Name -->
+              <div class="absolute bottom-6 right-6 text-right">
+                <h3 class="font-arizonia text-5xl text-white drop-shadow-xl">
+                  Adam
+                </h3>
+                <p class="text-white/80 tracking-wide text-sm mt-1">
+                  The Groom
                 </p>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="max-w-3xl mx-auto px-6 space-y-6 md:space-y-14">
-                <!-- ITEM -->
-                <div class="text-center">
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/1059/1059802.png"
-                        class="w-12 mx-auto opacity-80 mb-4"
-                    />
-                    <h3 class="text-2xl font-semibold text-[#4B352A]">
-                        Ceremony
-                    </h3>
-                    <p class="text-gray-600 mt-3 leading-relaxed">
-                        A heartfelt beginning — surrounded by blessings, joy,
-                        and the warmth of everyone we hold close.
-                    </p>
-                </div>
+    <!-- brief intro  -->
+    <section class="bg-[#F7F5F2] py-10 md:py-20 px-4">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Image -->
+        <div>
+          <img
+            src="https://cdn0.hitched.co.uk/article/1212/3_2/960/jpg/42121-Romantic-cirty-breaks-europe-main-eeffc18.jpeg"
+            class="w-full h-[480px] object-cover rounded-3xl shadow-2xl object-[center_70%]"
+          />
+        </div>
 
-                <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
+        <!-- Right Content -->
+        <div class="space-y-5 md:pr-10 text-center md:text-left">
+          <h2
+            class="text-4xl md:text-5xl font-arizonia text-[#4B352A] leading-tight"
+          >
+            A Swipe, A Spark, A Forever
+          </h2>
 
-                <!-- ITEM -->
-                <div class="text-center">
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/3480/3480718.png"
-                        class="w-12 mx-auto opacity-80 mb-4"
-                    />
-                    <h3 class="text-2xl font-semibold text-[#4B352A]">
-                        Toast & Dinner
-                    </h3>
-                    <p class="text-gray-600 mt-3 leading-relaxed">
-                        A warm evening filled with celebration, clinking
-                        glasses, and heartfelt conversations.
-                    </p>
-                </div>
+          <p class="text-gray-700 italic md:text-lg leading-relaxed max-w-md">
+            What began with a simple swipe soon unfolded into something far
+            deeper — a connection filled with warmth, laughter, and gentle
+            moments that felt effortlessly right. What started as chance quickly
+            became comfort, companionship, and a love that simply made sense.
+            <br /><br />
+            Sometimes, all it takes is one spark to change everything.
+          </p>
 
-                <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
+          <div class="h-[2px] w-20 bg-[#4B352A]/30 mx-auto md:mx-0"></div>
+        </div>
+      </div>
+    </section>
 
-                <!-- ITEM -->
-                <div class="text-center">
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/1683/1683807.png"
-                        class="w-12 mx-auto opacity-80 mb-4"
-                    />
-                    <h3 class="text-2xl font-semibold text-[#4B352A]">
-                        Wedding Cake
-                    </h3>
-                    <p class="text-gray-600 mt-3 leading-relaxed">
-                        A sweet moment of unity — celebrated with smiles, love,
-                        and a hint of magic.
-                    </p>
-                </div>
+    <!-- Our Love Story  -->
+    <section
+      class="py-10 md:py-20 bg-white relative overflow-hidden"
+      id="story-block"
+    >
+      <!-- Decorative Flower (Top Left) -->
+      <img
+        src="https://www.pngall.com/wp-content/uploads/15/Orange-Flower-PNG-Photo.png"
+        class="absolute top-10 left-0 w-50 opacity-40 pointer-events-none select-none"
+        alt=""
+      />
 
-                <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
+      <!-- Decorative Flower (Bottom Right) -->
+      <img
+        src="https://www.pngall.com/wp-content/uploads/15/Orange-Flower-PNG-Photo.png"
+        class="absolute bottom-10 right-0 w-58 opacity-40 rotate-12 pointer-events-none select-none"
+        alt=""
+      />
 
-                <!-- ITEM -->
-                <div class="text-center">
-                    <img
-                        src="https://www.freeiconspng.com/uploads/camera-icon-21.png"
-                        class="w-12 mx-auto opacity-80 mb-4"
-                    />
-                    <h3 class="text-2xl font-semibold text-[#4B352A]">
-                        Photography
-                    </h3>
-                    <p class="text-gray-600 mt-3 leading-relaxed">
-                        Capturing the magic of every moment — preserved forever
-                        with love and care.
-                    </p>
-                </div>
-            </div>
-        </section>
+      <!-- WHITE BOX WRAPPER -->
+      <div
+        class="relative z-10 max-w-3xl mx-4 md:mx-auto bg-white border border-[#4B352A]/30 rounded-3xl p-4 md:p-12 shadow-sm space-y-8 md:space-y-16"
+      >
+        <div class="text-center relative z-10">
+          <h2 class="text-4xl md:text-6xl font-arizonia text-[#4B352A]">
+            Our Love Story
+          </h2>
+          <p class="text-gray-600 italic mt-3">
+            Moments that shaped a forever.
+          </p>
+        </div>
 
-        <!-- wedding venue -->
-        <section
-            id="venue-block"
-            class="relative h-[600px] md:h-[750px] w-full overflow-hidden"
+        <!-- Story Item -->
+        <div>
+          <h3 class="text-3xl font-arizonia text-[#4B352A]">
+            The Perfect Swipe
+          </h3>
+          <p class="text-xs text-[#4B352A] mt-1 tracking-widest">March 2024</p>
+          <p class="text-gray-700 mt-4 leading-relaxed">
+            It began with a match at the most unexpected moment — one arriving,
+            the other ready to leave. A simple swipe that changed everything.
+          </p>
+        </div>
+
+        <!-- Story Item (Right aligned) -->
+        <div class="text-right">
+          <h3 class="text-3xl font-arizonia text-[#4B352A]">
+            First Connection
+          </h3>
+          <p class="text-xs text-[#4B352A] mt-1 tracking-widest">March 2024</p>
+          <p class="text-gray-700 mt-4 leading-relaxed">
+            A quiet pizza, laughter, and an instant comfort — their first
+            moments together were simple but unforgettable.
+          </p>
+        </div>
+
+        <!-- Story Item -->
+        <div>
+          <h3 class="text-3xl font-arizonia text-[#4B352A]">
+            Moments Together
+          </h3>
+          <p class="text-xs text-[#4B352A] mt-1 tracking-widest">
+            Mar – Jun 2024
+          </p>
+          <p class="text-gray-700 mt-4 leading-relaxed">
+            Long calls, boba dates, walks, and movies — little joys stitched
+            their story with warmth and ease.
+          </p>
+        </div>
+
+        <!-- Story Item (Right aligned) -->
+        <div class="text-right">
+          <h3 class="text-3xl font-arizonia text-[#4B352A]">Forever Begins</h3>
+          <p class="text-xs text-[#4B352A] mt-1 tracking-widest">2024 – 2025</p>
+          <p class="text-gray-700 mt-4 leading-relaxed">
+            Their journey grew into a quiet promise — steady, certain, and built
+            on love, trust, and shared dreams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- wedding details -->
+    <section class="py-10 md:py-20 bg-[#F7F5F2]" id="itinerary-block">
+      <div class="text-center mb-6 md:mb-16">
+        <h2 class="text-5xl md:text-7xl font-arizonia text-[#4B352A]">
+          Wedding Details
+        </h2>
+        <p class="text-gray-600 italic mt-3">
+          Moments cherished in our celebration.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 space-y-6 md:space-y-14">
+        <!-- ITEM -->
+        <div class="text-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1059/1059802.png"
+            class="w-12 mx-auto opacity-80 mb-4"
+          />
+          <h3 class="text-2xl font-semibold text-[#4B352A]">Ceremony</h3>
+          <p class="text-gray-600 mt-3 leading-relaxed">
+            A heartfelt beginning — surrounded by blessings, joy, and the warmth
+            of everyone we hold close.
+          </p>
+        </div>
+
+        <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
+
+        <!-- ITEM -->
+        <div class="text-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3480/3480718.png"
+            class="w-12 mx-auto opacity-80 mb-4"
+          />
+          <h3 class="text-2xl font-semibold text-[#4B352A]">Toast & Dinner</h3>
+          <p class="text-gray-600 mt-3 leading-relaxed">
+            A warm evening filled with celebration, clinking glasses, and
+            heartfelt conversations.
+          </p>
+        </div>
+
+        <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
+
+        <!-- ITEM -->
+        <div class="text-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1683/1683807.png"
+            class="w-12 mx-auto opacity-80 mb-4"
+          />
+          <h3 class="text-2xl font-semibold text-[#4B352A]">Wedding Cake</h3>
+          <p class="text-gray-600 mt-3 leading-relaxed">
+            A sweet moment of unity — celebrated with smiles, love, and a hint
+            of magic.
+          </p>
+        </div>
+
+        <div class="h-[1px] bg-[#4B352A]/20 w-2/3 mx-auto"></div>
+
+        <!-- ITEM -->
+        <div class="text-center">
+          <img
+            src="https://www.freeiconspng.com/uploads/camera-icon-21.png"
+            class="w-12 mx-auto opacity-80 mb-4"
+          />
+          <h3 class="text-2xl font-semibold text-[#4B352A]">Photography</h3>
+          <p class="text-gray-600 mt-3 leading-relaxed">
+            Capturing the magic of every moment — preserved forever with love
+            and care.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- wedding venue -->
+    <section
+      id="venue-block"
+      class="relative h-[600px] md:h-[750px] w-full overflow-hidden"
+    >
+      <!-- Background Image -->
+      <img
+        src="https://images-pw.pixieset.com/elementfield/0JaDaRG/redchapelbarn-b978a4e7-1500.jpg"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <!-- Gradient Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90"
+      ></div>
+
+      <!-- Text Block -->
+      <div
+        class="absolute bottom-12 left-1/2 -translate-x-1/2 w-[90%] md:w-[70%] text-center text-white"
+      >
+        <h2 class="text-5xl md:text-7xl font-arizonia drop-shadow-xl">
+          Wedding Venue
+        </h2>
+
+        <p class="italic text-lg md:text-xl mt-3 opacity-90 max-w-2xl mx-auto">
+          A serene and timeless place where our forever begins.
+        </p>
+
+        <div
+          class="mt-10 bg-white/5 backdrop-blur-[2px] rounded-3xl p-6 md:p-10 border border-white/30"
         >
-            <!-- Background Image -->
+          <h3 class="text-3xl md:text-4xl font-semibold">
+            St. Mary’s Cathedral
+          </h3>
+
+          <p class="mt-2 text-gray-200">MG Road, Ernakulam, Kerala — 682011</p>
+
+          <div class="w-20 h-px bg-white/40 mx-auto my-6"></div>
+
+          <p class="text-xl tracking-wide">
+            Ceremony at <span class="font-bold">10:00 AM</span>
+          </p>
+
+          <a
+            href="#"
+            class="inline-block mt-8 border border-white text-white px-10 py-3 rounded-full tracking-widest uppercase text-sm hover:bg-white hover:text-[#4B352A] transition-all duration-300"
+          >
+            View Map
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- dress code -->
+    <section
+      class="py-10 md:py-20 bg-[#F7F5F2] text-[#333]"
+      id="dress-code-block"
+    >
+      <div class="text-center mb-8 md:mb-16">
+        <h2 class="text-4xl md:text-6xl font-arizonia text-[#4B352A] mb-3">
+          Dress Code
+        </h2>
+        <p class="text-gray-600 italic max-w-xl mx-auto">
+          A refined palette curated for our celebration.
+        </p>
+      </div>
+
+      <!-- NEW HORIZONTAL LOOKBOOK LAYOUT -->
+      <div class="max-w-7xl mx-auto px-4 space-y-8 md:space-y-10">
+        <!-- WOMEN SECTION -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center"
+        >
+          <!-- Text -->
+          <div>
+            <h3 class="text-2xl md:text-3xl font-semibold text-[#4B352A] mb-3">
+              For Women
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Soft silhouettes, pastel tones, and graceful textures. Choose
+              sarees, gowns, or elegant ethnic ensembles in subtle hues that
+              complement the wedding palette.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F7DDE2] border border-gray-300 text-gray-700"
+                >Blush</span
+              >
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#FFFFF4] border border-gray-300 text-gray-700"
+                >Ivory</span
+              >
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#D8A7B4] border border-gray-300 text-gray-700"
+                >Dusty Rose</span
+              >
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F3E5C3] border border-gray-300 text-gray-700"
+                >Champagne</span
+              >
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div
+            class="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#4B352A]/20"
+          >
             <img
-                src="https://images-pw.pixieset.com/elementfield/0JaDaRG/redchapelbarn-b978a4e7-1500.jpg"
-                class="absolute inset-0 w-full h-full object-cover"
+              src="https://oldsite.nationalweddingshow.co.uk/uploads/2019/02/pink-r-.jpg"
+              class="w-full h-full object-cover object-center"
             />
+          </div>
+        </div>
 
-            <!-- Gradient Overlay -->
-            <div
-                class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90"
-            ></div>
+        <!-- DIVIDER -->
+        <div class="w-full h-px bg-[#4B352A]/20"></div>
 
-            <!-- Text Block -->
-            <div
-                class="absolute bottom-12 left-1/2 -translate-x-1/2 w-[90%] md:w-[70%] text-center text-white"
+        <!-- MEN SECTION -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center mb-10"
+        >
+          <!-- Image (left this time, alternating layout) -->
+          <div
+            class="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#4B352A]/20 order-2 md:order-1"
+          >
+            <img
+              src="https://static.showit.co/1200/01vZUQWnHb1gJy_jsCFHfg/114838/dsc04343.jpg"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+
+          <!-- Text -->
+          <div class="order-1 md:order-2">
+            <h3 class="text-2xl md:text-3xl font-semibold text-[#4B352A] mb-3">
+              For Men
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Neutral tones and structured fits. Opt for sherwanis, suits,
+              bandhgala sets, or simple ethnic wear in ivory, beige, champagne,
+              or soft pastel variants.
+            </p>
+
+            <div class="flex gap-4">
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#FFFFF4] border border-gray-300 text-gray-700"
+                >Ivory</span
+              >
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F3E5C3] border border-gray-300 text-gray-700"
+                >Champagne</span
+              >
+              <span
+                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#EDE0CB] border border-gray-300 text-gray-700"
+                >Beige</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTE -->
+        <p class="text-center text-gray-500 text-sm max-w-xl mx-auto">
+          Kindly avoid neon shades, heavy glitter, or stark contrasts to ensure
+          a soft cohesive palette.
+        </p>
+      </div>
+    </section>
+
+    <!-- gallery -->
+    <section
+      class="py-10 md:py-20 px-6 bg-[#faf9f7]"
+      id="gallery-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="gallery"
+      data-moj-web-label="Wedding Gallery"
+      data-moj-web-category="structural"
+    >
+      <div class="max-w-6xl mx-auto text-center mb-14">
+        <h2 class="text-4xl md:text-6xl font-arizonia text-[#4B352A] mb-4">
+          Our Gallery
+        </h2>
+        <p class="text-gray-600 italic max-w-2xl mx-auto">
+          A collection of moments unfolding through frames.
+        </p>
+      </div>
+
+      <div class="overflow-hidden relative">
+        <div class="scroll-track flex gap-6">
+          <div class="flex gap-6">
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/2959194/pexels-photo-2959194.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/1839747/pexels-photo-1839747.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/3593434/pexels-photo-3593434.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/2959194/pexels-photo-2959194.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/1839747/pexels-photo-1839747.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/3593434/pexels-photo-3593434.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
+            <div class="item w-80 border border-gray-300 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg"
+                class="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section
+      class="bg-[#F7F5F2] border-t border-[#e6dad8] py-16 px-6"
+      id="footer-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="footer"
+      data-moj-web-label="Wedding footer"
+      data-moj-web-category="structural"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
+        >
+          <div class="md:w-1/2">
+            <h2
+              class="text-4xl md:text-6xl font-arizonia text-[#4B352A] tracking-wide"
             >
-                <h2 class="text-5xl md:text-7xl font-arizonia drop-shadow-xl">
-                    Wedding Venue
-                </h2>
+              Eve & Adam
+            </h2>
 
-                <p
-                    class="italic text-lg md:text-xl mt-3 opacity-90 max-w-2xl mx-auto"
+            <p class="text-gray-600 italic max-w-sm mt-2">
+              “A celebration of love, joy, and forever.”
+            </p>
+
+            <div class="h-px w-32 bg-[#4B352A]/20 mt-6"></div>
+          </div>
+
+          <div class="flex flex-col items-start md:items-end md:w-1/2 gap-6">
+            <div class="flex gap-6">
+              <a href="#" class="text-[#4B352A] hover:opacity-70 transition">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-7 h-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                    A serene and timeless place where our forever begins.
-                </p>
+                  <circle cx="12" cy="12" r="3.2"></circle>
+                  <path
+                    d="M17.2 3H6.8A3.8 3.8 0 0 0 3 6.8v10.4A3.8 3.8 0 0 0 6.8 21h10.4a3.8 3.8 0 0 0 3.8-3.8V6.8A3.8 3.8 0 0 0 17.2 3ZM18 7.2a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0Z"
+                  />
+                </svg>
+              </a>
 
-                <div
-                    class="mt-10 bg-white/5 backdrop-blur-[2px] rounded-3xl p-6 md:p-10 border border-white/30"
+              <a href="#" class="text-[#4B352A] hover:opacity-70 transition">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-7 h-7"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                    <h3 class="text-3xl md:text-4xl font-semibold">
-                        St. Mary’s Cathedral
-                    </h3>
+                  <path
+                    d="M22 12.06C22 6.48 17.52 2 11.94 2A10.06 10.06 0 0 0 2 12c0 5 3.66 9.14 8.44 9.88v-7h-2.5v-3h2.5V9.5c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.22.2 2.22.2v2.44h-1.25c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 3h-2.34v7A10 10 0 0 0 22 12.06Z"
+                  />
+                </svg>
+              </a>
 
-                    <p class="mt-2 text-gray-200">
-                        MG Road, Ernakulam, Kerala — 682011
-                    </p>
-
-                    <div class="w-20 h-px bg-white/40 mx-auto my-6"></div>
-
-                    <p class="text-xl tracking-wide">
-                        Ceremony at <span class="font-bold">10:00 AM</span>
-                    </p>
-
-                    <a
-                        href="#"
-                        class="inline-block mt-8 border border-white text-white px-10 py-3 rounded-full tracking-widest uppercase text-sm hover:bg-white hover:text-[#4B352A] transition-all duration-300"
-                    >
-                        View Map
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- dress code -->
-        <section
-            class="py-10 md:py-20 bg-[#F7F5F2] text-[#333]"
-            id="dress-code-block"
-        >
-            <div class="text-center mb-8 md:mb-16">
-                <h2
-                    class="text-4xl md:text-6xl font-arizonia text-[#4B352A] mb-3"
+              <a href="#" class="text-[#4B352A] hover:opacity-70 transition">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-7 h-7"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                    Dress Code
-                </h2>
-                <p class="text-gray-600 italic max-w-xl mx-auto">
-                    A refined palette curated for our celebration.
-                </p>
-            </div>
-
-            <!-- NEW HORIZONTAL LOOKBOOK LAYOUT -->
-            <div class="max-w-7xl mx-auto px-4 space-y-8 md:space-y-10">
-                <!-- WOMEN SECTION -->
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center"
-                >
-                    <!-- Text -->
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-semibold text-[#4B352A] mb-3">
-                            For Women
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Soft silhouettes, pastel tones, and graceful
-                            textures. Choose sarees, gowns, or elegant ethnic
-                            ensembles in subtle hues that complement the wedding
-                            palette.
-                        </p>
-
-                        <div class="flex flex-wrap gap-4">
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F7DDE2] border border-gray-300 text-gray-700"
-                                >Blush</span
-                            >
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#FFFFF4] border border-gray-300 text-gray-700"
-                                >Ivory</span
-                            >
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#D8A7B4] border border-gray-300 text-gray-700"
-                                >Dusty Rose</span
-                            >
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F3E5C3] border border-gray-300 text-gray-700"
-                                >Champagne</span
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Image -->
-                    <div
-                        class="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#4B352A]/20"
-                    >
-                        <img
-                            src="https://oldsite.nationalweddingshow.co.uk/uploads/2019/02/pink-r-.jpg"
-                            class="w-full h-full object-cover object-center"
-                        />
-                    </div>
-                </div>
-
-                <!-- DIVIDER -->
-                <div class="w-full h-px bg-[#4B352A]/20"></div>
-
-                <!-- MEN SECTION -->
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center mb-10"
-                >
-                    <!-- Image (left this time, alternating layout) -->
-                    <div
-                        class="h-80 rounded-3xl overflow-hidden shadow-lg border border-[#4B352A]/20 order-2 md:order-1"
-                    >
-                        <img
-                            src="https://static.showit.co/1200/01vZUQWnHb1gJy_jsCFHfg/114838/dsc04343.jpg"
-                            class="w-full h-full object-cover object-center"
-                        />
-                    </div>
-
-                    <!-- Text -->
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-[#4B352A] mb-3">
-                            For Men
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Neutral tones and structured fits. Opt for
-                            sherwanis, suits, bandhgala sets, or simple ethnic
-                            wear in ivory, beige, champagne, or soft pastel
-                            variants.
-                        </p>
-
-                        <div class="flex gap-4">
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#FFFFF4] border border-gray-300 text-gray-700"
-                                >Ivory</span
-                            >
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#F3E5C3] border border-gray-300 text-gray-700"
-                                >Champagne</span
-                            >
-                            <span
-                                class="px-4 py-2 text-xs md:text-sm rounded-full bg-[#EDE0CB] border border-gray-300 text-gray-700"
-                                >Beige</span
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NOTE -->
-                <p
-                    class="text-center text-gray-500  text-sm max-w-xl mx-auto"
-                >
-                    Kindly avoid neon shades, heavy glitter, or stark contrasts
-                    to ensure a soft cohesive palette.
-                </p>
-            </div>
-        </section>
-
-        <!-- gallery -->
-        <section
-            class="py-10 md:py-20 px-6 bg-[#faf9f7]"
-            id="gallery-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="gallery"
-            data-moj-web-label="Wedding Gallery"
-            data-moj-web-category="structural"
-        >
-            <div class="max-w-6xl mx-auto text-center mb-14">
-                <h2
-                    class="text-4xl md:text-6xl font-arizonia text-[#4B352A] mb-4"
-                >
-                    Our Gallery
-                </h2>
-                <p class="text-gray-600 italic max-w-2xl mx-auto">
-                    A collection of moments unfolding through frames.
-                </p>
+                  <path
+                    d="M12.04 2A10 10 0 0 0 8 21.12c-.14-.82-.28-2.08 0-3l1.88-7A3.4 3.4 0 0 1 9.5 8c0-2 2.5-3.7 4.45-3.7 2.08 0 3.62 1.38 3.62 3.38 0 2.27-1.2 4.5-2.7 4.5a1.44 1.44 0 0 1-1.45-1.79c.2-.82.62-2.08.62-2.73 0-.62-.32-1.14-1.02-1.14-1.08 0-2 1.14-2 2.57 0 .96.34 1.6.34 1.6l-1.38 5.64c-.28 1.1-.06 2.58-.06 2.58A10 10 0 0 0 22 12a10 10 0 0 0-9.96-10Z"
+                  />
+                </svg>
+              </a>
             </div>
 
-            <div class="overflow-hidden relative">
-                <div class="scroll-track flex gap-6">
-                    <div class="flex gap-6">
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/2959194/pexels-photo-2959194.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/1839747/pexels-photo-1839747.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/3593434/pexels-photo-3593434.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="flex gap-6">
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/2959194/pexels-photo-2959194.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/1839747/pexels-photo-1839747.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/3593434/pexels-photo-3593434.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-
-                        <div
-                            class="item w-80 border border-gray-300 overflow-hidden"
-                        >
-                            <img
-                                src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg"
-                                class="w-full h-64 md:h-96 object-cover"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <section
-            class="bg-[#F7F5F2] border-t border-[#e6dad8] py-16 px-6"
-            id="footer-block"
-            data-moj-web-fixed="false"
-            data-moj-web-type="footer"
-            data-moj-web-label="Wedding footer"
-            data-moj-web-category="structural"
-        >
-            <div class="max-w-6xl mx-auto">
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
-                >
-                    <div class="md:w-1/2">
-                        <h2
-                            class="text-4xl md:text-6xl font-arizonia text-[#4B352A] tracking-wide"
-                        >
-                            Eve & Adam
-                        </h2>
-
-                        <p class="text-gray-600 italic max-w-sm mt-2">
-                            “A celebration of love, joy, and forever.”
-                        </p>
-
-                        <div class="h-px w-32 bg-[#4B352A]/20 mt-6"></div>
-                    </div>
-
-                    <div
-                        class="flex flex-col items-start md:items-end md:w-1/2 gap-6"
-                    >
-                        <div class="flex gap-6">
-                            <a
-                                href="#"
-                                class="text-[#4B352A] hover:opacity-70 transition"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-7 h-7"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <circle cx="12" cy="12" r="3.2"></circle>
-                                    <path
-                                        d="M17.2 3H6.8A3.8 3.8 0 0 0 3 6.8v10.4A3.8 3.8 0 0 0 6.8 21h10.4a3.8 3.8 0 0 0 3.8-3.8V6.8A3.8 3.8 0 0 0 17.2 3ZM18 7.2a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0Z"
-                                    />
-                                </svg>
-                            </a>
-
-                            <a
-                                href="#"
-                                class="text-[#4B352A] hover:opacity-70 transition"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-7 h-7"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M22 12.06C22 6.48 17.52 2 11.94 2A10.06 10.06 0 0 0 2 12c0 5 3.66 9.14 8.44 9.88v-7h-2.5v-3h2.5V9.5c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.22.2 2.22.2v2.44h-1.25c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 3h-2.34v7A10 10 0 0 0 22 12.06Z"
-                                    />
-                                </svg>
-                            </a>
-
-                            <a
-                                href="#"
-                                class="text-[#4B352A] hover:opacity-70 transition"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="w-7 h-7"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M12.04 2A10 10 0 0 0 8 21.12c-.14-.82-.28-2.08 0-3l1.88-7A3.4 3.4 0 0 1 9.5 8c0-2 2.5-3.7 4.45-3.7 2.08 0 3.62 1.38 3.62 3.38 0 2.27-1.2 4.5-2.7 4.5a1.44 1.44 0 0 1-1.45-1.79c.2-.82.62-2.08.62-2.73 0-.62-.32-1.14-1.02-1.14-1.08 0-2 1.14-2 2.57 0 .96.34 1.6.34 1.6l-1.38 5.64c-.28 1.1-.06 2.58-.06 2.58A10 10 0 0 0 22 12a10 10 0 0 0-9.96-10Z"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-
-                        <p
-                            class="text-gray-500 text-sm text-left md:text-right leading-relaxed"
-                        >
-                            © 2025 Eve & Adam Wedding<br />
-                            All Rights Reserved.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </body>
+            <p
+              class="text-gray-500 text-sm text-left md:text-right leading-relaxed"
+            >
+              © 2025 Eve & Adam Wedding<br />
+              All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

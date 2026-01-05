@@ -1,21 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 body {
-    font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
 }
 
 .font-arizonia {
-    font-family: "Arizonia", cursive;
+  font-family: "Arizonia", cursive;
 }
 
 .scroll-track {
-    width: max-content;
-    animation: scroll 40s linear infinite;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
