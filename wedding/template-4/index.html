@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wedding Template - 2</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Arizonia&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -29,9 +27,14 @@
         font-family: "Playfair Display", serif;
       }
     </style>
-
-    <!-- HERO SECTION -->
-    <section class="relative w-full h-screen overflow-hidden">
+    <section
+      class="relative w-full h-screen overflow-hidden"
+      id="hero-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="hero"
+      data-moj-web-label="Hero Section"
+      data-moj-web-category="structural"
+    >
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img
@@ -40,7 +43,6 @@
         />
         <div class="absolute inset-0 bg-[#8D5F8C]/50"></div>
       </div>
-
       <!-- CENTER CONTENT -->
       <div
         class="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 text-center"
@@ -48,49 +50,43 @@
         <h1
           class="text-white font-serif text-[70px] md:text-[110px] leading-none"
         >
-          Adam
-          <span class="text-[140px] md:text-[180px] align-middle">&</span><br />
-          Eve
+          John <span class="text-[140px] md:text-[180px] align-middle">&</span
+          ><br />
+          Jane
         </h1>
-
         <p class="text-white mt-6 text-lg md:text-xl tracking-wide">
           June 15, 2026.
         </p>
-
         <p
           class="text-white mt-4 uppercase tracking-widest text-sm md:text-base"
         >
           Save The Date
         </p>
-
         <p class="text-white mt-6 max-w-xl leading-relaxed">
           We are getting Married. Let's create a remarkable journey where our
           dreams become realities.
         </p>
       </div>
       <!-- MOBILE MENU BUTTON -->
-
       <!-- MOBILE SIDEBAR -->
       <div
-        id="mobileSidebar"
-        class="fixed top-0 right-[-300px] w-[260px] h-full bg-[#8D5F8C]/95 backdrop-blur-md z-40 p-8 flex flex-col gap-6 text-white transition-all duration-300 lg:hidden"
+        id="mobileMenu"
+        class="fixed top-0 right-0 w-[260px] h-full bg-[#8D5F8C]/95 backdrop-blur-md z-40 p-8 flex flex-col gap-6 text-white transition-all duration-300 lg:hidden translate-x-full"
       >
-        <button id="closeSidebar" class="text-3xl self-end">×</button>
-
+        <button id="closeMenu" class="text-3xl self-end">×</button>
         <a class="mt-6 uppercase tracking-wide text-lg" href="#">Home</a>
         <a class="uppercase tracking-wide text-lg" href="#">Story</a>
         <a class="uppercase tracking-wide text-lg" href="#">Plans</a>
         <a class="uppercase tracking-wide text-lg" href="#">Gallery</a>
         <a class="uppercase tracking-wide text-lg" href="#">Contact</a>
       </div>
-
       <!-- DESKTOP NAVBAR (same as yours, hidden on mobile) -->
       <div
         id="heroNavbar"
-        class="block absolute bottom-0 w-full border-t border-white/30 py-6 transition-all duration-300 z-20"
+        class="block absolute bottom-0 w-full border-t border-white/30 py-6 transition-all duration-300 z-20 text-white"
       >
         <button
-          id="mobileMenuBtn"
+          id="menuToggle"
           class="lg:hidden px-4 ml-auto flex justify-end text-white text-3xl"
         >
           ☰
@@ -106,51 +102,15 @@
         </nav>
       </div>
     </section>
-
     <script>
-      const nav = document.getElementById("heroNavbar");
-      const links = nav.querySelectorAll(".nav-link");
-
-      // Sticky behavior for DESKTOP ONLY
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > window.innerHeight - 120) {
-          nav.classList.add(
-            "fixed",
-            "top-0",
-            "bg-[#8D5F8C]/80",
-            "backdrop-blur-md"
-          );
-          nav.classList.remove("absolute", "bottom-0", "border-white/30");
-
-          links.forEach((l) => l.classList.add("text-white"));
-        } else {
-          nav.classList.remove(
-            "fixed",
-            "top-0",
-            "bg-[#8D5F8C]/80",
-            "backdrop-blur-md"
-          );
-          nav.classList.add("absolute", "bottom-0", "border-white/30");
-
-          links.forEach((l) => l.classList.add("text-white"));
-        }
-      });
-
-      // MOBILE SIDEBAR LOGIC
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const mobileSidebar = document.getElementById("mobileSidebar");
-      const closeSidebar = document.getElementById("closeSidebar");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileSidebar.style.right = "0px";
-      });
-
-      closeSidebar.addEventListener("click", () => {
-        mobileSidebar.style.right = "-300px";
-      });
+      (function () { const isEditor = window.frameElement && window.frameElement.classList.contains("gjs-frame"); const menuToggle = document.getElementById("menuToggle"); const mobileMenu = document.getElementById("mobileMenu"); const closeMenu = document.getElementById("closeMenu"); const nav = document.getElementById("heroNavbar"); const links = document.querySelectorAll("#heroNavbar .nav-link"); if (!menuToggle || !mobileMenu || !closeMenu || !nav) return; // ---- MOBILE MENU ---- function openMenu() { mobileMenu.classList.remove("translate-x-full"); document.body.style.overflow = "hidden"; } function closeMenuFunc() { mobileMenu.classList.add("translate-x-full"); document.body.style.overflow = ""; } menuToggle.addEventListener("click", (e) => { if (isEditor) { e.preventDefault(); e.stopPropagation(); } openMenu(); }); closeMenu.addEventListener("click", (e) => { if (isEditor) { e.preventDefault(); e.stopPropagation(); } closeMenuFunc(); }); // ---- SCROLL NAV EFFECT ---- function handleScroll() { if (window.scrollY > window.innerHeight - 120) { nav.classList.add( "fixed", "top-0", "bg-[#8D5F8C]/80", "backdrop-blur-md" ); nav.classList.remove("absolute", "bottom-0", "border-white/30"); links.forEach((l) => l.classList.add("text-white")); } else { nav.classList.remove( "fixed", "top-0", "bg-[#8D5F8C]/80", "backdrop-blur-md" ); nav.classList.add("absolute", "bottom-0", "border-white/30"); links.forEach((l) => l.classList.remove("text-white")); } } window.addEventListener("scroll", handleScroll); handleScroll(); })();
     </script>
-
     <section
+      id="about-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="about"
+      data-moj-web-label="About Section"
+      data-moj-web-category="structural"
       class="relative w-full py-10 md:py-24 px-4 lg:px-20 bg-white overflow-hidden max-w-[1536px] mx-auto"
     >
       <!-- MOBILE IMAGES (Grid Layout) -->
@@ -172,32 +132,27 @@
           class="w-full rounded-md shadow-sm"
         />
       </div>
-
       <!-- FLOATING IMAGES (Desktop Only) -->
       <!-- TOP LEFT -->
       <img
         src="https://wpolive.com/html/bohu-live/assets/images/quote/image-1.jpg"
         class="hidden lg:block absolute top-10 left-0 w-46 2xl:w-80 h-auto object-cover rounded-md shadow-sm"
       />
-
       <!-- BOTTOM LEFT -->
       <img
         src="https://wpolive.com/html/bohu-live/assets/images/quote/image-2.jpg"
         class="hidden lg:block absolute bottom-10 left-10 lg:left-24 w-44 2xl:w-64 h-auto object-cover rounded-md shadow-sm"
       />
-
       <!-- TOP RIGHT -->
       <img
         src="https://wpolive.com/html/bohu-live/assets/images/quote/image-4.jpg"
         class="hidden lg:block absolute top-20 right-5 lg:right-10 w-40 2xl:w-56 h-auto object-cover rounded-md shadow-sm"
       />
-
       <!-- BOTTOM RIGHT -->
       <img
         src="https://wpolive.com/html/bohu-live/assets/images/quote/image-3.jpg"
         class="hidden lg:block absolute bottom-10 right-10 lg:right-20 w-50 2xl:w-80 h-auto object-cover rounded-md shadow-sm"
       />
-
       <!-- QUOTE BLOCK -->
       <div class="text-center max-w-3xl mx-auto relative z-10">
         <!-- Heading -->
@@ -207,7 +162,6 @@
           “You are my today and<br class="hidden md:block" />
           all of my tomorrows.”
         </h2>
-
         <!-- Paragraph -->
         <p class="mt-8 text-gray-600 max-w-2xl mx-auto leading-7 px-4">
           Your smile is so gentle, yet powerful enough to light up the darkest
@@ -217,7 +171,6 @@
           just for my heart to find peace. It’s not just beauty I see; it’s
           love, comfort, and home all at once.
         </p>
-
         <!-- Icon -->
         <div class="mt-10 flex justify-center">
           <img
@@ -227,8 +180,14 @@
         </div>
       </div>
     </section>
-
-    <section class="w-full bg-[#f5f5f5] py-28 px-4 lg:px-20">
+    <section
+      id="intro-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="intro"
+      data-moj-web-label="Intro Section"
+      data-moj-web-category="structural"
+      class="w-full bg-[#f5f5f5] py-28 px-4 lg:px-20"
+    >
       <div
         class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start max-w-7xl mx-auto"
       >
@@ -238,16 +197,13 @@
             src="https://wpolive.com/html/bohu-live/assets/images/couple/image-1.jpg"
             class="w-72 mx-auto lg:mx-0 rounded-md shadow-sm mb-8"
           />
-
           <h3 class="font-serif text-3xl mb-4">Eve</h3>
-
           <p class="text-gray-600 leading-relaxed max-w-sm mx-auto lg:mx-0">
             Today, I marry my best friend.<br />
             With joy in my heart and love in<br />
             my eyes, I’m ready for forever.
           </p>
         </div>
-
         <!-- CENTER LARGE IMAGE -->
         <div class="flex justify-center h-full">
           <img
@@ -255,11 +211,9 @@
             class="w-full max-w-xl h-full rounded-md shadow-sm object-cover"
           />
         </div>
-
         <!-- RIGHT COLUMN -->
         <div class="text-center lg:text-right mt-10 lg:mt-0">
           <h3 class="font-serif text-3xl mb-4">Adam</h3>
-
           <p
             class="text-gray-600 leading-relaxed max-w-sm mx-auto lg:mr-0 lg:ml-auto"
           >
@@ -267,7 +221,6 @@
             of hope, I can’t wait to begin this<br />
             journey with you by my side.
           </p>
-
           <img
             src="https://wpolive.com/html/bohu-live/assets/images/couple/image-3.jpg"
             class="w-72 mx-auto lg:ml-auto lg:mr-0 rounded-md shadow-sm mt-10"
@@ -275,8 +228,12 @@
         </div>
       </div>
     </section>
-
     <section
+      id="story-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="story"
+      data-moj-web-label="story Section"
+      data-moj-web-category="structural"
       class="w-full bg-white py-10 md:py-20 px-4 lg:px-20 max-w-[1536px] mx-auto"
     >
       <!-- Heading -->
@@ -287,7 +244,6 @@
           magic that brought us together.
         </p>
       </div>
-
       <!-- STORY BLOCK 1 -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
         <div>
@@ -296,7 +252,6 @@
             class="w-full rounded-lg shadow-md object-cover"
           />
         </div>
-
         <div class="text-center md:text-left">
           <h3 class="font-serif text-3xl mb-4">How We Met</h3>
           <p class="text-gray-600 leading-relaxed">
@@ -307,7 +262,6 @@
           </p>
         </div>
       </div>
-
       <!-- STORY BLOCK 2 -->
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 md:-mt-40 lg:-mt-60"
@@ -320,7 +274,6 @@
             deeper, and suddenly—home felt like a person, not a place.
           </p>
         </div>
-
         <div class="order-1 md:order-2">
           <img
             src="https://wpolive.com/html/bohu-live/assets/images/story/image-right-1.jpg"
@@ -328,7 +281,6 @@
           />
         </div>
       </div>
-
       <!-- STORY BLOCK 3 -->
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:-mt-40 lg:-mt-60"
@@ -339,7 +291,6 @@
             class="w-full rounded-lg shadow-md object-cover"
           />
         </div>
-
         <div class="text-center md:text-left">
           <h3 class="font-serif text-3xl mb-4">The Proposal</h3>
           <p class="text-gray-600 leading-relaxed">
@@ -350,7 +301,6 @@
           </p>
         </div>
       </div>
-
       <!-- Decorative Flower -->
       <div class="mt-20 flex justify-center">
         <img
@@ -359,8 +309,14 @@
         />
       </div>
     </section>
-
-    <section class="w-full grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+    <section
+      id="plans-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="plans"
+      data-moj-web-label="plans Section"
+      data-moj-web-category="structural"
+      class="w-full grid grid-cols-1 lg:grid-cols-2 overflow-hidden"
+    >
       <!-- LEFT IMAGE -->
       <div class="w-full">
         <img
@@ -368,7 +324,6 @@
           class="w-full object-cover max-h-screen"
         />
       </div>
-
       <!-- RIGHT PANEL -->
       <div
         class="bg-[#f9f7f3] py-10 md:py-20 px-10 lg:px-20 flex flex-col justify-center"
@@ -380,83 +335,65 @@
             class="w-14 opacity-70"
           />
         </div>
-
         <!-- Heading -->
         <h2 class="font-serif text-4xl md:text-6xl text-center mb-14">
           The Plans
         </h2>
-
         <div class="space-y-14">
           <!-- DAY BEFORE -->
           <div>
             <h3 class="font-serif text-2xl mb-6">The Day Before</h3>
-
             <div class="space-y-4 text-gray-700 text-sm tracking-wide">
               <div class="flex justify-between">
-                <span>Event One</span>
-                <span>03:00 PM</span>
+                <span>Event One</span> <span>03:00 PM</span>
               </div>
-
               <div class="flex justify-between">
-                <span>Event Two</span>
-                <span>05:00 PM</span>
+                <span>Event Two</span> <span>05:00 PM</span>
               </div>
-
               <div class="flex justify-between">
-                <span>Event Three</span>
-                <span>08:00 PM</span>
+                <span>Event Three</span> <span>08:00 PM</span>
               </div>
             </div>
           </div>
-
           <!-- WEDDING DAY -->
           <div>
             <h3 class="font-serif text-2xl mb-6">The Wedding Day</h3>
-
             <div class="space-y-4 text-gray-700 text-sm tracking-wide">
               <div class="flex justify-between">
-                <span>Ceremony</span>
-                <span>03:00 PM</span>
+                <span>Ceremony</span> <span>03:00 PM</span>
               </div>
-
               <div class="flex justify-between">
-                <span>Reception</span>
-                <span>05:00 PM</span>
+                <span>Reception</span> <span>05:00 PM</span>
               </div>
-
               <div class="flex justify-between">
-                <span>Farewell</span>
-                <span>08:00 PM</span>
+                <span>Farewell</span> <span>08:00 PM</span>
               </div>
             </div>
           </div>
-
           <!-- DAY AFTER -->
           <div>
             <h3 class="font-serif text-2xl mb-6">The Day After</h3>
-
             <div class="space-y-4 text-gray-700 text-sm tracking-wide">
               <div class="flex justify-between">
-                <span>Event One</span>
-                <span>03:00 PM</span>
+                <span>Event One</span> <span>03:00 PM</span>
               </div>
-
               <div class="flex justify-between">
-                <span>Event Two</span>
-                <span>05:00 PM</span>
+                <span>Event Two</span> <span>05:00 PM</span>
               </div>
-
               <div class="flex justify-between">
-                <span>Event Three</span>
-                <span>08:00 PM</span>
+                <span>Event Three</span> <span>08:00 PM</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <section
+      id="gallery-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="gallery"
+      data-moj-web-label="gallery Section"
+      data-moj-web-category="structural"
       class="w-full bg-white py-10 md:py-20 px-4 lg:px-20 overflow-hidden"
     >
       <!-- MOBILE SCROLL CONTAINER -->
@@ -467,34 +404,28 @@
           src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-7.jpg"
           class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
         />
-
         <img
           src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-2.jpg"
           class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
         />
-
         <img
           src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-8.jpg"
           class="w-60 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
         />
-
         <img
           src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-9.jpg"
           class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
         />
-
         <img
           src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-1.jpg"
           class="w-56 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
         />
-
         <img
           src="https://wpolive.com/html/bohu-live/assets/images/gallery/image-6.jpg"
           class="w-52 2xl:w-72 snap-start rounded-md shadow-sm object-cover flex-shrink-0"
         />
       </div>
     </section>
-
     <style>
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
@@ -504,9 +435,13 @@
         scrollbar-width: none;
       }
     </style>
-
     <!-- FOOTER -->
     <section
+      id="footer-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="footer"
+      data-moj-web-label="footer Section"
+      data-moj-web-category="structural"
       class="w-full bg-[#6B3F69] text-white py-10 md:py-20 px-4 lg:px-20"
     >
       <div
@@ -519,31 +454,19 @@
             wedding. Your presence will make our day truly special!
           </p>
         </div>
-
         <!-- RIGHT LINKS + CONTACTS -->
         <div class="flex justify-between lg:justify-end gap-20 text-white">
           <!-- LINKS -->
           <div>
             <h3 class="font-serif text-xl mb-4">Links</h3>
             <ul class="space-y-2 text-white/90">
-              <li>
-                <a href="#" class="hover:opacity-70">About As</a>
-              </li>
-              <li>
-                <a href="#" class="hover:opacity-70">Story</a>
-              </li>
-              <li>
-                <a href="#" class="hover:opacity-70">RSVP</a>
-              </li>
-              <li>
-                <a href="#" class="hover:opacity-70">Gallery</a>
-              </li>
-              <li>
-                <a href="#" class="hover:opacity-70">Contact</a>
-              </li>
+              <li><a href="#" class="hover:opacity-70">About As</a></li>
+              <li><a href="#" class="hover:opacity-70">Story</a></li>
+              <li><a href="#" class="hover:opacity-70">RSVP</a></li>
+              <li><a href="#" class="hover:opacity-70">Gallery</a></li>
+              <li><a href="#" class="hover:opacity-70">Contact</a></li>
             </ul>
           </div>
-
           <!-- CONTACTS -->
           <div>
             <h3 class="font-serif text-xl mb-4">Contacts</h3>
@@ -559,10 +482,8 @@
           </div>
         </div>
       </div>
-
       <!-- DIVIDER LINE -->
       <div class="w-full h-px bg-white/20 mt-16"></div>
-
       <!-- BOTTOM BAR -->
       <div
         class="max-w-[1500px] mx-auto flex flex-col md:flex-row justify-between items-center py-6"
@@ -571,19 +492,16 @@
         <p class="text-white/80 text-sm mb-4 md:mb-0">
           Copyright © 2025 | | All Rights Reserved
         </p>
-
         <!-- SOCIAL ICONS -->
         <div class="flex gap-5 text-white">
           <!-- Facebook -->
           <a href="#" class="hover:opacity-70">
             <i class="fa-brands fa-facebook-f text-xl"></i>
           </a>
-
           <!-- Twitter -->
           <a href="#" class="hover:opacity-70">
             <i class="fa-brands fa-twitter text-xl"></i>
           </a>
-
           <!-- Instagram -->
           <a href="#" class="hover:opacity-70">
             <i class="fa-brands fa-instagram text-xl"></i>
