@@ -339,6 +339,9 @@
             });
         </script>
 
+
+
+
         <!-- Hero -->
         <section
             class="relative md:mx-5 md:rounded-3xl mt-20 md:mt-32 xl:mt-28 overflow-hidden"
@@ -410,12 +413,14 @@
                                 <div>
                                     <p
                                         class="text-3xl md:text-4xl font-medium leading-tight text-[#0D1112]"
+                                        id="event-date-text-2"
                                     >
-                                        DD–DD
+                                        20–22
                                         <span
                                             class="text-2xl md:text-3xl font-normal text-[#393D7E]"
-                                            >Month 'YY</span
                                         >
+                                            Dec '26
+                                        </span>
                                     </p>
 
                                     <span
@@ -478,8 +483,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                        id="cd2-days"
                                     >
-                                        12
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -493,8 +499,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                        id="cd2-hours"
                                     >
-                                        08
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -508,8 +515,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                        id="cd2-mins"
                                     >
-                                        32
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -523,8 +531,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#393D7E]"
+                                        id="cd2-secs"
                                     >
-                                        45
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -537,6 +546,114 @@
                 </div>
             </div>
         </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const dateTextEl = document.querySelector("#event-date-text-2");
+
+                const countdownBox = document
+                    .querySelector("#cd2-days")
+                    .closest(".bg-white\\/30");
+
+                const daysEl = document.querySelector("#cd2-days");
+                const hoursEl = document.querySelector("#cd2-hours");
+                const minsEl = document.querySelector("#cd2-mins");
+                const secsEl = document.querySelector("#cd2-secs");
+
+                function parseEventDate(text) {
+                    if (!text) return null;
+
+                    // Normalize whitespace
+                    text = text.replace(/\s+/g, " ").trim();
+
+                    // Matches:
+                    // 20–22 Dec '26
+                    // 5-9 Jan '27
+                    const match = text.match(
+                        /(\d{1,2})[–-](\d{1,2})\s+([A-Za-z]+)\s+'(\d{2})/
+                    );
+
+                    if (!match) return null;
+
+                    let [, startDay, endDay, month, year] = match;
+
+                    const monthIndex = [
+                        "jan",
+                        "feb",
+                        "mar",
+                        "apr",
+                        "may",
+                        "jun",
+                        "jul",
+                        "aug",
+                        "sep",
+                        "oct",
+                        "nov",
+                        "dec",
+                    ].indexOf(month.toLowerCase());
+
+                    if (monthIndex < 0) return null;
+
+                    const fullYear = 2000 + parseInt(year);
+
+                    // Prevent nonsense dates like 32 Dec
+                    const d = new Date(
+                        fullYear,
+                        monthIndex,
+                        endDay,
+                        23,
+                        59,
+                        59
+                    );
+                    if (isNaN(d.getTime())) return null;
+
+                    return d;
+                }
+
+                function hideCountdown() {
+                    if (countdownBox) countdownBox.style.display = "none";
+                }
+
+                function showCountdown() {
+                    if (countdownBox) countdownBox.style.display = "";
+                }
+
+                function updateCountdown() {
+                    const eventDate = parseEventDate(dateTextEl?.innerText);
+
+                    // If invalid → hide countdown
+                    if (!eventDate) {
+                        hideCountdown();
+                        return;
+                    }
+
+                    showCountdown();
+
+                    const now = new Date();
+                    const diff = eventDate - now;
+
+                    if (diff <= 0) {
+                        daysEl.innerText = 0;
+                        hoursEl.innerText = 0;
+                        minsEl.innerText = 0;
+                        secsEl.innerText = 0;
+                        return;
+                    }
+
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const mins = Math.floor((diff / (1000 * 60)) % 60);
+                    const secs = Math.floor((diff / 1000) % 60);
+
+                    daysEl.innerText = days;
+                    hoursEl.innerText = hours;
+                    minsEl.innerText = mins;
+                    secsEl.innerText = secs;
+                }
+
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            });
+        </script>
 
         <!-- stats -->
         <section
@@ -1257,8 +1374,8 @@
 
         <!-- schedule -->
         <section
-            id="schedule-block"
             class="py-10 md:py-16 px-4 bg-white"
+            id="schedule-block"
             data-moj-web-fixed="false"
             data-moj-web-type="Schedule"
             data-moj-web-label="Schedule"
@@ -1496,8 +1613,8 @@
 
         <!-- TARIFF -->
         <section
-            id="tariff-block"
             class="py-10 px-4 xl:py-16 bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466] text-white"
+            id="tariff-block"
             data-moj-web-fixed="false"
             data-moj-web-type="tariff"
             data-moj-web-label="Tariff"
@@ -1607,8 +1724,8 @@
 
         <!-- ABOUT VENUE -->
         <section
-            id="about-venue-block"
             class="py-10 md:py-16 px-4 max-w-7xl mx-auto relative"
+            id="about-venue-block"
             data-moj-web-fixed="false"
             data-moj-web-type="aboutVenue"
             data-moj-web-label="About Venue"
@@ -1898,8 +2015,8 @@
 
         <!-- SPONSORS -->
         <section
-            id="sponsor-block"
             class="py-10 px-4 xl:py-20 bg-[#f5f8f6] relative overflow-hidden"
+            id="sponsor-block"
             data-moj-web-fixed="false"
             data-moj-web-type="sponsor"
             data-moj-web-label="Sponsors "
@@ -2008,8 +2125,8 @@
 
         <!-- FOOTER -->
         <section
-            id="footer-block"
             class="bg-gradient-to-br from-[#393D7E] via-[#1D1F3A] to-[#2F3466] text-white pt-16 pb-8 px-6 lg:px-20"
+            id="footer-block"
             data-moj-web-fixed="false"
             data-moj-web-type="footer"
             data-moj-web-label="Footer"

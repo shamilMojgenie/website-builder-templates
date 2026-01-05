@@ -38,12 +38,13 @@
             }
         </style>
 
-        <!-- navbar -->
+        <!-- Hero -->
         <section
-            id="navbar"
+            class="lg:pl-4 relative overflow-x-clip pb-10 lg:py-24 caudex pt-20"
+            id="hero-main"
             data-moj-web-fixed="false"
-            data-moj-web-type="navbar"
-            data-moj-web-label="Navbar"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero Banner"
             data-moj-web-category="structural"
         >
             <nav
@@ -129,7 +130,7 @@
             >
                 <!-- Close Button -->
                 <button
-                    onclick="toggleMenu()"
+                    id="closeMenu"
                     class="absolute top-9 right-8 text-2xl text-[#224C30] hover:text-[#102C57] focus:outline-none"
                     aria-label="Close Menu"
                 >
@@ -206,56 +207,6 @@
                 class="fixed inset-0 bg-black/50 z-30 hidden"
                 onclick="toggleMenu()"
             ></div>
-        </section>
-        <script>
-            const nav = document.getElementById("mainNav");
-            const menu = document.getElementById("mobileMenu");
-            const overlay = document.getElementById("menuOverlay");
-            const mobileLogo = document.getElementById("mobileLogo");
-
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 10) {
-                    nav.classList.add(
-                        "bg-white",
-                        "text-[#224C30]",
-                        "shadow-md"
-                    );
-
-                    if (window.innerWidth < 1280) {
-                        mobileLogo.classList.add("opacity-100");
-                    }
-                } else {
-                    nav.classList.remove(
-                        "bg-white",
-                        "text-[#224C30]",
-                        "shadow-md"
-                    );
-                    if (window.innerWidth < 1280) {
-                        mobileLogo.classList.remove("opacity-100");
-                    }
-                }
-            });
-
-            function toggleMenu() {
-                menu.classList.toggle("translate-x-full");
-                menu.classList.toggle("translate-x-0");
-                overlay.classList.toggle("hidden");
-            }
-
-            document
-                .getElementById("menuToggle")
-                .addEventListener("click", toggleMenu);
-        </script>
-
-        <!-- Hero -->
-        <section
-            class="lg:pl-4 relative overflow-x-clip pb-10 lg:py-24 caudex pt-20"
-            id="hero-main"
-            data-moj-web-fixed="false"
-            data-moj-web-type="hero"
-            data-moj-web-label="Hero Banner"
-            data-moj-web-category="structural"
-        >
             <img
                 src="https://res.cloudinary.com/dxdqxr8cy/image/upload/v1765279363/flower_vgmtsa.svg"
                 alt=""
@@ -300,12 +251,13 @@
 
                         <!-- Date -->
                         <p
+                            id="wedding-date"
                             class="text-[#102C57] text-lg xl:text-xl font-semibold mb-5"
                         >
-                            26<sup>th</sup> & 27<sup>th</sup> January 2026
+                            26 & 27 January 2026
                         </p>
 
-                        <div class="w-full">
+                        <div class="w-full countdown-wrapper">
                             <div class="flex justify-center gap-4">
                                 <!-- Days -->
                                 <div
@@ -435,47 +387,175 @@
                     />
                 </div>
             </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const nav = document.getElementById("mainNav");
+                    const mobileLogo = document.getElementById("mobileLogo");
+
+                    function handleScroll() {
+                        if (window.scrollY > 10) {
+                            nav.classList.add("bg-white", "shadow-md");
+                            nav.classList.remove("bg-transparent");
+
+                            // show logo on mobile when scrolling
+                            if (window.innerWidth < 1280) {
+                                mobileLogo.classList.add("opacity-100");
+                            }
+                        } else {
+                            nav.classList.remove("bg-white", "shadow-md");
+                            nav.classList.add("bg-transparent");
+
+                            if (window.innerWidth < 1280) {
+                                mobileLogo.classList.remove("opacity-100");
+                            }
+                        }
+                    }
+
+                    handleScroll();
+                    window.addEventListener("scroll", handleScroll);
+                });
+                (function () {
+                    const isEditor =
+                        window.frameElement &&
+                        window.frameElement.classList.contains("gjs-frame");
+
+                    const menuToggle = document.getElementById("menuToggle");
+                    const mobileMenu = document.getElementById("mobileMenu");
+                    const closeMenu = document.getElementById("closeMenu");
+
+                    if (!menuToggle || !mobileMenu || !closeMenu) return;
+
+                    function openMenu() {
+                        mobileMenu.classList.remove("translate-x-full");
+                        document.body.style.overflow = "hidden";
+                    }
+
+                    function closeMenuFunc() {
+                        mobileMenu.classList.add("translate-x-full");
+                        document.body.style.overflow = "";
+                    }
+
+                    menuToggle.addEventListener("click", (e) => {
+                        if (isEditor) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                        openMenu();
+                    });
+
+                    closeMenu.addEventListener("click", (e) => {
+                        if (isEditor) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                        closeMenuFunc();
+                    });
+                })();
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const dateEl = document.getElementById("wedding-date");
+                    const wrapper =
+                        document.querySelector(".countdown-wrapper");
+
+                    const daysEl = document.getElementById("days");
+                    const hoursEl = document.getElementById("hours");
+                    const minsEl = document.getElementById("minutes");
+                    const secsEl = document.getElementById("seconds");
+
+                    function parseWeddingDate() {
+                        if (!dateEl) return null;
+
+                        // Get PLAIN TEXT (no HTML)
+                        let text = dateEl.textContent.trim();
+
+                        // Remove ordinal suffixes like st / nd / rd / th
+                        text = text.replace(/\b(\d+)(st|nd|rd|th)\b/gi, "$1");
+
+                        // Collapse spaces
+                        text = text.replace(/\s+/g, " ");
+
+                        // Match
+                        // 26 & 27 January 2026
+                        // 26 and 27 January 2026
+                        const match = text.match(
+                            /(\d{1,2})\s*(?:&|and)\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/i
+                        );
+
+                        if (!match) return null;
+
+                        let [, startDay, endDay, month, year] = match;
+
+                        const months = [
+                            "january",
+                            "february",
+                            "march",
+                            "april",
+                            "may",
+                            "june",
+                            "july",
+                            "august",
+                            "september",
+                            "october",
+                            "november",
+                            "december",
+                        ];
+
+                        const m = months.indexOf(month.toLowerCase());
+                        if (m < 0) return null;
+
+                        const date = new Date(year, m, startDay, 0, 0, 0);
+
+                        return isNaN(date.getTime()) ? null : date;
+                    }
+
+                    function hideCountdown() {
+                        if (wrapper) wrapper.style.display = "none";
+                    }
+
+                    function showCountdown() {
+                        if (wrapper) wrapper.style.display = "";
+                    }
+
+                    function updateCountdown() {
+                        const eventDate = parseWeddingDate();
+
+                        if (!eventDate) {
+                            hideCountdown();
+                            return;
+                        }
+
+                        showCountdown();
+
+                        const now = new Date();
+                        const diff = eventDate - now;
+
+                        if (diff <= 0) {
+                            daysEl.textContent = "00";
+                            hoursEl.textContent = "00";
+                            minsEl.textContent = "00";
+                            secsEl.textContent = "00";
+                            return;
+                        }
+
+                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor(
+                            (diff / (1000 * 60 * 60)) % 24
+                        );
+                        const mins = Math.floor((diff / (1000 * 60)) % 60);
+                        const secs = Math.floor((diff / 1000) % 60);
+
+                        daysEl.textContent = String(days).padStart(2, "0");
+                        hoursEl.textContent = String(hours).padStart(2, "0");
+                        minsEl.textContent = String(mins).padStart(2, "0");
+                        secsEl.textContent = String(secs).padStart(2, "0");
+                    }
+
+                    updateCountdown();
+                    setInterval(updateCountdown, 1000);
+                });
+            </script>
         </section>
-        <script>
-            const weddingDate = new Date("2026-01-26T00:00:00").getTime();
 
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = weddingDate - now;
-
-                if (distance < 0) {
-                    document.getElementById("days").innerText = "00";
-                    document.getElementById("hours").innerText = "00";
-                    document.getElementById("minutes").innerText = "00";
-                    document.getElementById("seconds").innerText = "00";
-                    return;
-                }
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor(
-                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                );
-                const minutes = Math.floor(
-                    (distance % (1000 * 60 * 60)) / (1000 * 60)
-                );
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("days").innerText = String(
-                    days
-                ).padStart(2, "0");
-                document.getElementById("hours").innerText = String(
-                    hours
-                ).padStart(2, "0");
-                document.getElementById("minutes").innerText = String(
-                    minutes
-                ).padStart(2, "0");
-                document.getElementById("seconds").innerText = String(
-                    seconds
-                ).padStart(2, "0");
-            }
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-        </script>
         <style>
             #blue {
                 opacity: 1;
@@ -1295,68 +1375,78 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+                (function () {
+                    const AUTO_MS = 5000;
+
+                    const container = document.getElementById("inner-circle");
+                    const tabs = Array.from(
+                        container.querySelectorAll(".family-tab")
+                    );
+                    const panes = Array.from(
+                        container.querySelectorAll(".family-pane")
+                    );
+                    const tabKeys = tabs.map((t) => t.dataset.tab);
+
+                    let index = 0;
+                    let hover = false;
+                    let timer = null;
+
+                    function show(tab) {
+                        tabs.forEach((btn) => {
+                            const active = btn.dataset.tab === tab;
+                            btn.classList.toggle("bg-[#102C57]", active);
+                            btn.classList.toggle("text-white", active);
+                            btn.classList.toggle("bg-[#F3F3F3]", !active);
+                            btn.classList.toggle("text-[#102C57]", !active);
+                        });
+
+                        panes.forEach((pane) => {
+                            const active = pane.dataset.pane === tab;
+                            if (active) {
+                                pane.classList.remove("hidden", "opacity-0");
+                                pane.classList.add("opacity-100");
+                            } else {
+                                pane.classList.remove("opacity-100");
+                                pane.classList.add("opacity-0");
+                                setTimeout(
+                                    () => pane.classList.add("hidden"),
+                                    300
+                                );
+                            }
+                        });
+
+                        index = tabKeys.indexOf(tab);
+                    }
+
+                    function auto() {
+                        if (timer) return;
+                        timer = setInterval(() => {
+                            if (hover) return;
+                            index = (index + 1) % tabKeys.length;
+                            show(tabKeys[index]);
+                        }, AUTO_MS);
+                    }
+
+                    container.addEventListener(
+                        "mouseenter",
+                        () => (hover = true)
+                    );
+                    container.addEventListener(
+                        "mouseleave",
+                        () => (hover = false)
+                    );
+
+                    tabs.forEach(
+                        (btn) => (btn.onclick = () => show(btn.dataset.tab))
+                    );
+
+                    show(tabKeys[0]);
+                    auto();
+                })();
+            </script>
         </section>
-        <script>
-            (function () {
-                const AUTO_MS = 5000;
-
-                const container = document.getElementById("inner-circle");
-                const tabs = Array.from(
-                    container.querySelectorAll(".family-tab")
-                );
-                const panes = Array.from(
-                    container.querySelectorAll(".family-pane")
-                );
-                const tabKeys = tabs.map((t) => t.dataset.tab);
-
-                let index = 0;
-                let hover = false;
-                let timer = null;
-
-                function show(tab) {
-                    tabs.forEach((btn) => {
-                        const active = btn.dataset.tab === tab;
-                        btn.classList.toggle("bg-[#102C57]", active);
-                        btn.classList.toggle("text-white", active);
-                        btn.classList.toggle("bg-[#F3F3F3]", !active);
-                        btn.classList.toggle("text-[#102C57]", !active);
-                    });
-
-                    panes.forEach((pane) => {
-                        const active = pane.dataset.pane === tab;
-                        if (active) {
-                            pane.classList.remove("hidden", "opacity-0");
-                            pane.classList.add("opacity-100");
-                        } else {
-                            pane.classList.remove("opacity-100");
-                            pane.classList.add("opacity-0");
-                            setTimeout(() => pane.classList.add("hidden"), 300);
-                        }
-                    });
-
-                    index = tabKeys.indexOf(tab);
-                }
-
-                function auto() {
-                    if (timer) return;
-                    timer = setInterval(() => {
-                        if (hover) return;
-                        index = (index + 1) % tabKeys.length;
-                        show(tabKeys[index]);
-                    }, AUTO_MS);
-                }
-
-                container.addEventListener("mouseenter", () => (hover = true));
-                container.addEventListener("mouseleave", () => (hover = false));
-
-                tabs.forEach(
-                    (btn) => (btn.onclick = () => show(btn.dataset.tab))
-                );
-
-                show(tabKeys[0]);
-                auto();
-            })();
-        </script>
 
         <!-- itinerary -->
         <style>
@@ -1372,6 +1462,11 @@
             data-moj-web-label="itinerary Section"
             data-moj-web-category="structural"
         >
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            />
+
             <div class="max-w-7xl mx-auto">
                 <h2
                     class="text-3xl md:text-5xl lg:text-6xl caudex text-[#102C57] text-center leading-tight mb-2"
@@ -1409,11 +1504,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M19 3h-1V1h-2v2H8V1H6v2H5c-.11 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-calendar-days text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >November 18, 2026</span
@@ -1424,11 +1517,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-regular fa-clock text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >07:30 PM onwards</span
@@ -1439,11 +1530,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-location-dot text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >Azure Hall, Lakeside Pavilion</span
@@ -1454,11 +1543,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-star text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >Starlit Harmony Theme</span
@@ -1469,11 +1556,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-shirt text-white text-sm"
+                                            ></i>
                                         </div>
                                         <div>
                                             <h5
@@ -1549,13 +1634,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M19 3h-1V1h-2v2H8V1H6v2H5c-.11 0-2 
-.9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 
-2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-calendar-days text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >January 27, 2026</span
@@ -1566,12 +1647,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 20c-4.42 0-8-3.58-8-8s3.58-8 
-8-8 8 3.58 8 8-3.58 8-8 8z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-regular fa-clock text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >01:30 PM onwards</span
@@ -1582,13 +1660,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 2C8.13 2 5 5.13 5 9c0 
-5.25 7 13 7 13s7-7.75 7-13c0-3.87-
-3.13-7-7-7z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-location-dot text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >St. Teresa's Monastery Church</span
@@ -1599,16 +1673,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 
-2l3.09 6.26L22 
-9.27l-5 4.87 1.18 
-6.88L12 17.77l-6.18 
-3.25L7 14.14 2 
-9.27z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-star text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >Timeless Elegance Theme</span
@@ -1619,16 +1686,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 
-2l3.09 6.26L22 
-9.27l-5 4.87 1.18 
-6.88L12 17.77l-6.18 
-3.25L7 14.14 2 
-9.27z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-shirt text-white text-sm"
+                                            ></i>
                                         </div>
                                         <div>
                                             <h5
@@ -1707,14 +1767,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M19 
-3h-1V1h-2v2H8V1H6v2H5c-.11 0-2 
-.9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 
-2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-calendar-days text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >January 27, 2026</span
@@ -1725,14 +1780,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M11.99 
-2C6.47 2 2 6.48 2 12s4.47 10 
-9.99 10C17.52 22 22 17.52 22 
-12S17.52 2 11.99 2z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-regular fa-clock text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >07:00 PM onwards</span
@@ -1743,14 +1793,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 
-2C8.13 2 5 5.13 5 9c0 
-5.25 7 13 7 13s7-7.75 7-13c0-3.87-
-3.13-7-7-7z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-location-dot text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >Grand Hyatt, Kochi</span
@@ -1761,16 +1806,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 
-2l3.09 6.26L22 
-9.27l-5 4.87 1.18 
-6.88L12 17.77l-6.18 
-3.25L7 14.14 2 
-9.27z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-star text-white text-sm"
+                                            ></i>
                                         </div>
                                         <span class="text-gray-800 font-medium"
                                             >Garden of Eden Theme</span
@@ -1781,16 +1819,9 @@
                                         <div
                                             class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center"
                                         >
-                                            <svg class="w-4 h-4 text-white">
-                                                <path
-                                                    d="M12 
-2l3.09 6.26L22 
-9.27l-5 4.87 1.18 
-6.88L12 17.77l-6.18 
-3.25L7 14.14 2 
-9.27z"
-                                                />
-                                            </svg>
+                                            <i
+                                                class="fa-solid fa-shirt text-white text-sm"
+                                            ></i>
                                         </div>
                                         <div>
                                             <h5
@@ -1886,68 +1917,69 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <script is:inline>
-            const slidesContainer = document.getElementById("slides");
-            const indicatorBtns = document.querySelectorAll("[data-slide]");
-            const nextBtn = document.getElementById("next");
-            const prevBtn = document.getElementById("prev");
+            <script>
+                const slidesContainer = document.getElementById("slides");
+                const indicatorBtns = document.querySelectorAll("[data-slide]");
+                const nextBtn = document.getElementById("next");
+                const prevBtn = document.getElementById("prev");
 
-            let currentSlide = 0;
-            const totalSlides =
-                document.querySelectorAll("#slides > div").length;
+                let currentSlide = 0;
+                const totalSlides =
+                    document.querySelectorAll("#slides > div").length;
 
-            function updateSlider(index) {
-                slidesContainer.style.transform = `translateX(-${
-                    index * 100
-                }%)`;
+                function updateSlider(index) {
+                    slidesContainer.style.transform = `translateX(-${
+                        index * 100
+                    }%)`;
 
-                indicatorBtns.forEach((btn, i) => {
-                    btn.classList.toggle("opacity-50", i !== index);
-                    btn.blur(); // prevent page scroll during auto-slide
-                });
-            }
+                    indicatorBtns.forEach((btn, i) => {
+                        btn.classList.toggle("opacity-50", i !== index);
+                        btn.blur(); // prevent page scroll during auto-slide
+                    });
+                }
 
-            function goToNextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider(currentSlide);
-            }
-
-            function goToPrevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlider(currentSlide);
-            }
-
-            // Buttons
-            nextBtn.addEventListener("click", () => {
-                goToNextSlide();
-                resetAutoSlide();
-            });
-
-            prevBtn.addEventListener("click", () => {
-                goToPrevSlide();
-                resetAutoSlide();
-            });
-
-            indicatorBtns.forEach((btn, i) => {
-                btn.addEventListener("click", () => {
-                    currentSlide = i;
+                function goToNextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
                     updateSlider(currentSlide);
+                }
+
+                function goToPrevSlide() {
+                    currentSlide =
+                        (currentSlide - 1 + totalSlides) % totalSlides;
+                    updateSlider(currentSlide);
+                }
+
+                // Buttons
+                nextBtn.addEventListener("click", () => {
+                    goToNextSlide();
                     resetAutoSlide();
                 });
-            });
 
-            // ⭐ AUTO SCROLL (RESTORED)
-            let autoSlideTimer = setInterval(goToNextSlide, 6000);
+                prevBtn.addEventListener("click", () => {
+                    goToPrevSlide();
+                    resetAutoSlide();
+                });
 
-            function resetAutoSlide() {
-                clearInterval(autoSlideTimer);
-                autoSlideTimer = setInterval(goToNextSlide, 6000);
-            }
+                indicatorBtns.forEach((btn, i) => {
+                    btn.addEventListener("click", () => {
+                        currentSlide = i;
+                        updateSlider(currentSlide);
+                        resetAutoSlide();
+                    });
+                });
 
-            // Init
-            updateSlider(currentSlide);
-        </script>
+                // ⭐ AUTO SCROLL (RESTORED)
+                let autoSlideTimer = setInterval(goToNextSlide, 6000);
+
+                function resetAutoSlide() {
+                    clearInterval(autoSlideTimer);
+                    autoSlideTimer = setInterval(goToNextSlide, 6000);
+                }
+
+                // Init
+                updateSlider(currentSlide);
+            </script>
+        </section>
 
         <!-- venue -->
         <section
@@ -2281,54 +2313,57 @@
                     />
                 </div>
             </div>
-        </section>
-        <script>
-            const scrollSpeed = 1; // pixels per frame
-            const intervalDelay = 16; // ~60fps
-            let isPaused = false; // shared pause state
+            <script>
+                const scrollSpeed = 1; // pixels per frame
+                const intervalDelay = 16; // ~60fps
+                let isPaused = false; // shared pause state
 
-            function setupInfiniteScroll(containerId) {
-                const container = document.getElementById(containerId);
-                const children = [...container.children];
+                function setupInfiniteScroll(containerId) {
+                    const container = document.getElementById(containerId);
+                    const children = [...container.children];
 
-                // Clone children for seamless loop
-                children.forEach((child) => {
-                    const clone = child.cloneNode(true);
-                    container.appendChild(clone);
-                });
+                    // Clone children for seamless loop
+                    children.forEach((child) => {
+                        const clone = child.cloneNode(true);
+                        container.appendChild(clone);
+                    });
 
-                const scroll = () => {
-                    if (!isPaused) {
-                        container.scrollLeft += scrollSpeed;
-                        if (container.scrollLeft >= container.scrollWidth / 2) {
-                            container.scrollLeft = 0;
+                    const scroll = () => {
+                        if (!isPaused) {
+                            container.scrollLeft += scrollSpeed;
+                            if (
+                                container.scrollLeft >=
+                                container.scrollWidth / 2
+                            ) {
+                                container.scrollLeft = 0;
+                            }
                         }
-                    }
-                };
+                    };
 
-                const interval = setInterval(scroll, intervalDelay);
+                    const interval = setInterval(scroll, intervalDelay);
 
-                // Shared hover handlers
-                container.addEventListener(
-                    "mouseenter",
-                    () => (isPaused = true)
-                );
-                container.addEventListener(
-                    "mouseleave",
-                    () => (isPaused = false)
-                );
-            }
+                    // Shared hover handlers
+                    container.addEventListener(
+                        "mouseenter",
+                        () => (isPaused = true)
+                    );
+                    container.addEventListener(
+                        "mouseleave",
+                        () => (isPaused = false)
+                    );
+                }
 
-            // Setup both scroll containers
-            setupInfiniteScroll("galleryContainer");
-            setupInfiniteScroll("galleryContainer2");
-        </script>
-        <style>
-            .scroll-hide {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-        </style>
+                // Setup both scroll containers
+                setupInfiniteScroll("galleryContainer");
+                setupInfiniteScroll("galleryContainer2");
+            </script>
+            <style>
+                .scroll-hide {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            </style>
+        </section>
 
         <!-- footer -->
         <section

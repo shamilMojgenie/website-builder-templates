@@ -380,10 +380,10 @@
 
                         <!-- DESCRIPTION -->
                         <p class="text-white mt-5 md:w-[86%]">
-                            Event is a creative platform dedicated to
-                            organizing world-class design events that bring
-                            together professionals, students, and innovators
-                            from industry.
+                            Event is a creative platform dedicated to organizing
+                            world-class design events that bring together
+                            professionals, students, and innovators from
+                            industry.
                         </p>
 
                         <!-- BUTTON -->
@@ -477,7 +477,7 @@
 
                 <!-- COUNTDOWN SECTION -->
                 <div
-                    class="relative w-full bg-[url('https://wallpapergod.com/images/hd/plain-1920X1200-wallpaper-xvabox3s0ap7sgu0.jpeg')]  bg-cover bg-center mt-[90px] py-[50px] md:py-20 flex justify-center"
+                    class="relative w-full bg-[url('https://wallpapergod.com/images/hd/plain-1920X1200-wallpaper-xvabox3s0ap7sgu0.jpeg')] bg-cover bg-center mt-[90px] py-[50px] md:py-20 flex justify-center"
                 >
                     <div
                         class="w-full max-w-[1300px] flex flex-wrap px-3 md:px-5 justify-between"
@@ -507,7 +507,7 @@
 
                         <!-- COUNTDOWN VISUAL -->
                         <div
-                            class="w-full md:w-6/12 flex items-center mt-5 md:mt-0 "
+                            class="w-full md:w-6/12 flex items-center mt-5 md:mt-0"
                         >
                             <div
                                 class="w-full flex justify-center text-white text-3xl md:text-[50px] font-bold space-x-6"
@@ -538,162 +538,186 @@
             </div>
         </section>
         <script>
-    function startCountdown() {
-        const eventDate = new Date("2026-12-17T00:00:00"); // <<< YOUR DATE
-        const dayEl = document.getElementById("count-days");
-        const hourEl = document.getElementById("count-hours");
-        const minEl = document.getElementById("count-mins");
-        const secEl = document.getElementById("count-secs");
+            function startCountdown() {
+                const eventDate = new Date("2026-12-17T00:00:00"); // <<< YOUR DATE
+                const dayEl = document.getElementById("count-days");
+                const hourEl = document.getElementById("count-hours");
+                const minEl = document.getElementById("count-mins");
+                const secEl = document.getElementById("count-secs");
 
-        function updateCountdown() {
-            const now = new Date();
-            const diff = eventDate - now;
+                function updateCountdown() {
+                    const now = new Date();
+                    const diff = eventDate - now;
 
-            if (diff <= 0) {
-                dayEl.innerHTML = "00";
-                hourEl.innerHTML = "00";
-                minEl.innerHTML = "00";
-                secEl.innerHTML = "00";
-                return;
+                    if (diff <= 0) {
+                        dayEl.innerHTML = "00";
+                        hourEl.innerHTML = "00";
+                        minEl.innerHTML = "00";
+                        secEl.innerHTML = "00";
+                        return;
+                    }
+
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const mins = Math.floor((diff / (1000 * 60)) % 60);
+                    const secs = Math.floor((diff / 1000) % 60);
+
+                    dayEl.innerHTML = String(days).padStart(2, "0");
+                    hourEl.innerHTML = String(hours).padStart(2, "0");
+                    minEl.innerHTML = String(mins).padStart(2, "0");
+                    secEl.innerHTML = String(secs).padStart(2, "0");
+                }
+
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
             }
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const mins = Math.floor((diff / (1000 * 60)) % 60);
-            const secs = Math.floor((diff / 1000) % 60);
-
-            dayEl.innerHTML = String(days).padStart(2, "0");
-            hourEl.innerHTML = String(hours).padStart(2, "0");
-            minEl.innerHTML = String(mins).padStart(2, "0");
-            secEl.innerHTML = String(secs).padStart(2, "0");
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    }
-
-    startCountdown();
-</script>
-
+            startCountdown();
+        </script>
 
         <section
             class="w-full bg-zinc-800 uppercase overflow-hidden pb-10 md:pb-20"
         >
             <!-- REPEATED SET STARTS HERE -->
-     <style>
-    /* Marquee wrapper */
-    .marquee-container {
-        overflow: hidden;
-        width: 100%;
-        position: relative;
-    }
+            <style>
+                /* Marquee wrapper */
+                .marquee-container {
+                    overflow: hidden;
+                    width: 100%;
+                    position: relative;
+                }
 
-    /* Track that scrolls */
-    .marquee-track {
-        display: flex;
-        gap: 4rem;
-        width: max-content;
-        animation: marqueeScroll 50s linear infinite;
-    }
+                /* Track that scrolls */
+                .marquee-track {
+                    display: flex;
+                    gap: 4rem;
+                    width: max-content;
+                    animation: marqueeScroll 50s linear infinite;
+                }
 
-    /* Animation */
-    @keyframes marqueeScroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-</style>
+                /* Animation */
+                @keyframes marqueeScroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
 
-<div class="marquee-container py-10">
-    <div class="marquee-track">
+            <div class="marquee-container py-10">
+                <div class="marquee-track">
+                    <!-- 1 -->
+                    <div class="inline-flex items-center flex-row-reverse">
+                        <p
+                            class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+                        >
+                            Business Conference
+                        </p>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                            class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                        />
+                    </div>
 
-        <!-- 1 -->
-        <div class="inline-flex items-center flex-row-reverse">
-            <p
-                class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
-            >
-                Business Conference
-            </p>
-            <img
-                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
-                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
-                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
-            />
-        </div>
+                    <!-- 2 -->
+                    <div class="inline-flex items-center flex-row-reverse">
+                        <p
+                            class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+                        >
+                            Business Solution
+                        </p>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                            class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                        />
+                    </div>
 
-        <!-- 2 -->
-        <div class="inline-flex items-center flex-row-reverse">
-            <p
-                class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
-            >
-                Business Solution
-            </p>
-            <img
-                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
-                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
-                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
-            />
-        </div>
+                    <!-- 3 -->
+                    <div class="inline-flex items-center flex-row-reverse">
+                        <p
+                            class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+                        >
+                            Business Conference
+                        </p>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                            class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                        />
+                    </div>
 
-        <!-- 3 -->
-        <div class="inline-flex items-center flex-row-reverse">
-            <p
-                class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
-            >
-                Business Conference
-            </p>
-            <img
-                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
-                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
-                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
-            />
-        </div>
+                    <!-- 4 -->
+                    <div class="inline-flex items-center flex-row-reverse">
+                        <p
+                            class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+                        >
+                            Business Solution
+                        </p>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                            class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                        />
+                    </div>
 
-        <!-- 4 -->
-        <div class="inline-flex items-center flex-row-reverse">
-            <p
-                class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
-            >
-                Business Solution
-            </p>
-            <img
-                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
-                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
-                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
-            />
-        </div>
+                    <!-- duplicated for infinite loop smoothness -->
+                    <!-- 5 -->
+                    <div class="inline-flex items-center flex-row-reverse">
+                        <p
+                            class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+                        >
+                            Business Conference
+                        </p>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                            class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                        />
+                    </div>
 
-        <!-- duplicated for infinite loop smoothness -->
-        <!-- 5 -->
-        <div class="inline-flex items-center flex-row-reverse">
-            <p
-                class="text-[#0C6DD4] text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
-            >
-                Business Conference
-            </p>
-            <img
-                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
-                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
-                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
-            />
-        </div>
-
-        <!-- 6 -->
-        <div class="inline-flex items-center flex-row-reverse">
-            <p
-                class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
-            >
-                Business Solution
-            </p>
-            <img
-                src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
-                class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
-                style="filter: invert(36%) sepia(92%) saturate(748%) hue-rotate(184deg) brightness(90%) contrast(101%);"
-            />
-        </div>
-
-    </div>
-</div>
-
+                    <!-- 6 -->
+                    <div class="inline-flex items-center flex-row-reverse">
+                        <p
+                            class="text-white/10 text-[50px] md:text-[70px] font-semibold leading-[70px] whitespace-nowrap"
+                        >
+                            Business Solution
+                        </p>
+                        <img
+                            src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/event-home-banner-ly002.png"
+                            class="w-[50px] md:w-[70px] mx-5 md:mr-[50px]"
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
+                        />
+                    </div>
+                </div>
+            </div>
 
             <div class="max-w-7xl mx-auto px-4">
                 <input
@@ -1559,21 +1583,21 @@
                     <img
                         src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-9.svg"
                         class="h-2"
-                          style="
-                                        filter: invert(36%) sepia(92%)
-                                            saturate(748%) hue-rotate(184deg)
-                                            brightness(90%) contrast(101%);
-                                    "
+                        style="
+                            filter: invert(36%) sepia(92%) saturate(748%)
+                                hue-rotate(184deg) brightness(90%)
+                                contrast(101%);
+                        "
                     />
                     Our Speakers
                     <img
                         src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-10.svg"
                         class="h-2"
-                          style="
-                                        filter: invert(36%) sepia(92%)
-                                            saturate(748%) hue-rotate(184deg)
-                                            brightness(90%) contrast(101%);
-                                    "
+                        style="
+                            filter: invert(36%) sepia(92%) saturate(748%)
+                                hue-rotate(184deg) brightness(90%)
+                                contrast(101%);
+                        "
                     />
                 </span>
 
@@ -1708,7 +1732,6 @@
                         />
                     </span>
 
-
                     <p class="text-white/70 mt-4 max-w-xl">
                         Hear directly from our attendees and partners about
                         their experiences.
@@ -1813,21 +1836,21 @@
                         <img
                             src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-9.svg"
                             class="w-8 mx-2"
-                              style="
-                                        filter: invert(36%) sepia(92%)
-                                            saturate(748%) hue-rotate(184deg)
-                                            brightness(90%) contrast(101%);
-                                    "
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
                         />
                         Quick Answers
                         <img
                             src="https://c.animaapp.com/miwnxunvQd8fQQ/assets/icon-10.svg"
                             class="w-8 mx-2"
-                              style="
-                                        filter: invert(36%) sepia(92%)
-                                            saturate(748%) hue-rotate(184deg)
-                                            brightness(90%) contrast(101%);
-                                    "
+                            style="
+                                filter: invert(36%) sepia(92%) saturate(748%)
+                                    hue-rotate(184deg) brightness(90%)
+                                    contrast(101%);
+                            "
                         />
                     </span>
 
@@ -1886,7 +1909,7 @@
                                 for="faq2"
                                 class="cursor-pointer block text-white text-lg transition !bg-transparent"
                             >
-                                Everything you need about  events?
+                                Everything you need about events?
                             </label>
 
                             <div
@@ -2145,10 +2168,7 @@
             <div
                 class="border-t border-white/10 py-5 px-5 flex flex-col md:flex-row justify-between text-center text-white"
             >
-                <p>
-                    ©2025 All rights reserved for Event.
-                </p>
-
+                <p>©2025 All rights reserved for Event.</p>
             </div>
         </section>
     </body>

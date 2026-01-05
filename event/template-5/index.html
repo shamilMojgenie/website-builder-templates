@@ -31,6 +31,10 @@
         <section
             id="navbar"
             class="fixed top-0 left-0 w-full z-50 duration-300"
+            data-moj-web-fixed="false"
+            data-moj-web-type="navbar"
+            data-moj-web-label="Navbar"
+            data-moj-web-category="structural"
         >
             <nav
                 class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6"
@@ -147,7 +151,14 @@
         </script>
 
         <!-- HERO SECTION -->
-        <section class="relative w-full py-30 md:py-50 overflow-hidden">
+        <section
+            class="relative w-full py-30 md:py-50 overflow-hidden"
+            id="hero"
+            data-moj-web-fixed="false"
+            data-moj-web-type="hero"
+            data-moj-web-label="Hero"
+            data-moj-web-category="structural"
+        >
             <img
                 src="https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?cs=srgb&dl=pexels-jibarofoto-2833037.jpg&fm=jpg"
                 class="absolute inset-0 w-full h-full object-cover"
@@ -166,12 +177,12 @@
                     INNOVATION EVENT
                 </h2>
 
-                <p class="mt-4 text-white/80 text-lg">
+                <p class="mt-4 text-white/80 text-lg" id="event-date-line">
                     23-25 August 2027 @ The Times Center, Manhattan, New York
                 </p>
 
                 <!-- COUNTDOWN -->
-                <div class="flex gap-3 md:gap-8 mt-10">
+                <div class="flex gap-3 md:gap-8 mt-10 countdown-wrapper">
                     <div
                         class="bg-white/10 backdrop-blur-md px-4 md:px-8 py-5 rounded-xl text-center"
                     >
@@ -262,48 +273,106 @@
             </svg>
         </section>
         <script>
-            function startCountdown() {
-                const eventDate = new Date(
-                    "August 23, 2027 00:00:00"
-                ).getTime();
+            document.addEventListener("DOMContentLoaded", () => {
+                const dateLine = document.querySelector("#event-date-line");
+                const countdown = document.querySelector(".countdown-wrapper");
 
-                setInterval(() => {
-                    const now = new Date().getTime();
+                const dayEls = document.querySelectorAll(".count-days");
+                const hourEls = document.querySelectorAll(".count-hours");
+                const minEls = document.querySelectorAll(".count-minutes");
+                const secEls = document.querySelectorAll(".count-seconds");
+
+                function parseDateFromText(text) {
+                    if (!text) return null;
+
+                    text = text.trim();
+
+                    // Matches: 23-25 August 2027 ...
+                    const match = text.match(
+                        /(\d{1,2})[–-](\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/
+                    );
+
+                    if (!match) return null;
+
+                    let [, startDay, endDay, month, year] = match;
+
+                    const monthIndex = [
+                        "january",
+                        "february",
+                        "march",
+                        "April",
+                        "may",
+                        "june",
+                        "july",
+                        "august",
+                        "september",
+                        "october",
+                        "november",
+                        "december",
+                    ].indexOf(month.toLowerCase());
+
+                    if (monthIndex < 0) return null;
+
+                    const d = new Date(year, monthIndex, endDay, 23, 59, 59);
+
+                    if (isNaN(d.getTime())) return null;
+
+                    return d;
+                }
+
+                function hideCountdown() {
+                    if (countdown) countdown.style.display = "none";
+                }
+
+                function showCountdown() {
+                    if (countdown) countdown.style.display = "";
+                }
+
+                function updateCountdown() {
+                    const eventDate = parseDateFromText(dateLine?.innerText);
+
+                    if (!eventDate) {
+                        hideCountdown();
+                        return;
+                    }
+
+                    showCountdown();
+
+                    const now = new Date();
                     const diff = eventDate - now;
 
-                    if (diff <= 0) return;
+                    if (diff <= 0) {
+                        dayEls.forEach((el) => (el.textContent = 0));
+                        hourEls.forEach((el) => (el.textContent = 0));
+                        minEls.forEach((el) => (el.textContent = 0));
+                        secEls.forEach((el) => (el.textContent = 0));
+                        return;
+                    }
 
                     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor(
-                        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                    );
-                    const minutes = Math.floor(
-                        (diff % (1000 * 60 * 60)) / (1000 * 60)
-                    );
-                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const mins = Math.floor((diff / (1000 * 60)) % 60);
+                    const secs = Math.floor((diff / 1000) % 60);
 
-                    // Update ALL countdown elements
-                    document
-                        .querySelectorAll(".count-days")
-                        .forEach((el) => (el.textContent = days));
-                    document
-                        .querySelectorAll(".count-hours")
-                        .forEach((el) => (el.textContent = hours));
-                    document
-                        .querySelectorAll(".count-minutes")
-                        .forEach((el) => (el.textContent = minutes));
-                    document
-                        .querySelectorAll(".count-seconds")
-                        .forEach((el) => (el.textContent = seconds));
-                }, 1000);
-            }
+                    dayEls.forEach((el) => (el.textContent = days));
+                    hourEls.forEach((el) => (el.textContent = hours));
+                    minEls.forEach((el) => (el.textContent = mins));
+                    secEls.forEach((el) => (el.textContent = secs));
+                }
 
-            startCountdown();
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            });
         </script>
 
         <!-- ABOUT SECTION -->
         <section
             class="w-full relative bg-white pt-10 md:pt-20 relative overflow-hidden"
+            id="about"
+            data-moj-web-fixed="false"
+            data-moj-web-type="about"
+            data-moj-web-label="About"
+            data-moj-web-category="structural"
         >
             <div
                 class="absolute bottom-0 top-3/5 left-0 right-0 bg-[#76E6CF]/50"
@@ -316,7 +385,9 @@
                 </h2>
 
                 <!-- IMAGE ROW -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6 md:mt-16">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6 md:mt-16"
+                >
                     <!-- IMAGE -->
                     <div>
                         <img
@@ -384,7 +455,14 @@
         </section>
 
         <!-- EVENT STATS SECTION -->
-        <section class="w-full bg-white py-10 md:pb-24">
+        <section
+            class="w-full bg-white py-10 md:pb-24"
+            data-moj-web-fixed="false"
+            data-moj-web-type="stats"
+            data-moj-web-label="stats"
+            data-moj-web-category="structural"
+            id="stats"
+        >
             <div
                 class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-12 text-center"
             >
@@ -447,7 +525,14 @@
         </section>
 
         <!-- EVENT HIGHLIGHTS SECTION -->
-        <section class="w-full bg-[#76E6CF]/20 py-10 md:py-20">
+        <section
+            class="w-full bg-[#76E6CF]/20 py-10 md:py-20"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlights"
+            data-moj-web-label="highlights"
+            data-moj-web-category="structural"
+            id="highlights"
+        >
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <!-- Title -->
                 <h2 class="text-3xl md:text-5xl font-extrabold text-[#0b0b30]">
@@ -563,7 +648,14 @@
         </section>
 
         <!-- SESSION LIST SECTION -->
-        <section class="w-full bg-white py-10 md:py-20">
+        <section
+            class="w-full bg-white py-10 md:py-20"
+            data-moj-web-fixed="false"
+            data-moj-web-type="highlights"
+            data-moj-web-label="highlights"
+            data-moj-web-category="structural"
+            id="highlights"
+        >
             <div class="max-w-7xl mx-auto px-4">
                 <!-- Title -->
                 <h2
@@ -641,6 +733,11 @@
         <!-- TICKETS SECTION -->
         <section
             class="relative w-full bg-[#0b0f4a] py-10 md:py-20 text-white mt-24 md:mt-16"
+            data-moj-web-fixed="false"
+            data-moj-web-type="tariff"
+            data-moj-web-label="tariff"
+            data-moj-web-category="structural"
+            id="tariff"
         >
             <!-- CTA BANNER -->
             <div
@@ -829,7 +926,14 @@
         </section>
 
         <!-- OFFICIAL SPONSORS & PARTNERS -->
-        <section class="w-full bg-white py-10 md:py-20">
+        <section
+            class="w-full bg-white py-10 md:py-20"
+            data-moj-web-fixed="false"
+            data-moj-web-type="sponsors"
+            data-moj-web-label="sponsors"
+            data-moj-web-category="structural"
+            id="sponsors"
+        >
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <!-- TITLE -->
                 <h2 class="text-3xl md:text-5xl font-extrabold text-[#0b0b30]">
@@ -920,7 +1024,14 @@
         </section>
 
         <!-- FOOTER -->
-        <footer class="bg-[#0b0b30] text-white pt-10 md:pt-16 pb-10">
+        <section
+            class="bg-[#0b0b30] text-white pt-10 md:pt-16 pb-10"
+            data-moj-web-fixed="false"
+            data-moj-web-type="footer"
+            data-moj-web-label="footer"
+            data-moj-web-category="structural"
+            id="footer"
+        >
             <div
                 class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12"
             >
@@ -1020,6 +1131,6 @@
             >
                 © 2027 GlobalEvent. All rights reserved.
             </div>
-        </footer>
+        </section>
     </body>
 </html>

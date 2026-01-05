@@ -84,10 +84,8 @@
                                 >Gallery</a
                             >
                             <div class="relative">
-                                <button
-                                    onclick="toggleDownloads()"
-                                    class="flex items-center text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium gap-1 cursor-pointer"
-                                >
+                              <button id="downloadsBtn" class="flex items-center text-[#353535] hover:text-[#043915] transition duration-300 text-base font-medium gap-1 cursor-pointer">
+
                                     Downloads
                                     <svg
                                         class="w-4 h-4"
@@ -140,10 +138,8 @@
                         </div>
                         <!-- Mobile menu button -->
                         <div class="lg:hidden">
-                            <button
-                                onclick="toggleSidebar()"
-                                class="text-gray-500 hover:text-[#353535]"
-                            >
+                          <button id="sidebarToggleBtn" class="text-gray-500 hover:text-[#353535]">
+
                                 <svg
                                     class="w-6 h-6"
                                     fill="none"
@@ -162,21 +158,16 @@
                     </div>
                 </div>
                 <!-- Overlay -->
-                <div
-                    id="mobileOverlay"
-                    onclick="closeSidebar()"
-                    class="hidden fixed inset-0 bg-black/50 bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden"
-                ></div>
+              <div id="mobileOverlay" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"></div>
+</div>
                 <!-- Mobile Sidebar -->
                 <div
                     id="mobileSidebar"
                     class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50 pt-5"
                 >
                     <div class="p-6 space-y-6 relative">
-                        <button
-                            onclick="closeSidebar()"
-                            class="absolute top-4 right-4 text-gray-500 hover:text-black"
-                        >
+                    <button id="sidebarCloseBtn" class="absolute top-4 right-4 text-gray-500 hover:text-black">
+
                             <svg
                                 class="w-6 h-6"
                                 fill="none"
@@ -224,10 +215,8 @@
                             >
                             <!-- Downloads Dropdown in Mobile -->
                             <div class="space-y-1">
-                                <button
-                                    onclick="toggleMobileDownloads()"
-                                    class="w-full flex justify-between items-center text-[#353535] font-medium focus:outline-none"
-                                >
+                            <button id="mobileDownloadsBtn" class="w-full flex justify-between items-center text-[#353535] font-medium focus:outline-none">
+
                                     <span>Downloads</span>
                                     <svg
                                         class="w-4 h-4"
@@ -280,64 +269,53 @@
                 </div>
             </nav>
         </section>
-        <script>
-            let isOpen = false;
+    <script>
+    const sidebar = document.getElementById("mobileSidebar");
+    const overlay = document.getElementById("mobileOverlay");
+    const downloadsMenu = document.getElementById("downloadsDropdown");
+    const mobileDownloadsMenu = document.getElementById("mobileDownloadsDropdown");
 
-            const toggleSidebar = () => {
-                isOpen = !isOpen;
-                document
-                    .getElementById("mobileSidebar")
-                    .classList.toggle("translate-x-full");
-                document
-                    .getElementById("mobileSidebar")
-                    .classList.toggle("translate-x-0");
+    const sidebarToggleBtn = document.getElementById("sidebarToggleBtn");
+    const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+    const downloadsBtn = document.getElementById("downloadsBtn");
+    const mobileDownloadsBtn = document.getElementById("mobileDownloadsBtn");
 
-                document
-                    .getElementById("mobileOverlay")
-                    .classList.toggle("hidden");
-                document
-                    .getElementById("mobileOverlay")
-                    .classList.toggle("block");
-            };
+    // Sidebar open
+    sidebarToggleBtn?.addEventListener("click", () => {
+        sidebar.classList.remove("translate-x-full");
+        sidebar.classList.add("translate-x-0");
+        overlay.classList.remove("hidden");
+    });
 
-            const closeSidebar = () => {
-                isOpen = false;
-                document
-                    .getElementById("mobileSidebar")
-                    .classList.add("translate-x-full");
-                document
-                    .getElementById("mobileSidebar")
-                    .classList.remove("translate-x-0");
+    // Sidebar close
+    function closeSidebar() {
+        sidebar.classList.add("translate-x-full");
+        sidebar.classList.remove("translate-x-0");
+        overlay.classList.add("hidden");
+    }
 
-                document
-                    .getElementById("mobileOverlay")
-                    .classList.add("hidden");
-                document
-                    .getElementById("mobileOverlay")
-                    .classList.remove("block");
-            };
+    sidebarCloseBtn?.addEventListener("click", closeSidebar);
+    overlay?.addEventListener("click", closeSidebar);
 
-            const toggleDownloads = () => {
-                const dropdown = document.getElementById("downloadsDropdown");
-                dropdown.classList.toggle("hidden");
-            };
-            const toggleMobileDownloads = () => {
-                const dropdown = document.getElementById(
-                    "mobileDownloadsDropdown"
-                );
-                dropdown.classList.toggle("hidden");
-            };
-            document.addEventListener("click", (e) => {
-                const btn = e.target.closest("button");
-                const menu = document.getElementById("downloadsDropdown");
+    // Desktop dropdown toggle
+    downloadsBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        downloadsMenu.classList.toggle("hidden");
+    });
 
-                if (!btn || !btn.closest("[onclick='toggleDownloads()']")) {
-                    if (!e.target.closest("#downloadsDropdown")) {
-                        menu?.classList.add("hidden");
-                    }
-                }
-            });
-        </script>
+    // Mobile dropdown toggle
+    mobileDownloadsBtn?.addEventListener("click", () => {
+        mobileDownloadsMenu.classList.toggle("hidden");
+    });
+
+    // Click outside to close desktop dropdown
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest("#downloadsBtn") && !e.target.closest("#downloadsDropdown")) {
+            downloadsMenu?.classList.add("hidden");
+        }
+    });
+</script>
+
 
         <!-- Hero -->
         <section
@@ -397,13 +375,15 @@
                                 <div>
                                     <p
                                         class="text-3xl md:text-5xl font-bold leading-tight"
+                                        id="event-date-text"
                                     >
-                                        DD–DD
+                                        09–12
                                         <span
                                             class="text-2xl md:text-3xl font-light"
-                                            >Month 'YY</span
+                                            >Dec '26</span
                                         >
                                     </p>
+
                                     <p
                                         class="text-base md:text-lg font-medium mt-1"
                                     >
@@ -455,8 +435,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#043915]"
+                                        id="cd-days"
                                     >
-                                        12
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -470,8 +451,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#043915]"
+                                        id="cd-hours"
                                     >
-                                        08
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -485,8 +467,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#043915]"
+                                        id="cd-mins"
                                     >
-                                        32
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -500,8 +483,9 @@
                                 >
                                     <p
                                         class="text-xl md:text-2xl font-bold text-[#043915]"
+                                        id="cd-secs"
                                     >
-                                        45
+                                        0
                                     </p>
                                     <span
                                         class="text-[10px] md:text-xs uppercase text-gray-600 tracking-wide mt-1"
@@ -525,6 +509,94 @@
                 </div>
             </div>
         </section>
+       <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const dateTextEl = document.querySelector("#event-date-text");
+
+  const countdownBox = document
+    .querySelector("#cd-days")
+    ?.closest(".bg-white\\/30");
+
+  const daysEl = document.querySelector("#cd-days");
+  const hoursEl = document.querySelector("#cd-hours");
+  const minsEl = document.querySelector("#cd-mins");
+  const secsEl = document.querySelector("#cd-secs");
+
+  function parseEventDate(text) {
+    if (!text) return null;
+
+    text = text.replace(/\s+/g, " ").trim();
+
+    // works with: 09–12 Dec '26  OR  9-12 Jan '27
+    const match = text.match(
+      /(\d{1,2})[–-](\d{1,2})\s+([A-Za-z]+)\s+'(\d{2})/
+    );
+
+    if (!match) return null;
+
+    let [, startDay, endDay, month, year] = match;
+
+    const monthIndex = [
+      "jan","feb","mar","apr","may","jun",
+      "jul","aug","sep","oct","nov","dec"
+    ].indexOf(month.toLowerCase());
+
+    if (monthIndex < 0) return null;
+
+    const fullYear = 2000 + parseInt(year);
+
+    const d = new Date(fullYear, monthIndex, endDay, 23, 59, 59);
+
+    if (isNaN(d.getTime())) return null;
+
+    return d;
+  }
+
+  function hideCountdown() {
+    if (countdownBox) countdownBox.style.display = "none";
+  }
+
+  function showCountdown() {
+    if (countdownBox) countdownBox.style.display = "";
+  }
+
+  function updateCountdown() {
+    const eventDate = parseEventDate(dateTextEl?.innerText);
+
+    if (!eventDate) {
+      hideCountdown();
+      return;
+    }
+
+    showCountdown();
+
+    const now = new Date();
+    const diff = eventDate - now;
+
+    if (diff <= 0) {
+      daysEl.innerText = 0;
+      hoursEl.innerText = 0;
+      minsEl.innerText = 0;
+      secsEl.innerText = 0;
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    daysEl.innerText = days;
+    hoursEl.innerText = hours;
+    minsEl.innerText = mins;
+    secsEl.innerText = secs;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
+</script>
+
 
         <!-- stats -->
         <section
