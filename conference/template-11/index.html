@@ -229,32 +229,30 @@
       </div>
     </section>
     <script>
-      const navbar = document.getElementById("navbarMain");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 10) {
-          navbar.classList.remove("bg-transparent");
-          navbar.classList.add("bg-[#F25A2A]/95", "shadow-lg");
-        } else {
-          navbar.classList.add("bg-transparent");
-          navbar.classList.remove("bg-[#F25A2A]/95", "shadow-lg");
-        }
-      });
       (function () {
         const isEditor =
           window.frameElement &&
           window.frameElement.classList.contains("gjs-frame");
+
         const menuToggle = document.getElementById("menuToggle");
         const mobileMenu = document.getElementById("mobileMenu");
         const closeMenu = document.getElementById("closeMenu");
-        if (!menuToggle || !mobileMenu || !closeMenu) return;
+        const navbar = document.getElementById("navbarMain");
+        const links = document.querySelectorAll(".nav-item");
+
+        if (!menuToggle || !mobileMenu || !closeMenu || !navbar) return;
+
+        // ---- MOBILE MENU ----
         function openMenu() {
           mobileMenu.classList.remove("translate-x-full");
           document.body.style.overflow = "hidden";
         }
+
         function closeMenuFunc() {
           mobileMenu.classList.add("translate-x-full");
           document.body.style.overflow = "";
         }
+
         menuToggle.addEventListener("click", (e) => {
           if (isEditor) {
             e.preventDefault();
@@ -262,6 +260,7 @@
           }
           openMenu();
         });
+
         closeMenu.addEventListener("click", (e) => {
           if (isEditor) {
             e.preventDefault();
@@ -269,8 +268,30 @@
           }
           closeMenuFunc();
         });
+
+        // ---- SCROLL COLOR CHANGE ----
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add("bg-white", "shadow-lg");
+            navbar.classList.remove("bg-transparent");
+
+            links.forEach((l) => {
+              l.classList.remove("text-white");
+              l.classList.add("text-[#F25A2A]");
+            });
+          } else {
+            navbar.classList.remove("bg-white", "shadow-lg");
+            navbar.classList.add("bg-transparent");
+
+            links.forEach((l) => {
+              l.classList.add("text-white");
+              l.classList.remove("text-[#F25A2A]");
+            });
+          }
+        });
       })();
     </script>
+
     <!-- about  -->
     <section
       id="about-conference"
@@ -353,7 +374,7 @@
       data-moj-web-type="welcome-chairman"
       data-moj-web-label="Welcome Chairman"
       data-moj-web-category="structural"
-      class="w-full text-white py-10 md:py-20 px-6 md:px-16 lg:px-24"
+      class="w-full text-white py-10 md:py-20 px-6 md:px-16 lg:px-24 bg-[#161515]"
     >
       <div
         class="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
@@ -574,7 +595,7 @@
       data-moj-web-type="org-committee"
       data-moj-web-label="Organizing Committee"
       data-moj-web-category="structural"
-      class="w-full text-white py-10 md:py-20 px-6 md:px-16 lg:px-24 relative overflow-x-clip"
+      class="w-full text-white py-10 md:py-20 px-6 md:px-16 lg:px-24 relative overflow-x-clip bg-[#161515]"
     >
       <!-- LEFT BACKGROUND CIRCLES -->
       <div
@@ -711,7 +732,7 @@
       data-moj-web-type="registration-charges"
       data-moj-web-label="Registration Charges"
       data-moj-web-category="structural"
-      class="w-full py-10 md:py-20 px-6 md:px-16 lg:px-24 relative text-white overflow-x-clip"
+      class="w-full py-10 md:py-20 px-6 md:px-16 lg:px-24 relative text-white overflow-x-clip bg-[#161515]"
     >
       <div class="relative z-10 max-w-[1400px] mx-auto">
         <!-- HEADING -->
@@ -1055,29 +1076,67 @@
           </div>
         </div>
       </div>
+      <script>
+        (function () {
+          const isEditor =
+            window.frameElement &&
+            window.frameElement.classList.contains("gjs-frame");
+
+          const day1Btn = document.getElementById("day1Btn");
+          const day2Btn = document.getElementById("day2Btn");
+
+          const day1 = document.getElementById("day1");
+          const day2 = document.getElementById("day2");
+
+          if (!day1Btn || !day2Btn || !day1 || !day2) return;
+
+          function activateDay1(e) {
+            if (isEditor && e) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+
+            // content visibility
+            day1.classList.remove("hidden");
+            day2.classList.add("hidden");
+
+            // Day 1 active styling
+            day1Btn.classList.add("bg-[#F25A2A]", "text-white");
+            day1Btn.classList.remove("bg-gray-200", "text-gray-600");
+
+            // Day 2 inactive styling
+            day2Btn.classList.remove("bg-[#F25A2A]", "text-white");
+            day2Btn.classList.add("bg-gray-200", "text-gray-600");
+          }
+
+          function activateDay2(e) {
+            if (isEditor && e) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+
+            // content visibility
+            day2.classList.remove("hidden");
+            day1.classList.add("hidden");
+
+            // Day 2 active styling
+            day2Btn.classList.add("bg-[#F25A2A]", "text-white");
+            day2Btn.classList.remove("bg-gray-200", "text-gray-600");
+
+            // Day 1 inactive styling
+            day1Btn.classList.remove("bg-[#F25A2A]", "text-white");
+            day1Btn.classList.add("bg-gray-200", "text-gray-600");
+          }
+
+          day1Btn.addEventListener("click", activateDay1);
+          day2Btn.addEventListener("click", activateDay2);
+
+          // Default – Day 1 active
+          activateDay1();
+        })();
+      </script>
     </section>
-    <script>
-      const day1Btn = document.getElementById("day1Btn");
-      const day2Btn = document.getElementById("day2Btn");
-      const day1 = document.getElementById("day1");
-      const day2 = document.getElementById("day2");
-      day1Btn.addEventListener("click", () => {
-        day1Btn.classList.add("bg-[#F25A2A]", "text-white");
-        day1Btn.classList.remove("text-gray-600");
-        day2Btn.classList.remove("bg-[#F25A2A]", "text-white");
-        day2Btn.classList.add("text-gray-600");
-        day1.classList.remove("hidden");
-        day2.classList.add("hidden");
-      });
-      day2Btn.addEventListener("click", () => {
-        day2Btn.classList.add("bg-[#F25A2A]", "text-white");
-        day2Btn.classList.remove("text-gray-600");
-        day1Btn.classList.remove("bg-[#F25A2A]", "text-white");
-        day1Btn.classList.add("text-gray-600");
-        day2.classList.remove("hidden");
-        day1.classList.add("hidden");
-      });
-    </script>
+
     <!-- divider  -->
     <section
       id="scroll-strip"
@@ -1141,6 +1200,11 @@
         </div>
       </div>
     </section>
+    <style>
+      .animate-marquee {
+        animation: marquee 25s linear infinite;
+      }
+    </style>
     <!-- spekaers -->
     <section
       id="meet-speakers"
@@ -1294,7 +1358,7 @@
       data-moj-web-type="join-event-banner"
       data-moj-web-label="Join Event Banner"
       data-moj-web-category="structural"
-      class="w-full py-12 md:py-16 px-6 bg-transparent text-center relative overflow-x-clip"
+      class="w-full py-12 md:py-16 px-6 bg-transparent text-center relative overflow-x-clip bg-[#161515]"
     >
       <div class="absolute inset-0 pointer-events-none">
         <div
@@ -1338,7 +1402,7 @@
       data-moj-web-type="footer"
       data-moj-web-label="Footer Section"
       data-moj-web-category="structural"
-      class="w-full bg-[#161515] text-white pt-10 pb-8 px-6 md:px-16 lg:px-24"
+      class="w-full bg-[#161515] text-white pt-10 pb-8 px-6 md:px-16 lg:px-24 bg-[#161515]"
     >
       <div
         class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12"

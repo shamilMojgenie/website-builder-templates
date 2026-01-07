@@ -29,55 +29,15 @@
         font-family: "Playfair Display", serif;
       }
     </style>
-    <style>
-      @keyframes fadefloat {
-        0% {
-          opacity: 0.1;
-          transform: translateY(0px) scale(1);
-        }
-        50% {
-          opacity: 0.4;
-          transform: translateY(-20px) scale(1.1);
-        }
-        100% {
-          opacity: 0.1;
-          transform: translateY(0px) scale(1);
-        }
-      }
-      .animate-fadefloat {
-        animation: fadefloat 6s ease-in-out infinite;
-      }
-
-      @keyframes fadein {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fadein {
-        animation: fadein 1.4s ease-out forwards;
-      }
-    </style>
-
-    <script>
-      const openMenu = document.getElementById("openMenu");
-      const closeMenu = document.getElementById("closeMenu");
-      const mobileSidebar = document.getElementById("mobileSidebar");
-
-      openMenu.addEventListener("click", () => {
-        mobileSidebar.style.right = "0";
-      });
-      closeMenu.addEventListener("click", () => {
-        mobileSidebar.style.right = "-100%";
-      });
-    </script>
 
     <!-- NAVBAR -->
-    <section>
+    <section
+      id="navbar-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="navbar"
+      data-moj-web-label="Navbar"
+      data-moj-web-category="structural"
+    >
       <nav
         class="absolute top-0 w-full py-6 z-30 flex justify-center backdrop-blur-xl bg-white/60 border-b border-black/10"
       >
@@ -103,7 +63,9 @@
       >
         <button id="closeMenu" class="text-3xl self-end">×</button>
 
-        <nav class="mt-6 space-y-4 uppercase tracking-wide text-lg">
+        <nav
+          class="mt-6 space-y-4 uppercase tracking-wide text-lg flex flex-col"
+        >
           <a href="#">Home</a>
           <a href="#">Story</a>
           <a href="#">Plans</a>
@@ -112,9 +74,56 @@
         </nav>
       </div>
     </section>
+    <script>
+      (function () {
+        // Detect GrapesJS editor frame
+        const isEditor =
+          window.frameElement &&
+          window.frameElement.classList.contains("gjs-frame");
+
+        const openMenuBtn = document.getElementById("openMenu");
+        const closeMenuBtn = document.getElementById("closeMenu");
+        const mobileSidebar = document.getElementById("mobileSidebar");
+
+        if (!openMenuBtn || !closeMenuBtn || !mobileSidebar) return;
+
+        function openMenu() {
+          mobileSidebar.style.right = "0";
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeMenu() {
+          mobileSidebar.style.right = "-100%";
+          document.body.style.overflow = "";
+        }
+
+        openMenuBtn.addEventListener("click", (e) => {
+          if (isEditor) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          openMenu();
+        });
+
+        closeMenuBtn.addEventListener("click", (e) => {
+          if (isEditor) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          closeMenu();
+        });
+      })();
+    </script>
 
     <!-- HERO SECTION -->
-    <section class="relative w-full h-screen overflow-hidden bg-white">
+    <section
+      id="hero-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="hero"
+      data-moj-web-label="hero"
+      data-moj-web-category="structural"
+      class="relative w-full h-screen md:pt-22 lg:pt-0 overflow-hidden bg-white"
+    >
       <!-- SOFT FLOATING ELEMENTS -->
       <div class="pointer-events-none">
         <div
@@ -164,8 +173,13 @@
         </div>
       </div>
     </section>
-
+    <!-- message -->
     <section
+      id="message-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="message"
+      data-moj-web-label="message"
+      data-moj-web-category="structural"
       class="relative w-full py-10 md:py-20 px-4 bg-gradient-to-b from-[#faf7f9] to-white overflow-hidden"
     >
       <!-- DECORATIVE CIRCLES -->
@@ -218,7 +232,14 @@
       </div>
     </section>
 
+    <!-- about -->
+
     <section
+      id="about-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="about"
+      data-moj-web-label="about"
+      data-moj-web-category="structural"
       class="w-full py-10 md:py-20 px-4 bg-[#f5f5f5] relative overflow-hidden"
     >
       <!-- BACKGROUND BLURS -->
@@ -275,7 +296,14 @@
       </div>
     </section>
 
+    <!-- story -->
+
     <section
+      id="story-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="story"
+      data-moj-web-label="story"
+      data-moj-web-category="structural"
       class="relative w-full py-10 md:py-20 px-4 bg-gradient-to-b from-white to-[#faf7fb] overflow-hidden"
     >
       <!-- BACKGROUND BLURS -->
@@ -420,7 +448,16 @@
       </div>
     </section>
 
-    <section class="w-full py-10 md:py-20 px-4 bg-white">
+    <!-- itinery -->
+
+    <section
+      id="itinery-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="itinery"
+      data-moj-web-label="itinery"
+      data-moj-web-category="structural"
+      class="w-full py-10 md:py-20 px-4 bg-white"
+    >
       <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-20">
         <!-- LEFT COLUMN — HEADING + INTRO -->
         <div class="lg:col-span-1 flex flex-col justify-start">
@@ -554,7 +591,16 @@
       </div>
     </section>
 
-    <section class="w-full bg-[#f5f5f5] py-16 px-4 lg:px-20">
+    <!-- gallery -->
+
+    <section
+      id="gallery-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="gallery"
+      data-moj-web-label="gallery"
+      data-moj-web-category="structural"
+      class="w-full bg-[#f5f5f5] py-16 px-4 lg:px-20"
+    >
       <!-- Heading -->
       <div class="text-center mb-14">
         <h2 class="font-serif text-4xl md:text-6xl text-neutral-900">
@@ -628,6 +674,11 @@
 
     <!-- FOOTER -->
     <section
+      id="footer-block"
+      data-moj-web-fixed="false"
+      data-moj-web-type="footer"
+      data-moj-web-label="footer"
+      data-moj-web-category="structural"
       class="w-full bg-[#fafafa] text-neutral-700 py-14 px-4 border-t border-neutral-200"
     >
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
